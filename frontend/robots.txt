@@ -1,0 +1,36 @@
+# robots.txt для dongfeng-minitraktor.ru
+# Оптимизация для Яндекса и других поисковых систем РФ/СНГ
+
+# Правила для всех роботов
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.pdf$
+Disallow: /search?
+Disallow: /cart/
+Disallow: /checkout/
+
+# Правила для Яндекса
+User-agent: Yandex
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 1
+
+# Правила для Google
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# Правила для Mail.ru
+User-agent: Mail.RU_Bot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://dongfeng-minitraktor.ru/sitemap.xml
+
+# Host для Яндекса (главное зеркало сайта)
+Host: dongfeng-minitraktor.ru

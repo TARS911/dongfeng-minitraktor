@@ -1,0 +1,33 @@
+{
+  "name": "dongfeng-backend",
+  "version": "1.0.0",
+  "description": "Fastify backend для сайта минитракторов DONGFENG",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "init-db": "node database/init.js",
+    "seed-db": "node database/seed.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "fastify",
+    "api",
+    "dongfeng",
+    "tractors"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/cors": "^9.0.0",
+    "@fastify/static": "^7.0.0",
+    "better-sqlite3": "^9.2.0",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.25.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.8",
+    "pino-pretty": "^13.1.2"
+  }
+}
