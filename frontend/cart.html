@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина покупок - DONGFENG Минитрактора</title>
+    <meta name="description" content="Корзина покупок минитракторов DONGFENG">
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="logo">
+                    <a href="/">
+                        <img src="images/logo.png" alt="DONGFENG Минитрактора" width="180" height="60">
+                    </a>
+                </div>
+
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li><a href="/#catalog" class="nav__link">Каталог</a></li>
+                        <li><a href="/#about" class="nav__link">О компании</a></li>
+                        <li><a href="/#delivery" class="nav__link">Доставка</a></li>
+                        <li><a href="/#contacts" class="nav__link">Контакты</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__contacts">
+                    <a href="tel:+79999999999" class="phone">+7 (999) 999-99-99</a>
+                    <a href="/cart.html" class="cart-icon">
+                        🛒 Корзина
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Page -->
+    <section class="cart-page">
+        <div class="container">
+            <div class="cart-header">
+                <h1 class="section-title">Корзина покупок</h1>
+            </div>
+
+            <div class="cart-content">
+                <!-- Cart Items -->
+                <div class="cart-items-wrapper">
+                    <div id="cart-items-container" class="cart-items">
+                        <!-- Будет заполнено через JavaScript -->
+                    </div>
+
+                    <div style="margin-top: var(--space-xl);">
+                        <button
+                            class="btn btn--outline"
+                            data-action="clear-cart"
+                            style="margin-right: var(--space-md);"
+                        >
+                            Очистить корзину
+                        </button>
+                        <a href="/" class="btn btn--secondary">
+                            Продолжить покупки
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <h3>Итого</h3>
+
+                    <div class="cart-summary-row">
+                        <span class="cart-summary-label">Товаров:</span>
+                        <span class="cart-summary-value" id="cart-items-count">0</span>
+                    </div>
+
+                    <div class="cart-summary-row">
+                        <span class="cart-summary-label">Сумма:</span>
+                        <span class="cart-summary-value" id="cart-total">0 ₽</span>
+                    </div>
+
+                    <div class="cart-summary__actions">
+                        <button
+                            class="btn btn--primary btn--block btn--large"
+                            onclick="proceedToCheckout()"
+                        >
+                            Оформить заказ
+                        </button>
+                        <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); text-align: center;">
+                            Доставка рассчитывается при оформлении
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__column">
+                    <h4>О компании</h4>
+                    <ul>
+                        <li><a href="/#about">О нас</a></li>
+                        <li><a href="/#delivery">Доставка</a></li>
+                        <li><a href="/#contacts">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h4>Каталог</h4>
+                    <ul>
+                        <li><a href="/#catalog">Минитрактора</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h4>Контакты</h4>
+                    <p><a href="tel:+79999999999">+7 (999) 999-99-99</a></p>
+                    <p><a href="mailto:info@dongfeng-minitraktor.ru">info@dongfeng-minitraktor.ru</a></p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 DONGFENG Минитрактора. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script>
+        // Render cart page on load
+        document.addEventListener('DOMContentLoaded', () => {
+            cart.renderCartPage();
+            updateCartSummary();
+        });
+
+        // Update summary on cart change
+        window.addEventListener('cartUpdated', () => {
+            cart.renderCartPage();
+            updateCartSummary();
+        });
+
+        function updateCartSummary() {
+            document.getElementById('cart-items-count').textContent = cart.getItemsCount();
+            document.getElementById('cart-total').textContent =
+                cart.getTotalPrice().toLocaleString('ru-RU') + ' ₽';
+        }
+
+        function proceedToCheckout() {
+            if (cart.getItemsCount() === 0) {
+                alert('Корзина пуста!');
+                return;
+            }
+            window.location.href = '/checkout.html';
+        }
+    </script>
+</body>
+</html>

@@ -8,6 +8,7 @@ import dotenv from 'dotenv';
 // Routes
 import productRoutes from './routes/products.js';
 import formRoutes from './routes/forms.js';
+import orderRoutes from './routes/orders.js';
 
 dotenv.config();
 
@@ -52,6 +53,7 @@ fastify.get('/api/health', async (request, reply) => {
 // Регистрируем API routes
 await fastify.register(productRoutes, { prefix: '/api' });
 await fastify.register(formRoutes, { prefix: '/api' });
+await fastify.register(orderRoutes, { prefix: '/api' });
 
 // Error handler
 fastify.setErrorHandler((error, request, reply) => {
@@ -124,6 +126,8 @@ const start = async () => {
     console.log(`   GET  /api/categories        - Категории`);
     console.log(`   POST /api/contact           - Форма обратной связи`);
     console.log(`   POST /api/delivery-calculator - Расчет доставки`);
+    console.log(`   POST /api/orders            - Создать заказ 🛒`);
+    console.log(`   GET  /api/orders/:id        - Получить заказ`);
     console.log(`   GET  /api/health            - Health check`);
     console.log('\n========================================\n');
 
