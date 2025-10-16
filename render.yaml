@@ -1,0 +1,33 @@
+# Render.com Blueprint для автоматического деплоя
+# https://render.com/docs/blueprint-spec
+
+services:
+  # Backend API + Frontend
+  - type: web
+    name: dongfeng-minitraktor
+    env: node
+    region: frankfurt  # Ближайший регион к РФ
+    plan: free
+    buildCommand: cd backend && npm install && npm run init-db && npm run seed-db
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: HOST
+        value: 0.0.0.0
+      - key: DB_PATH
+        value: /opt/render/project/src/backend/database/dongfeng.db
+      - key: FRONTEND_URL
+        sync: false
+    disk:
+      name: dongfeng-db
+      mountPath: /opt/render/project/src/backend/database
+      sizeGB: 1
+
+# Примечания:
+# 1. Free план: 512MB RAM, засыпает после 15 мин неактивности
+# 2. База SQLite будет на persistent диске
+# 3. Автоматический SSL сертификат
+# 4. URL вида: https://dongfeng-minitraktor.onrender.com
