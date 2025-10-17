@@ -227,14 +227,51 @@
             <p class="section-subtitle">Выберите подходящую модель из нашего ассортимента</p>
 
             <div class="catalog__grid">
-                <!-- Карточка товара 1 -->
+                <!-- Карточка товара 1: DF-244 с кабиной -->
                 <article class="product-card" itemscope itemtype="https://schema.org/Product">
                     <div class="product-card__image">
-                        <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg" alt="Минитрактор DONGFENG DF-244" itemprop="image">
+                        <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg" alt="Минитрактор DF-244 с кабиной" itemprop="image">
                         <div class="product-card__badge">Хит продаж</div>
                     </div>
                     <div class="product-card__content">
-                        <h3 class="product-card__title" itemprop="name">DONGFENG DF-244</h3>
+                        <h3 class="product-card__title" itemprop="name">Минитрактор DF-244 с кабиной</h3>
+                        <div class="product-card__specs">
+                            <div class="spec">
+                                <span class="spec__label">Мощность:</span>
+                                <span class="spec__value">24 л.с.</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec__label">Привод:</span>
+                                <span class="spec__value">4x4</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec__label">КПП:</span>
+                                <span class="spec__value">8+8</span>
+                            </div>
+                        </div>
+                        <div class="product-card__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <span class="price__current" itemprop="price" content="320000">320 000 ₽</span>
+                            <meta itemprop="priceCurrency" content="RUB">
+                            <link itemprop="availability" href="https://schema.org/InStock">
+                        </div>
+                        <div class="product-card__actions">
+                            <button class="btn btn--primary btn--block" onclick="requestPrice('DF-244')">
+                                Узнать цену
+                            </button>
+                            <button class="btn btn--outline btn--block" onclick="showDetails('DF-244')">
+                                Подробнее
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Карточка товара 2: DF-244 без кабины -->
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <div class="product-card__image">
+                        <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg" alt="Минитрактор DF-244 без кабины" itemprop="image">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title" itemprop="name">Минитрактор DF-244 без кабины</h3>
                         <div class="product-card__specs">
                             <div class="spec">
                                 <span class="spec__label">Мощность:</span>
@@ -265,51 +302,14 @@
                     </div>
                 </article>
 
-                <!-- Карточка товара 2 -->
+                <!-- Карточка товара 3: DF-404 с кабиной -->
                 <article class="product-card" itemscope itemtype="https://schema.org/Product">
                     <div class="product-card__image">
-                        <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698081/dongfeng-minitraktor/df-304-main.jpg" alt="Минитрактор DONGFENG DF-304" itemprop="image">
+                        <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698082/dongfeng-minitraktor/df-404-main.jpg" alt="Минитрактор DF-404 с кабиной" itemprop="image">
                         <div class="product-card__badge badge--new">Новинка</div>
                     </div>
                     <div class="product-card__content">
-                        <h3 class="product-card__title" itemprop="name">DONGFENG DF-304</h3>
-                        <div class="product-card__specs">
-                            <div class="spec">
-                                <span class="spec__label">Мощность:</span>
-                                <span class="spec__value">30 л.с.</span>
-                            </div>
-                            <div class="spec">
-                                <span class="spec__label">Привод:</span>
-                                <span class="spec__value">4x4</span>
-                            </div>
-                            <div class="spec">
-                                <span class="spec__label">КПП:</span>
-                                <span class="spec__value">12+12</span>
-                            </div>
-                        </div>
-                        <div class="product-card__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                            <span class="price__current" itemprop="price" content="385000">385 000 ₽</span>
-                            <meta itemprop="priceCurrency" content="RUB">
-                            <link itemprop="availability" href="https://schema.org/InStock">
-                        </div>
-                        <div class="product-card__actions">
-                            <button class="btn btn--primary btn--block" onclick="requestPrice('DF-304')">
-                                Узнать цену
-                            </button>
-                            <button class="btn btn--outline btn--block" onclick="showDetails('DF-304')">
-                                Подробнее
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Карточка товара 3 -->
-                <article class="product-card" itemscope itemtype="https://schema.org/Product">
-                    <div class="product-card__image">
-                        <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698082/dongfeng-minitraktor/df-404-main.jpg" alt="Минитрактор DONGFENG DF-404" itemprop="image">
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title" itemprop="name">DONGFENG DF-404</h3>
+                        <h3 class="product-card__title" itemprop="name">Минитрактор DF-404 с кабиной</h3>
                         <div class="product-card__specs">
                             <div class="spec">
                                 <span class="spec__label">Мощность:</span>
@@ -325,7 +325,7 @@
                             </div>
                         </div>
                         <div class="product-card__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                            <span class="price__current" itemprop="price" content="485000">485 000 ₽</span>
+                            <span class="price__current" itemprop="price" content="520000">520 000 ₽</span>
                             <meta itemprop="priceCurrency" content="RUB">
                             <link itemprop="availability" href="https://schema.org/InStock">
                         </div>
@@ -340,17 +340,17 @@
                     </div>
                 </article>
 
-                <!-- Карточка товара 4 -->
+                <!-- Карточка товара 4: Xingtai 244 с кабиной -->
                 <article class="product-card" itemscope itemtype="https://schema.org/Product">
                     <div class="product-card__image">
-                        <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698081/dongfeng-minitraktor/df-354-main.jpg" alt="Минитрактор DONGFENG DF-354" itemprop="image">
+                        <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698081/dongfeng-minitraktor/df-304-main.jpg" alt="Минитрактор Xingtai (Синтай) 244 с кабиной" itemprop="image">
                     </div>
                     <div class="product-card__content">
-                        <h3 class="product-card__title" itemprop="name">DONGFENG DF-354</h3>
+                        <h3 class="product-card__title" itemprop="name">Xingtai (Синтай) 244 с кабиной</h3>
                         <div class="product-card__specs">
                             <div class="spec">
                                 <span class="spec__label">Мощность:</span>
-                                <span class="spec__value">35 л.с.</span>
+                                <span class="spec__value">24 л.с.</span>
                             </div>
                             <div class="spec">
                                 <span class="spec__label">Привод:</span>
@@ -358,19 +358,19 @@
                             </div>
                             <div class="spec">
                                 <span class="spec__label">КПП:</span>
-                                <span class="spec__value">12+12</span>
+                                <span class="spec__value">8+8</span>
                             </div>
                         </div>
                         <div class="product-card__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                            <span class="price__current" itemprop="price" content="435000">435 000 ₽</span>
+                            <span class="price__current" itemprop="price" content="310000">310 000 ₽</span>
                             <meta itemprop="priceCurrency" content="RUB">
                             <link itemprop="availability" href="https://schema.org/InStock">
                         </div>
                         <div class="product-card__actions">
-                            <button class="btn btn--primary btn--block" onclick="requestPrice('DF-354')">
+                            <button class="btn btn--primary btn--block" onclick="requestPrice('Xingtai 244')">
                                 Узнать цену
                             </button>
-                            <button class="btn btn--outline btn--block" onclick="showDetails('DF-354')">
+                            <button class="btn btn--outline btn--block" onclick="showDetails('Xingtai 244')">
                                 Подробнее
                             </button>
                         </div>
