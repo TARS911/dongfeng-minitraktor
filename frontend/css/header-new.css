@@ -1,0 +1,422 @@
+/*
+ * New Header Styles - Search, Cart, Favorites, Compare
+ * Стили для обновленного header
+ */
+
+/* === Header Structure === */
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: var(--header-bg);
+    box-shadow: var(--header-shadow);
+    z-index: var(--z-sticky);
+    transition: all var(--transition-base);
+}
+
+.header__top {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: var(--space-lg);
+    align-items: center;
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+/* === Search Bar (Google/Yandex style) === */
+.search-bar {
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+    background: var(--color-white);
+    border: 2px solid var(--color-gray-300);
+    border-radius: 24px;
+    padding: 4px 8px 4px 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar:focus-within {
+    border-color: var(--brand-primary);
+    box-shadow: 0 4px 16px rgba(42, 157, 78, 0.15);
+}
+
+.search-bar__input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    padding: 10px 12px;
+    outline: none;
+    color: var(--color-gray-900);
+}
+
+.search-bar__input::placeholder {
+    color: var(--color-gray-500);
+}
+
+.search-bar__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--brand-primary);
+    color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.search-bar__button:hover {
+    background: var(--brand-primary-dark);
+    transform: scale(1.05);
+}
+
+.search-bar__button:active {
+    transform: scale(0.95);
+}
+
+/* === Header Actions (Favorites, Compare, Cart) === */
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.header-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    border-radius: var(--radius-md);
+    color: var(--color-gray-700);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.header-action:hover {
+    background: var(--color-gray-100);
+    color: var(--brand-primary);
+}
+
+.header-action svg {
+    width: 24px;
+    height: 24px;
+}
+
+.header-action__label {
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.header-action__badge {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    background: var(--brand-accent);
+    color: var(--color-white);
+    font-size: 10px;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.header-action__badge:empty {
+    display: none;
+}
+
+.header-action:hover .header-action__badge {
+    transform: scale(1.1);
+}
+
+.header-action--cart {
+    background: var(--brand-primary);
+    color: var(--color-white);
+}
+
+.header-action--cart:hover {
+    background: var(--brand-primary-dark);
+    color: var(--color-white);
+}
+
+.header-action--cart .header-action__badge {
+    background: var(--brand-accent);
+}
+
+/* === Header Contact === */
+.header__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.header__contact .phone {
+    font-weight: var(--font-weight-semibold);
+    font-size: 16px;
+    color: var(--color-gray-900);
+    white-space: nowrap;
+}
+
+/* === Navigation with Catalog === */
+.header__nav {
+    background: var(--color-gray-50);
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+.nav__catalog-menu {
+    position: relative;
+}
+
+.nav__catalog-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    background: var(--brand-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav__catalog-btn:hover {
+    background: var(--brand-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(42, 157, 78, 0.3);
+}
+
+.nav__catalog-btn:active {
+    transform: translateY(0);
+}
+
+.nav__catalog-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* === Catalog Dropdown === */
+.catalog-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 280px;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    padding: 12px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+}
+
+.catalog-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.catalog-dropdown__category {
+    transition: background 0.2s ease;
+}
+
+.catalog-dropdown__category:hover {
+    background: var(--color-gray-50);
+}
+
+.catalog-dropdown__category a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: var(--color-gray-700);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.catalog-dropdown__category:hover a {
+    color: var(--brand-primary);
+}
+
+.catalog-dropdown__icon {
+    font-size: 20px;
+    width: 28px;
+    text-align: center;
+}
+
+.catalog-dropdown__name {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.catalog-dropdown__count {
+    font-size: 13px;
+    color: var(--color-gray-500);
+}
+
+.nav__list {
+    display: flex;
+    gap: var(--space-xl);
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 14px 0;
+}
+
+.nav__link {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-700);
+    transition: color var(--transition-fast);
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.nav__link:hover {
+    color: var(--brand-primary);
+}
+
+/* === Responsive Design === */
+@media (max-width: 1200px) {
+    .header__top {
+        grid-template-columns: auto 1fr auto;
+        gap: var(--space-md);
+    }
+
+    .header__contact {
+        display: none;
+    }
+
+    .header__actions {
+        gap: var(--space-sm);
+    }
+
+    .header-action__label {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__top {
+        grid-template-columns: auto 1fr auto;
+        padding: var(--space-sm) 0;
+    }
+
+    .logo img {
+        height: 38px;
+    }
+
+    .search-bar {
+        max-width: none;
+        border-radius: 20px;
+        padding: 2px 6px 2px 16px;
+    }
+
+    .search-bar__input {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .search-bar__button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .header__actions {
+        gap: 4px;
+    }
+
+    .header-action {
+        padding: 6px 8px;
+    }
+
+    .header-action svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .header-action__badge {
+        min-width: 16px;
+        height: 16px;
+        font-size: 9px;
+        top: 2px;
+        right: 4px;
+    }
+
+    .header__nav {
+        display: none; /* Будет мобильное меню */
+    }
+
+    .nav__catalog-btn {
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__top {
+        grid-template-columns: auto 1fr auto;
+        gap: 8px;
+    }
+
+    .logo img {
+        height: 34px;
+    }
+
+    .search-bar {
+        padding: 2px 4px 2px 12px;
+    }
+
+    .search-bar__input {
+        font-size: 13px;
+        padding: 6px 8px;
+    }
+
+    .search-bar__input::placeholder {
+        font-size: 12px;
+    }
+
+    .search-bar__button {
+        width: 32px;
+        height: 32px;
+    }
+
+    .header__actions {
+        gap: 2px;
+    }
+
+    .header-action {
+        padding: 4px 6px;
+    }
+}
