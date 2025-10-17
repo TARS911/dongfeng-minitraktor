@@ -188,9 +188,18 @@ function validateInput(input) {
 
     // Phone validation (Russian format)
     if (input.type === 'tel') {
-        const phoneRegex = /^[\+]?[(]?[0-9]{1,3}[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?[-\s\.]?[0-9]{4,6}$/;
-        if (!phoneRegex.test(value.replace(/\s/g, ''))) {
+        // Удаляем все символы кроме цифр
+        const digitsOnly = value.replace(/\D/g, '');
+
+        // Проверяем что есть минимум 11 цифр (российский формат: +7 XXX XXX XX XX)
+        if (digitsOnly.length < 11 || digitsOnly.length > 11) {
             showError(input, 'Введите корректный номер телефона');
+            return false;
+        }
+
+        // Проверяем что номер начинается с 7 или 8
+        if (digitsOnly[0] !== '7' && digitsOnly[0] !== '8') {
+            showError(input, 'Номер должен начинаться с +7 или 8');
             return false;
         }
     }
