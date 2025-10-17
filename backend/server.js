@@ -9,6 +9,7 @@ import dotenv from 'dotenv';
 import productRoutes from './routes/products.js';
 import formRoutes from './routes/forms.js';
 import orderRoutes from './routes/orders.js';
+import adminRoutes from './routes/admin.js';
 
 dotenv.config();
 
@@ -56,6 +57,7 @@ fastify.get('/api/health', async (request, reply) => {
 await fastify.register(productRoutes, { prefix: '/api' });
 await fastify.register(formRoutes, { prefix: '/api' });
 await fastify.register(orderRoutes, { prefix: '/api' });
+await fastify.register(adminRoutes, { prefix: '/api/admin' });
 
 // Error handler
 fastify.setErrorHandler((error, request, reply) => {
