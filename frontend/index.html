@@ -84,6 +84,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modal.css">
 
     <!-- Schema.org разметка для Яндекса -->
     <script type="application/ld+json">
@@ -694,6 +695,62 @@
             </div>
         </div>
     </footer>
+
+    <!-- Модальное окно обратной связи -->
+    <div class="modal-overlay" id="callbackModal">
+        <div class="modal">
+            <button class="modal__close" onclick="closeCallbackModal()" aria-label="Закрыть">×</button>
+
+            <div class="modal__content">
+                <h2 class="modal__title">Заказать звонок</h2>
+                <p class="modal__subtitle">Оставьте свои контакты и мы перезвоним в течение 15 минут</p>
+
+                <form class="modal__form" id="callbackForm" onsubmit="submitCallbackForm(event)">
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Ваше имя"
+                        required
+                        minlength="2"
+                    >
+
+                    <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Телефон"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email (необязательно)"
+                    >
+
+                    <textarea
+                        name="message"
+                        placeholder="Ваш вопрос или комментарий (необязательно)"
+                        rows="4"
+                    ></textarea>
+
+                    <button type="submit" class="btn btn--primary btn--block">
+                        Отправить заявку
+                    </button>
+
+                    <p class="modal__privacy">
+                        Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                    </p>
+                </form>
+
+                <div class="modal__success" style="display: none;">
+                    <div class="modal__success-icon">✅</div>
+                    <h3 class="modal__success-title">Спасибо за заявку!</h3>
+                    <p class="modal__success-text">Мы свяжемся с вами в ближайшее время</p>
+                    <button class="btn btn--primary" onclick="closeCallbackModal()">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- JavaScript -->
     <script src="js/app.js"></script>

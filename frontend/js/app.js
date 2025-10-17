@@ -100,14 +100,121 @@ function toggleMobileMenu() {
 
 // === Modal Functions ===
 function openCallbackModal() {
-    console.log('Opening callback modal...');
+    const modal = document.getElementById('callbackModal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Блокируем прокрутку
 
-    // Здесь будет логика открытия модального окна
-    alert('Модальное окно "Заказать звонок"\n\nФункционал будет добавлен при интеграции с backend');
+        // Отправка события в Яндекс.Метрику
+        if (typeof ym !== 'undefined') {
+            ym(YOUR_METRIKA_ID, 'reachGoal', 'callback_click');
+        }
+    }
+}
 
-    // Отправка события в Яндекс.Метрику
-    if (typeof ym !== 'undefined') {
-        ym(YOUR_METRIKA_ID, 'reachGoal', 'callback_click');
+function closeCallbackModal() {
+    const modal = document.getElementById('callbackModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Разблокируем прокрутку
+
+        // Сброс формы
+        const form = document.getElementById('callbackForm');
+        if (form) {
+            form.reset();
+            form.style.display = 'block';
+        }
+
+        // Скрыть success сообщение
+        const success = modal.querySelector('.modal__success');
+        if (success) {
+            success.style.display = 'none';
+        }
+    }
+}
+
+// Закрытие по клику на overlay
+document.addEventListener('click', (e) => {
+    const modal = document.getElementById('callbackModal');
+    if (modal && e.target === modal) {
+        closeCallbackModal();
+    }
+});
+
+// Закрытие по ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeCallbackModal();
+    }
+});
+
+// === Callback Modal Form Submit ===
+async function submitCallbackForm(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // Validate all inputs
+    let isValid = true;
+    const inputs = form.querySelectorAll('input[required]');
+
+    inputs.forEach(input => {
+        if (!validateInput(input)) {
+            isValid = false;
+        }
+    });
+
+    if (!isValid) {
+        return;
+    }
+
+    // Show loading state
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = 'Отправка...';
+
+    // Отправка на backend
+    try {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                email: formData.get('email') || null,
+                message: formData.get('message') || null
+            })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            // Скрыть форму
+            form.style.display = 'none';
+
+            // Показать success сообщение
+            const success = document.querySelector('.modal__success');
+            if (success) {
+                success.style.display = 'block';
+            }
+
+            // Яндекс.Метрика
+            if (typeof ym !== 'undefined') {
+                ym(YOUR_METRIKA_ID, 'reachGoal', 'callback_form_submit');
+            }
+        } else {
+            alert('Ошибка при отправке заявки. Попробуйте еще раз или позвоните нам: +7 (969) 999-56-68');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Ошибка при отправке заявки. Попробуйте еще раз или позвоните нам: +7 (969) 999-56-68');
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
     }
 }
 
