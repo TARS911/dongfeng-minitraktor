@@ -51,7 +51,7 @@ const products = [
     1, // in_stock
     1, // is_hit
     0, // is_new
-    'https://cdn.jsdelivr.net/gh/TARS911/dongfeng-minitraktor@main/frontend/images/df-244-main.jpg',
+    'https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg',
     JSON.stringify({
       engine: {
         type: 'Дизельный',
@@ -96,7 +96,7 @@ const products = [
     1,
     0,
     1, // is_new
-    'https://cdn.jsdelivr.net/gh/TARS911/dongfeng-minitraktor@main/frontend/images/df-304-main.jpg',
+    'https://res.cloudinary.com/drenz1aia/image/upload/v1760698081/dongfeng-minitraktor/df-304-main.jpg',
     JSON.stringify({
       engine: {
         type: 'Дизельный',
@@ -141,7 +141,7 @@ const products = [
     1,
     0,
     0,
-    'https://cdn.jsdelivr.net/gh/TARS911/dongfeng-minitraktor@main/frontend/images/df-404-main.jpg',
+    'https://res.cloudinary.com/drenz1aia/image/upload/v1760698082/dongfeng-minitraktor/df-404-main.jpg',
     JSON.stringify({
       engine: {
         type: 'Дизельный',
@@ -186,7 +186,7 @@ const products = [
     1,
     0,
     0,
-    'https://cdn.jsdelivr.net/gh/TARS911/dongfeng-minitraktor@main/frontend/images/df-354-main.jpg',
+    'https://res.cloudinary.com/drenz1aia/image/upload/v1760698081/dongfeng-minitraktor/df-354-main.jpg',
     JSON.stringify({
       engine: {
         type: 'Дизельный',
