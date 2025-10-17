@@ -191,16 +191,28 @@ function validateInput(input) {
         // Удаляем все символы кроме цифр
         const digitsOnly = value.replace(/\D/g, '');
 
-        // Проверяем что есть минимум 11 цифр (российский формат: +7 XXX XXX XX XX)
-        if (digitsOnly.length < 11 || digitsOnly.length > 11) {
-            showError(input, 'Введите корректный номер телефона');
+        // Проверяем длину (российский формат: 10-11 цифр)
+        // 10 цифр: 9XXXXXXXXX (без кода страны)
+        // 11 цифр: 7XXXXXXXXXX или 8XXXXXXXXXX
+        if (digitsOnly.length < 10 || digitsOnly.length > 11) {
+            showError(input, 'Введите корректный номер телефона (10-11 цифр)');
             return false;
         }
 
-        // Проверяем что номер начинается с 7 или 8
-        if (digitsOnly[0] !== '7' && digitsOnly[0] !== '8') {
-            showError(input, 'Номер должен начинаться с +7 или 8');
-            return false;
+        // Если 11 цифр - проверяем что начинается с 7 или 8
+        if (digitsOnly.length === 11) {
+            if (digitsOnly[0] !== '7' && digitsOnly[0] !== '8') {
+                showError(input, 'Номер должен начинаться с +7 или 8');
+                return false;
+            }
+        }
+
+        // Если 10 цифр - проверяем что начинается с 9 (мобильный без кода страны)
+        if (digitsOnly.length === 10) {
+            if (digitsOnly[0] !== '9') {
+                showError(input, 'Введите корректный российский номер');
+                return false;
+            }
         }
     }
 
