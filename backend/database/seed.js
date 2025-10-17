@@ -379,6 +379,194 @@ const products = [
         clearance: '320 мм'
       }
     })
+  ],
+
+  // 8. Минитрактор Кентавр 244
+  [
+    'Минитрактор Кентавр 244',
+    'kentavr-244',
+    'Кентавр 244',
+    1,
+    'Российский минитрактор Кентавр 244 - надежность и качество отечественного производства. Адаптирован к российским условиям эксплуатации.',
+    290000,
+    null,
+    24,
+    '4x4',
+    '8+8',
+    'Дизельный, 3-цилиндровый',
+    33,
+    880,
+    '2820x1310x1460',
+    2,
+    1,
+    0,
+    0,
+    'https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg',
+    JSON.stringify({
+      engine: {
+        type: 'Дизельный',
+        cylinders: 3,
+        displacement: '1.5 л',
+        cooling: 'Водяное охлаждение',
+        start: 'Электростартер'
+      },
+      transmission: {
+        type: 'Механическая',
+        gears: '8 вперед / 8 назад',
+        clutch: 'Сухое, однодисковое'
+      },
+      hydraulics: {
+        lift_capacity: '680 кг',
+        connections: '2 задних вывода'
+      },
+      dimensions: {
+        length: '2820 мм',
+        width: '1310 мм',
+        height: '1460 мм',
+        clearance: '310 мм'
+      }
+    })
+  ],
+
+  // 9. Минитрактор Русич 244
+  [
+    'Минитрактор Русич 244',
+    'rusich-244',
+    'Русич 244',
+    1,
+    'Минитрактор Русич 244 - качественная российская техника для сельского хозяйства. Простота в обслуживании и доступность запчастей.',
+    285000,
+    null,
+    24,
+    '4x4',
+    '8+8',
+    'Дизельный, 3-цилиндровый',
+    32,
+    860,
+    '2800x1300x1450',
+    2,
+    1,
+    0,
+    0,
+    'https://res.cloudinary.com/drenz1aia/image/upload/v1760698081/dongfeng-minitraktor/df-304-main.jpg',
+    JSON.stringify({
+      engine: {
+        type: 'Дизельный',
+        cylinders: 3,
+        displacement: '1.5 л',
+        cooling: 'Водяное охлаждение',
+        start: 'Электростартер'
+      },
+      transmission: {
+        type: 'Механическая',
+        gears: '8 вперед / 8 назад',
+        clutch: 'Сухое, однодисковое'
+      },
+      hydraulics: {
+        lift_capacity: '650 кг',
+        connections: '2 задних вывода'
+      },
+      dimensions: {
+        length: '2800 мм',
+        width: '1300 мм',
+        height: '1450 мм',
+        clearance: '305 мм'
+      }
+    })
+  ],
+
+  // 10. Минитрактор Скаут 244
+  [
+    'Минитрактор Скаут 244',
+    'skaut-244',
+    'Скаут 244',
+    1,
+    'Минитрактор Скаут 244 - современная техника с отличным соотношением цены и качества. Идеален для небольших фермерских хозяйств.',
+    280000,
+    null,
+    24,
+    '4x4',
+    '8+8',
+    'Дизельный, 3-цилиндровый',
+    31,
+    840,
+    '2790x1290x1440',
+    2,
+    1,
+    0,
+    0,
+    'https://res.cloudinary.com/drenz1aia/image/upload/v1760698081/dongfeng-minitraktor/df-354-main.jpg',
+    JSON.stringify({
+      engine: {
+        type: 'Дизельный',
+        cylinders: 3,
+        displacement: '1.5 л',
+        cooling: 'Водяное охлаждение',
+        start: 'Электростартер'
+      },
+      transmission: {
+        type: 'Механическая',
+        gears: '8 вперед / 8 назад',
+        clutch: 'Сухое, однодисковое'
+      },
+      hydraulics: {
+        lift_capacity: '630 кг',
+        connections: '2 задних вывода'
+      },
+      dimensions: {
+        length: '2790 мм',
+        width: '1290 мм',
+        height: '1440 мм',
+        clearance: '300 мм'
+      }
+    })
+  ],
+
+  // 11. Минитрактор Рустрак 244
+  [
+    'Минитрактор Рустрак 244',
+    'rustrak-244',
+    'Рустрак 244',
+    1,
+    'Минитрактор Рустрак 244 - надежная техника российского производства. Адаптирован к суровым условиям эксплуатации.',
+    292000,
+    null,
+    24,
+    '4x4',
+    '8+8',
+    'Дизельный, 3-цилиндровый',
+    33,
+    890,
+    '2830x1315x1470',
+    2,
+    1,
+    0,
+    0,
+    'https://res.cloudinary.com/drenz1aia/image/upload/v1760698082/dongfeng-minitraktor/df-404-main.jpg',
+    JSON.stringify({
+      engine: {
+        type: 'Дизельный',
+        cylinders: 3,
+        displacement: '1.5 л',
+        cooling: 'Водяное охлаждение',
+        start: 'Электростартер'
+      },
+      transmission: {
+        type: 'Механическая',
+        gears: '8 вперед / 8 назад',
+        clutch: 'Сухое, однодисковое'
+      },
+      hydraulics: {
+        lift_capacity: '670 кг',
+        connections: '2 задних вывода'
+      },
+      dimensions: {
+        length: '2830 мм',
+        width: '1315 мм',
+        height: '1470 мм',
+        clearance: '315 мм'
+      }
+    })
   ]
 ];
 
