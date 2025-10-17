@@ -51,7 +51,7 @@ const products = [
     1, // in_stock
     1, // is_hit
     0, // is_new
-    '/images/tractor-1.jpg',
+    '/images/df-244-main.jpg',
     JSON.stringify({
       engine: {
         type: 'Дизельный',
@@ -96,7 +96,7 @@ const products = [
     1,
     0,
     1, // is_new
-    '/images/tractor-2.jpg',
+    '/images/df-304-main.jpg',
     JSON.stringify({
       engine: {
         type: 'Дизельный',
@@ -141,7 +141,7 @@ const products = [
     1,
     0,
     0,
-    '/images/tractor-3.jpg',
+    '/images/df-404-main.jpg',
     JSON.stringify({
       engine: {
         type: 'Дизельный',
@@ -186,7 +186,7 @@ const products = [
     1,
     0,
     0,
-    '/images/tractor-1.jpg',
+    '/images/df-354-main.jpg',
     JSON.stringify({
       engine: {
         type: 'Дизельный',
@@ -210,63 +210,6 @@ const products = [
         height: '1550 мм',
         clearance: '330 мм'
       }
-    })
-  ],
-  [
-    'Плуг однокорпусный ПЛ-1',
-    'plug-pl-1',
-    'ПЛ-1',
-    2, // Навесное оборудование
-    'Однокорпусный плуг для вспашки почвы. Совместим со всеми моделями минитракторов DONGFENG.',
-    15000,
-    null,
-    0, // power (не применимо для навесного)
-    'N/A',
-    'N/A',
-    null,
-    null,
-    45,
-    '800x400x600',
-    1,
-    1,
-    0,
-    0,
-    '/images/tractor-2.jpg',
-    JSON.stringify({
-      type: 'Плуг',
-      compatibility: ['DF-244', 'DF-304', 'DF-354', 'DF-404'],
-      working_width: '25 см',
-      working_depth: '15-20 см',
-      weight: '45 кг'
-    })
-  ],
-  [
-    'Фреза почвенная ФП-120',
-    'freza-fp-120',
-    'ФП-120',
-    2,
-    'Почвенная фреза для культивации и подготовки почвы. Ширина захвата 120 см.',
-    45000,
-    null,
-    0,
-    'N/A',
-    'N/A',
-    null,
-    null,
-    85,
-    '1200x500x400',
-    1,
-    1,
-    1,
-    0,
-    '/images/tractor-3.jpg',
-    JSON.stringify({
-      type: 'Фреза',
-      compatibility: ['DF-304', 'DF-354', 'DF-404'],
-      working_width: '120 см',
-      working_depth: '12-18 см',
-      blades: 36,
-      weight: '85 кг'
     })
   ]
 ];
