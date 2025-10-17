@@ -1,4 +1,6 @@
 import db from '../config/database.js';
+import * as telegram from '../utils/telegram.js';
+import * as email from '../utils/email.js';
 
 export default async function formRoutes(fastify, options) {
 
@@ -35,6 +37,13 @@ export default async function formRoutes(fastify, options) {
       );
 
       fastify.log.info(`Новая заявка от ${name}, ID: ${result.lastInsertRowid}`);
+
+      // Отправляем уведомления (не блокируем ответ)
+      const requestData = { name, phone, email, message, product_model };
+      Promise.all([
+        telegram.notifyNewContact(requestData, result.lastInsertRowid),
+        email.notifyNewContact(requestData, result.lastInsertRowid)
+      ]).catch(err => fastify.log.error('Ошибка при отправке уведомлений:', err));
 
       return {
         success: true,
@@ -99,6 +108,13 @@ export default async function formRoutes(fastify, options) {
       );
 
       fastify.log.info(`Расчет доставки в ${city}, модель ${product_model}`);
+
+      // Отправляем уведомления (не блокируем ответ)
+      const requestData = { city, product_model, phone, estimated_cost: delivery.cost, estimated_days: delivery.days };
+      Promise.all([
+        telegram.notifyDeliveryRequest(requestData, result.lastInsertRowid),
+        email.notifyDeliveryRequest(requestData, result.lastInsertRowid)
+      ]).catch(err => fastify.log.error('Ошибка при отправке уведомлений:', err));
 
       return {
         success: true,
