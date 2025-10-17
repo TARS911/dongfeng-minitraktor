@@ -1,36 +1,72 @@
 # robots.txt для dongfeng-minitraktor.ru
-# Оптимизация для Яндекса и других поисковых систем РФ/СНГ
+# SEO оптимизация для Яндекса, Google и поисковых систем РФ/СНГ
 
+# ============================================
 # Правила для всех роботов
+# ============================================
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /private/
-Disallow: /*.pdf$
-Disallow: /search?
-Disallow: /cart/
-Disallow: /checkout/
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /fonts/
 
-# Правила для Яндекса
+# Запрещаем служебные файлы
+Disallow: /*.json$
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /.git
+Disallow: /node_modules/
+
+# ============================================
+# Яндекс (приоритетный для РФ/СНГ)
+# ============================================
 User-agent: Yandex
 Allow: /
-Disallow: /admin/
-Disallow: /private/
-Crawl-delay: 1
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /fonts/
+Crawl-delay: 0.5
+Clean-param: utm_source&utm_medium&utm_campaign
 
-# Правила для Google
+# ============================================
+# Google
+# ============================================
 User-agent: Googlebot
 Allow: /
-Disallow: /admin/
-Disallow: /private/
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /fonts/
 
-# Правила для Mail.ru
+# ============================================
+# Mail.ru
+# ============================================
 User-agent: Mail.RU_Bot
 Allow: /
 Crawl-delay: 1
 
+# ============================================
+# Rambler
+# ============================================
+User-agent: StackRambler
+Allow: /
+Crawl-delay: 1
+
+# ============================================
+# Sputnik (Ростелеком)
+# ============================================
+User-agent: Sputnik_Bot
+Allow: /
+Crawl-delay: 1
+
+# ============================================
 # Sitemap
+# ============================================
 Sitemap: https://dongfeng-minitraktor.ru/sitemap.xml
 
-# Host для Яндекса (главное зеркало сайта)
+# ============================================
+# Host для Яндекса (главное зеркало)
+# ============================================
 Host: dongfeng-minitraktor.ru
