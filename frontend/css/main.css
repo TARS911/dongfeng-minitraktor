@@ -163,6 +163,97 @@
     background: var(--color-white);
 }
 
+/* === Catalog Tabs === */
+.catalog__tabs {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-3xl);
+    overflow-x: auto;
+    padding-bottom: 12px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.catalog__tabs::-webkit-scrollbar {
+    height: 6px;
+}
+
+.catalog__tabs::-webkit-scrollbar-track {
+    background: var(--color-gray-100);
+    border-radius: 3px;
+}
+
+.catalog__tabs::-webkit-scrollbar-thumb {
+    background: var(--color-gray-400);
+    border-radius: 3px;
+}
+
+.catalog__tabs::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-primary);
+}
+
+.catalog__tab {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 14px 24px;
+    background: var(--color-white);
+    border: 2px solid var(--color-gray-300);
+    border-radius: 50px;
+    color: var(--color-gray-700);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.catalog__tab:hover {
+    border-color: var(--brand-primary);
+    color: var(--brand-primary);
+    background: #f0f9f4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(42, 157, 78, 0.15);
+}
+
+.catalog__tab.active {
+    background: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: var(--color-white);
+    box-shadow: 0 4px 16px rgba(42, 157, 78, 0.3);
+}
+
+.catalog__tab.active:hover {
+    background: var(--brand-primary-dark);
+    border-color: var(--brand-primary-dark);
+    color: var(--color-white);
+}
+
+.tab__name {
+    font-weight: var(--font-weight-semibold);
+}
+
+.tab__count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 8px;
+    background: var(--color-gray-200);
+    color: var(--color-gray-700);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.catalog__tab.active .tab__count {
+    background: rgba(255, 255, 255, 0.3);
+    color: var(--color-white);
+}
+
 .catalog__more {
     text-align: center;
 }
@@ -597,6 +688,23 @@
     .hero__features {
         flex-direction: column;
         gap: var(--space-md);
+    }
+
+    .catalog__tabs {
+        gap: var(--space-sm);
+        margin-bottom: var(--space-2xl);
+    }
+
+    .catalog__tab {
+        padding: 12px 18px;
+        font-size: var(--font-size-sm);
+    }
+
+    .tab__count {
+        min-width: 20px;
+        height: 20px;
+        padding: 0 6px;
+        font-size: 11px;
     }
 
     .warranty__grid {

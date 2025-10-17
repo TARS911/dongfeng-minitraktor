@@ -319,6 +319,30 @@
             <h2 class="section-title">Каталог минитракторов DONGFENG</h2>
             <p class="section-subtitle">Выберите подходящую модель из нашего ассортимента</p>
 
+            <!-- Горизонтальные табы категорий -->
+            <div class="catalog__tabs">
+                <button class="catalog__tab active" data-category="all" onclick="filterByCategory('all')">
+                    <span class="tab__name">Все минитрактора</span>
+                    <span class="tab__count">11</span>
+                </button>
+                <button class="catalog__tab" data-category="df" onclick="filterByCategory('df')">
+                    <span class="tab__name">Тракторы DF</span>
+                    <span class="tab__count">3</span>
+                </button>
+                <button class="catalog__tab" data-category="xingtai" onclick="filterByCategory('xingtai')">
+                    <span class="tab__name">Тракторы Синтай</span>
+                    <span class="tab__count">2</span>
+                </button>
+                <button class="catalog__tab" data-category="lovol" onclick="filterByCategory('lovol')">
+                    <span class="tab__name">Тракторы Lovol</span>
+                    <span class="tab__count">2</span>
+                </button>
+                <button class="catalog__tab" data-category="russian" onclick="filterByCategory('russian')">
+                    <span class="tab__name">Российские тракторы</span>
+                    <span class="tab__count">4</span>
+                </button>
+            </div>
+
             <div class="catalog__grid">
                 <!-- Карточка товара 1: DF-244 с кабиной -->
                 <article class="product-card" itemscope itemtype="https://schema.org/Product">

@@ -112,6 +112,35 @@ function showAllProducts() {
     filterByBrand('all');
 }
 
+// === Фильтрация по категории (табы) ===
+function filterByCategory(category) {
+    // Удалить active класс со всех табов
+    const tabs = document.querySelectorAll('.catalog__tab');
+    tabs.forEach(tab => tab.classList.remove('active'));
+
+    // Добавить active класс на выбранный таб
+    const activeTab = document.querySelector(`[data-category="${category}"]`);
+    if (activeTab) {
+        activeTab.classList.add('active');
+    }
+
+    // Фильтрация товаров
+    currentBrand = category;
+    if (category === 'all') {
+        filteredProducts = [...allProducts];
+    } else {
+        filteredProducts = filterProductsByBrand(category);
+    }
+
+    renderProducts(filteredProducts);
+
+    // Прокрутка к каталогу (если нужно)
+    const catalogGrid = document.querySelector('.catalog__grid');
+    if (catalogGrid) {
+        catalogGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
 // === Отображение товаров ===
 function renderProducts(products) {
     const catalogGrid = document.querySelector('.catalog__grid');
