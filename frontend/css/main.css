@@ -526,6 +526,28 @@
     .section-title {
         font-size: var(--font-size-2xl);
     }
+
+    /* Extra mobile optimizations */
+    .container {
+        padding: 0 16px;
+    }
+
+    .catalog {
+        padding: var(--space-3xl) 0;
+    }
+
+    .product-card {
+        border-radius: 20px; /* Even smaller radius on very small screens */
+    }
+
+    .btn--large {
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+
+    .hero__cta .btn {
+        width: 100%;
+    }
 }
 
 /* === Scroll Reveal Animation === */

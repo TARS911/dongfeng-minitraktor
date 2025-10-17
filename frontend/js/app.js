@@ -255,6 +255,102 @@ function showDetails(model) {
     alert(`Детальная информация о ${model}\n\nБудет создана отдельная страница товара`);
 }
 
+// === Load All Products ===
+async function loadAllProducts() {
+    const catalogGrid = document.querySelector('.catalog__grid');
+    const loadButton = event.target;
+
+    // Show loading state
+    const originalText = loadButton.textContent;
+    loadButton.disabled = true;
+    loadButton.textContent = 'Загрузка...';
+
+    try {
+        const response = await fetch('/api/products');
+        const data = await response.json();
+
+        if (data.success && data.data) {
+            // Clear existing products
+            catalogGrid.innerHTML = '';
+
+            // Render all products
+            data.data.forEach(product => {
+                const productCard = createProductCard(product);
+                catalogGrid.appendChild(productCard);
+            });
+
+            // Hide the button after loading
+            document.querySelector('.catalog__more').style.display = 'none';
+
+            // Re-init scroll reveal for new products
+            initScrollReveal();
+
+            // Яндекс.Метрика
+            if (typeof ym !== 'undefined') {
+                ym(YOUR_METRIKA_ID, 'reachGoal', 'load_all_products');
+            }
+        } else {
+            throw new Error('Failed to load products');
+        }
+    } catch (error) {
+        console.error('Error loading products:', error);
+        alert('Ошибка при загрузке товаров. Попробуйте обновить страницу.');
+        loadButton.disabled = false;
+        loadButton.textContent = originalText;
+    }
+}
+
+// Create product card HTML
+function createProductCard(product) {
+    const article = document.createElement('article');
+    article.className = 'product-card';
+    article.setAttribute('itemscope', '');
+    article.setAttribute('itemtype', 'https://schema.org/Product');
+
+    const badges = [];
+    if (product.is_hit) badges.push('<div class="product-card__badge">Хит продаж</div>');
+    if (product.is_new) badges.push('<div class="product-card__badge badge--new">Новинка</div>');
+
+    article.innerHTML = `
+        <div class="product-card__image">
+            <img src="${product.image_url}" alt="${product.name}" itemprop="image" loading="lazy">
+            ${badges.join('')}
+        </div>
+        <div class="product-card__content">
+            <h3 class="product-card__title" itemprop="name">${product.name}</h3>
+            <div class="product-card__specs">
+                <div class="spec">
+                    <span class="spec__label">Мощность:</span>
+                    <span class="spec__value">${product.power} л.с.</span>
+                </div>
+                <div class="spec">
+                    <span class="spec__label">Привод:</span>
+                    <span class="spec__value">${product.drive}</span>
+                </div>
+                <div class="spec">
+                    <span class="spec__label">КПП:</span>
+                    <span class="spec__value">${product.transmission}</span>
+                </div>
+            </div>
+            <div class="product-card__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <span class="price__current" itemprop="price" content="${product.price}">${product.price.toLocaleString('ru-RU')} ₽</span>
+                <meta itemprop="priceCurrency" content="RUB">
+                <link itemprop="availability" href="https://schema.org/${product.in_stock ? 'InStock' : 'OutOfStock'}">
+            </div>
+            <div class="product-card__actions">
+                <button class="btn btn--primary btn--block" onclick="requestPrice('${product.model}')">
+                    Узнать цену
+                </button>
+                <button class="btn btn--outline btn--block" onclick="showDetails('${product.model}')">
+                    Подробнее
+                </button>
+            </div>
+        </div>
+    `;
+
+    return article;
+}
+
 // === Form Handlers ===
 function initFormValidation() {
     const forms = document.querySelectorAll('form');

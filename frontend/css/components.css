@@ -112,7 +112,7 @@
 /* Product Card */
 .product-card {
     background: var(--card-bg);
-    border-radius: 20px;
+    border-radius: 28px; /* iPhone-style rounded corners */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -561,7 +561,7 @@ form > * + * {
 @media (max-width: 768px) {
     .catalog__grid {
         grid-template-columns: 1fr;
-        gap: var(--space-lg);
+        gap: var(--space-md);
     }
 
     .advantages__grid {
@@ -571,5 +571,80 @@ form > * + * {
 
     .section-title {
         font-size: var(--font-size-3xl);
+    }
+
+    /* Mobile optimizations for product cards */
+    .product-card {
+        border-radius: 24px; /* Slightly smaller radius on mobile */
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .product-card__content {
+        padding: var(--space-md); /* Reduced padding on mobile */
+    }
+
+    .product-card__title {
+        font-size: 20px; /* Smaller title on mobile */
+        margin-bottom: var(--space-sm);
+    }
+
+    .product-card__specs {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px; /* Tighter gap on mobile */
+        margin-bottom: var(--space-md);
+    }
+
+    .spec {
+        padding: 10px 6px; /* Reduced padding */
+    }
+
+    .spec__label {
+        font-size: 9px; /* Smaller label */
+        margin-bottom: 4px;
+    }
+
+    .spec__value {
+        font-size: 14px; /* Smaller value */
+    }
+
+    .product-card__price {
+        padding: 12px; /* Reduced padding */
+        margin-bottom: var(--space-md);
+    }
+
+    .price__current {
+        font-size: 28px; /* Smaller price on mobile */
+    }
+
+    .price__current::after {
+        font-size: 18px; /* Smaller ruble sign */
+    }
+
+    .product-card__badge {
+        top: 12px;
+        right: 12px;
+        padding: 6px 14px;
+        font-size: 10px;
+        border-radius: 20px;
+    }
+
+    .product-card__image {
+        aspect-ratio: 16/12; /* Slightly different ratio on mobile */
+    }
+
+    /* Buttons on mobile */
+    .btn {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+
+    .btn--large {
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+
+    .product-card__actions {
+        gap: 8px; /* Tighter gap between buttons */
     }
 }
