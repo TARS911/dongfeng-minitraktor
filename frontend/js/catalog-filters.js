@@ -174,6 +174,9 @@ function resetFilters() {
 
     // Применить
     filterAndRenderProducts();
+
+    // Обновить счётчик фильтров
+    updateActiveFiltersCount();
 }
 
 // === Переключение видимости фильтров ===
