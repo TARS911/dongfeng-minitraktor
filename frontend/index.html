@@ -49,12 +49,28 @@
         "description": "Продажа китайских минитракторов DONGFENG в России",
         "url": "https://dongfeng-minitraktor.ru",
         "logo": "https://dongfeng-minitraktor.ru/images/logo.png",
-        "telephone": "+7-XXX-XXX-XX-XX",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "RU",
-            "addressLocality": "Москва"
-        },
+        "telephone": "+7-969-999-56-68",
+        "email": "info@btferm.com",
+        "address": [
+            {
+                "@type": "PostalAddress",
+                "addressCountry": "RU",
+                "addressLocality": "Белгород",
+                "streetAddress": "ул. Дальняя Тихая, 2"
+            },
+            {
+                "@type": "PostalAddress",
+                "addressCountry": "RU",
+                "addressLocality": "Курск",
+                "streetAddress": "Магистральный проезд, 34к/1"
+            },
+            {
+                "@type": "PostalAddress",
+                "addressCountry": "RU",
+                "addressLocality": "Брянск",
+                "streetAddress": "ул. Литейная, д. 15"
+            }
+        ],
         "priceRange": "180000-850000 RUB",
         "areaServed": ["RU", "KZ", "BY", "UA"],
         "sameAs": [
@@ -107,7 +123,7 @@
 
                 <!-- Контакты в шапке -->
                 <div class="header__contacts">
-                    <a href="tel:+79999999999" class="phone">+7 (999) 999-99-99</a>
+                    <a href="tel:+79699995668" class="phone">+7 (969) 999-56-68</a>
                     <button class="btn btn--primary" onclick="openCallbackModal()">Заказать звонок</button>
                 </div>
 
@@ -461,47 +477,84 @@
         <div class="container">
             <h2 class="section-title">Контакты</h2>
 
-            <div class="contacts__grid">
-                <div class="contacts__info">
-                    <h3>Офис и склад в Москве</h3>
-                    <div class="contact-item">
-                        <strong>Адрес:</strong>
-                        <p>г. Москва, ул. Примерная, д. 1</p>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Телефон:</strong>
-                        <p><a href="tel:+79999999999">+7 (999) 999-99-99</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Email:</strong>
-                        <p><a href="mailto:info@dongfeng-minitraktor.ru">info@dongfeng-minitraktor.ru</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Режим работы:</strong>
-                        <p>Пн-Пт: 9:00 - 18:00<br>Сб: 10:00 - 16:00<br>Вс: выходной</p>
-                    </div>
-
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="VKontakte">VK</a>
-                        <a href="#" class="social-link" aria-label="Telegram">TG</a>
-                        <a href="#" class="social-link" aria-label="WhatsApp">WA</a>
-                    </div>
+            <div class="contacts__wrapper">
+                <!-- Карта -->
+                <div class="contacts__map">
+                    <iframe
+                        src="https://yandex.ru/map-widget/v1/?um=constructor%3A9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c&amp;source=constructor"
+                        width="100%"
+                        height="400"
+                        frameborder="0"
+                        style="border-radius: 12px;">
+                    </iframe>
                 </div>
 
-                <div class="contacts__form">
-                    <h3>Остались вопросы?</h3>
-                    <p>Оставьте заявку и мы перезвоним в течение 15 минут</p>
-                    <form class="contact-form" onsubmit="submitContactForm(event)">
-                        <input type="text" name="name" placeholder="Ваше имя" required>
-                        <input type="tel" name="phone" placeholder="Телефон" required>
-                        <textarea name="message" placeholder="Ваш вопрос" rows="4"></textarea>
-                        <button type="submit" class="btn btn--primary btn--block">
-                            Отправить заявку
-                        </button>
-                        <p class="form-privacy">
-                            Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
-                        </p>
-                    </form>
+                <div class="contacts__grid">
+                    <div class="contacts__info">
+                        <h3>Наши адреса</h3>
+
+                        <div class="contact-item">
+                            <strong>📍 Белгород</strong>
+                            <p>ул. Дальняя Тихая, 2</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <strong>📍 Курск</strong>
+                            <p>Магистральный проезд, 34к/1</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <strong>📍 Брянск</strong>
+                            <p>ул. Литейная, д. 15</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <strong>📍 Липецк</strong>
+                            <p>Трубный проезд, д. 15</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <strong>📍 п. Разумное</strong>
+                            <p>ул. Легезина, 15Б</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <strong>📞 Телефон:</strong>
+                            <p><a href="tel:+79699995668">+7 (969) 999-56-68</a></p>
+                        </div>
+
+                        <div class="contact-item">
+                            <strong>📧 Email:</strong>
+                            <p><a href="mailto:info@btferm.com">info@btferm.com</a></p>
+                        </div>
+
+                        <div class="contact-item">
+                            <strong>⏰ Режим работы:</strong>
+                            <p>Пн-Пт: 9:00 - 18:00<br>Сб: 10:00 - 16:00<br>Вс: выходной</p>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="VKontakte">VK</a>
+                            <a href="#" class="social-link" aria-label="Telegram">TG</a>
+                            <a href="#" class="social-link" aria-label="WhatsApp">WA</a>
+                        </div>
+                    </div>
+
+                    <div class="contacts__form">
+                        <h3>Остались вопросы?</h3>
+                        <p>Оставьте заявку и мы перезвоним в течение 15 минут</p>
+                        <form class="contact-form" onsubmit="submitContactForm(event)">
+                            <input type="text" name="name" placeholder="Ваше имя" required>
+                            <input type="tel" name="phone" placeholder="Телефон" required>
+                            <textarea name="message" placeholder="Ваш вопрос" rows="4"></textarea>
+                            <button type="submit" class="btn btn--primary btn--block">
+                                Отправить заявку
+                            </button>
+                            <p class="form-privacy">
+                                Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                            </p>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -540,8 +593,8 @@
                 </div>
                 <div class="footer__column">
                     <h4>Контакты</h4>
-                    <p><a href="tel:+79999999999">+7 (999) 999-99-99</a></p>
-                    <p><a href="mailto:info@dongfeng-minitraktor.ru">info@dongfeng-minitraktor.ru</a></p>
+                    <p><a href="tel:+79699995668">+7 (969) 999-56-68</a></p>
+                    <p><a href="mailto:info@btferm.com">info@btferm.com</a></p>
                     <div class="social-links">
                         <a href="#" aria-label="VKontakte">VK</a>
                         <a href="#" aria-label="Telegram">TG</a>

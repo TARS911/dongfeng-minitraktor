@@ -270,6 +270,23 @@
     background: var(--color-gray-50);
 }
 
+.contacts__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xl);
+}
+
+.contacts__map {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.contacts__map iframe {
+    display: block;
+}
+
 .contacts__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
