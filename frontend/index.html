@@ -229,7 +229,7 @@
                 <!-- Карточка товара 1 -->
                 <article class="product-card" itemscope itemtype="https://schema.org/Product">
                     <div class="product-card__image">
-                        <img src="images/tractor-1.jpg" alt="Минитрактор DONGFENG DF-244" itemprop="image">
+                        <img src="images/df-244-main.jpg" alt="Минитрактор DONGFENG DF-244" itemprop="image">
                         <div class="product-card__badge">Хит продаж</div>
                     </div>
                     <div class="product-card__content">
@@ -267,7 +267,7 @@
                 <!-- Карточка товара 2 -->
                 <article class="product-card" itemscope itemtype="https://schema.org/Product">
                     <div class="product-card__image">
-                        <img src="images/tractor-2.jpg" alt="Минитрактор DONGFENG DF-304" itemprop="image">
+                        <img src="images/df-304-main.jpg" alt="Минитрактор DONGFENG DF-304" itemprop="image">
                         <div class="product-card__badge badge--new">Новинка</div>
                     </div>
                     <div class="product-card__content">
@@ -305,7 +305,7 @@
                 <!-- Карточка товара 3 -->
                 <article class="product-card" itemscope itemtype="https://schema.org/Product">
                     <div class="product-card__image">
-                        <img src="images/tractor-3.jpg" alt="Минитрактор DONGFENG DF-404" itemprop="image">
+                        <img src="images/df-404-main.jpg" alt="Минитрактор DONGFENG DF-404" itemprop="image">
                     </div>
                     <div class="product-card__content">
                         <h3 class="product-card__title" itemprop="name">DONGFENG DF-404</h3>
@@ -333,6 +333,43 @@
                                 Узнать цену
                             </button>
                             <button class="btn btn--outline btn--block" onclick="showDetails('DF-404')">
+                                Подробнее
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Карточка товара 4 -->
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <div class="product-card__image">
+                        <img src="images/df-354-main.jpg" alt="Минитрактор DONGFENG DF-354" itemprop="image">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title" itemprop="name">DONGFENG DF-354</h3>
+                        <div class="product-card__specs">
+                            <div class="spec">
+                                <span class="spec__label">Мощность:</span>
+                                <span class="spec__value">35 л.с.</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec__label">Привод:</span>
+                                <span class="spec__value">4x4</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec__label">КПП:</span>
+                                <span class="spec__value">12+12</span>
+                            </div>
+                        </div>
+                        <div class="product-card__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <span class="price__current" itemprop="price" content="435000">435 000 ₽</span>
+                            <meta itemprop="priceCurrency" content="RUB">
+                            <link itemprop="availability" href="https://schema.org/InStock">
+                        </div>
+                        <div class="product-card__actions">
+                            <button class="btn btn--primary btn--block" onclick="requestPrice('DF-354')">
+                                Узнать цену
+                            </button>
+                            <button class="btn btn--outline btn--block" onclick="showDetails('DF-354')">
                                 Подробнее
                             </button>
                         </div>
@@ -503,9 +540,10 @@
                         <input type="text" placeholder="Ваш город" required>
                         <select required>
                             <option value="">Выберите модель</option>
-                            <option value="df244">DONGFENG DF-244</option>
-                            <option value="df304">DONGFENG DF-304</option>
-                            <option value="df404">DONGFENG DF-404</option>
+                            <option value="df244">DONGFENG DF-244 (24 л.с.)</option>
+                            <option value="df304">DONGFENG DF-304 (30 л.с.)</option>
+                            <option value="df354">DONGFENG DF-354 (35 л.с.)</option>
+                            <option value="df404">DONGFENG DF-404 (40 л.с.)</option>
                         </select>
                         <input type="tel" placeholder="Телефон" required>
                         <button type="submit" class="btn btn--primary btn--block">
