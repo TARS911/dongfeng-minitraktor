@@ -510,10 +510,17 @@ function calculateDelivery(event) {
 
     // Validate
     let isValid = true;
-    const inputs = form.querySelectorAll('input[required], select[required]');
+    const inputs = form.querySelectorAll('input[required], select[required], input[type="checkbox"][required]');
 
     inputs.forEach(input => {
-        if (!validateInput(input)) {
+        if (input.type === 'checkbox') {
+            if (!input.checked) {
+                showError(input, 'Необходимо подтвердить согласие');
+                isValid = false;
+            } else {
+                clearError(input);
+            }
+        } else if (!validateInput(input)) {
             isValid = false;
         }
     });
@@ -542,6 +549,148 @@ function calculateDelivery(event) {
             ym(YOUR_METRIKA_ID, 'reachGoal', 'delivery_calculation');
         }
     }, 1000);
+}
+
+// === Service Form Submit ===
+async function submitServiceForm(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // Validate all inputs including checkbox
+    let isValid = true;
+    const inputs = form.querySelectorAll('input[required], textarea[required]');
+
+    inputs.forEach(input => {
+        if (input.type === 'checkbox') {
+            if (!input.checked) {
+                showError(input, 'Необходимо подтвердить согласие');
+                isValid = false;
+            } else {
+                clearError(input);
+            }
+        } else if (!validateInput(input)) {
+            isValid = false;
+        }
+    });
+
+    if (!isValid) {
+        return;
+    }
+
+    // Show loading state
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = 'Отправка...';
+
+    try {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                message: formData.get('message'),
+                type: 'service',
+                consent: formData.get('consent') === 'on'
+            })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            alert('Спасибо! Ваша заявка на сервисное обслуживание принята.\nМы свяжемся с вами в ближайшее время.');
+            form.reset();
+
+            // Яндекс.Метрика
+            if (typeof ym !== 'undefined') {
+                ym(YOUR_METRIKA_ID, 'reachGoal', 'service_form_submit');
+            }
+        } else {
+            alert('Ошибка при отправке заявки. Попробуйте еще раз или позвоните нам: +7 (969) 999-56-68');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Ошибка при отправке заявки. Попробуйте еще раз или позвоните нам: +7 (969) 999-56-68');
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+    }
+}
+
+// === Warranty Form Submit ===
+async function submitWarrantyForm(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // Validate all inputs including checkbox
+    let isValid = true;
+    const inputs = form.querySelectorAll('input[required], textarea[required]');
+
+    inputs.forEach(input => {
+        if (input.type === 'checkbox') {
+            if (!input.checked) {
+                showError(input, 'Необходимо подтвердить согласие');
+                isValid = false;
+            } else {
+                clearError(input);
+            }
+        } else if (!validateInput(input)) {
+            isValid = false;
+        }
+    });
+
+    if (!isValid) {
+        return;
+    }
+
+    // Show loading state
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = 'Отправка...';
+
+    try {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                message: formData.get('message'),
+                type: 'warranty',
+                consent: formData.get('consent') === 'on'
+            })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            alert('Спасибо! Ваша заявка на гарантийный ремонт принята.\nМы свяжемся с вами в ближайшее время и зафиксируем факт поломки.');
+            form.reset();
+
+            // Яндекс.Метрика
+            if (typeof ym !== 'undefined') {
+                ym(YOUR_METRIKA_ID, 'reachGoal', 'warranty_form_submit');
+            }
+        } else {
+            alert('Ошибка при отправке заявки. Попробуйте еще раз или позвоните на горячую линию: 8 (495) 069-7915');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Ошибка при отправке заявки. Попробуйте еще раз или позвоните на горячую линию: 8 (495) 069-7915');
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+    }
 }
 
 // === Phone Mask ===
