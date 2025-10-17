@@ -11,7 +11,7 @@ const insertCategory = db.prepare(`
 const categories = [
   ['Минитрактора', 'minitractory', 'Компактные тракторы для дачи и небольших хозяйств'],
   ['Навесное оборудование', 'equipment', 'Навесное оборудование для минитракторов'],
-  ['Запчасти', 'parts', 'Оригинальные запчасти DONGFENG']
+  ['Запчасти', 'parts', 'Оригинальные запчасти']
 ];
 
 categories.forEach(cat => {
@@ -32,25 +32,78 @@ const insertProduct = db.prepare(`
 `);
 
 const products = [
+  // 1. Минитрактор DF 244 с кабиной
   [
-    'Минитрактор DONGFENG DF-244',
-    'df-244',
+    'Минитрактор DF-244 с кабиной',
+    'df-244-s-kabinoy',
     'DF-244',
-    1, // category_id
-    'Надежный минитрактор для небольших хозяйств и дачных участков. Отличное соотношение цены и качества.',
-    285000,
+    1,
+    'Надежный минитрактор DONGFENG DF-244 с комфортабельной кабиной. Защита от непогоды, отопление, удобное рабочее место.',
+    320000,
     null,
-    24, // power
+    24,
     '4x4',
     '8+8',
     'Дизельный, 3-цилиндровый',
-    30, // fuel_tank
-    850, // weight
-    '2800x1300x1450',
-    3, // warranty_years
-    1, // in_stock
+    30,
+    950,
+    '2800x1300x2150',
+    3,
+    1,
     1, // is_hit
-    0, // is_new
+    0,
+    'https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg',
+    JSON.stringify({
+      engine: {
+        type: 'Дизельный',
+        cylinders: 3,
+        displacement: '1.5 л',
+        cooling: 'Водяное охлаждение',
+        start: 'Электростартер'
+      },
+      transmission: {
+        type: 'Механическая',
+        gears: '8 вперед / 8 назад',
+        clutch: 'Сухое, однодисковое'
+      },
+      hydraulics: {
+        lift_capacity: '600 кг',
+        connections: '2 задних вывода'
+      },
+      cabin: {
+        heating: 'Есть',
+        ventilation: 'Есть',
+        windows: 'Панорамные'
+      },
+      dimensions: {
+        length: '2800 мм',
+        width: '1300 мм',
+        height: '2150 мм (с кабиной)',
+        clearance: '300 мм'
+      }
+    })
+  ],
+
+  // 2. Минитрактор DF 244 без кабины
+  [
+    'Минитрактор DF-244 без кабины',
+    'df-244-bez-kabiny',
+    'DF-244',
+    1,
+    'Минитрактор DONGFENG DF-244 в базовой комплектации без кабины. Отличное соотношение цены и качества.',
+    285000,
+    null,
+    24,
+    '4x4',
+    '8+8',
+    'Дизельный, 3-цилиндровый',
+    30,
+    850,
+    '2800x1300x1450',
+    3,
+    1,
+    0,
+    0,
     'https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg',
     JSON.stringify({
       engine: {
@@ -77,70 +130,27 @@ const products = [
       }
     })
   ],
+
+  // 3. Минитрактор DF-404 с кабиной
   [
-    'Минитрактор DONGFENG DF-304',
-    'df-304',
-    'DF-304',
-    1,
-    'Мощный и производительный минитрактор для фермерских хозяйств. Новинка 2024 года с улучшенными характеристиками.',
-    385000,
-    420000, // old_price
-    30,
-    '4x4',
-    '12+12',
-    'Дизельный, 3-цилиндровый',
-    40,
-    950,
-    '3000x1400x1500',
-    3,
-    1,
-    0,
-    1, // is_new
-    'https://res.cloudinary.com/drenz1aia/image/upload/v1760698081/dongfeng-minitraktor/df-304-main.jpg',
-    JSON.stringify({
-      engine: {
-        type: 'Дизельный',
-        cylinders: 3,
-        displacement: '1.8 л',
-        cooling: 'Водяное охлаждение',
-        start: 'Электростартер'
-      },
-      transmission: {
-        type: 'Механическая',
-        gears: '12 вперед / 12 назад',
-        clutch: 'Сухое, двухдисковое'
-      },
-      hydraulics: {
-        lift_capacity: '800 кг',
-        connections: '3 задних вывода'
-      },
-      dimensions: {
-        length: '3000 мм',
-        width: '1400 мм',
-        height: '1500 мм',
-        clearance: '320 мм'
-      }
-    })
-  ],
-  [
-    'Минитрактор DONGFENG DF-404',
-    'df-404',
+    'Минитрактор DF-404 с кабиной',
+    'df-404-s-kabinoy',
     'DF-404',
     1,
-    'Профессиональный минитрактор повышенной мощности для интенсивной работы. Идеален для крупных участков.',
-    485000,
+    'Профессиональный минитрактор DONGFENG DF-404 повышенной мощности с комфортабельной кабиной. Для интенсивной работы на больших участках.',
+    520000,
     null,
     40,
     '4x4',
     '16+8',
     'Дизельный, 4-цилиндровый',
     50,
-    1100,
-    '3200x1500x1600',
+    1200,
+    '3200x1500x2200',
     3,
     1,
     0,
-    0,
+    1, // is_new
     'https://res.cloudinary.com/drenz1aia/image/upload/v1760698082/dongfeng-minitraktor/df-404-main.jpg',
     JSON.stringify({
       engine: {
@@ -159,30 +169,136 @@ const products = [
         lift_capacity: '1000 кг',
         connections: '4 задних вывода + передний ВОМ'
       },
+      cabin: {
+        heating: 'Есть',
+        air_conditioning: 'Опция',
+        ventilation: 'Есть',
+        windows: 'Панорамные с тонировкой'
+      },
       dimensions: {
         length: '3200 мм',
         width: '1500 мм',
-        height: '1600 мм',
+        height: '2200 мм (с кабиной)',
         clearance: '350 мм'
       }
     })
   ],
+
+  // 4. Минитрактор Xingtai 244 с кабиной
   [
-    'Минитрактор DONGFENG DF-354',
-    'df-354',
-    'DF-354',
+    'Минитрактор Xingtai (Синтай) 244 с кабиной',
+    'xingtai-244-s-kabinoy',
+    'Xingtai 244',
     1,
-    'Универсальный минитрактор среднего класса. Оптимален для работы на участках до 5 гектаров.',
-    435000,
+    'Минитрактор Xingtai (Синтай) 244 с кабиной - надежная китайская техника по доступной цене. Отличное решение для фермерского хозяйства.',
+    310000,
     null,
-    35,
+    24,
     '4x4',
-    '12+12',
-    'Дизельный, 4-цилиндровый',
-    45,
-    1000,
-    '3100x1450x1550',
-    3,
+    '8+8',
+    'Дизельный, 3-цилиндровый',
+    32,
+    920,
+    '2850x1280x2100',
+    2,
+    1,
+    0,
+    0,
+    'https://res.cloudinary.com/drenz1aia/image/upload/v1760698081/dongfeng-minitraktor/df-304-main.jpg',
+    JSON.stringify({
+      engine: {
+        type: 'Дизельный',
+        cylinders: 3,
+        displacement: '1.5 л',
+        cooling: 'Водяное охлаждение',
+        start: 'Электростартер'
+      },
+      transmission: {
+        type: 'Механическая',
+        gears: '8 вперед / 8 назад',
+        clutch: 'Сухое, однодисковое'
+      },
+      hydraulics: {
+        lift_capacity: '650 кг',
+        connections: '2 задних вывода'
+      },
+      cabin: {
+        heating: 'Есть',
+        ventilation: 'Есть'
+      },
+      dimensions: {
+        length: '2850 мм',
+        width: '1280 мм',
+        height: '2100 мм (с кабиной)',
+        clearance: '310 мм'
+      }
+    })
+  ],
+
+  // 5. Минитрактор Xingtai 244 без кабины
+  [
+    'Минитрактор Xingtai (Синтай) 244 без кабины',
+    'xingtai-244-bez-kabiny',
+    'Xingtai 244',
+    1,
+    'Минитрактор Xingtai (Синтай) 244 в базовой комплектации. Экономичный и надежный помощник для дачи и небольшого хозяйства.',
+    275000,
+    null,
+    24,
+    '4x4',
+    '8+8',
+    'Дизельный, 3-цилиндровый',
+    32,
+    820,
+    '2850x1280x1420',
+    2,
+    1,
+    0,
+    0,
+    'https://res.cloudinary.com/drenz1aia/image/upload/v1760698081/dongfeng-minitraktor/df-304-main.jpg',
+    JSON.stringify({
+      engine: {
+        type: 'Дизельный',
+        cylinders: 3,
+        displacement: '1.5 л',
+        cooling: 'Водяное охлаждение',
+        start: 'Электростартер'
+      },
+      transmission: {
+        type: 'Механическая',
+        gears: '8 вперед / 8 назад',
+        clutch: 'Сухое, однодисковое'
+      },
+      hydraulics: {
+        lift_capacity: '650 кг',
+        connections: '2 задних вывода'
+      },
+      dimensions: {
+        length: '2850 мм',
+        width: '1280 мм',
+        height: '1420 мм',
+        clearance: '310 мм'
+      }
+    })
+  ],
+
+  // 6. Трактор LOVOL TE 244 без кабины
+  [
+    'Трактор LOVOL TE-244 без кабины',
+    'lovol-te-244-bez-kabiny',
+    'LOVOL TE-244',
+    1,
+    'Трактор LOVOL TE-244 - надежная техника от известного китайского производителя. Простота в обслуживании и экономичность.',
+    295000,
+    null,
+    24,
+    '4x4',
+    '8+8',
+    'Дизельный, 3-цилиндровый',
+    35,
+    870,
+    '2900x1320x1480',
+    2,
     1,
     0,
     0,
@@ -190,25 +306,77 @@ const products = [
     JSON.stringify({
       engine: {
         type: 'Дизельный',
-        cylinders: 4,
-        displacement: '2.0 л',
+        cylinders: 3,
+        displacement: '1.6 л',
         cooling: 'Водяное охлаждение',
         start: 'Электростартер'
       },
       transmission: {
         type: 'Механическая',
-        gears: '12 вперед / 12 назад',
-        clutch: 'Сухое, двухдисковое'
+        gears: '8 вперед / 8 назад',
+        clutch: 'Сухое, однодисковое'
       },
       hydraulics: {
-        lift_capacity: '900 кг',
-        connections: '3 задних вывода'
+        lift_capacity: '700 кг',
+        connections: '2 задних вывода'
       },
       dimensions: {
-        length: '3100 мм',
-        width: '1450 мм',
-        height: '1550 мм',
-        clearance: '330 мм'
+        length: '2900 мм',
+        width: '1320 мм',
+        height: '1480 мм',
+        clearance: '320 мм'
+      }
+    })
+  ],
+
+  // 7. Трактор LOVOL TE 244 с кабиной
+  [
+    'Трактор LOVOL TE-244 с кабиной',
+    'lovol-te-244-s-kabinoy',
+    'LOVOL TE-244',
+    1,
+    'Трактор LOVOL TE-244 с комфортабельной кабиной. Работа в любую погоду с максимальным комфортом.',
+    330000,
+    null,
+    24,
+    '4x4',
+    '8+8',
+    'Дизельный, 3-цилиндровый',
+    35,
+    970,
+    '2900x1320x2150',
+    2,
+    1,
+    0,
+    0,
+    'https://res.cloudinary.com/drenz1aia/image/upload/v1760698081/dongfeng-minitraktor/df-354-main.jpg',
+    JSON.stringify({
+      engine: {
+        type: 'Дизельный',
+        cylinders: 3,
+        displacement: '1.6 л',
+        cooling: 'Водяное охлаждение',
+        start: 'Электростартер'
+      },
+      transmission: {
+        type: 'Механическая',
+        gears: '8 вперед / 8 назад',
+        clutch: 'Сухое, однодисковое'
+      },
+      hydraulics: {
+        lift_capacity: '700 кг',
+        connections: '2 задних вывода'
+      },
+      cabin: {
+        heating: 'Есть',
+        ventilation: 'Есть',
+        windows: 'Панорамные'
+      },
+      dimensions: {
+        length: '2900 мм',
+        width: '1320 мм',
+        height: '2150 мм (с кабиной)',
+        clearance: '320 мм'
       }
     })
   ]
