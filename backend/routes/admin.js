@@ -3,12 +3,6 @@
  */
 
 import db from '../config/database.js';
-import { readFileSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 export default async function adminRoutes(fastify, options) {
 
@@ -35,9 +29,64 @@ export default async function adminRoutes(fastify, options) {
       db.exec('DROP TABLE IF EXISTS products');
       db.exec('DROP TABLE IF EXISTS categories');
 
-      // Читаем и выполняем init.sql
-      const initSQL = readFileSync(join(__dirname, '../database/init.sql'), 'utf-8');
-      db.exec(initSQL);
+      // Создаем таблицы напрямую (без чтения init.sql)
+      db.exec(`
+        CREATE TABLE IF NOT EXISTS categories (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          name TEXT NOT NULL,
+          slug TEXT NOT NULL UNIQUE,
+          description TEXT,
+          created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
+
+        CREATE TABLE IF NOT EXISTS products (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          name TEXT NOT NULL,
+          slug TEXT NOT NULL UNIQUE,
+          model TEXT NOT NULL,
+          category_id INTEGER NOT NULL,
+          description TEXT,
+          price REAL NOT NULL,
+          old_price REAL,
+          power INTEGER,
+          drive TEXT,
+          transmission TEXT,
+          engine_type TEXT,
+          fuel_tank INTEGER,
+          weight INTEGER,
+          dimensions TEXT,
+          warranty_years INTEGER DEFAULT 1,
+          in_stock BOOLEAN DEFAULT 1,
+          is_hit BOOLEAN DEFAULT 0,
+          is_new BOOLEAN DEFAULT 0,
+          image_url TEXT,
+          specifications TEXT,
+          created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+          FOREIGN KEY (category_id) REFERENCES categories(id)
+        );
+
+        CREATE TABLE IF NOT EXISTS contacts (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          name TEXT NOT NULL,
+          phone TEXT NOT NULL,
+          email TEXT,
+          message TEXT,
+          product_model TEXT,
+          status TEXT DEFAULT 'new',
+          created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
+
+        CREATE TABLE IF NOT EXISTS delivery_requests (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          city TEXT NOT NULL,
+          product_model TEXT NOT NULL,
+          phone TEXT NOT NULL,
+          estimated_cost REAL,
+          estimated_days TEXT,
+          status TEXT DEFAULT 'new',
+          created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
+      `);
 
       fastify.log.info('✅ Таблицы созданы');
 
