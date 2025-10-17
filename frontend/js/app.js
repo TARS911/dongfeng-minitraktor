@@ -69,15 +69,35 @@ function initSmoothScroll() {
 // === Header Scroll Effect ===
 function initHeaderScroll() {
     const header = document.querySelector('.header');
+    const headerHeight = header.offsetHeight;
     let lastScroll = 0;
+    let isFixed = false;
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
 
-        if (currentScroll > 100) {
+        // Фиксируем header при скролле вниз более чем на его высоту
+        if (currentScroll > headerHeight) {
+            if (!isFixed) {
+                header.classList.add('header--fixed');
+                // Добавляем отступ к body чтобы контент не прыгал
+                document.body.style.paddingTop = headerHeight + 'px';
+                isFixed = true;
+            }
             header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
         } else {
+            if (isFixed) {
+                header.classList.remove('header--fixed');
+                document.body.style.paddingTop = '0';
+                isFixed = false;
+            }
             header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.08)';
+        }
+
+        // Закрыть dropdown при скролле
+        const dropdown = document.getElementById('catalogDropdown');
+        if (dropdown && dropdown.classList.contains('active')) {
+            dropdown.classList.remove('active');
         }
 
         lastScroll = currentScroll;
