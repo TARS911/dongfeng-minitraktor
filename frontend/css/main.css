@@ -173,6 +173,56 @@
     background: var(--color-gray-50);
 }
 
+/* === Warranty Section === */
+.warranty {
+    padding: var(--section-padding) 0;
+    background: var(--color-white);
+}
+
+.warranty__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    margin-bottom: var(--space-3xl);
+}
+
+.warranty-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--card-border-radius);
+    padding: var(--space-2xl);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.warranty-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--brand-primary);
+}
+
+.warranty-card__icon {
+    font-size: 48px;
+    margin-bottom: var(--space-lg);
+}
+
+.warranty-card__title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-md);
+}
+
+.warranty-card__text {
+    color: var(--color-gray-600);
+    line-height: var(--line-height-relaxed);
+    font-size: var(--font-size-base);
+}
+
+.warranty__cta {
+    text-align: center;
+}
+
 /* === Delivery Section === */
 .delivery {
     padding: var(--section-padding) 0;
@@ -376,6 +426,10 @@
         font-size: var(--font-size-5xl);
     }
 
+    .warranty__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .delivery__content,
     .contacts__grid {
         grid-template-columns: 1fr;
@@ -423,6 +477,10 @@
     .hero__features {
         flex-direction: column;
         gap: var(--space-md);
+    }
+
+    .warranty__grid {
+        grid-template-columns: 1fr;
     }
 
     .footer__content {
