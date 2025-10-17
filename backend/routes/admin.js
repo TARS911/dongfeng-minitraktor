@@ -137,7 +137,7 @@ export default async function adminRoutes(fastify, options) {
           1,
           1,
           0,
-          '/images/df-244-main.jpg',
+          'https://cdn.jsdelivr.net/gh/TARS911/dongfeng-minitraktor@main/frontend/images/df-244-main.jpg',
           JSON.stringify({
             engine: {
               type: 'Дизельный',
@@ -182,7 +182,7 @@ export default async function adminRoutes(fastify, options) {
           1,
           0,
           1,
-          '/images/df-304-main.jpg',
+          'https://cdn.jsdelivr.net/gh/TARS911/dongfeng-minitraktor@main/frontend/images/df-304-main.jpg',
           JSON.stringify({
             engine: {
               type: 'Дизельный',
@@ -227,7 +227,7 @@ export default async function adminRoutes(fastify, options) {
           1,
           0,
           0,
-          '/images/df-404-main.jpg',
+          'https://cdn.jsdelivr.net/gh/TARS911/dongfeng-minitraktor@main/frontend/images/df-404-main.jpg',
           JSON.stringify({
             engine: {
               type: 'Дизельный',
@@ -272,7 +272,7 @@ export default async function adminRoutes(fastify, options) {
           1,
           0,
           0,
-          '/images/df-354-main.jpg',
+          'https://cdn.jsdelivr.net/gh/TARS911/dongfeng-minitraktor@main/frontend/images/df-354-main.jpg',
           JSON.stringify({
             engine: {
               type: 'Дизельный',
