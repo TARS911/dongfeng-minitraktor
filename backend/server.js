@@ -17,16 +17,18 @@ const __dirname = dirname(__filename);
 
 // Создаем Fastify instance
 const fastify = Fastify({
-  logger: {
-    level: process.env.LOG_LEVEL || 'info',
-    transport: {
-      target: 'pino-pretty',
-      options: {
-        translateTime: 'HH:MM:ss Z',
-        ignore: 'pid,hostname'
+  logger: process.env.NODE_ENV === 'production'
+    ? true  // В production - простой JSON логгер
+    : {     // В development - красивый pino-pretty
+        level: process.env.LOG_LEVEL || 'info',
+        transport: {
+          target: 'pino-pretty',
+          options: {
+            translateTime: 'HH:MM:ss Z',
+            ignore: 'pid,hostname'
+          }
+        }
       }
-    }
-  }
 });
 
 // Регистрируем CORS
