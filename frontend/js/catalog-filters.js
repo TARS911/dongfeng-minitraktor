@@ -185,11 +185,48 @@ function toggleFilters() {
     const toggleBtn = document.querySelector('.catalog__filter-toggle');
 
     if (filtersPanel) {
-        filtersPanel.classList.toggle('active');
+        const isActive = filtersPanel.classList.toggle('active');
+
         if (toggleBtn) {
             toggleBtn.classList.toggle('active');
         }
+
+        // Управление overlay
+        let overlay = document.getElementById('filtersOverlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.id = 'filtersOverlay';
+            overlay.className = 'filters-overlay';
+            overlay.onclick = closeFilters;
+            document.body.appendChild(overlay);
+        }
+
+        if (isActive) {
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        } else {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
     }
+}
+
+// === Закрытие фильтров ===
+function closeFilters() {
+    const filtersPanel = document.getElementById('catalogFilters');
+    const toggleBtn = document.querySelector('.catalog__filter-toggle');
+    const overlay = document.getElementById('filtersOverlay');
+
+    if (filtersPanel) {
+        filtersPanel.classList.remove('active');
+    }
+    if (toggleBtn) {
+        toggleBtn.classList.remove('active');
+    }
+    if (overlay) {
+        overlay.classList.remove('active');
+    }
+    document.body.style.overflow = '';
 }
 
 // === Обновление счетчика активных фильтров ===

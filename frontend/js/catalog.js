@@ -163,6 +163,11 @@ function renderProducts(products) {
     if (typeof initScrollReveal === 'function') {
         initScrollReveal();
     }
+
+    // Инициализировать lightbox для изображений
+    if (typeof initProductImageLightbox === 'function') {
+        initProductImageLightbox();
+    }
 }
 
 function createProductCardHTML(product) {

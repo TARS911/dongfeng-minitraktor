@@ -130,6 +130,11 @@
     color: #238d42;
 }
 
+/* Кнопка закрытия - скрыта на десктопе */
+.filters__close-btn {
+    display: none;
+}
+
 /* === FILTER GROUPS === */
 .filter-group {
     margin-bottom: 24px;
@@ -326,31 +331,74 @@
 
     .catalog__filters {
         position: fixed;
-        left: -300px;
+        left: -320px;
         top: 0;
         bottom: 0;
-        width: 280px;
+        width: 300px;
         max-height: 100vh;
-        z-index: 1000;
-        transition: left 0.3s;
+        z-index: 1001;
+        transition: left 0.3s ease;
         background: white;
-        box-shadow: 4px 0 12px rgba(0,0,0,0.1);
+        box-shadow: 4px 0 20px rgba(0,0,0,0.15);
     }
 
     .catalog__filters.active {
         left: 0;
     }
 
-    /* Overlay при открытых фильтрах */
-    .catalog__filters.active::before {
+    /* Кнопка закрытия фильтров */
+    .filters__close-btn {
+        display: block !important;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 32px;
+        height: 32px;
+        background: #f5f5f5;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.2s;
+    }
+
+    .filters__close-btn:hover {
+        background: #e0e0e0;
+    }
+
+    .filters__close-btn::before,
+    .filters__close-btn::after {
         content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 16px;
+        height: 2px;
+        background: #333;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .filters__close-btn::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    /* Overlay при открытых фильтрах */
+    .filters-overlay {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0,0,0,0.5);
-        z-index: -1;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .filters-overlay.active {
+        opacity: 1;
+        visibility: visible;
     }
 }
 
