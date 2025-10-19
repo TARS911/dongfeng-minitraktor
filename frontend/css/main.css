@@ -740,20 +740,74 @@
 
     /* Extra mobile optimizations */
     .container {
-        padding: 0 16px;
+        padding: 0 12px;
     }
 
     .catalog {
-        padding: var(--space-3xl) 0;
+        padding: var(--space-2xl) 0;
+    }
+
+    .catalog__grid {
+        gap: 16px;
     }
 
     .product-card {
-        border-radius: 20px; /* Even smaller radius on very small screens */
+        border-radius: 14px;
+    }
+
+    .product-card__content {
+        padding: 14px;
+    }
+
+    .product-card__title {
+        font-size: 16px;
+        min-height: 42px;
+        max-height: 42px;
+        margin-bottom: 10px;
+    }
+
+    .product-card__specs {
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .spec {
+        padding: 8px 4px;
+        min-height: 48px;
+    }
+
+    .spec__label {
+        font-size: 8px;
+    }
+
+    .spec__value {
+        font-size: 12px;
+    }
+
+    .product-card__price {
+        padding: 10px;
+        margin-bottom: 12px;
+        min-height: 48px;
+    }
+
+    .price__current {
+        font-size: 20px;
+    }
+
+    .product-card__image {
+        min-height: 200px;
+        max-height: 200px;
+    }
+
+    .btn {
+        font-size: 13px;
+        padding: 10px 16px;
+        min-height: 40px;
     }
 
     .btn--large {
-        padding: 12px 18px;
-        font-size: 14px;
+        padding: 11px 16px;
+        font-size: 13px;
     }
 
     .hero__cta .btn {
