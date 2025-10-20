@@ -76,7 +76,7 @@
 
 /* === Hero Section === */
 .hero {
-    background: #EDF2F7;
+    background: white;
     padding: var(--space-5xl) 0;
     position: relative;
     overflow: hidden;
@@ -160,7 +160,7 @@
 /* === Catalog Section === */
 .catalog {
     padding: var(--section-padding) 0;
-    background: #EDF2F7;
+    background: white;
 }
 
 /* === Catalog Tabs === */
@@ -261,13 +261,13 @@
 /* === Advantages Section === */
 .advantages {
     padding: var(--section-padding) 0;
-    background: #EDF2F7;
+    background: #FAFAFA;
 }
 
 /* === Warranty Section === */
 .warranty {
     padding: var(--section-padding) 0;
-    background: #EDF2F7;
+    background: white;
 }
 
 .warranty__text {
@@ -415,7 +415,7 @@
 /* === Delivery Section === */
 .delivery {
     padding: var(--section-padding) 0;
-    background: #EDF2F7;
+    background: white;
 }
 
 .delivery__content {
@@ -442,78 +442,45 @@
 }
 
 .delivery__calculator {
-    background: linear-gradient(135deg, #6B3410 0%, #8B4513 50%, #A0522D 100%);
+    background: white;
     padding: var(--space-2xl);
     border-radius: var(--card-border-radius);
-    box-shadow: 0 8px 24px rgba(107, 52, 16, 0.3);
-    border: 2px solid #8B4513;
-    position: relative;
-    overflow: hidden;
-}
-
-.delivery__calculator::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at top right, rgba(205, 133, 63, 0.15) 0%, transparent 60%);
-    pointer-events: none;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #cbd5e0;
 }
 
 .delivery__calculator h3 {
     font-size: var(--font-size-2xl);
     margin-bottom: var(--space-lg);
-    color: white;
+    color: var(--color-gray-900);
     font-weight: 700;
-    position: relative;
-    z-index: 1;
 }
 
 .delivery__calculator label {
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--color-gray-700);
     font-weight: 500;
-    position: relative;
-    z-index: 1;
 }
 
 .delivery__calculator input,
 .delivery__calculator select {
     background: #FFFFFF;
-    border: 2px solid rgba(139, 69, 19, 0.4);
+    border: 2px solid #cbd5e0;
     color: #333;
-    position: relative;
-    z-index: 1;
     font-weight: 500;
+    transition: all 0.2s ease;
 }
 
 .delivery__calculator input:focus,
 .delivery__calculator select:focus {
-    background: #FFFAF0;
-    border-color: #CD853F;
-    box-shadow: 0 0 0 3px rgba(205, 133, 63, 0.25);
-}
-
-.delivery__calculator .btn {
-    position: relative;
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    font-weight: 600;
-}
-
-.delivery__calculator .btn:hover {
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.5);
-    transform: translateY(-2px);
+    background: white;
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(42, 157, 78, 0.1);
 }
 
 /* === Contacts Section === */
 .contacts {
     padding: var(--section-padding) 0;
-    background: #EDF2F7;
+    background: #FAFAFA;
 }
 
 .contacts__wrapper {
@@ -588,7 +555,7 @@
 
 /* === Footer === */
 .footer {
-    background: linear-gradient(135deg, #1a6b36 0%, #2a9d4e 100%);
+    background: #2d3748;
     color: white;
     padding: var(--space-4xl) 0 var(--space-2xl);
     position: relative;

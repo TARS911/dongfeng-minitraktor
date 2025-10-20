@@ -12,9 +12,9 @@
     --brand-primary-light: #3db95e;     /* Светло-зеленый для акцентов */
 
     /* Акцентные цвета */
-    --brand-accent: #ff5b1a;            /* Оранжевый для CTA (как у cn-tractor) */
-    --brand-accent-dark: #e64a0f;       /* Темно-оранжевый для hover */
-    --brand-accent-light: #ff7842;      /* Светло-оранжевый */
+    --brand-accent: #FF6600;            /* Яркий оранжевый для CTA (как у KRONOS5) */
+    --brand-accent-dark: #E55A00;       /* Темно-оранжевый для hover */
+    --brand-accent-light: #FF8533;      /* Светло-оранжевый */
 
     /* Нейтральные цвета */
     --color-white: #ffffff;
