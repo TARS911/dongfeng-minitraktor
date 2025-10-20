@@ -8,7 +8,7 @@ services:
     env: node
     region: frankfurt  # Ближайший регион к РФ
     plan: free
-    buildCommand: cd backend && npm install && npm run init-db && npm run seed-db
+    buildCommand: cd backend && npm ci --omit=dev
     startCommand: cd backend && npm start
     envVars:
       - key: NODE_ENV
@@ -31,3 +31,5 @@ services:
 # 2. База SQLite будет на persistent диске
 # 3. Автоматический SSL сертификат
 # 4. URL вида: https://dongfeng-minitraktor.onrender.com
+# 5. ВАЖНО: Инициализация БД делается ОДИН РАЗ через Shell или POST /api/admin/rebuild-db
+#    npm run init-db && npm run seed-db - НЕ запускать при каждом деплое!
