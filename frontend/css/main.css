@@ -85,56 +85,78 @@ body {
     white-space: nowrap;
 }
 
-/* === Hero Section === */
+/* === Hero Section - John Deere Style === */
 .hero {
-    background: white;
-    padding: var(--space-5xl) 0;
     position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
     overflow: hidden;
+    background: #1a2332;
 }
 
+/* Огромное фоновое фото */
 .hero::before {
     content: '';
     position: absolute;
     top: 0;
+    left: 0;
     right: 0;
-    width: 50%;
-    height: 100%;
-    background: url('../images/hero-tractor.png') no-repeat center right;
-    background-size: contain;
-    opacity: 0.1;
-    pointer-events: none;
+    bottom: 0;
+    background: url('https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+/* Темный градиент оверлей для читаемости */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(42, 157, 78, 0.85) 0%, rgba(26, 35, 50, 0.9) 100%);
+    z-index: 2;
 }
 
 .hero__content {
     position: relative;
-    z-index: 1;
-    max-width: 700px;
+    z-index: 3;
+    max-width: 900px;
+    color: white;
 }
 
 .hero__title {
-    font-size: var(--font-size-6xl);
-    line-height: var(--line-height-tight);
-    margin-bottom: var(--space-lg);
+    font-size: 4.5rem;
+    line-height: 1.15;
+    margin-bottom: var(--space-xl);
+    font-weight: var(--font-weight-extrabold);
+    color: white;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     animation: fadeInUp 0.8s ease-out;
 }
 
 .hero__title .accent {
-    color: var(--brand-primary);
+    color: var(--brand-accent);
     position: relative;
 }
 
 .hero__subtitle {
-    font-size: var(--font-size-xl);
-    color: var(--color-gray-600);
-    margin-bottom: var(--space-2xl);
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: var(--space-3xl);
+    line-height: 1.6;
+    font-weight: 400;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .hero__features {
     display: flex;
-    gap: var(--space-xl);
-    margin-bottom: var(--space-3xl);
+    gap: var(--space-2xl);
+    margin-bottom: var(--space-4xl);
     flex-wrap: wrap;
     animation: fadeInUp 0.8s ease-out 0.4s both;
 }
@@ -142,24 +164,28 @@ body {
 .feature {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
+    gap: var(--space-md);
 }
 
 .feature__icon {
-    width: 32px;
-    height: 32px;
-    background: var(--brand-primary);
-    color: var(--color-white);
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: var(--font-weight-bold);
+    font-size: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .feature__text {
-    font-weight: var(--font-weight-medium);
-    color: var(--color-gray-700);
+    font-weight: var(--font-weight-semibold);
+    color: white;
+    font-size: 1.125rem;
 }
 
 .hero__cta {
@@ -714,15 +740,18 @@ body {
     }
 
     .hero {
+        min-height: 70vh;
         padding: var(--space-3xl) 0;
     }
 
     .hero__title {
-        font-size: var(--font-size-4xl);
+        font-size: 2.5rem;
+        line-height: 1.2;
     }
 
     .hero__subtitle {
-        font-size: var(--font-size-lg);
+        font-size: 1.125rem;
+        margin-bottom: var(--space-2xl);
     }
 
     .hero__cta {
@@ -730,8 +759,17 @@ body {
     }
 
     .hero__features {
-        flex-direction: column;
-        gap: var(--space-md);
+        gap: var(--space-lg);
+    }
+
+    .feature__icon {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .feature__text {
+        font-size: 1rem;
     }
 
     .catalog__tabs {
@@ -774,8 +812,22 @@ body {
 
 /* Small Mobile */
 @media (max-width: 480px) {
+    .hero {
+        min-height: 60vh;
+    }
+
     .hero__title {
-        font-size: var(--font-size-3xl);
+        font-size: 2rem;
+        line-height: 1.25;
+    }
+
+    .hero__subtitle {
+        font-size: 1rem;
+        margin-bottom: var(--space-lg);
+    }
+
+    .hero__features {
+        gap: var(--space-md);
     }
 
     .section-title {
