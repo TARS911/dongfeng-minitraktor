@@ -3,16 +3,27 @@
  * Современный дизайн с анимациями
  */
 
+/* Body offset for fixed header */
+body {
+    padding-top: var(--header-height);
+}
+
 /* === Header === */
 .header {
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     height: var(--header-height);
-    background: var(--header-bg);
-    box-shadow: var(--header-shadow);
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     z-index: var(--z-sticky);
-    transition: all var(--transition-base);
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    height: 70px;
 }
 
 .header__content {
