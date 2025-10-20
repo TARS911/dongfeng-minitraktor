@@ -6,12 +6,12 @@
 
     <!-- SEO Meta Tags для РФ и СНГ -->
     <title>Минитрактора DONGFENG - Официальный дилер в России | Цены от производителя</title>
-    <meta name="description" content="Официальный дилер минитракторов DONGFENG в России. Продажа китайских минитракторов с доставкой по РФ и СНГ. Гарантия до 3 лет, сервисное обслуживание, запчасти в наличии. Цены от 180 000 руб.">
+    <meta name="description" content="Официальный дилер минитракторов DONGFENG в России. Продажа китайских минитракторов с доставкой по РФ и СНГ. Гарантия 1 год, сервисное обслуживание, запчасти в наличии. Цены от 180 000 руб.">
     <meta name="keywords" content="минитрактор dongfeng, китайские минитрактора, купить минитрактор, минитрактор цена, dongfeng купить, минитрактор для дачи, сельхозтехника">
 
     <!-- Open Graph для соцсетей (VK, OK, Telegram) -->
     <meta property="og:title" content="Минитрактора DONGFENG - Официальный дилер в России | Цены от 285 000 ₽">
-    <meta property="og:description" content="Продажа китайских минитракторов DONGFENG с гарантией до 3 лет. Доставка по Белгороду, Курску, Брянску, Липецку. Собственный сервисный центр. Запчасти в наличии. ☎️ +7 (969) 999-56-68">
+    <meta property="og:description" content="Продажа китайских минитракторов DONGFENG с гарантией 1 год. Доставка по Белгороду, Курску, Брянску, Липецку. Собственный сервисный центр. Запчасти в наличии. ☎️ +7 (969) 999-56-68">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dongfeng-minitraktor.ru">
     <meta property="og:image" content="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg">
@@ -24,7 +24,7 @@
     <!-- Twitter Card (для международных соцсетей) -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Минитрактора DONGFENG - Официальный дилер в России">
-    <meta name="twitter:description" content="Продажа китайских минитракторов с гарантией до 3 лет. Доставка по РФ и СНГ.">
+    <meta name="twitter:description" content="Продажа китайских минитракторов с гарантией 1 год. Доставка по РФ и СНГ.">
     <meta name="twitter:image" content="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg">
 
     <!-- ВКонтакте -->
@@ -161,6 +161,54 @@
                     <img src="images/logo.svg" alt="DONGFENG Минитрактора" width="180" height="50">
                 </div>
 
+                <!-- Меню каталога -->
+                <div class="nav__catalog-menu">
+                    <button class="nav__catalog-btn" onclick="toggleCatalogMenu()">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Каталог
+                    </button>
+                    <!-- Выпадающее меню каталога -->
+                    <div class="catalog-dropdown" id="catalogDropdown">
+                        <div class="catalog-dropdown__category" data-brand="df">
+                            <a href="#" onclick="filterByBrand('df'); return false;">
+                                <span class="catalog-dropdown__icon">🚜</span>
+                                <span class="catalog-dropdown__name">Тракторы DF</span>
+                                <span class="catalog-dropdown__count">(3)</span>
+                            </a>
+                        </div>
+                        <div class="catalog-dropdown__category" data-brand="xingtai">
+                            <a href="#" onclick="filterByBrand('xingtai'); return false;">
+                                <span class="catalog-dropdown__icon">🚜</span>
+                                <span class="catalog-dropdown__name">Тракторы Синтай</span>
+                                <span class="catalog-dropdown__count">(2)</span>
+                            </a>
+                        </div>
+                        <div class="catalog-dropdown__category" data-brand="lovol">
+                            <a href="#" onclick="filterByBrand('lovol'); return false;">
+                                <span class="catalog-dropdown__icon">🚜</span>
+                                <span class="catalog-dropdown__name">Тракторы Lovol</span>
+                                <span class="catalog-dropdown__count">(2)</span>
+                            </a>
+                        </div>
+                        <div class="catalog-dropdown__category" data-brand="russian">
+                            <a href="#" onclick="filterByBrand('russian'); return false;">
+                                <span class="catalog-dropdown__icon">🚜</span>
+                                <span class="catalog-dropdown__name">Российские тракторы</span>
+                                <span class="catalog-dropdown__count">(4)</span>
+                            </a>
+                        </div>
+                        <div class="catalog-dropdown__category">
+                            <a href="#catalog" onclick="showAllProducts(); return false;">
+                                <span class="catalog-dropdown__icon">📋</span>
+                                <span class="catalog-dropdown__name">Все тракторы</span>
+                                <span class="catalog-dropdown__count">(11)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Поисковая строка -->
                 <div class="search-bar">
                     <input
@@ -219,55 +267,9 @@
                 </button>
             </div>
 
-            <!-- Навигация с каталогом -->
+            <!-- Навигация -->
             <div class="header__nav">
                 <nav class="nav" aria-label="Основная навигация">
-                    <div class="nav__catalog-menu">
-                        <button class="nav__catalog-btn" onclick="toggleCatalogMenu()">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                            Каталог
-                        </button>
-                        <!-- Выпадающее меню каталога -->
-                        <div class="catalog-dropdown" id="catalogDropdown">
-                            <div class="catalog-dropdown__category" data-brand="df">
-                                <a href="#" onclick="filterByBrand('df'); return false;">
-                                    <span class="catalog-dropdown__icon">🚜</span>
-                                    <span class="catalog-dropdown__name">Тракторы DF</span>
-                                    <span class="catalog-dropdown__count">(3)</span>
-                                </a>
-                            </div>
-                            <div class="catalog-dropdown__category" data-brand="xingtai">
-                                <a href="#" onclick="filterByBrand('xingtai'); return false;">
-                                    <span class="catalog-dropdown__icon">🚜</span>
-                                    <span class="catalog-dropdown__name">Тракторы Синтай</span>
-                                    <span class="catalog-dropdown__count">(2)</span>
-                                </a>
-                            </div>
-                            <div class="catalog-dropdown__category" data-brand="lovol">
-                                <a href="#" onclick="filterByBrand('lovol'); return false;">
-                                    <span class="catalog-dropdown__icon">🚜</span>
-                                    <span class="catalog-dropdown__name">Тракторы Lovol</span>
-                                    <span class="catalog-dropdown__count">(2)</span>
-                                </a>
-                            </div>
-                            <div class="catalog-dropdown__category" data-brand="russian">
-                                <a href="#" onclick="filterByBrand('russian'); return false;">
-                                    <span class="catalog-dropdown__icon">🚜</span>
-                                    <span class="catalog-dropdown__name">Российские тракторы</span>
-                                    <span class="catalog-dropdown__count">(4)</span>
-                                </a>
-                            </div>
-                            <div class="catalog-dropdown__category">
-                                <a href="#catalog" onclick="showAllProducts(); return false;">
-                                    <span class="catalog-dropdown__icon">📋</span>
-                                    <span class="catalog-dropdown__name">Все тракторы</span>
-                                    <span class="catalog-dropdown__count">(11)</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                     <ul class="nav__list">
                         <li><a href="#about" class="nav__link">О компании</a></li>
                         <li><a href="#delivery" class="nav__link">Доставка</a></li>
@@ -392,7 +394,7 @@
                     <p class="trust-card__text">По всей России и странам СНГ</p>
                 </div>
                 <div class="trust-card trust-card--accent">
-                    <div class="trust-card__number">3 года</div>
+                    <div class="trust-card__number">1 год</div>
                     <div class="trust-card__label">гарантия</div>
                     <p class="trust-card__text">Официальная гарантия производителя</p>
                 </div>
@@ -718,7 +720,7 @@
                     Минитрактора <span class="accent">DONGFENG</span> от официального дилера
                 </h2>
                 <p class="company-intro__subtitle">
-                    Цены от производителя • Гарантия до 3 лет • Доставка по России и СНГ
+                    Цены от производителя • Гарантия 1 год • Доставка по России и СНГ
                 </p>
                 <div class="company-intro__features">
                     <div class="feature">
@@ -749,7 +751,7 @@
 
                 <div class="advantage-card">
                     <div class="advantage-card__icon">🛡️</div>
-                    <h3 class="advantage-card__title">Гарантия до 3 лет</h3>
+                    <h3 class="advantage-card__title">Гарантия 1 год</h3>
                     <p class="advantage-card__text">
                         Официальная гарантия от производителя. Полное гарантийное обслуживание в течение всего срока.
                     </p>
@@ -802,7 +804,7 @@
                 </p>
                 <p>
                     На всю поставляемую технику предоставляется <strong>гарантия завода-изготовителя</strong>.
-                    Гарантийный срок составляет <strong>от 12 до 36 месяцев</strong> в зависимости от вида техники и бренда-производителя.
+                    Гарантийный срок составляет <strong>12 месяцев</strong>.
                 </p>
                 <p>
                     В случае обнаружения дефекта в период действия гарантии необходимо <strong>незамедлительно приостановить эксплуатацию техники</strong>
