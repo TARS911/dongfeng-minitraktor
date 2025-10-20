@@ -293,6 +293,65 @@ body {
     color: rgba(255, 255, 255, 0.95);
 }
 
+/* === Company Introduction - Compact === */
+.company-intro {
+    background: white;
+    padding: var(--space-3xl) 0 var(--space-2xl);
+    text-align: center;
+    border-bottom: 1px solid #e8f5e9;
+    margin-bottom: var(--space-3xl);
+}
+
+.company-intro__title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-lg);
+    line-height: 1.3;
+}
+
+.company-intro__title .accent {
+    color: var(--brand-primary);
+}
+
+.company-intro__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-gray-600);
+    margin-bottom: var(--space-2xl);
+}
+
+.company-intro__features {
+    display: flex;
+    gap: var(--space-xl);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.company-intro .feature {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.company-intro .feature__icon {
+    width: 32px;
+    height: 32px;
+    background: var(--brand-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.company-intro .feature__text {
+    font-weight: 600;
+    color: var(--color-gray-700);
+    font-size: 0.9375rem;
+}
+
 /* === Catalog Section === */
 .catalog {
     padding: var(--section-padding) 0;
@@ -851,6 +910,34 @@ body {
         font-size: 1rem;
     }
 
+    .company-intro {
+        padding: var(--space-2xl) 0 var(--space-lg);
+        margin-bottom: var(--space-2xl);
+    }
+
+    .company-intro__title {
+        font-size: 1.75rem;
+    }
+
+    .company-intro__subtitle {
+        font-size: 1rem;
+        margin-bottom: var(--space-lg);
+    }
+
+    .company-intro__features {
+        gap: var(--space-md);
+    }
+
+    .company-intro .feature__icon {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    .company-intro .feature__text {
+        font-size: 0.875rem;
+    }
+
     .catalog__tabs {
         gap: var(--space-sm);
         margin-bottom: var(--space-2xl);
@@ -903,6 +990,18 @@ body {
 
     .hero__features {
         gap: var(--space-md);
+    }
+
+    .company-intro__title {
+        font-size: 1.5rem;
+    }
+
+    .company-intro__subtitle {
+        font-size: 0.9375rem;
+    }
+
+    .company-intro__features {
+        gap: var(--space-sm);
     }
 
     .section-title {
