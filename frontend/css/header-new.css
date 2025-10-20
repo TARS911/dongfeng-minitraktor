@@ -33,7 +33,7 @@
 
 .header__top {
     display: grid;
-    grid-template-columns: auto auto 1fr auto auto;
+    grid-template-columns: auto auto 1fr auto auto auto;
     gap: var(--space-lg);
     align-items: center;
     padding: var(--space-md) 0;
@@ -194,16 +194,10 @@
     white-space: nowrap;
 }
 
-/* === Navigation with Catalog === */
-.header__nav {
-    background: var(--color-gray-50);
-    border-bottom: 1px solid var(--color-gray-200);
-}
-
+/* === Navigation === */
 .nav {
     display: flex;
     align-items: center;
-    gap: var(--space-xl);
 }
 
 .nav__catalog-menu {
@@ -333,6 +327,10 @@
         gap: var(--space-md);
     }
 
+    .nav {
+        display: none; /* Скрыть навигацию, будет в burger menu */
+    }
+
     .header__contact {
         display: none;
     }
@@ -402,10 +400,6 @@
         font-size: 9px;
         top: 2px;
         right: 4px;
-    }
-
-    .header__nav {
-        display: none; /* Будет мобильное меню */
     }
 
     .nav__catalog-btn {
