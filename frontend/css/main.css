@@ -76,7 +76,7 @@
 
 /* === Hero Section === */
 .hero {
-    background: linear-gradient(135deg, #f8faf9 0%, #e8f5ee 100%);
+    background: #EDF2F7;
     padding: var(--space-5xl) 0;
     position: relative;
     overflow: hidden;
@@ -160,7 +160,7 @@
 /* === Catalog Section === */
 .catalog {
     padding: var(--section-padding) 0;
-    background: var(--color-white);
+    background: #EDF2F7;
 }
 
 /* === Catalog Tabs === */
@@ -261,13 +261,13 @@
 /* === Advantages Section === */
 .advantages {
     padding: var(--section-padding) 0;
-    background: #f5faf7;
+    background: #EDF2F7;
 }
 
 /* === Warranty Section === */
 .warranty {
     padding: var(--section-padding) 0;
-    background: var(--color-white);
+    background: #EDF2F7;
 }
 
 .warranty__text {
@@ -415,7 +415,7 @@
 /* === Delivery Section === */
 .delivery {
     padding: var(--section-padding) 0;
-    background: var(--color-white);
+    background: #EDF2F7;
 }
 
 .delivery__content {
@@ -513,7 +513,7 @@
 /* === Contacts Section === */
 .contacts {
     padding: var(--section-padding) 0;
-    background: #f5faf7;
+    background: #EDF2F7;
 }
 
 .contacts__wrapper {
