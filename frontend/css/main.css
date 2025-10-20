@@ -1453,8 +1453,16 @@ body {
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
     color: var(--color-gray-900);
+    margin-bottom: var(--space-sm);
+    text-align: center;
+}
+
+.payment-card__subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
     margin-bottom: var(--space-md);
     text-align: center;
+    font-weight: var(--font-weight-normal);
 }
 
 .payment-card__description {
