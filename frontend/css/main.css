@@ -458,6 +458,10 @@ body {
     background: #FAFAFA;
 }
 
+.advantages .trust__grid {
+    margin: var(--space-4xl) 0;
+}
+
 /* === Warranty Section === */
 .warranty {
     padding: var(--section-padding) 0;
