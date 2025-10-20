@@ -3,34 +3,18 @@ name: Deploy to Render
 on:
   push:
     branches: [ main ]
+  workflow_dispatch: # Позволяет запускать вручную
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20'
-
-    - name: Install dependencies
-      run: |
-        cd backend
-        npm ci
-
-    - name: Run tests (optional)
-      run: |
-        cd backend
-        npm test || echo "No tests configured"
-
     - name: Trigger Render Deploy
       run: |
-        curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
-      if: github.ref == 'refs/heads/main'
-
-    - name: Notify on success
-      run: echo "✅ Deployed successfully to Render!"
+        if [ -n "${{ secrets.RENDER_DEPLOY_HOOK }}" ]; then
+          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
+          echo "✅ Deploy triggered successfully!"
+        else
+          echo "⚠️ RENDER_DEPLOY_HOOK secret not configured"
+        fi
