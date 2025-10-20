@@ -480,18 +480,19 @@
 
 .delivery__calculator input,
 .delivery__calculator select {
-    background: rgba(255, 255, 255, 0.95);
-    border: 2px solid rgba(139, 69, 19, 0.3);
+    background: #FFFFFF;
+    border: 2px solid rgba(139, 69, 19, 0.4);
     color: #333;
     position: relative;
     z-index: 1;
+    font-weight: 500;
 }
 
 .delivery__calculator input:focus,
 .delivery__calculator select:focus {
-    background: white;
+    background: #FFFAF0;
     border-color: #CD853F;
-    box-shadow: 0 0 0 3px rgba(205, 133, 63, 0.2);
+    box-shadow: 0 0 0 3px rgba(205, 133, 63, 0.25);
 }
 
 .delivery__calculator .btn {
