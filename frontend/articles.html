@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags для РФ и СНГ -->
+    <title>Статьи и новости о минитракторах DONGFENG - Советы по эксплуатации и обслуживанию</title>
+    <meta name="description" content="Полезные статьи и новости о минитракторах DONGFENG: советы по эксплуатации, обслуживание, подготовка к сезону, отзывы клиентов, новости компании. Экспертные рекомендации от официального дилера.">
+    <meta name="keywords" content="статьи о минитракторах, советы по эксплуатации трактора, обслуживание минитрактора, подготовка трактора к сезону, отзывы о dongfeng, новости сельхозтехники">
+
+    <!-- Open Graph для соцсетей (VK, OK, Telegram) -->
+    <meta property="og:title" content="Статьи и новости о минитракторах DONGFENG">
+    <meta property="og:description" content="Экспертные советы по эксплуатации и обслуживанию минитракторов, новости компании, отзывы клиентов">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dongfeng-minitraktor.ru/articles.html">
+    <meta property="og:image" content="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg">
+    <meta property="og:locale" content="ru_RU">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Статьи и новости о минитракторах DONGFENG">
+    <meta name="twitter:description" content="Полезные советы по эксплуатации и обслуживанию минитракторов">
+
+    <!-- Дополнительные мета-теги -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Russian">
+    <meta http-equiv="content-language" content="ru-RU">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dongfeng-minitraktor.ru/articles.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/drenz1aia/image/upload/v1760698083/dongfeng-minitraktor/favicon.svg">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/header-new.css">
+    <link rel="stylesheet" href="css/catalog-modals.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
+
+    <!-- Schema.org разметка -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Блог о минитракторах DONGFENG",
+        "description": "Статьи и новости о минитракторах: советы по эксплуатации, обслуживание, отзывы клиентов",
+        "url": "https://dongfeng-minitraktor.ru/articles.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "DONGFENG - Официальный дилер минитракторов",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://res.cloudinary.com/drenz1aia/image/upload/v1760698084/dongfeng-minitraktor/logo.svg"
+            }
+        }
+    }
+    </script>
+
+    <style>
+        /* Стили для страницы статей */
+        .articles-section {
+            padding: var(--space-2xl) 0;
+            background: var(--color-background);
+        }
+
+        .articles__header {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .articles__layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: var(--space-xl);
+            align-items: start;
+        }
+
+        @media (max-width: 968px) {
+            .articles__layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Сайдбар с категориями */
+        .articles__sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .categories-widget {
+            background: white;
+            border-radius: 12px;
+            padding: var(--space-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .categories-widget__title {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            color: var(--color-text);
+        }
+
+        .category-filter {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .category-filter__item {
+            margin-bottom: var(--space-xs);
+        }
+
+        .category-filter__link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 8px;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: var(--font-size-md);
+        }
+
+        .category-filter__link:hover {
+            background: var(--color-background);
+            color: var(--brand-primary);
+        }
+
+        .category-filter__link--active {
+            background: var(--brand-primary);
+            color: white;
+            font-weight: 600;
+        }
+
+        .category-filter__count {
+            font-size: var(--font-size-sm);
+            opacity: 0.7;
+        }
+
+        /* Сетка статей */
+        .articles__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        @media (max-width: 768px) {
+            .articles__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Карточка статьи */
+        .article-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .article-card__image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .article-card__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover .article-card__image img {
+            transform: scale(1.05);
+        }
+
+        .article-card__category {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--brand-primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+        }
+
+        .article-card__content {
+            padding: var(--space-lg);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card__meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-sm);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+        }
+
+        .article-card__date {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .article-card__title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+            color: var(--color-text);
+            line-height: 1.4;
+        }
+
+        .article-card__title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .article-card__title a:hover {
+            color: var(--brand-primary);
+        }
+
+        .article-card__excerpt {
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            margin-bottom: var(--space-md);
+            flex: 1;
+        }
+
+        .article-card__footer {
+            margin-top: auto;
+        }
+
+        .article-card__link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--brand-primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: gap 0.2s ease;
+        }
+
+        .article-card__link:hover {
+            gap: 12px;
+        }
+
+        /* Мобильная адаптация сайдбара */
+        @media (max-width: 968px) {
+            .articles__sidebar {
+                position: static;
+                margin-bottom: var(--space-xl);
+            }
+
+            .category-filter {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: var(--space-xs);
+            }
+
+            .category-filter__item {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header с навигацией -->
+    <header class="header">
+        <div class="container">
+            <div class="header__top">
+                <!-- Логотип -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="DONGFENG Минитрактора" width="180" height="50">
+                    </a>
+                </div>
+
+                <!-- Меню каталога -->
+                <div class="nav__catalog-menu">
+                    <button class="nav__catalog-btn" onclick="toggleCatalogMenu()">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        КАТАЛОГ
+                    </button>
+                    <!-- Выпадающее меню каталога -->
+                    <div class="catalog-dropdown" id="catalogDropdown">
+                        <div class="catalog-dropdown__category" data-brand="df">
+                            <a href="index.html#catalog" onclick="filterByBrand('df'); return false;">
+                                <span class="catalog-dropdown__icon">🚜</span>
+                                <span class="catalog-dropdown__name">Тракторы DF</span>
+                                <span class="catalog-dropdown__count">(3)</span>
+                            </a>
+                        </div>
+                        <div class="catalog-dropdown__category" data-brand="xingtai">
+                            <a href="index.html#catalog" onclick="filterByBrand('xingtai'); return false;">
+                                <span class="catalog-dropdown__icon">🚜</span>
+                                <span class="catalog-dropdown__name">Тракторы Синтай</span>
+                                <span class="catalog-dropdown__count">(2)</span>
+                            </a>
+                        </div>
+                        <div class="catalog-dropdown__category" data-brand="lovol">
+                            <a href="index.html#catalog" onclick="filterByBrand('lovol'); return false;">
+                                <span class="catalog-dropdown__icon">🚜</span>
+                                <span class="catalog-dropdown__name">Тракторы Lovol</span>
+                                <span class="catalog-dropdown__count">(2)</span>
+                            </a>
+                        </div>
+                        <div class="catalog-dropdown__category" data-brand="russian">
+                            <a href="index.html#catalog" onclick="filterByBrand('russian'); return false;">
+                                <span class="catalog-dropdown__icon">🚜</span>
+                                <span class="catalog-dropdown__name">Российские тракторы</span>
+                                <span class="catalog-dropdown__count">(4)</span>
+                            </a>
+                        </div>
+                        <div class="catalog-dropdown__category">
+                            <a href="index.html#catalog" onclick="showAllProducts(); return false;">
+                                <span class="catalog-dropdown__icon">📋</span>
+                                <span class="catalog-dropdown__name">Все тракторы</span>
+                                <span class="catalog-dropdown__count">(11)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Поисковая строка -->
+                <div class="search-bar">
+                    <input
+                        type="search"
+                        class="search-bar__input"
+                        placeholder="Поиск тракторов по модели или бренду..."
+                        id="searchInput"
+                        oninput="searchProducts(event)"
+                    >
+                    <button class="search-bar__button" onclick="performSearch()">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Навигация -->
+                <nav class="nav" aria-label="Основная навигация">
+                    <ul class="nav__list">
+                        <li><a href="index.html" class="nav__link">Главная</a></li>
+                        <li><a href="payment.html" class="nav__link">Оплата</a></li>
+                        <li><a href="delivery.html" class="nav__link">Доставка</a></li>
+                        <li><a href="warranty.html" class="nav__link">Гарантия</a></li>
+                        <li><a href="articles.html" class="nav__link nav__link--active">Статьи</a></li>
+                        <li><a href="contacts.html" class="nav__link">Контакты</a></li>
+                        <li><a href="media.html" class="nav__link">МЕДИА</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Иконки действий -->
+                <div class="header__actions">
+                    <a href="#favorites" class="header-action" onclick="openFavorites(); return false;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        <span class="header-action__label">Избранное</span>
+                        <span class="header-action__badge" id="favoritesCount">0</span>
+                    </a>
+                    <a href="#compare" class="header-action" onclick="openCompare(); return false;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H9M15 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H15M9 3V21M15 3V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="header-action__label">Сравнение</span>
+                        <span class="header-action__badge" id="compareCount">0</span>
+                    </a>
+                    <a href="#cart" class="header-action header-action--cart" onclick="openCart(); return false;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 2L7 7H21L19 2H9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7 7H21L19 17H9L7 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="10" cy="21" r="1" fill="currentColor"/>
+                            <circle cx="18" cy="21" r="1" fill="currentColor"/>
+                        </svg>
+                        <span class="header-action__label">Корзина</span>
+                        <span class="header-action__badge" id="cartCount">0</span>
+                    </a>
+                </div>
+
+                <!-- Контакты -->
+                <div class="header__contact">
+                    <a href="tel:+79699995668" class="phone">+7 (969) 999-56-68</a>
+                    <button class="btn btn--primary btn--small" onclick="openCallbackModal()">Заказать звонок</button>
+                </div>
+
+                <!-- Мобильное меню -->
+                <button class="burger" aria-label="Открыть меню" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__header">
+            <img src="images/logo.svg" alt="DONGFENG" class="mobile-menu__logo">
+            <button class="mobile-menu__close" onclick="closeMobileMenu()" aria-label="Закрыть меню">×</button>
+        </div>
+
+        <!-- Каталог -->
+        <div class="mobile-menu__catalog">
+            <div class="mobile-menu__catalog-title">Каталог товаров</div>
+            <ul class="mobile-menu__catalog-list">
+                <li class="mobile-menu__catalog-item">
+                    <a href="index.html#catalog" class="mobile-menu__catalog-link" onclick="filterByBrand('df'); return false;">
+                        <span class="mobile-menu__catalog-icon">🚜</span>
+                        <span>Тракторы DF</span>
+                        <span class="mobile-menu__catalog-count">3</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__catalog-item">
+                    <a href="index.html#catalog" class="mobile-menu__catalog-link" onclick="filterByBrand('xingtai'); return false;">
+                        <span class="mobile-menu__catalog-icon">🚜</span>
+                        <span>Тракторы Синтай</span>
+                        <span class="mobile-menu__catalog-count">2</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__catalog-item">
+                    <a href="index.html#catalog" class="mobile-menu__catalog-link" onclick="filterByBrand('lovol'); return false;">
+                        <span class="mobile-menu__catalog-icon">🚜</span>
+                        <span>Тракторы Lovol</span>
+                        <span class="mobile-menu__catalog-count">2</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__catalog-item">
+                    <a href="index.html#catalog" class="mobile-menu__catalog-link" onclick="filterByBrand('russian'); return false;">
+                        <span class="mobile-menu__catalog-icon">🚜</span>
+                        <span>Российские тракторы</span>
+                        <span class="mobile-menu__catalog-count">4</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__catalog-item">
+                    <a href="index.html#catalog" class="mobile-menu__catalog-link" onclick="showAllProducts(); return false;">
+                        <span class="mobile-menu__catalog-icon">📋</span>
+                        <span>Все тракторы</span>
+                        <span class="mobile-menu__catalog-count">11</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Навигация -->
+        <nav class="mobile-menu__nav">
+            <ul class="mobile-menu__list">
+                <li class="mobile-menu__item">
+                    <a href="index.html" class="mobile-menu__link">
+                        <span>Главная</span>
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="payment.html" class="mobile-menu__link">
+                        <span>Оплата</span>
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="delivery.html" class="mobile-menu__link">
+                        <span>Доставка</span>
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="warranty.html" class="mobile-menu__link">
+                        <span>Гарантия</span>
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="articles.html" class="mobile-menu__link mobile-menu__link--active">
+                        <span>Статьи</span>
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="contacts.html" class="mobile-menu__link">
+                        <span>Контакты</span>
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="media.html" class="mobile-menu__link">
+                        <span>МЕДИА</span>
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Контакты внизу меню -->
+        <div class="mobile-menu__contacts">
+            <a href="tel:+79699995668" class="mobile-menu__phone">+7 (969) 999-56-68</a>
+            <button class="btn btn--primary btn--block mobile-menu__cta" onclick="openCallbackModal(); closeMobileMenu();">
+                Заказать звонок
+            </button>
+        </div>
+    </div>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+        <!-- Хлебные крошки -->
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="index.html">Главная</a>
+                <span>/</span>
+                <span>Статьи</span>
+            </div>
+        </div>
+
+        <!-- Секция статей -->
+        <section class="articles-section">
+            <div class="container">
+                <div class="articles__header">
+                    <h1 class="section-title">Статьи и новости</h1>
+                    <p class="section-subtitle">Полезная информация о минитракторах, советы по эксплуатации и обслуживанию</p>
+                </div>
+
+                <div class="articles__layout">
+                    <!-- Сайдбар с категориями -->
+                    <aside class="articles__sidebar">
+                        <div class="categories-widget">
+                            <h2 class="categories-widget__title">Категории</h2>
+                            <ul class="category-filter">
+                                <li class="category-filter__item">
+                                    <a href="#all" class="category-filter__link category-filter__link--active" data-category="all">
+                                        <span>Все статьи</span>
+                                        <span class="category-filter__count">9</span>
+                                    </a>
+                                </li>
+                                <li class="category-filter__item">
+                                    <a href="#operation" class="category-filter__link" data-category="operation">
+                                        <span>Советы по эксплуатации</span>
+                                        <span class="category-filter__count">3</span>
+                                    </a>
+                                </li>
+                                <li class="category-filter__item">
+                                    <a href="#maintenance" class="category-filter__link" data-category="maintenance">
+                                        <span>Обслуживание</span>
+                                        <span class="category-filter__count">2</span>
+                                    </a>
+                                </li>
+                                <li class="category-filter__item">
+                                    <a href="#news" class="category-filter__link" data-category="news">
+                                        <span>Новости компании</span>
+                                        <span class="category-filter__count">2</span>
+                                    </a>
+                                </li>
+                                <li class="category-filter__item">
+                                    <a href="#reviews" class="category-filter__link" data-category="reviews">
+                                        <span>Отзывы клиентов</span>
+                                        <span class="category-filter__count">2</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <!-- Сетка статей -->
+                    <div class="articles__content">
+                        <div class="articles__grid" id="articlesGrid">
+                            <!-- Статья 1 -->
+                            <article class="article-card" data-category="operation">
+                                <div class="article-card__image">
+                                    <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg" alt="Подготовка минитрактора к весенним работам">
+                                    <span class="article-card__category">Советы по эксплуатации</span>
+                                </div>
+                                <div class="article-card__content">
+                                    <div class="article-card__meta">
+                                        <span class="article-card__date">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                            15 марта 2025
+                                        </span>
+                                    </div>
+                                    <h3 class="article-card__title">
+                                        <a href="#">Подготовка минитрактора к весенним работам: пошаговая инструкция</a>
+                                    </h3>
+                                    <p class="article-card__excerpt">
+                                        Весна - время активных полевых работ. Узнайте, как правильно подготовить минитрактор после зимнего хранения, чтобы техника работала безотказно весь сезон.
+                                    </p>
+                                    <div class="article-card__footer">
+                                        <a href="#" class="article-card__link">
+                                            Читать далее
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Статья 2 -->
+                            <article class="article-card" data-category="maintenance">
+                                <div class="article-card__image">
+                                    <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698082/dongfeng-minitraktor/df-404-main.jpg" alt="Техническое обслуживание минитрактора">
+                                    <span class="article-card__category">Обслуживание</span>
+                                </div>
+                                <div class="article-card__content">
+                                    <div class="article-card__meta">
+                                        <span class="article-card__date">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                            10 марта 2025
+                                        </span>
+                                    </div>
+                                    <h3 class="article-card__title">
+                                        <a href="#">Регламент технического обслуживания минитрактора DONGFENG</a>
+                                    </h3>
+                                    <p class="article-card__excerpt">
+                                        Подробный регламент ТО для минитракторов DONGFENG: когда менять масло, фильтры, проверять гидравлику и другие важные узлы. Продлите срок службы техники.
+                                    </p>
+                                    <div class="article-card__footer">
+                                        <a href="#" class="article-card__link">
+                                            Читать далее
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Статья 3 -->
+                            <article class="article-card" data-category="operation">
+                                <div class="article-card__image">
+                                    <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698081/dongfeng-minitraktor/df-304-main.jpg" alt="Экономия топлива на минитракторе">
+                                    <span class="article-card__category">Советы по эксплуатации</span>
+                                </div>
+                                <div class="article-card__content">
+                                    <div class="article-card__meta">
+                                        <span class="article-card__date">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                            5 марта 2025
+                                        </span>
+                                    </div>
+                                    <h3 class="article-card__title">
+                                        <a href="#">7 способов сократить расход топлива на минитракторе</a>
+                                    </h3>
+                                    <p class="article-card__excerpt">
+                                        Практические рекомендации по экономии топлива: правильная настройка двигателя, оптимальный режим работы, выбор навесного оборудования и другие секреты.
+                                    </p>
+                                    <div class="article-card__footer">
+                                        <a href="#" class="article-card__link">
+                                            Читать далее
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Статья 4 -->
+                            <article class="article-card" data-category="news">
+                                <div class="article-card__image">
+                                    <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg" alt="Новые модели минитракторов">
+                                    <span class="article-card__category">Новости компании</span>
+                                </div>
+                                <div class="article-card__content">
+                                    <div class="article-card__meta">
+                                        <span class="article-card__date">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                            1 марта 2025
+                                        </span>
+                                    </div>
+                                    <h3 class="article-card__title">
+                                        <a href="#">Поступление новых моделей минитракторов 2025 года</a>
+                                    </h3>
+                                    <p class="article-card__excerpt">
+                                        На наш склад поступили обновленные модели минитракторов DONGFENG 2025 года с улучшенными характеристиками. Узнайте о новых функциях и специальных предложениях.
+                                    </p>
+                                    <div class="article-card__footer">
+                                        <a href="#" class="article-card__link">
+                                            Читать далее
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Статья 5 -->
+                            <article class="article-card" data-category="reviews">
+                                <div class="article-card__image">
+                                    <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698082/dongfeng-minitraktor/df-404-main.jpg" alt="Отзыв фермера">
+                                    <span class="article-card__category">Отзывы клиентов</span>
+                                </div>
+                                <div class="article-card__content">
+                                    <div class="article-card__meta">
+                                        <span class="article-card__date">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                            25 февраля 2025
+                                        </span>
+                                    </div>
+                                    <h3 class="article-card__title">
+                                        <a href="#">История успеха: как минитрактор DF-404 помог фермеру из Белгорода</a>
+                                    </h3>
+                                    <p class="article-card__excerpt">
+                                        Сергей Иванов делится опытом использования минитрактора DONGFENG DF-404 для обработки 15 гектаров земли. Реальный отзыв после года эксплуатации.
+                                    </p>
+                                    <div class="article-card__footer">
+                                        <a href="#" class="article-card__link">
+                                            Читать далее
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Статья 6 -->
+                            <article class="article-card" data-category="maintenance">
+                                <div class="article-card__image">
+                                    <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698081/dongfeng-minitraktor/df-304-main.jpg" alt="Зимнее хранение минитрактора">
+                                    <span class="article-card__category">Обслуживание</span>
+                                </div>
+                                <div class="article-card__content">
+                                    <div class="article-card__meta">
+                                        <span class="article-card__date">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                            20 февраля 2025
+                                        </span>
+                                    </div>
+                                    <h3 class="article-card__title">
+                                        <a href="#">Консервация минитрактора на зиму: полное руководство</a>
+                                    </h3>
+                                    <p class="article-card__excerpt">
+                                        Пошаговая инструкция по правильной консервации минитрактора на зимний период. Защитите технику от коррозии и продлите срок службы всех узлов и агрегатов.
+                                    </p>
+                                    <div class="article-card__footer">
+                                        <a href="#" class="article-card__link">
+                                            Читать далее
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Статья 7 -->
+                            <article class="article-card" data-category="operation">
+                                <div class="article-card__image">
+                                    <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg" alt="Навесное оборудование">
+                                    <span class="article-card__category">Советы по эксплуатации</span>
+                                </div>
+                                <div class="article-card__content">
+                                    <div class="article-card__meta">
+                                        <span class="article-card__date">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                            15 февраля 2025
+                                        </span>
+                                    </div>
+                                    <h3 class="article-card__title">
+                                        <a href="#">Как выбрать навесное оборудование для минитрактора</a>
+                                    </h3>
+                                    <p class="article-card__excerpt">
+                                        Плуг, культиватор, косилка, снегоуборщик - разбираемся в видах навесного оборудования и критериях выбора для различных задач и типов почв.
+                                    </p>
+                                    <div class="article-card__footer">
+                                        <a href="#" class="article-card__link">
+                                            Читать далее
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Статья 8 -->
+                            <article class="article-card" data-category="news">
+                                <div class="article-card__image">
+                                    <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698082/dongfeng-minitraktor/df-404-main.jpg" alt="Акция на минитракторы">
+                                    <span class="article-card__category">Новости компании</span>
+                                </div>
+                                <div class="article-card__content">
+                                    <div class="article-card__meta">
+                                        <span class="article-card__date">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                            10 февраля 2025
+                                        </span>
+                                    </div>
+                                    <h3 class="article-card__title">
+                                        <a href="#">Весенняя акция: скидки до 50 000 рублей на минитракторы</a>
+                                    </h3>
+                                    <p class="article-card__excerpt">
+                                        Успейте приобрести минитрактор со скидкой! Специальное предложение на популярные модели DONGFENG. Акция действует до конца марта 2025 года.
+                                    </p>
+                                    <div class="article-card__footer">
+                                        <a href="#" class="article-card__link">
+                                            Читать далее
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Статья 9 -->
+                            <article class="article-card" data-category="reviews">
+                                <div class="article-card__image">
+                                    <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698081/dongfeng-minitraktor/df-304-main.jpg" alt="Отзыв дачника">
+                                    <span class="article-card__category">Отзывы клиентов</span>
+                                </div>
+                                <div class="article-card__content">
+                                    <div class="article-card__meta">
+                                        <span class="article-card__date">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                            5 февраля 2025
+                                        </span>
+                                    </div>
+                                    <h3 class="article-card__title">
+                                        <a href="#">Минитрактор для дачи: опыт использования DF-244</a>
+                                    </h3>
+                                    <p class="article-card__excerpt">
+                                        Владимир Петров из Курска рассказывает о своем опыте использования минитрактора DF-244 на дачном участке площадью 20 соток. Честный отзыв после 2 лет эксплуатации.
+                                    </p>
+                                    <div class="article-card__footer">
+                                        <a href="#" class="article-card__link">
+                                            Читать далее
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__bottom">
+                <p>&copy; 2025 DONGFENG Минитрактора. Все права защищены.</p>
+                <div class="footer__links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Пользовательское соглашение</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно обратной связи -->
+    <div class="modal-overlay" id="callbackModal">
+        <div class="modal">
+            <button class="modal__close" onclick="closeCallbackModal()" aria-label="Закрыть">×</button>
+
+            <div class="modal__content">
+                <h2 class="modal__title">Заказать звонок</h2>
+                <p class="modal__subtitle">Оставьте свои контакты и мы перезвоним в течение 15 минут</p>
+
+                <form class="modal__form" id="callbackForm" onsubmit="submitCallbackForm(event)">
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Ваше имя"
+                        required
+                        minlength="2"
+                    >
+
+                    <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Телефон"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email (необязательно)"
+                    >
+
+                    <textarea
+                        name="message"
+                        placeholder="Ваш вопрос или комментарий (необязательно)"
+                        rows="4"
+                    ></textarea>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="consent" required>
+                        <span>Я подтверждаю согласие на обработку персональных данных</span>
+                    </label>
+
+                    <button type="submit" class="btn btn--primary btn--block">
+                        Отправить заявку
+                    </button>
+
+                    <p class="modal__privacy">
+                        Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                    </p>
+                </form>
+
+                <div class="modal__success" style="display: none;">
+                    <div class="modal__success-icon">✅</div>
+                    <h3 class="modal__success-title">Спасибо за заявку!</h3>
+                    <p class="modal__success-text">Мы свяжемся с вами в ближайшее время</p>
+                    <button class="btn btn--primary" onclick="closeCallbackModal()">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/mobile-menu.js"></script>
+
+    <script>
+        // Фильтрация статей по категориям
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryLinks = document.querySelectorAll('.category-filter__link');
+            const articleCards = document.querySelectorAll('.article-card');
+
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    // Убираем активный класс со всех ссылок
+                    categoryLinks.forEach(l => l.classList.remove('category-filter__link--active'));
+
+                    // Добавляем активный класс на текущую ссылку
+                    this.classList.add('category-filter__link--active');
+
+                    const category = this.dataset.category;
+
+                    // Фильтруем статьи
+                    articleCards.forEach(card => {
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
