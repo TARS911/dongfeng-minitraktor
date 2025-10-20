@@ -76,7 +76,7 @@
 
 /* === Hero Section === */
 .hero {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #f8faf9 0%, #e8f5ee 100%);
     padding: var(--space-5xl) 0;
     position: relative;
     overflow: hidden;
@@ -261,13 +261,13 @@
 /* === Advantages Section === */
 .advantages {
     padding: var(--section-padding) 0;
-    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    background: #f5faf7;
 }
 
 /* === Warranty Section === */
 .warranty {
     padding: var(--section-padding) 0;
-    background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
+    background: var(--color-white);
 }
 
 .warranty__text {
@@ -513,7 +513,7 @@
 /* === Contacts Section === */
 .contacts {
     padding: var(--section-padding) 0;
-    background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+    background: #f5faf7;
 }
 
 .contacts__wrapper {
