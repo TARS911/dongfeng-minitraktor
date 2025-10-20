@@ -184,7 +184,7 @@ async function submitCallbackForm(event) {
 
     // Отправка на backend
     try {
-        const response = await fetch('/api/contact', {
+        const response = await fetch(`${window.API_URL}/api/contact`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -273,7 +273,7 @@ async function loadAllProducts() {
     loadButton.textContent = 'Загрузка...';
 
     try {
-        const response = await fetch('/api/products');
+        const response = await fetch(`${window.API_URL}/api/products`);
         const data = await response.json();
 
         if (data.success && data.data) {
@@ -593,7 +593,7 @@ async function submitServiceForm(event) {
     submitButton.textContent = 'Отправка...';
 
     try {
-        const response = await fetch('/api/contact', {
+        const response = await fetch(`${window.API_URL}/api/contact`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -664,7 +664,7 @@ async function submitWarrantyForm(event) {
     submitButton.textContent = 'Отправка...';
 
     try {
-        const response = await fetch('/api/contact', {
+        const response = await fetch(`${window.API_URL}/api/contact`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

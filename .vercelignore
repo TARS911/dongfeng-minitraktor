@@ -1,0 +1,14 @@
+# Игнорируем backend при деплое на Vercel
+backend/
+node_modules/
+.git/
+.github/
+
+# Игнорируем документацию
+*.md
+!README.md
+
+# Игнорируем конфигурационные файлы
+.env
+.env.local
+render.yaml

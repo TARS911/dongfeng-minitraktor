@@ -34,7 +34,31 @@ const fastify = Fastify({
 
 // Регистрируем CORS
 await fastify.register(cors, {
-  origin: process.env.FRONTEND_URL || 'http://localhost:8000',
+  origin: (origin, cb) => {
+    const allowedOrigins = [
+      'http://localhost:3000',
+      'http://localhost:8000',
+      'https://dongfeng-minitraktor.onrender.com',
+      /\.vercel\.app$/  // Разрешаем все поддомены vercel.app
+    ];
+
+    // Разрешаем запросы без origin (например, curl или Postman)
+    if (!origin) {
+      cb(null, true);
+      return;
+    }
+
+    // Проверяем origin в списке разрешенных
+    const isAllowed = allowedOrigins.some(allowed => {
+      if (typeof allowed === 'string') {
+        return origin === allowed;
+      }
+      // Для регулярных выражений
+      return allowed.test(origin);
+    });
+
+    cb(null, isAllowed);
+  },
   credentials: true
 });
 

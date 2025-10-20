@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 // === Загрузка товаров ===
 async function loadProducts() {
     try {
-        const response = await fetch('/api/products');
+        const response = await fetch(`${window.API_URL}/api/products`);
         const data = await response.json();
 
         if (data.success && data.data) {
