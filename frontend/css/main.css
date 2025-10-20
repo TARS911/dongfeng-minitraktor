@@ -582,7 +582,7 @@ body {
     padding: var(--space-2xl);
     border-radius: var(--card-border-radius);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    border: 1px solid #cbd5e0;
+    border: 2px solid #e0e0e0;
 }
 
 .delivery__calculator h3 {
@@ -689,62 +689,23 @@ body {
     text-decoration: underline;
 }
 
-/* === Footer === */
+/* === Footer - Минималистичный === */
 .footer {
     background: #2d3748;
     color: white;
-    padding: var(--space-4xl) 0 var(--space-2xl);
+    padding: var(--space-2xl) 0;
     position: relative;
 }
 
-.footer__content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-2xl);
-    margin-bottom: var(--space-3xl);
-}
-
-.footer__column h4 {
-    color: white;
-    margin-bottom: var(--space-lg);
-    font-size: var(--font-size-lg);
-    font-weight: 600;
-}
-
-.footer__column ul {
-    list-style: none;
-}
-
-.footer__column li {
-    margin-bottom: var(--space-sm);
-}
-
-.footer__column a {
-    color: rgba(255, 255, 255, 0.9);
-    transition: all var(--transition-fast);
-}
-
-.footer__column a:hover {
-    color: white;
-    transform: translateX(4px);
-}
-
-.footer__column .social-links .social-link {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-}
-
-.footer__column .social-links .social-link:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-3px);
-}
-
 .footer__bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: var(--space-xl);
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.footer__bottom p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--font-size-sm);
 }
 
 .footer__links {
@@ -753,8 +714,9 @@ body {
 }
 
 .footer__links a {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.75);
     font-size: var(--font-size-sm);
+    transition: color var(--transition-fast);
 }
 
 .footer__links a:hover {
@@ -818,10 +780,6 @@ body {
     .delivery__content,
     .contacts__grid {
         grid-template-columns: 1fr;
-    }
-
-    .footer__content {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -911,10 +869,6 @@ body {
     }
 
     .warranty__grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer__content {
         grid-template-columns: 1fr;
     }
 
