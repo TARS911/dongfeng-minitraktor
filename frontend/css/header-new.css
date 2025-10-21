@@ -299,8 +299,9 @@
 }
 
 .nav__list {
-    display: flex;
-    gap: var(--space-xl);
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: var(--space-md) var(--space-xl);
     align-items: center;
     list-style: none;
     margin: 0;
