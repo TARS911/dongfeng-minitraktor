@@ -42,7 +42,7 @@ body {
 /* Navigation */
 .nav__list {
     display: flex;
-    gap: var(--space-xl);
+    gap: var(--space-md);
     align-items: center;
 }
 
@@ -51,6 +51,9 @@ body {
     color: var(--color-gray-700);
     transition: color var(--transition-fast);
     position: relative;
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: inline-block;
 }
 
 .nav__link::after {
@@ -66,6 +69,7 @@ body {
 
 .nav__link:hover {
     color: var(--brand-primary);
+    background: var(--color-gray-50);
 }
 
 .nav__link:hover::after {
