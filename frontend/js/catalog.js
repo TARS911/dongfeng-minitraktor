@@ -184,6 +184,12 @@ function createProductCardHTML(product) {
                 <img src="${product.image_url}" alt="${product.name}" itemprop="image" loading="lazy">
                 ${badges.join('')}
                 <div class="product-card__actions-overlay">
+                    <button class="action-btn" onclick="showDetails('${product.slug}')" title="Быстрый просмотр">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M11 19a8 8 0 100-16 8 8 0 000 16z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                     <button class="action-btn ${isFavorite ? 'active' : ''}" onclick="toggleFavorite(${product.id})" title="${isFavorite ? 'Удалить из избранного' : 'Добавить в избранное'}">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="${isFavorite ? 'currentColor' : 'none'}">
                             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2"/>
@@ -479,7 +485,7 @@ style.textContent = `
     .product-card__actions-overlay {
         position: absolute;
         top: 12px;
-        left: 12px;
+        right: 12px;
         display: flex;
         gap: 8px;
         opacity: 0;
