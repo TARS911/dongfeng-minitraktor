@@ -32,31 +32,36 @@
 }
 
 .header__top {
-    display: grid;
-    grid-template-columns: auto auto 1fr auto auto auto;
-    gap: var(--space-xl);
+    display: flex;
     align-items: center;
-    padding: var(--space-md) 0;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    padding: var(--space-lg) 0;
+    flex-wrap: nowrap;
+}
+
+.logo {
+    flex-shrink: 0;
 }
 
 .logo img {
     height: 45px;
     width: auto;
+    display: block;
 }
 
 /* === Search Bar (Google/Yandex style) === */
 .search-bar {
     display: flex;
     align-items: center;
-    max-width: 500px;
+    max-width: 350px;
     width: 100%;
+    flex-shrink: 1;
     background: var(--color-white);
-    border: 2px solid var(--color-gray-300);
+    border: 1px solid var(--color-gray-200);
     border-radius: 24px;
-    padding: 4px 8px 4px 20px;
+    padding: 4px 8px 4px 16px;
     transition: all 0.3s ease;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
-    margin-right: var(--space-md);
 }
 
 .search-bar:focus-within {
@@ -102,11 +107,23 @@
     transform: scale(0.95);
 }
 
+/* === Navigation === */
+.nav {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.nav__catalog-menu {
+    flex-shrink: 0;
+}
+
 /* === Header Actions (Favorites, Compare, Cart) === */
 .header__actions {
     display: flex;
     align-items: center;
-    gap: var(--space-lg);
+    gap: var(--space-md);
+    flex-shrink: 0;
 }
 
 .header-action {
@@ -322,14 +339,38 @@
 }
 
 /* === Responsive Design === */
+/* === Header Contact === */
+.header__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-xs);
+    flex-shrink: 0;
+}
+
+.header__contact .phone {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-900);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.header__contact .phone:hover {
+    color: var(--brand-primary);
+}
+
+.header__contact .btn {
+    white-space: nowrap;
+}
+
 @media (max-width: 1200px) {
     .header__top {
-        grid-template-columns: auto auto 1fr auto;
         gap: var(--space-md);
     }
 
-    .nav {
-        display: none; /* Скрыть навигацию, будет в burger menu */
+    .search-bar {
+        max-width: 280px;
     }
 
     .header__contact {
@@ -347,7 +388,6 @@
 
 @media (max-width: 768px) {
     .header__top {
-        grid-template-columns: auto auto 1fr auto;
         padding: var(--space-sm) 0;
     }
 
