@@ -22,7 +22,7 @@
   "dependencies": {
     "@fastify/cors": "^9.0.0",
     "@fastify/static": "^7.0.0",
-    "better-sqlite3": "^9.2.0",
+    "better-sqlite3": "^9.6.0",
     "cloudinary": "^2.7.0",
     "dotenv": "^16.3.1",
     "fastify": "^4.25.0",

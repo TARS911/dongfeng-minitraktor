@@ -1,0 +1,175 @@
+/*
+ * Optimized Header Layout
+ * Оптимизированный header без контактов, компактная навигация
+ */
+
+.header__top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 30px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Логотип - компактнее */
+.logo {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+/* Меню каталога - компактнее */
+.nav__catalog-menu {
+    flex-shrink: 0;
+}
+
+.nav__catalog-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+/* Поисковая строка - уменьшена */
+.search-bar {
+    max-width: 300px;
+    flex: 0 1 300px;
+}
+
+.search-bar__input {
+    font-size: 13px;
+    padding: 8px 12px;
+}
+
+/* Навигация - сдвинута вправо */
+.nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.nav__list {
+    display: flex;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav__link {
+    padding: 8px 12px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* Иконки действий - компактнее */
+.header__actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+    margin-left: 15px;
+}
+
+.header-action {
+    padding: 8px;
+    min-width: auto;
+}
+
+.header-action__label {
+    display: none; /* Скрываем текст, оставляем только иконки */
+}
+
+.header-action__badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    min-width: 18px;
+    height: 18px;
+    font-size: 11px;
+    padding: 0 4px;
+}
+
+/* Бургер меню */
+.burger {
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1400px) {
+    .header__top {
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    .nav__list {
+        gap: 5px;
+    }
+
+    .nav__link {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .search-bar {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .search-bar {
+        max-width: 200px;
+    }
+
+    .nav__list {
+        gap: 3px;
+    }
+
+    .nav__link {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* На планшетах скрываем навигацию, показываем бургер */
+    .nav {
+        display: none;
+    }
+
+    .search-bar {
+        max-width: 250px;
+    }
+
+    .header__actions {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__top {
+        padding: 12px 15px;
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .search-bar {
+        max-width: 180px;
+    }
+
+    .header__actions {
+        gap: 6px;
+    }
+
+    .header-action svg {
+        width: 20px;
+        height: 20px;
+    }
+}
