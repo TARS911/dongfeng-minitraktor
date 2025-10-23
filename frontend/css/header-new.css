@@ -7,7 +7,7 @@
 .header {
     position: relative;
     width: 100%;
-    background: linear-gradient(to bottom, #FFFFFF, #FAFAFA);
+    background: linear-gradient(to bottom, #ffffff, #fafafa);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     z-index: 100;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -82,8 +82,8 @@
     max-width: 420px;
     width: 100%;
     flex: 1;
-    background: #FFFFFF;
-    border: 2px solid #E8E8E8;
+    background: #ffffff;
+    border: 2px solid #e8e8e8;
     border-radius: 28px;
     padding: 3px 3px 3px 20px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -91,14 +91,15 @@
 }
 
 .search-bar:hover {
-    border-color: #D0D0D0;
+    border-color: #d0d0d0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .search-bar:focus-within {
     border-color: var(--brand-primary);
-    box-shadow: 0 0 0 3px rgba(42, 157, 78, 0.1),
-                0 4px 16px rgba(42, 157, 78, 0.15);
+    box-shadow:
+        0 0 0 3px rgba(42, 157, 78, 0.1),
+        0 4px 16px rgba(42, 157, 78, 0.15);
 }
 
 .search-bar__input {
@@ -148,7 +149,7 @@
 .nav {
     flex: 1 1 auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .nav__catalog-menu {
@@ -174,14 +175,14 @@
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    background: #F8F8F8;
+    background: #f8f8f8;
     border: 1px solid transparent;
 }
 
 .header-action:hover {
-    background: #FFFFFF;
+    background: #ffffff;
     color: var(--brand-primary);
-    border-color: #E0E0E0;
+    border-color: #e0e0e0;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -218,7 +219,7 @@
     position: absolute;
     top: -4px;
     right: -4px;
-    background: linear-gradient(135deg, #FF5722, #FF7043);
+    background: linear-gradient(135deg, #ff5722, #ff7043);
     color: var(--color-white);
     font-size: 11px;
     font-weight: 700;
@@ -234,8 +235,13 @@
 }
 
 @keyframes badgePulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 .header-action__badge:empty {
@@ -256,13 +262,18 @@
 }
 
 .header-action--cart .header-action__badge {
-    background: linear-gradient(135deg, #FF5722, #FF7043);
+    background: linear-gradient(135deg, #ff5722, #ff7043);
     animation: cartBadgePulse 1.5s infinite;
 }
 
 @keyframes cartBadgePulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 /* === Professional Header Contact === */
@@ -276,7 +287,7 @@
 .header__contact .phone {
     font-weight: 600;
     font-size: 18px;
-    color: #2C2C2C;
+    color: #2c2c2c;
     white-space: nowrap;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -377,7 +388,7 @@
     top: calc(100% + 12px);
     left: 0;
     min-width: 320px;
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 16px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     padding: 8px;
@@ -430,7 +441,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #F8F8F8;
+    background: #f8f8f8;
     border-radius: 8px;
     transition: all 0.2s ease;
 }
@@ -451,7 +462,7 @@
 .catalog-dropdown__count {
     font-size: 13px;
     color: #999;
-    background: #F5F5F5;
+    background: #f5f5f5;
     padding: 2px 8px;
     border-radius: 12px;
     font-weight: 500;
@@ -462,7 +473,7 @@
     gap: 8px;
     align-items: center;
     list-style: none;
-    margin: 0 0 0 24px;
+    margin: 0;
     padding: 0;
 }
 
@@ -486,7 +497,7 @@
 }
 
 .nav__link:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 50%;
