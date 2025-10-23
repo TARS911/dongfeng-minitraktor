@@ -160,6 +160,7 @@
             href="css/mobile-optimizations.css?v=1761211422"
         />
         <link rel="stylesheet" href="css/ux-improvements.css?v=1761211422" />
+        <link rel="stylesheet" href="css/premium-redesign.css?v=1761211422" />
 
         <!-- Schema.org разметка для Яндекса -->
         <script type="application/ld+json">
@@ -759,71 +760,65 @@
             </div>
         </div>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <!-- Декоративные фигуры -->
-            <div class="hero__shapes">
-                <div class="hero__shape hero__shape--1"></div>
-                <div class="hero__shape hero__shape--2"></div>
-                <div class="hero__shape hero__shape--3"></div>
+        <!-- Premium Hero Section -->
+        <section class="hero-premium">
+            <!-- Фоновое изображение -->
+            <div class="hero-premium__media">
+                <img
+                    src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg"
+                    alt="DONGFENG Трактор"
+                    class="hero-premium__image"
+                />
             </div>
 
+            <!-- Темный оверлей -->
+            <div class="hero-premium__overlay"></div>
+
             <!-- Контент -->
-            <div class="hero__content">
-                <h1 class="hero__title">
-                    Минитрактора <span class="highlight">DONGFENG</span><br />
-                    для вашего хозяйства
+            <div class="hero-premium__content">
+                <div class="hero-premium__badge">ОФИЦИАЛЬНЫЙ ДИЛЕР</div>
+
+                <h1 class="hero-premium__title">
+                    МИНИТРАКТОРА<br />
+                    DONGFENG
                 </h1>
 
-                <p class="hero__subtitle">
-                    Официальный дилер в России • Прямые поставки от
-                    производителя<br />
-                    Гарантия 1 год • Доставка по всей РФ и СНГ
+                <p class="hero-premium__subtitle">
+                    Профессиональная сельскохозяйственная техника для вашего
+                    бизнеса.<br />
+                    Прямые поставки от производителя • Гарантия 12 месяцев •
+                    Сервисная поддержка
                 </p>
 
-                <!-- Feature badges -->
-                <div class="hero__features">
-                    <div class="hero__feature-badge">
-                        <span class="hero__feature-icon">✓</span>
-                        <span>Сертифицированная техника</span>
-                    </div>
-                    <div class="hero__feature-badge">
-                        <span class="hero__feature-icon">🛡️</span>
-                        <span>Гарантия производителя</span>
-                    </div>
-                    <div class="hero__feature-badge">
-                        <span class="hero__feature-icon">🚚</span>
-                        <span>Быстрая доставка</span>
-                    </div>
-                    <div class="hero__feature-badge">
-                        <span class="hero__feature-icon">🔧</span>
-                        <span>Сервисный центр</span>
-                    </div>
-                </div>
-
-                <!-- CTA кнопки -->
-                <div class="hero__cta">
-                    <a href="#catalog" class="hero__btn hero__btn--primary">
-                        <span class="hero__btn-icon">🚜</span>
-                        <span>Смотреть каталог</span>
+                <div class="hero-premium__cta">
+                    <a href="#catalog" class="btn-premium btn-premium--primary">
+                        <span>Смотреть модели</span>
+                        <svg
+                            width="20"
+                            height="20"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path d="M5 12h14m-7-7l7 7-7 7" />
+                        </svg>
                     </a>
                     <a
-                        href="tel:+79699995668"
-                        class="hero__btn hero__btn--secondary"
+                        href="#contact"
+                        class="btn-premium btn-premium--secondary"
                     >
-                        <span class="hero__btn-icon">📞</span>
-                        <span>+7 (969) 999-56-68</span>
+                        <span>Получить консультацию</span>
                     </a>
                 </div>
             </div>
 
             <!-- Scroll indicator -->
             <div
-                class="hero__scroll"
+                class="hero-premium__scroll"
                 onclick="document.querySelector('#catalog').scrollIntoView({behavior: 'smooth'})"
             >
-                <span class="hero__scroll-text">Листайте вниз</span>
-                <div class="hero__scroll-icon"></div>
+                <span>ПРОКРУТИТЕ ВНИЗ</span>
+                <div class="hero-premium__scroll-line"></div>
             </div>
         </section>
 
