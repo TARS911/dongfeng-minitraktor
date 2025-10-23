@@ -3,9 +3,9 @@
  * Современный дизайн с анимациями
  */
 
-/* Body offset for fixed header */
+/* Body offset for fixed header - REMOVED for premium redesign */
 body {
-    padding-top: var(--header-height);
+    padding-top: 0;
 }
 
 /* === Header === */
@@ -92,13 +92,14 @@ body {
 
 /* Огромное фоновое фото */
 .hero::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg') no-repeat center center;
+    background: url("https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg")
+        no-repeat center center;
     background-size: cover;
     opacity: 0.3;
     z-index: 1;
@@ -106,13 +107,17 @@ body {
 
 /* Темный градиент оверлей для читаемости */
 .hero::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(42, 157, 78, 0.85) 0%, rgba(26, 35, 50, 0.9) 100%);
+    background: linear-gradient(
+        135deg,
+        rgba(42, 157, 78, 0.85) 0%,
+        rgba(26, 35, 50, 0.9) 100%
+    );
     z-index: 2;
 }
 
@@ -215,7 +220,7 @@ body {
 }
 
 .trust-card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -238,7 +243,11 @@ body {
 
 /* Яркая акцентная карточка - KRONOS5 orange */
 .trust-card--accent {
-    background: linear-gradient(135deg, var(--brand-accent) 0%, var(--brand-accent-dark) 100%);
+    background: linear-gradient(
+        135deg,
+        var(--brand-accent) 0%,
+        var(--brand-accent-dark) 100%
+    );
     border-color: var(--brand-accent);
     box-shadow: 0 8px 28px rgba(255, 102, 0, 0.35);
     color: white;
@@ -450,7 +459,7 @@ body {
 /* === Advantages Section === */
 .advantages {
     padding: var(--section-padding) 0;
-    background: #FAFAFA;
+    background: #fafafa;
 }
 
 .advantages .trust__grid {
@@ -695,7 +704,7 @@ body {
 
 .delivery__calculator input,
 .delivery__calculator select {
-    background: #FFFFFF;
+    background: #ffffff;
     border: 2px solid #cbd5e0;
     color: #333;
     font-weight: 500;
@@ -712,7 +721,7 @@ body {
 /* === Contacts Section === */
 .contacts {
     padding: var(--section-padding) 0;
-    background: #FAFAFA;
+    background: #fafafa;
 }
 
 .contacts__wrapper {
@@ -788,7 +797,7 @@ body {
 /* === Contacts Page Specific Styles === */
 .contacts-page {
     padding: var(--section-padding) 0;
-    background: #FAFAFA;
+    background: #fafafa;
 }
 
 .page-title {
@@ -1422,7 +1431,7 @@ body {
 /* Payment Section */
 .payment-section {
     padding: var(--section-padding) 0;
-    background: #FAFAFA;
+    background: #fafafa;
 }
 
 .payment__grid {
@@ -1520,7 +1529,7 @@ body {
 }
 
 .payment-card__features li::before {
-    content: '✓';
+    content: "✓";
     position: absolute;
     left: 0;
     color: var(--brand-primary);
@@ -1776,7 +1785,7 @@ body {
 }
 
 .documents-list li::before {
-    content: '📄';
+    content: "📄";
     position: absolute;
     left: 0;
     top: var(--space-md);
@@ -1852,7 +1861,7 @@ body {
 }
 
 .faq-question::before {
-    content: 'Q:';
+    content: "Q:";
     position: absolute;
     left: 0;
     color: var(--brand-primary);

@@ -6,21 +6,21 @@
 /* === ПРЕМИАЛЬНЫЕ ПЕРЕМЕННЫЕ === */
 :root {
     /* Цвета как у топовых брендов */
-    --brand-primary: #2a9d4e;      /* Зеленый как John Deere */
-    --brand-secondary: #1a5928;     /* Темно-зеленый */
-    --brand-accent: #FF6600;        /* Оранжевый акцент */
-    --brand-gold: #D4AF37;          /* Премиум золото */
+    --brand-primary: #2a9d4e; /* Зеленый как John Deere */
+    --brand-secondary: #1a5928; /* Темно-зеленый */
+    --brand-accent: #ff6600; /* Оранжевый акцент */
+    --brand-gold: #d4af37; /* Премиум золото */
 
     /* Нейтральные как у CLAAS */
-    --color-bg: #F5F5F5;
-    --color-white: #FFFFFF;
-    --color-black: #1A1A1A;
+    --color-bg: #f5f5f5;
+    --color-white: #ffffff;
+    --color-black: #1a1a1a;
     --color-text: #333333;
     --color-text-light: #666666;
 
     /* Профессиональная типографика */
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-heading: 'Montserrat', 'Roboto', sans-serif;
+    --font-primary: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: "Montserrat", "Roboto", sans-serif;
 
     /* Spacing как у JCB */
     --section-padding: 100px;
@@ -35,7 +35,8 @@
     min-height: 700px;
     max-height: 1080px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 140px;
     overflow: hidden;
     background: #1a1a1a;
 }
@@ -77,7 +78,7 @@
     position: relative;
     z-index: 10;
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 0;
     padding: 0 60px;
     color: white;
 }
@@ -189,8 +190,14 @@
 }
 
 @keyframes scrollLine {
-    0%, 100% { transform: translateY(0); opacity: 0; }
-    50% { opacity: 1; }
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 /* === MEGA MENU КАК У JOHN DEERE === */
@@ -203,7 +210,7 @@
     z-index: 1000;
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
 }
 
@@ -252,7 +259,7 @@
 }
 
 .nav-premium__link::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -286,13 +293,15 @@
     background: white;
     overflow: hidden;
     position: relative;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
     cursor: pointer;
 }
 
 .product-card-premium:hover {
     transform: translateY(-12px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
 .product-card-premium__image-wrapper {
