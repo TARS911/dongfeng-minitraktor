@@ -158,6 +158,26 @@
     color: var(--brand-primary);
 }
 
+/* Orange phone button */
+.btn-premium--phone {
+    background: #ff5722;
+    color: white;
+    border: 2px solid #ff5722;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-premium--phone svg {
+    flex-shrink: 0;
+}
+
+.btn-premium--phone:hover {
+    background: #e64a19;
+    border-color: #e64a19;
+    transform: translateX(4px);
+}
+
 /* Scroll indicator как у Fendt */
 .hero-premium__scroll {
     position: absolute;
