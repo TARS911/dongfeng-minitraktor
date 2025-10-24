@@ -1,4 +1,4 @@
-import supabase from "../config/supabase.js";
+import { supabase } from "../config/supabase.js";
 
 export default async function orderRoutes(fastify, options) {
   // POST /api/orders - Создать новый заказ

@@ -2,7 +2,7 @@
  * Admin routes - управление базой данных
  */
 
-import supabase from "../config/supabase.js";
+import { supabase } from "../config/supabase.js";
 
 export default async function adminRoutes(fastify, options) {
   // POST /api/admin/rebuild-db - Пересоздать базу данных

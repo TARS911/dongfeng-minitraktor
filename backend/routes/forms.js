@@ -1,4 +1,4 @@
-import supabase from "../config/supabase.js";
+import { supabase } from "../config/supabase.js";
 import * as telegram from "../utils/telegram.js";
 import * as email from "../utils/email.js";
 

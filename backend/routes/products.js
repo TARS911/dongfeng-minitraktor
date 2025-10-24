@@ -1,4 +1,4 @@
-import supabase from "../config/supabase.js";
+import { supabase } from "../config/supabase.js";
 
 export default async function productRoutes(fastify, options) {
   // GET /api/products - Получить все товары с фильтрацией
@@ -51,7 +51,7 @@ export default async function productRoutes(fastify, options) {
         let query = supabase.from("products").select(
           `
           *,
-          category:categories(name, slug)
+          categories!inner(name, slug)
         `,
           { count: "exact" },
         );
@@ -118,9 +118,9 @@ export default async function productRoutes(fastify, options) {
         // Преобразуем данные для совместимости с фронтендом
         const processedProducts = products.map((p) => ({
           ...p,
-          category_name: p.category?.name || null,
-          category_slug: p.category?.slug || null,
-          category: undefined, // Убираем вложенный объект
+          category_name: p.categories?.name || null,
+          category_slug: p.categories?.slug || null,
+          categories: undefined, // Убираем вложенный объект
         }));
 
         return {
@@ -153,7 +153,7 @@ export default async function productRoutes(fastify, options) {
         .select(
           `
           *,
-          category:categories(name, slug)
+          categories(name, slug)
         `,
         )
         .eq("slug", slug)
@@ -169,9 +169,9 @@ export default async function productRoutes(fastify, options) {
       // Преобразуем данные для совместимости с фронтендом
       const processedProduct = {
         ...product,
-        category_name: product.category?.name || null,
-        category_slug: product.category?.slug || null,
-        category: undefined,
+        category_name: product.categories?.name || null,
+        category_slug: product.categories?.slug || null,
+        categories: undefined,
       };
 
       return {
