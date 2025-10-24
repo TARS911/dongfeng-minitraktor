@@ -5,25 +5,23 @@
 
 /* === УЛУЧШЕННЫЕ КАРТОЧКИ ТОВАРОВ === */
 
-/* Более компактные и красивые карточки */
+/* Более компактные и красивые карточки - МИНИМАЛИСТИЧНЫЙ ДИЗАЙН */
 .product-card {
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: white;
+    border: 1px solid #e5e5e5;
 }
 
 .product-card__image {
     height: 220px;
     position: relative;
-    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    background: #f8f8f8;
 }
 
 .product-card__image::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.05) 100%);
-    z-index: 1;
+    display: none; /* Убираем градиент */
 }
 
 .product-card__content {
@@ -36,38 +34,41 @@
     margin-bottom: 12px;
     min-height: auto;
     font-weight: 600;
+    color: #1a1a1a;
 }
 
 .product-card__specs {
     padding: 12px;
     gap: 8px;
     margin-bottom: 12px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
+    background: #f8f8f8; /* Простой серый фон вместо градиента */
+    border-radius: 8px;
 }
 
 .spec {
     font-size: 13px;
+    color: #333;
 }
 
 .spec__label {
     font-size: 12px;
+    color: #666;
 }
 
 .price__current {
     font-size: 22px;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #2a9d4e; /* Простой зеленый цвет вместо градиента */
 }
 
 .product-card__badge {
     font-size: 11px;
     padding: 6px 12px;
-    border-radius: 20px;
+    border-radius: 4px; /* Меньше скругление */
     font-weight: 600;
     letter-spacing: 0.3px;
+    background: #2a9d4e; /* Простой зеленый */
+    color: white;
 }
 
 /* Grid адаптация */
@@ -223,7 +224,7 @@
         z-index: 1000;
         transition: left 0.3s ease;
         overflow-y: auto;
-        box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+        box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
     }
 
     .catalog__filters.active {
@@ -366,7 +367,7 @@
 }
 
 .btn::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -375,7 +376,9 @@
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.2);
     transform: translate(-50%, -50%);
-    transition: width 0.5s, height 0.5s;
+    transition:
+        width 0.5s,
+        height 0.5s;
 }
 
 .btn:active::before {
@@ -384,7 +387,11 @@
 }
 
 .btn--primary {
-    background: linear-gradient(135deg, var(--brand-accent) 0%, var(--brand-accent-dark) 100%);
+    background: linear-gradient(
+        135deg,
+        var(--brand-accent) 0%,
+        var(--brand-accent-dark) 100%
+    );
     box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
 }
 
@@ -428,8 +435,13 @@
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
 }
 
 /* === STICKY ELEMENTS === */
@@ -526,7 +538,12 @@
         line-height: 1.6;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         line-height: 1.3;
     }
 
