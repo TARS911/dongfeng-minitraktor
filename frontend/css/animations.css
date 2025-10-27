@@ -1,0 +1,500 @@
+/*
+ * Modern Animations & Effects 2025
+ * Современные анимации и визуальные эффекты
+ */
+
+/* === KEYFRAME ANIMATIONS === */
+
+/* Плавное появление */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Появление снизу */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Появление сверху */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Появление слева */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Появление справа */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Увеличение с появлением */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Пульсация */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Тряска */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+/* Вращение */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Градиентная анимация */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Свечение */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(42, 157, 78, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(42, 157, 78, 0.6);
+    }
+}
+
+/* Плавающий эффект */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* === UTILITY CLASSES === */
+
+/* Базовые анимации */
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 0.6s ease-out;
+}
+
+.animate-fade-in-left {
+    animation: fadeInLeft 0.6s ease-out;
+}
+
+.animate-fade-in-right {
+    animation: fadeInRight 0.6s ease-out;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.4s ease-out;
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* С задержками */
+.animate-delay-100 {
+    animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+    animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+    animation-delay: 0.3s;
+}
+
+.animate-delay-400 {
+    animation-delay: 0.4s;
+}
+
+.animate-delay-500 {
+    animation-delay: 0.5s;
+}
+
+/* === HOVER EFFECTS === */
+
+/* Подъем карточки */
+.hover-lift {
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-layered-hover);
+}
+
+/* Масштабирование */
+.hover-scale {
+    transition: transform var(--transition-base);
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Масштабирование изображения внутри */
+.hover-zoom-image {
+    overflow: hidden;
+}
+
+.hover-zoom-image img {
+    transition: transform var(--transition-slow);
+}
+
+.hover-zoom-image:hover img {
+    transform: scale(1.1);
+}
+
+/* Свечение при наведении */
+.hover-glow {
+    transition: box-shadow var(--transition-base);
+}
+
+.hover-glow:hover {
+    box-shadow: var(--shadow-primary-lg);
+}
+
+/* Изменение цвета с градиентом */
+.hover-gradient {
+    position: relative;
+    overflow: hidden;
+    transition: color var(--transition-base);
+}
+
+.hover-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-button-hover);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    z-index: -1;
+}
+
+.hover-gradient:hover::before {
+    opacity: 1;
+}
+
+/* Подчеркивание снизу */
+.hover-underline {
+    position: relative;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--brand-primary);
+    transition: width var(--transition-base);
+}
+
+.hover-underline:hover::after {
+    width: 100%;
+}
+
+/* Тень при наведении */
+.hover-shadow {
+    transition: box-shadow var(--transition-base);
+}
+
+.hover-shadow:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+/* Яркость при наведении */
+.hover-brighten {
+    transition: filter var(--transition-base);
+}
+
+.hover-brighten:hover {
+    filter: brightness(1.1);
+}
+
+/* === SCROLL ANIMATIONS === */
+
+/* Элементы для анимации при скролле */
+.scroll-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-scale-in.is-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* === LOADING ANIMATIONS === */
+
+/* Спиннер */
+.spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--color-gray-200);
+    border-top-color: var(--brand-primary);
+    border-radius: 50%;
+    animation: rotate 0.8s linear infinite;
+}
+
+.spinner-sm {
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+}
+
+.spinner-lg {
+    width: 60px;
+    height: 60px;
+    border-width: 6px;
+}
+
+/* Точки загрузки */
+.loading-dots {
+    display: inline-flex;
+    gap: 8px;
+}
+
+.loading-dots span {
+    width: 8px;
+    height: 8px;
+    background: var(--brand-primary);
+    border-radius: 50%;
+    animation: pulse 1.4s ease-in-out infinite;
+}
+
+.loading-dots span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* === SCROLL REVEAL (JavaScript будет добавлять класс is-visible) === */
+
+/* Наблюдатель за элементами для анимации */
+[data-animate] {
+    opacity: 0;
+}
+
+[data-animate].is-visible {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+[data-animate="fade"] {
+    opacity: 0;
+}
+
+[data-animate="fade"].is-visible {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+[data-animate="scale"] {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+[data-animate="scale"].is-visible {
+    animation: scaleIn 0.8s ease-out forwards;
+}
+
+[data-animate="left"] {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+[data-animate="left"].is-visible {
+    animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+[data-animate="right"] {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+[data-animate="right"].is-visible {
+    animation: fadeInRight 0.8s ease-out forwards;
+}
+
+/* === BUTTON EFFECTS === */
+
+/* Кнопка с волной */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-ripple:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Кнопка с градиентной анимацией */
+.btn-gradient-animated {
+    background: var(--gradient-animated);
+    background-size: 400% 400%;
+    animation: gradient-shift 8s ease infinite;
+}
+
+/* === CARD EFFECTS === */
+
+/* Карточка с 3D эффектом */
+.card-3d {
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card-3d:hover {
+    transform: perspective(1000px) rotateX(2deg) translateY(-5px);
+    box-shadow: var(--shadow-layered-hover);
+}
+
+/* === RESPONSIVE === */
+
+/* Отключение анимаций на мобильных для производительности */
+@media (max-width: 768px) {
+    .animate-fade-in,
+    .animate-fade-in-up,
+    .animate-fade-in-down,
+    .animate-fade-in-left,
+    .animate-fade-in-right,
+    .animate-scale-in {
+        animation-duration: 0.4s;
+    }
+
+    /* Упрощенные hover эффекты */
+    .hover-lift:hover {
+        transform: translateY(-4px);
+    }
+}
+
+/* Respecting prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -24,22 +24,51 @@
     --brand-gold: #ffb800; /* Премиум золото */
     --brand-purple: #8b5cf6; /* Современный фиолетовый */
 
-    /* === PREMIUM GRADIENTS === */
-    --gradient-primary: linear-gradient(135deg, #2a9d4e 0%, #4ade80 100%);
-    --gradient-accent: linear-gradient(135deg, #ff6600 0%, #ff8533 100%);
-    --gradient-hero: linear-gradient(
+    /* === PREMIUM GRADIENTS 2025 === */
+    --gradient-primary: linear-gradient(
         135deg,
-        #1f7a3c 0%,
-        #2a9d4e 50%,
+        #2a9d4e 0%,
+        #34c759 50%,
         #4ade80 100%
     );
-    --gradient-premium: linear-gradient(135deg, #ffb800 0%, #ff6600 100%);
-    --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    --gradient-accent: linear-gradient(
+        135deg,
+        #ff6600 0%,
+        #ff7a1a 50%,
+        #ff8533 100%
+    );
+    --gradient-hero: linear-gradient(
+        135deg,
+        #1a6e35 0%,
+        #2a9d4e 30%,
+        #34c759 70%,
+        #4ade80 100%
+    );
+    --gradient-premium: linear-gradient(
+        135deg,
+        #ffd700 0%,
+        #ffb800 50%,
+        #ff6600 100%
+    );
+    --gradient-dark: linear-gradient(
+        135deg,
+        #0a0a0a 0%,
+        #1a1a1a 50%,
+        #2d2d2d 100%
+    );
     --gradient-overlay: linear-gradient(
         180deg,
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.7) 100%
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.8) 100%
     );
+
+    /* Новые современные градиенты */
+    --gradient-success: linear-gradient(135deg, #22c55e 0%, #4ade80 100%);
+    --gradient-info: linear-gradient(135deg, #1890d7 0%, #3b82f6 100%);
+    --gradient-card: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    --gradient-button: linear-gradient(135deg, #2a9d4e 0%, #2ea752 100%);
+    --gradient-button-hover: linear-gradient(135deg, #34c759 0%, #4ade80 100%);
 
     /* Animated Gradient */
     --gradient-animated: linear-gradient(
@@ -76,14 +105,13 @@
     --color-error: #ef4444;
     --color-info: #3b82f6;
 
-    /* === UNIFIED TYPOGRAPHY === */
-    /* Один основной шрифт для всего сайта - чистый и современный */
+    /* === PREMIUM TYPOGRAPHY 2025 === */
+    /* Montserrat для заголовков - стильный, современный, геометричный */
+    /* Open Sans для текста - идеальная читаемость, профессиональный вид */
     --font-primary:
-        "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
         sans-serif;
-    --font-heading:
-        "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-        sans-serif;
+    --font-heading: "Montserrat", "Segoe UI", sans-serif;
     --font-mono: "SF Mono", "Monaco", "Consolas", monospace;
 
     /* Font Sizes - Оптимизированные для читаемости */
@@ -141,20 +169,30 @@
     --radius-3xl: 2rem; /* 32px */
     --radius-full: 9999px;
 
-    /* === PREMIUM SHADOWS === */
-    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
-    --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.15);
-    --shadow-2xl: 0 20px 48px rgba(0, 0, 0, 0.2);
-    --shadow-3xl: 0 30px 64px rgba(0, 0, 0, 0.25);
+    /* === PREMIUM SHADOWS 2025 === */
+    --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.18);
+    --shadow-2xl: 0 20px 48px rgba(0, 0, 0, 0.22);
+    --shadow-3xl: 0 30px 64px rgba(0, 0, 0, 0.28);
 
-    /* Colored Shadows */
-    --shadow-primary: 0 8px 24px rgba(42, 157, 78, 0.3);
-    --shadow-accent: 0 8px 24px rgba(255, 102, 0, 0.3);
-    --shadow-gold: 0 8px 24px rgba(255, 184, 0, 0.3);
-    --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.18);
+    /* Colored Shadows - Улучшенные с мягким свечением */
+    --shadow-primary: 0 8px 24px rgba(42, 157, 78, 0.35);
+    --shadow-primary-lg: 0 12px 32px rgba(42, 157, 78, 0.4);
+    --shadow-accent: 0 8px 24px rgba(255, 102, 0, 0.35);
+    --shadow-accent-lg: 0 12px 32px rgba(255, 102, 0, 0.4);
+    --shadow-gold: 0 8px 24px rgba(255, 184, 0, 0.35);
+    --shadow-hover: 0 12px 36px rgba(0, 0, 0, 0.2);
+
+    /* Многослойные тени для глубины */
+    --shadow-layered:
+        0 2px 4px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.08),
+        0 8px 24px rgba(0, 0, 0, 0.1);
+    --shadow-layered-hover:
+        0 4px 8px rgba(0, 0, 0, 0.08), 0 8px 20px rgba(0, 0, 0, 0.12),
+        0 16px 36px rgba(0, 0, 0, 0.15);
 
     /* Neumorphism Shadows */
     --shadow-neomorph-light:
