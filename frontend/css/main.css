@@ -1045,12 +1045,13 @@ body {
     font-weight: 600;
 }
 
-/* === Footer - Минималистичный === */
+/* === Footer - Светлый и современный === */
 .footer {
-    background: #2d3748;
-    color: white;
+    background: #f8f9fa;
+    color: var(--color-gray-800);
     padding: var(--space-2xl) 0;
     position: relative;
+    border-top: 1px solid var(--color-gray-200);
 }
 
 .footer__bottom {
@@ -1060,7 +1061,7 @@ body {
 }
 
 .footer__bottom p {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--color-gray-700);
     font-size: var(--font-size-sm);
 }
 
@@ -1070,13 +1071,13 @@ body {
 }
 
 .footer__links a {
-    color: rgba(255, 255, 255, 0.75);
+    color: var(--color-gray-600);
     font-size: var(--font-size-sm);
     transition: color var(--transition-fast);
 }
 
 .footer__links a:hover {
-    color: white;
+    color: var(--brand-primary);
 }
 
 /* === Animations === */
@@ -1916,5 +1917,43 @@ body {
 
     .section-subtitle {
         font-size: var(--font-size-base);
+    }
+}
+
+/* === Секция преимуществ - светлая === */
+.advantages {
+    background: #ffffff;
+    padding: var(--space-4xl) 0;
+}
+
+.advantages .section-title {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+    color: var(--color-gray-900);
+}
+
+/* Мобильная оптимизация */
+@media (max-width: 768px) {
+    .advantages {
+        padding: var(--space-2xl) 0;
+    }
+
+    .advantages .section-title {
+        margin-bottom: var(--space-xl);
+    }
+
+    .footer {
+        padding: var(--space-xl) 0;
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+        gap: var(--space-md);
+        text-align: center;
+    }
+
+    .footer__links {
+        flex-direction: column;
+        gap: var(--space-sm);
     }
 }
