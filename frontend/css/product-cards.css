@@ -325,50 +325,126 @@
     }
 }
 
-/* Mobile */
+/* Mobile - Компактная и красивая версия */
 @media (max-width: 768px) {
     .catalog__grid {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: var(--space-md);
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: var(--space-sm);
+    }
+
+    .product-card {
+        border-radius: var(--radius-lg);
+    }
+
+    .product-card:hover {
+        transform: translateY(-4px);
     }
 
     .product-card__image {
-        height: 200px;
+        height: 140px;
     }
 
     .product-card__content {
-        padding: var(--space-md);
-    }
-
-    .product-card__badge {
-        font-size: 10px;
-        padding: 4px 8px;
-    }
-
-    .product-card__specs {
         padding: var(--space-sm);
     }
 
+    .product-card__title {
+        font-size: 0.813rem; /* 13px */
+        font-weight: var(--font-weight-semibold);
+        margin-bottom: var(--space-xs);
+        min-height: auto;
+        line-height: 1.3;
+    }
+
+    .product-card__badge {
+        font-size: 9px;
+        padding: 3px 6px;
+        top: var(--space-xs);
+        left: var(--space-xs);
+    }
+
+    .product-card__specs {
+        padding: var(--space-xs);
+        gap: 4px;
+        margin-bottom: var(--space-sm);
+    }
+
     .spec {
-        font-size: 12px;
+        font-size: 11px;
+    }
+
+    .spec__label {
+        font-size: 10px;
+    }
+
+    .spec__value {
+        font-size: 11px;
+        font-weight: var(--font-weight-semibold);
+    }
+
+    .price__current {
+        font-size: var(--font-size-lg); /* 18px */
+        margin-bottom: 0;
+    }
+
+    .price__old {
+        font-size: 11px;
+        margin-top: 2px;
+    }
+
+    .price__discount {
+        font-size: 9px;
+        padding: 2px 4px;
+    }
+
+    .product-card__availability {
+        font-size: 11px;
+        margin-bottom: var(--space-xs);
+    }
+
+    .availability-indicator {
+        width: 6px;
+        height: 6px;
     }
 
     .product-card__overlay {
         opacity: 1;
-        background: rgba(0, 0, 0, 0.3);
+        background: rgba(0, 0, 0, 0.25);
     }
 
     .product-card__action-btn {
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .product-card__action-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .product-card__actions .btn {
+        font-size: 12px;
+        padding: var(--space-xs) var(--space-sm);
+    }
+
+    .product-card__rating {
+        margin-bottom: 4px;
+    }
+
+    .rating-star {
+        font-size: 11px;
+    }
+
+    .rating-count {
+        font-size: 10px;
     }
 }
 
-/* Small Mobile */
+/* Small Mobile - Максимально компактная версия */
 @media (max-width: 480px) {
     .catalog__grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-md);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
     }
 
     .product-card {
@@ -376,7 +452,48 @@
     }
 
     .product-card__image {
-        height: 220px;
+        height: 120px;
+    }
+
+    .product-card__content {
+        padding: 8px;
+    }
+
+    .product-card__title {
+        font-size: 12px;
+        margin-bottom: 6px;
+        line-height: 1.25;
+    }
+
+    .product-card__specs {
+        padding: 6px;
+        gap: 3px;
+        margin-bottom: 8px;
+    }
+
+    .spec {
+        font-size: 10px;
+    }
+
+    .spec__label {
+        font-size: 9px;
+    }
+
+    .spec__value {
+        font-size: 10px;
+    }
+
+    .price__current {
+        font-size: 16px;
+    }
+
+    .price__old {
+        font-size: 10px;
+    }
+
+    .product-card__actions .btn {
+        font-size: 11px;
+        padding: 6px 10px;
     }
 }
 
