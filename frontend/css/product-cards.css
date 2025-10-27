@@ -113,6 +113,55 @@
     height: 20px;
 }
 
+/* Overlay с кнопками действий (для catalog.js) */
+.product-card__actions-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.product-card:hover .product-card__actions-overlay {
+    opacity: 1;
+}
+
+/* Кнопки действий в overlay */
+.action-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: var(--radius-full);
+    color: var(--brand-primary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-lg);
+}
+
+.action-btn:hover {
+    background: var(--brand-primary);
+    color: var(--color-white);
+    transform: scale(1.1);
+}
+
+.action-btn.active {
+    background: var(--brand-primary);
+    color: var(--color-white);
+}
+
+.action-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
 /* Контент карточки */
 .product-card__content {
     padding: var(--space-xl);

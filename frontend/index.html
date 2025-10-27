@@ -1019,6 +1019,7 @@
                                 class="product-card"
                                 itemscope
                                 itemtype="https://schema.org/Product"
+                                data-product-id="1"
                             >
                                 <div class="product-card__image">
                                     <img
@@ -1028,6 +1029,73 @@
                                     />
                                     <div class="product-card__badge">
                                         Хит продаж
+                                    </div>
+                                    <div class="product-card__actions-overlay">
+                                        <button
+                                            class="action-btn"
+                                            onclick="window.location.href='catalog.html'"
+                                            title="Быстрый просмотр"
+                                        >
+                                            <svg
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M11 19a8 8 0 100-16 8 8 0 000 16z"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                                <path
+                                                    d="M21 21l-4.35-4.35"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </button>
+                                        <button
+                                            class="action-btn"
+                                            onclick="toggleFavorite(1)"
+                                            title="Добавить в избранное"
+                                        >
+                                            <svg
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                />
+                                            </svg>
+                                        </button>
+                                        <button
+                                            class="action-btn"
+                                            onclick="toggleCompare(1)"
+                                            title="Добавить к сравнению"
+                                        >
+                                            <svg
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M9 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H9M15 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H15M9 3V21M15 3V21"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </button>
                                     </div>
                                 </div>
                                 <div class="product-card__content">
@@ -1083,13 +1151,13 @@
                                     <div class="product-card__actions">
                                         <button
                                             class="btn btn--primary btn--block"
-                                            onclick="requestPrice('DF-244')"
+                                            onclick="addToCart(1)"
                                         >
-                                            Узнать цену
+                                            В корзину
                                         </button>
                                         <button
                                             class="btn btn--outline btn--block"
-                                            onclick="showDetails('DF-244')"
+                                            onclick="window.location.href='catalog.html'"
                                         >
                                             Подробнее
                                         </button>
@@ -1102,6 +1170,7 @@
                                 class="product-card"
                                 itemscope
                                 itemtype="https://schema.org/Product"
+                                data-product-id="2"
                             >
                                 <div class="product-card__image">
                                     <img
@@ -1110,6 +1179,73 @@
                                         itemprop="image"
                                         loading="lazy"
                                     />
+                                    <div class="product-card__actions-overlay">
+                                        <button
+                                            class="action-btn"
+                                            onclick="window.location.href='catalog.html'"
+                                            title="Быстрый просмотр"
+                                        >
+                                            <svg
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M11 19a8 8 0 100-16 8 8 0 000 16z"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                                <path
+                                                    d="M21 21l-4.35-4.35"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </button>
+                                        <button
+                                            class="action-btn"
+                                            onclick="toggleFavorite(2)"
+                                            title="Добавить в избранное"
+                                        >
+                                            <svg
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                />
+                                            </svg>
+                                        </button>
+                                        <button
+                                            class="action-btn"
+                                            onclick="toggleCompare(2)"
+                                            title="Добавить к сравнению"
+                                        >
+                                            <svg
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M9 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H9M15 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H15M9 3V21M15 3V21"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </button>
+                                    </div>
                                 </div>
                                 <div class="product-card__content">
                                     <h3
@@ -1164,13 +1300,13 @@
                                     <div class="product-card__actions">
                                         <button
                                             class="btn btn--primary btn--block"
-                                            onclick="requestPrice('DF-244')"
+                                            onclick="addToCart(2)"
                                         >
-                                            Узнать цену
+                                            В корзину
                                         </button>
                                         <button
                                             class="btn btn--outline btn--block"
-                                            onclick="showDetails('DF-244')"
+                                            onclick="window.location.href='catalog.html'"
                                         >
                                             Подробнее
                                         </button>
@@ -1183,6 +1319,7 @@
                                 class="product-card"
                                 itemscope
                                 itemtype="https://schema.org/Product"
+                                data-product-id="3"
                             >
                                 <div class="product-card__image">
                                     <img
@@ -1193,6 +1330,73 @@
                                     />
                                     <div class="product-card__badge badge--new">
                                         Новинка
+                                    </div>
+                                    <div class="product-card__actions-overlay">
+                                        <button
+                                            class="action-btn"
+                                            onclick="window.location.href='catalog.html'"
+                                            title="Быстрый просмотр"
+                                        >
+                                            <svg
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M11 19a8 8 0 100-16 8 8 0 000 16z"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                                <path
+                                                    d="M21 21l-4.35-4.35"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </button>
+                                        <button
+                                            class="action-btn"
+                                            onclick="toggleFavorite(3)"
+                                            title="Добавить в избранное"
+                                        >
+                                            <svg
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                />
+                                            </svg>
+                                        </button>
+                                        <button
+                                            class="action-btn"
+                                            onclick="toggleCompare(3)"
+                                            title="Добавить к сравнению"
+                                        >
+                                            <svg
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M9 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H9M15 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H15M9 3V21M15 3V21"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </button>
                                     </div>
                                 </div>
                                 <div class="product-card__content">
@@ -1250,13 +1454,13 @@
                                     <div class="product-card__actions">
                                         <button
                                             class="btn btn--primary btn--block"
-                                            onclick="requestPrice('DF-404')"
+                                            onclick="addToCart(3)"
                                         >
-                                            Узнать цену
+                                            В корзину
                                         </button>
                                         <button
                                             class="btn btn--outline btn--block"
-                                            onclick="showDetails('DF-404')"
+                                            onclick="window.location.href='catalog.html'"
                                         >
                                             Подробнее
                                         </button>
@@ -1269,6 +1473,7 @@
                                 class="product-card"
                                 itemscope
                                 itemtype="https://schema.org/Product"
+                                data-product-id="4"
                             >
                                 <div class="product-card__image">
                                     <img
@@ -1277,6 +1482,73 @@
                                         itemprop="image"
                                         loading="lazy"
                                     />
+                                    <div class="product-card__actions-overlay">
+                                        <button
+                                            class="action-btn"
+                                            onclick="window.location.href='catalog.html'"
+                                            title="Быстрый просмотр"
+                                        >
+                                            <svg
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M11 19a8 8 0 100-16 8 8 0 000 16z"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                                <path
+                                                    d="M21 21l-4.35-4.35"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </button>
+                                        <button
+                                            class="action-btn"
+                                            onclick="toggleFavorite(4)"
+                                            title="Добавить в избранное"
+                                        >
+                                            <svg
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                />
+                                            </svg>
+                                        </button>
+                                        <button
+                                            class="action-btn"
+                                            onclick="toggleCompare(4)"
+                                            title="Добавить к сравнению"
+                                        >
+                                            <svg
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M9 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H9M15 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H15M9 3V21M15 3V21"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </button>
+                                    </div>
                                 </div>
                                 <div class="product-card__content">
                                     <h3
@@ -1331,13 +1603,13 @@
                                     <div class="product-card__actions">
                                         <button
                                             class="btn btn--primary btn--block"
-                                            onclick="requestPrice('Xingtai 244')"
+                                            onclick="addToCart(4)"
                                         >
-                                            Узнать цену
+                                            В корзину
                                         </button>
                                         <button
                                             class="btn btn--outline btn--block"
-                                            onclick="showDetails('Xingtai 244')"
+                                            onclick="window.location.href='catalog.html'"
                                         >
                                             Подробнее
                                         </button>
