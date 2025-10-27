@@ -21,7 +21,7 @@
 /* Показываем кнопку бургера на мобильных устройствах */
 @media (max-width: 768px) {
     .burger {
-        display: flex;
+        display: flex !important;
     }
 }
 
