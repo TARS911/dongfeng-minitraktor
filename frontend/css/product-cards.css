@@ -21,25 +21,7 @@
     transform: translateY(-12px);
     box-shadow: var(--shadow-layered-hover);
     border-color: var(--brand-primary);
-}
-
-/* Премиальное свечение для карточки */
-.product-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--gradient-card);
-    opacity: 0;
-    transition: opacity var(--transition-base);
-    pointer-events: none;
-    z-index: 0;
-}
-
-.product-card:hover::before {
-    opacity: 1;
+    background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
 }
 
 /* Изображение товара */
