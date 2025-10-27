@@ -178,6 +178,12 @@
     display: block;
 }
 
+/* Увеличенный значок рубля */
+.price__current .ruble {
+    font-size: 1.1em;
+    font-weight: var(--font-weight-bold);
+}
+
 .price__old {
     font-size: var(--font-size-base);
     color: var(--color-gray-500);

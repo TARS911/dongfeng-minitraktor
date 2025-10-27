@@ -200,3 +200,311 @@
 .modal-overlay.active .modal {
     animation: modalFadeIn 0.3s ease;
 }
+
+/* === Стили для корзины, избранного и сравнения === */
+
+/* Большие модальные окна */
+.modal--large {
+    max-width: 900px;
+    width: 95%;
+}
+
+/* Пустое состояние */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-state svg {
+    color: var(--color-gray-300);
+    margin-bottom: 24px;
+}
+
+.empty-state h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-700);
+    margin-bottom: 12px;
+}
+
+.empty-state p {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-500);
+    margin-bottom: 32px;
+}
+
+/* Элементы корзины */
+.cart-items,
+.favorites-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.cart-item,
+.favorites-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-gray-200);
+}
+
+.cart-item__image,
+.favorites-item__image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+}
+
+.cart-item__info,
+.favorites-item__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cart-item__title,
+.favorites-item__title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-900);
+}
+
+.cart-item__price,
+.favorites-item__price {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--brand-primary);
+}
+
+/* Количество в корзине */
+.cart-item__quantity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.quantity-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--color-gray-300);
+    background: white;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--color-gray-700);
+    transition: all var(--transition-fast);
+}
+
+.quantity-btn:hover {
+    background: var(--brand-primary);
+    color: white;
+    border-color: var(--brand-primary);
+}
+
+.quantity-value {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    min-width: 40px;
+    text-align: center;
+}
+
+/* Кнопка удалить */
+.remove-btn {
+    background: transparent;
+    border: none;
+    color: var(--color-error);
+    cursor: pointer;
+    padding: 8px;
+    font-size: var(--font-size-sm);
+    transition: all var(--transition-fast);
+}
+
+.remove-btn:hover {
+    color: var(--color-error);
+    text-decoration: underline;
+}
+
+/* Итого корзины */
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    background: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+    margin-bottom: 24px;
+}
+
+.cart-total__label {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-700);
+}
+
+.cart-total__price {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--brand-primary);
+}
+
+/* Действия в модалке */
+.modal__actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+/* Таблица сравнения */
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+}
+
+.compare-table th,
+.compare-table td {
+    padding: 12px;
+    border: 1px solid var(--color-gray-200);
+    text-align: left;
+}
+
+.compare-table th {
+    background: var(--color-gray-50);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-700);
+}
+
+.compare-table img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+}
+
+/* === Адаптация для мобильных === */
+
+@media (max-width: 768px) {
+    .modal--large {
+        max-width: 100%;
+        width: 100%;
+        max-height: 100vh;
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    .modal__title {
+        font-size: var(--font-size-xl);
+    }
+
+    .cart-item,
+    .favorites-item {
+        flex-direction: column;
+        padding: 12px;
+    }
+
+    .cart-item__image,
+    .favorites-item__image {
+        width: 100%;
+        height: 150px;
+    }
+
+    .cart-item__title,
+    .favorites-item__title {
+        font-size: var(--font-size-base);
+    }
+
+    .cart-item__price,
+    .favorites-item__price {
+        font-size: var(--font-size-lg);
+    }
+
+    .cart-total {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .cart-total__label {
+        font-size: var(--font-size-base);
+    }
+
+    .cart-total__price {
+        font-size: var(--font-size-2xl);
+    }
+
+    .modal__actions {
+        flex-direction: column;
+    }
+
+    .modal__actions .btn {
+        width: 100%;
+    }
+
+    /* Таблица сравнения на мобильных */
+    .compare-table {
+        font-size: 12px;
+    }
+
+    .compare-table th,
+    .compare-table td {
+        padding: 8px 4px;
+    }
+
+    .compare-table img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .empty-state {
+        padding: 40px 20px;
+    }
+
+    .empty-state h3 {
+        font-size: var(--font-size-xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .modal {
+        padding: 16px;
+    }
+
+    .modal__close {
+        width: 36px;
+        height: 36px;
+        font-size: 28px;
+        top: 12px;
+        right: 12px;
+    }
+
+    .quantity-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+    }
+
+    .quantity-value {
+        font-size: var(--font-size-base);
+        min-width: 32px;
+    }
+
+    /* Таблица сравнения - делаем скроллируемой */
+    .compare-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .compare-table {
+        min-width: 600px;
+    }
+}
