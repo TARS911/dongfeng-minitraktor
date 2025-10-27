@@ -565,8 +565,12 @@
         padding: var(--space-sm) 0;
     }
 
-    /* СКРЫТЬ МЕНЮ КАТАЛОГА В МОБИЛЬНОЙ ВЕРСИИ */
+    /* СКРЫТЬ МЕНЮ КАТАЛОГА И НАВИГАЦИЮ В МОБИЛЬНОЙ ВЕРСИИ */
     .nav__catalog-menu {
+        display: none !important;
+    }
+
+    .nav__list {
         display: none !important;
     }
 
