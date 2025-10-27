@@ -565,6 +565,11 @@
         padding: var(--space-sm) 0;
     }
 
+    /* СКРЫТЬ МЕНЮ КАТАЛОГА В МОБИЛЬНОЙ ВЕРСИИ */
+    .nav__catalog-menu {
+        display: none !important;
+    }
+
     .nav__catalog-btn {
         padding: 8px 12px;
         font-size: 14px;
