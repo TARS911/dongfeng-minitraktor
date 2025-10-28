@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="css/main.css?v=1761211422" />
         <link rel="stylesheet" href="css/modal.css?v=1761211422" />
         <link rel="stylesheet" href="css/header-new.css?v=1761211422" />
+        <link rel="stylesheet" href="css/mobile-menu.css?v=1761211422" />
         <link rel="stylesheet" href="css/catalog-modals.css?v=1761211422" />
         <link rel="stylesheet" href="css/cart.css?v=1761211422" />
         <style>
@@ -78,17 +79,12 @@
         <!-- Header -->
         <header class="header">
             <div class="container">
-                <div class="header__content">
-                    <nav class="nav">
+                <div class="header__top">
+                    <nav class="nav" aria-label="Основная навигация">
                         <ul class="nav__list">
                             <li>
                                 <a href="index.html" class="nav__link"
                                     >Главная</a
-                                >
-                            </li>
-                            <li>
-                                <a href="catalog.html" class="nav__link"
-                                    >Каталог</a
                                 >
                             </li>
                             <li>
@@ -107,9 +103,17 @@
                                 >
                             </li>
                             <li>
+                                <a href="articles.html" class="nav__link"
+                                    >Статьи</a
+                                >
+                            </li>
+                            <li>
                                 <a href="contacts.html" class="nav__link"
                                     >Контакты</a
                                 >
+                            </li>
+                            <li>
+                                <a href="media.html" class="nav__link">Медиа</a>
                             </li>
                         </ul>
                     </nav>
@@ -199,9 +203,97 @@
                             >
                         </a>
                     </div>
+
+                    <button
+                        class="burger"
+                        aria-label="Открыть меню"
+                        onclick="toggleMobileMenu()"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu__header">
+                <a href="index.html"
+                    ><img
+                        src="images/logo.svg"
+                        alt="DONGFENG"
+                        class="mobile-menu__logo"
+                /></a>
+                <button
+                    class="mobile-menu__close"
+                    onclick="closeMobileMenu()"
+                    aria-label="Закрыть меню"
+                >
+                    ×
+                </button>
+            </div>
+            <nav class="mobile-menu__nav">
+                <ul class="mobile-menu__list">
+                    <li class="mobile-menu__item">
+                        <a
+                            href="catalog.html"
+                            class="mobile-menu__link mobile-menu__link--catalog"
+                            ><span>🚜 Каталог тракторов</span></a
+                        >
+                    </li>
+                    <li class="mobile-menu__item">
+                        <a href="index.html" class="mobile-menu__link"
+                            ><span>Главная</span></a
+                        >
+                    </li>
+                    <li class="mobile-menu__item">
+                        <a href="payment.html" class="mobile-menu__link"
+                            ><span>Оплата</span></a
+                        >
+                    </li>
+                    <li class="mobile-menu__item">
+                        <a href="delivery.html" class="mobile-menu__link"
+                            ><span>Доставка</span></a
+                        >
+                    </li>
+                    <li class="mobile-menu__item">
+                        <a href="warranty.html" class="mobile-menu__link"
+                            ><span>Гарантия</span></a
+                        >
+                    </li>
+                    <li class="mobile-menu__item">
+                        <a href="articles.html" class="mobile-menu__link"
+                            ><span>Статьи</span></a
+                        >
+                    </li>
+                    <li class="mobile-menu__item">
+                        <a href="contacts.html" class="mobile-menu__link"
+                            ><span>Контакты</span></a
+                        >
+                    </li>
+                    <li class="mobile-menu__item">
+                        <a href="media.html" class="mobile-menu__link"
+                            ><span>Медиа</span></a
+                        >
+                    </li>
+                </ul>
+            </nav>
+            <div class="mobile-menu__footer">
+                <a href="tel:+79699995668" class="mobile-menu__phone"
+                    >+7 (969) 999-56-68</a
+                >
+                <button
+                    class="btn btn--primary"
+                    style="width: 100%; margin-top: 16px"
+                    onclick="openCallbackModal(); closeMobileMenu();"
+                >
+                    Заказать звонок
+                </button>
+            </div>
+        </div>
 
         <!-- Compare Page -->
         <section class="cart-page">
@@ -275,6 +367,7 @@
 
         <script src="js/config.js"></script>
         <script src="js/global-cart.js"></script>
+        <script src="js/mobile-menu.js"></script>
         <script>
             // Render compare page on load
             document.addEventListener("DOMContentLoaded", async () => {
