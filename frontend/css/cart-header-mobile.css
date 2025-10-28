@@ -1,8 +1,16 @@
 /* Cart/Favorites/Compare Page Header - Mobile Only Actions */
 
-/* Hide mobile actions on desktop */
+/* Hide mobile actions AND mobile menu on desktop */
 .header__mobile-actions {
     display: none;
+}
+
+/* Hide mobile menu completely on desktop */
+@media (min-width: 769px) {
+    .mobile-menu,
+    .mobile-menu-overlay {
+        display: none !important;
+    }
 }
 
 /* Show mobile actions ONLY on mobile */
