@@ -1,20 +1,19 @@
 /**
- * Catalog Functions - Search, Filter, Cart, Favorites, Compare
- * Функции каталога товаров
+ * Catalog Functions - Search, Filter, Product Rendering
+ * Функции каталога товаров (БЕЗ дублирования cart/favorites/compare)
  */
 
 // === Глобальные переменные ===
 let allProducts = [];
 let filteredProducts = [];
 let currentBrand = "all";
-let cart = JSON.parse(localStorage.getItem("cart") || "[]");
-let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
-let compare = JSON.parse(localStorage.getItem("compare") || "[]");
+
+// Используем глобальные переменные из global-cart.js
+// let cart, favorites, compare - УЖЕ определены в global-cart.js
 
 // === Инициализация ===
 document.addEventListener("DOMContentLoaded", async () => {
   await loadProducts();
-  updateCounters();
   initializeCatalog();
 });
 
@@ -174,8 +173,13 @@ function renderProducts(products) {
 }
 
 function createProductCardHTML(product) {
-  const isFavorite = favorites.includes(product.id);
-  const isInCompare = compare.includes(product.id);
+  // Получаем глобальные переменные из global-cart.js
+  const isFavorite = window.favorites
+    ? window.favorites.includes(product.id)
+    : false;
+  const isInCompare = window.compare
+    ? window.compare.includes(product.id)
+    : false;
   const badges = [];
 
   if (product.is_hit)
@@ -195,12 +199,12 @@ function createProductCardHTML(product) {
                             <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
-                    <button class="action-btn ${isFavorite ? "active" : ""}" onclick="toggleFavorite(${product.id})" title="${isFavorite ? "Удалить из избранного" : "Добавить в избранное"}">
+                    <button class="action-btn ${isFavorite ? "active" : ""}" onclick="window.toggleFavorite(${product.id}); updateProductCard(${product.id})" title="${isFavorite ? "Удалить из избранного" : "Добавить в избранное"}">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="${isFavorite ? "currentColor" : "none"}">
                             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2"/>
                         </svg>
                     </button>
-                    <button class="action-btn ${isInCompare ? "active" : ""}" onclick="toggleCompare(${product.id})" title="${isInCompare ? "Удалить из сравнения" : "Добавить к сравнению"}">
+                    <button class="action-btn ${isInCompare ? "active" : ""}" onclick="window.toggleCompare(${product.id}); updateProductCard(${product.id})" title="${isInCompare ? "Удалить из сравнения" : "Добавить к сравнению"}">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                             <path d="M9 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H9M15 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H15M9 3V21M15 3V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -229,7 +233,7 @@ function createProductCardHTML(product) {
                     <link itemprop="availability" href="https://schema.org/${product.in_stock ? "InStock" : "OutOfStock"}">
                 </div>
                 <div class="product-card__actions">
-                    <button class="btn btn--primary btn--block" onclick="addToCart(${product.id})">
+                    <button class="btn btn--primary btn--block" onclick="window.addToCart(${product.id})">
                         В корзину
                     </button>
                     <button class="btn btn--outline btn--block" onclick="showDetails('${product.model}')">
@@ -241,174 +245,18 @@ function createProductCardHTML(product) {
     `;
 }
 
-// === Корзина ===
-function addToCart(productId) {
-  const product = allProducts.find((p) => p.id === productId);
-  if (!product) return;
-
-  const existingItem = cart.find((item) => item.id === productId);
-
-  if (existingItem) {
-    existingItem.quantity += 1;
-  } else {
-    cart.push({
-      id: productId,
-      quantity: 1,
-      product: product,
-    });
-  }
-
-  saveCart();
-  updateCounters();
-  showNotification(`${product.name} добавлен в корзину`);
-}
-
-function saveCart() {
-  localStorage.setItem("cart", JSON.stringify(cart));
-}
-
-function openCart() {
-  const modal = document.getElementById("cartModal");
-  if (!modal) {
-    createCartModal();
-  }
-
-  renderCartModal();
-  document.getElementById("cartModal").classList.add("active");
-  document.body.style.overflow = "hidden";
-}
-
-// === Избранное ===
-function toggleFavorite(productId) {
-  const index = favorites.indexOf(productId);
-
-  if (index > -1) {
-    favorites.splice(index, 1);
-    showNotification("Удалено из избранного");
-  } else {
-    favorites.push(productId);
-    showNotification("Добавлено в избранное");
-  }
-
-  localStorage.setItem("favorites", JSON.stringify(favorites));
-  updateCounters();
-
-  // Обновить иконку на карточке
+// Обновление карточки товара после изменения избранного/сравнения
+function updateProductCard(productId) {
   const card = document.querySelector(`[data-product-id="${productId}"]`);
   if (card) {
-    const btn = card.querySelector(".action-btn");
-    const svg = btn.querySelector("svg path");
-    if (index > -1) {
-      btn.classList.remove("active");
-      svg.setAttribute("fill", "none");
-    } else {
-      btn.classList.add("active");
-      svg.setAttribute("fill", "currentColor");
+    const product = allProducts.find((p) => p.id === productId);
+    if (product) {
+      const newHTML = createProductCardHTML(product);
+      const temp = document.createElement("div");
+      temp.innerHTML = newHTML;
+      card.replaceWith(temp.firstElementChild);
     }
   }
-}
-
-function openFavorites() {
-  const modal = document.getElementById("favoritesModal");
-  if (!modal) {
-    createFavoritesModal();
-  }
-
-  renderFavoritesModal();
-  document.getElementById("favoritesModal").classList.add("active");
-  document.body.style.overflow = "hidden";
-}
-
-// === Сравнение ===
-function toggleCompare(productId) {
-  const index = compare.indexOf(productId);
-
-  if (index > -1) {
-    compare.splice(index, 1);
-    showNotification("Удалено из сравнения");
-  } else {
-    if (compare.length >= 4) {
-      showNotification("Можно сравнить не более 4 товаров");
-      return;
-    }
-    compare.push(productId);
-    showNotification("Добавлено к сравнению");
-  }
-
-  localStorage.setItem("compare", JSON.stringify(compare));
-  updateCounters();
-
-  // Обновить иконку на карточке
-  const card = document.querySelector(`[data-product-id="${productId}"]`);
-  if (card) {
-    const buttons = card.querySelectorAll(".action-btn");
-    const btn = buttons[1]; // Второя кнопка
-    if (index > -1) {
-      btn.classList.remove("active");
-    } else {
-      btn.classList.add("active");
-    }
-  }
-}
-
-function openCompare() {
-  const modal = document.getElementById("compareModal");
-  if (!modal) {
-    createCompareModal();
-  }
-
-  renderCompareModal();
-  document.getElementById("compareModal").classList.add("active");
-  document.body.style.overflow = "hidden";
-}
-
-// === Обновление счетчиков ===
-function updateCounters() {
-  // Корзина
-  const cartCount = document.getElementById("cartCount");
-  if (cartCount) {
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartCount.textContent = totalItems;
-  }
-
-  // Избранное
-  const favoritesCount = document.getElementById("favoritesCount");
-  if (favoritesCount) {
-    favoritesCount.textContent = favorites.length;
-  }
-
-  // Сравнение
-  const compareCount = document.getElementById("compareCount");
-  if (compareCount) {
-    compareCount.textContent = compare.length;
-  }
-}
-
-// === Уведомления ===
-function showNotification(message) {
-  // Простое уведомление (можно заменить на более красивое)
-  const notification = document.createElement("div");
-  notification.className = "notification";
-  notification.textContent = message;
-  notification.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background: #2a9d4e;
-        color: white;
-        padding: 16px 24px;
-        border-radius: 12px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-        z-index: 10000;
-        animation: slideIn 0.3s ease;
-    `;
-
-  document.body.appendChild(notification);
-
-  setTimeout(() => {
-    notification.style.animation = "slideOut 0.3s ease";
-    setTimeout(() => notification.remove(), 300);
-  }, 3000);
 }
 
 // === Переключение меню каталога ===
@@ -435,9 +283,19 @@ document.addEventListener("click", (e) => {
 function initializeCatalog() {
   // Загрузить все товары при загрузке страницы
   renderProducts(allProducts);
+
+  // Обновить счетчики из global-cart.js
+  if (typeof window.updateCounters === "function") {
+    window.updateCounters();
+  }
 }
 
-// Добавить CSS для анимаций уведомлений
+// Показать детали товара (заглушка - можно доработать)
+function showDetails(slug) {
+  alert(`Просмотр деталей товара: ${slug}\n\nФункция будет реализована позже.`);
+}
+
+// === Добавить CSS для анимаций и стилей ===
 const style = document.createElement("style");
 style.textContent = `
     @keyframes slideIn {
@@ -503,319 +361,12 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// === Модальные окна ===
-
-// Создание модального окна Корзины
-function createCartModal() {
-  const modal = document.createElement("div");
-  modal.id = "cartModal";
-  modal.className = "modal-overlay";
-  modal.innerHTML = `
-        <div class="modal modal--large">
-            <button class="modal__close" onclick="closeModal('cartModal')" aria-label="Закрыть">×</button>
-            <div class="modal__content">
-                <h2 class="modal__title">Корзина</h2>
-                <div id="cartContent"></div>
-            </div>
-        </div>
-    `;
-  document.body.appendChild(modal);
-
-  // Закрытие по клику на overlay
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      closeModal("cartModal");
-    }
-  });
-}
-
-// Рендеринг содержимого корзины
-function renderCartModal() {
-  const content = document.getElementById("cartContent");
-  if (!content) return;
-
-  if (cart.length === 0) {
-    content.innerHTML = `
-            <div class="empty-state">
-                <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
-                    <path d="M9 2L7 7H21L19 2H9Z" stroke="currentColor" stroke-width="2"/>
-                    <path d="M7 7H21L19 17H9L7 7Z" stroke="currentColor" stroke-width="2"/>
-                    <circle cx="10" cy="21" r="1" fill="currentColor"/>
-                    <circle cx="18" cy="21" r="1" fill="currentColor"/>
-                </svg>
-                <h3>Корзина пуста</h3>
-                <p>Добавьте товары из каталога</p>
-                <button class="btn btn--primary" onclick="closeModal('cartModal')">Перейти в каталог</button>
-            </div>
-        `;
-    return;
-  }
-
-  let totalPrice = 0;
-  const itemsHTML = cart
-    .map((item) => {
-      const subtotal = item.product.price * item.quantity;
-      totalPrice += subtotal;
-
-      return `
-            <div class="cart-item">
-                <img src="${item.product.image_url}" alt="${item.product.name}" class="cart-item__image">
-                <div class="cart-item__info">
-                    <h4 class="cart-item__title">${item.product.name}</h4>
-                    <p class="cart-item__specs">${item.product.power} л.с. • ${item.product.drive}</p>
-                </div>
-                <div class="cart-item__quantity">
-                    <button onclick="updateCartQuantity(${item.id}, -1)" class="quantity-btn">−</button>
-                    <span>${item.quantity}</span>
-                    <button onclick="updateCartQuantity(${item.id}, 1)" class="quantity-btn">+</button>
-                </div>
-                <div class="cart-item__price">${subtotal.toLocaleString("ru-RU")} <span class="ruble">₽</span></div>
-                <button onclick="removeFromCart(${item.id})" class="cart-item__remove" title="Удалить">
-                    <svg width="20" height="20" viewBox="0 0 24 24">
-                        <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
-            </div>
-        `;
-    })
-    .join("");
-
-  content.innerHTML = `
-        <div class="cart-items">${itemsHTML}</div>
-        <div class="cart-total">
-            <div class="cart-total__row">
-                <span>Товаров:</span>
-                <span>${cart.reduce((sum, item) => sum + item.quantity, 0)} шт.</span>
-            </div>
-            <div class="cart-total__row cart-total__row--main">
-                <span>Итого:</span>
-                <span class="cart-total__price">${totalPrice.toLocaleString("ru-RU")} ₽</span>
-            </div>
-        </div>
-        <div class="cart-actions">
-            <button class="btn btn--outline" onclick="closeModal('cartModal')">Продолжить покупки</button>
-            <button class="btn btn--primary" onclick="checkout()">Оформить заказ</button>
-        </div>
-    `;
-}
-
-// Обновление количества товара в корзине
-function updateCartQuantity(productId, change) {
-  const item = cart.find((i) => i.id === productId);
-  if (!item) return;
-
-  item.quantity += change;
-
-  if (item.quantity <= 0) {
-    removeFromCart(productId);
-    return;
-  }
-
-  saveCart();
-  updateCounters();
-  renderCartModal();
-}
-
-// Удаление товара из корзины
-function removeFromCart(productId) {
-  cart = cart.filter((item) => item.id !== productId);
-  saveCart();
-  updateCounters();
-  renderCartModal();
-  showNotification("Товар удален из корзины");
-}
-
-// Оформление заказа
-function checkout() {
-  alert(
-    "Функция оформления заказа будет реализована позже.\n\nПожалуйста, позвоните нам: +7 (969) 999-56-68",
-  );
-}
-
-// Создание модального окна Избранного
-function createFavoritesModal() {
-  const modal = document.createElement("div");
-  modal.id = "favoritesModal";
-  modal.className = "modal-overlay";
-  modal.innerHTML = `
-        <div class="modal modal--large">
-            <button class="modal__close" onclick="closeModal('favoritesModal')" aria-label="Закрыть">×</button>
-            <div class="modal__content">
-                <h2 class="modal__title">Избранное</h2>
-                <div id="favoritesContent"></div>
-            </div>
-        </div>
-    `;
-  document.body.appendChild(modal);
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      closeModal("favoritesModal");
-    }
-  });
-}
-
-// Рендеринг избранного
-function renderFavoritesModal() {
-  const content = document.getElementById("favoritesContent");
-  if (!content) return;
-
-  if (favorites.length === 0) {
-    content.innerHTML = `
-            <div class="empty-state">
-                <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2"/>
-                </svg>
-                <h3>Избранное пусто</h3>
-                <p>Добавьте товары, которые вам понравились</p>
-                <button class="btn btn--primary" onclick="closeModal('favoritesModal')">Перейти в каталог</button>
-            </div>
-        `;
-    return;
-  }
-
-  const favoriteProducts = allProducts.filter((p) => favorites.includes(p.id));
-  const itemsHTML = favoriteProducts
-    .map(
-      (product) => `
-        <div class="favorites-item">
-            <img src="${product.image_url}" alt="${product.name}" class="favorites-item__image">
-            <div class="favorites-item__info">
-                <h4 class="favorites-item__title">${product.name}</h4>
-                <p class="favorites-item__specs">${product.power} л.с. • ${product.drive} • ${product.transmission}</p>
-                <div class="favorites-item__price">${product.price.toLocaleString("ru-RU")} ₽</div>
-            </div>
-            <div class="favorites-item__actions">
-                <button class="btn btn--primary btn--small" onclick="addToCart(${product.id})">В корзину</button>
-                <button class="btn btn--outline btn--small" onclick="toggleFavorite(${product.id}); renderFavoritesModal();">Удалить</button>
-            </div>
-        </div>
-    `,
-    )
-    .join("");
-
-  content.innerHTML = `<div class="favorites-items">${itemsHTML}</div>`;
-}
-
-// Создание модального окна Сравнения
-function createCompareModal() {
-  const modal = document.createElement("div");
-  modal.id = "compareModal";
-  modal.className = "modal-overlay";
-  modal.innerHTML = `
-        <div class="modal modal--large">
-            <button class="modal__close" onclick="closeModal('compareModal')" aria-label="Закрыть">×</button>
-            <div class="modal__content">
-                <h2 class="modal__title">Сравнение товаров</h2>
-                <div id="compareContent"></div>
-            </div>
-        </div>
-    `;
-  document.body.appendChild(modal);
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      closeModal("compareModal");
-    }
-  });
-}
-
-// Рендеринг сравнения
-function renderCompareModal() {
-  const content = document.getElementById("compareContent");
-  if (!content) return;
-
-  if (compare.length === 0) {
-    content.innerHTML = `
-            <div class="empty-state">
-                <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
-                    <path d="M9 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H9M15 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H15M9 3V21M15 3V21" stroke="currentColor" stroke-width="2"/>
-                </svg>
-                <h3>Список сравнения пуст</h3>
-                <p>Добавьте товары для сравнения характеристик</p>
-                <button class="btn btn--primary" onclick="closeModal('compareModal')">Перейти в каталог</button>
-            </div>
-        `;
-    return;
-  }
-
-  const compareProducts = allProducts.filter((p) => compare.includes(p.id));
-
-  const tableHTML = `
-        <div class="compare-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Характеристика</th>
-                        ${compareProducts
-                          .map(
-                            (p) => `
-                            <th>
-                                <div class="compare-product">
-                                    <img src="${p.image_url}" alt="${p.name}">
-                                    <h4>${p.name}</h4>
-                                    <button onclick="toggleCompare(${p.id}); renderCompareModal();" class="btn btn--outline btn--small">Удалить</button>
-                                </div>
-                            </th>
-                        `,
-                          )
-                          .join("")}
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Мощность</strong></td>
-                        ${compareProducts.map((p) => `<td>${p.power} л.с.</td>`).join("")}
-                    </tr>
-                    <tr>
-                        <td><strong>Привод</strong></td>
-                        ${compareProducts.map((p) => `<td>${p.drive}</td>`).join("")}
-                    </tr>
-                    <tr>
-                        <td><strong>КПП</strong></td>
-                        ${compareProducts.map((p) => `<td>${p.transmission}</td>`).join("")}
-                    </tr>
-                    <tr>
-                        <td><strong>Цена</strong></td>
-                        ${compareProducts.map((p) => `<td><strong>${p.price.toLocaleString("ru-RU")} ₽</strong></td>`).join("")}
-                    </tr>
-                    <tr>
-                        <td></td>
-                        ${compareProducts.map((p) => `<td><button class="btn btn--primary btn--small" onclick="addToCart(${p.id})">В корзину</button></td>`).join("")}
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    `;
-
-  content.innerHTML = tableHTML;
-}
-
-// Закрытие модального окна
-function closeModal(modalId) {
-  const modal = document.getElementById(modalId);
-  if (modal) {
-    modal.classList.remove("active");
-    document.body.style.overflow = "";
-  }
-}
-
-// Закрытие по ESC
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closeModal("cartModal");
-    closeModal("favoritesModal");
-    closeModal("compareModal");
-  }
-});
-
-// === Экспорт функций в глобальную область видимости ===
-window.openCart = openCart;
-window.openFavorites = openFavorites;
-window.openCompare = openCompare;
-window.closeModal = closeModal;
-window.toggleFavorite = toggleFavorite;
-window.toggleCompare = toggleCompare;
-window.addToCart = addToCart;
-window.updateCartQuantity = updateCartQuantity;
-window.removeFromCart = removeFromCart;
+// === Экспорт функций ===
+window.searchProducts = searchProducts;
+window.performSearch = performSearch;
+window.filterByBrand = filterByBrand;
+window.filterByCategory = filterByCategory;
+window.showAllProducts = showAllProducts;
+window.toggleCatalogMenu = toggleCatalogMenu;
+window.showDetails = showDetails;
+window.updateProductCard = updateProductCard;

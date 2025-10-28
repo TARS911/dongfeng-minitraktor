@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Сравнение товаров - DONGFENG Минитрактора</title>
+        <meta
+            name="description"
+            content="Сравнение минитракторов DONGFENG"
+        />
+
+        <link rel="stylesheet" href="css/variables.css?v=1761211422" />
+        <link rel="stylesheet" href="css/reset.css?v=1761211422" />
+        <link rel="stylesheet" href="css/components.css?v=1761211422" />
+        <link rel="stylesheet" href="css/effects.css?v=1761211422" />
+        <link rel="stylesheet" href="css/main.css?v=1761211422" />
+        <link rel="stylesheet" href="css/modal.css?v=1761211422" />
+        <link rel="stylesheet" href="css/header-new.css?v=1761211422" />
+        <link rel="stylesheet" href="css/catalog-modals.css?v=1761211422" />
+        <link rel="stylesheet" href="css/cart.css?v=1761211422" />
+        <style>
+            .compare-table-wrapper {
+                overflow-x: auto;
+                margin-top: 40px;
+                background: white;
+                border-radius: 12px;
+                padding: 20px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            }
+            .compare-table {
+                width: 100%;
+                border-collapse: collapse;
+                min-width: 600px;
+            }
+            .compare-table th,
+            .compare-table td {
+                padding: 16px;
+                text-align: center;
+                border: 1px solid #e8e8e8;
+            }
+            .compare-table th {
+                background: #f5f5f5;
+                font-weight: 600;
+                color: #404040;
+                text-align: left;
+            }
+            .compare-table td {
+                font-size: 16px;
+                color: #525252;
+            }
+            .compare-table img {
+                width: 120px;
+                height: 120px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin: 0 auto;
+                display: block;
+            }
+            .compare-table strong {
+                color: #171717;
+                font-weight: 600;
+            }
+            .compare-remove-btn {
+                background: #fee;
+                color: #ef4444;
+                border: none;
+                padding: 8px 16px;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 500;
+                transition: all 0.2s;
+            }
+            .compare-remove-btn:hover {
+                background: #ef4444;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header__content">
+                    <div class="logo">
+                        <a href="index.html" style="text-decoration: none">
+                            <span
+                                style="
+                                    font-size: 24px;
+                                    font-weight: 700;
+                                    color: #2a9d4e;
+                                "
+                                >DONGFENG</span
+                            >
+                            <span
+                                style="
+                                    display: block;
+                                    font-size: 12px;
+                                    color: #666;
+                                "
+                                >Минитрактора</span
+                            >
+                        </a>
+                    </div>
+
+                    <nav class="nav">
+                        <ul class="nav__list">
+                            <li>
+                                <a href="index.html" class="nav__link"
+                                    >Главная</a
+                                >
+                            </li>
+                            <li>
+                                <a href="catalog.html" class="nav__link"
+                                    >Каталог</a
+                                >
+                            </li>
+                            <li>
+                                <a href="payment.html" class="nav__link"
+                                    >Оплата</a
+                                >
+                            </li>
+                            <li>
+                                <a href="delivery.html" class="nav__link"
+                                    >Доставка</a
+                                >
+                            </li>
+                            <li>
+                                <a href="warranty.html" class="nav__link"
+                                    >Гарантия</a
+                                >
+                            </li>
+                            <li>
+                                <a href="contacts.html" class="nav__link"
+                                    >Контакты</a
+                                >
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="header__actions">
+                        <a href="favorites.html" class="header-action">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    fill="none"
+                                />
+                            </svg>
+                            <span class="header-action__label">Избранное</span>
+                            <span class="header-action__badge" id="favoritesCount">0</span>
+                        </a>
+                        <a href="compare.html" class="header-action">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M9 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H9M15 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H15M9 3V21M15 3V21"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                            <span class="header-action__label">Сравнение</span>
+                            <span class="header-action__badge" id="compareCount">0</span>
+                        </a>
+                        <a href="cart.html" class="header-action header-action--cart">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M9 2L7 7H21L19 2H9Z"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M7 7H21L19 17H9L7 7Z"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <circle cx="10" cy="21" r="1" fill="currentColor" />
+                                <circle cx="18" cy="21" r="1" fill="currentColor" />
+                            </svg>
+                            <span class="header-action__label">Корзина</span>
+                            <span class="header-action__badge" id="cartCount">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Compare Page -->
+        <section class="cart-page">
+            <div class="container">
+                <div class="cart-header">
+                    <h1 class="section-title">Сравнение товаров</h1>
+                    <p style="color: var(--color-gray-600); margin-top: var(--space-md);">
+                        Сравните характеристики выбранных минитракторов
+                    </p>
+                </div>
+
+                <div id="compare-content">
+                    <!-- Будет заполнено через JavaScript -->
+                </div>
+
+                <div style="margin-top: var(--space-xl); text-align: center;">
+                    <a href="catalog.html" class="btn btn--primary">
+                        Вернуться в каталог
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__column">
+                        <h4>О компании</h4>
+                        <ul>
+                            <li><a href="/#about">О нас</a></li>
+                            <li><a href="delivery.html">Доставка</a></li>
+                            <li><a href="contacts.html">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Каталог</h4>
+                        <ul>
+                            <li><a href="catalog.html">Минитрактора</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Контакты</h4>
+                        <p><a href="tel:+79699995668">+7 (969) 999-56-68</a></p>
+                        <p>
+                            <a href="mailto:info@dongfeng-minitraktor.ru"
+                                >info@dongfeng-minitraktor.ru</a
+                            >
+                        </p>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <p>
+                        &copy; 2025 DONGFENG Минитрактора. Все права защищены.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/config.js"></script>
+        <script src="js/global-cart.js"></script>
+        <script>
+            // Render compare page on load
+            document.addEventListener("DOMContentLoaded", async () => {
+                await renderComparePage();
+            });
+
+            async function renderComparePage() {
+                const container = document.getElementById("compare-content");
+                const compare = JSON.parse(localStorage.getItem("compare") || "[]");
+
+                if (compare.length === 0) {
+                    container.innerHTML = `
+                        <div class="empty-state" style="padding: 80px 20px; text-align: center;">
+                            <svg width="120" height="120" viewBox="0 0 24 24" fill="none" style="margin: 0 auto 30px; color: #d4d4d4;">
+                                <path d="M9 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H9M15 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H15M9 3V21M15 3V21" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <h3 style="font-size: 28px; margin-bottom: 16px; color: #404040;">Нет товаров для сравнения</h3>
+                            <p style="font-size: 18px; color: #737373; margin-bottom: 40px;">Добавьте минимум 2 товара для сравнения характеристик</p>
+                            <a href="catalog.html" class="btn btn--primary">Перейти в каталог</a>
+                        </div>
+                    `;
+                    return;
+                }
+
+                try {
+                    const response = await fetch(`${window.API_URL}/api/products`);
+                    const data = await response.json();
+
+                    if (data.success && data.data) {
+                        const compareProducts = data.data.filter((p) => compare.includes(p.id));
+
+                        const html = `
+                            <div class="compare-table-wrapper">
+                                <table class="compare-table">
+                                    <tr>
+                                        <th style="width: 200px;">Фото</th>
+                                        ${compareProducts.map((p) => `<td><img src="${p.image_url}" alt="${p.name}"></td>`).join("")}
+                                    </tr>
+                                    <tr>
+                                        <th>Модель</th>
+                                        ${compareProducts.map((p) => `<td><strong>${p.name}</strong></td>`).join("")}
+                                    </tr>
+                                    <tr>
+                                        <th>Цена</th>
+                                        ${compareProducts.map((p) => `<td><strong style="color: #2a9d4e; font-size: 20px;">${p.price.toLocaleString("ru-RU")} ₽</strong></td>`).join("")}
+                                    </tr>
+                                    <tr>
+                                        <th>Мощность</th>
+                                        ${compareProducts.map((p) => `<td>${p.power} л.с.</td>`).join("")}
+                                    </tr>
+                                    <tr>
+                                        <th>Привод</th>
+                                        ${compareProducts.map((p) => `<td>${p.drive}</td>`).join("")}
+                                    </tr>
+                                    <tr>
+                                        <th>КПП</th>
+                                        ${compareProducts.map((p) => `<td>${p.transmission}</td>`).join("")}
+                                    </tr>
+                                    <tr>
+                                        <th>В наличии</th>
+                                        ${compareProducts.map((p) => `<td>${p.in_stock ? '<span style="color: #22c55e;">✓ Да</span>' : '<span style="color: #ef4444;">✗ Нет</span>'}</td>`).join("")}
+                                    </tr>
+                                    <tr>
+                                        <th>Действия</th>
+                                        ${compareProducts
+                                            .map(
+                                                (p) => `
+                                            <td>
+                                                <button onclick="window.addToCart(${p.id})" class="btn btn--primary" style="margin-bottom: 8px; width: 100%;">
+                                                    В корзину
+                                                </button>
+                                                <button onclick="removeCompare(${p.id})" class="compare-remove-btn" style="width: 100%;">
+                                                    Удалить
+                                                </button>
+                                            </td>
+                                        `
+                                            )
+                                            .join("")}
+                                    </tr>
+                                </table>
+                            </div>
+                        `;
+
+                        container.innerHTML = html;
+                    }
+                } catch (error) {
+                    console.error("Ошибка загрузки сравнения:", error);
+                    container.innerHTML = `
+                        <div style="text-align: center; padding: 60px 20px;">
+                            <p style="color: #ef4444; font-size: 18px;">Ошибка загрузки товаров</p>
+                            <button onclick="location.reload()" class="btn btn--primary" style="margin-top: 20px;">Попробовать снова</button>
+                        </div>
+                    `;
+                }
+            }
+
+            function removeCompare(productId) {
+                window.toggleCompare(productId);
+                renderComparePage();
+            }
+        </script>
+    </body>
+</html>

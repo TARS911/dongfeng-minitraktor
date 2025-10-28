@@ -3,10 +3,34 @@
  * Стили для модальных окон каталога
  */
 
+/* === Ensure modal overlay is properly displayed === */
+.modal-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    z-index: 9999 !important;
+    display: none !important;
+}
+
+.modal-overlay.active {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
 /* === Large Modal === */
-.modal--large .modal {
-    max-width: 900px;
-    width: 95%;
+.modal.modal--large {
+    max-width: 900px !important;
+    width: 95% !important;
+    background: white !important;
+    border-radius: 16px !important;
+    padding: 40px !important;
+    position: relative !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
 }
 
 /* === Empty State === */

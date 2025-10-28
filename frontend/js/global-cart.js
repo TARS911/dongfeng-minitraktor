@@ -172,7 +172,7 @@ function createFavoritesModal() {
             <button class="modal__close" onclick="closeModal('favoritesModal')" aria-label="Закрыть">×</button>
             <div class="modal__content">
                 <h2 class="modal__title">Избранное</h2>
-                <div id="favoritesContent"></div>
+                <div id="favoritesContent">Загрузка...</div>
             </div>
         </div>
     `;
@@ -279,7 +279,7 @@ function createCompareModal() {
             <button class="modal__close" onclick="closeModal('compareModal')" aria-label="Закрыть">×</button>
             <div class="modal__content">
                 <h2 class="modal__title">Сравнение товаров</h2>
-                <div id="compareContent"></div>
+                <div id="compareContent">Загрузка...</div>
             </div>
         </div>
     `;
@@ -441,12 +441,18 @@ window.updateCounters = updateCounters;
 // === Добавление в корзину (для кнопок на страницах) ===
 async function addToCart(productId) {
   try {
-    // Загрузить товар из API
-    const response = await fetch(`${window.API_URL}/api/products/${productId}`);
+    // Загрузить все товары из API
+    const response = await fetch(`${window.API_URL}/api/products`);
     const data = await response.json();
 
     if (data.success && data.data) {
-      const product = data.data;
+      // Найти нужный товар по ID
+      const product = data.data.find((p) => p.id === productId);
+
+      if (!product) {
+        showNotification("Товар не найден");
+        return;
+      }
 
       // Проверить, есть ли уже в корзине
       const existingItem = cart.find((item) => item.id === productId);
