@@ -182,11 +182,6 @@ function createProductCardHTML(product) {
     : false;
   const badges = [];
 
-  if (product.is_hit)
-    badges.push('<div class="product-card__badge">Хит продаж</div>');
-  if (product.is_new)
-    badges.push('<div class="product-card__badge badge--new">Новинка</div>');
-
   return `
         <article class="product-card" itemscope itemtype="https://schema.org/Product" data-product-id="${product.id}">
             <div class="product-card__image">

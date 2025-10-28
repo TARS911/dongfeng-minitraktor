@@ -20,18 +20,27 @@ function updateCounters() {
   if (cartCount) {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
+    cartCount.setAttribute("data-hidden", totalItems === 0 ? "true" : "false");
   }
 
   // Избранное
   const favoritesCount = document.getElementById("favoritesCount");
   if (favoritesCount) {
     favoritesCount.textContent = favorites.length;
+    favoritesCount.setAttribute(
+      "data-hidden",
+      favorites.length === 0 ? "true" : "false",
+    );
   }
 
   // Сравнение
   const compareCount = document.getElementById("compareCount");
   if (compareCount) {
     compareCount.textContent = compare.length;
+    compareCount.setAttribute(
+      "data-hidden",
+      compare.length === 0 ? "true" : "false",
+    );
   }
 }
 
@@ -533,7 +542,7 @@ function renderCartPage() {
                 <div class="cart-item__price">${(item.product.price * item.quantity).toLocaleString("ru-RU")} <span class="ruble">₽</span></div>
                 <button onclick="removeFromCart(${item.id})" class="remove-btn" title="Удалить">×</button>
             </div>
-        `
+        `,
     )
     .join("");
 
@@ -549,7 +558,7 @@ function getItemsCount() {
 function getTotalPrice() {
   return cart.reduce(
     (sum, item) => sum + item.product.price * item.quantity,
-    0
+    0,
   );
 }
 

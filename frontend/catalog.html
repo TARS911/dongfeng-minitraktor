@@ -263,6 +263,25 @@
                         <!-- Выпадающее меню каталога -->
                         <div class="catalog-dropdown" id="catalogDropdown">
                             <div
+                                class="catalog-dropdown__category catalog-dropdown__category--all"
+                            >
+                                <a
+                                    href="#catalog"
+                                    onclick="showAllProducts(); return false;"
+                                >
+                                    <span class="catalog-dropdown__icon"
+                                        >📋</span
+                                    >
+                                    <span class="catalog-dropdown__name"
+                                        >Все тракторы</span
+                                    >
+                                    <span class="catalog-dropdown__count"
+                                        >(11)</span
+                                    >
+                                </a>
+                            </div>
+                            <div class="catalog-dropdown__divider"></div>
+                            <div
                                 class="catalog-dropdown__category"
                                 data-brand="df"
                             >
@@ -335,22 +354,6 @@
                                     >
                                     <span class="catalog-dropdown__count"
                                         >(4)</span
-                                    >
-                                </a>
-                            </div>
-                            <div class="catalog-dropdown__category">
-                                <a
-                                    href="#catalog"
-                                    onclick="showAllProducts(); return false;"
-                                >
-                                    <span class="catalog-dropdown__icon"
-                                        >📋</span
-                                    >
-                                    <span class="catalog-dropdown__name"
-                                        >Все тракторы</span
-                                    >
-                                    <span class="catalog-dropdown__count"
-                                        >(11)</span
                                     >
                                 </a>
                             </div>
@@ -428,10 +431,7 @@
 
                     <!-- Иконки действий -->
                     <div class="header__actions">
-                        <a
-                            href="favorites.html"
-                            class="header-action"
-                        >
+                        <a href="favorites.html" class="header-action">
                             <svg
                                 width="24"
                                 height="24"
@@ -452,10 +452,7 @@
                                 >0</span
                             >
                         </a>
-                        <a
-                            href="compare.html"
-                            class="header-action"
-                        >
+                        <a href="compare.html" class="header-action">
                             <svg
                                 width="24"
                                 height="24"
@@ -795,6 +792,23 @@
                             <div class="filter-group">
                                 <h4 class="filter-group__title">Бренд</h4>
                                 <div class="filter-group__content">
+                                    <label
+                                        class="filter-checkbox filter-checkbox--all"
+                                    >
+                                        <input
+                                            type="radio"
+                                            name="brand-filter"
+                                            value="all"
+                                            checked
+                                            onchange="showAllProducts()"
+                                        />
+                                        <span>📋 Все тракторы</span>
+                                        <span
+                                            class="filter-count filter-count--primary"
+                                            >(11)</span
+                                        >
+                                    </label>
+                                    <div class="filter-divider"></div>
                                     <label class="filter-checkbox">
                                         <input
                                             type="checkbox"
