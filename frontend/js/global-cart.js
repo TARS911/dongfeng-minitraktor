@@ -139,6 +139,11 @@ function updateCartQuantity(productId, change) {
       localStorage.setItem("cart", JSON.stringify(cart));
       updateCounters();
       renderCartModal();
+      // Update cart page if we're on it
+      if (typeof renderCartPage === "function") {
+        renderCartPage();
+        updateCartSummary();
+      }
     }
   }
 }
@@ -149,6 +154,11 @@ function removeFromCart(productId) {
   updateCounters();
   renderCartModal();
   showNotification("Товар удален из корзины");
+  // Update cart page if we're on it
+  if (typeof renderCartPage === "function") {
+    renderCartPage();
+    updateCartSummary();
+  }
 }
 
 // === Избранное ===
@@ -428,6 +438,9 @@ document.addEventListener("keydown", (e) => {
 });
 
 // === Экспорт функций в глобальную область ===
+window.cart = cart;
+window.favorites = favorites;
+window.compare = compare;
 window.openCart = openCart;
 window.openFavorites = openFavorites;
 window.openCompare = openCompare;
@@ -480,3 +493,95 @@ async function addToCart(productId) {
 
 // Экспорт функции
 window.addToCart = addToCart;
+
+// === Render Cart Page (для cart.html) ===
+function renderCartPage() {
+  const container = document.getElementById("cart-items-container");
+  if (!container) return;
+
+  if (cart.length === 0) {
+    container.innerHTML = `
+            <div class="empty-state" style="text-align: center; padding: 80px 20px;">
+                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" style="margin: 0 auto 30px; color: #d4d4d4;">
+                    <path d="M9 2L7 7H21L19 2H9Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M7 7H21L19 17H9L7 7Z" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="10" cy="21" r="1" fill="currentColor"/>
+                    <circle cx="18" cy="21" r="1" fill="currentColor"/>
+                </svg>
+                <h3 style="font-size: 28px; margin-bottom: 16px; color: #404040;">Корзина пуста</h3>
+                <p style="font-size: 18px; color: #737373; margin-bottom: 40px;">Добавьте товары из каталога</p>
+                <a href="catalog.html" class="btn btn--primary">Перейти в каталог</a>
+            </div>
+        `;
+    return;
+  }
+
+  const itemsHTML = cart
+    .map(
+      (item) => `
+            <div class="cart-item" data-product-id="${item.id}">
+                <img src="${item.product.image_url}" alt="${item.product.name}" class="cart-item__image">
+                <div class="cart-item__info">
+                    <h4 class="cart-item__title">${item.product.name}</h4>
+                    <p class="cart-item__specs">${item.product.power} л.с. • ${item.product.drive}</p>
+                </div>
+                <div class="cart-item__quantity">
+                    <button onclick="updateCartQuantity(${item.id}, -1)" class="quantity-btn">−</button>
+                    <span class="quantity-value">${item.quantity}</span>
+                    <button onclick="updateCartQuantity(${item.id}, 1)" class="quantity-btn">+</button>
+                </div>
+                <div class="cart-item__price">${(item.product.price * item.quantity).toLocaleString("ru-RU")} <span class="ruble">₽</span></div>
+                <button onclick="removeFromCart(${item.id})" class="remove-btn" title="Удалить">×</button>
+            </div>
+        `
+    )
+    .join("");
+
+  container.innerHTML = itemsHTML;
+}
+
+// Получить количество товаров
+function getItemsCount() {
+  return cart.reduce((sum, item) => sum + item.quantity, 0);
+}
+
+// Получить общую стоимость
+function getTotalPrice() {
+  return cart.reduce(
+    (sum, item) => sum + item.product.price * item.quantity,
+    0
+  );
+}
+
+// Очистить корзину
+function clearCart() {
+  if (confirm("Очистить корзину?")) {
+    cart = [];
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCounters();
+    renderCartPage();
+    updateCartSummary();
+    showNotification("Корзина очищена");
+  }
+}
+
+// Обновить summary на странице корзины
+function updateCartSummary() {
+  const itemsCountEl = document.getElementById("cart-items-count");
+  const totalEl = document.getElementById("cart-total");
+
+  if (itemsCountEl) {
+    itemsCountEl.textContent = getItemsCount();
+  }
+
+  if (totalEl) {
+    totalEl.textContent = getTotalPrice().toLocaleString("ru-RU") + " ₽";
+  }
+}
+
+// Экспорт функций для cart.html
+window.renderCartPage = renderCartPage;
+window.getItemsCount = getItemsCount;
+window.getTotalPrice = getTotalPrice;
+window.clearCart = clearCart;
+window.updateCartSummary = updateCartSummary;
