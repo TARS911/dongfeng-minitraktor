@@ -560,6 +560,16 @@
         font-size: 14px;
     }
 
+    /* Fix scroll indicator - move it down on mobile to avoid phone number overlap */
+    .hero-premium__scroll {
+        bottom: 20px;
+        font-size: 11px;
+    }
+
+    .hero-premium__scroll-line {
+        height: 40px;
+    }
+
     .features-premium__grid {
         grid-template-columns: 1fr;
         gap: 32px;
