@@ -156,6 +156,23 @@
     opacity: 0.4;
 }
 
+/* Special styling for Catalog link in mobile menu */
+.mobile-menu__link--catalog {
+    background: linear-gradient(135deg, rgba(42, 157, 78, 0.08), rgba(42, 157, 78, 0.03));
+    border: 1px solid rgba(42, 157, 78, 0.15);
+    border-left: 4px solid var(--brand-primary);
+    margin: 0 10px 10px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: var(--brand-primary);
+}
+
+.mobile-menu__link--catalog:hover {
+    background: linear-gradient(135deg, rgba(42, 157, 78, 0.15), rgba(42, 157, 78, 0.08));
+    border-color: rgba(42, 157, 78, 0.25);
+    color: #238d42;
+}
+
 /* Каталог в мобильном меню */
 
 

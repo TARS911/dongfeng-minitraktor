@@ -25,7 +25,15 @@
             <div class="container">
                 <div class="header__content">
                     <div class="logo">
-                        <a href="index.html" style="text-decoration: none; color: #2a9d4e; font-size: 20px; font-weight: 600;">
+                        <a
+                            href="index.html"
+                            style="
+                                text-decoration: none;
+                                color: #2a9d4e;
+                                font-size: 20px;
+                                font-weight: 600;
+                            "
+                        >
                             DONGFENG
                         </a>
                     </div>
@@ -67,7 +75,12 @@
 
                     <div class="header__actions">
                         <a href="favorites.html" class="header-action">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                            >
                                 <path
                                     d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
                                     stroke="currentColor"
@@ -76,10 +89,19 @@
                                 />
                             </svg>
                             <span class="header-action__label">Избранное</span>
-                            <span class="header-action__badge" id="favoritesCount">0</span>
+                            <span
+                                class="header-action__badge"
+                                id="favoritesCount"
+                                >0</span
+                            >
                         </a>
                         <a href="compare.html" class="header-action">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                            >
                                 <path
                                     d="M9 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H9M15 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H15M9 3V21M15 3V21"
                                     stroke="currentColor"
@@ -89,10 +111,20 @@
                                 />
                             </svg>
                             <span class="header-action__label">Сравнение</span>
-                            <span class="header-action__badge" id="compareCount">0</span>
+                            <span class="header-action__badge" id="compareCount"
+                                >0</span
+                            >
                         </a>
-                        <a href="cart.html" class="header-action header-action--cart">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <a
+                            href="cart.html"
+                            class="header-action header-action--cart"
+                        >
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                            >
                                 <path
                                     d="M9 2L7 7H21L19 2H9Z"
                                     stroke="currentColor"
@@ -107,11 +139,23 @@
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
                                 />
-                                <circle cx="10" cy="21" r="1" fill="currentColor" />
-                                <circle cx="18" cy="21" r="1" fill="currentColor" />
+                                <circle
+                                    cx="10"
+                                    cy="21"
+                                    r="1"
+                                    fill="currentColor"
+                                />
+                                <circle
+                                    cx="18"
+                                    cy="21"
+                                    r="1"
+                                    fill="currentColor"
+                                />
                             </svg>
                             <span class="header-action__label">Корзина</span>
-                            <span class="header-action__badge" id="cartCount">0</span>
+                            <span class="header-action__badge" id="cartCount"
+                                >0</span
+                            >
                         </a>
                     </div>
                 </div>
@@ -121,9 +165,21 @@
         <!-- Favorites Page -->
         <section class="cart-page">
             <div class="container">
+                <!-- Breadcrumbs -->
+                <div class="breadcrumbs">
+                    <a href="index.html">Главная</a>
+                    <span>/</span>
+                    <span>Избранное</span>
+                </div>
+
                 <div class="cart-header">
                     <h1 class="section-title">Избранные товары</h1>
-                    <p style="color: var(--color-gray-600); margin-top: var(--space-md);">
+                    <p
+                        style="
+                            color: var(--color-gray-600);
+                            margin-top: var(--space-md);
+                        "
+                    >
                         Сохраненные минитрактора для быстрого доступа
                     </p>
                 </div>
@@ -132,7 +188,7 @@
                     <!-- Будет заполнено через JavaScript -->
                 </div>
 
-                <div style="margin-top: var(--space-xl); text-align: center;">
+                <div style="margin-top: var(--space-xl); text-align: center">
                     <a href="catalog.html" class="btn btn--primary">
                         Вернуться в каталог
                     </a>
@@ -186,7 +242,9 @@
 
             async function renderFavoritesPage() {
                 const container = document.getElementById("favorites-content");
-                const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+                const favorites = JSON.parse(
+                    localStorage.getItem("favorites") || "[]",
+                );
 
                 if (favorites.length === 0) {
                     container.innerHTML = `
@@ -203,12 +261,14 @@
                 }
 
                 try {
-                    const response = await fetch(`${window.API_URL}/api/products`);
+                    const response = await fetch(
+                        `${window.API_URL}/api/products`,
+                    );
                     const data = await response.json();
 
                     if (data.success && data.data) {
                         const favoriteProducts = data.data.filter((p) =>
-                            favorites.includes(p.id)
+                            favorites.includes(p.id),
                         );
 
                         const html = `
@@ -235,7 +295,7 @@
                                             </button>
                                         </div>
                                     </div>
-                                `
+                                `,
                                     )
                                     .join("")}
                             </div>
