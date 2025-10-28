@@ -118,7 +118,7 @@ function renderCartModal() {
                     <span class="quantity-value">${item.quantity}</span>
                     <button onclick="updateCartQuantity(${item.id}, 1)" class="quantity-btn">+</button>
                 </div>
-                <div class="cart-item__price">${subtotal.toLocaleString("ru-RU")} <span class="ruble">₽</span></div>
+                <div class="cart-item__price">${subtotal.toLocaleString("ru-RU")} ₽</div>
                 <button onclick="removeFromCart(${item.id})" class="remove-btn" title="Удалить">Удалить</button>
             </div>
         `;
@@ -129,7 +129,7 @@ function renderCartModal() {
         <div class="cart-items">${itemsHTML}</div>
         <div class="cart-total">
             <span class="cart-total__label">Итого:</span>
-            <span class="cart-total__price">${totalPrice.toLocaleString("ru-RU")} <span class="ruble">₽</span></span>
+            <span class="cart-total__price">${totalPrice.toLocaleString("ru-RU")} ₽</span>
         </div>
         <div class="modal__actions">
             <button class="btn btn--outline" onclick="closeModal('cartModal')">Продолжить покупки</button>
@@ -240,7 +240,7 @@ async function renderFavoritesModal() {
                     <div class="favorites-item__info">
                         <h4 class="favorites-item__title">${product.name}</h4>
                         <p class="favorites-item__specs">${product.power} л.с. • ${product.drive}</p>
-                        <div class="favorites-item__price">${product.price.toLocaleString("ru-RU")} <span class="ruble">₽</span></div>
+                        <div class="favorites-item__price">${product.price.toLocaleString("ru-RU")} ₽</div>
                     </div>
                     <button onclick="toggleFavorite(${product.id}); renderFavoritesModal();" class="remove-btn">Удалить</button>
                 </div>
@@ -350,7 +350,7 @@ async function renderCompareModal() {
                         </tr>
                         <tr>
                             <th>Цена</th>
-                            ${compareProducts.map((p) => `<td><strong>${p.price.toLocaleString("ru-RU")} <span class="ruble">₽</span></strong></td>`).join("")}
+                            ${compareProducts.map((p) => `<td><strong>${p.price.toLocaleString("ru-RU")} ₽</strong></td>`).join("")}
                         </tr>
                         <tr>
                             <th>Мощность</th>
@@ -539,7 +539,7 @@ function renderCartPage() {
                     <span class="quantity-value">${item.quantity}</span>
                     <button onclick="updateCartQuantity(${item.id}, 1)" class="quantity-btn">+</button>
                 </div>
-                <div class="cart-item__price">${(item.product.price * item.quantity).toLocaleString("ru-RU")} <span class="ruble">₽</span></div>
+                <div class="cart-item__price">${(item.product.price * item.quantity).toLocaleString("ru-RU")} ₽</div>
                 <button onclick="removeFromCart(${item.id})" class="remove-btn" title="Удалить">×</button>
             </div>
         `,
