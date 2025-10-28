@@ -353,7 +353,7 @@ function createProductCard(product) {
                 </div>
             </div>
             <div class="product-card__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span class="price__current" itemprop="price" content="${product.price}">${product.price.toLocaleString("ru-RU")} ₽</span>
+                <span class="price__current" itemprop="price" content="${product.price}">${product.price.toLocaleString("ru-RU")}</span>
                 <meta itemprop="priceCurrency" content="RUB">
                 <link itemprop="availability" href="https://schema.org/${product.in_stock ? "InStock" : "OutOfStock"}">
             </div>
