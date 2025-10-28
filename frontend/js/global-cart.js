@@ -15,16 +15,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // === Обновление счетчиков ===
 function updateCounters() {
-  // Корзина
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  // Корзина (оба счетчика: desktop и mobile)
   const cartCount = document.getElementById("cartCount");
+  const cartCountMobile = document.getElementById("cartCountMobile");
   if (cartCount) {
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
     cartCount.setAttribute("data-hidden", totalItems === 0 ? "true" : "false");
   }
+  if (cartCountMobile) {
+    cartCountMobile.textContent = totalItems;
+    cartCountMobile.setAttribute(
+      "data-hidden",
+      totalItems === 0 ? "true" : "false",
+    );
+  }
 
-  // Избранное
+  // Избранное (оба счетчика)
   const favoritesCount = document.getElementById("favoritesCount");
+  const favoritesCountMobile = document.getElementById("favoritesCountMobile");
   if (favoritesCount) {
     favoritesCount.textContent = favorites.length;
     favoritesCount.setAttribute(
@@ -32,12 +42,27 @@ function updateCounters() {
       favorites.length === 0 ? "true" : "false",
     );
   }
+  if (favoritesCountMobile) {
+    favoritesCountMobile.textContent = favorites.length;
+    favoritesCountMobile.setAttribute(
+      "data-hidden",
+      favorites.length === 0 ? "true" : "false",
+    );
+  }
 
-  // Сравнение
+  // Сравнение (оба счетчика)
   const compareCount = document.getElementById("compareCount");
+  const compareCountMobile = document.getElementById("compareCountMobile");
   if (compareCount) {
     compareCount.textContent = compare.length;
     compareCount.setAttribute(
+      "data-hidden",
+      compare.length === 0 ? "true" : "false",
+    );
+  }
+  if (compareCountMobile) {
+    compareCountMobile.textContent = compare.length;
+    compareCountMobile.setAttribute(
       "data-hidden",
       compare.length === 0 ? "true" : "false",
     );

@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="css/mobile-menu.css?v=1761211422" />
         <link rel="stylesheet" href="css/catalog-modals.css?v=1761211422" />
         <link rel="stylesheet" href="css/cart.css?v=1761211422" />
+        <link rel="stylesheet" href="css/cart-header-mobile.css?v=1761211422" />
         <style>
             .compare-table-wrapper {
                 overflow-x: auto;
@@ -79,46 +80,19 @@
         <!-- Header -->
         <header class="header">
             <div class="container">
-                <div class="header__top">
-                    <nav class="nav" aria-label="Основная навигация">
-                        <ul class="nav__list">
-                            <li>
-                                <a href="index.html" class="nav__link"
-                                    >Главная</a
-                                >
-                            </li>
-                            <li>
-                                <a href="payment.html" class="nav__link"
-                                    >Оплата</a
-                                >
-                            </li>
-                            <li>
-                                <a href="delivery.html" class="nav__link"
-                                    >Доставка</a
-                                >
-                            </li>
-                            <li>
-                                <a href="warranty.html" class="nav__link"
-                                    >Гарантия</a
-                                >
-                            </li>
-                            <li>
-                                <a href="articles.html" class="nav__link"
-                                    >Статьи</a
-                                >
-                            </li>
-                            <li>
-                                <a href="contacts.html" class="nav__link"
-                                    >Контакты</a
-                                >
-                            </li>
-                            <li>
-                                <a href="media.html" class="nav__link">Медиа</a>
-                            </li>
-                        </ul>
-                    </nav>
+                <div class="header__content">
+                    <div class="header__contacts">
+                        <a href="tel:+79699995668" class="phone"
+                            >+7 (969) 999-56-68</a
+                        >
+                        <a href="cart.html" class="cart-icon">
+                            🛒 Корзина
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </div>
 
-                    <div class="header__actions">
+                    <!-- Mobile Actions - ONLY ON MOBILE -->
+                    <div class="header__mobile-actions">
                         <a href="favorites.html" class="header-action">
                             <svg
                                 width="24"
@@ -133,10 +107,9 @@
                                     fill="none"
                                 />
                             </svg>
-                            <span class="header-action__label">Избранное</span>
                             <span
                                 class="header-action__badge"
-                                id="favoritesCount"
+                                id="favoritesCountMobile"
                                 >0</span
                             >
                         </a>
@@ -155,8 +128,9 @@
                                     stroke-linejoin="round"
                                 />
                             </svg>
-                            <span class="header-action__label">Сравнение</span>
-                            <span class="header-action__badge" id="compareCount"
+                            <span
+                                class="header-action__badge"
+                                id="compareCountMobile"
                                 >0</span
                             >
                         </a>
@@ -197,22 +171,22 @@
                                     fill="currentColor"
                                 />
                             </svg>
-                            <span class="header-action__label">Корзина</span>
-                            <span class="header-action__badge" id="cartCount"
+                            <span
+                                class="header-action__badge"
+                                id="cartCountMobile"
                                 >0</span
                             >
                         </a>
+                        <button
+                            class="burger"
+                            aria-label="Открыть меню"
+                            onclick="toggleMobileMenu()"
+                        >
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
                     </div>
-
-                    <button
-                        class="burger"
-                        aria-label="Открыть меню"
-                        onclick="toggleMobileMenu()"
-                    >
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
                 </div>
             </div>
         </header>
