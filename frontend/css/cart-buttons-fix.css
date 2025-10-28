@@ -3,6 +3,12 @@
  * Гарантирует отображение на всех страницах и всех разрешениях
  */
 
+/* === Фикс z-index для header === */
+.header {
+    position: relative !important;
+    z-index: 1000 !important;
+}
+
 /* === Обязательное отображение header__actions === */
 .header__actions {
     display: flex !important;
@@ -12,7 +18,7 @@
     gap: 12px;
     margin-left: auto;
     flex-shrink: 0;
-    z-index: 10;
+    z-index: 100 !important;
 }
 
 /* === Кнопки действий === */
