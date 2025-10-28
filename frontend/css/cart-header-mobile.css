@@ -1,26 +1,45 @@
-/* Cart/Favorites/Compare Page Header - Mobile Only Actions */
+/* Cart/Favorites/Compare Page Header - Desktop + Mobile Actions */
 
-/* Hide mobile actions AND mobile menu on desktop */
+/* Show mobile actions on ALL screens (desktop + mobile) */
 .header__mobile-actions {
-    display: none;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
-/* Hide mobile menu completely on desktop */
+/* Hide mobile menu overlay on desktop */
 @media (min-width: 769px) {
     .mobile-menu,
     .mobile-menu-overlay {
         display: none !important;
     }
+
+    /* Hide burger button on desktop */
+    .header__mobile-actions .burger {
+        display: none;
+    }
+
+    /* Keep action icons visible on desktop */
+    .header__mobile-actions .header-action {
+        display: flex;
+    }
+
+    /* Show phone + cart text on desktop too */
+    .header__contacts {
+        display: flex !important;
+        align-items: center;
+        gap: 24px;
+    }
 }
 
-/* Show mobile actions ONLY on mobile */
+/* Mobile specific styles */
 @media (max-width: 768px) {
-    /* Hide desktop phone + cart */
+    /* Hide desktop phone + cart text on mobile */
     .header__contacts {
         display: none !important;
     }
 
-    /* Show mobile actions */
+    /* Show mobile actions with burger */
     .header__mobile-actions {
         display: flex;
         align-items: center;
@@ -86,5 +105,26 @@
 
     .header__mobile-actions .burger:hover span {
         background: var(--brand-primary);
+    }
+}
+
+/* Desktop specific icon styles */
+@media (min-width: 769px) {
+    .header__mobile-actions .header-action svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .header__mobile-actions .header-action__badge {
+        min-width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+
+    .header__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
     }
 }
