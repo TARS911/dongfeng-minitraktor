@@ -21,13 +21,24 @@
         <link rel="stylesheet" href="css/footer-minimal.css?v=1761211422" />
 
         <style>
-            /* Desktop: Show icons, hide only burger menu */
+            /* Desktop: Show icons, hide burger menu */
             @media (min-width: 769px) {
                 .header__mobile-actions .burger {
                     display: none !important;
                 }
 
                 .header__mobile-actions {
+                    display: flex !important;
+                }
+            }
+
+            /* Mobile: Show everything including burger */
+            @media (max-width: 768px) {
+                .header__mobile-actions {
+                    display: flex !important;
+                }
+
+                .header__mobile-actions .burger {
                     display: flex !important;
                 }
             }
