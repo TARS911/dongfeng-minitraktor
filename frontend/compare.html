@@ -19,24 +19,6 @@
         <link rel="stylesheet" href="css/cart-header-mobile.css?v=1761211422" />
         <link rel="stylesheet" href="css/footer-minimal.css?v=1761211422" />
         <style>
-            /* Mobile: Force show burger menu */
-            @media (max-width: 768px) {
-                .header__mobile-actions {
-                    display: flex !important;
-                }
-
-                .header__mobile-actions .burger {
-                    display: flex !important;
-                }
-            }
-
-            /* Desktop: Hide burger menu */
-            @media (min-width: 769px) {
-                .header__mobile-actions .burger {
-                    display: none !important;
-                }
-            }
-
             .compare-table-wrapper {
                 overflow-x: auto;
                 margin-top: 40px;
@@ -272,6 +254,36 @@
                             ><span>Медиа</span></a
                         >
                     </li>
+                    <li class="mobile-menu__item">
+                        <a href="favorites.html" class="mobile-menu__link"
+                            ><span>❤️ Избранное</span></a
+                        >
+                    </li>
+                    <li class="mobile-menu__item">
+                        <a href="compare.html" class="mobile-menu__link"
+                            ><span>⚖️ Сравнение</span></a
+                        >
+                    </li>
+                    <li class="mobile-menu__item">
+                        <a href="cart.html" class="mobile-menu__link"
+                            ><span>🛒 Корзина</span></a
+                        >
+                    </li>
+                    <li class="mobile-menu__divider"></li>
+                    <li class="mobile-menu__item">
+                        <a
+                            href="privacy.html"
+                            class="mobile-menu__link mobile-menu__link--small"
+                            ><span>Политика конфиденциальности</span></a
+                        >
+                    </li>
+                    <li class="mobile-menu__item">
+                        <a
+                            href="terms.html"
+                            class="mobile-menu__link mobile-menu__link--small"
+                            ><span>Пользовательское соглашение</span></a
+                        >
+                    </li>
                 </ul>
             </nav>
             <div class="mobile-menu__footer">
@@ -313,12 +325,6 @@
                 <div id="compare-content">
                     <!-- Будет заполнено через JavaScript -->
                 </div>
-
-                <div style="margin-top: var(--space-xl); text-align: center">
-                    <a href="catalog.html" class="btn btn--primary">
-                        Вернуться в каталог
-                    </a>
-                </div>
             </div>
         </section>
 
@@ -355,8 +361,7 @@
                                 <path d="M9 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H9M15 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H15M9 3V21M15 3V21" stroke="currentColor" stroke-width="2"/>
                             </svg>
                             <h3 style="font-size: 28px; margin-bottom: 16px; color: #404040;">Нет товаров для сравнения</h3>
-                            <p style="font-size: 18px; color: #737373; margin-bottom: 40px;">Добавьте минимум 2 товара для сравнения характеристик</p>
-                            <a href="catalog.html" class="btn btn--primary">Перейти в каталог</a>
+                            <p style="font-size: 18px; color: #737373;">Добавьте минимум 2 товара для сравнения характеристик</p>
                         </div>
                     `;
                     return;
