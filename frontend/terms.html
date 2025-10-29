@@ -21,6 +21,13 @@
         <link rel="stylesheet" href="css/footer-minimal.css?v=1761211422" />
 
         <style>
+            /* Desktop: Hide mobile actions (burger + icons) */
+            @media (min-width: 769px) {
+                .header__mobile-actions {
+                    display: none !important;
+                }
+            }
+
             .legal-page {
                 padding: var(--space-4xl) 0;
                 min-height: 60vh;
