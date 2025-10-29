@@ -86,7 +86,7 @@
     }
 
     .header__mobile-actions .burger {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         gap: 4px;
         background: none;
