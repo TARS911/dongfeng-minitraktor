@@ -88,18 +88,30 @@
     .header__mobile-actions .burger {
         display: flex !important;
         flex-direction: column;
-        gap: 4px;
-        background: none;
-        border: none;
+        gap: 5px;
+        background: rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
         cursor: pointer;
-        padding: 8px;
+        padding: 10px;
         margin-left: 8px;
+        transition: all 0.2s ease;
+    }
+
+    .header__mobile-actions .burger:hover {
+        background: rgba(42, 157, 78, 0.1);
+        border-color: rgba(42, 157, 78, 0.3);
+    }
+
+    .header__mobile-actions .burger:active {
+        transform: scale(0.95);
     }
 
     .header__mobile-actions .burger span {
         width: 24px;
-        height: 2px;
-        background: var(--color-gray-700);
+        height: 3px;
+        background: #333333;
+        border-radius: 2px;
         transition: all 0.3s;
     }
 

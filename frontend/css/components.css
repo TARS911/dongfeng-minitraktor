@@ -114,7 +114,7 @@
 
 /* Product Card - Профессиональный дизайн как на лучших сайтах */
 .product-card {
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     overflow: hidden;
@@ -128,13 +128,17 @@
 }
 
 .product-card::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, transparent 0%, rgba(42, 157, 78, 0.03) 100%);
+    background: linear-gradient(
+        135deg,
+        transparent 0%,
+        rgba(42, 157, 78, 0.03) 100%
+    );
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -155,7 +159,7 @@
     width: 100%;
     aspect-ratio: 4/3;
     overflow: hidden;
-    background: linear-gradient(to bottom, #F8F8F8, #F0F0F0);
+    background: linear-gradient(to bottom, #f8f8f8, #f0f0f0);
 }
 
 .product-card__image img {
@@ -175,7 +179,7 @@
     position: absolute;
     top: 12px;
     left: 12px;
-    background: linear-gradient(135deg, #FF5722, #FF7043);
+    background: linear-gradient(135deg, #ff5722, #ff7043);
     color: var(--color-white);
     padding: 6px 14px;
     border-radius: 20px;
@@ -200,7 +204,7 @@
 }
 
 .product-card__badge.badge--new {
-    background: linear-gradient(135deg, #10B981, #34D399);
+    background: linear-gradient(135deg, #10b981, #34d399);
     box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
@@ -233,7 +237,7 @@
 }
 
 .spec {
-    background: #F8F8F8;
+    background: #f8f8f8;
     padding: 8px;
     border-radius: 8px;
     text-align: center;
@@ -496,17 +500,30 @@ form > * + * {
 .burger {
     display: none;
     flex-direction: column;
-    gap: 4px;
-    padding: var(--space-sm);
-    background: transparent;
+    gap: 5px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.burger:hover {
+    background: rgba(42, 157, 78, 0.1);
+    border-color: rgba(42, 157, 78, 0.3);
+}
+
+.burger:active {
+    transform: scale(0.95);
 }
 
 .burger span {
     display: block;
     width: 24px;
     height: 3px;
-    background: var(--color-gray-900);
-    border-radius: var(--radius-sm);
+    background: #333333;
+    border-radius: 2px;
     transition: all var(--transition-base);
 }
 

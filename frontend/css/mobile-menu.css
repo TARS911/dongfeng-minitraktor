@@ -7,15 +7,26 @@
 .burger {
     display: none; /* Скрыта на десктопе */
     flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 22px;
-    background: transparent;
-    border: none;
+    justify-content: center;
+    gap: 5px;
+    width: auto;
+    height: auto;
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
     cursor: pointer;
-    padding: 0;
+    padding: 10px;
     z-index: 1001;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+}
+
+.burger:hover {
+    background: rgba(42, 157, 78, 0.1);
+    border-color: rgba(42, 157, 78, 0.3);
+}
+
+.burger:active {
+    transform: scale(0.95);
 }
 
 /* Показываем кнопку бургера на мобильных устройствах */
@@ -27,9 +38,9 @@
 
 .burger span {
     display: block;
-    width: 100%;
+    width: 24px;
     height: 3px;
-    background: var(--brand-primary);
+    background: #333333;
     border-radius: 2px;
     transition: all 0.3s ease;
 }
