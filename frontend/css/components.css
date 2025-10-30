@@ -530,7 +530,7 @@ form > * + * {
 /* Mobile burger */
 @media (max-width: 768px) {
     .burger {
-        display: flex;
+        display: flex !important;
     }
 }
 
