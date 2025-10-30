@@ -1,25 +1,14 @@
-/*
- * Modern Animations & Effects 2025
- * Современные анимации и визуальные эффекты
+/**
+ * Modern Animations - Плавные микроанимации для UI/UX
+ * Современные анимации для улучшения пользовательского опыта
  */
 
-/* === KEYFRAME ANIMATIONS === */
+/* === Keyframes === */
 
-/* Плавное появление */
 @keyframes fadeIn {
     from {
         opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Появление снизу */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -27,32 +16,18 @@
     }
 }
 
-/* Появление сверху */
-@keyframes fadeInDown {
+@keyframes fadeInScale {
     from {
         opacity: 0;
-        transform: translateY(-30px);
+        transform: scale(0.95);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1);
     }
 }
 
-/* Появление слева */
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Появление справа */
-@keyframes fadeInRight {
+@keyframes slideInRight {
     from {
         opacity: 0;
         transform: translateX(30px);
@@ -63,21 +38,37 @@
     }
 }
 
-/* Увеличение с появлением */
-@keyframes scaleIn {
+@keyframes slideInLeft {
     from {
         opacity: 0;
-        transform: scale(0.9);
+        transform: translateX(-30px);
     }
     to {
         opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
         transform: scale(1);
     }
 }
 
-/* Пульсация */
 @keyframes pulse {
-    0%, 100% {
+    0%,
+    100% {
         transform: scale(1);
     }
     50% {
@@ -85,355 +76,275 @@
     }
 }
 
-/* Тряска */
 @keyframes shake {
-    0%, 100% {
+    0%,
+    100% {
         transform: translateX(0);
     }
-    10%, 30%, 50%, 70%, 90% {
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
         transform: translateX(-5px);
     }
-    20%, 40%, 60%, 80% {
+    20%,
+    40%,
+    60%,
+    80% {
         transform: translateX(5px);
     }
 }
 
-/* Вращение */
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
+@keyframes ripple {
     to {
-        transform: rotate(360deg);
+        transform: scale(4);
+        opacity: 0;
     }
 }
 
-/* Градиентная анимация */
-@keyframes gradient-shift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+/* === Button Animations === */
+
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Свечение */
-@keyframes glow {
-    0%, 100% {
-        box-shadow: 0 0 10px rgba(42, 157, 78, 0.3);
-    }
-    50% {
-        box-shadow: 0 0 25px rgba(42, 157, 78, 0.6);
-    }
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition:
+        width 0.6s,
+        height 0.6s;
 }
 
-/* Плавающий эффект */
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
-/* === UTILITY CLASSES === */
-
-/* Базовые анимации */
-.animate-fade-in {
-    animation: fadeIn 0.6s ease-out;
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-.animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out;
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.animate-fade-in-down {
-    animation: fadeInDown 0.6s ease-out;
+/* === Card Animations === */
+
+.card,
+.catalog__item,
+.product-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeIn 0.5s ease-out;
 }
 
-.animate-fade-in-left {
-    animation: fadeInLeft 0.6s ease-out;
+.card:hover,
+.catalog__item:hover,
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-.animate-fade-in-right {
-    animation: fadeInRight 0.6s ease-out;
-}
-
-.animate-scale-in {
-    animation: scaleIn 0.4s ease-out;
-}
-
-.animate-pulse {
-    animation: pulse 2s ease-in-out infinite;
-}
-
-.animate-float {
-    animation: float 3s ease-in-out infinite;
-}
-
-/* С задержками */
-.animate-delay-100 {
+/* Stagger animation for cards */
+.catalog__item:nth-child(1) {
     animation-delay: 0.1s;
 }
-
-.animate-delay-200 {
+.catalog__item:nth-child(2) {
     animation-delay: 0.2s;
 }
-
-.animate-delay-300 {
+.catalog__item:nth-child(3) {
     animation-delay: 0.3s;
 }
-
-.animate-delay-400 {
+.catalog__item:nth-child(4) {
     animation-delay: 0.4s;
 }
-
-.animate-delay-500 {
+.catalog__item:nth-child(5) {
     animation-delay: 0.5s;
 }
-
-/* === HOVER EFFECTS === */
-
-/* Подъем карточки */
-.hover-lift {
-    transition: transform var(--transition-base), box-shadow var(--transition-base);
+.catalog__item:nth-child(6) {
+    animation-delay: 0.6s;
 }
 
-.hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-layered-hover);
+/* === Form Animations === */
+
+.form-group {
+    position: relative;
+    animation: slideInLeft 0.4s ease-out;
 }
 
-/* Масштабирование */
-.hover-scale {
-    transition: transform var(--transition-base);
+.form-input,
+.form-textarea,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    transition: all 0.3s ease;
+    border: 2px solid #e0e0e0;
 }
 
-.hover-scale:hover {
+.form-input:focus,
+.form-textarea:focus,
+input:focus,
+textarea:focus {
+    border-color: var(--brand-primary, #2a9d4e);
+    box-shadow: 0 0 0 3px rgba(42, 157, 78, 0.1);
+    transform: scale(1.01);
+}
+
+.form-input:valid,
+input:valid:not(:placeholder-shown) {
+    border-color: #4caf50;
+}
+
+.form-input:invalid:not(:placeholder-shown):not(:focus),
+input:invalid:not(:placeholder-shown):not(:focus) {
+    border-color: #f44336;
+    animation: shake 0.5s;
+}
+
+/* Floating labels */
+.form-label {
+    transition: all 0.3s ease;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+    transform: translateY(-25px) scale(0.85);
+    color: var(--brand-primary, #2a9d4e);
+}
+
+/* === Icon Animations === */
+
+.icon,
+.header-action svg,
+.burger svg {
+    transition: all 0.3s ease;
+}
+
+.icon:hover,
+.header-action:hover svg {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* === Image Animations === */
+
+img {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-image:hover,
+.catalog__item img:hover {
     transform: scale(1.05);
 }
 
-/* Масштабирование изображения внутри */
-.hover-zoom-image {
-    overflow: hidden;
+/* === Loading Skeleton === */
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
 }
 
-.hover-zoom-image img {
-    transition: transform var(--transition-slow);
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+    border-radius: 8px;
 }
 
-.hover-zoom-image:hover img {
-    transform: scale(1.1);
-}
+/* === Tooltip Animations === */
 
-/* Свечение при наведении */
-.hover-glow {
-    transition: box-shadow var(--transition-base);
-}
-
-.hover-glow:hover {
-    box-shadow: var(--shadow-primary-lg);
-}
-
-/* Изменение цвета с градиентом */
-.hover-gradient {
-    position: relative;
-    overflow: hidden;
-    transition: color var(--transition-base);
-}
-
-.hover-gradient::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--gradient-button-hover);
+.tooltip {
     opacity: 0;
-    transition: opacity var(--transition-base);
-    z-index: -1;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
 }
 
-.hover-gradient:hover::before {
+.tooltip.show,
+*:hover > .tooltip {
     opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
-/* Подчеркивание снизу */
-.hover-underline {
-    position: relative;
+/* === Modal Animations === */
+
+.modal {
+    animation: fadeInScale 0.3s ease-out;
 }
 
-.hover-underline::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--brand-primary);
-    transition: width var(--transition-base);
+.modal-overlay {
+    animation: fadeIn 0.3s ease-out;
 }
 
-.hover-underline:hover::after {
-    width: 100%;
+/* === Badge Pulse === */
+
+.badge-new,
+.badge-hot,
+.header-action__badge {
+    animation: pulse 2s infinite;
 }
 
-/* Тень при наведении */
-.hover-shadow {
-    transition: box-shadow var(--transition-base);
-}
+/* === Scroll Reveal === */
 
-.hover-shadow:hover {
-    box-shadow: var(--shadow-hover);
-}
-
-/* Яркость при наведении */
-.hover-brighten {
-    transition: filter var(--transition-base);
-}
-
-.hover-brighten:hover {
-    filter: brightness(1.1);
-}
-
-/* === SCROLL ANIMATIONS === */
-
-/* Элементы для анимации при скролле */
-.scroll-fade-in {
+.scroll-reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: all 0.6s ease-out;
 }
 
-.scroll-fade-in.is-visible {
+.scroll-reveal.revealed {
     opacity: 1;
     transform: translateY(0);
 }
 
-.scroll-scale-in {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+/* === Success/Error Messages === */
+
+.success-message {
+    animation: bounceIn 0.5s ease-out;
 }
 
-.scroll-scale-in.is-visible {
-    opacity: 1;
-    transform: scale(1);
+.error-message {
+    animation: shake 0.5s ease-out;
 }
 
-/* === LOADING ANIMATIONS === */
+/* === Progress Bars === */
 
-/* Спиннер */
-.spinner {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border: 4px solid var(--color-gray-200);
-    border-top-color: var(--brand-primary);
-    border-radius: 50%;
-    animation: rotate 0.8s linear infinite;
+@keyframes progress {
+    from {
+        width: 0%;
+    }
 }
 
-.spinner-sm {
-    width: 20px;
-    height: 20px;
-    border-width: 2px;
+.progress-bar {
+    animation: progress 1s ease-out forwards;
 }
 
-.spinner-lg {
-    width: 60px;
-    height: 60px;
-    border-width: 6px;
-}
+/* === Ripple Effect for Clicks === */
 
-/* Точки загрузки */
-.loading-dots {
-    display: inline-flex;
-    gap: 8px;
-}
-
-.loading-dots span {
-    width: 8px;
-    height: 8px;
-    background: var(--brand-primary);
-    border-radius: 50%;
-    animation: pulse 1.4s ease-in-out infinite;
-}
-
-.loading-dots span:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.loading-dots span:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.loading-dots span:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-/* === SCROLL REVEAL (JavaScript будет добавлять класс is-visible) === */
-
-/* Наблюдатель за элементами для анимации */
-[data-animate] {
-    opacity: 0;
-}
-
-[data-animate].is-visible {
-    animation: fadeInUp 0.8s ease-out forwards;
-}
-
-[data-animate="fade"] {
-    opacity: 0;
-}
-
-[data-animate="fade"].is-visible {
-    animation: fadeIn 0.8s ease-out forwards;
-}
-
-[data-animate="scale"] {
-    opacity: 0;
-    transform: scale(0.9);
-}
-
-[data-animate="scale"].is-visible {
-    animation: scaleIn 0.8s ease-out forwards;
-}
-
-[data-animate="left"] {
-    opacity: 0;
-    transform: translateX(-30px);
-}
-
-[data-animate="left"].is-visible {
-    animation: fadeInLeft 0.8s ease-out forwards;
-}
-
-[data-animate="right"] {
-    opacity: 0;
-    transform: translateX(30px);
-}
-
-[data-animate="right"].is-visible {
-    animation: fadeInRight 0.8s ease-out forwards;
-}
-
-/* === BUTTON EFFECTS === */
-
-/* Кнопка с волной */
-.btn-ripple {
+.ripple-effect {
     position: relative;
     overflow: hidden;
 }
 
-.btn-ripple::after {
-    content: '';
+.ripple-effect::after {
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -442,53 +353,17 @@
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.5);
     transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
+    animation: ripple 0.6s ease-out;
 }
 
-.btn-ripple:active::after {
-    width: 300px;
-    height: 300px;
+/* === Smooth Scroll === */
+
+html {
+    scroll-behavior: smooth;
 }
 
-/* Кнопка с градиентной анимацией */
-.btn-gradient-animated {
-    background: var(--gradient-animated);
-    background-size: 400% 400%;
-    animation: gradient-shift 8s ease infinite;
-}
+/* === Reduce Motion for Accessibility === */
 
-/* === CARD EFFECTS === */
-
-/* Карточка с 3D эффектом */
-.card-3d {
-    transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-
-.card-3d:hover {
-    transform: perspective(1000px) rotateX(2deg) translateY(-5px);
-    box-shadow: var(--shadow-layered-hover);
-}
-
-/* === RESPONSIVE === */
-
-/* Отключение анимаций на мобильных для производительности */
-@media (max-width: 768px) {
-    .animate-fade-in,
-    .animate-fade-in-up,
-    .animate-fade-in-down,
-    .animate-fade-in-left,
-    .animate-fade-in-right,
-    .animate-scale-in {
-        animation-duration: 0.4s;
-    }
-
-    /* Упрощенные hover эффекты */
-    .hover-lift:hover {
-        transform: translateY(-4px);
-    }
-}
-
-/* Respecting prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -496,5 +371,33 @@
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
+}
+
+/* === Loading Spinner === */
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-top-color: var(--brand-primary, #2a9d4e);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.8s linear infinite;
+}
+
+/* === Page Transitions === */
+
+.page-enter {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.page-exit {
+    animation: fadeIn 0.3s ease-out reverse;
 }
