@@ -1,0 +1,389 @@
+/* Promo Blocks - Преимущества, Квиз, Подписка */
+
+/* === Our Advantages Block === */
+.advantages-section {
+    padding: 80px 0;
+    background: #f8f8f8;
+}
+
+.advantages-section__title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 60px 0;
+    text-align: left;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.advantage-item {
+    background: white;
+    border-radius: 12px;
+    padding: 32px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.advantage-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.advantage-item__icon {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    background: var(--brand-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.advantage-item__icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.advantage-item__text {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* === Quiz Block === */
+.quiz-block {
+    background: linear-gradient(135deg, #1a5540 0%, #0d3d2c 100%);
+    padding: 0;
+    margin: 60px 0;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.quiz-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.quiz-block::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: -60px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.quiz-block__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48px 60px;
+    gap: 40px;
+}
+
+.quiz-block__text {
+    flex: 1;
+}
+
+.quiz-block__title {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+}
+
+.quiz-block__subtitle {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+}
+
+.quiz-block__button {
+    background: var(--brand-accent);
+    color: white;
+    border: none;
+    padding: 18px 48px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(255, 91, 26, 0.3);
+}
+
+.quiz-block__button:hover {
+    background: #e54d15;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 91, 26, 0.4);
+}
+
+/* === Newsletter Block === */
+.newsletter-block {
+    background: linear-gradient(135deg, var(--brand-accent) 0%, #e54d15 100%);
+    padding: 0;
+    margin: 0 0 60px 0;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.newsletter-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.newsletter-block::after {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.newsletter-block__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48px 60px;
+    gap: 60px;
+}
+
+.newsletter-block__text {
+    flex: 1;
+}
+
+.newsletter-block__title {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+}
+
+.newsletter-block__subtitle {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+.newsletter-block__form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 420px;
+}
+
+.newsletter-block__input {
+    flex: 1;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    background: white;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.newsletter-block__input::placeholder {
+    color: #999;
+}
+
+.newsletter-block__input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.newsletter-block__submit {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+}
+
+.newsletter-block__submit:hover {
+    background: white;
+    color: var(--brand-accent);
+    transform: translateX(4px);
+}
+
+.newsletter-block__submit svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* === Responsive Styles === */
+@media (max-width: 1200px) {
+    .advantages-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .quiz-block__content,
+    .newsletter-block__content {
+        padding: 40px 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quiz-block__content,
+    .newsletter-block__content {
+        flex-direction: column;
+        text-align: center;
+        padding: 36px 32px;
+    }
+
+    .quiz-block__title,
+    .newsletter-block__title {
+        font-size: 28px;
+    }
+
+    .newsletter-block__form {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+@media (max-width: 768px) {
+    .advantages-section {
+        padding: 60px 0;
+    }
+
+    .advantages-section__title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .advantage-item {
+        padding: 24px 20px;
+    }
+
+    .advantage-item__icon {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+    }
+
+    .advantage-item__icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .advantage-item__text {
+        font-size: 14px;
+    }
+
+    .quiz-block,
+    .newsletter-block {
+        border-radius: 12px;
+        margin: 40px 0;
+    }
+
+    .quiz-block__content,
+    .newsletter-block__content {
+        padding: 32px 24px;
+    }
+
+    .quiz-block__title,
+    .newsletter-block__title {
+        font-size: 24px;
+    }
+
+    .quiz-block__subtitle,
+    .newsletter-block__subtitle {
+        font-size: 14px;
+    }
+
+    .quiz-block__button {
+        padding: 14px 32px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .newsletter-block__input {
+        padding: 14px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .advantages-section {
+        padding: 40px 0;
+    }
+
+    .advantages-section__title {
+        font-size: 24px;
+        margin-bottom: 32px;
+    }
+
+    .advantage-item {
+        padding: 20px 16px;
+        gap: 16px;
+    }
+
+    .quiz-block__content,
+    .newsletter-block__content {
+        padding: 28px 20px;
+        gap: 24px;
+    }
+
+    .quiz-block__title,
+    .newsletter-block__title {
+        font-size: 20px;
+    }
+}

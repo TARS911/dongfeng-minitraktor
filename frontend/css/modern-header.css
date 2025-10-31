@@ -184,7 +184,7 @@
 }
 
 .nav-menu-modern li a::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -4px;
     left: 0;
@@ -207,28 +207,38 @@
 
 .action-btn {
     position: relative;
-    width: 44px;
-    height: 44px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: white;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
+    gap: 4px;
+    background: transparent;
+    border: none;
     cursor: pointer;
     transition: all 0.3s ease;
     color: #666;
+    text-decoration: none;
+    padding: 4px 8px;
 }
 
 .action-btn:hover {
-    border-color: var(--brand-primary);
     color: var(--brand-primary);
+}
+
+.action-btn:hover svg {
     transform: translateY(-2px);
 }
 
 .action-btn svg {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.action-btn__text {
+    font-size: 12px;
+    color: inherit;
+    white-space: nowrap;
 }
 
 .action-btn__badge {
@@ -248,32 +258,11 @@
     padding: 0 4px;
 }
 
-/* Cart Button (Green) */
-.action-btn--cart {
-    background: var(--brand-primary);
-    border-color: var(--brand-primary);
-    color: white;
-}
-
-.action-btn--cart:hover {
-    background: #1e7a3d;
-    border-color: #1e7a3d;
-}
-
-.action-btn--cart .action-btn__badge {
-    background: var(--brand-accent);
-}
-
-/* Auth Button */
+/* Auth Button - styled as normal action button with icon on top */
 .action-btn--auth {
-    width: auto;
-    padding: 0 16px;
-    gap: 6px;
-}
-
-.action-btn--auth span {
-    font-size: 13px;
-    font-weight: 500;
+    background: transparent;
+    border: none;
+    color: #666;
 }
 
 /* Mobile Menu Toggle */
