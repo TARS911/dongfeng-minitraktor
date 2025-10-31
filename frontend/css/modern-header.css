@@ -141,12 +141,14 @@
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    text-decoration: none;
 }
 
 .catalog-btn-modern:hover {
     background: #1e7a3d;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(42, 157, 78, 0.3);
+    color: white;
 }
 
 .catalog-btn-modern svg {
