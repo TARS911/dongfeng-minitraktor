@@ -342,31 +342,32 @@
         height: 14px;
     }
 
-    /* Actions with labels below icons */
+    /* Actions - only icons, no text */
     .modern-header__actions {
         gap: 8px;
     }
 
     .action-btn {
-        padding: 4px;
-        min-width: 48px;
+        padding: 8px;
+        min-width: 44px;
+        min-height: 44px;
     }
 
     .action-btn svg {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
     }
 
+    /* Hide text labels on mobile */
     .action-btn__text {
-        font-size: 10px;
-        margin-top: 2px;
+        display: none;
     }
 
     .action-btn__badge {
-        top: 0;
-        right: 2px;
-        min-width: 16px;
-        height: 16px;
+        top: 4px;
+        right: 4px;
+        min-width: 18px;
+        height: 18px;
         font-size: 10px;
     }
 }
@@ -390,20 +391,27 @@
     }
 
     .modern-header__actions {
-        gap: 4px;
+        gap: 6px;
     }
 
     .action-btn {
-        padding: 3px;
-        min-width: 44px;
+        padding: 6px;
+        min-width: 40px;
+        min-height: 40px;
     }
 
     .action-btn svg {
-        width: 18px;
-        height: 18px;
+        width: 22px;
+        height: 22px;
     }
 
-    .action-btn__text {
+    /* Text already hidden by 768px breakpoint */
+
+    .action-btn__badge {
+        top: 2px;
+        right: 2px;
+        min-width: 16px;
+        height: 16px;
         font-size: 9px;
     }
 }
