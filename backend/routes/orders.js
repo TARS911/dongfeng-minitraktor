@@ -38,118 +38,116 @@ export default async function orderRoutes(fastify, options) {
       },
     },
     async (request, reply) => {
-      const transaction = db.transaction((orderData) => {
-        try {
-          const {
-            customer_name,
-            customer_phone,
-            customer_email,
-            delivery_address,
-            delivery_city,
-            notes,
-            items,
-          } = orderData;
+      try {
+        const {
+          customer_name,
+          customer_phone,
+          customer_email,
+          delivery_address,
+          delivery_city,
+          notes,
+          items,
+        } = request.body;
 
-          // Генерируем номер заказа
-          const order_number = `DF-${Date.now()}-${Math.random().toString(36).substr(2, 6).toUpperCase()}`;
+        // Генерируем номер заказа
+        const order_number = `DF-${Date.now()}-${Math.random().toString(36).substr(2, 6).toUpperCase()}`;
 
-          // Получаем товары и считаем общую сумму
-          let total_amount = 0;
-          const orderItems = [];
+        // Получаем товары и считаем общую сумму
+        let total_amount = 0;
+        const orderItems = [];
 
-          for (const item of items) {
-            const product = db
-              .prepare(
-                "SELECT id, name, model, price, in_stock FROM products WHERE id = ?",
-              )
-              .get(item.product_id);
+        for (const item of items) {
+          const { data: product, error: productError } = await supabase
+            .from("products")
+            .select("id, name, model, price, in_stock")
+            .eq("id", item.product_id)
+            .single();
 
-            if (!product) {
-              throw new Error(`Товар с ID ${item.product_id} не найден`);
-            }
-
-            if (!product.in_stock) {
-              throw new Error(`Товар "${product.name}" нет в наличии`);
-            }
-
-            const subtotal = product.price * item.quantity;
-            total_amount += subtotal;
-
-            orderItems.push({
-              product_id: product.id,
-              product_name: product.name,
-              product_model: product.model,
-              price: product.price,
-              quantity: item.quantity,
-              subtotal: subtotal,
+          if (productError || !product) {
+            return reply.code(400).send({
+              success: false,
+              error: `Товар с ID ${item.product_id} не найден`,
             });
           }
 
-          // Создаем заказ
-          const insertOrder = db.prepare(`
-          INSERT INTO orders (
-            order_number, customer_name, customer_phone, customer_email,
-            delivery_address, delivery_city, total_amount, notes, status
-          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'new')
-        `);
+          if (!product.in_stock) {
+            return reply.code(400).send({
+              success: false,
+              error: `Товар "${product.name}" нет в наличии`,
+            });
+          }
 
-          const orderResult = insertOrder.run(
+          const subtotal = product.price * item.quantity;
+          total_amount += subtotal;
+
+          orderItems.push({
+            product_id: product.id,
+            product_name: product.name,
+            product_model: product.model,
+            price: product.price,
+            quantity: item.quantity,
+            subtotal: subtotal,
+          });
+        }
+
+        // Создаем заказ
+        const { data: order, error: orderError } = await supabase
+          .from("orders")
+          .insert({
             order_number,
             customer_name,
             customer_phone,
-            customer_email || null,
-            delivery_address || null,
+            customer_email: customer_email || null,
+            delivery_address: delivery_address || null,
             delivery_city,
             total_amount,
-            notes || null,
-          );
+            notes: notes || null,
+            status: "new",
+          })
+          .select()
+          .single();
 
-          const order_id = orderResult.lastInsertRowid;
-
-          // Добавляем товары в заказ
-          const insertItem = db.prepare(`
-          INSERT INTO order_items (
-            order_id, product_id, product_name, product_model, price, quantity, subtotal
-          ) VALUES (?, ?, ?, ?, ?, ?, ?)
-        `);
-
-          for (const item of orderItems) {
-            insertItem.run(
-              order_id,
-              item.product_id,
-              item.product_name,
-              item.product_model,
-              item.price,
-              item.quantity,
-              item.subtotal,
-            );
-          }
-
-          return {
-            order_id,
-            order_number,
-            total_amount,
-            items_count: orderItems.length,
-          };
-        } catch (error) {
-          throw error;
+        if (orderError) {
+          throw orderError;
         }
-      });
 
-      try {
-        const result = transaction(request.body);
+        // Добавляем товары в заказ
+        const itemsToInsert = orderItems.map((item) => ({
+          order_id: order.id,
+          product_id: item.product_id,
+          product_name: item.product_name,
+          product_model: item.product_model,
+          price: item.price,
+          quantity: item.quantity,
+          subtotal: item.subtotal,
+        }));
 
-        fastify.log.info(`Новый заказ создан: ${result.order_number}`);
+        const { error: itemsError } = await supabase
+          .from("order_items")
+          .insert(itemsToInsert);
+
+        if (itemsError) {
+          // Откатываем заказ если не удалось добавить товары
+          await supabase.from("orders").delete().eq("id", order.id);
+          throw itemsError;
+        }
+
+        fastify.log.info(`Новый заказ создан: ${order.order_number}`);
 
         return {
           success: true,
           message:
             "Заказ успешно создан! Мы свяжемся с вами в ближайшее время.",
-          data: result,
+          data: {
+            order_id: order.id,
+            order_number: order.order_number,
+            total_amount,
+            items_count: orderItems.length,
+          },
         };
       } catch (error) {
         fastify.log.error(error);
-        reply.code(400).send({
+        reply.code(500).send({
           success: false,
           error: error.message || "Ошибка при создании заказа",
         });
@@ -162,34 +160,33 @@ export default async function orderRoutes(fastify, options) {
     try {
       const { id } = request.params;
 
-      const order = db
-        .prepare(
-          `
-        SELECT * FROM orders WHERE id = ?
-      `,
-        )
-        .get(id);
+      const { data: order, error: orderError } = await supabase
+        .from("orders")
+        .select("*")
+        .eq("id", id)
+        .single();
 
-      if (!order) {
+      if (orderError || !order) {
         return reply.code(404).send({
           success: false,
           error: "Заказ не найден",
         });
       }
 
-      const items = db
-        .prepare(
-          `
-        SELECT * FROM order_items WHERE order_id = ?
-      `,
-        )
-        .all(id);
+      const { data: items, error: itemsError } = await supabase
+        .from("order_items")
+        .select("*")
+        .eq("order_id", id);
+
+      if (itemsError) {
+        throw itemsError;
+      }
 
       return {
         success: true,
         data: {
           ...order,
-          items,
+          items: items || [],
         },
       };
     } catch (error) {
@@ -206,34 +203,33 @@ export default async function orderRoutes(fastify, options) {
     try {
       const { order_number } = request.params;
 
-      const order = db
-        .prepare(
-          `
-        SELECT * FROM orders WHERE order_number = ?
-      `,
-        )
-        .get(order_number);
+      const { data: order, error: orderError } = await supabase
+        .from("orders")
+        .select("*")
+        .eq("order_number", order_number)
+        .single();
 
-      if (!order) {
+      if (orderError || !order) {
         return reply.code(404).send({
           success: false,
           error: "Заказ не найден",
         });
       }
 
-      const items = db
-        .prepare(
-          `
-        SELECT * FROM order_items WHERE order_id = ?
-      `,
-        )
-        .all(order.id);
+      const { data: items, error: itemsError } = await supabase
+        .from("order_items")
+        .select("*")
+        .eq("order_id", order.id);
+
+      if (itemsError) {
+        throw itemsError;
+      }
 
       return {
         success: true,
         data: {
           ...order,
-          items,
+          items: items || [],
         },
       };
     } catch (error) {
@@ -250,30 +246,30 @@ export default async function orderRoutes(fastify, options) {
     try {
       const { status, limit = 50, offset = 0 } = request.query;
 
-      let query = "SELECT * FROM orders WHERE 1=1";
-      const params = [];
+      let query = supabase
+        .from("orders")
+        .select("*", { count: "exact" })
+        .order("created_at", { ascending: false })
+        .range(offset, offset + limit - 1);
 
       if (status) {
-        query += " AND status = ?";
-        params.push(status);
+        query = query.eq("status", status);
       }
 
-      query += " ORDER BY created_at DESC LIMIT ? OFFSET ?";
-      params.push(limit, offset);
+      const { data: orders, error, count } = await query;
 
-      const orders = db.prepare(query).all(...params);
-      const { total } = db
-        .prepare("SELECT COUNT(*) as total FROM orders")
-        .get();
+      if (error) {
+        throw error;
+      }
 
       return {
         success: true,
-        data: orders,
+        data: orders || [],
         pagination: {
-          total,
+          total: count || 0,
           limit,
           offset,
-          hasMore: offset + limit < total,
+          hasMore: offset + limit < (count || 0),
         },
       };
     } catch (error) {
@@ -314,15 +310,14 @@ export default async function orderRoutes(fastify, options) {
         const { id } = request.params;
         const { status } = request.body;
 
-        const update = db.prepare(`
-        UPDATE orders
-        SET status = ?, updated_at = CURRENT_TIMESTAMP
-        WHERE id = ?
-      `);
+        const { data, error } = await supabase
+          .from("orders")
+          .update({ status, updated_at: new Date().toISOString() })
+          .eq("id", id)
+          .select()
+          .single();
 
-        const result = update.run(status, id);
-
-        if (result.changes === 0) {
+        if (error || !data) {
           return reply.code(404).send({
             success: false,
             error: "Заказ не найден",
@@ -334,6 +329,7 @@ export default async function orderRoutes(fastify, options) {
         return {
           success: true,
           message: "Статус заказа обновлен",
+          data,
         };
       } catch (error) {
         fastify.log.error(error);
