@@ -354,8 +354,8 @@
     }
 
     .action-btn svg {
-        width: 24px;
-        height: 24px;
+        width: 32px;
+        height: 32px;
     }
 
     /* Hide text labels on mobile */
@@ -401,8 +401,8 @@
     }
 
     .action-btn svg {
-        width: 22px;
-        height: 22px;
+        width: 28px;
+        height: 28px;
     }
 
     /* Text already hidden by 768px breakpoint */
