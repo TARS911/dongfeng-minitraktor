@@ -1,8 +1,7 @@
-# Vercel деплоит ТОЛЬКО frontend - игнорируем всё остальное
+# Vercel Full-Stack: Frontend + Serverless API
 
-# Backend (деплоится на Railway)
+# Backend folder не нужен (используем /api/ для serverless)
 backend/
-api/
 
 # Конфигурации других платформ
 render.yaml
@@ -19,8 +18,6 @@ start.sh
 .github/
 
 # Локальные файлы
-node_modules/
-.env
 .env.local
 .env.example
 
