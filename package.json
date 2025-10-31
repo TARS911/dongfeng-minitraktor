@@ -1,0 +1,15 @@
+{
+  "name": "dongfeng-minitraktor",
+  "version": "1.0.0",
+  "description": "E-commerce website for DONGFENG minitractors",
+  "type": "module",
+  "scripts": {
+    "start": "cd backend && npm install && node server.js",
+    "install": "cd backend && npm install"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "",
+  "license": "MIT"
+}
