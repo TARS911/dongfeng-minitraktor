@@ -1,14 +1,27 @@
-# Игнорируем backend при деплое на Vercel
-backend/
+# Игнорируем ненужные файлы при деплое на Vercel
 node_modules/
 .git/
 .github/
 
-# Игнорируем документацию
+# Игнорируем документацию (кроме README)
 *.md
 !README.md
 
-# Игнорируем конфигурационные файлы
-.env
+# Игнорируем локальные конфиги
 .env.local
+.env.example
+
+# Игнорируем конфиги других платформ
 render.yaml
+railway.toml
+Procfile
+start.sh
+
+# Игнорируем старую БД (если есть)
+*.db
+*.sqlite
+backend/database/*.db
+
+# Игнорируем логи
+*.log
+npm-debug.log*
