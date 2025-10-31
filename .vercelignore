@@ -1,27 +1,29 @@
-# Игнорируем ненужные файлы при деплое на Vercel
-node_modules/
-.git/
-.github/
+# Vercel деплоит ТОЛЬКО frontend - игнорируем всё остальное
 
-# Игнорируем документацию (кроме README)
-*.md
-!README.md
+# Backend (деплоится на Railway)
+backend/
+api/
 
-# Игнорируем локальные конфиги
-.env.local
-.env.example
-
-# Игнорируем конфиги других платформ
+# Конфигурации других платформ
 render.yaml
 railway.toml
 Procfile
 start.sh
 
-# Игнорируем старую БД (если есть)
+# Документация
+*.md
+!README.md
+
+# Git
+.git/
+.github/
+
+# Локальные файлы
+node_modules/
+.env
+.env.local
+.env.example
+
+# База данных (используется Supabase)
 *.db
 *.sqlite
-backend/database/*.db
-
-# Игнорируем логи
-*.log
-npm-debug.log*

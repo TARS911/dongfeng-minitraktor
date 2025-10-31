@@ -1,5 +1,5 @@
 // API Configuration
-// Auto-detect deployment platform
+// Architecture: Vercel (Frontend) + Railway (Backend)
 
 function getApiUrl() {
   const hostname = window.location.hostname;
@@ -9,18 +9,18 @@ function getApiUrl() {
     return "http://localhost:3000";
   }
 
-  // Vercel deployment
+  // Vercel deployment - используем Railway backend
   if (hostname.includes("vercel.app")) {
-    return window.location.origin; // Same domain as frontend
+    return "https://dongfeng-minitraktor-production.up.railway.app";
   }
 
-  // Railway deployment
+  // Railway deployment (full-stack)
   if (hostname.includes("railway.app")) {
     return "https://dongfeng-minitraktor-production.up.railway.app";
   }
 
-  // Custom domain or other - use same origin
-  return window.location.origin;
+  // Custom domain - используем Railway backend
+  return "https://dongfeng-minitraktor-production.up.railway.app";
 }
 
 const API_URL = getApiUrl();
@@ -29,3 +29,4 @@ const API_URL = getApiUrl();
 window.API_URL = API_URL;
 
 console.log("🌐 API URL:", API_URL);
+console.log("📍 Platform:", window.location.hostname);
