@@ -214,14 +214,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4px;
+    gap: 6px;
     background: transparent;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
     color: #666;
     text-decoration: none;
-    padding: 4px 8px;
+    padding: 8px 12px;
 }
 
 .action-btn:hover {
@@ -233,32 +233,34 @@
 }
 
 .action-btn svg {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     transition: transform 0.3s ease;
 }
 
 .action-btn__text {
-    font-size: 12px;
+    font-size: 13px;
     color: inherit;
     white-space: nowrap;
+    font-weight: 500;
 }
 
 .action-btn__badge {
     position: absolute;
-    top: -6px;
-    right: -6px;
+    top: 2px;
+    right: 4px;
     background: var(--brand-accent);
     color: white;
     font-size: 11px;
     font-weight: 600;
-    min-width: 18px;
-    height: 18px;
-    border-radius: 9px;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 4px;
+    padding: 0 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Auth Button - styled as normal action button with icon on top */
