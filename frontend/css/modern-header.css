@@ -312,25 +312,57 @@
 @media (max-width: 768px) {
     .modern-header__main {
         padding: 12px 0;
-        gap: 12px;
+        gap: 8px;
     }
 
+    /* Hide logo on mobile */
     .modern-header__logo {
-        font-size: 20px;
+        display: none;
     }
 
+    /* Hide catalog button on mobile */
     .catalog-btn-modern {
-        padding: 10px 16px;
-        font-size: 13px;
+        display: none;
+    }
+
+    /* Smaller city selector */
+    .city-selector-modern__btn {
+        padding: 6px 10px;
+        font-size: 12px;
+        border-width: 1px;
+    }
+
+    .city-selector-modern__btn svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Actions with labels below icons */
+    .modern-header__actions {
+        gap: 8px;
     }
 
     .action-btn {
-        width: 40px;
-        height: 40px;
+        padding: 4px;
+        min-width: 48px;
     }
 
-    .action-btn--auth span {
-        display: none;
+    .action-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .action-btn__text {
+        font-size: 10px;
+        margin-top: 2px;
+    }
+
+    .action-btn__badge {
+        top: 0;
+        right: 2px;
+        min-width: 16px;
+        height: 16px;
+        font-size: 10px;
     }
 }
 
@@ -340,40 +372,33 @@
     }
 
     .modern-header__main {
-        gap: 8px;
+        gap: 6px;
     }
 
     .modern-header__left {
-        gap: 8px;
+        gap: 6px;
     }
 
     .city-selector-modern__btn {
-        padding: 8px 12px;
-        font-size: 13px;
-    }
-
-    .catalog-btn-modern {
-        padding: 8px 12px;
-        font-size: 12px;
-        gap: 6px;
-    }
-
-    .catalog-btn-modern svg {
-        width: 16px;
-        height: 16px;
+        padding: 5px 8px;
+        font-size: 11px;
     }
 
     .modern-header__actions {
-        gap: 6px;
+        gap: 4px;
     }
 
     .action-btn {
-        width: 36px;
-        height: 36px;
+        padding: 3px;
+        min-width: 44px;
     }
 
     .action-btn svg {
         width: 18px;
         height: 18px;
+    }
+
+    .action-btn__text {
+        font-size: 9px;
     }
 }
