@@ -1,0 +1,72 @@
+# robots.txt для dongfeng-minitraktor.ru
+# SEO оптимизация для Яндекса, Google и поисковых систем РФ/СНГ
+
+# ============================================
+# Правила для всех роботов
+# ============================================
+User-agent: *
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /fonts/
+
+# Запрещаем служебные файлы
+Disallow: /*.json$
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /.git
+Disallow: /node_modules/
+
+# ============================================
+# Яндекс (приоритетный для РФ/СНГ)
+# ============================================
+User-agent: Yandex
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /fonts/
+Crawl-delay: 0.5
+Clean-param: utm_source&utm_medium&utm_campaign
+
+# ============================================
+# Google
+# ============================================
+User-agent: Googlebot
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /fonts/
+
+# ============================================
+# Mail.ru
+# ============================================
+User-agent: Mail.RU_Bot
+Allow: /
+Crawl-delay: 1
+
+# ============================================
+# Rambler
+# ============================================
+User-agent: StackRambler
+Allow: /
+Crawl-delay: 1
+
+# ============================================
+# Sputnik (Ростелеком)
+# ============================================
+User-agent: Sputnik_Bot
+Allow: /
+Crawl-delay: 1
+
+# ============================================
+# Sitemap
+# ============================================
+Sitemap: https://dongfeng-minitraktor.ru/sitemap.xml
+
+# ============================================
+# Host для Яндекса (главное зеркало)
+# ============================================
+Host: dongfeng-minitraktor.ru

@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Заказ принят - DONGFENG Минитрактора</title>
+        <meta
+            name="description"
+            content="Подтверждение заказа минитракторов DONGFENG"
+        />
+
+        <link rel="stylesheet" href="css/variables.css?v=1761211422" />
+        <link rel="stylesheet" href="css/reset.css?v=1761211422" />
+        <link rel="stylesheet" href="css/components.css?v=1761211422" />
+        <link rel="stylesheet" href="css/effects.css?v=1761211422" />
+        <link rel="stylesheet" href="css/main.css?v=1761211422" />
+        <link rel="stylesheet" href="css/modal.css?v=1761211422" />
+        <link rel="stylesheet" href="css/header-new.css?v=1761211422" />
+        <style>
+            .confirmation-page {
+                padding: var(--space-xl) 0;
+                background: #fafafa;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+            }
+
+            .confirmation-container {
+                background: white;
+                padding: var(--space-xl);
+                border-radius: 12px;
+                box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+                text-align: center;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .confirmation-icon {
+                width: 100px;
+                height: 100px;
+                margin: 0 auto var(--space-lg);
+                background: #e8f5e9;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 48px;
+            }
+
+            .confirmation-title {
+                font-size: 28px;
+                font-weight: 600;
+                color: #2a9d4e;
+                margin-bottom: var(--space-md);
+            }
+
+            .confirmation-message {
+                font-size: 16px;
+                color: var(--color-text-secondary);
+                margin-bottom: var(--space-xl);
+                line-height: 1.6;
+            }
+
+            .order-number {
+                background: #f5f5f5;
+                padding: var(--space-lg);
+                border-radius: 8px;
+                margin-bottom: var(--space-xl);
+                border-left: 4px solid #2a9d4e;
+            }
+
+            .order-number-label {
+                font-size: 12px;
+                color: var(--color-text-secondary);
+                text-transform: uppercase;
+                margin-bottom: 4px;
+            }
+
+            .order-number-value {
+                font-size: 24px;
+                font-weight: 600;
+                color: #2a9d4e;
+                font-family: monospace;
+            }
+
+            .next-steps {
+                text-align: left;
+                background: #f9f9f9;
+                padding: var(--space-lg);
+                border-radius: 8px;
+                margin-bottom: var(--space-xl);
+            }
+
+            .next-steps-title {
+                font-size: 14px;
+                font-weight: 600;
+                color: var(--color-text-primary);
+                margin-bottom: var(--space-md);
+                text-transform: uppercase;
+            }
+
+            .next-steps-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .next-steps-list li {
+                padding: 8px 0;
+                font-size: 14px;
+                color: var(--color-text-secondary);
+                padding-left: 28px;
+                position: relative;
+            }
+
+            .next-steps-list li::before {
+                content: "✓";
+                position: absolute;
+                left: 0;
+                color: #2a9d4e;
+                font-weight: 600;
+            }
+
+            .confirmation-actions {
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+
+            .btn--primary-link {
+                background: var(--brand-primary);
+                color: white;
+                border: none;
+                padding: 14px 24px;
+                border-radius: 8px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background 0.2s;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .btn--primary-link:hover {
+                background: #238a3d;
+            }
+
+            .btn--secondary-link {
+                background: #f0f0f0;
+                color: var(--color-text-primary);
+                border: none;
+                padding: 12px 24px;
+                border-radius: 8px;
+                font-size: 14px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: background 0.2s;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .btn--secondary-link:hover {
+                background: #e0e0e0;
+            }
+
+            .contact-info {
+                margin-top: var(--space-xl);
+                padding-top: var(--space-xl);
+                border-top: 1px solid #f0f0f0;
+            }
+
+            .contact-info-title {
+                font-size: 14px;
+                font-weight: 600;
+                color: var(--color-text-primary);
+                margin-bottom: var(--space-md);
+            }
+
+            .contact-link {
+                display: inline-block;
+                margin-right: var(--space-md);
+                color: var(--brand-primary);
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+            .contact-link:hover {
+                text-decoration: underline;
+            }
+
+            @media (max-width: 768px) {
+                .confirmation-page {
+                    padding: var(--space-lg) var(--space-md);
+                }
+
+                .confirmation-title {
+                    font-size: 24px;
+                }
+
+                .order-number-value {
+                    font-size: 18px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header__content">
+                    <div class="logo">
+                        <a href="index.html" style="text-decoration: none; color: #2a9d4e; font-size: 20px; font-weight: 600;">
+                            DONGFENG
+                        </a>
+                    </div>
+
+                    <nav class="nav">
+                        <ul class="nav__list">
+                            <li>
+                                <a href="index.html" class="nav__link"
+                                    >Главная</a
+                                >
+                            </li>
+                            <li>
+                                <a href="payment.html" class="nav__link"
+                                    >Оплата</a
+                                >
+                            </li>
+                            <li>
+                                <a href="delivery.html" class="nav__link"
+                                    >Доставка</a
+                                >
+                            </li>
+                            <li>
+                                <a href="warranty.html" class="nav__link"
+                                    >Гарантия</a
+                                >
+                            </li>
+                            <li>
+                                <a href="articles.html" class="nav__link"
+                                    >Статьи</a
+                                >
+                            </li>
+                            <li>
+                                <a href="contacts.html" class="nav__link"
+                                    >Контакты</a
+                                >
+                            </li>
+                            <li>
+                                <a href="media.html" class="nav__link">Медиа</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="header__contacts">
+                        <a href="tel:+79699995668" class="phone"
+                            >+7 (969) 999-56-68</a
+                        >
+                        <a href="cart.html" class="cart-icon">
+                            🛒 Корзина
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Confirmation Page -->
+        <section class="confirmation-page">
+            <div class="container">
+                <div class="confirmation-container">
+                    <div class="confirmation-icon">✓</div>
+
+                    <h1 class="confirmation-title">Заказ принят!</h1>
+
+                    <p class="confirmation-message">
+                        Спасибо за ваш заказ! Мы получили вашу заявку и скоро с вами свяжемся для подтверждения деталей и расчета доставки.
+                    </p>
+
+                    <div class="order-number">
+                        <div class="order-number-label">Номер заказа</div>
+                        <div class="order-number-value" id="orderNumber">DF-XXXX-XXXX</div>
+                    </div>
+
+                    <div class="next-steps">
+                        <div class="next-steps-title">Что дальше?</div>
+                        <ul class="next-steps-list">
+                            <li>Мы свяжемся с вами по указанному телефону</li>
+                            <li>Обсудим детали доставки и способ оплаты</li>
+                            <li>Предоставим полную информацию о товаре</li>
+                            <li>Оформим доставку в удобное для вас время</li>
+                        </ul>
+                    </div>
+
+                    <div class="confirmation-actions">
+                        <a href="index.html" class="btn--primary-link">Вернуться на главную</a>
+                        <a href="catalog.html" class="btn--secondary-link">Продолжить покупки</a>
+                    </div>
+
+                    <div class="contact-info">
+                        <div class="contact-info-title">Есть вопросы?</div>
+                        <a href="tel:+79699995668" class="contact-link">Позвоните нам</a>
+                        <a href="mailto:info@dongfeng-minitraktor.ru" class="contact-link">Напишите на email</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__column">
+                        <h4>О компании</h4>
+                        <ul>
+                            <li><a href="/#about">О нас</a></li>
+                            <li><a href="/#delivery">Доставка</a></li>
+                            <li><a href="/#contacts">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Каталог</h4>
+                        <ul>
+                            <li><a href="/#catalog">Минитрактора</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Контакты</h4>
+                        <p><a href="tel:+79999999999">+7 (999) 999-99-99</a></p>
+                        <p>
+                            <a href="mailto:info@dongfeng-minitraktor.ru"
+                                >info@dongfeng-minitraktor.ru</a
+                            >
+                        </p>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <p>
+                        &copy; 2025 DONGFENG Минитрактора. Все права защищены.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/config.js"></script>
+        <script src="js/global-cart.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                // Get order number from URL
+                const params = new URLSearchParams(window.location.search);
+                const orderNumber = params.get('number');
+
+                if (orderNumber) {
+                    document.getElementById('orderNumber').textContent = orderNumber;
+                }
+
+                // Update cart counter
+                updateCartCounter();
+            });
+
+            // Update cart counter in header
+            function updateCartCounter() {
+                const cartCount = document.getElementById("cartCount");
+                if (cartCount && typeof cart !== 'undefined') {
+                    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                    cartCount.textContent = totalItems;
+                }
+            }
+        </script>
+    </body>
+</html>

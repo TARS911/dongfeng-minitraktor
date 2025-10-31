@@ -1,0 +1,403 @@
+/**
+ * Modern Animations - Плавные микроанимации для UI/UX
+ * Современные анимации для улучшения пользовательского опыта
+ */
+
+/* === Keyframes === */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* === Button Animations === */
+
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition:
+        width 0.6s,
+        height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* === Card Animations === */
+
+.card,
+.catalog__item,
+.product-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.card:hover,
+.catalog__item:hover,
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Stagger animation for cards */
+.catalog__item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.catalog__item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.catalog__item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.catalog__item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+.catalog__item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+.catalog__item:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+/* === Form Animations === */
+
+.form-group {
+    position: relative;
+    animation: slideInLeft 0.4s ease-out;
+}
+
+.form-input,
+.form-textarea,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    transition: all 0.3s ease;
+    border: 2px solid #e0e0e0;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+input:focus,
+textarea:focus {
+    border-color: var(--brand-primary, #2a9d4e);
+    box-shadow: 0 0 0 3px rgba(42, 157, 78, 0.1);
+    transform: scale(1.01);
+}
+
+.form-input:valid,
+input:valid:not(:placeholder-shown) {
+    border-color: #4caf50;
+}
+
+.form-input:invalid:not(:placeholder-shown):not(:focus),
+input:invalid:not(:placeholder-shown):not(:focus) {
+    border-color: #f44336;
+    animation: shake 0.5s;
+}
+
+/* Floating labels */
+.form-label {
+    transition: all 0.3s ease;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+    transform: translateY(-25px) scale(0.85);
+    color: var(--brand-primary, #2a9d4e);
+}
+
+/* === Icon Animations === */
+
+.icon,
+.header-action svg,
+.burger svg {
+    transition: all 0.3s ease;
+}
+
+.icon:hover,
+.header-action:hover svg {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* === Image Animations === */
+
+img {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-image:hover,
+.catalog__item img:hover {
+    transform: scale(1.05);
+}
+
+/* === Loading Skeleton === */
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+    border-radius: 8px;
+}
+
+/* === Tooltip Animations === */
+
+.tooltip {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.tooltip.show,
+*:hover > .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* === Modal Animations === */
+
+.modal {
+    animation: fadeInScale 0.3s ease-out;
+}
+
+.modal-overlay {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* === Badge Pulse === */
+
+.badge-new,
+.badge-hot,
+.header-action__badge {
+    animation: pulse 2s infinite;
+}
+
+/* === Scroll Reveal === */
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === Success/Error Messages === */
+
+.success-message {
+    animation: bounceIn 0.5s ease-out;
+}
+
+.error-message {
+    animation: shake 0.5s ease-out;
+}
+
+/* === Progress Bars === */
+
+@keyframes progress {
+    from {
+        width: 0%;
+    }
+}
+
+.progress-bar {
+    animation: progress 1s ease-out forwards;
+}
+
+/* === Ripple Effect for Clicks === */
+
+.ripple-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-effect::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    animation: ripple 0.6s ease-out;
+}
+
+/* === Smooth Scroll === */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* === Reduce Motion for Accessibility === */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* === Loading Spinner === */
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-top-color: var(--brand-primary, #2a9d4e);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.8s linear infinite;
+}
+
+/* === Page Transitions === */
+
+.page-enter {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.page-exit {
+    animation: fadeIn 0.3s ease-out reverse;
+}
