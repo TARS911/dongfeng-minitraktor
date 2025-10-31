@@ -1,5 +1,5 @@
 // API Configuration
-// Architecture: Vercel Full-Stack (Frontend + Backend Serverless + Supabase)
+// Architecture: Netlify (Frontend) + Railway (Backend) + Supabase (Database)
 
 function getApiUrl() {
   const hostname = window.location.hostname;
@@ -9,8 +9,8 @@ function getApiUrl() {
     return "http://localhost:3000";
   }
 
-  // Production - Vercel serverless (same domain)
-  return window.location.origin;
+  // Production - Railway backend
+  return "https://dongfeng-minitraktor-production.up.railway.app";
 }
 
 const API_URL = getApiUrl();
@@ -18,6 +18,6 @@ const API_URL = getApiUrl();
 // Export for use in other scripts
 window.API_URL = API_URL;
 
-console.log("🚀 Vercel Full-Stack");
+console.log("🚀 Netlify + Railway");
 console.log("🌐 API URL:", API_URL);
 console.log("📍 Platform:", window.location.hostname);
