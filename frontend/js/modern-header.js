@@ -174,6 +174,7 @@ function showAuthModal() {
 function toggleMobileMenu() {
   const mobileMenu = document.getElementById("mobileMenu");
   const toggle = document.querySelector(".mobile-menu-toggle");
+  const body = document.body;
 
   if (mobileMenu) {
     mobileMenu.classList.toggle("active");
@@ -182,6 +183,25 @@ function toggleMobileMenu() {
   if (toggle) {
     toggle.classList.toggle("active");
   }
+
+  // Блокировка скролла при открытом меню
+  body.style.overflow = mobileMenu.classList.contains("active") ? "hidden" : "";
+}
+
+function closeMobileMenu() {
+  const mobileMenu = document.getElementById("mobileMenu");
+  const toggle = document.querySelector(".mobile-menu-toggle");
+  const body = document.body;
+
+  if (mobileMenu) {
+    mobileMenu.classList.remove("active");
+  }
+
+  if (toggle) {
+    toggle.classList.remove("active");
+  }
+
+  body.style.overflow = "";
 }
 
 // === Newsletter Subscription ===
@@ -227,6 +247,7 @@ window.updateFavoritesCounter = updateFavoritesCounter;
 window.updateCompareCounter = updateCompareCounter;
 window.handleAuth = handleAuth;
 window.toggleMobileMenu = toggleMobileMenu;
+window.closeMobileMenu = closeMobileMenu;
 window.subscribeNewsletter = subscribeNewsletter;
 
 // === Обновление счётчиков при изменениях в localStorage ===
