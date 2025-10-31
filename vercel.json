@@ -1,11 +1,14 @@
 {
   "version": 2,
+  "buildCommand": "npm run vercel-build",
+  "installCommand": "npm install",
   "builds": [
     {
       "src": "backend/server.js",
       "use": "@vercel/node",
       "config": {
-        "maxDuration": 30
+        "maxDuration": 30,
+        "includeFiles": ["backend/**"]
       }
     },
     {

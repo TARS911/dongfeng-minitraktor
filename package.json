@@ -4,8 +4,7 @@
   "description": "E-commerce website for DONGFENG minitractors",
   "type": "module",
   "scripts": {
-    "start": "cd backend && npm install && node server.js",
-    "install": "cd backend && npm install"
+    "vercel-build": "cd backend && npm install"
   },
   "engines": {
     "node": "18.x"
