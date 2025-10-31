@@ -1,0 +1,390 @@
+/* Modern Header Styles */
+.modern-header {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.modern-header__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.modern-header__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    gap: 24px;
+}
+
+/* Left Section: Logo + City + Catalog */
+.modern-header__left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.modern-header__logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--brand-primary);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* City Selector */
+.city-selector-modern {
+    position: relative;
+}
+
+.city-selector-modern__btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: white;
+    border: 2px solid var(--brand-primary);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.city-selector-modern__btn:hover {
+    background: #f0f9f4;
+}
+
+.city-selector-modern__btn svg {
+    color: var(--brand-primary);
+}
+
+.city-selector-modern__dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    padding: 16px;
+    min-width: 260px;
+    z-index: 1100;
+    display: none;
+    animation: fadeInDown 0.3s ease;
+}
+
+.city-selector-modern__dropdown.active {
+    display: block;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.city-selector-modern__title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.city-selector-modern__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.city-selector-modern__list li {
+    padding: 10px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.city-selector-modern__list li:hover {
+    background: #f0f9f4;
+    color: var(--brand-primary);
+}
+
+/* Catalog Button */
+.catalog-btn-modern {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: var(--brand-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.catalog-btn-modern:hover {
+    background: #1e7a3d;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(42, 157, 78, 0.3);
+}
+
+.catalog-btn-modern svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Center Section: Navigation */
+.modern-header__nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu-modern {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu-modern li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-menu-modern li a:hover {
+    color: var(--brand-primary);
+}
+
+.nav-menu-modern li a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--brand-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-menu-modern li a:hover::after {
+    width: 100%;
+}
+
+/* Right Section: Icons */
+.modern-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.action-btn {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #666;
+}
+
+.action-btn:hover {
+    border-color: var(--brand-primary);
+    color: var(--brand-primary);
+    transform: translateY(-2px);
+}
+
+.action-btn svg {
+    width: 22px;
+    height: 22px;
+}
+
+.action-btn__badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: var(--brand-accent);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+}
+
+/* Cart Button (Green) */
+.action-btn--cart {
+    background: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: white;
+}
+
+.action-btn--cart:hover {
+    background: #1e7a3d;
+    border-color: #1e7a3d;
+}
+
+.action-btn--cart .action-btn__badge {
+    background: var(--brand-accent);
+}
+
+/* Auth Button */
+.action-btn--auth {
+    width: auto;
+    padding: 0 16px;
+    gap: 6px;
+}
+
+.action-btn--auth span {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    background: white;
+    border: 2px solid var(--brand-primary);
+    border-radius: 8px;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.mobile-menu-toggle span {
+    width: 20px;
+    height: 2px;
+    background: var(--brand-primary);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .nav-menu-modern {
+        gap: 20px;
+    }
+
+    .nav-menu-modern li a {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 992px) {
+    .modern-header__nav {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .modern-header__main {
+        padding: 12px 0;
+        gap: 12px;
+    }
+
+    .modern-header__logo {
+        font-size: 20px;
+    }
+
+    .catalog-btn-modern {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .action-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .action-btn--auth span {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .modern-header__container {
+        padding: 0 12px;
+    }
+
+    .modern-header__main {
+        gap: 8px;
+    }
+
+    .modern-header__left {
+        gap: 8px;
+    }
+
+    .city-selector-modern__btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .catalog-btn-modern {
+        padding: 8px 12px;
+        font-size: 12px;
+        gap: 6px;
+    }
+
+    .catalog-btn-modern svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .modern-header__actions {
+        gap: 6px;
+    }
+
+    .action-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .action-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
