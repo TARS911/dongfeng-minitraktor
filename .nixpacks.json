@@ -1,0 +1,16 @@
+{
+  "phases": {
+    "setup": {
+      "nixPkgs": ["nodejs_20"]
+    },
+    "install": {
+      "cmds": ["npm install --prefix backend"]
+    },
+    "build": {
+      "cmds": ["echo 'Skipping build'"]
+    }
+  },
+  "start": {
+    "cmd": "cd backend && node server.js"
+  }
+}
