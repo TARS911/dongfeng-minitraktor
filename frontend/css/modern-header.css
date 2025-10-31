@@ -30,6 +30,7 @@
 }
 
 .modern-header__logo {
+    display: none; /* Hidden on all screens */
     font-size: 24px;
     font-weight: 700;
     color: var(--brand-primary);
