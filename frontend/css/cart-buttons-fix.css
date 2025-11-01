@@ -199,3 +199,20 @@
         opacity: 1 !important;
     }
 }
+
+/* === ФИКС для modern-header: иконки как в мобильной версии === */
+.modern-header__actions .action-btn svg {
+    display: inline-block !important;
+    width: 24px !important;
+    height: 24px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Увеличиваем иконки на десктопе */
+@media (min-width: 769px) {
+    .modern-header__actions .action-btn svg {
+        width: 28px !important;
+        height: 28px !important;
+    }
+}
