@@ -310,9 +310,9 @@
     color: #2a9d4e;
 }
 
-/* Кнопка открытия sidebar (мобильная) - СПРАВА ВВЕРХУ */
+/* Кнопка открытия sidebar (мобильная) - СПРАВА ВВЕРХУ, ЗАФИКСИРОВАНА */
 .sidebar-toggle {
-    position: fixed;
+    position: fixed !important;
     right: 16px;
     top: 16px;
     width: 44px;
@@ -324,7 +324,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 9999;
     box-shadow: 0 2px 12px rgba(42, 157, 78, 0.3);
     transition: all 0.2s;
 }

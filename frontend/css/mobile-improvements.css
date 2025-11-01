@@ -1,8 +1,8 @@
 /* Улучшения для мобильной версии */
 
-/* Плавающая кнопка действия (как в вашем дизайне) */
+/* Плавающая кнопка действия (как в вашем дизайне) - ЗАФИКСИРОВАНА */
 .floating-action-btn {
-    position: fixed;
+    position: fixed !important;
     bottom: 100px;
     left: 20px;
     width: 56px;
@@ -14,7 +14,7 @@
     justify-content: center;
     box-shadow: 0 4px 16px rgba(42, 157, 78, 0.4);
     cursor: pointer;
-    z-index: 900;
+    z-index: 9998;
     transition: all 0.3s ease;
     border: none;
 }
@@ -37,13 +37,13 @@
     }
 }
 
-/* Кнопка "Заказать звонок" внизу экрана */
+/* Кнопка "Заказать звонок" внизу экрана - ЗАФИКСИРОВАНА */
 .call-me-bottom-btn {
-    position: fixed;
+    position: fixed !important;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 950;
+    z-index: 9997;
     display: none;
     padding: 12px 16px;
     background: white;
@@ -339,11 +339,21 @@
     animation: fadeInUp 0.4s ease-out;
 }
 
-.product-card:nth-child(1) { animation-delay: 0s; }
-.product-card:nth-child(2) { animation-delay: 0.1s; }
-.product-card:nth-child(3) { animation-delay: 0.2s; }
-.product-card:nth-child(4) { animation-delay: 0.3s; }
-.product-card:nth-child(5) { animation-delay: 0.4s; }
+.product-card:nth-child(1) {
+    animation-delay: 0s;
+}
+.product-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+.product-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+.product-card:nth-child(4) {
+    animation-delay: 0.3s;
+}
+.product-card:nth-child(5) {
+    animation-delay: 0.4s;
+}
 
 /* Тактильная обратная связь */
 @media (max-width: 768px) {
