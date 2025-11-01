@@ -489,6 +489,12 @@
 
             function removeFavorite(productId) {
                 console.log("removeFavorite called with:", productId);
+
+                // Запрашиваем подтверждение ПЕРЕД удалением
+                if (!confirm("Удалить товар из избранного?")) {
+                    return; // Пользователь отменил удаление
+                }
+
                 if (typeof window.toggleFavorite === "function") {
                     window.toggleFavorite(productId);
                     // Обновляем счетчик в header
