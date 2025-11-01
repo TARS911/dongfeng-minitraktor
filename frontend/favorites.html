@@ -299,11 +299,74 @@
                         >
                     </li>
                     <li class="mobile-menu__item">
-                        <a href="compare.html" class="header-action">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                                <line x1="8" y1="6" x2="8" y2="18" />
-                                <line x1="16" y1="6" x2="16" y2="18" />
-                            </svg>
+                        <a href="compare.html" class="mobile-menu__link"
+                            ><span>⚖️ Сравнение</span></a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main" style="padding-top: 40px; min-height: 80vh">
+            <div class="container" style="max-width: 1400px">
+                <h1
+                    style="
+                        font-size: 42px;
+                        margin-bottom: 32px;
+                        color: #171717;
+                        font-weight: 700;
+                    "
+                >
+                    Избранное
+                </h1>
+
+                <div id="favoritesContainer"></div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer-minimal">
+            <div class="footer-minimal__container">
+                <div class="footer-minimal__left">
+                    <p class="footer-minimal__text">
+                        © 2024 DONGFENG. Официальный дилер минитракторов.
+                    </p>
+                </div>
+                <div class="footer-minimal__right">
+                    <a href="terms.html" class="footer-minimal__link"
+                        >Пользовательское соглашение</a
+                    >
+                    <a href="privacy.html" class="footer-minimal__link"
+                        >Политика конфиденциальности</a
+                    >
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            const API_URL =
+                window.location.hostname === "localhost"
+                    ? "http://localhost:3000"
+                    : "https://dongfeng-minitraktor-production.up.railway.app";
+            window.API_URL = API_URL;
+        </script>
+        <script src="js/app.js"></script>
+        <script src="js/catalog-filters.js"></script>
+        <script src="js/catalog.js"></script>
+        <script src="js/cart.js"></script>
+
+        <script>
+            // Render Favorites Page
+            async function renderFavoritesPage() {
+                const container = document.getElementById("favoritesContainer");
+                const favorites = JSON.parse(
+                    localStorage.getItem("favorites") || "[]",
+                );
+
+                if (favorites.length === 0) {
+                    container.innerHTML = `
+                        <div style="text-align: center; padding: 60px 20px;">
                             <h3 style="font-size: 28px; margin-bottom: 16px; color: #404040;">Список избранного пуст</h3>
                             <p style="font-size: 18px; color: #737373;">Добавляйте понравившиеся товары в избранное для быстрого доступа</p>
                         </div>
