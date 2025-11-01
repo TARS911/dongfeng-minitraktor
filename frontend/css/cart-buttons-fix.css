@@ -210,16 +210,16 @@
 /* Показать SVG иконки */
 .modern-header__actions .action-btn svg {
     display: inline-block !important;
-    width: 24px !important;
-    height: 24px !important;
+    width: 28px !important;
+    height: 28px !important;
     visibility: visible !important;
     opacity: 1 !important;
 }
 
-/* Увеличиваем иконки на десктопе */
+/* Увеличиваем иконки на десктопе - ЕДИНЫЙ РАЗМЕР 32px */
 @media (min-width: 769px) {
     .modern-header__actions .action-btn svg {
-        width: 28px !important;
-        height: 28px !important;
+        width: 32px !important;
+        height: 32px !important;
     }
 }
