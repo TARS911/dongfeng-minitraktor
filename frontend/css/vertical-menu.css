@@ -488,11 +488,6 @@ body.with-sidebar.sidebar-collapsed .footer-minimal {
         padding-left: 0;
     }
 
-    /* Скрываем иконки header на мобильных, оставляем только кнопку меню */
-    .modern-header--with-sidebar .modern-header__actions {
-        display: none;
-    }
-
     body.with-sidebar .main {
         margin-left: 0;
     }
