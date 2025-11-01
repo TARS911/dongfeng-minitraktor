@@ -744,7 +744,7 @@
                                             ${product.price.toLocaleString("ru-RU")} ₽
                                         </div>
                                         <div style="display: flex; gap: 12px;">
-                                            <button onclick="window.addToCart(${product.id})" class="btn btn--primary" style="flex: 1;">
+                                            <button onclick="addToCartFromFavorites(${product.id})" class="btn btn--primary" style="flex: 1;">
                                                 В корзину
                                             </button>
                                             <button onclick="removeFavorite(${product.id})" class="btn btn--outline" style="width: 48px; padding: 0;">
@@ -772,21 +772,38 @@
             }
 
             function removeFavorite(productId) {
-                if (window.toggleFavorite) {
+                console.log("removeFavorite called with:", productId);
+                if (typeof window.toggleFavorite === "function") {
                     window.toggleFavorite(productId);
                     // Обновляем счетчик в header
-                    if (window.updateFavoritesCounter) {
+                    if (typeof window.updateFavoritesCounter === "function") {
                         window.updateFavoritesCounter();
                     }
                     // Перерисовываем страницу
-                    renderFavoritesPage();
+                    setTimeout(() => renderFavoritesPage(), 100);
                 } else {
                     console.error("toggleFavorite function not found");
+                    alert(
+                        "Функция удаления не доступна. Перезагрузите страницу.",
+                    );
+                }
+            }
+
+            function addToCartFromFavorites(productId) {
+                console.log("addToCartFromFavorites called with:", productId);
+                if (typeof window.addToCart === "function") {
+                    window.addToCart(productId);
+                } else {
+                    console.error("addToCart function not found");
+                    alert(
+                        "Функция добавления в корзину не доступна. Перезагрузите страницу.",
+                    );
                 }
             }
 
             // Вызов при загрузке страницы
             document.addEventListener("DOMContentLoaded", () => {
+                console.log("DOM loaded, rendering favorites page...");
                 renderFavoritesPage();
             });
         </script>

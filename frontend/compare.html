@@ -820,7 +820,7 @@
                                             .map(
                                                 (p) => `
                                             <td>
-                                                <button onclick="window.addToCart(${p.id})" class="btn btn--primary" style="margin-bottom: 8px; width: 100%;">
+                                                <button onclick="addToCartFromCompare(${p.id})" class="btn btn--primary" style="margin-bottom: 8px; width: 100%;">
                                                     В корзину
                                                 </button>
                                                 <button onclick="removeCompare(${p.id})" class="compare-remove-btn" style="width: 100%;">
@@ -849,21 +849,38 @@
             }
 
             function removeCompare(productId) {
-                if (window.toggleCompare) {
+                console.log("removeCompare called with:", productId);
+                if (typeof window.toggleCompare === "function") {
                     window.toggleCompare(productId);
                     // Обновляем счетчик в header
-                    if (window.updateCompareCounter) {
+                    if (typeof window.updateCompareCounter === "function") {
                         window.updateCompareCounter();
                     }
                     // Перерисовываем страницу
-                    renderComparePage();
+                    setTimeout(() => renderComparePage(), 100);
                 } else {
                     console.error("toggleCompare function not found");
+                    alert(
+                        "Функция удаления не доступна. Перезагрузите страницу.",
+                    );
+                }
+            }
+
+            function addToCartFromCompare(productId) {
+                console.log("addToCartFromCompare called with:", productId);
+                if (typeof window.addToCart === "function") {
+                    window.addToCart(productId);
+                } else {
+                    console.error("addToCart function not found");
+                    alert(
+                        "Функция добавления в корзину не доступна. Перезагрузите страницу.",
+                    );
                 }
             }
 
             // Вызов при загрузке страницы
             document.addEventListener("DOMContentLoaded", () => {
+                console.log("DOM loaded, rendering compare page...");
                 renderComparePage();
             });
         </script>
