@@ -1,279 +1,556 @@
 <!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DEMO - Вертикальное меню - DONGFENG</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DEMO - Вертикальное меню - DONGFENG</title>
 
-    <link rel="stylesheet" href="css/variables.css?v=1761211422" />
-    <link rel="stylesheet" href="css/reset.css?v=1761211422" />
-    <link rel="stylesheet" href="css/components.css?v=1761211422" />
-    <link rel="stylesheet" href="css/modern-header.css?v=1761211422" />
-    <link rel="stylesheet" href="css/cart-buttons-fix.css?v=1761995152" />
-    <link rel="stylesheet" href="css/vertical-menu.css" />
+        <link rel="stylesheet" href="css/variables.css?v=1761211422" />
+        <link rel="stylesheet" href="css/reset.css?v=1761211422" />
+        <link rel="stylesheet" href="css/components.css?v=1761211422" />
+        <link rel="stylesheet" href="css/modern-header.css?v=1761211422" />
+        <link rel="stylesheet" href="css/cart-buttons-fix.css?v=1761995152" />
+        <link rel="stylesheet" href="css/vertical-menu.css" />
 
-    <style>
-        /* Временные стили для демо */
-        .demo-content {
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        <style>
+            /* Временные стили для демо */
+            .demo-content {
+                padding: 40px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
 
-        .demo-banner {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
+            .demo-banner {
+                background: #fff3cd;
+                border: 2px solid #ffc107;
+                padding: 20px;
+                border-radius: 8px;
+                margin-bottom: 30px;
+                text-align: center;
+            }
 
-        .demo-banner h2 {
-            color: #856404;
-            margin-bottom: 10px;
-        }
+            .demo-banner h2 {
+                color: #856404;
+                margin-bottom: 10px;
+            }
 
-        .demo-banner p {
-            color: #856404;
-            margin: 5px 0;
-        }
-    </style>
-</head>
-<body class="with-sidebar">
-    <!-- Кнопка переключения sidebar (для мобильных) -->
-    <button class="sidebar-toggle" onclick="toggleSidebar()" aria-label="Меню">
-        <span></span>
-    </button>
+            .demo-banner p {
+                color: #856404;
+                margin: 5px 0;
+            }
+        </style>
+    </head>
+    <body class="with-sidebar">
+        <!-- Кнопка переключения sidebar (для мобильных) -->
+        <button
+            class="sidebar-toggle"
+            onclick="toggleSidebar()"
+            aria-label="Меню"
+        >
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            >
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
 
-    <!-- Overlay для мобильных устройств -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        <!-- Overlay для мобильных устройств -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <!-- Вертикальное боковое меню -->
-    <aside class="sidebar-menu" id="sidebarMenu">
-        <!-- Заголовок с логотипом -->
-        <div class="sidebar-menu__header">
-            <a href="index.html" class="sidebar-menu__logo">DONGFENG</a>
-        </div>
-
-        <!-- Навигация -->
-        <nav class="sidebar-menu__nav">
-            <ul class="sidebar-menu__list">
-                <!-- Кнопка каталога -->
-                <li class="sidebar-menu__item">
-                    <a href="catalog.html" class="sidebar-menu__link sidebar-menu__link--catalog">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="7" height="7"></rect>
-                            <rect x="14" y="3" width="7" height="7"></rect>
-                            <rect x="14" y="14" width="7" height="7"></rect>
-                            <rect x="3" y="14" width="7" height="7"></rect>
+        <!-- Вертикальное боковое меню -->
+        <aside class="sidebar-menu" id="sidebarMenu">
+            <!-- Заголовок с логотипом и кнопкой закрытия -->
+            <div class="sidebar-menu__header">
+                <div class="sidebar-menu__logo-container">
+                    <a href="index.html" class="sidebar-menu__logo">
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                        >
+                            <path
+                                d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"
+                            />
                         </svg>
-                        КАТАЛОГ
+                        DONGFENG
                     </a>
-                </li>
-
-                <!-- Главная -->
-                <li class="sidebar-menu__item">
-                    <a href="index.html" class="sidebar-menu__link active">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                        </svg>
-                        Главная
-                    </a>
-                </li>
-
-                <!-- Оплата -->
-                <li class="sidebar-menu__item">
-                    <a href="payment.html" class="sidebar-menu__link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                            <line x1="1" y1="10" x2="23" y2="10"></line>
-                        </svg>
-                        Оплата
-                    </a>
-                </li>
-
-                <!-- Доставка -->
-                <li class="sidebar-menu__item">
-                    <a href="delivery.html" class="sidebar-menu__link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="1" y="3" width="15" height="13"></rect>
-                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
-                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
-                        </svg>
-                        Доставка
-                    </a>
-                </li>
-
-                <!-- Гарантия -->
-                <li class="sidebar-menu__item">
-                    <a href="warranty.html" class="sidebar-menu__link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                        </svg>
-                        Гарантия
-                    </a>
-                </li>
-
-                <!-- Статьи -->
-                <li class="sidebar-menu__item">
-                    <a href="articles.html" class="sidebar-menu__link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <polyline points="10 9 9 9 8 9"></polyline>
-                        </svg>
-                        Статьи
-                    </a>
-                </li>
-
-                <!-- Контакты -->
-                <li class="sidebar-menu__item">
-                    <a href="contacts.html" class="sidebar-menu__link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                        </svg>
-                        Контакты
-                    </a>
-                </li>
-
-                <!-- Медиа -->
-                <li class="sidebar-menu__item">
-                    <a href="media.html" class="sidebar-menu__link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
-                            <line x1="7" y1="2" x2="7" y2="22"></line>
-                            <line x1="17" y1="2" x2="17" y2="22"></line>
-                            <line x1="2" y1="12" x2="22" y2="12"></line>
-                            <line x1="2" y1="7" x2="7" y2="7"></line>
-                            <line x1="2" y1="17" x2="7" y2="17"></line>
-                            <line x1="17" y1="17" x2="22" y2="17"></line>
-                            <line x1="17" y1="7" x2="22" y2="7"></line>
-                        </svg>
-                        Медиа
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <!-- Селектор города внизу -->
-        <div class="sidebar-city-selector">
-            <button class="sidebar-city-selector__btn" onclick="toggleSidebarCitySelector()">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span id="sidebarSelectedCity">Белгород</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="6 9 12 15 18 9" />
-                </svg>
-            </button>
-            <div class="sidebar-city-selector__dropdown" id="sidebarCityDropdown">
-                <div class="sidebar-city-selector__title">Выберите ваш город:</div>
-                <ul class="sidebar-city-selector__list">
-                    <li onclick="selectSidebarCity('Белгород')">Белгород</li>
-                    <li onclick="selectSidebarCity('Курск')">Курск</li>
-                    <li onclick="selectSidebarCity('Воронеж')">Воронеж</li>
-                    <li onclick="selectSidebarCity('Орёл')">Орёл</li>
-                    <li onclick="selectSidebarCity('Тула')">Тула</li>
-                    <li onclick="selectSidebarCity('Липецк')">Липецк</li>
-                    <li onclick="selectSidebarCity('Брянск')">Брянск</li>
-                </ul>
+                </div>
+                <button
+                    class="sidebar-menu__close"
+                    onclick="closeSidebar()"
+                    aria-label="Закрыть"
+                >
+                    ×
+                </button>
             </div>
-        </div>
-    </aside>
 
-    <!-- Упрощенный Header (только иконки справа) -->
-    <header class="modern-header modern-header--with-sidebar">
-        <div class="modern-header__container">
-            <div class="modern-header__main">
-                <!-- Правая секция: только иконки действий -->
-                <div class="modern-header__actions" style="margin-left: auto;">
-                    <!-- Compare -->
-                    <a href="compare.html" class="action-btn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                            <line x1="8" y1="6" x2="8" y2="18" />
-                            <line x1="16" y1="6" x2="16" y2="18" />
-                        </svg>
-                        <span class="action-btn__text">Сравнение</span>
-                        <span class="action-btn__badge" id="compareCount" style="display: none">0</span>
-                    </a>
+            <!-- Поиск (опционально, можно убрать если не нужен) -->
+            <!-- <div class="sidebar-menu__search">
+            <input type="text" class="sidebar-menu__search-input" placeholder="Поиск...">
+        </div> -->
 
-                    <!-- Favorites -->
-                    <a href="favorites.html" class="action-btn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                        </svg>
-                        <span class="action-btn__text">Избранное</span>
-                        <span class="action-btn__badge" id="favoritesCount" style="display: none">0</span>
-                    </a>
+            <!-- Навигация -->
+            <nav class="sidebar-menu__nav">
+                <ul class="sidebar-menu__list">
+                    <!-- Кнопка каталога -->
+                    <li class="sidebar-menu__item">
+                        <a
+                            href="catalog.html"
+                            class="sidebar-menu__link sidebar-menu__link--catalog"
+                        >
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                            КАТАЛОГ
+                        </a>
+                    </li>
 
-                    <!-- Cart -->
-                    <a href="cart.html" class="action-btn action-btn--cart">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                            <circle cx="12" cy="12" r="11" fill="#2a9d4e" />
-                            <path d="M8 9L6 11H18L16 9H8Z" stroke="white" stroke-width="1.5" />
-                            <path d="M6 11H18L17 17H7L6 11Z" stroke="white" stroke-width="1.5" />
-                        </svg>
-                        <span class="action-btn__text">Корзина</span>
-                        <span class="action-btn__badge" id="cartCount" style="display: none">0</span>
-                    </a>
+                    <!-- Главная -->
+                    <li class="sidebar-menu__item">
+                        <a href="index.html" class="sidebar-menu__link active">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                                ></path>
+                                <polyline
+                                    points="9 22 9 12 15 12 15 22"
+                                ></polyline>
+                            </svg>
+                            Главная
+                        </a>
+                    </li>
 
-                    <!-- Auth Button -->
-                    <button class="action-btn action-btn--auth">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                            <circle cx="12" cy="7" r="4" />
-                        </svg>
-                        <span class="action-btn__text">Войти</span>
-                    </button>
+                    <!-- Оплата -->
+                    <li class="sidebar-menu__item">
+                        <a href="payment.html" class="sidebar-menu__link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <rect
+                                    x="1"
+                                    y="4"
+                                    width="22"
+                                    height="16"
+                                    rx="2"
+                                    ry="2"
+                                ></rect>
+                                <line x1="1" y1="10" x2="23" y2="10"></line>
+                            </svg>
+                            Оплата
+                        </a>
+                    </li>
+
+                    <!-- Доставка -->
+                    <li class="sidebar-menu__item">
+                        <a href="delivery.html" class="sidebar-menu__link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <rect x="1" y="3" width="15" height="13"></rect>
+                                <polygon
+                                    points="16 8 20 8 23 11 23 16 16 16 16 8"
+                                ></polygon>
+                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                            </svg>
+                            Доставка
+                        </a>
+                    </li>
+
+                    <!-- Гарантия -->
+                    <li class="sidebar-menu__item">
+                        <a href="warranty.html" class="sidebar-menu__link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                                ></path>
+                            </svg>
+                            Гарантия
+                        </a>
+                    </li>
+
+                    <!-- Статьи -->
+                    <li class="sidebar-menu__item">
+                        <a href="articles.html" class="sidebar-menu__link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                                ></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            Статьи
+                        </a>
+                    </li>
+
+                    <!-- Контакты -->
+                    <li class="sidebar-menu__item">
+                        <a href="contacts.html" class="sidebar-menu__link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                                ></path>
+                            </svg>
+                            Контакты
+                        </a>
+                    </li>
+
+                    <!-- Медиа -->
+                    <li class="sidebar-menu__item">
+                        <a href="media.html" class="sidebar-menu__link">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <rect
+                                    x="2"
+                                    y="2"
+                                    width="20"
+                                    height="20"
+                                    rx="2.18"
+                                    ry="2.18"
+                                ></rect>
+                                <line x1="7" y1="2" x2="7" y2="22"></line>
+                                <line x1="17" y1="2" x2="17" y2="22"></line>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <line x1="2" y1="7" x2="7" y2="7"></line>
+                                <line x1="2" y1="17" x2="7" y2="17"></line>
+                                <line x1="17" y1="17" x2="22" y2="17"></line>
+                                <line x1="17" y1="7" x2="22" y2="7"></line>
+                            </svg>
+                            Медиа
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Селектор города внизу -->
+            <div class="sidebar-city-selector">
+                <button
+                    class="sidebar-city-selector__btn"
+                    onclick="toggleSidebarCitySelector()"
+                >
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                        />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <span id="sidebarSelectedCity">Белгород</span>
+                    <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                </button>
+                <div
+                    class="sidebar-city-selector__dropdown"
+                    id="sidebarCityDropdown"
+                >
+                    <div class="sidebar-city-selector__title">
+                        Выберите ваш город:
+                    </div>
+                    <ul class="sidebar-city-selector__list">
+                        <li onclick="selectSidebarCity('Белгород')">
+                            Белгород
+                        </li>
+                        <li onclick="selectSidebarCity('Курск')">Курск</li>
+                        <li onclick="selectSidebarCity('Воронеж')">Воронеж</li>
+                        <li onclick="selectSidebarCity('Орёл')">Орёл</li>
+                        <li onclick="selectSidebarCity('Тула')">Тула</li>
+                        <li onclick="selectSidebarCity('Липецк')">Липецк</li>
+                        <li onclick="selectSidebarCity('Брянск')">Брянск</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </header>
+        </aside>
 
-    <!-- Основной контент -->
-    <main class="demo-content">
-        <div class="demo-banner">
-            <h2>🎨 ДЕМО: Вертикальное меню</h2>
-            <p><strong>Это демонстрационная страница для проверки дизайна</strong></p>
-            <p>Навигационное меню теперь слева вертикально</p>
-            <p>Иконки (избранное, сравнение, корзина, вход) остались справа вверху</p>
-            <p>На планшетах и мобильных меню скрывается и открывается кнопкой</p>
-        </div>
+        <!-- Упрощенный Header (только иконки справа) -->
+        <header class="modern-header modern-header--with-sidebar">
+            <div class="modern-header__container">
+                <div class="modern-header__main">
+                    <!-- Правая секция: только иконки действий -->
+                    <div
+                        class="modern-header__actions"
+                        style="margin-left: auto"
+                    >
+                        <!-- Compare -->
+                        <a href="compare.html" class="action-btn">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            >
+                                <line x1="8" y1="6" x2="8" y2="18" />
+                                <line x1="16" y1="6" x2="16" y2="18" />
+                            </svg>
+                            <span class="action-btn__text">Сравнение</span>
+                            <span
+                                class="action-btn__badge"
+                                id="compareCount"
+                                style="display: none"
+                                >0</span
+                            >
+                        </a>
 
-        <h1 style="font-size: 42px; margin-bottom: 24px; color: #171717;">Добро пожаловать!</h1>
+                        <!-- Favorites -->
+                        <a href="favorites.html" class="action-btn">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                />
+                            </svg>
+                            <span class="action-btn__text">Избранное</span>
+                            <span
+                                class="action-btn__badge"
+                                id="favoritesCount"
+                                style="display: none"
+                                >0</span
+                            >
+                        </a>
 
-        <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 24px;">
-            <h2 style="font-size: 28px; margin-bottom: 16px; color: #2a9d4e;">Что изменилось?</h2>
-            <ul style="list-style: disc; padding-left: 24px; line-height: 1.8; color: #525252;">
-                <li><strong>Вертикальное меню слева</strong> - все страницы навигации теперь в боковой панели</li>
-                <li><strong>Логотип DONGFENG</strong> - перенесен в верхнюю часть бокового меню</li>
-                <li><strong>Селектор города</strong> - теперь внизу бокового меню</li>
-                <li><strong>Кнопка "КАТАЛОГ"</strong> - выделена зеленым цветом в меню</li>
-                <li><strong>Иконки действий</strong> - остались на своем месте в правом верхнем углу</li>
-                <li><strong>Адаптивность</strong> - на мобильных устройствах меню скрывается и открывается кнопкой</li>
-            </ul>
-        </div>
+                        <!-- Cart -->
+                        <a href="cart.html" class="action-btn action-btn--cart">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="white"
+                                stroke-width="2"
+                            >
+                                <circle cx="12" cy="12" r="11" fill="#2a9d4e" />
+                                <path
+                                    d="M8 9L6 11H18L16 9H8Z"
+                                    stroke="white"
+                                    stroke-width="1.5"
+                                />
+                                <path
+                                    d="M6 11H18L17 17H7L6 11Z"
+                                    stroke="white"
+                                    stroke-width="1.5"
+                                />
+                            </svg>
+                            <span class="action-btn__text">Корзина</span>
+                            <span
+                                class="action-btn__badge"
+                                id="cartCount"
+                                style="display: none"
+                                >0</span
+                            >
+                        </a>
 
-        <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            <h2 style="font-size: 28px; margin-bottom: 16px; color: #2a9d4e;">Преимущества вертикального меню</h2>
-            <ul style="list-style: disc; padding-left: 24px; line-height: 1.8; color: #525252;">
-                <li>✅ Больше места для контента по горизонтали</li>
-                <li>✅ Легко добавлять новые пункты меню</li>
-                <li>✅ Современный дизайн как в популярных панелях управления</li>
-                <li>✅ Удобная навигация - все пункты видны сразу</li>
-                <li>✅ Иконки справа не мешают и всегда доступны</li>
-            </ul>
-        </div>
-    </main>
+                        <!-- Auth Button -->
+                        <button class="action-btn action-btn--auth">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                                />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                            <span class="action-btn__text">Войти</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-    <script src="js/vertical-menu.js"></script>
-    <script src="js/modern-header.js"></script>
-    <script src="js/header-icons-animation.js"></script>
-</body>
+        <!-- Основной контент -->
+        <main class="demo-content">
+            <div class="demo-banner">
+                <h2>🎨 ДЕМО: Вертикальное меню (улучшенная версия)</h2>
+                <p>
+                    <strong
+                        >✨ Дизайн вдохновлен Netlify - современный и
+                        элегантный!</strong
+                    >
+                </p>
+                <p>
+                    📱 На мобильных: меню открывается кнопкой с крестиком для
+                    закрытия
+                </p>
+                <p>🎯 Иконки действий справа вверху - всегда на месте!</p>
+                <p>🌈 Светлый фон, деликатные тени, плавные анимации</p>
+            </div>
+
+            <h1 style="font-size: 42px; margin-bottom: 24px; color: #171717">
+                Добро пожаловать!
+            </h1>
+
+            <div
+                style="
+                    background: white;
+                    padding: 30px;
+                    border-radius: 12px;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    margin-bottom: 24px;
+                "
+            >
+                <h2
+                    style="font-size: 28px; margin-bottom: 16px; color: #2a9d4e"
+                >
+                    ✨ Что улучшено в новой версии?
+                </h2>
+                <ul
+                    style="
+                        list-style: disc;
+                        padding-left: 24px;
+                        line-height: 1.8;
+                        color: #525252;
+                    "
+                >
+                    <li>
+                        <strong>Светлый фон #f8fafb</strong> - как в Netlify,
+                        вместо белого
+                    </li>
+                    <li>
+                        <strong>Деликатные тени</strong> - мягкие и элегантные
+                        эффекты глубины
+                    </li>
+                    <li>
+                        <strong>Иконка логотипа</strong> - добавлена SVG иконка
+                        щита рядом с DONGFENG
+                    </li>
+                    <li>
+                        <strong>Зеленая полоска слева</strong> - при наведении и
+                        активном пункте
+                    </li>
+                    <li>
+                        <strong>Градиент на кнопке КАТАЛОГ</strong> -
+                        современный переход цветов
+                    </li>
+                    <li>
+                        <strong>Кнопка закрытия на мобильных</strong> - удобный
+                        крестик ×
+                    </li>
+                    <li>
+                        <strong>Плавная анимация открытия</strong> -
+                        cubic-bezier для естественности
+                    </li>
+                    <li>
+                        <strong>Компактные отступы</strong> - больше элементов
+                        умещается
+                    </li>
+                </ul>
+            </div>
+
+            <div
+                style="
+                    background: white;
+                    padding: 30px;
+                    border-radius: 12px;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                "
+            >
+                <h2
+                    style="font-size: 28px; margin-bottom: 16px; color: #2a9d4e"
+                >
+                    Преимущества вертикального меню
+                </h2>
+                <ul
+                    style="
+                        list-style: disc;
+                        padding-left: 24px;
+                        line-height: 1.8;
+                        color: #525252;
+                    "
+                >
+                    <li>✅ Больше места для контента по горизонтали</li>
+                    <li>✅ Легко добавлять новые пункты меню</li>
+                    <li>
+                        ✅ Современный дизайн как в популярных панелях
+                        управления
+                    </li>
+                    <li>✅ Удобная навигация - все пункты видны сразу</li>
+                    <li>✅ Иконки справа не мешают и всегда доступны</li>
+                </ul>
+            </div>
+        </main>
+
+        <script src="js/vertical-menu.js"></script>
+        <script src="js/modern-header.js"></script>
+        <script src="js/header-icons-animation.js"></script>
+    </body>
 </html>
