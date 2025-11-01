@@ -366,16 +366,63 @@
         <!-- Main Content -->
         <main class="main" style="padding-top: 40px; min-height: 80vh">
             <div class="container" style="max-width: 1400px">
-                <h1
+                <!-- Breadcrumbs -->
+                <nav
+                    style="margin-bottom: 24px; font-size: 14px; color: #737373"
+                >
+                    <a
+                        href="index.html"
+                        style="color: #737373; text-decoration: none"
+                        >Главная</a
+                    >
+                    <span style="margin: 0 8px">/</span>
+                    <span style="color: #171717">Сравнение товаров</span>
+                </nav>
+
+                <div
                     style="
-                        font-size: 42px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
                         margin-bottom: 32px;
-                        color: #171717;
-                        font-weight: 700;
+                        flex-wrap: wrap;
+                        gap: 16px;
                     "
                 >
-                    Сравнение товаров
-                </h1>
+                    <h1
+                        style="
+                            font-size: 42px;
+                            margin: 0;
+                            color: #171717;
+                            font-weight: 700;
+                        "
+                    >
+                        Сравнение товаров
+                    </h1>
+
+                    <a
+                        href="catalog.html"
+                        class="btn btn--outline"
+                        style="
+                            text-decoration: none;
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 8px;
+                        "
+                    >
+                        <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        Вернуться в каталог
+                    </a>
+                </div>
 
                 <div id="compareContainer"></div>
             </div>
@@ -507,8 +554,17 @@
             }
 
             function removeCompare(productId) {
-                window.toggleCompare(productId);
-                renderComparePage();
+                if (window.toggleCompare) {
+                    window.toggleCompare(productId);
+                    // Обновляем счетчик в header
+                    if (window.updateCompareCounter) {
+                        window.updateCompareCounter();
+                    }
+                    // Перерисовываем страницу
+                    renderComparePage();
+                } else {
+                    console.error("toggleCompare function not found");
+                }
             }
 
             // Вызов при загрузке страницы
@@ -517,6 +573,6 @@
             });
         </script>
         <script src="js/modern-header.js"></script>
-    <script src="js/header-icons-animation.js"></script>
-</body>
+        <script src="js/header-icons-animation.js"></script>
+    </body>
 </html>
