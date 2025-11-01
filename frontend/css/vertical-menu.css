@@ -446,7 +446,11 @@ body.sidebar-collapsed .modern-header--with-sidebar {
 }
 
 /* Адаптация контента */
-body.with-sidebar .main {
+body.with-sidebar .main,
+body.with-sidebar section,
+body.with-sidebar .catalog,
+body.with-sidebar .contacts-page,
+body.with-sidebar footer {
     margin-left: 260px;
     transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -457,7 +461,11 @@ body.with-sidebar .footer-minimal {
 }
 
 /* Когда sidebar скрыт */
-body.with-sidebar.sidebar-collapsed .main {
+body.with-sidebar.sidebar-collapsed .main,
+body.with-sidebar.sidebar-collapsed section,
+body.with-sidebar.sidebar-collapsed .catalog,
+body.with-sidebar.sidebar-collapsed .contacts-page,
+body.with-sidebar.sidebar-collapsed footer {
     margin-left: 60px;
 }
 
@@ -495,7 +503,11 @@ body.with-sidebar.sidebar-collapsed .footer-minimal {
         padding-left: 0;
     }
 
-    body.with-sidebar .main {
+    body.with-sidebar .main,
+    body.with-sidebar section,
+    body.with-sidebar .catalog,
+    body.with-sidebar .contacts-page,
+    body.with-sidebar footer {
         margin-left: 0;
     }
 
