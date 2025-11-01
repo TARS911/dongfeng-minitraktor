@@ -567,11 +567,6 @@
             function removeCompare(productId) {
                 console.log("removeCompare called with:", productId);
 
-                // Запрашиваем подтверждение ПЕРЕД удалением
-                if (!confirm("Удалить товар из сравнения?")) {
-                    return; // Пользователь отменил удаление
-                }
-
                 if (typeof window.toggleCompare === "function") {
                     window.toggleCompare(productId);
                     // Обновляем счетчик в header
