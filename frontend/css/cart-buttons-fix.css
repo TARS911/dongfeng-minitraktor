@@ -201,6 +201,13 @@
 }
 
 /* === ФИКС для modern-header: иконки как в мобильной версии === */
+
+/* СКРЫТЬ ТЕКСТ - показывать только иконки на всех разрешениях */
+.modern-header__actions .action-btn__text {
+    display: none !important;
+}
+
+/* Показать SVG иконки */
 .modern-header__actions .action-btn svg {
     display: inline-block !important;
     width: 24px !important;
