@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="css/modern-header.css?v=1761211422" />
         <link rel="stylesheet" href="css/cart-buttons-fix.css?v=1761995152" />
         <link rel="stylesheet" href="css/vertical-menu.css" />
+        <link rel="stylesheet" href="css/mobile-improvements.css" />
 
         <style>
             /* Временные стили для демо */
@@ -547,7 +548,228 @@
                     <li>✅ Иконки справа не мешают и всегда доступны</li>
                 </ul>
             </div>
+
+            <!-- Демо улучшенных карточек товаров -->
+            <div
+                style="
+                    background: white;
+                    padding: 30px;
+                    border-radius: 12px;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    margin-top: 24px;
+                "
+            >
+                <h2
+                    style="font-size: 28px; margin-bottom: 16px; color: #2a9d4e"
+                >
+                    📱 Улучшения для мобильных
+                </h2>
+                <p style="margin-bottom: 16px; color: #525252">
+                    Уменьшите окно браузера или откройте на телефоне, чтобы
+                    увидеть:
+                </p>
+                <ul
+                    style="
+                        list-style: disc;
+                        padding-left: 24px;
+                        line-height: 1.8;
+                        color: #525252;
+                    "
+                >
+                    <li><strong>Плавающую кнопку +</strong> слева внизу</li>
+                    <li>
+                        <strong>Кнопку "Заказать звонок"</strong> в самом низу
+                    </li>
+                    <li>
+                        <strong>Улучшенные карточки товаров</strong> с быстрыми
+                        действиями
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Пример карточки товара -->
+            <div style="margin-top: 32px">
+                <h2
+                    style="font-size: 28px; margin-bottom: 20px; color: #171717"
+                >
+                    Демо карточки товара
+                </h2>
+                <div
+                    class="product-card"
+                    style="
+                        background: white;
+                        border-radius: 12px;
+                        padding: 16px;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                        position: relative;
+                        max-width: 400px;
+                    "
+                >
+                    <span class="product-card__badge">ХИТ</span>
+
+                    <div class="product-card__quick-actions">
+                        <button
+                            class="product-card__quick-btn product-card__quick-btn--favorite"
+                            onclick="this.classList.toggle('active')"
+                            title="В избранное"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                />
+                            </svg>
+                        </button>
+                        <button
+                            class="product-card__quick-btn product-card__quick-btn--compare"
+                            onclick="this.classList.toggle('active')"
+                            title="Сравнить"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <line x1="8" y1="6" x2="8" y2="18" />
+                                <line x1="16" y1="6" x2="16" y2="18" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <img
+                        src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg"
+                        alt="DF-244"
+                        class="product-card__image"
+                        style="
+                            width: 100%;
+                            height: 200px;
+                            object-fit: cover;
+                            border-radius: 8px;
+                            margin-bottom: 12px;
+                        "
+                    />
+
+                    <div class="product-card__content">
+                        <h3
+                            class="product-card__title"
+                            style="
+                                font-size: 18px;
+                                font-weight: 600;
+                                margin-bottom: 8px;
+                            "
+                        >
+                            DONGFENG DF-244
+                        </h3>
+
+                        <div
+                            class="product-card__specs"
+                            style="margin-bottom: 12px"
+                        >
+                            <div
+                                style="
+                                    display: flex;
+                                    gap: 6px;
+                                    font-size: 13px;
+                                    color: #71717a;
+                                    margin-bottom: 4px;
+                                "
+                            >
+                                <span>⚡ 24 л.с.</span>
+                                <span>• 🚗 Полный</span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="product-card__price"
+                            style="
+                                font-size: 24px;
+                                font-weight: 700;
+                                color: #2a9d4e;
+                                margin-bottom: 12px;
+                            "
+                        >
+                            285 000 ₽
+                        </div>
+
+                        <button
+                            class="product-card__add-cart"
+                            style="
+                                width: 100%;
+                                padding: 12px;
+                                background: #2a9d4e;
+                                color: white;
+                                border: none;
+                                border-radius: 8px;
+                                font-weight: 600;
+                                cursor: pointer;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 8px;
+                            "
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                style="width: 18px; height: 18px"
+                            >
+                                <circle cx="9" cy="21" r="1" />
+                                <circle cx="20" cy="21" r="1" />
+                                <path
+                                    d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                                />
+                            </svg>
+                            В корзину
+                        </button>
+                    </div>
+                </div>
+            </div>
         </main>
+
+        <!-- Плавающая кнопка (видна только на мобильных) -->
+        <button class="floating-action-btn" title="Быстрые действия">
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            >
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+        </button>
+
+        <!-- Кнопка "Заказать звонок" внизу (видна только на мобильных) -->
+        <div class="call-me-bottom-btn">
+            <div class="call-me-bottom-btn__container">
+                <a href="tel:+79699995668" class="call-me-bottom-btn__phone">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                        />
+                    </svg>
+                    +7 (969) 999-56-68
+                </a>
+                <button
+                    class="call-me-bottom-btn__button"
+                    onclick="alert('Форма заказа звонка')"
+                >
+                    Заказать звонок
+                </button>
+            </div>
+        </div>
 
         <script src="js/vertical-menu.js"></script>
         <script src="js/modern-header.js"></script>
