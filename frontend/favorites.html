@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="css/main.css?v=1761211422" />
         <link rel="stylesheet" href="css/modal.css?v=1761211422" />
         <link rel="stylesheet" href="css/header-new.css?v=1761211422" />
+        <link rel="stylesheet" href="css/modern-header.css?v=1761991144" />
+        <link rel="stylesheet" href="css/promo-blocks.css?v=1761211422" />
         <link rel="stylesheet" href="css/mobile-menu.css?v=1761211422" />
         <link rel="stylesheet" href="css/catalog-modals.css?v=1761211422" />
         <link rel="stylesheet" href="css/cart.css?v=1761211422" />
@@ -24,77 +26,207 @@
     </head>
     <body>
         <!-- Header -->
-        <header class="header">
-            <div class="container">
-                <div class="header__content">
-                    <div class="header__contacts">
-                        <a href="tel:+79699995668" class="phone"
-                            >+7 (969) 999-56-68</a
+        <header class="modern-header">
+            <div class="modern-header__container">
+                <div class="modern-header__main">
+                    <!-- Left Section: Logo + City + Catalog -->
+                    <div class="modern-header__left">
+                        <a href="index.html" class="modern-header__logo"
+                            >DONGFENG</a
                         >
-                        <a href="cart.html" class="cart-icon">
-                            🛒 Корзина
-                            <span class="cart-count" id="cartCount">0</span>
+
+                        <!-- City Selector -->
+                        <div class="city-selector-modern">
+                            <button
+                                class="city-selector-modern__btn"
+                                onclick="toggleCitySelector()"
+                            >
+                                <svg
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                                    />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                <span id="selectedCity">Белгород</span>
+                                <svg
+                                    width="12"
+                                    height="12"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </button>
+                            <div
+                                class="city-selector-modern__dropdown"
+                                id="cityDropdown"
+                            >
+                                <div class="city-selector-modern__title">
+                                    Выберите ваш город:
+                                </div>
+                                <ul class="city-selector-modern__list">
+                                    <li onclick="selectCity('Белгород')">
+                                        Белгород
+                                    </li>
+                                    <li onclick="selectCity('Курск')">Курск</li>
+                                    <li onclick="selectCity('Воронеж')">
+                                        Воронеж
+                                    </li>
+                                    <li onclick="selectCity('Орёл')">Орёл</li>
+                                    <li onclick="selectCity('Тула')">Тула</li>
+                                    <li onclick="selectCity('Липецк')">
+                                        Липецк
+                                    </li>
+                                    <li onclick="selectCity('Брянск')">
+                                        Брянск
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Catalog Button -->
+                        <a href="catalog.html" class="catalog-btn-modern">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                            КАТАЛОГ
                         </a>
                     </div>
 
-                    <!-- Mobile Actions - ONLY ON MOBILE -->
-                    <div class="header__mobile-actions">
-                        <a href="favorites.html" class="header-action">
+                    <!-- Center Section: Navigation -->
+                    <div class="modern-header__nav">
+                        <ul class="nav-menu-modern">
+                            <li><a href="index.html">ГЛАВНАЯ</a></li>
+                            <li><a href="payment.html">ОПЛАТА</a></li>
+                            <li><a href="delivery.html">ДОСТАВКА</a></li>
+                            <li><a href="warranty.html">ГАРАНТИЯ</a></li>
+                            <li><a href="articles.html">СТАТЬИ</a></li>
+                            <li><a href="contacts.html">КОНТАКТЫ</a></li>
+                            <li><a href="media.html">МЕДИА</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Right Section: Icons -->
+                    <div class="modern-header__actions">
+                        <!-- Compare -->
+                        <a href="compare.html" class="action-btn">
                             <svg
-                                width="24"
-                                height="24"
                                 viewBox="0 0 24 24"
                                 fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
                             >
-                                <path
-                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    fill="none"
-                                />
-                            </svg>
-                            <span
-                                class="header-action__badge"
-                                id="favoritesCountMobile"
-                                >0</span
-                            >
-                        </a>
-                        <a href="compare.html" class="header-action">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                                 <line x1="8" y1="6" x2="8" y2="18" />
                                 <line x1="16" y1="6" x2="16" y2="18" />
                             </svg>
+                            <span class="action-btn__text">Сравнение</span>
                             <span
-                                class="header-action__badge"
-                                id="compareCountMobile"
+                                class="action-btn__badge"
+                                id="compareCount"
+                                style="display: none"
                                 >0</span
                             >
                         </a>
-                        <a
-                            href="cart.html"
-                            class="header-action header-action--cart"
-                        >
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="11" fill="#2a9d4e" />
-                                <path d="M8 9L6 11H18L16 9H8Z" stroke="white" stroke-width="1.5" />
-                                <path d="M6 11H18L17 17H7L6 11Z" stroke="white" stroke-width="1.5" />
+
+                        <!-- Favorites -->
+                        <a href="favorites.html" class="action-btn">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                />
                             </svg>
+                            <span class="action-btn__text">Избранное</span>
                             <span
-                                class="header-action__badge"
-                                id="cartCountMobile"
+                                class="action-btn__badge"
+                                id="favoritesCount"
+                                style="display: none"
                                 >0</span
                             >
                         </a>
+
+                        <!-- Cart -->
+                        <a href="cart.html" class="action-btn action-btn--cart">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="white"
+                                stroke-width="2"
+                            >
+                                <circle cx="12" cy="12" r="11" fill="#2a9d4e" />
+                                <path
+                                    d="M8 9L6 11H18L16 9H8Z"
+                                    stroke="white"
+                                    stroke-width="1.5"
+                                />
+                                <path
+                                    d="M6 11H18L17 17H7L6 11Z"
+                                    stroke="white"
+                                    stroke-width="1.5"
+                                />
+                            </svg>
+                            <span class="action-btn__text">Корзина</span>
+                            <span
+                                class="action-btn__badge"
+                                id="cartCount"
+                                style="display: none"
+                                >0</span
+                            >
+                        </a>
+
+                        <!-- Auth Button -->
                         <button
-                            class="burger"
-                            aria-label="Открыть меню"
-                            onclick="toggleMobileMenu()"
+                            class="action-btn action-btn--auth"
+                            onclick="handleAuth()"
                         >
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                                />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                            <span class="action-btn__text">Войти</span>
                         </button>
                     </div>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button
+                        class="mobile-menu-toggle"
+                        onclick="toggleMobileMenu()"
+                        aria-label="Меню"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </header>
