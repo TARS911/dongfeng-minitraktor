@@ -235,7 +235,7 @@
             // });
         </script>
     </head>
-    <body class="with-sidebar" class="with-sidebar">
+    <body class="with-sidebar">
         <!-- Кнопка переключения sidebar (для мобильных) - СПРАВА ВВЕРХУ -->
         <button
             class="sidebar-toggle"
@@ -421,28 +421,6 @@
                         </a>
                     </li>
 
-                    <!-- Статьи -->
-                    <li class="sidebar-menu__item">
-                        <a href="articles.html" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                                ></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                            </svg>
-                            Статьи
-                        </a>
-                    </li>
-
                     <!-- Контакты -->
                     <li class="sidebar-menu__item">
                         <a href="contacts.html" class="sidebar-menu__link">
@@ -549,13 +527,13 @@
         </aside>
 
 
-                    <!-- Left Section: Logo + City + Catalog -->
-                    <div class="modern-header__left">
-                        <a href="index.html" class="modern-header__logo"
-                            >DONGFENG</a
-                        >
 
-                        <!-- City Selector -->
+        <!-- Modern Header -->
+        <header class="modern-header modern-header--with-sidebar">
+            <div class="modern-header__container">
+                <div class="modern-header__main">
+                    <!-- Left Section: City + Catalog -->
+                    <div class="modern-header__left">                        <!-- City Selector -->
                         <div class="city-selector-modern">
                             <button
                                 class="city-selector-modern__btn"
@@ -638,14 +616,14 @@
                             <li><a href="payment.html">ОПЛАТА</a></li>
                             <li><a href="delivery.html">ДОСТАВКА</a></li>
                             <li><a href="warranty.html">ГАРАНТИЯ</a></li>
-                            <li><a href="articles.html">СТАТЬИ</a></li>
                             <li><a href="contacts.html">КОНТАКТЫ</a></li>
                             <li><a href="media.html">МЕДИА</a></li>
                         </ul>
                     </div>
 
                     <!-- Right Section: Icons -->
-                                        <div class="modern-header__actions">                        <!-- Compare -->
+                    <div class="modern-header__actions">
+                        <!-- Compare -->
                         <a href="compare.html" class="action-btn">
                             <svg
                                 viewBox="0 0 24 24"
@@ -733,7 +711,7 @@
                                 <circle cx="12" cy="7" r="4" />
                             </svg>
                             <span class="action-btn__text">Войти</span>
-        </button>
+                        </button>
                     </div>
 
                     <!-- Mobile Menu Toggle -->
@@ -750,198 +728,6 @@
             </div>
         </header>
 
-        <!-- Мобильное меню -->
-        <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-        <div class="mobile-menu" id="mobileMenu">
-            <div class="mobile-menu__header">
-                <img
-                    src="images/logo.svg"
-                    alt="DONGFENG"
-                    class="mobile-menu__logo"
-                />
-                <button
-                    class="mobile-menu__close"
-                    onclick="closeMobileMenu()"
-                    aria-label="Закрыть меню"
-                >
-                    ×
-                </button>
-            </div>
-
-            <!-- Кнопка скрытия/показа sidebar (только десктоп) -->
-            <div class="sidebar-collapse-toggle">
-                <button class="sidebar-desktop-toggle" onclick="toggleSidebarDesktop()" title="Свернуть/развернуть меню">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Навигация -->
-            <nav class="mobile-menu__nav">
-                <ul class="mobile-menu__list">
-                    <li class="mobile-menu__item">
-                        <a
-                            href="catalog.html"
-                            class="mobile-menu__link mobile-menu__link--catalog"
-                        >
-                            <span>🚜 Каталог тракторов</span>
-                            <svg
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9 5l7 7-7 7"
-                                />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="mobile-menu__item">
-                        <a href="index.html" class="mobile-menu__link">
-                            <span>Главная</span>
-                            <svg
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9 5l7 7-7 7"
-                                />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="mobile-menu__item">
-                        <a href="payment.html" class="mobile-menu__link">
-                            <span>Оплата</span>
-                            <svg
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9 5l7 7-7 7"
-                                />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="mobile-menu__item">
-                        <a
-                            href="delivery.html"
-                            class="mobile-menu__link mobile-menu__link--active"
-                        >
-                            <span>Доставка</span>
-                            <svg
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9 5l7 7-7 7"
-                                />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="mobile-menu__item">
-                        <a href="warranty.html" class="mobile-menu__link">
-                            <span>Гарантия</span>
-                            <svg
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9 5l7 7-7 7"
-                                />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="mobile-menu__item">
-                        <a href="articles.html" class="mobile-menu__link">
-                            <span>Статьи</span>
-                            <svg
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9 5l7 7-7 7"
-                                />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="mobile-menu__item">
-                        <a href="contacts.html" class="mobile-menu__link">
-                            <span>Контакты</span>
-                            <svg
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9 5l7 7-7 7"
-                                />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="mobile-menu__item">
-                        <a href="media.html" class="mobile-menu__link">
-                            <span>Медиа</span>
-                            <svg
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9 5l7 7-7 7"
-                                />
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            <!-- Контакты внизу меню -->
-            <div class="mobile-menu__contacts">
-                <a href="tel:+79699995668" class="mobile-menu__phone"
-                    >+7 (969) 999-56-68</a
-                >
-                <button
-                    class="btn btn--primary btn--block mobile-menu__cta"
-                    onclick="openCallbackModal(); closeMobileMenu();"
-                >
-                    Заказать звонок
-                </button>
-            </div>
-        </div>
-
-        <!-- Доставка -->
         <section id="delivery" class="delivery">
             <div class="container">
                 <!-- Хлебные крошки -->
