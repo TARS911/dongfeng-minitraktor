@@ -173,6 +173,7 @@ function showAuthModal() {
 // === Mobile Menu ===
 function toggleMobileMenu() {
   const mobileMenu = document.getElementById("mobileMenu");
+  const overlay = document.getElementById("mobileMenuOverlay");
   const toggle = document.querySelector(".mobile-menu-toggle");
   const body = document.body;
 
@@ -180,21 +181,31 @@ function toggleMobileMenu() {
     mobileMenu.classList.toggle("active");
   }
 
+  if (overlay) {
+    overlay.classList.toggle("active");
+  }
+
   if (toggle) {
     toggle.classList.toggle("active");
   }
 
   // Блокировка скролла при открытом меню
-  body.style.overflow = mobileMenu.classList.contains("active") ? "hidden" : "";
+  body.style.overflow =
+    mobileMenu && mobileMenu.classList.contains("active") ? "hidden" : "";
 }
 
 function closeMobileMenu() {
   const mobileMenu = document.getElementById("mobileMenu");
+  const overlay = document.getElementById("mobileMenuOverlay");
   const toggle = document.querySelector(".mobile-menu-toggle");
   const body = document.body;
 
   if (mobileMenu) {
     mobileMenu.classList.remove("active");
+  }
+
+  if (overlay) {
+    overlay.classList.remove("active");
   }
 
   if (toggle) {
