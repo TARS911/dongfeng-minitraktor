@@ -42,6 +42,7 @@ await fastify.register(cors, {
       "http://localhost:8000",
       "https://dongfeng-minitraktor.onrender.com",
       /\.vercel\.app$/, // Разрешаем все поддомены vercel.app
+      /\.netlify\.app$/, // Разрешаем все поддомены netlify.app
       /\.railway\.app$/, // Разрешаем Railway
       process.env.FRONTEND_URL, // Кастомный домен из .env
     ].filter(Boolean); // Убираем undefined значения
