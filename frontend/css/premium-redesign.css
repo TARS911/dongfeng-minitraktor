@@ -73,14 +73,19 @@
     z-index: 2;
 }
 
-/* Контент */
+/* Контент - перемещен в правый верхний угол */
 .hero-premium__content {
-    position: relative;
+    position: absolute;
+    top: 80px;
+    right: 60px;
     z-index: 10;
-    max-width: 1400px;
-    margin: 0;
-    padding: 0 60px;
-    color: white;
+    max-width: 550px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    color: #171717;
 }
 
 .hero-premium__badge {
@@ -98,21 +103,21 @@
 
 .hero-premium__title {
     font-family: var(--font-heading);
-    font-size: 72px;
+    font-size: 42px;
     font-weight: 900;
     line-height: 1.1;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: -1px;
+    color: #171717;
 }
 
 .hero-premium__subtitle {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 1.5;
-    max-width: 700px;
-    margin-bottom: 40px;
-    opacity: 0.95;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    color: #525252;
 }
 
 .hero-premium__cta {
@@ -538,13 +543,39 @@
     }
 }
 
+/* Tablet: hero content adjustments */
+@media (max-width: 1024px) {
+    .hero-premium__content {
+        max-width: 450px;
+        padding: 32px;
+        top: 60px;
+        right: 40px;
+    }
+
+    .hero-premium__title {
+        font-size: 36px;
+    }
+
+    .hero-premium__subtitle {
+        font-size: 14px;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-premium {
         height: 70vh;
     }
 
     .hero-premium__content {
-        padding: 0 24px;
+        position: relative;
+        top: auto;
+        right: auto;
+        max-width: 100%;
+        padding: 24px;
+        margin-top: 80px;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
     }
 
     .hero-premium__title {
