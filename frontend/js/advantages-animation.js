@@ -1,54 +1,54 @@
 // Интерактивные анимации для иконок преимуществ
 
-document.addEventListener('DOMContentLoaded', function() {
-    const advantageItems = document.querySelectorAll('.advantage-item');
+document.addEventListener("DOMContentLoaded", function () {
+  const advantageItems = document.querySelectorAll(".advantage-item");
 
-    advantageItems.forEach((item, index) => {
-        const icon = item.querySelector('.advantage-item__icon');
+  advantageItems.forEach((item, index) => {
+    const icon = item.querySelector(".advantage-item__icon");
 
-        // Разные анимации для разных иконок
-        item.addEventListener('mouseenter', function() {
-            switch(index) {
-                case 0: // Доставка - движение грузовика вправо
-                    icon.style.transform = 'translateX(8px)';
-                    break;
+    // Разные анимации для разных иконок
+    item.addEventListener("mouseenter", function () {
+      switch (index) {
+        case 0: // Доставка - движение грузовика вправо
+          icon.style.transform = "translateX(8px)";
+          break;
 
-                case 1: // Расширенная гарантия - пульсация щита
-                    icon.style.animation = 'pulse 0.6s ease-in-out';
-                    break;
+        case 1: // Расширенная гарантия - пульсация щита
+          icon.style.animation = "pulse 0.6s ease-in-out";
+          break;
 
-                case 2: // Лизинг - вращение монеты
-                    icon.style.transform = 'rotateY(180deg)';
-                    break;
+        case 2: // Лизинг - вращение монеты
+          icon.style.transform = "rotateY(180deg)";
+          break;
 
-                case 3: // Торги - подпрыгивание корзины
-                    icon.style.animation = 'bounce 0.6s ease';
-                    break;
+        case 3: // Торги - подпрыгивание корзины
+          icon.style.animation = "bounce 0.6s ease";
+          break;
 
-                case 4: // Услуги и сервис - вращение гаечного ключа
-                    icon.style.transform = 'rotate(15deg) scale(1.1)';
-                    break;
+        case 4: // Услуги и сервис - вращение гаечного ключа
+          icon.style.transform = "rotate(15deg) scale(1.1)";
+          break;
 
-                case 5: // Лучшая цена - вращение доллара
-                    icon.style.transform = 'rotateZ(360deg) scale(1.15)';
-                    break;
+        case 5: // Лучшая цена - вращение доллара
+          icon.style.transform = "rotateZ(360deg) scale(1.15)";
+          break;
 
-                case 6: // Бонусная программа - качание ярлыка
-                    icon.style.animation = 'swing 0.6s ease-in-out';
-                    break;
-            }
-        });
-
-        item.addEventListener('mouseleave', function() {
-            icon.style.transform = '';
-            icon.style.animation = '';
-        });
+        case 6: // Бонусная программа - качание ярлыка
+          icon.style.animation = "swing 0.6s ease-in-out";
+          break;
+      }
     });
+
+    item.addEventListener("mouseleave", function () {
+      icon.style.transform = "";
+      icon.style.animation = "";
+    });
+  });
 });
 
 // Добавляем стили для анимаций
-const style = document.createElement('style');
-style.textContent = `
+const advantagesStyle = document.createElement("style");
+advantagesStyle.textContent = `
     .advantage-item__icon {
         transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
@@ -90,4 +90,4 @@ style.textContent = `
         color: var(--brand-primary);
     }
 `;
-document.head.appendChild(style);
+document.head.appendChild(advantagesStyle);

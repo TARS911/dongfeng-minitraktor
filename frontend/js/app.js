@@ -72,6 +72,8 @@ function initSmoothScroll() {
 // === Header Scroll Effect - CLAAS Style ===
 function initHeaderScroll() {
   const header = document.querySelector(".header");
+  if (!header) return; // Если header не найден, выходим
+
   let lastScroll = 0;
 
   window.addEventListener("scroll", () => {

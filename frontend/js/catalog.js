@@ -291,8 +291,8 @@ function showDetails(slug) {
 }
 
 // === Добавить CSS для анимаций и стилей ===
-const style = document.createElement("style");
-style.textContent = `
+const catalogStyle = document.createElement("style");
+catalogStyle.textContent = `
     @keyframes slideIn {
         from {
             transform: translateX(400px);
@@ -354,7 +354,7 @@ style.textContent = `
         opacity: 1;
     }
 `;
-document.head.appendChild(style);
+document.head.appendChild(catalogStyle);
 
 // === Экспорт функций ===
 window.searchProducts = searchProducts;
