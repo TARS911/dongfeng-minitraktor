@@ -1,0 +1,21 @@
+# Ignore backend - only deploy frontend
+backend/
+node_modules/
+
+# Ignore deployment configs for other platforms
+render.yaml
+netlify.toml
+railway.toml
+Procfile
+start.sh
+.nixpacks.json
+
+# Ignore database
+*.db
+*.db-shm
+*.db-wal
+
+# Ignore documentation
+DEPLOY.md
+README.md
+CLAUDE.md
