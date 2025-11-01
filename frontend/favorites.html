@@ -60,19 +60,9 @@
                             >
                         </a>
                         <a href="compare.html" class="header-action">
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                            >
-                                <path
-                                    d="M9 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H9M15 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H15M9 3V21M15 3V21"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <line x1="8" y1="6" x2="8" y2="18" />
+                                <line x1="16" y1="6" x2="16" y2="18" />
                             </svg>
                             <span
                                 class="header-action__badge"
@@ -84,38 +74,10 @@
                             href="cart.html"
                             class="header-action header-action--cart"
                         >
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                            >
-                                <path
-                                    d="M9 2L7 7H21L19 2H9Z"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                                <path
-                                    d="M7 7H21L19 17H9L7 7Z"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                                <circle
-                                    cx="10"
-                                    cy="21"
-                                    r="1"
-                                    fill="currentColor"
-                                />
-                                <circle
-                                    cx="18"
-                                    cy="21"
-                                    r="1"
-                                    fill="currentColor"
-                                />
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="11" fill="#2a9d4e" />
+                                <path d="M8 9L6 11H18L16 9H8Z" stroke="white" stroke-width="1.5" />
+                                <path d="M6 11H18L17 17H7L6 11Z" stroke="white" stroke-width="1.5" />
                             </svg>
                             <span
                                 class="header-action__badge"
@@ -205,105 +167,10 @@
                         >
                     </li>
                     <li class="mobile-menu__item">
-                        <a href="compare.html" class="mobile-menu__link"
-                            ><span>⚖️ Сравнение</span></a
-                        >
-                    </li>
-                    <li class="mobile-menu__item">
-                        <a href="cart.html" class="mobile-menu__link"
-                            ><span>🛒 Корзина</span></a
-                        >
-                    </li>
-                    <li class="mobile-menu__divider"></li>
-                    <li class="mobile-menu__item">
-                        <a
-                            href="privacy.html"
-                            class="mobile-menu__link mobile-menu__link--small"
-                            ><span>Политика конфиденциальности</span></a
-                        >
-                    </li>
-                    <li class="mobile-menu__item">
-                        <a
-                            href="terms.html"
-                            class="mobile-menu__link mobile-menu__link--small"
-                            ><span>Пользовательское соглашение</span></a
-                        >
-                    </li>
-                </ul>
-            </nav>
-            <div class="mobile-menu__footer">
-                <a href="tel:+79699995668" class="mobile-menu__phone"
-                    >+7 (969) 999-56-68</a
-                >
-                <button
-                    class="btn btn--primary"
-                    style="width: 100%; margin-top: 16px"
-                    onclick="openCallbackModal(); closeMobileMenu();"
-                >
-                    Заказать звонок
-                </button>
-            </div>
-        </div>
-
-        <!-- Favorites Page -->
-        <section class="cart-page">
-            <div class="container">
-                <!-- Breadcrumbs -->
-                <div class="breadcrumbs">
-                    <a href="index.html">Главная</a>
-                    <span>/</span>
-                    <span>Избранное</span>
-                </div>
-
-                <div class="cart-header">
-                    <h1 class="section-title">Избранные товары</h1>
-                    <p
-                        style="
-                            color: var(--color-gray-600);
-                            margin-top: var(--space-md);
-                        "
-                    >
-                        Сохраненные минитрактора для быстрого доступа
-                    </p>
-                </div>
-
-                <div id="favorites-content">
-                    <!-- Будет заполнено через JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Minimal Footer -->
-        <footer class="footer-minimal">
-            <div class="container">
-                <p>&copy; 2025 DONGFENG Минитрактора. Все права защищены.</p>
-                <div class="footer-minimal__links">
-                    <a href="/privacy.html">Политика конфиденциальности</a>
-                    <a href="/terms.html">Пользовательское соглашение</a>
-                </div>
-            </div>
-        </footer>
-
-        <script src="js/config.js"></script>
-        <script src="js/global-cart.js"></script>
-        <script src="js/mobile-menu.js"></script>
-        <script>
-            // Render favorites page on load
-            document.addEventListener("DOMContentLoaded", async () => {
-                await renderFavoritesPage();
-            });
-
-            async function renderFavoritesPage() {
-                const container = document.getElementById("favorites-content");
-                const favorites = JSON.parse(
-                    localStorage.getItem("favorites") || "[]",
-                );
-
-                if (favorites.length === 0) {
-                    container.innerHTML = `
-                        <div class="empty-state" style="padding: 80px 20px; text-align: center;">
-                            <svg width="120" height="120" viewBox="0 0 24 24" fill="none" style="margin: 0 auto 30px; color: #d4d4d4;">
-                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <a href="compare.html" class="header-action">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <line x1="8" y1="6" x2="8" y2="18" />
+                                <line x1="16" y1="6" x2="16" y2="18" />
                             </svg>
                             <h3 style="font-size: 28px; margin-bottom: 16px; color: #404040;">Список избранного пуст</h3>
                             <p style="font-size: 18px; color: #737373;">Добавляйте понравившиеся товары в избранное для быстрого доступа</p>

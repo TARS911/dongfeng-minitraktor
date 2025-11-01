@@ -45,3 +45,7 @@ coverage/
 .nyc_output/
 .vercel-credentials.txt
 .vercel/
+
+# Local Netlify folder
+.netlify
+.netlify
