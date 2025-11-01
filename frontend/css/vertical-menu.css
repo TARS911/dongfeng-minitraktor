@@ -1,4 +1,4 @@
-/* Вертикальное боковое меню - Netlify-inspired Design */
+/* Вертикальное боковое меню - Netlify-inspired Design с возможностью скрытия */
 
 .sidebar-menu {
     position: fixed;
@@ -12,7 +12,24 @@
     display: flex;
     flex-direction: column;
     box-shadow: 2px 0 12px rgba(0, 0, 0, 0.04);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Скрытое состояние sidebar на десктопе */
+.sidebar-menu.collapsed {
+    width: 60px;
+}
+
+.sidebar-menu.collapsed .sidebar-menu__nav {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar-menu.collapsed .sidebar-city-selector {
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* Header с логотипом и поиском (мобильная версия) */
@@ -348,6 +365,11 @@
 /* Header adaptation */
 .modern-header--with-sidebar {
     padding-left: 260px;
+    transition: padding-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.sidebar-collapsed .modern-header--with-sidebar {
+    padding-left: 60px;
 }
 
 .modern-header--with-sidebar .modern-header__nav {
@@ -362,8 +384,38 @@
 }
 
 .modern-header--with-sidebar .modern-header__main {
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 12px 32px;
+}
+
+/* Кнопка переключения sidebar на десктопе */
+.sidebar-desktop-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sidebar-desktop-toggle:hover {
+    background: #f8fafb;
+    border-color: #2a9d4e;
+}
+
+.sidebar-desktop-toggle svg {
+    width: 20px;
+    height: 20px;
+    stroke: #525252;
+    transition: stroke 0.2s;
+}
+
+.sidebar-desktop-toggle:hover svg {
+    stroke: #2a9d4e;
 }
 
 /* Overlay */
@@ -389,10 +441,21 @@
 /* Адаптация контента */
 body.with-sidebar .main {
     margin-left: 260px;
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body.with-sidebar .footer-minimal {
     margin-left: 260px;
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Когда sidebar скрыт */
+body.with-sidebar.sidebar-collapsed .main {
+    margin-left: 60px;
+}
+
+body.with-sidebar.sidebar-collapsed .footer-minimal {
+    margin-left: 60px;
 }
 
 /* Мобильная версия */
@@ -414,6 +477,11 @@ body.with-sidebar .footer-minimal {
 
     .sidebar-toggle {
         display: flex;
+    }
+
+    /* Скрываем десктопную кнопку переключения sidebar на мобильных */
+    .sidebar-desktop-toggle {
+        display: none !important;
     }
 
     .modern-header--with-sidebar {

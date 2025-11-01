@@ -342,11 +342,26 @@
         <header class="modern-header modern-header--with-sidebar">
             <div class="modern-header__container">
                 <div class="modern-header__main">
-                    <!-- Правая секция: только иконки действий -->
-                    <div
-                        class="modern-header__actions"
-                        style="margin-left: auto"
+                    <!-- Кнопка переключения sidebar (только на десктопе) -->
+                    <button
+                        class="sidebar-desktop-toggle"
+                        onclick="toggleSidebarDesktop()"
+                        title="Скрыть/показать меню"
                     >
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+
+                    <!-- Правая секция: только иконки действий -->
+                    <div class="modern-header__actions">
                         <!-- Compare -->
                         <a href="compare.html" class="action-btn">
                             <svg
