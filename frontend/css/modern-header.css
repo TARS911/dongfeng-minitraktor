@@ -271,29 +271,6 @@
     color: #666;
 }
 
-/* Mobile Menu Toggle */
-.mobile-menu-toggle {
-    display: none;
-    width: 44px;
-    height: 44px;
-    background: white;
-    border: 2px solid var(--brand-primary);
-    border-radius: 8px;
-    cursor: pointer;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-}
-
-.mobile-menu-toggle span {
-    width: 20px;
-    height: 2px;
-    background: var(--brand-primary);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
 /* Responsive Styles */
 @media (max-width: 1200px) {
     .nav-menu-modern {
@@ -308,10 +285,6 @@
 @media (max-width: 992px) {
     .modern-header__nav {
         display: none;
-    }
-
-    .mobile-menu-toggle {
-        display: flex;
     }
 }
 
