@@ -207,8 +207,32 @@
     opacity: 1;
 }
 
-/* Специальная кнопка каталога */
-.sidebar-menu__link--catalog {
+/* Оранжевая кнопка (Каталог) */
+.sidebar-menu__link--orange {
+    background: linear-gradient(135deg, #ff5b1a 0%, #ff8547 100%);
+    color: white;
+    margin: 0 0 8px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(255, 91, 26, 0.25);
+}
+
+.sidebar-menu__link--orange::before {
+    display: none;
+}
+
+.sidebar-menu__link--orange:hover {
+    background: linear-gradient(135deg, #e64d0f 0%, #ff7033 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 91, 26, 0.35);
+    transform: translateY(-1px);
+}
+
+.sidebar-menu__link--orange svg {
+    opacity: 1;
+}
+
+/* Зеленая кнопка (Акции) */
+.sidebar-menu__link--green {
     background: linear-gradient(135deg, #2a9d4e 0%, #22c55e 100%);
     color: white;
     margin: 0 0 8px;
@@ -216,18 +240,18 @@
     box-shadow: 0 2px 8px rgba(42, 157, 78, 0.25);
 }
 
-.sidebar-menu__link--catalog::before {
+.sidebar-menu__link--green::before {
     display: none;
 }
 
-.sidebar-menu__link--catalog:hover {
+.sidebar-menu__link--green:hover {
     background: linear-gradient(135deg, #248943 0%, #16a34a 100%);
     color: white;
     box-shadow: 0 4px 12px rgba(42, 157, 78, 0.35);
     transform: translateY(-1px);
 }
 
-.sidebar-menu__link--catalog svg {
+.sidebar-menu__link--green svg {
     opacity: 1;
 }
 
