@@ -1,0 +1,444 @@
+/**
+ * DONGFENG ULTIMATE DESIGN SYSTEM
+ * Финальная комплексная дизайн-система объединяющая:
+ * - New Holland премиум стиль
+ * - Agro-App современный интерфейс
+ * - Улучшенную типографику и анимации
+ */
+
+/* ============================================
+   ГЛОБАЛЬНЫЕ УЛУЧШЕНИЯ
+   ============================================ */
+
+/* Применяем улучшенную hero секцию */
+.hero-premium {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2a9d4e 100%);
+}
+
+/* Применяем улучшенные кнопки */
+.btn-premium,
+.nh-btn,
+.agro-btn {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-premium:hover,
+.nh-btn:hover,
+.agro-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* ============================================
+   УЛУЧШЕННАЯ HERO СЕКЦИЯ С ВИДЕО ФОНОМ
+   ============================================ */
+
+.hero-premium__media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+/* ============================================
+   ADVANTAGES СЕКЦИЯ (УЛУЧШЕННАЯ)
+   ============================================ */
+
+.advantages-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+}
+
+.advantage-item {
+    background: white;
+    padding: 40px 24px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.advantage-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(42, 157, 78, 0.2);
+}
+
+.advantage-item__icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #4CAF50 0%, #2a9d4e 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.advantage-item:hover .advantage-item__icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.advantage-item__icon svg {
+    width: 36px;
+    height: 36px;
+}
+
+.advantage-item__text {
+    font-size: 18px;
+    font-weight: 600;
+    color: #212121;
+    line-height: 1.4;
+}
+
+/* ============================================
+   QUIZ BLOCK (УЛУЧШЕННЫЙ)
+   ============================================ */
+
+.quiz-block {
+    background: linear-gradient(135deg, #2a9d4e 0%, #1e7a3a 100%);
+    padding: 60px 40px;
+    border-radius: 24px;
+    margin: 60px 0;
+    box-shadow: 0 20px 48px rgba(42, 157, 78, 0.3);
+}
+
+.quiz-block__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.quiz-block__title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.quiz-block__subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.quiz-block__button {
+    padding: 16px 48px;
+    background: white;
+    color: #2a9d4e;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.quiz-block__button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   FOOTER (УЛУЧШЕННЫЙ)
+   ============================================ */
+
+.footer {
+    background: #1a1a2e;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 60px 0 30px;
+}
+
+.footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer__links {
+    display: flex;
+    gap: 32px;
+}
+
+.footer__links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer__links a:hover {
+    color: #4CAF50;
+}
+
+/* ============================================
+   МОДАЛЬНОЕ ОКНО (УЛУЧШЕННОЕ)
+   ============================================ */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: white;
+    border-radius: 24px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
+    transform: scale(0.9) translateY(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-overlay.active .modal {
+    transform: scale(1) translateY(0);
+}
+
+.modal__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal__close:hover {
+    background: #e0e0e0;
+    transform: rotate(90deg);
+}
+
+.modal__content {
+    padding: 40px;
+}
+
+.modal__title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #212121;
+    margin-bottom: 12px;
+}
+
+.modal__subtitle {
+    font-size: 16px;
+    color: #757575;
+    margin-bottom: 32px;
+}
+
+.modal__form input,
+.modal__form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+}
+
+.modal__form input:focus,
+.modal__form textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.1);
+}
+
+.modal__form button {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #4CAF50 0%, #2a9d4e 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal__form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(76, 175, 80, 0.3);
+}
+
+/* ============================================
+   SIDEBAR MENU (УЛУЧШЕННОЕ)
+   ============================================ */
+
+.sidebar-menu {
+    background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+    box-shadow: 4px 0 32px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-menu__link {
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.sidebar-menu__link:hover {
+    background: linear-gradient(90deg, rgba(76, 175, 80, 0.08) 0%, transparent 100%);
+    border-left-color: #4CAF50;
+}
+
+.sidebar-menu__link.active {
+    background: linear-gradient(90deg, rgba(76, 175, 80, 0.12) 0%, transparent 100%);
+    border-left-color: #4CAF50;
+    color: #2a9d4e;
+    font-weight: 600;
+}
+
+/* ============================================
+   HEADER (УЛУЧШЕННЫЙ)
+   ============================================ */
+
+.modern-header {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.modern-header.scrolled {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   RESPONSIVE IMPROVEMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .quiz-block__content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .quiz-block__button {
+        width: 100%;
+    }
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .advantage-item {
+        padding: 32px 20px;
+    }
+
+    .modal__content {
+        padding: 32px 24px;
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer__links {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+/* ============================================
+   АНИМАЦИИ ПРИ СКРОЛЛЕ
+   ============================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Последовательная анимация для карточек */
+.advantage-item:nth-child(1) { animation-delay: 0.1s; }
+.advantage-item:nth-child(2) { animation-delay: 0.2s; }
+.advantage-item:nth-child(3) { animation-delay: 0.3s; }
+.advantage-item:nth-child(4) { animation-delay: 0.4s; }
+.advantage-item:nth-child(5) { animation-delay: 0.5s; }
+.advantage-item:nth-child(6) { animation-delay: 0.6s; }
+.advantage-item:nth-child(7) { animation-delay: 0.7s; }
+
+/* ============================================
+   УТИЛИТЫ
+   ============================================ */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-4 { margin-top: 24px; }
+.mt-8 { margin-top: 48px; }
+.mb-4 { margin-bottom: 24px; }
+.mb-8 { margin-bottom: 48px; }
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+    background: #4CAF50;
+    color: white;
+}
+
+/* Focus visible для доступности */
+:focus-visible {
+    outline: 3px solid #4CAF50;
+    outline-offset: 2px;
+}
