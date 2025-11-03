@@ -1,0 +1,702 @@
+/**
+ * AGROTECH STRUCTURE - Полная структура сайта
+ * На основе примера современного агро-сайта
+ */
+
+/* ============================================
+   СТАТИСТИКА ПОД HERO (70+ Years, 150+ Countries...)
+   ============================================ */
+
+.stats-section {
+    background: white;
+    padding: 60px 0;
+    margin-top: -80px;
+    position: relative;
+    z-index: 100;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 40px 24px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(76, 175, 80, 0.15);
+}
+
+.stat-card__number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #2a9d4e 0%, #4CAF50 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.stat-card__label {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #424242;
+}
+
+/* ============================================
+   PRODUCT RANGE (4 категории)
+   ============================================ */
+
+.product-range {
+    padding: 100px 0;
+    background: #fafafa;
+}
+
+.product-range__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.product-range__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: #212121;
+    margin-bottom: 16px;
+}
+
+.product-range__subtitle {
+    font-size: 1.25rem;
+    color: #757575;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.product-range__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.product-category {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.product-category:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.product-category__image {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-category__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-category:hover .product-category__image img {
+    transform: scale(1.1);
+}
+
+.product-category__content {
+    padding: 32px 24px;
+}
+
+.product-category__spec {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4CAF50;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.product-category__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #212121;
+    margin-bottom: 12px;
+}
+
+.product-category__description {
+    font-size: 1rem;
+    color: #757575;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.product-category__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #2a9d4e;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.product-category__link:hover {
+    gap: 12px;
+    color: #1e7a3a;
+}
+
+/* ============================================
+   FEATURED MODELS (карточки с бейджами)
+   ============================================ */
+
+.featured-models {
+    padding: 100px 0;
+    background: white;
+}
+
+.featured-models__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.featured-models__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: #212121;
+    margin-bottom: 16px;
+}
+
+.featured-models__subtitle {
+    font-size: 1.25rem;
+    color: #757575;
+}
+
+.featured-models__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.model-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.model-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 16px 48px rgba(76, 175, 80, 0.2);
+}
+
+.model-card__header {
+    position: relative;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    padding: 24px;
+}
+
+.model-card__badges {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.model-card__badge {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.model-card__badge--new {
+    background: #4CAF50;
+    color: white;
+}
+
+.model-card__badge--bestseller {
+    background: #FF9800;
+    color: white;
+}
+
+.model-card__badge--innovation {
+    background: #2196F3;
+    color: white;
+}
+
+.model-card__category {
+    font-size: 14px;
+    color: #757575;
+    margin-bottom: 8px;
+}
+
+.model-card__name {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #212121;
+}
+
+.model-card__image {
+    width: 100%;
+    height: 280px;
+    background: #f5f5f5;
+}
+
+.model-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.model-card__specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 32px 24px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.model-card__spec {
+    text-align: center;
+}
+
+.model-card__spec-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #2a9d4e;
+    margin-bottom: 4px;
+}
+
+.model-card__spec-label {
+    font-size: 12px;
+    color: #757575;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.model-card__actions {
+    display: flex;
+    gap: 12px;
+    padding: 24px;
+}
+
+.model-card__btn {
+    flex: 1;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.model-card__btn--primary {
+    background: linear-gradient(135deg, #2a9d4e 0%, #4CAF50 100%);
+    color: white;
+}
+
+.model-card__btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+}
+
+.model-card__btn--secondary {
+    background: #f5f5f5;
+    color: #212121;
+}
+
+.model-card__btn--secondary:hover {
+    background: #e0e0e0;
+}
+
+/* ============================================
+   SMART TECHNOLOGY СЕКЦИЯ
+   ============================================ */
+
+.smart-tech {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2a9d4e 100%);
+    color: white;
+}
+
+.smart-tech__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.smart-tech__badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+
+.smart-tech__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.smart-tech__description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+.smart-tech__features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.smart-tech__feature {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.smart-tech__feature-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.smart-tech__feature-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.smart-tech__feature-text {
+    font-size: 1rem;
+    opacity: 0.85;
+    line-height: 1.6;
+}
+
+.smart-tech__image {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.smart-tech__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============================================
+   SERVICE & SUPPORT
+   ============================================ */
+
+.service-support {
+    padding: 100px 0;
+    background: #fafafa;
+}
+
+.service-support__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.service-support__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: #212121;
+    margin-bottom: 16px;
+}
+
+.service-support__subtitle {
+    font-size: 1.25rem;
+    color: #757575;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.service-support__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.service-card {
+    background: white;
+    padding: 40px 32px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.service-card__icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 24px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2a9d4e;
+}
+
+.service-card__icon svg {
+    width: 36px;
+    height: 36px;
+}
+
+.service-card__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #212121;
+    margin-bottom: 12px;
+}
+
+.service-card__description {
+    font-size: 1rem;
+    color: #757575;
+    line-height: 1.6;
+}
+
+/* ============================================
+   FIND A DEALER
+   ============================================ */
+
+.find-dealer {
+    padding: 100px 0;
+    background: white;
+}
+
+.find-dealer__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.find-dealer__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: #212121;
+    margin-bottom: 16px;
+}
+
+.find-dealer__subtitle {
+    font-size: 1.25rem;
+    color: #757575;
+}
+
+.find-dealer__search {
+    max-width: 600px;
+    margin: 0 auto 60px;
+    display: flex;
+    gap: 12px;
+}
+
+.find-dealer__input {
+    flex: 1;
+    padding: 16px 24px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.find-dealer__input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.1);
+}
+
+.find-dealer__btn {
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #2a9d4e 0%, #4CAF50 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.find-dealer__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+}
+
+.dealer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.dealer-card {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 32px;
+    transition: all 0.3s ease;
+}
+
+.dealer-card:hover {
+    border-color: #4CAF50;
+    box-shadow: 0 8px 24px rgba(76, 175, 80, 0.15);
+}
+
+.dealer-card__name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #212121;
+    margin-bottom: 16px;
+}
+
+.dealer-card__address {
+    font-size: 1rem;
+    color: #757575;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.dealer-card__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.dealer-card__contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #424242;
+    font-size: 0.95rem;
+}
+
+.dealer-card__hours {
+    padding: 16px;
+    background: #f5f5f5;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    color: #424242;
+    margin-bottom: 20px;
+}
+
+.dealer-card__btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: #2a9d4e;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.dealer-card__btn:hover {
+    background: #1e7a3a;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .smart-tech__container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .smart-tech__image {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .stat-card {
+        padding: 24px 16px;
+    }
+
+    .stat-card__number {
+        font-size: 2.5rem;
+    }
+
+    .product-range__grid,
+    .featured-models__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .smart-tech__features {
+        grid-template-columns: 1fr;
+    }
+
+    .find-dealer__search {
+        flex-direction: column;
+    }
+
+    .dealer-grid {
+        grid-template-columns: 1fr;
+    }
+}
