@@ -1,0 +1,809 @@
+/*
+ * BELTEHFERM Complete Design System
+ * Полный дизайн из AGRO Figma проекта
+ * Адаптировано для БЕЛТЕХФЕРМ минитракторов
+ */
+
+/* ===== LOGO HEXAGON STYLES ===== */
+.beltehferm-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.beltehferm-logo__icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.beltehferm-logo__hexagon {
+  width: 100%;
+  height: 100%;
+  color: #059669;
+  fill: #dcfce7;
+}
+
+.beltehferm-logo__dot {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.beltehferm-logo__dot-inner {
+  width: 8px;
+  height: 8px;
+  background: #059669;
+  border-radius: 50%;
+}
+
+.beltehferm-logo__text-top {
+  color: #111827;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-size: 1rem;
+}
+
+.beltehferm-logo__text-bottom {
+  color: #059669;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.light-theme .beltehferm-logo__text-top {
+  color: #111827;
+}
+
+body:not(.light-theme) .beltehferm-logo__text-top {
+  color: #ffffff;
+}
+
+/* ===== ENHANCED NAVIGATION ===== */
+.light-theme .header {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px);
+}
+
+.light-theme .header.scrolled {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== ENHANCED HERO ===== */
+.light-theme .terra-hero {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #eff6ff 100%);
+}
+
+/* ===== REMOVED DUPLICATE BACKGROUND ===== */
+/* Background now only in terra-hero section */
+
+.terra-hero__grid-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image:
+    linear-gradient(#059669 1px, transparent 1px),
+    linear-gradient(90deg, #059669 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+/* ===== MOBILE OPTIMIZATIONS ===== */
+@media (max-width: 768px) {
+  .beltehferm-logo__icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .beltehferm-logo__text-top {
+    font-size: 0.875rem;
+  }
+
+  .beltehferm-logo__text-bottom {
+    font-size: 0.65rem;
+  }
+
+  .terra-hero {
+    min-height: 100svh; /* Используем svh для mobile */
+  }
+
+  .terra-heading-hero {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .terra-text-lead {
+    font-size: 1rem !important;
+  }
+
+  .terra-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .terra-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .terra-stat-value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .terra-heading-hero {
+    font-size: 1.75rem !important;
+  }
+
+  .terra-innovation-grid,
+  .terra-product-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+.terra-hero__image,
+.terra-innovation-card,
+.terra-product-showcase-image {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Reduce animations on low-end devices */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== EXPERIENCE SECTION ===== */
+.experience-section {
+  padding: 8rem 0;
+  background: linear-gradient(to bottom, #f9fafb 0%, #ffffff 100%);
+}
+
+.light-theme .experience-section {
+  background: linear-gradient(to bottom, #f9fafb 0%, #ffffff 100%);
+}
+
+body:not(.light-theme) .experience-section {
+  background: linear-gradient(to bottom, #0a0a0a 0%, #000000 100%);
+}
+
+.experience-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.experience-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+  border-radius: 9999px;
+  color: #047857;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+body:not(.light-theme) .experience-badge {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #34d399;
+}
+
+.experience-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+body:not(.light-theme) .experience-title {
+  color: #ffffff;
+}
+
+.experience-description {
+  max-width: 42rem;
+  margin: 0 auto;
+  color: #6b7280;
+  font-size: 1.125rem;
+}
+
+body:not(.light-theme) .experience-description {
+  color: #9ca3af;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .experience-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.experience-card {
+  position: relative;
+  padding: 2rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+  border-color: #a7f3d0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+body:not(.light-theme) .experience-card {
+  background: rgba(17, 24, 39, 0.5);
+  border-color: rgba(75, 85, 99, 0.3);
+}
+
+body:not(.light-theme) .experience-card:hover {
+  border-color: rgba(52, 211, 153, 0.5);
+}
+
+.experience-card--featured {
+  background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+  border-color: #bbf7d0;
+}
+
+body:not(.light-theme) .experience-card--featured {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.1) 0%,
+    rgba(6, 182, 212, 0.1) 100%
+  );
+  border-color: rgba(52, 211, 153, 0.3);
+}
+
+.experience-icon {
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.experience-card:hover .experience-icon {
+  transform: scale(1.1);
+}
+
+.experience-icon svg {
+  width: 2rem;
+  height: 2rem;
+  color: #ffffff;
+}
+
+.experience-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+body:not(.light-theme) .experience-card-title {
+  color: #ffffff;
+}
+
+.experience-card-text {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+body:not(.light-theme) .experience-card-text {
+  color: #9ca3af;
+}
+
+.experience-card--featured .experience-card-text {
+  color: #374151;
+}
+
+body:not(.light-theme) .experience-card--featured .experience-card-text {
+  color: #d1d5db;
+}
+
+.experience-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  color: #374151;
+  font-weight: 500;
+  background: #ffffff;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.experience-btn:hover {
+  background: #f9fafb;
+}
+
+.experience-btn--primary {
+  background: #059669;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+}
+
+.experience-btn--primary:hover {
+  background: #047857;
+}
+
+body:not(.light-theme) .experience-btn {
+  background: rgba(31, 41, 55, 0.5);
+  border-color: rgba(75, 85, 99, 0.5);
+  color: #d1d5db;
+}
+
+body:not(.light-theme) .experience-btn:hover {
+  background: rgba(31, 41, 55, 0.8);
+}
+
+/* ===== SUSTAINABILITY SECTION ===== */
+.sustainability-section {
+  padding: 8rem 0;
+  background: linear-gradient(to bottom, #ffffff 0%, #f0fdf4 50%, #ffffff 100%);
+}
+
+body:not(.light-theme) .sustainability-section {
+  background: linear-gradient(
+    to bottom,
+    #000000 0%,
+    rgba(16, 185, 129, 0.05) 50%,
+    #000000 100%
+  );
+}
+
+.sustainability-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .sustainability-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.sustainability-content {
+  color: #111827;
+}
+
+body:not(.light-theme) .sustainability-content {
+  color: #ffffff;
+}
+
+.sustainability-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+  border-radius: 9999px;
+  color: #047857;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+body:not(.light-theme) .sustainability-badge {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #34d399;
+}
+
+.sustainability-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+body:not(.light-theme) .sustainability-title {
+  color: #ffffff;
+}
+
+.sustainability-text {
+  color: #6b7280;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+body:not(.light-theme) .sustainability-text {
+  color: #9ca3af;
+}
+
+.sustainability-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sustainability-feature {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.sustainability-feature:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body:not(.light-theme) .sustainability-feature {
+  background: rgba(17, 24, 39, 0.5);
+  border-color: rgba(75, 85, 99, 0.3);
+}
+
+.sustainability-feature-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #059669;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+.sustainability-feature-title {
+  color: #111827;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+body:not(.light-theme) .sustainability-feature-title {
+  color: #ffffff;
+}
+
+.sustainability-feature-text {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+body:not(.light-theme) .sustainability-feature-text {
+  color: #9ca3af;
+}
+
+.sustainability-image-wrapper {
+  position: relative;
+}
+
+.sustainability-image-glow {
+  position: absolute;
+  inset: 0;
+  background: rgba(167, 243, 208, 0.4);
+  filter: blur(60px);
+}
+
+.sustainability-image-container {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.sustainability-image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+.sustainability-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .sustainability-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.sustainability-stat {
+  text-align: center;
+  padding: 2rem;
+  background: #ffffff;
+  border: 1px solid #bbf7d0;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.sustainability-stat:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+body:not(.light-theme) .sustainability-stat {
+  background: rgba(17, 24, 39, 0.5);
+  border-color: rgba(52, 211, 153, 0.3);
+}
+
+.sustainability-stat-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #059669;
+  margin: 0 auto 1rem;
+}
+
+.sustainability-stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #047857;
+  margin-bottom: 0.5rem;
+}
+
+body:not(.light-theme) .sustainability-stat-value {
+  color: #34d399;
+}
+
+.sustainability-stat-label {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+body:not(.light-theme) .sustainability-stat-label {
+  color: #9ca3af;
+}
+
+/* ===== ENHANCED MOBILE OPTIMIZATIONS ===== */
+@media (max-width: 768px) {
+  /* Logo adjustments */
+  .header-content .beltehferm-logo {
+    gap: 0.5rem;
+  }
+
+  /* Header improvements */
+  .header-main {
+    padding: 0.75rem 0;
+  }
+
+  .search-bar {
+    max-width: 100%;
+  }
+
+  .search-input {
+    font-size: 14px;
+  }
+
+  /* Experience section mobile */
+  .experience-section {
+    padding: 4rem 0;
+  }
+
+  .experience-title {
+    font-size: 1.875rem;
+  }
+
+  .experience-description {
+    font-size: 1rem;
+  }
+
+  .experience-grid {
+    gap: 1rem;
+  }
+
+  /* Sustainability section mobile */
+  .sustainability-section {
+    padding: 4rem 0;
+  }
+
+  .sustainability-title {
+    font-size: 1.875rem;
+  }
+
+  .sustainability-grid {
+    gap: 2.5rem;
+  }
+
+  .sustainability-image {
+    height: 350px;
+  }
+
+  /* Action buttons mobile */
+  .action-btn__text {
+    display: none;
+  }
+
+  .theme-toggle-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Container padding */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Logo smaller on tiny screens */
+  .beltehferm-logo__icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .beltehferm-logo__text-top {
+    font-size: 0.8rem;
+  }
+
+  .beltehferm-logo__text-bottom {
+    font-size: 0.6rem;
+  }
+
+  /* Sections padding */
+  .experience-section,
+  .sustainability-section {
+    padding: 3rem 0;
+  }
+
+  /* Typography */
+  .experience-title,
+  .sustainability-title {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .experience-description,
+  .sustainability-text {
+    font-size: 0.9rem;
+  }
+
+  /* Cards */
+  .experience-card,
+  .sustainability-stat {
+    padding: 1.25rem;
+  }
+
+  .experience-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .experience-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .experience-card-title {
+    font-size: 1.1rem;
+  }
+
+  .experience-card-text {
+    font-size: 0.9rem;
+  }
+
+  /* Sustainability */
+  .sustainability-image {
+    height: 300px;
+  }
+
+  .sustainability-stat-value {
+    font-size: 1.5rem;
+  }
+
+  .sustainability-stat-label {
+    font-size: 0.75rem;
+  }
+
+  .sustainability-feature {
+    padding: 0.75rem;
+  }
+
+  .sustainability-feature-title {
+    font-size: 0.9rem;
+  }
+
+  .sustainability-feature-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Extra small screens optimization */
+  .experience-title,
+  .sustainability-title {
+    font-size: 1.35rem;
+  }
+
+  .experience-badge,
+  .sustainability-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .sustainability-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .sustainability-image {
+    height: 250px;
+  }
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* ===== BUTTON ENHANCEMENTS ===== */
+.terra-btn,
+.experience-btn {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.terra-btn:active,
+.experience-btn:active {
+  transform: scale(0.98);
+}
+
+/* ===== IMAGE LOADING OPTIMIZATION ===== */
+.sustainability-image,
+.terra-hero__image {
+  content-visibility: auto;
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-contrast: high) {
+  .experience-card,
+  .sustainability-feature,
+  .sustainability-stat {
+    border-width: 2px;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .experience-section,
+  .sustainability-section {
+    page-break-inside: avoid;
+  }
+}

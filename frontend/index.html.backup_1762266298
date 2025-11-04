@@ -302,6 +302,17 @@
 
     <!-- Header -->
     <header class="header">
+      <div class="header-top">
+        <div class="container">
+          <div class="header-top-content">
+            <div>📍 Белгород, Курск, Брянск, Липецк</div>
+            <div class="header-contacts">
+              <a href="mailto:info@beltehferm.ru">📧 info@beltehferm.ru</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="header-main">
         <div class="container">
           <div class="header-content">

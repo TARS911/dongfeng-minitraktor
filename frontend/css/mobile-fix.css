@@ -1,0 +1,394 @@
+/* ===== КРИТИЧЕСКИЕ ИСПРАВЛЕНИЯ МОБИЛЬНОЙ ВЕРСИИ ===== */
+
+/* Скрыть header-top на мобильных */
+@media (max-width: 768px) {
+  .header-top {
+    display: none !important;
+  }
+
+  /* Упростить header */
+  .header-main {
+    padding: 0.5rem 0 !important;
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+
+  /* Компактный логотип */
+  .beltehferm-logo {
+    flex-shrink: 0;
+    gap: 0.35rem !important;
+  }
+
+  .beltehferm-logo__icon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .beltehferm-logo__text-top {
+    font-size: 0.75rem !important;
+    line-height: 1;
+  }
+
+  .beltehferm-logo__text-bottom {
+    font-size: 0.6rem !important;
+    line-height: 1;
+  }
+
+  /* Убрать search bar на маленьких экранах */
+  .search-bar {
+    display: none !important;
+  }
+
+  /* Компактные кнопки действий */
+  .header-actions {
+    gap: 0.25rem !important;
+    flex-wrap: nowrap;
+  }
+
+  .action-btn {
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0.5rem !important;
+  }
+
+  .action-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .action-btn__text {
+    display: none !important;
+  }
+
+  .action-btn__badge {
+    top: 4px;
+    right: 4px;
+    min-width: 16px;
+    height: 16px;
+    font-size: 10px;
+    padding: 0 4px;
+  }
+
+  .theme-toggle-btn {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .theme-toggle-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Оптимизация Hero секции */
+  .terra-hero {
+    min-height: 85vh !important;
+    padding: 2rem 0 !important;
+  }
+
+  .terra-hero__container {
+    padding: 1rem !important;
+  }
+
+  .terra-badge {
+    font-size: 0.7rem !important;
+    padding: 0.4rem 0.8rem !important;
+  }
+
+  .terra-heading-hero {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .terra-text-lead {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .terra-buttons {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+
+  .terra-btn {
+    width: 100% !important;
+    padding: 0.875rem 1.5rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .terra-stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+    margin-top: 2rem !important;
+  }
+
+  .terra-stat-value {
+    font-size: 1.5rem !important;
+  }
+
+  .terra-stat-label {
+    font-size: 0.75rem !important;
+  }
+
+  /* Скрыть некоторые декоративные элементы */
+  .terra-grid-bg {
+    opacity: 0.02 !important;
+  }
+
+  .terra-hero__overlay {
+    opacity: 0.5 !important;
+  }
+
+  /* Innovation секция */
+  .terra-innovation-section {
+    padding: 3rem 0 !important;
+  }
+
+  .terra-innovation-section h2 {
+    font-size: 1.75rem !important;
+  }
+
+  .terra-innovation-section p {
+    font-size: 0.9rem !important;
+  }
+
+  .terra-innovation-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .terra-innovation-card {
+    padding: 1.25rem !important;
+  }
+
+  .terra-innovation-icon {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .terra-innovation-icon svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  /* Experience секция - упростить */
+  .experience-section {
+    padding: 2.5rem 0 !important;
+  }
+
+  .experience-title {
+    font-size: 1.5rem !important;
+  }
+
+  .experience-badge {
+    font-size: 0.7rem !important;
+    padding: 0.4rem 0.8rem !important;
+  }
+
+  .experience-description {
+    font-size: 0.9rem !important;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .experience-card {
+    padding: 1.25rem !important;
+  }
+
+  .experience-icon {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  /* Sustainability - упростить */
+  .sustainability-section {
+    padding: 2.5rem 0 !important;
+  }
+
+  .sustainability-title {
+    font-size: 1.5rem !important;
+  }
+
+  .sustainability-badge {
+    font-size: 0.7rem !important;
+  }
+
+  .sustainability-text {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .sustainability-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .sustainability-image {
+    height: 250px !important;
+  }
+
+  .sustainability-feature {
+    padding: 0.75rem !important;
+  }
+
+  .sustainability-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+
+  .sustainability-stat {
+    padding: 1rem !important;
+  }
+
+  .sustainability-stat-value {
+    font-size: 1.25rem !important;
+  }
+
+  .sustainability-stat-label {
+    font-size: 0.7rem !important;
+  }
+
+  /* Product Showcase */
+  .terra-product-showcase-section {
+    padding: 2.5rem 0 !important;
+  }
+
+  .terra-product-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0.5rem !important;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .terra-product-tab {
+    font-size: 0.8rem !important;
+    padding: 0.5rem 1rem !important;
+    white-space: nowrap;
+  }
+
+  .terra-product-showcase-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Преимущества */
+  .advantages {
+    padding: 2rem 0 !important;
+  }
+
+  .advantages-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .advantage-item {
+    padding: 1.25rem !important;
+  }
+
+  .advantage-icon {
+    font-size: 2rem !important;
+  }
+
+  /* Контейнеры */
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Footer упростить */
+  .footer {
+    padding: 2rem 0 1rem !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .footer-section h3 {
+    font-size: 1rem !important;
+  }
+
+  .footer-section p,
+  .footer-section a {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 380px) {
+  .beltehferm-logo__icon {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .beltehferm-logo__text-top {
+    font-size: 0.7rem !important;
+  }
+
+  .beltehferm-logo__text-bottom {
+    font-size: 0.55rem !important;
+  }
+
+  .terra-heading-hero {
+    font-size: 1.5rem !important;
+  }
+
+  .terra-stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .action-btn {
+    min-width: 36px;
+    min-height: 36px;
+  }
+
+  .theme-toggle-btn {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
+/* Улучшение читаемости */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3 {
+    line-height: 1.3;
+  }
+
+  /* Больше воздуха */
+  section {
+    margin-bottom: 1rem;
+  }
+
+  /* Оптимизация кнопок для тач */
+  button,
+  .terra-btn,
+  .action-btn,
+  a.btn {
+    min-height: 44px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  }
+
+  /* Убрать hover эффекты на тач устройствах */
+  @media (hover: none) {
+    *:hover {
+      transform: none !important;
+    }
+  }
+}
