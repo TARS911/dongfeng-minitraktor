@@ -1,0 +1,492 @@
+/*
+ * TERRA LIGHT THEME - Premium Light Design
+ * Светлая премиум тема на основе AGRO Figma проекта
+ * БЕЛТЕХФЕРМ брендинг
+ */
+
+:root {
+  /* === LIGHT THEME COLORS === */
+
+  /* Emerald Green - Main Brand (darker shades for light bg) */
+  --light-emerald-50: #f0fdf4;
+  --light-emerald-100: #dcfce7;
+  --light-emerald-200: #bbf7d0;
+  --light-emerald-300: #86efac;
+  --light-emerald-400: #4ade80;
+  --light-emerald-500: #22c55e;
+  --light-emerald-600: #059669;
+  --light-emerald-700: #047857;
+
+  /* Blue Accents */
+  --light-blue-50: #eff6ff;
+  --light-blue-100: #dbeafe;
+  --light-blue-500: #3b82f6;
+
+  /* Grays for Light Theme */
+  --light-gray-50: #f9fafb;
+  --light-gray-100: #f3f4f6;
+  --light-gray-200: #e5e7eb;
+  --light-gray-300: #d1d5db;
+  --light-gray-400: #9ca3af;
+  --light-gray-500: #6b7280;
+  --light-gray-600: #4b5563;
+  --light-gray-700: #374151;
+  --light-gray-800: #1f2937;
+  --light-gray-900: #111827;
+
+  --light-white: #ffffff;
+
+  /* === LIGHT GRADIENTS === */
+  --light-gradient-hero: linear-gradient(
+    135deg,
+    #f0fdf4 0%,
+    #ffffff 50%,
+    #eff6ff 100%
+  );
+  --light-gradient-section: linear-gradient(
+    180deg,
+    #f9fafb 0%,
+    #eff6ff 50%,
+    #f9fafb 100%
+  );
+  --light-gradient-button: linear-gradient(135deg, #059669 0%, #047857 100%);
+  --light-gradient-button-hover: linear-gradient(
+    135deg,
+    #10b981 0%,
+    #059669 100%
+  );
+  --light-gradient-overlay: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(240, 253, 244, 0.9) 50%,
+    rgba(255, 255, 255, 0.95) 100%
+  );
+
+  /* === LIGHT SHADOWS === */
+  --light-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --light-shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --light-shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --light-shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --light-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* Emerald Shadows */
+  --light-shadow-emerald:
+    0 10px 15px -3px rgba(5, 150, 105, 0.2),
+    0 4px 6px -2px rgba(5, 150, 105, 0.05);
+  --light-shadow-emerald-lg: 0 20px 25px -5px rgba(5, 150, 105, 0.3);
+}
+
+/* === LIGHT THEME BASE === */
+body.light-theme {
+  background: var(--light-white);
+  color: var(--light-gray-900);
+}
+
+/* === LIGHT NAVIGATION & HEADER === */
+.light-theme .header {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--light-gray-200);
+}
+
+.light-theme .header.scrolled {
+  box-shadow: var(--light-shadow-sm);
+}
+
+.light-theme .header-top {
+  background: var(--light-gray-50) !important;
+  border-bottom: 1px solid var(--light-gray-200);
+}
+
+.light-theme .header-top-content,
+.light-theme .header-top-content a {
+  color: var(--light-gray-700) !important;
+}
+
+.light-theme .header-top-content a:hover {
+  color: var(--light-emerald-600) !important;
+}
+
+/* Search Bar Light */
+.light-theme .search-input {
+  background: var(--light-gray-50) !important;
+  border: 1px solid var(--light-gray-300) !important;
+  color: var(--light-gray-900) !important;
+}
+
+.light-theme .search-input::placeholder {
+  color: var(--light-gray-400) !important;
+}
+
+.light-theme .search-input:focus {
+  border-color: var(--light-emerald-600) !important;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1) !important;
+}
+
+.light-theme .search-btn {
+  background: var(--light-gradient-button) !important;
+  color: var(--light-white) !important;
+}
+
+.light-theme .search-btn:hover {
+  background: var(--light-gradient-button-hover) !important;
+}
+
+/* Header Actions */
+.light-theme .action-btn {
+  color: var(--light-gray-700) !important;
+}
+
+.light-theme .action-btn:hover {
+  color: var(--light-emerald-600) !important;
+}
+
+.light-theme .action-btn svg {
+  stroke: var(--light-gray-600);
+}
+
+.light-theme .action-btn:hover svg {
+  stroke: var(--light-emerald-600);
+}
+
+.light-theme .action-btn--cart {
+  background: var(--light-gradient-button) !important;
+}
+
+.light-theme .header-phone {
+  background: var(--light-white) !important;
+  color: var(--light-gray-900) !important;
+  border: 1px solid var(--light-gray-300) !important;
+}
+
+.light-theme .header-phone:hover {
+  background: var(--light-emerald-600) !important;
+  color: var(--light-white) !important;
+  border-color: var(--light-emerald-600) !important;
+}
+
+/* Sidebar Menu Light Theme */
+.light-theme .sidebar-menu {
+  background: var(--light-white) !important;
+  border-right: 1px solid var(--light-gray-200);
+}
+
+.light-theme .sidebar-menu__header {
+  background: var(--light-gray-50) !important;
+  border-bottom: 1px solid var(--light-gray-200);
+}
+
+.light-theme .sidebar-menu__link {
+  color: var(--light-gray-700) !important;
+}
+
+.light-theme .sidebar-menu__link:hover {
+  background: var(--light-emerald-50) !important;
+  color: var(--light-emerald-700) !important;
+}
+
+.light-theme .sidebar-menu__link--gradient-blue,
+.light-theme .sidebar-menu__link--orange {
+  background: var(--light-emerald-100) !important;
+  color: var(--light-emerald-700) !important;
+}
+
+/* === LIGHT HERO SECTION === */
+.light-theme .terra-hero {
+  background: var(--light-gradient-hero);
+}
+
+.light-theme .terra-hero__image {
+  opacity: 0.1;
+}
+
+.light-theme .terra-hero__overlay {
+  background: var(--light-gradient-overlay);
+}
+
+.light-theme .terra-badge {
+  background: var(--light-emerald-100);
+  border: 1px solid var(--light-emerald-200);
+  color: var(--light-emerald-700);
+}
+
+.light-theme .terra-heading-hero,
+.light-theme .terra-heading-section {
+  color: var(--light-gray-900);
+}
+
+.light-theme .terra-text-lead {
+  color: var(--light-gray-600);
+}
+
+.light-theme .terra-text-body {
+  color: var(--light-gray-600);
+}
+
+.light-theme .terra-stat-value {
+  color: var(--light-emerald-600);
+}
+
+.light-theme .terra-stat-label {
+  color: var(--light-gray-600);
+}
+
+.light-theme .terra-stats-grid {
+  border-top: 1px solid var(--light-gray-200);
+}
+
+.light-theme .terra-scroll-indicator {
+  border-color: var(--light-gray-300);
+}
+
+.light-theme .terra-scroll-dot {
+  background: var(--light-emerald-600);
+}
+
+/* Grid Background Light */
+.light-theme .terra-grid-bg {
+  opacity: 0.03;
+  background-image:
+    linear-gradient(var(--light-emerald-600) 1px, transparent 1px),
+    linear-gradient(90deg, var(--light-emerald-600) 1px, transparent 1px);
+}
+
+/* === LIGHT BUTTONS === */
+.light-theme .terra-btn-primary {
+  background: var(--light-gradient-button);
+  color: var(--light-white);
+  box-shadow: var(--light-shadow-emerald);
+}
+
+.light-theme .terra-btn-primary:hover {
+  background: var(--light-gradient-button-hover);
+  box-shadow: var(--light-shadow-emerald-lg);
+}
+
+.light-theme .terra-btn-outline {
+  background: var(--light-white);
+  color: var(--light-gray-700);
+  border: 2px solid var(--light-gray-300);
+  box-shadow: var(--light-shadow-sm);
+}
+
+.light-theme .terra-btn-outline:hover {
+  background: var(--light-gray-50);
+  border-color: var(--light-gray-400);
+}
+
+/* === LIGHT INNOVATION SECTION === */
+.light-theme .terra-innovation {
+  background: var(--light-gradient-section);
+}
+
+.light-theme .terra-innovation-card {
+  background: var(--light-white);
+  border: 1px solid var(--light-gray-200);
+}
+
+.light-theme .terra-innovation-card:hover {
+  border-color: var(--light-emerald-300);
+  box-shadow: var(--light-shadow-xl);
+}
+
+.light-theme .terra-innovation-card h3 {
+  color: var(--light-gray-900);
+}
+
+.light-theme .terra-innovation-card p {
+  color: var(--light-gray-600);
+}
+
+/* === LIGHT PRODUCT SHOWCASE === */
+.light-theme .terra-product-showcase {
+  background: linear-gradient(
+    180deg,
+    var(--light-gray-50) 0%,
+    var(--light-white) 100%
+  );
+  border-top: 1px solid var(--light-gray-200);
+}
+
+.light-theme .terra-tabs-nav {
+  background: var(--light-white);
+  border: 1px solid var(--light-gray-200);
+}
+
+.light-theme .terra-tab-btn {
+  color: var(--light-gray-700);
+}
+
+.light-theme .terra-tab-btn:hover {
+  background: var(--light-emerald-50);
+  color: var(--light-emerald-700);
+}
+
+.light-theme .terra-tab-btn.active {
+  background: var(--light-emerald-600);
+  color: var(--light-white);
+  box-shadow: var(--light-shadow-emerald);
+}
+
+.light-theme .terra-feature-item {
+  background: var(--light-white);
+  border: 1px solid var(--light-gray-200);
+}
+
+.light-theme .terra-feature-item:hover {
+  background: var(--light-gray-50);
+  border-color: var(--light-emerald-300);
+}
+
+.light-theme .terra-feature-icon {
+  background: var(--light-emerald-100);
+}
+
+.light-theme .terra-feature-icon svg {
+  stroke: var(--light-emerald-600);
+}
+
+/* === LIGHT ADVANTAGES === */
+.light-theme .advantages {
+  background: var(--light-white) !important;
+  border-top: 1px solid var(--light-gray-200);
+  border-bottom: 1px solid var(--light-gray-200);
+}
+
+.light-theme .advantage-item {
+  background: var(--light-white) !important;
+  border: 1px solid var(--light-gray-200);
+}
+
+.light-theme .advantage-item:hover {
+  background: var(--light-gray-50) !important;
+  border-color: var(--light-emerald-300);
+  box-shadow: var(--light-shadow-xl);
+}
+
+.light-theme .advantage-title {
+  color: var(--light-emerald-600) !important;
+}
+
+.light-theme .advantage-item > div:last-child {
+  color: var(--light-gray-600);
+}
+
+/* === LIGHT FOOTER === */
+.light-theme .footer {
+  background: var(--light-gray-50) !important;
+  border-top: 1px solid var(--light-gray-200);
+}
+
+.light-theme .footer-section h3 {
+  color: var(--light-gray-900) !important;
+}
+
+.light-theme .footer-section p,
+.light-theme .footer-section a {
+  color: var(--light-gray-600) !important;
+}
+
+.light-theme .footer-section a:hover {
+  color: var(--light-emerald-600) !important;
+}
+
+.light-theme .terra-social-link {
+  background: var(--light-white);
+  border: 1px solid var(--light-gray-200);
+  color: var(--light-gray-600);
+}
+
+.light-theme .terra-social-link:hover {
+  background: var(--light-emerald-600);
+  border-color: var(--light-emerald-600);
+  color: var(--light-white);
+}
+
+.light-theme .footer-bottom {
+  border-top: 1px solid var(--light-gray-200);
+  color: var(--light-gray-500);
+}
+
+/* === LIGHT PRODUCT CARDS === */
+.light-theme .product-card {
+  background: var(--light-white) !important;
+  border: 1px solid var(--light-gray-200);
+}
+
+.light-theme .product-card:hover {
+  border-color: var(--light-emerald-300);
+  box-shadow: var(--light-shadow-xl);
+}
+
+.light-theme .product-content h3 {
+  color: var(--light-gray-900) !important;
+}
+
+.light-theme .product-price {
+  color: var(--light-emerald-600) !important;
+}
+
+/* === THEME TOGGLE BUTTON === */
+.theme-toggle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.5rem;
+  border: 1px solid var(--light-gray-300);
+  background: var(--light-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 300ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--light-emerald-50);
+  border-color: var(--light-emerald-300);
+  transform: translateY(-2px);
+}
+
+.theme-toggle-btn svg {
+  position: absolute;
+  transition: all 300ms ease;
+}
+
+/* Light theme - show moon icon */
+.light-theme .theme-toggle-btn .sun-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.light-theme .theme-toggle-btn .moon-icon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0);
+}
+
+/* Dark theme - show sun icon */
+body:not(.light-theme) .theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+body:not(.light-theme) .theme-toggle-btn:hover {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+body:not(.light-theme) .theme-toggle-btn .sun-icon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0);
+  stroke: white;
+}
+
+body:not(.light-theme) .theme-toggle-btn .moon-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+  stroke: white;
+}
