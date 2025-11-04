@@ -668,6 +668,149 @@ body {
   text-decoration: underline;
 }
 
+/* ===== HERO BANNER ===== */
+.hero {
+  background-image:
+    linear-gradient(rgba(42, 157, 78, 0.8), rgba(26, 122, 58, 0.9)),
+    url("https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.hero .btn-secondary {
+  background: #ff5b1a;
+  color: white;
+  padding: 15px 40px;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(255, 91, 26, 0.4);
+}
+
+.hero .btn-secondary:hover {
+  background: #e04a10;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(255, 91, 26, 0.5);
+}
+
+/* ===== ADVANTAGES SECTION ===== */
+.advantages {
+  background: #f9f9f9;
+  padding: 60px 0;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.advantage-item {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.advantage-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.advantage-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #2a9d4e;
+}
+
+.advantage-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.advantage-item p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ===== CATEGORIES SECTION ===== */
+.categories {
+  padding: 60px 0;
+  background: white;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.category-card {
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  border-radius: 12px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  border-color: #2a9d4e;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  box-shadow: 0 8px 24px rgba(42, 157, 78, 0.2);
+}
+
+.category-icon {
+  font-size: 56px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.category-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.category-card p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ===== PRODUCTS SECTION ===== */
+.products {
+  padding: 60px 0;
+  background: white;
+}
+
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
   .header-content {
@@ -722,5 +865,13 @@ body {
     height: 44px;
     right: 16px;
     top: 16px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
   }
 }
