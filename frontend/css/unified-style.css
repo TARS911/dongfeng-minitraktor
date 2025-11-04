@@ -957,6 +957,21 @@ body {
 }
 
 /* ===== SIDEBAR MENU LINK VARIANTS ===== */
+.sidebar-menu__link--gradient-blue {
+  background: linear-gradient(135deg, #1e88e5 0%, #00bcd4 100%);
+  color: white !important;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.sidebar-menu__link--gradient-blue:hover {
+  background: linear-gradient(135deg, #1976d2 0%, #00acc1 100%);
+}
+
+.sidebar-menu__link--gradient-blue svg {
+  color: white !important;
+}
+
 .sidebar-menu__link--green {
   background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
   color: white !important;
