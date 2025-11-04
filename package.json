@@ -1,0 +1,40 @@
+{
+  "name": "dongfeng-design-system",
+  "version": "1.0.0",
+  "description": "DONGFENG миnitractors e-commerce website with Figma design system integration",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "figma:setup": "node scripts/figma/setup-wizard.js",
+    "figma:test": "node scripts/figma/test-connection.js",
+    "figma:pull": "node scripts/figma/figma-to-css.js",
+    "figma:push": "node scripts/figma/css-to-figma.js",
+    "figma:sync": "node scripts/figma/sync-tokens.js",
+    "figma:sync:watch": "chokidar 'frontend/css/variables.css' -c 'npm run figma:sync'",
+    "figma:components:list": "node scripts/figma/figma-components.js",
+    "figma:components:generate": "node scripts/figma/figma-to-code.js",
+    "figma:backup": "node scripts/figma/backup-tokens.js",
+    "figma:diff": "node scripts/figma/diff-tokens.js",
+    "figma:validate": "node scripts/figma/validate-tokens.js"
+  },
+  "keywords": [
+    "figma",
+    "design-system",
+    "design-tokens",
+    "dongfeng",
+    "tractors"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "chalk": "^5.3.0",
+    "chokidar-cli": "^3.0.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "node-fetch": "^3.3.2",
+    "postcss": "^8.4.49",
+    "postcss-value-parser": "^4.2.0",
+    "prettier": "^3.4.2",
+    "prompts": "^2.4.2"
+  }
+}

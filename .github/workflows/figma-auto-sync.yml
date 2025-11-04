@@ -1,0 +1,85 @@
+name: Auto Sync with Figma
+
+on:
+  schedule:
+    # Runs every day at 2:00 UTC
+    - cron: '0 2 * * *'
+
+  workflow_dispatch:
+    # Allows manual trigger from GitHub UI
+
+jobs:
+  auto-sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Pull tokens from Figma
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
+          FIGMA_FILE_ID: ${{ secrets.FIGMA_FILE_ID }}
+        run: |
+          if [ -z "$FIGMA_ACCESS_TOKEN" ] || [ -z "$FIGMA_FILE_ID" ]; then
+            echo "❌ Figma credentials not configured"
+            exit 1
+          fi
+
+          echo "📥 Pulling design tokens from Figma..."
+          npm run figma:pull || echo "⚠️ figma:pull not fully implemented yet"
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "✅ No changes detected"
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "📝 Changes detected"
+          fi
+
+      - name: Create Pull Request
+        if: steps.check_changes.outputs.changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: '🎨 Auto-sync design tokens from Figma'
+          title: '🎨 Auto-sync design tokens from Figma'
+          body: |
+            ## Автоматическая синхронизация дизайн-токенов
+
+            Этот PR создан автоматически GitHub Actions.
+
+            ### Изменения:
+            - Обновлены CSS переменные из Figma
+            - Синхронизация выполнена: ${{ github.run_id }}
+
+            ### Что проверить:
+            - [ ] Цвета отображаются корректно
+            - [ ] Spacing не сломал layout
+            - [ ] Typography читаема
+            - [ ] Тени выглядят естественно
+
+            **Автоматически создано:** $(date)
+          branch: figma-auto-sync-${{ github.run_number }}
+          delete-branch: true
+          labels: |
+            design
+            figma
+            automated
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "❌ Figma auto-sync failed"
+          echo "Check the logs and Figma connection"

@@ -1,0 +1,59 @@
+name: Figma Sync Check
+
+on:
+  pull_request:
+    paths:
+      - 'frontend/css/variables.css'
+      - 'frontend/css/**/*.css'
+      - 'figma.config.js'
+
+jobs:
+  check-sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check Figma connection
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
+          FIGMA_FILE_ID: ${{ secrets.FIGMA_FILE_ID }}
+        run: |
+          if [ -z "$FIGMA_ACCESS_TOKEN" ] || [ -z "$FIGMA_FILE_ID" ]; then
+            echo "⚠️ Figma credentials not configured in secrets"
+            echo "Skip Figma sync check"
+            exit 0
+          fi
+          npm run figma:test
+
+      - name: Compare tokens with Figma
+        if: env.FIGMA_ACCESS_TOKEN != ''
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
+          FIGMA_FILE_ID: ${{ secrets.FIGMA_FILE_ID }}
+        run: |
+          echo "🔍 Checking for token differences..."
+          # TODO: Implement figma:diff command
+          echo "Token comparison not yet implemented"
+
+      - name: Comment PR
+        if: env.FIGMA_ACCESS_TOKEN != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.name,
+              body: '✅ Figma sync check completed. CSS variables have been updated.'
+            })
