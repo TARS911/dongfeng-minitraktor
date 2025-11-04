@@ -467,7 +467,107 @@
         overlay.classList.remove("active");
       }
 
-      // Load Products from API
+      // Static Products Data (temporary - until backend is fixed)
+      const STATIC_PRODUCTS = [
+        {
+          id: 1,
+          name: "DONGFENG DF-244 с кабиной",
+          slug: "df-244-s-kabinoy",
+          price: 285000,
+          power: 24,
+          drive: "4WD",
+          transmission: "Механическая",
+          in_stock: true,
+          is_hit: true,
+          is_new: false,
+          image_url:
+            "https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg",
+          category_id: 1,
+        },
+        {
+          id: 2,
+          name: "DONGFENG DF-304",
+          slug: "df-304",
+          price: 320000,
+          power: 30,
+          drive: "4WD",
+          transmission: "Механическая",
+          in_stock: true,
+          is_hit: false,
+          is_new: true,
+          image_url:
+            "https://res.cloudinary.com/drenz1aia/image/upload/v1760698081/dongfeng-minitraktor/df-304-main.jpg",
+          category_id: 2,
+        },
+        {
+          id: 3,
+          name: "DONGFENG DF-404",
+          slug: "df-404",
+          price: 380000,
+          power: 40,
+          drive: "4WD",
+          transmission: "Механическая",
+          in_stock: true,
+          is_hit: true,
+          is_new: false,
+          image_url:
+            "https://res.cloudinary.com/drenz1aia/image/upload/v1760698082/dongfeng-minitraktor/df-404-main.jpg",
+          category_id: 3,
+        },
+        {
+          id: 4,
+          name: "DONGFENG DF-254",
+          slug: "df-254",
+          price: 295000,
+          power: 25,
+          drive: "4WD",
+          transmission: "Механическая",
+          in_stock: true,
+          is_hit: false,
+          is_new: false,
+          image_url:
+            "https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg",
+          category_id: 1,
+        },
+        {
+          id: 5,
+          name: "DONGFENG DF-354",
+          slug: "df-354",
+          price: 350000,
+          power: 35,
+          drive: "4WD",
+          transmission: "Механическая",
+          in_stock: false,
+          is_hit: false,
+          is_new: true,
+          image_url:
+            "https://res.cloudinary.com/drenz1aia/image/upload/v1760698081/dongfeng-minitraktor/df-304-main.jpg",
+          category_id: 2,
+        },
+        {
+          id: 6,
+          name: "DONGFENG DF-504",
+          slug: "df-504",
+          price: 450000,
+          power: 50,
+          drive: "4WD",
+          transmission: "Механическая",
+          in_stock: true,
+          is_hit: true,
+          is_new: true,
+          image_url:
+            "https://res.cloudinary.com/drenz1aia/image/upload/v1760698082/dongfeng-minitraktor/df-404-main.jpg",
+          category_id: 3,
+        },
+      ];
+
+      const STATIC_CATEGORIES = [
+        { id: 1, name: "20-30 л.с.", slug: "20-30" },
+        { id: 2, name: "30-40 л.с.", slug: "30-40" },
+        { id: 3, name: "40+ л.с.", slug: "40-plus" },
+      ];
+
+      // Load Products (using static data for now)
       async function loadProducts() {
         const loadingMessage = document.getElementById("loadingMessage");
         const errorMessage = document.getElementById("errorMessage");
@@ -477,30 +577,16 @@
         errorMessage.style.display = "none";
         productsGrid.innerHTML = "";
 
-        try {
-          // Load products
-          const productsResponse = await fetch(`${API_URL}/products`);
-          if (!productsResponse.ok) {
-            throw new Error("Failed to fetch products");
-          }
-          const productsData = await productsResponse.json();
-          allProducts = productsData.data || [];
+        // Simulate loading delay
+        await new Promise((resolve) => setTimeout(resolve, 500));
 
-          // Load categories
-          const categoriesResponse = await fetch(`${API_URL}/categories`);
-          if (categoriesResponse.ok) {
-            const categoriesData = await categoriesResponse.json();
-            categories = categoriesData.data || [];
-            populateCategories();
-          }
+        // Use static data
+        allProducts = STATIC_PRODUCTS;
+        categories = STATIC_CATEGORIES;
+        populateCategories();
 
-          loadingMessage.style.display = "none";
-          renderProducts(allProducts);
-        } catch (error) {
-          console.error("Error loading products:", error);
-          loadingMessage.style.display = "none";
-          errorMessage.style.display = "block";
-        }
+        loadingMessage.style.display = "none";
+        renderProducts(allProducts);
       }
 
       // Populate Categories Dropdown
