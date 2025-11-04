@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Каталог минитракторов DONGFENG - Официальный дилер в России | Цены от
+      производителя
+    </title>
+    <meta
+      name="description"
+      content="Каталог минитракторов DONGFENG. Китайские минитрактора с доставкой по РФ и СНГ. Гарантия 1 год, сервисное обслуживание, запчасти в наличии. Цены от 285 000 руб."
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://res.cloudinary.com/drenz1aia/image/upload/v1760698083/dongfeng-minitraktor/favicon.svg"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/unified-style.css" />
+
+    <style>
+      /* Фильтры каталога */
+      .catalog-filters {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .filters-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .filters-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .filter-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .filter-label {
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #333;
+        font-size: 14px;
+      }
+
+      .filter-select {
+        padding: 10px 12px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: border-color 0.3s;
+      }
+
+      .filter-select:focus {
+        outline: none;
+        border-color: #2a9d4e;
+      }
+
+      .filter-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      .catalog-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .catalog-count {
+        font-size: 18px;
+        color: #666;
+      }
+
+      .sort-select {
+        padding: 10px 15px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+
+      .no-products {
+        text-align: center;
+        padding: 60px 20px;
+        color: #666;
+      }
+
+      .no-products-icon {
+        font-size: 64px;
+        margin-bottom: 20px;
+      }
+
+      /* Загрузка */
+      .loading {
+        text-align: center;
+        padding: 60px 20px;
+        font-size: 18px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-top">
+        <div class="container">
+          <div class="header-top-content">
+            <div>📍 Белгород, Курск, Брянск, Липецк</div>
+            <div class="header-contacts">
+              <a href="mailto:info@dongfeng-rf.ru">📧 info@dongfeng-rf.ru</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-main">
+        <div class="container">
+          <div class="header-content">
+            <a href="index.html" class="logo">DONGFENG</a>
+
+            <div class="search-bar">
+              <form class="search-form" id="searchForm">
+                <input
+                  type="text"
+                  class="search-input"
+                  placeholder="Поиск тракторов..."
+                  id="searchInput"
+                />
+                <button type="submit" class="search-btn">🔍 Найти</button>
+              </form>
+            </div>
+
+            <div class="header-actions">
+              <a href="tel:+79699995668" class="header-phone"
+                >📞 +7 (969) 999-56-68</a
+              >
+              <a href="cart.html" class="cart-btn"
+                >🛒 Корзина <span id="cartCount">(0)</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <div class="container">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Главная</a></li>
+            <li><a href="catalog.html" class="nav-link active">Каталог</a></li>
+            <li><a href="about.html" class="nav-link">О компании</a></li>
+            <li><a href="delivery.html" class="nav-link">Доставка</a></li>
+            <li><a href="warranty.html" class="nav-link">Гарантия</a></li>
+            <li><a href="payment.html" class="nav-link">Оплата</a></li>
+            <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="container">
+        <h1 class="page-title">Каталог минитракторов DONGFENG</h1>
+        <p class="page-subtitle">Надежная техника для вашего хозяйства</p>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="page-content">
+      <div class="container">
+        <!-- Фильтры -->
+        <div class="catalog-filters">
+          <h2 class="filters-title">Фильтры</h2>
+          <div class="filters-grid">
+            <div class="filter-group">
+              <label class="filter-label">Категория</label>
+              <select class="filter-select" id="categoryFilter">
+                <option value="">Все категории</option>
+                <option value="20-30">20-30 л.с.</option>
+                <option value="30-40">30-40 л.с.</option>
+                <option value="40+">40+ л.с.</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label class="filter-label">Цена</label>
+              <select class="filter-select" id="priceFilter">
+                <option value="">Любая цена</option>
+                <option value="0-300000">До 300 000 ₽</option>
+                <option value="300000-400000">300 000 - 400 000 ₽</option>
+                <option value="400000-999999">От 400 000 ₽</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label class="filter-label">Привод</label>
+              <select class="filter-select" id="driveFilter">
+                <option value="">Любой привод</option>
+                <option value="4WD">Полный привод (4WD)</option>
+                <option value="2WD">Задний привод (2WD)</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label class="filter-label">Наличие</label>
+              <select class="filter-select" id="stockFilter">
+                <option value="">Все товары</option>
+                <option value="true">В наличии</option>
+                <option value="false">Под заказ</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-buttons">
+            <button class="btn btn-primary" id="applyFilters">
+              Применить фильтры
+            </button>
+            <button class="btn btn-outline" id="resetFilters">Сбросить</button>
+          </div>
+        </div>
+
+        <!-- Заголовок каталога -->
+        <div class="catalog-header">
+          <div class="catalog-count">
+            Найдено товаров: <strong id="productCount">0</strong>
+          </div>
+          <select class="sort-select" id="sortSelect">
+            <option value="newest">Сначала новые</option>
+            <option value="price_asc">Цена: по возрастанию</option>
+            <option value="price_desc">Цена: по убыванию</option>
+            <option value="power_asc">Мощность: по возрастанию</option>
+            <option value="power_desc">Мощность: по убыванию</option>
+          </select>
+        </div>
+
+        <!-- Загрузка -->
+        <div class="loading" id="loading">⏳ Загрузка каталога...</div>
+
+        <!-- Сетка товаров -->
+        <div
+          class="products-grid"
+          id="productsGrid"
+          style="display: none"
+        ></div>
+
+        <!-- Нет товаров -->
+        <div class="no-products" id="noProducts" style="display: none">
+          <div class="no-products-icon">📦</div>
+          <h3>Товары не найдены</h3>
+          <p>Попробуйте изменить параметры фильтрации</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>DONGFENG</h3>
+            <p>Официальный дилер минитракторов DONGFENG в России</p>
+            <p style="margin-top: 15px">
+              Надежная техника для вашего хозяйства
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Каталог</h3>
+            <a href="catalog.html" class="footer-link">Все модели</a>
+            <a href="catalog.html?category=20-30" class="footer-link"
+              >20-30 л.с.</a
+            >
+            <a href="catalog.html?category=30-40" class="footer-link"
+              >30-40 л.с.</a
+            >
+            <a href="catalog.html?category=40+" class="footer-link">40+ л.с.</a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Информация</h3>
+            <a href="about.html" class="footer-link">О компании</a>
+            <a href="delivery.html" class="footer-link">Доставка</a>
+            <a href="warranty.html" class="footer-link">Гарантия</a>
+            <a href="payment.html" class="footer-link">Оплата</a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Контакты</h3>
+            <a href="tel:+79699995668" class="footer-link"
+              >📞 +7 (969) 999-56-68</a
+            >
+            <a href="mailto:info@dongfeng-rf.ru" class="footer-link"
+              >📧 info@dongfeng-rf.ru</a
+            >
+            <a href="contacts.html" class="footer-link">📍 Наши адреса</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2025 DONGFENG Минитрактора. Все права защищены.
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // API URL
+      const API_URL = "https://dongfeng-backend-production.up.railway.app/api";
+
+      // Состояние
+      let allProducts = [];
+      let filteredProducts = [];
+
+      // Загрузка товаров
+      async function loadProducts() {
+        try {
+          const response = await fetch(`${API_URL}/products`);
+          const data = await response.json();
+
+          if (data.success) {
+            allProducts = data.data;
+            applyFilters();
+          } else {
+            showError();
+          }
+        } catch (error) {
+          console.error("Ошибка загрузки:", error);
+          showError();
+        }
+      }
+
+      // Применение фильтров
+      function applyFilters() {
+        const category = document.getElementById("categoryFilter").value;
+        const price = document.getElementById("priceFilter").value;
+        const drive = document.getElementById("driveFilter").value;
+        const stock = document.getElementById("stockFilter").value;
+        const sort = document.getElementById("sortSelect").value;
+        const search = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+
+        // Фильтрация
+        filteredProducts = allProducts.filter((product) => {
+          // Категория
+          if (category) {
+            const power = product.power;
+            if (category === "20-30" && (power < 20 || power > 30))
+              return false;
+            if (category === "30-40" && (power < 30 || power > 40))
+              return false;
+            if (category === "40+" && power < 40) return false;
+          }
+
+          // Цена
+          if (price) {
+            const [min, max] = price.split("-").map(Number);
+            if (product.price < min || (max && product.price > max))
+              return false;
+          }
+
+          // Привод
+          if (drive && product.drive !== drive) return false;
+
+          // Наличие
+          if (stock && product.in_stock.toString() !== stock) return false;
+
+          // Поиск
+          if (search && !product.name.toLowerCase().includes(search))
+            return false;
+
+          return true;
+        });
+
+        // Сортировка
+        filteredProducts.sort((a, b) => {
+          switch (sort) {
+            case "price_asc":
+              return a.price - b.price;
+            case "price_desc":
+              return b.price - a.price;
+            case "power_asc":
+              return a.power - b.power;
+            case "power_desc":
+              return b.power - a.power;
+            case "newest":
+              return b.id - a.id;
+            default:
+              return 0;
+          }
+        });
+
+        renderProducts();
+      }
+
+      // Отображение товаров
+      function renderProducts() {
+        const grid = document.getElementById("productsGrid");
+        const loading = document.getElementById("loading");
+        const noProducts = document.getElementById("noProducts");
+        const countEl = document.getElementById("productCount");
+
+        loading.style.display = "none";
+        countEl.textContent = filteredProducts.length;
+
+        if (filteredProducts.length === 0) {
+          grid.style.display = "none";
+          noProducts.style.display = "block";
+          return;
+        }
+
+        noProducts.style.display = "none";
+        grid.style.display = "grid";
+
+        grid.innerHTML = filteredProducts
+          .map(
+            (product) => `
+                <div class="product-card">
+                    <img src="${product.image_url}" alt="${product.name}" class="product-image">
+                    <div class="product-content">
+                        ${product.is_hit ? '<span class="product-badge">ХИТ ПРОДАЖ</span>' : ""}
+                        ${product.is_new ? '<span class="product-badge new">НОВИНКА</span>' : ""}
+                        <h3 class="product-title">${product.name}</h3>
+                        <div class="product-desc">
+                            ${product.power} л.с. • ${product.drive} • ${product.transmission}
+                        </div>
+                        <div class="product-price">${product.price.toLocaleString("ru-RU")} ₽</div>
+                        ${
+                          product.in_stock
+                            ? '<span style="color: #2a9d4e; font-weight: 600;">✓ В наличии</span>'
+                            : '<span style="color: #999;">Под заказ</span>'
+                        }
+                        <a href="product.html?slug=${product.slug}" class="btn btn-primary" style="margin-top: 15px; width: 100%; text-align: center;">Подробнее</a>
+                    </div>
+                </div>
+            `,
+          )
+          .join("");
+      }
+
+      // Показать ошибку
+      function showError() {
+        document.getElementById("loading").innerHTML =
+          "⚠️ Ошибка загрузки. Попробуйте позже.";
+      }
+
+      // Обработчики событий
+      document
+        .getElementById("applyFilters")
+        .addEventListener("click", applyFilters);
+      document.getElementById("resetFilters").addEventListener("click", () => {
+        document.getElementById("categoryFilter").value = "";
+        document.getElementById("priceFilter").value = "";
+        document.getElementById("driveFilter").value = "";
+        document.getElementById("stockFilter").value = "";
+        document.getElementById("searchInput").value = "";
+        applyFilters();
+      });
+      document
+        .getElementById("sortSelect")
+        .addEventListener("change", applyFilters);
+      document.getElementById("searchForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        applyFilters();
+      });
+
+      // Загрузка корзины
+      function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+        document.getElementById("cartCount").textContent = `(${count})`;
+      }
+
+      // Инициализация
+      loadProducts();
+      updateCartCount();
+    </script>
+  </body>
+</html>

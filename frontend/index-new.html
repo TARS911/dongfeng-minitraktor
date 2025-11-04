@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Минитрактора DONGFENG - Купить с доставкой | Официальный дилер</title>
+    <meta name="description" content="Продажа минитракторов DONGFENG с доставкой по России. Гарантия 1 год. Цены от 285 000 ₽. ☎️ +7 (969) 999-56-68">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/drenz1aia/image/upload/v1760698083/dongfeng-minitraktor/favicon.svg">
+
+    <!-- CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-top {
+            background: #2a9d4e;
+            color: white;
+            padding: 8px 0;
+            font-size: 13px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-contacts a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+        }
+
+        .header-main {
+            padding: 15px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #2a9d4e;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .search-form {
+            display: flex;
+            border: 2px solid #2a9d4e;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            font-size: 14px;
+        }
+
+        .search-btn {
+            background: #2a9d4e;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .header-phone {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2a9d4e;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .cart-btn {
+            background: #ff5b1a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            background: #fff;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            padding: 15px 0;
+        }
+
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #2a9d4e;
+        }
+
+        /* ===== HERO BANNER ===== */
+        .hero {
+            background: linear-gradient(135deg, #2a9d4e 0%, #1a7a3a 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: #ff5b1a;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            transition: transform 0.3s;
+        }
+
+        .hero-cta:hover {
+            transform: scale(1.05);
+        }
+
+        /* ===== ADVANTAGES ===== */
+        .advantages {
+            background: white;
+            padding: 40px 0;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .advantage-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .advantage-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .advantage-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* ===== CATEGORIES ===== */
+        .categories {
+            padding: 50px 0;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .category-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .category-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .category-count {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* ===== PRODUCTS ===== */
+        .products {
+            padding: 50px 0;
+            background: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .product-content {
+            padding: 20px;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: #ff5b1a;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-desc {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .product-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2a9d4e;
+            margin-bottom: 15px;
+        }
+
+        .product-btn {
+            display: block;
+            width: 100%;
+            background: #2a9d4e;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .product-btn:hover {
+            background: #1a7a3a;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #222;
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-link {
+            display: block;
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .search-bar {
+                width: 100%;
+                max-width: none;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .nav-list {
+                overflow-x: auto;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 15px;
+            }
+
+            .product-content {
+                padding: 15px;
+            }
+
+            .product-title {
+                font-size: 16px;
+            }
+
+            .product-price {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div>📍 Белгород, Курск, Брянск, Липецк</div>
+                    <div class="header-contacts">
+                        <a href="mailto:info@btferm.com">✉️ info@btferm.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-content">
+                    <a href="index.html" class="logo">DONGFENG</a>
+
+                    <div class="search-bar">
+                        <form class="search-form" action="catalog.html" method="get">
+                            <input type="text" class="search-input" name="search" placeholder="Поиск тракторов...">
+                            <button type="submit" class="search-btn">Найти</button>
+                        </form>
+                    </div>
+
+                    <div class="header-actions">
+                        <a href="tel:+79699995668" class="header-phone">📞 +7 (969) 999-56-68</a>
+                        <a href="cart.html" class="cart-btn">🛒 Корзина</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+                    <li><a href="delivery.html" class="nav-link">Доставка</a></li>
+                    <li><a href="payment.html" class="nav-link">Оплата</a></li>
+                    <li><a href="warranty.html" class="nav-link">Гарантия</a></li>
+                    <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="hero">
+        <div class="container">
+            <h1>Минитрактора DONGFENG</h1>
+            <p>Надежная техника для вашего хозяйства от официального дилера</p>
+            <a href="catalog.html" class="hero-cta">Смотреть каталог</a>
+        </div>
+    </section>
+
+    <!-- ADVANTAGES -->
+    <section class="advantages">
+        <div class="container">
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-icon">🚚</div>
+                    <div class="advantage-title">Доставка по России</div>
+                    <div>Быстрая доставка в любой регион</div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">🛡️</div>
+                    <div class="advantage-title">Гарантия 1 год</div>
+                    <div>Официальная гарантия производителя</div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">🔧</div>
+                    <div class="advantage-title">Сервис и запчасти</div>
+                    <div>Сервисный центр и запчасти в наличии</div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">💰</div>
+                    <div class="advantage-title">Выгодные цены</div>
+                    <div>Цены от производителя без наценок</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Категории товаров</h2>
+            <div class="categories-grid">
+                <a href="catalog.html?category=minitraktory-df" class="category-card">
+                    <div class="category-icon">🚜</div>
+                    <div class="category-title">Минитрактора DF</div>
+                    <div class="category-count">3 модели</div>
+                </a>
+                <a href="catalog.html?category=minitraktory-xingtai" class="category-card">
+                    <div class="category-icon">🚜</div>
+                    <div class="category-title">Минитрактора Синтай</div>
+                    <div class="category-count">2 модели</div>
+                </a>
+                <a href="catalog.html?category=rossiyskie" class="category-card">
+                    <div class="category-icon">🚜</div>
+                    <div class="category-title">Российские тракторы</div>
+                    <div class="category-count">6 моделей</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Популярные модели</h2>
+            <div class="products-grid" id="products-grid">
+                <!-- Товары загружаются через JavaScript -->
+                <div class="product-card">
+                    <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg" alt="DONGFENG DF-244" class="product-image">
+                    <div class="product-content">
+                        <span class="product-badge">ХИТ ПРОДАЖ</span>
+                        <h3 class="product-title">DONGFENG DF-244 с кабиной</h3>
+                        <p class="product-desc">Компактный минитрактор 24 л.с. с кабиной, 4WD</p>
+                        <div class="product-price">285 000 ₽</div>
+                        <a href="catalog.html" class="product-btn">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698081/dongfeng-minitraktor/df-304-main.jpg" alt="DONGFENG DF-304" class="product-image">
+                    <div class="product-content">
+                        <span class="product-badge">НОВИНКА</span>
+                        <h3 class="product-title">DONGFENG DF-304</h3>
+                        <p class="product-desc">Мощный 30 л.с., 4WD, для тяжелых работ</p>
+                        <div class="product-price">320 000 ₽</div>
+                        <a href="catalog.html" class="product-btn">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698082/dongfeng-minitraktor/df-404-main.jpg" alt="DONGFENG DF-404" class="product-image">
+                    <div class="product-content">
+                        <span class="product-badge">ХИТ ПРОДАЖ</span>
+                        <h3 class="product-title">DONGFENG DF-404</h3>
+                        <p class="product-desc">Профессиональный 40 л.с., усиленная конструкция</p>
+                        <div class="product-price">380 000 ₽</div>
+                        <a href="catalog.html" class="product-btn">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Компания</h3>
+                    <a href="about.html" class="footer-link">О нас</a>
+                    <a href="contacts.html" class="footer-link">Контакты</a>
+                    <a href="delivery.html" class="footer-link">Доставка</a>
+                    <a href="warranty.html" class="footer-link">Гарантия</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Каталог</h3>
+                    <a href="catalog.html" class="footer-link">Все товары</a>
+                    <a href="catalog.html?category=df" class="footer-link">DONGFENG</a>
+                    <a href="catalog.html?category=xingtai" class="footer-link">XINGTAI</a>
+                    <a href="catalog.html?category=russian" class="footer-link">Российские</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <a href="tel:+79699995668" class="footer-link">+7 (969) 999-56-68</a>
+                    <a href="mailto:info@btferm.com" class="footer-link">info@btferm.com</a>
+                    <p style="color: #999; margin-top: 15px;">Белгород, Курск, Брянск, Липецк</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2025 DONGFENG Минитрактора. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Простая аналитика
+        console.log('🚜 DONGFENG - Официальный дилер минитракторов');
+    </script>
+</body>
+</html>
