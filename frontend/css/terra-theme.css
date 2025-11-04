@@ -362,6 +362,433 @@
   color: var(--terra-gray-400);
 }
 
+/* === TERRA NAVIGATION & HEADER === */
+
+/* Header Dark Theme */
+.header {
+  background: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--terra-white-10);
+}
+
+.header-top {
+  background: var(--terra-gray-900) !important;
+  border-bottom: 1px solid var(--terra-white-10);
+}
+
+.header-top-content,
+.header-top-content a {
+  color: var(--terra-gray-300) !important;
+}
+
+.header-top-content a:hover {
+  color: var(--terra-emerald-400) !important;
+}
+
+.header-main {
+  background: transparent !important;
+}
+
+/* Search Bar Dark */
+.search-input {
+  background: var(--terra-white-10) !important;
+  border: 1px solid var(--terra-white-20) !important;
+  color: var(--terra-white) !important;
+}
+
+.search-input::placeholder {
+  color: var(--terra-gray-400) !important;
+}
+
+.search-input:focus {
+  border-color: var(--terra-emerald-500) !important;
+  box-shadow: 0 0 0 3px var(--terra-emerald-10) !important;
+}
+
+.search-btn {
+  background: var(--terra-gradient-button) !important;
+  color: var(--terra-white) !important;
+  border: none !important;
+}
+
+.search-btn:hover {
+  background: var(--terra-gradient-button-hover) !important;
+}
+
+/* Header Actions */
+.action-btn {
+  color: var(--terra-gray-300) !important;
+  transition: all 300ms ease;
+}
+
+.action-btn:hover {
+  color: var(--terra-emerald-400) !important;
+  transform: translateY(-2px);
+}
+
+.action-btn svg {
+  stroke: var(--terra-gray-300);
+}
+
+.action-btn:hover svg {
+  stroke: var(--terra-emerald-400);
+}
+
+.action-btn--cart {
+  background: var(--terra-gradient-button) !important;
+}
+
+.action-btn--cart:hover {
+  background: var(--terra-gradient-button-hover) !important;
+  transform: translateY(-2px);
+}
+
+.header-phone {
+  background: var(--terra-white-10) !important;
+  color: var(--terra-white) !important;
+  border: 1px solid var(--terra-white-20) !important;
+}
+
+.header-phone:hover {
+  background: var(--terra-emerald-500) !important;
+  border-color: var(--terra-emerald-500) !important;
+}
+
+.cart-btn {
+  background: var(--terra-gradient-button) !important;
+  color: var(--terra-white) !important;
+}
+
+.cart-btn:hover {
+  background: var(--terra-gradient-button-hover) !important;
+}
+
+/* Sidebar Menu Dark Theme */
+.sidebar-menu {
+  background: var(--terra-gray-900) !important;
+  border-right: 1px solid var(--terra-white-10);
+}
+
+.sidebar-menu__header {
+  background: var(--terra-black) !important;
+  border-bottom: 1px solid var(--terra-white-10);
+}
+
+.sidebar-menu__close {
+  color: var(--terra-gray-300) !important;
+}
+
+.sidebar-menu__close:hover {
+  color: var(--terra-emerald-400) !important;
+  background: var(--terra-white-10) !important;
+}
+
+.sidebar-menu__link {
+  color: var(--terra-gray-300) !important;
+  transition: all 300ms ease;
+}
+
+.sidebar-menu__link:hover {
+  background: var(--terra-white-10) !important;
+  color: var(--terra-emerald-400) !important;
+  transform: translateX(4px);
+}
+
+.sidebar-menu__link svg {
+  stroke: var(--terra-gray-400);
+}
+
+.sidebar-menu__link:hover svg {
+  stroke: var(--terra-emerald-400);
+}
+
+.sidebar-menu__link--gradient-blue,
+.sidebar-menu__link--orange {
+  background: var(--terra-emerald-10) !important;
+  color: var(--terra-emerald-400) !important;
+}
+
+.sidebar-menu__link--gradient-blue:hover,
+.sidebar-menu__link--orange:hover {
+  background: var(--terra-emerald-20) !important;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  background: var(--terra-white-10) !important;
+  border: 1px solid var(--terra-white-20) !important;
+  color: var(--terra-white) !important;
+}
+
+.sidebar-toggle:hover {
+  background: var(--terra-emerald-500) !important;
+  border-color: var(--terra-emerald-500) !important;
+}
+
+.sidebar-overlay {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* === TERRA SECTIONS === */
+
+/* Advantages Section */
+.advantages {
+  background: var(--terra-gradient-dark) !important;
+  border-top: 1px solid var(--terra-white-10);
+  border-bottom: 1px solid var(--terra-white-10);
+}
+
+.advantage-item {
+  background: var(--terra-white-10) !important;
+  border: 1px solid var(--terra-white-20);
+  border-radius: 1rem;
+  transition: all 300ms ease;
+}
+
+.advantage-item:hover {
+  background: var(--terra-white-20) !important;
+  transform: translateY(-4px);
+  box-shadow: var(--terra-shadow-emerald);
+}
+
+.advantage-icon {
+  font-size: 3rem;
+  filter: grayscale(0);
+}
+
+.advantage-title {
+  color: var(--terra-emerald-400) !important;
+  font-weight: 600;
+}
+
+.advantage-item > div:last-child {
+  color: var(--terra-gray-300);
+}
+
+/* Categories Section */
+.categories {
+  background: var(--terra-black) !important;
+}
+
+.categories h2 {
+  color: var(--terra-white) !important;
+}
+
+/* Products Section */
+.products {
+  background: var(--terra-gradient-dark) !important;
+  border-top: 1px solid var(--terra-white-10);
+}
+
+.products h2 {
+  color: var(--terra-white) !important;
+}
+
+.product-card {
+  background: var(--terra-white-10) !important;
+  border: 1px solid var(--terra-white-20);
+  transition: all 300ms ease;
+}
+
+.product-card:hover {
+  background: var(--terra-white-20) !important;
+  transform: translateY(-8px);
+  box-shadow: var(--terra-shadow-emerald-lg);
+}
+
+.product-content h3 {
+  color: var(--terra-white) !important;
+}
+
+.product-price {
+  color: var(--terra-emerald-400) !important;
+  font-weight: 700;
+}
+
+.product-btn {
+  background: var(--terra-gradient-button) !important;
+  color: var(--terra-white) !important;
+  border: none;
+}
+
+.product-btn:hover {
+  background: var(--terra-gradient-button-hover) !important;
+}
+
+/* === TERRA INNOVATION SECTION === */
+.terra-innovation {
+  padding: 8rem 0;
+  background: var(--terra-black);
+  position: relative;
+  overflow: hidden;
+}
+
+.terra-innovation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.terra-innovation-card {
+  position: relative;
+  padding: 2rem;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid var(--terra-white-10);
+  border-radius: 1.5rem;
+  transition: all 300ms ease;
+}
+
+.terra-innovation-card:hover {
+  border-color: var(--terra-emerald-500);
+  transform: translateY(-8px);
+  box-shadow: var(--terra-shadow-emerald-lg);
+}
+
+.terra-innovation-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 300ms ease;
+}
+
+.terra-innovation-card:hover .terra-innovation-icon {
+  transform: scale(1.1);
+}
+
+/* === TERRA PRODUCT SHOWCASE WITH TABS === */
+.terra-product-showcase {
+  padding: 8rem 0;
+  background: linear-gradient(
+    180deg,
+    var(--terra-gray-950) 0%,
+    var(--terra-black) 100%
+  );
+  border-top: 1px solid var(--terra-white-10);
+}
+
+.terra-tabs {
+  width: 100%;
+}
+
+.terra-tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+  background: var(--terra-white-10);
+  border: 1px solid var(--terra-white-20);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.terra-tab-btn {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  background: transparent;
+  color: var(--terra-gray-300);
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.terra-tab-btn:hover {
+  background: var(--terra-white-10);
+  color: var(--terra-emerald-400);
+}
+
+.terra-tab-btn.active {
+  background: var(--terra-emerald-500);
+  color: var(--terra-white);
+  box-shadow: var(--terra-shadow-emerald);
+}
+
+.terra-tab-content {
+  display: none;
+}
+
+.terra-tab-content.active {
+  display: block;
+  animation: terra-fade-in-up 0.5s ease-out;
+}
+
+.terra-product-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.terra-product-showcase-image {
+  position: relative;
+}
+
+.terra-product-showcase-info {
+  color: var(--terra-white);
+}
+
+.terra-product-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.terra-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--terra-white-10);
+  border: 1px solid var(--terra-white-20);
+  border-radius: 1rem;
+  transition: all 300ms ease;
+}
+
+.terra-feature-item:hover {
+  background: var(--terra-white-20);
+  border-color: var(--terra-emerald-500);
+}
+
+.terra-feature-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--terra-emerald-10);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.terra-feature-icon svg {
+  stroke: var(--terra-emerald-400);
+}
+
+@media (max-width: 968px) {
+  .terra-product-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .terra-tabs-nav {
+    flex-direction: column;
+    max-width: 400px;
+  }
+}
+
 /* === TERRA HERO SECTION === */
 .terra-hero {
   position: relative;
@@ -442,6 +869,94 @@
 }
 .terra-hero__content > *:nth-child(5) {
   animation-delay: 0.5s;
+}
+
+/* === TERRA FOOTER === */
+.footer {
+  background: var(--terra-black) !important;
+  border-top: 1px solid var(--terra-white-10);
+  padding-top: 5rem !important;
+  padding-bottom: 2.5rem !important;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+
+.footer-section h3 {
+  color: var(--terra-white) !important;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.footer-section p,
+.footer-section a {
+  color: var(--terra-gray-400) !important;
+  line-height: 1.8;
+}
+
+.footer-section a:hover {
+  color: var(--terra-emerald-400) !important;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-section ul li a {
+  color: var(--terra-gray-300);
+  transition: all 300ms ease;
+  display: inline-block;
+}
+
+.footer-section ul li a:hover {
+  color: var(--terra-emerald-400);
+  transform: translateX(4px);
+}
+
+/* Social Links */
+.terra-social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.terra-social-link {
+  width: 40px;
+  height: 40px;
+  background: var(--terra-white-10);
+  border: 1px solid var(--terra-white-20);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--terra-gray-400);
+  transition: all 300ms ease;
+}
+
+.terra-social-link:hover {
+  background: var(--terra-emerald-500);
+  border-color: var(--terra-emerald-500);
+  color: var(--terra-white);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--terra-white-10);
+  text-align: center;
+  color: var(--terra-gray-500);
+  font-size: 0.875rem;
 }
 
 /* === RESPONSIVE ADJUSTMENTS === */
