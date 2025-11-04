@@ -876,49 +876,77 @@ body {
   }
 }
 
-/* ===== HEADER ICONS ===== */
-.header-icons {
+/* ===== HEADER ACTION BUTTONS ===== */
+.header-actions {
   display: flex;
-  gap: 15px;
+  gap: 12px;
   align-items: center;
-  margin-right: 20px;
 }
 
-.header-icon {
+.action-btn {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
-  border-radius: 50%;
-  transition: background 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s;
+  border-radius: 8px;
 }
 
-.header-icon:hover {
-  background: #f0f0f0;
+.action-btn:hover {
+  background: #f5f5f5;
+  transform: translateY(-2px);
 }
 
-.header-icon svg {
+.action-btn svg {
   width: 24px;
   height: 24px;
-  color: #333;
+  stroke: currentColor;
 }
 
-.header-icon .badge {
+.action-btn__text {
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.action-btn__badge {
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 4px;
+  right: 8px;
   background: #ff5722;
   color: white;
   font-size: 10px;
   font-weight: bold;
-  padding: 2px 5px;
+  padding: 2px 6px;
   border-radius: 10px;
-  min-width: 18px;
+  min-width: 16px;
   text-align: center;
+}
+
+/* Корзина с синим фоном */
+.action-btn--cart svg circle {
+  fill: #1e88e5;
+}
+
+.action-btn--cart:hover svg circle {
+  fill: #1976d2;
+}
+
+/* Кнопка входа */
+.action-btn--auth {
+  color: #1e88e5;
+  font-weight: 600;
+}
+
+.action-btn--auth:hover {
+  background: #e3f2fd;
 }
 
 /* ===== CITY SELECTOR ===== */

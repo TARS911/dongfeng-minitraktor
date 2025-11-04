@@ -325,63 +325,46 @@
               </form>
             </div>
             <div class="header-actions">
-              <div class="header-icons">
-                <button class="header-icon" title="Уведомления">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"
-                    ></path>
-                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            <div class="header-actions">
+                <!-- Сравнение -->
+                <a href="#" class="action-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="8" y1="6" x2="8" y2="18" />
+                    <line x1="16" y1="6" x2="16" y2="18" />
                   </svg>
-                  <span class="badge">4</span>
-                </button>
-                <button class="header-icon" title="Сравнение">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <polyline points="1 6 1 22 8 15 1 9"></polyline>
-                    <polyline points="23 6 23 22 16 15 23 9"></polyline>
+                  <span class="action-btn__text">Сравнение</span>
+                  <span class="action-btn__badge" id="compareCount" style="display: none">0</span>
+                </a>
+
+                <!-- Избранное -->
+                <a href="#" class="action-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                   </svg>
-                  <span class="badge">3</span>
-                </button>
-                <button class="header-icon" title="Чат">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-                    ></path>
+                  <span class="action-btn__text">Избранное</span>
+                  <span class="action-btn__badge" id="favoritesCount" style="display: none">0</span>
+                </a>
+
+                <!-- Корзина -->
+                <a href="cart.html" class="action-btn action-btn--cart">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <circle cx="12" cy="12" r="11" fill="#1e88e5" />
+                    <path d="M8 9L6 11H18L16 9H8Z" stroke="white" stroke-width="1.5" />
+                    <path d="M6 11H18L17 17H7L6 11Z" stroke="white" stroke-width="1.5" />
                   </svg>
-                </button>
-                <button class="header-icon" title="Профиль">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
+                  <span class="action-btn__text">Корзина</span>
+                  <span class="action-btn__badge" id="cartCount" style="display: none">0</span>
+                </a>
+
+                <!-- Вход -->
+                <button class="action-btn action-btn--auth" onclick="alert('Функция входа в разработке')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
                   </svg>
+                  <span class="action-btn__text">Войти</span>
                 </button>
               </div>
-              +79699995668" class="header-phone"
-                >📞 +7 (969) 999-56-68</a
-              >
-              <a href="cart.html" class="cart-btn">🛒 Корзина</a>
-            </div>
-          </div>
         </div>
       </div>
 
