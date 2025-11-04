@@ -1,1596 +1,704 @@
 <!doctype html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Доставка и оплата DONGFENG - Условия, сроки, стоимость</title>
+    <meta
+      name="description"
+      content="Доставка минитракторов DONGFENG по всей России. Самовывоз, транспортная компания, доставка курьером. Сроки доставки от 3 до 14 дней."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://res.cloudinary.com/drenz1aia/image/upload/v1760698083/dongfeng-minitraktor/favicon.svg"
+    />
+    <link rel="stylesheet" href="/css/unified-style.css" />
+  </head>
+  <body>
+    <!-- Кнопка открытия меню -->
+    <button class="sidebar-toggle" onclick="toggleSidebar()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
 
-        <!-- SEO Meta Tags для страницы "Доставка" -->
-        <title>
-            Доставка и оплата - DONGFENG | Доставка минитракторов по России и
-            СНГ
-        </title>
-        <meta
-            name="description"
-            content="Доставка минитракторов DONGFENG по всей России и СНГ. Транспортные компании ПЭК, Деловые Линии, КИТ. Железнодорожная доставка. Собственная служба доставки в Москве и МО. Самовывоз. Наличный и безналичный расчет, рассрочка, лизинг."
-        />
-        <meta
-            name="keywords"
-            content="доставка минитракторов, доставка техники по россии, транспортная компания пэк, деловые линии, железнодорожная доставка, оплата минитрактора, рассрочка минитрактор, лизинг трактора"
-        />
+    <!-- Overlay -->
+    <div
+      class="sidebar-overlay"
+      id="sidebarOverlay"
+      onclick="closeSidebar()"
+    ></div>
 
-        <!-- Open Graph для соцсетей (VK, OK, Telegram) -->
-        <meta
-            property="og:title"
-            content="Доставка и оплата - DONGFENG минитрактора по России и СНГ"
-        />
-        <meta
-            property="og:description"
-            content="Доставка минитракторов по всей России транспортными компаниями и ж/д. Различные способы оплаты: наличные, безнал, рассрочка, лизинг. Рассчитайте стоимость доставки онлайн."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-            property="og:url"
-            content="https://dongfeng-minitraktor.ru/delivery.html"
-        />
-        <meta
-            property="og:image"
-            content="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg"
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta
-            property="og:image:alt"
-            content="Доставка минитракторов DONGFENG"
-        />
-        <meta property="og:locale" content="ru_RU" />
-        <meta property="og:site_name" content="DONGFENG Минитрактора" />
+    <!-- Вертикальное меню -->
+    <aside class="sidebar-menu" id="sidebarMenu">
+      <div class="sidebar-menu__header">
+        <a href="index.html" class="sidebar-menu__logo">🚜 DONGFENG</a>
+        <button class="sidebar-menu__close" onclick="closeSidebar()">×</button>
+      </div>
 
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-            name="twitter:title"
-            content="Доставка и оплата - DONGFENG минитрактора"
-        />
-        <meta
-            name="twitter:description"
-            content="Доставка минитракторов по всей России и СНГ. Различные способы оплаты."
-        />
-        <meta
-            name="twitter:image"
-            content="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg"
-        />
-
-        <!-- ВКонтакте -->
-        <meta
-            property="vk:image"
-            content="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg"
-        />
-
-        <!-- Telegram -->
-        <meta property="telegram:channel" content="@dongfeng_official" />
-
-        <!-- Яндекс верификация -->
-        <meta
-            name="yandex-verification"
-            content="YOUR_YANDEX_VERIFICATION_CODE"
-        />
-
-        <!-- Гео-таргетинг -->
-        <meta name="geo.region" content="RU-BEL" />
-        <meta name="geo.placename" content="Белгород, Курск, Брянск, Липецк" />
-        <meta name="geo.position" content="50.595;36.588" />
-
-        <!-- Дополнительные мета-теги для SEO -->
-        <meta
-            name="robots"
-            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-        />
-        <meta name="googlebot" content="index, follow" />
-        <meta name="yandex" content="index, follow" />
-
-        <!-- Языковые настройки -->
-        <meta name="language" content="Russian" />
-        <meta http-equiv="content-language" content="ru-RU" />
-
-        <!-- Автор и копирайт -->
-        <meta name="author" content="DONGFENG - Официальный дилер" />
-        <meta name="copyright" content="DONGFENG Минитрактора" />
-
-        <!-- Контактная информация -->
-        <meta name="contact" content="info@btferm.com" />
-        <meta name="reply-to" content="info@btferm.com" />
-
-        <!-- Срок актуальности -->
-        <meta name="revisit-after" content="7 days" />
-        <meta name="expires" content="never" />
-
-        <!-- Canonical URL -->
-        <link
-            rel="canonical"
-            href="https://dongfeng-minitraktor.ru/delivery.html"
-        />
-
-        <!-- Альтернативные языки -->
-        <link
-            rel="alternate"
-            hreflang="ru"
-            href="https://dongfeng-minitraktor.ru/delivery.html"
-        />
-        <link
-            rel="alternate"
-            hreflang="x-default"
-            href="https://dongfeng-minitraktor.ru/delivery.html"
-        />
-
-        <!-- Favicon -->
-        <link
-            rel="icon"
-            type="image/png"
-            href="https://res.cloudinary.com/drenz1aia/image/upload/v1760698083/dongfeng-minitraktor/favicon.svg"
-        />
-
-        <!-- Preconnect для оптимизации -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://mc.yandex.ru" />
-
-        <!-- Google Fonts - Премиум комбинация 2025: Montserrat + Open Sans -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800"
-            rel="stylesheet"
-        />
-
-        <!-- CSS -->
-        <link rel="stylesheet" href="css/variables.css?v=1761211422" />
-        <link rel="stylesheet" href="css/reset.css?v=1761211422" />
-        <link rel="stylesheet" href="css/components.css?v=1761211422" />
-        <link rel="stylesheet" href="css/effects.css?v=1761211422" />
-        <link rel="stylesheet" href="css/main.css?v=1761211422" />
-        <link rel="stylesheet" href="css/modal.css?v=1761211422" />
-        <link rel="stylesheet" href="css/header-new.css?v=1761211422" />
-        <link rel="stylesheet" href="css/modern-header.css?v=1761991144" />
-        <link rel="stylesheet" href="css/promo-blocks.css?v=1761211422" />
-        <link rel="stylesheet" href="css/catalog-modals.css?v=1761211422" />
-        <link rel="stylesheet" href="css/catalog-filters.css?v=1761211422" />
-        <link rel="stylesheet" href="css/lightbox.css?v=1761211422" />
-        <link rel="stylesheet" href="css/mobile-menu.css?v=1761211422" />
-        <link rel="stylesheet" href="css/cart-buttons-fix.css?v=1761995152" />
-        <link rel="stylesheet" href="css/vertical-menu.css" />
-        <link rel="stylesheet" href="css/mobile-improvements.css" />
-
-        <!-- Schema.org разметка для Яндекса -->
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                "name": "DONGFENG - Официальный дилер минитракторов",
-                "description": "Доставка минитракторов DONGFENG по всей России и СНГ",
-                "url": "https://dongfeng-minitraktor.ru",
-                "logo": "https://res.cloudinary.com/drenz1aia/image/upload/v1760698084/dongfeng-minitraktor/logo.svg",
-                "telephone": "+7-969-999-56-68",
-                "email": "info@btferm.com",
-                "address": [
-                    {
-                        "@type": "PostalAddress",
-                        "addressCountry": "RU",
-                        "addressLocality": "Белгород",
-                        "streetAddress": "ул. Дальняя Тихая, 2"
-                    },
-                    {
-                        "@type": "PostalAddress",
-                        "addressCountry": "RU",
-                        "addressLocality": "Курск",
-                        "streetAddress": "Магистральный проезд, 34к/1"
-                    },
-                    {
-                        "@type": "PostalAddress",
-                        "addressCountry": "RU",
-                        "addressLocality": "Брянск",
-                        "streetAddress": "ул. Литейная, д. 15"
-                    }
-                ],
-                "priceRange": "180000-850000 RUB",
-                "areaServed": ["RU", "KZ", "BY", "UA"],
-                "sameAs": [
-                    "https://vk.com/dongfeng_tractors",
-                    "https://ok.ru/dongfeng",
-                    "https://t.me/dongfeng_official"
-                ]
-            }
-        </script>
-
-        <!-- Яндекс.Метрика -->
-        <script type="text/javascript">
-            (function (m, e, t, r, i, k, a) {
-                m[i] =
-                    m[i] ||
-                    function () {
-                        (m[i].a = m[i].a || []).push(arguments);
-                    };
-                m[i].l = 1 * new Date();
-                for (var j = 0; j < document.scripts.length; j++) {
-                    if (document.scripts[j].src === r) {
-                        return;
-                    }
-                }
-                ((k = e.createElement(t)),
-                    (a = e.getElementsByTagName(t)[0]),
-                    (k.async = 1),
-                    (k.src = r),
-                    a.parentNode.insertBefore(k, a));
-            })(
-                window,
-                document,
-                "script",
-                "https://mc.yandex.ru/metrika/tag.js",
-                "ym",
-            );
-
-            // Замените YOUR_METRIKA_ID на ваш ID счетчика
-            // ym(YOUR_METRIKA_ID, "init", {
-            //     clickmap:true,
-            //     trackLinks:true,
-            //     accurateTrackBounce:true,
-            //     webvisor:true,
-            //     ecommerce:"dataLayer"
-            // });
-        </script>
-    </head>
-    <body class="with-sidebar">
-        <!-- Кнопка переключения sidebar (для мобильных) - СПРАВА ВВЕРХУ -->
-        <button
-            class="sidebar-toggle"
-            onclick="toggleSidebar()"
-            aria-label="Меню"
-        >
-            <svg
+      <nav class="sidebar-menu__nav">
+        <ul class="sidebar-menu__list">
+          <li class="sidebar-menu__item">
+            <a href="index.html" class="sidebar-menu__link">
+              <svg
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              </svg>
+              Главная
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a
+              href="catalog.html"
+              class="sidebar-menu__link sidebar-menu__link--orange"
             >
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        </button>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              Каталог
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="about.html" class="sidebar-menu__link">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              О компании
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="delivery.html" class="sidebar-menu__link active">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+              Доставка
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="payment.html" class="sidebar-menu__link">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+              Оплата
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="warranty.html" class="sidebar-menu__link">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              Гарантия
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="contacts.html" class="sidebar-menu__link">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Контакты
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="cart.html" class="sidebar-menu__link">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path
+                  d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                ></path>
+              </svg>
+              Корзина
+            </a>
+          </li>
+        </ul>
 
-        <!-- Overlay для мобильных устройств -->
-        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        <div class="sidebar-menu__divider"></div>
 
-        <!-- Вертикальное боковое меню -->
-        <aside class="sidebar-menu" id="sidebarMenu">
-            <!-- Заголовок с кнопкой закрытия -->
-            <div class="sidebar-menu__header">
-                <button
-                    class="sidebar-menu__close"
-                    onclick="closeSidebar()"
-                    aria-label="Закрыть"
-                >
-                    ×
-                </button>
+        <div class="sidebar-menu__section-title">Дополнительно</div>
+        <ul class="sidebar-menu__list">
+          <li class="sidebar-menu__item">
+            <a href="articles.html" class="sidebar-menu__link">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                ></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              Статьи
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="media.html" class="sidebar-menu__link">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect
+                  x="2"
+                  y="2"
+                  width="20"
+                  height="20"
+                  rx="2.18"
+                  ry="2.18"
+                ></rect>
+                <line x1="7" y1="2" x2="7" y2="22"></line>
+                <line x1="17" y1="2" x2="17" y2="22"></line>
+              </svg>
+              Медиа
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-menu__footer">
+        <div class="sidebar-menu__contacts">
+          <div style="color: #666; margin-bottom: 10px; font-weight: 600">
+            Контакты
+          </div>
+          <a href="tel:+79699995668">📞 +7 (969) 999-56-68</a>
+          <a href="mailto:info@dongfeng-rf.ru">✉️ info@dongfeng-rf.ru</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-top">
+        <div class="container">
+          <div class="header-top-content">
+            <div>📍 Белгород, Курск, Брянск, Липецк</div>
+            <div class="header-contacts">
+              <a href="mailto:info@dongfeng-rf.ru">📧 info@dongfeng-rf.ru</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-main">
+        <div class="container">
+          <div class="header-content">
+            <a href="index.html" class="logo">DONGFENG</a>
+            <div class="search-bar">
+              <form class="search-form" action="catalog.html">
+                <input
+                  type="text"
+                  class="search-input"
+                  name="search"
+                  placeholder="Поиск тракторов..."
+                />
+                <button type="submit" class="search-btn">🔍 Найти</button>
+              </form>
+            </div>
+            <div class="header-actions">
+              <a href="tel:+79699995668" class="header-phone"
+                >📞 +7 (969) 999-56-68</a
+              >
+              <a href="cart.html" class="cart-btn">🛒 Корзина</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <div class="container">
+          <ul class="nav-list">
+            <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+            <li><a href="about.html" class="nav-link">О компании</a></li>
+            <li>
+              <a href="delivery.html" class="nav-link active">Доставка</a>
+            </li>
+            <li><a href="warranty.html" class="nav-link">Гарантия</a></li>
+            <li><a href="payment.html" class="nav-link">Оплата</a></li>
+            <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">Доставка и оплата</h1>
+        <p class="page-subtitle">Удобные способы доставки по всей России</p>
+      </div>
+    </section>
+
+    <!-- Page Content -->
+    <section class="page-content">
+      <div class="container">
+        <!-- Способы доставки -->
+        <div class="content-section">
+          <h2 class="section-title">Способы доставки</h2>
+          <div class="grid grid-3">
+            <div class="card">
+              <div
+                style="font-size: 48px; text-align: center; margin-bottom: 15px"
+              >
+                🏪
+              </div>
+              <h3 class="card-title" style="text-align: center">Самовывоз</h3>
+              <p class="card-text">
+                Самый быстрый и экономный способ. Заберите трактор из нашего
+                представительства в Белгороде, Курске, Брянске или Липецке.
+                Предварительный осмотр, проверка документов и консультация
+                специалиста.
+              </p>
+              <div
+                style="
+                  text-align: center;
+                  margin-top: 20px;
+                  font-weight: 600;
+                  color: #2a9d4e;
+                  font-size: 18px;
+                "
+              >
+                БЕСПЛАТНО
+              </div>
             </div>
 
-            <!-- Кнопка скрытия/показа sidebar (только десктоп) -->
-            <div class="sidebar-collapse-toggle">
-                <button
-                    class="sidebar-desktop-toggle"
-                    onclick="toggleSidebarDesktop()"
-                    title="Свернуть/развернуть меню"
-                >
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                </button>
+            <div class="card">
+              <div
+                style="font-size: 48px; text-align: center; margin-bottom: 15px"
+              >
+                🚛
+              </div>
+              <h3 class="card-title" style="text-align: center">
+                Транспортная компания
+              </h3>
+              <p class="card-text">
+                Работаем с крупнейшими ТК России: ПЭК, Деловые Линии, КИТ,
+                Байкал-Сервис. Доставка до терминала в вашем городе или до
+                двери. Страхование груза, отслеживание перемещения.
+              </p>
+              <div
+                style="
+                  text-align: center;
+                  margin-top: 20px;
+                  font-weight: 600;
+                  color: #2a9d4e;
+                  font-size: 18px;
+                "
+              >
+                от 5 000 ₽
+              </div>
             </div>
 
-            <!-- Навигация -->
-            <nav class="sidebar-menu__nav">
-                <ul class="sidebar-menu__list">
-                    <!-- Главная -->
-                    <li class="sidebar-menu__item">
-                        <a href="index.html" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-                                ></path>
-                                <polyline
-                                    points="9 22 9 12 15 12 15 22"
-                                ></polyline>
-                            </svg>
-                            Главная
-                        </a>
-                    </li>
-
-                    <!-- Каталог - ОРАНЖЕВЫЙ -->
-                    <li class="sidebar-menu__item">
-                        <a
-                            href="catalog.html"
-                            class="sidebar-menu__link sidebar-menu__link--orange"
-                        >
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                            Каталог
-                        </a>
-                    </li>
-
-                    <!-- Оплата -->
-                    <li class="sidebar-menu__item">
-                        <a href="payment.html" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <rect
-                                    x="1"
-                                    y="4"
-                                    width="22"
-                                    height="16"
-                                    rx="2"
-                                    ry="2"
-                                ></rect>
-                                <line x1="1" y1="10" x2="23" y2="10"></line>
-                            </svg>
-                            Оплата
-                        </a>
-                    </li>
-
-                    <!-- Доставка -->
-                    <li class="sidebar-menu__item">
-                        <a href="delivery.html" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <rect x="1" y="3" width="15" height="13"></rect>
-                                <polygon
-                                    points="16 8 20 8 23 11 23 16 16 16 16 8"
-                                ></polygon>
-                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
-                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
-                            </svg>
-                            Доставка
-                        </a>
-                    </li>
-
-                    <!-- Гарантия -->
-                    <li class="sidebar-menu__item">
-                        <a href="warranty.html" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
-                                ></path>
-                            </svg>
-                            Гарантия
-                        </a>
-                    </li>
-
-                    <!-- Акции - ЗЕЛЕНЫЙ -->
-                    <li class="sidebar-menu__item">
-                        <a
-                            href="#"
-                            class="sidebar-menu__link sidebar-menu__link--green"
-                        >
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <polygon
-                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                ></polygon>
-                            </svg>
-                            Акции
-                        </a>
-                    </li>
-
-                    <!-- Лизинг -->
-                    <li class="sidebar-menu__item">
-                        <a href="#" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M12 6v6l4 2"></path>
-                            </svg>
-                            Лизинг
-                        </a>
-                    </li>
-
-                    <!-- Медиа -->
-                    <li class="sidebar-menu__item">
-                        <a href="media.html" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <rect
-                                    x="2"
-                                    y="2"
-                                    width="20"
-                                    height="20"
-                                    rx="2.18"
-                                    ry="2.18"
-                                ></rect>
-                                <line x1="7" y1="2" x2="7" y2="22"></line>
-                                <line x1="17" y1="2" x2="17" y2="22"></line>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <line x1="2" y1="7" x2="7" y2="7"></line>
-                                <line x1="2" y1="17" x2="7" y2="17"></line>
-                                <line x1="17" y1="17" x2="22" y2="17"></line>
-                                <line x1="17" y1="7" x2="22" y2="7"></line>
-                            </svg>
-                            Медиа
-                        </a>
-                    </li>
-
-                    <!-- О нас -->
-                    <li class="sidebar-menu__item">
-                        <a href="about.html" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="12" y1="16" x2="12" y2="12"></line>
-                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                            </svg>
-                            О нас
-                        </a>
-                    </li>
-
-                    <!-- Лизинг и Гранты -->
-                    <li class="sidebar-menu__item">
-                        <a href="#" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                ></path>
-                                <circle cx="8.5" cy="7" r="4"></circle>
-                                <line x1="20" y1="8" x2="20" y2="14"></line>
-                                <line x1="23" y1="11" x2="17" y2="11"></line>
-                            </svg>
-                            Лизинг и Гранты
-                        </a>
-                    </li>
-
-                    <!-- Покупателям -->
-                    <li class="sidebar-menu__item">
-                        <a href="#" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
-                                ></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                            Покупателям
-                        </a>
-                    </li>
-
-                    <!-- Отгрузки -->
-                    <li class="sidebar-menu__item">
-                        <a href="#" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                                ></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
-                            Отгрузки
-                        </a>
-                    </li>
-
-                    <!-- Отзывы -->
-                    <li class="sidebar-menu__item">
-                        <a href="#" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-                                ></path>
-                            </svg>
-                            Отзывы
-                        </a>
-                    </li>
-
-                    <!-- Блог -->
-                    <li class="sidebar-menu__item">
-                        <a href="#" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path d="M12 20h9"></path>
-                                <path
-                                    d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
-                                ></path>
-                            </svg>
-                            Блог
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            <!-- Селектор города внизу -->
-            <div class="sidebar-city-selector">
-                <button
-                    class="sidebar-city-selector__btn"
-                    onclick="toggleSidebarCitySelector()"
-                >
-                    <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-                        <path
-                            d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                        />
-                        <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    <span id="sidebarSelectedCity">Белгород</span>
-                    <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-                        <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                </button>
-                <div
-                    class="sidebar-city-selector__dropdown"
-                    id="sidebarCityDropdown"
-                >
-                    <div class="sidebar-city-selector__title">
-                        Выберите ваш город:
-                    </div>
-                    <ul class="sidebar-city-selector__list">
-                        <li onclick="selectSidebarCity('Белгород')">
-                            Белгород
-                        </li>
-                        <li onclick="selectSidebarCity('Курск')">Курск</li>
-                        <li onclick="selectSidebarCity('Воронеж')">Воронеж</li>
-                        <li onclick="selectSidebarCity('Орёл')">Орёл</li>
-                        <li onclick="selectSidebarCity('Тула')">Тула</li>
-                        <li onclick="selectSidebarCity('Липецк')">Липецк</li>
-                        <li onclick="selectSidebarCity('Брянск')">Брянск</li>
-                    </ul>
-                </div>
+            <div class="card">
+              <div
+                style="font-size: 48px; text-align: center; margin-bottom: 15px"
+              >
+                🚚
+              </div>
+              <h3 class="card-title" style="text-align: center">
+                Доставка курьером
+              </h3>
+              <p class="card-text">
+                Доставка собственным автотранспортом до вашего участка или
+                склада. Опытные водители, профессиональная разгрузка. Доступно
+                для близлежащих регионов (до 500 км).
+              </p>
+              <div
+                style="
+                  text-align: center;
+                  margin-top: 20px;
+                  font-weight: 600;
+                  color: #2a9d4e;
+                  font-size: 18px;
+                "
+              >
+                от 30 ₽/км
+              </div>
             </div>
-        </aside>
-
-
-
-        <!-- Modern Header -->
-        <header class="modern-header modern-header--with-sidebar">
-            <div class="modern-header__container">
-                <div class="modern-header__main">
-                    <!-- Left Section: City + Catalog -->
-                    <div class="modern-header__left">                        <!-- City Selector -->
-                        <div class="city-selector-modern">
-                            <button
-                                class="city-selector-modern__btn"
-                                onclick="toggleCitySelector()"
-                            >
-                                <svg
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                >
-                                    <path
-                                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                    />
-                                    <circle cx="12" cy="10" r="3" />
-                                </svg>
-                                <span id="selectedCity">Белгород</span>
-                                <svg
-                                    width="12"
-                                    height="12"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                >
-                                    <polyline points="6 9 12 15 18 9" />
-                                </svg>
-                            </button>
-                            <div
-                                class="city-selector-modern__dropdown"
-                                id="cityDropdown"
-                            >
-                                <div class="city-selector-modern__title">
-                                    Выберите ваш город:
-                                </div>
-                                <ul class="city-selector-modern__list">
-                                    <li onclick="selectCity('Белгород')">
-                                        Белгород
-                                    </li>
-                                    <li onclick="selectCity('Курск')">Курск</li>
-                                    <li onclick="selectCity('Воронеж')">
-                                        Воронеж
-                                    </li>
-                                    <li onclick="selectCity('Орёл')">Орёл</li>
-                                    <li onclick="selectCity('Тула')">Тула</li>
-                                    <li onclick="selectCity('Липецк')">
-                                        Липецк
-                                    </li>
-                                    <li onclick="selectCity('Брянск')">
-                                        Брянск
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Catalog Button -->
-                        <a href="catalog.html" class="catalog-btn-modern">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <line x1="3" y1="12" x2="21" y2="12"></line>
-                                <line x1="3" y1="6" x2="21" y2="6"></line>
-                                <line x1="3" y1="18" x2="21" y2="18"></line>
-                            </svg>
-                            КАТАЛОГ
-                        </a>
-                    </div>
-
-                    <!-- Center Section: Navigation -->
-                    <div class="modern-header__nav">
-                        <ul class="nav-menu-modern">
-                            <li><a href="index.html">ГЛАВНАЯ</a></li>
-                            <li><a href="payment.html">ОПЛАТА</a></li>
-                            <li><a href="delivery.html">ДОСТАВКА</a></li>
-                            <li><a href="warranty.html">ГАРАНТИЯ</a></li>
-                            <li><a href="contacts.html">КОНТАКТЫ</a></li>
-                            <li><a href="media.html">МЕДИА</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Right Section: Icons -->
-                    <div class="modern-header__actions">
-                        <!-- Compare -->
-                        <a href="compare.html" class="action-btn">
-                            <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                            >
-                                <line x1="8" y1="6" x2="8" y2="18" />
-                                <line x1="16" y1="6" x2="16" y2="18" />
-                            </svg>
-                            <span class="action-btn__text">Сравнение</span>
-                            <span
-                                class="action-btn__badge"
-                                id="compareCount"
-                                style="display: none"
-                                >0</span
-                            >
-                        </a>
-
-                        <!-- Favorites -->
-                        <a href="favorites.html" class="action-btn">
-                            <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                                />
-                            </svg>
-                            <span class="action-btn__text">Избранное</span>
-                            <span
-                                class="action-btn__badge"
-                                id="favoritesCount"
-                                style="display: none"
-                                >0</span
-                            >
-                        </a>
-
-                        <!-- Cart -->
-                        <a href="cart.html" class="action-btn action-btn--cart">
-                            <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="white"
-                                stroke-width="2"
-                            >
-                                <circle cx="12" cy="12" r="11" fill="#2a9d4e" />
-                                <path
-                                    d="M8 9L6 11H18L16 9H8Z"
-                                    stroke="white"
-                                    stroke-width="1.5"
-                                />
-                                <path
-                                    d="M6 11H18L17 17H7L6 11Z"
-                                    stroke="white"
-                                    stroke-width="1.5"
-                                />
-                            </svg>
-                            <span class="action-btn__text">Корзина</span>
-                            <span
-                                class="action-btn__badge"
-                                id="cartCount"
-                                style="display: none"
-                                >0</span
-                            >
-                        </a>
-
-                        <!-- Auth Button -->
-                        <button
-                            class="action-btn action-btn--auth"
-                            onclick="handleAuth()"
-                        >
-                            <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
-                                />
-                                <circle cx="12" cy="7" r="4" />
-                            </svg>
-                            <span class="action-btn__text">Войти</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <section id="delivery" class="delivery">
-            <div class="container">
-                <!-- Хлебные крошки -->
-                <div class="breadcrumbs">
-                    <a href="index.html">Главная</a>
-                    <span>/</span>
-                    <span>Доставка</span>
-                </div>
-
-                <h1 class="section-title">Доставка и оплата</h1>
-
-                <div class="delivery__intro">
-                    <p>
-                        Мы организуем доставку минитракторов DONGFENG в любую
-                        точку России и стран СНГ. Работаем с проверенными
-                        транспортными компаниями и гарантируем сохранность
-                        техники при перевозке. Предлагаем несколько вариантов
-                        доставки и различные способы оплаты для вашего удобства.
-                    </p>
-                </div>
-
-                <div class="delivery__content">
-                    <div class="delivery__info">
-                        <h2>Способы доставки</h2>
-
-                        <div class="delivery-methods">
-                            <div class="delivery-method">
-                                <div class="delivery-method__icon">🚚</div>
-                                <h3 class="delivery-method__title">
-                                    Транспортная компания
-                                </h3>
-                                <p class="delivery-method__text">
-                                    Доставка через надежные ТК: ПЭК, Деловые
-                                    Линии, КИТ, Энергия. Отправляем технику с
-                                    упаковкой на деревянном поддоне. Срок
-                                    доставки 3-10 дней в зависимости от региона.
-                                </p>
-                                <ul class="delivery-method__list">
-                                    <li>
-                                        Доставка в терминал ТК в вашем городе
-                                    </li>
-                                    <li>
-                                        Возможна доставка до двери (за доп.
-                                        плату)
-                                    </li>
-                                    <li>Страхование груза включено</li>
-                                    <li>Оплата доставки при получении</li>
-                                </ul>
-                                <div class="delivery-method__price">
-                                    <strong>Стоимость:</strong> от 5 000 до 25
-                                    000 руб. в зависимости от региона
-                                </div>
-                            </div>
-
-                            <div class="delivery-method">
-                                <div class="delivery-method__icon">🚂</div>
-                                <h3 class="delivery-method__title">
-                                    Железнодорожная доставка
-                                </h3>
-                                <p class="delivery-method__text">
-                                    Оптимальный вариант для дальних регионов и
-                                    больших объемов. Техника доставляется в
-                                    контейнере или крытом вагоне до ближайшей
-                                    ж/д станции.
-                                </p>
-                                <ul class="delivery-method__list">
-                                    <li>
-                                        Экономичный способ для дальних
-                                        расстояний
-                                    </li>
-                                    <li>Срок доставки 7-20 дней</li>
-                                    <li>Надежная упаковка и крепление</li>
-                                    <li>
-                                        Возможность отправки нескольких единиц
-                                        техники
-                                    </li>
-                                </ul>
-                                <div class="delivery-method__price">
-                                    <strong>Стоимость:</strong> рассчитывается
-                                    индивидуально
-                                </div>
-                            </div>
-
-                            <div class="delivery-method">
-                                <div class="delivery-method__icon">🚐</div>
-                                <h3 class="delivery-method__title">
-                                    Собственная доставка
-                                </h3>
-                                <p class="delivery-method__text">
-                                    Доставка своим транспортом в Москве,
-                                    Московской области и близлежащих регионах
-                                    (Белгородская, Курская, Брянская, Липецкая
-                                    области).
-                                </p>
-                                <ul class="delivery-method__list">
-                                    <li>Доставка до вашего участка</li>
-                                    <li>Помощь в разгрузке</li>
-                                    <li>Быстрые сроки (1-3 дня)</li>
-                                    <li>Консультация по эксплуатации</li>
-                                </ul>
-                                <div class="delivery-method__price">
-                                    <strong>Стоимость:</strong> от 3 000 руб. в
-                                    пределах области
-                                </div>
-                            </div>
-
-                            <div class="delivery-method">
-                                <div class="delivery-method__icon">🏪</div>
-                                <h3 class="delivery-method__title">
-                                    Самовывоз
-                                </h3>
-                                <p class="delivery-method__text">
-                                    Вы можете забрать технику самостоятельно с
-                                    нашего склада в Белгороде, Курске, Брянске
-                                    или Липецке. Предварительная запись
-                                    обязательна.
-                                </p>
-                                <ul class="delivery-method__list">
-                                    <li>Бесплатно</li>
-                                    <li>Осмотр техники перед покупкой</li>
-                                    <li>Консультация специалиста</li>
-                                    <li>Помощь в погрузке</li>
-                                </ul>
-                                <div class="delivery-method__price">
-                                    <strong>Стоимость:</strong> бесплатно
-                                </div>
-                            </div>
-                        </div>
-
-                        <h2 class="section-subtitle">Регионы доставки</h2>
-                        <div class="delivery-regions">
-                            <p>
-                                Мы осуществляем доставку минитракторов по всей
-                                территории России и стран СНГ:
-                            </p>
-                            <div class="regions-grid">
-                                <div class="region-card">
-                                    <h4>Центральный ФО</h4>
-                                    <p>
-                                        Москва, Белгород, Курск, Брянск, Липецк,
-                                        Воронеж, Тамбов, Орел и др.
-                                    </p>
-                                </div>
-                                <div class="region-card">
-                                    <h4>Южный ФО</h4>
-                                    <p>
-                                        Краснодар, Ростов-на-Дону, Ставрополь,
-                                        Волгоград и др.
-                                    </p>
-                                </div>
-                                <div class="region-card">
-                                    <h4>Приволжский ФО</h4>
-                                    <p>
-                                        Казань, Нижний Новгород, Самара,
-                                        Саратов, Уфа и др.
-                                    </p>
-                                </div>
-                                <div class="region-card">
-                                    <h4>Северо-Западный ФО</h4>
-                                    <p>
-                                        Санкт-Петербург, Великий Новгород,
-                                        Псков, Калининград и др.
-                                    </p>
-                                </div>
-                                <div class="region-card">
-                                    <h4>Уральский ФО</h4>
-                                    <p>
-                                        Екатеринбург, Челябинск, Тюмень, Курган
-                                        и др.
-                                    </p>
-                                </div>
-                                <div class="region-card">
-                                    <h4>Страны СНГ</h4>
-                                    <p>
-                                        Казахстан, Беларусь, Армения, Киргизия и
-                                        др.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h2 class="section-subtitle">
-                            Упаковка и подготовка к отправке
-                        </h2>
-                        <div class="delivery-packaging">
-                            <p>
-                                Перед отправкой вся техника проходит тщательную
-                                подготовку и упаковку:
-                            </p>
-                            <ul class="packaging-list">
-                                <li>
-                                    Техника закрепляется на деревянном поддоне
-                                </li>
-                                <li>
-                                    Хрупкие элементы оборачиваются защитной
-                                    пленкой
-                                </li>
-                                <li>
-                                    Используется стрейч-пленка и крепежные ремни
-                                </li>
-                                <li>Все жидкости сливаются (масло, топливо)</li>
-                                <li>Аккумулятор отключается и фиксируется</li>
-                                <li>
-                                    Комплектация проверяется и запечатывается
-                                </li>
-                            </ul>
-                        </div>
-
-                        <h2 class="section-subtitle">Сроки доставки</h2>
-                        <div class="delivery-timeframes">
-                            <table class="timeframes-table">
-                                <thead>
-                                    <tr>
-                                        <th>Регион</th>
-                                        <th>Транспортная компания</th>
-                                        <th>Ж/Д доставка</th>
-                                        <th>Собственная доставка</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Белгородская обл.</td>
-                                        <td>1-2 дня</td>
-                                        <td>-</td>
-                                        <td>1 день</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Курская, Брянская, Липецкая обл.
-                                        </td>
-                                        <td>2-3 дня</td>
-                                        <td>5-7 дней</td>
-                                        <td>1-2 дня</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Москва и МО</td>
-                                        <td>3-5 дней</td>
-                                        <td>7-10 дней</td>
-                                        <td>2-3 дня</td>
-                                    </tr>
-                                    <tr>
-                                        <td>ЦФО (другие области)</td>
-                                        <td>3-7 дней</td>
-                                        <td>7-12 дней</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Южный ФО</td>
-                                        <td>5-8 дней</td>
-                                        <td>10-14 дней</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Приволжский ФО</td>
-                                        <td>5-10 дней</td>
-                                        <td>10-15 дней</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Дальние регионы</td>
-                                        <td>7-14 дней</td>
-                                        <td>15-25 дней</td>
-                                        <td>-</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <h2 class="section-subtitle">Способы оплаты</h2>
-                        <div class="payment-methods">
-                            <div class="payment-method">
-                                <div class="payment-method__icon">💵</div>
-                                <h3 class="payment-method__title">Наличными</h3>
-                                <p>
-                                    Оплата наличными при получении товара.
-                                    Доступна при самовывозе или доставке
-                                    собственной службой доставки. Принимаем
-                                    рубли РФ.
-                                </p>
-                            </div>
-
-                            <div class="payment-method">
-                                <div class="payment-method__icon">🏦</div>
-                                <h3 class="payment-method__title">
-                                    Безналичный расчет
-                                </h3>
-                                <p>
-                                    Для юридических лиц и ИП - безналичная
-                                    оплата по счету. Работаем с НДС и без НДС.
-                                    Предоставляем полный пакет документов (счет,
-                                    накладная, счет-фактура).
-                                </p>
-                            </div>
-
-                            <div class="payment-method">
-                                <div class="payment-method__icon">💳</div>
-                                <h3 class="payment-method__title">
-                                    Банковский перевод
-                                </h3>
-                                <p>
-                                    Перевод с карты на карту или банковский
-                                    перевод для физических лиц. После получения
-                                    оплаты отправляем технику в течение 1-2
-                                    рабочих дней.
-                                </p>
-                            </div>
-
-                            <div class="payment-method">
-                                <div class="payment-method__icon">📊</div>
-                                <h3 class="payment-method__title">Рассрочка</h3>
-                                <p>
-                                    Предлагаем рассрочку на срок до 12 месяцев
-                                    без переплаты. Минимальный первоначальный
-                                    взнос 30%. Оформление за 1 день.
-                                </p>
-                            </div>
-
-                            <div class="payment-method">
-                                <div class="payment-method__icon">📈</div>
-                                <h3 class="payment-method__title">Лизинг</h3>
-                                <p>
-                                    Лизинг для юридических лиц и ИП на срок до 5
-                                    лет. Работаем с ведущими лизинговыми
-                                    компаниями. Первоначальный взнос от 10%.
-                                </p>
-                            </div>
-
-                            <div class="payment-method">
-                                <div class="payment-method__icon">🤝</div>
-                                <h3 class="payment-method__title">
-                                    Частичная предоплата
-                                </h3>
-                                <p>
-                                    Возможна оплата частями: предоплата 50%,
-                                    остаток при получении. Удобно для крупных
-                                    заказов и дальних регионов.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="delivery__calculator">
-                        <h3>Рассчитать доставку</h3>
-                        <p class="calculator-subtitle">
-                            Укажите ваш город и модель трактора, и мы рассчитаем
-                            стоимость и срок доставки
-                        </p>
-                        <form
-                            class="calculator-form"
-                            onsubmit="calculateDelivery(event)"
-                        >
-                            <div class="form-group">
-                                <label for="deliveryCity">Город доставки</label>
-                                <input
-                                    type="text"
-                                    id="deliveryCity"
-                                    name="city"
-                                    placeholder="Например: Москва"
-                                    required
-                                />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="deliveryModel"
-                                    >Модель трактора</label
-                                >
-                                <select
-                                    id="deliveryModel"
-                                    name="model"
-                                    required
-                                >
-                                    <option value="">Выберите модель</option>
-                                    <option value="df244">
-                                        DONGFENG DF-244 (24 л.с.)
-                                    </option>
-                                    <option value="df304">
-                                        DONGFENG DF-304 (30 л.с.)
-                                    </option>
-                                    <option value="df354">
-                                        DONGFENG DF-354 (35 л.с.)
-                                    </option>
-                                    <option value="df404">
-                                        DONGFENG DF-404 (40 л.с.)
-                                    </option>
-                                    <option value="xingtai244">
-                                        Xingtai 244 (24 л.с.)
-                                    </option>
-                                    <option value="xingtai304">
-                                        Xingtai 304 (30 л.с.)
-                                    </option>
-                                    <option value="lovol504">
-                                        Lovol 504 (50 л.с.)
-                                    </option>
-                                    <option value="lovol604">
-                                        Lovol 604 (60 л.с.)
-                                    </option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="deliveryMethod"
-                                    >Способ доставки</label
-                                >
-                                <select
-                                    id="deliveryMethod"
-                                    name="delivery_method"
-                                    required
-                                >
-                                    <option value="">Выберите способ</option>
-                                    <option value="transport_company">
-                                        Транспортная компания
-                                    </option>
-                                    <option value="railway">
-                                        Железнодорожная доставка
-                                    </option>
-                                    <option value="own_delivery">
-                                        Собственная доставка
-                                    </option>
-                                    <option value="pickup">
-                                        Самовывоз (бесплатно)
-                                    </option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="deliveryPhone">Телефон</label>
-                                <input
-                                    type="tel"
-                                    id="deliveryPhone"
-                                    name="phone"
-                                    placeholder="+7 (___) ___-__-__"
-                                    required
-                                />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="deliveryEmail"
-                                    >Email (необязательно)</label
-                                >
-                                <input
-                                    type="email"
-                                    id="deliveryEmail"
-                                    name="email"
-                                    placeholder="example@email.com"
-                                />
-                            </div>
-
-                            <label class="checkbox-label">
-                                <input
-                                    type="checkbox"
-                                    name="consent"
-                                    required
-                                />
-                                <span
-                                    >Я подтверждаю согласие на обработку
-                                    персональных данных</span
-                                >
-                            </label>
-
-                            <button
-                                type="submit"
-                                class="btn btn--primary btn--block"
-                            >
-                                Рассчитать стоимость
-                            </button>
-
-                            <p class="calculator-note">
-                                Мы рассчитаем точную стоимость доставки и
-                                свяжемся с вами в течение 30 минут
-                            </p>
-                        </form>
-                    </div>
-                </div>
-
-                <!-- FAQ по доставке -->
-                <div class="delivery-faq">
-                    <h2 class="section-title">Часто задаваемые вопросы</h2>
-
-                    <div class="faq-grid">
-                        <div class="faq-item">
-                            <h3 class="faq-item__question">
-                                Как отследить мою посылку?
-                            </h3>
-                            <p class="faq-item__answer">
-                                После отправки мы предоставим вам номер
-                                накладной и ссылку для отслеживания. Вы сможете
-                                следить за движением груза в режиме реального
-                                времени на сайте транспортной компании.
-                            </p>
-                        </div>
-
-                        <div class="faq-item">
-                            <h3 class="faq-item__question">
-                                Что делать, если при получении обнаружены
-                                повреждения?
-                            </h3>
-                            <p class="faq-item__answer">
-                                Обязательно составьте акт при представителе ТК,
-                                сфотографируйте повреждения и сразу свяжитесь с
-                                нами. Мы поможем решить вопрос с транспортной
-                                компанией и организуем замену или ремонт по
-                                гарантии.
-                            </p>
-                        </div>
-
-                        <div class="faq-item">
-                            <h3 class="faq-item__question">
-                                Можно ли оплатить доставку при получении?
-                            </h3>
-                            <p class="faq-item__answer">
-                                Да, при доставке транспортной компанией вы
-                                можете оплатить доставку при получении в
-                                терминале ТК. Стоимость техники оплачивается
-                                заранее или по договоренности.
-                            </p>
-                        </div>
-
-                        <div class="faq-item">
-                            <h3 class="faq-item__question">
-                                Входит ли в стоимость доставка до двери?
-                            </h3>
-                            <p class="faq-item__answer">
-                                Стандартная доставка ТК включает доставку до
-                                терминала в вашем городе. Доставка до двери
-                                возможна за дополнительную плату (стоимость
-                                уточняйте у ТК). Собственной службой доставляем
-                                до вашего участка.
-                            </p>
-                        </div>
-
-                        <div class="faq-item">
-                            <h3 class="faq-item__question">
-                                Как происходит разгрузка техники?
-                            </h3>
-                            <p class="faq-item__answer">
-                                В терминале ТК обычно есть погрузчик для
-                                разгрузки. При доставке собственным транспортом
-                                мы поможем с разгрузкой. Рекомендуем заранее
-                                подготовить место и при необходимости
-                                договориться об услугах манипулятора.
-                            </p>
-                        </div>
-
-                        <div class="faq-item">
-                            <h3 class="faq-item__question">
-                                Доставляете ли вы в Казахстан и другие страны
-                                СНГ?
-                            </h3>
-                            <p class="faq-item__answer">
-                                Да, мы организуем доставку в Казахстан,
-                                Беларусь, Армению и другие страны СНГ. Помогаем
-                                с оформлением таможенных документов. Стоимость и
-                                сроки рассчитываются индивидуально.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Гарантии при доставке -->
-                <div class="delivery-guarantees">
-                    <h2 class="section-title">Наши гарантии</h2>
-                    <div class="guarantees-grid">
-                        <div class="guarantee-card">
-                            <div class="guarantee-card__icon">✅</div>
-                            <h3>Проверка перед отправкой</h3>
-                            <p>
-                                Каждая единица техники проходит предпродажную
-                                подготовку и проверку исправности
-                            </p>
-                        </div>
-                        <div class="guarantee-card">
-                            <div class="guarantee-card__icon">📦</div>
-                            <h3>Надежная упаковка</h3>
-                            <p>
-                                Используем качественные упаковочные материалы и
-                                надежное крепление на поддоне
-                            </p>
-                        </div>
-                        <div class="guarantee-card">
-                            <div class="guarantee-card__icon">🛡️</div>
-                            <h3>Страхование груза</h3>
-                            <p>
-                                Все отправления застрахованы на полную стоимость
-                                техники
-                            </p>
-                        </div>
-                        <div class="guarantee-card">
-                            <div class="guarantee-card__icon">📋</div>
-                            <h3>Полный комплект документов</h3>
-                            <p>
-                                Предоставляем все необходимые документы для
-                                регистрации и эксплуатации
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA секция -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-card">
-                    <h2 class="cta-card__title">
-                        Нужна помощь с выбором доставки?
-                    </h2>
-                    <p class="cta-card__text">
-                        Наши специалисты помогут подобрать оптимальный способ
-                        доставки и рассчитают точную стоимость. Свяжитесь с нами
-                        удобным способом.
-                    </p>
-                    <div class="cta-card__actions">
-                        <button
-                            class="btn btn--primary btn--large"
-                            onclick="openCallbackModal()"
-                        >
-                            Заказать звонок
-                        </button>
-                        <a
-                            href="contacts.html"
-                            class="btn btn--outline btn--large"
-                        >
-                            Контакты
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer__bottom">
-                    <p>
-                        &copy; 2025 DONGFENG Минитрактора. Все права защищены.
-                    </p>
-                    <div class="footer__links">
-                        <a href="privacy.html">Политика конфиденциальности</a>
-                        <a href="terms.html">Пользовательское соглашение</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <!-- Модальное окно обратной связи -->
-        <div class="modal-overlay" id="callbackModal">
-            <div class="modal">
-                <button
-                    class="modal__close"
-                    onclick="closeCallbackModal()"
-                    aria-label="Закрыть"
-                >
-                    ×
-                </button>
-
-                <div class="modal__content">
-                    <h2 class="modal__title">Заказать звонок</h2>
-                    <p class="modal__subtitle">
-                        Оставьте свои контакты и мы перезвоним в течение 15
-                        минут
-                    </p>
-
-                    <form
-                        class="modal__form"
-                        id="callbackForm"
-                        onsubmit="submitCallbackForm(event)"
-                    >
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Ваше имя"
-                            required
-                            minlength="2"
-                        />
-
-                        <input
-                            type="tel"
-                            name="phone"
-                            placeholder="Телефон"
-                            required
-                        />
-
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Email (необязательно)"
-                        />
-
-                        <textarea
-                            name="message"
-                            placeholder="Ваш вопрос или комментарий (необязательно)"
-                            rows="4"
-                        ></textarea>
-
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="consent" required />
-                            <span
-                                >Я подтверждаю согласие на обработку
-                                персональных данных</span
-                            >
-                        </label>
-
-                        <button
-                            type="submit"
-                            class="btn btn--primary btn--block"
-                        >
-                            Отправить заявку
-                        </button>
-
-                        <p class="modal__privacy">
-                            Нажимая кнопку, вы соглашаетесь с
-                            <a href="#">политикой конфиденциальности</a>
-                        </p>
-                    </form>
-
-                    <div class="modal__success" style="display: none">
-                        <div class="modal__success-icon">✅</div>
-                        <h3 class="modal__success-title">Спасибо за заявку!</h3>
-                        <p class="modal__success-text">
-                            Мы свяжемся с вами в ближайшее время
-                        </p>
-                        <button
-                            class="btn btn--primary"
-                            onclick="closeCallbackModal()"
-                        >
-                            Закрыть
-                        </button>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
 
-        <!-- JavaScript -->
-        <script src="js/config.js"></script>
-        <script src="js/header-icons-animation.js"></script>
-        <script src="js/global-cart.js"></script>
-        <script src="js/app.js"></script>
-        <script src="js/catalog.js"></script>
-        <script src="js/catalog-filters.js"></script>
-        <script src="js/lightbox.js"></script>
-        <script src="js/mobile-menu.js"></script>
+        <!-- Стоимость доставки -->
+        <div class="content-section">
+          <h2 class="section-title">Стоимость доставки</h2>
+          <p class="section-text">
+            Стоимость доставки минитрактора рассчитывается индивидуально и
+            зависит от нескольких факторов:
+          </p>
+          <div class="grid grid-2">
+            <div class="card">
+              <h3 class="card-title">Факторы расчета стоимости</h3>
+              <ul style="list-style: none; padding: 0">
+                <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0">
+                  <span style="font-weight: 600">📍</span> Расстояние от склада
+                  до пункта назначения
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0">
+                  <span style="font-weight: 600">🚜</span> Габариты и вес
+                  выбранной модели трактора
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0">
+                  <span style="font-weight: 600">📦</span> Необходимость
+                  дополнительной упаковки
+                </li>
+                <li style="padding: 10px 0">
+                  <span style="font-weight: 600">🏠</span> Тип доставки (до
+                  терминала или до двери)
+                </li>
+              </ul>
+            </div>
 
-        <!-- Noscript для Яндекс.Метрики -->
-        <!-- <noscript><div><img src="https://mc.yandex.ru/watch/YOUR_METRIKA_ID" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
-        <script src="js/vertical-menu.js"></script>
-        <script src="js/modern-header.js"></script>
-</body>
+            <div class="card">
+              <h3 class="card-title">Примерная стоимость доставки</h3>
+              <ul style="list-style: none; padding: 0">
+                <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0">
+                  <div style="display: flex; justify-content: space-between">
+                    <span>Белгород - Воронеж</span>
+                    <span style="color: #2a9d4e; font-weight: 600"
+                      >от 8 000 ₽</span
+                    >
+                  </div>
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0">
+                  <div style="display: flex; justify-content: space-between">
+                    <span>Белгород - Москва</span>
+                    <span style="color: #2a9d4e; font-weight: 600"
+                      >от 12 000 ₽</span
+                    >
+                  </div>
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0">
+                  <div style="display: flex; justify-content: space-between">
+                    <span>Белгород - Ростов-на-Дону</span>
+                    <span style="color: #2a9d4e; font-weight: 600"
+                      >от 15 000 ₽</span
+                    >
+                  </div>
+                </li>
+                <li style="padding: 10px 0">
+                  <div style="display: flex; justify-content: space-between">
+                    <span>Белгород - Казань</span>
+                    <span style="color: #2a9d4e; font-weight: 600"
+                      >от 18 000 ₽</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            style="
+              background: #fff3e0;
+              padding: 20px;
+              border-radius: 12px;
+              margin-top: 25px;
+              border-left: 4px solid #ff5b1a;
+            "
+          >
+            <div style="font-weight: 600; margin-bottom: 10px; color: #ff5b1a">
+              💡 Бесплатная доставка
+            </div>
+            <p style="margin: 0; color: #666">
+              При покупке 2-х и более тракторов — доставка по Центральному
+              федеральному округу БЕСПЛАТНО! Актуально для фермерских хозяйств и
+              агропредприятий.
+            </p>
+          </div>
+        </div>
+
+        <!-- Сроки доставки -->
+        <div class="content-section">
+          <h2 class="section-title">Сроки доставки</h2>
+          <p class="section-text">
+            Средний срок доставки минитракторов по России составляет от 3 до 14
+            дней, в зависимости от региона и выбранного способа доставки.
+          </p>
+          <div class="grid grid-3">
+            <div class="card">
+              <h3 class="card-title">Самовывоз</h3>
+              <div
+                style="
+                  font-size: 36px;
+                  font-weight: 700;
+                  color: #2a9d4e;
+                  text-align: center;
+                  margin: 20px 0;
+                "
+              >
+                1 день
+              </div>
+              <p class="card-text" style="text-align: center">
+                Техника готова к выдаче на следующий день после оформления
+                заказа
+              </p>
+            </div>
+
+            <div class="card">
+              <h3 class="card-title">Транспортная компания</h3>
+              <div
+                style="
+                  font-size: 36px;
+                  font-weight: 700;
+                  color: #2a9d4e;
+                  text-align: center;
+                  margin: 20px 0;
+                "
+              >
+                3-7 дней
+              </div>
+              <p class="card-text" style="text-align: center">
+                Доставка в крупные города ЦФО. Отдаленные регионы — до 14 дней
+              </p>
+            </div>
+
+            <div class="card">
+              <h3 class="card-title">Доставка курьером</h3>
+              <div
+                style="
+                  font-size: 36px;
+                  font-weight: 700;
+                  color: #2a9d4e;
+                  text-align: center;
+                  margin: 20px 0;
+                "
+              >
+                2-5 дней
+              </div>
+              <p class="card-text" style="text-align: center">
+                Доставка в пределах 500 км от Белгорода, Курска, Брянска,
+                Липецка
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Процесс доставки -->
+        <div class="content-section">
+          <h2 class="section-title">Как происходит доставка</h2>
+          <div class="grid grid-4">
+            <div class="card">
+              <div
+                style="
+                  background: #2a9d4e;
+                  color: white;
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  margin-bottom: 15px;
+                "
+              >
+                1
+              </div>
+              <h3 class="card-title">Оформление заказа</h3>
+              <p class="card-text">
+                Вы выбираете трактор, способ доставки и оплаты. Менеджер
+                подтверждает заказ и согласовывает детали.
+              </p>
+            </div>
+
+            <div class="card">
+              <div
+                style="
+                  background: #2a9d4e;
+                  color: white;
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  margin-bottom: 15px;
+                "
+              >
+                2
+              </div>
+              <h3 class="card-title">Подготовка к отправке</h3>
+              <p class="card-text">
+                Проводим предпродажную подготовку, упаковываем технику и готовим
+                комплект документов.
+              </p>
+            </div>
+
+            <div class="card">
+              <div
+                style="
+                  background: #2a9d4e;
+                  color: white;
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  margin-bottom: 15px;
+                "
+              >
+                3
+              </div>
+              <h3 class="card-title">Отправка</h3>
+              <p class="card-text">
+                Передаем технику в транспортную компанию или нашему водителю.
+                Высылаем номер для отслеживания.
+              </p>
+            </div>
+
+            <div class="card">
+              <div
+                style="
+                  background: #2a9d4e;
+                  color: white;
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  margin-bottom: 15px;
+                "
+              >
+                4
+              </div>
+              <h3 class="card-title">Получение</h3>
+              <p class="card-text">
+                Вы получаете трактор, проверяете комплектность, подписываете
+                документы о приемке.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div style="text-align: center; margin-top: 50px">
+          <a
+            href="catalog.html"
+            class="btn btn-primary"
+            style="margin-right: 15px"
+            >Выбрать трактор</a
+          >
+          <a href="contacts.html" class="btn btn-outline"
+            >Рассчитать доставку</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>DONGFENG</h3>
+            <p>Официальный дилер минитракторов в России</p>
+          </div>
+          <div class="footer-section">
+            <h3>Каталог</h3>
+            <a href="catalog.html" class="footer-link">Все модели</a>
+            <a href="catalog.html?power=20-30" class="footer-link"
+              >20-30 л.с.</a
+            >
+            <a href="catalog.html?power=30-40" class="footer-link"
+              >30-40 л.с.</a
+            >
+            <a href="catalog.html?power=40+" class="footer-link">40+ л.с.</a>
+          </div>
+          <div class="footer-section">
+            <h3>Информация</h3>
+            <a href="about.html" class="footer-link">О компании</a>
+            <a href="delivery.html" class="footer-link">Доставка</a>
+            <a href="warranty.html" class="footer-link">Гарантия</a>
+            <a href="payment.html" class="footer-link">Оплата</a>
+          </div>
+          <div class="footer-section">
+            <h3>Контакты</h3>
+            <a href="tel:+79699995668" class="footer-link"
+              >📞 +7 (969) 999-56-68</a
+            >
+            <a href="mailto:info@dongfeng-rf.ru" class="footer-link"
+              >📧 info@dongfeng-rf.ru</a
+            >
+            <a href="contacts.html" class="footer-link">📍 Наши адреса</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          © 2025 DONGFENG Минитрактора. Все права защищены.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleSidebar() {
+        const menu = document.getElementById("sidebarMenu");
+        const overlay = document.getElementById("sidebarOverlay");
+        menu.classList.toggle("active");
+        overlay.classList.toggle("active");
+      }
+
+      function closeSidebar() {
+        const menu = document.getElementById("sidebarMenu");
+        const overlay = document.getElementById("sidebarOverlay");
+        menu.classList.remove("active");
+        overlay.classList.remove("active");
+      }
+    </script>
+  </body>
 </html>

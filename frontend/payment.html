@@ -1,1458 +1,828 @@
 <!doctype html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Способы оплаты DONGFENG - Наличные, безналичный расчет, рассрочка
+    </title>
+    <meta
+      name="description"
+      content="Удобные способы оплаты при покупке минитракторов DONGFENG: наличные, банковский перевод, оплата картой, рассрочка и кредит от банков-партнеров."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://res.cloudinary.com/drenz1aia/image/upload/v1760698083/dongfeng-minitraktor/favicon.svg"
+    />
+    <link rel="stylesheet" href="/css/unified-style.css" />
+  </head>
+  <body>
+    <!-- Кнопка открытия меню -->
+    <button class="sidebar-toggle" onclick="toggleSidebar()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
 
-        <!-- SEO Meta Tags для РФ и СНГ -->
-        <title>
-            Оплата минитракторов DONGFENG - Наличный и безналичный расчет,
-            кредит, лизинг
-        </title>
-        <meta
-            name="description"
-            content="Способы оплаты минитракторов DONGFENG: наличный расчет, банковский перевод, кредит от банков партнеров, лизинг для юридических лиц. Принимаем все банковские карты. Оплата при получении."
-        />
-        <meta
-            name="keywords"
-            content="оплата минитрактора, купить трактор в кредит, лизинг сельхозтехники, безналичный расчет, оплата картой, dongfeng оплата"
-        />
+    <!-- Overlay -->
+    <div
+      class="sidebar-overlay"
+      id="sidebarOverlay"
+      onclick="closeSidebar()"
+    ></div>
 
-        <!-- Open Graph для соцсетей (VK, OK, Telegram) -->
-        <meta
-            property="og:title"
-            content="Оплата минитракторов DONGFENG - Удобные способы оплаты"
-        />
-        <meta
-            property="og:description"
-            content="Наличный и безналичный расчет, кредит от банков партнеров, лизинг. Принимаем все банковские карты. Оплата при получении."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-            property="og:url"
-            content="https://dongfeng-minitraktor.ru/payment.html"
-        />
-        <meta
-            property="og:image"
-            content="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg"
-        />
-        <meta property="og:locale" content="ru_RU" />
+    <!-- Вертикальное меню -->
+    <aside class="sidebar-menu" id="sidebarMenu">
+      <div class="sidebar-menu__header">
+        <a href="index.html" class="sidebar-menu__logo">🚜 DONGFENG</a>
+        <button class="sidebar-menu__close" onclick="closeSidebar()">×</button>
+      </div>
 
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Оплата минитракторов DONGFENG" />
-        <meta
-            name="twitter:description"
-            content="Удобные способы оплаты: наличные, безналичный расчет, кредит, лизинг"
-        />
-
-        <!-- Дополнительные мета-теги -->
-        <meta name="robots" content="index, follow" />
-        <meta name="language" content="Russian" />
-        <meta http-equiv="content-language" content="ru-RU" />
-
-        <!-- Canonical URL -->
-        <link
-            rel="canonical"
-            href="https://dongfeng-minitraktor.ru/payment.html"
-        />
-
-        <!-- Favicon -->
-        <link
-            rel="icon"
-            type="image/png"
-            href="https://res.cloudinary.com/drenz1aia/image/upload/v1760698083/dongfeng-minitraktor/favicon.svg"
-        />
-
-        <!-- CSS -->
-        <link rel="stylesheet" href="css/variables.css?v=1761211422" />
-        <link rel="stylesheet" href="css/reset.css?v=1761211422" />
-        <link rel="stylesheet" href="css/components.css?v=1761211422" />
-        <link rel="stylesheet" href="css/effects.css?v=1761211422" />
-        <link rel="stylesheet" href="css/main.css?v=1761211422" />
-        <link rel="stylesheet" href="css/modal.css?v=1761211422" />
-        <link rel="stylesheet" href="css/header-new.css?v=1761211422" />
-        <link rel="stylesheet" href="css/modern-header.css?v=1761991144" />
-        <link rel="stylesheet" href="css/promo-blocks.css?v=1761211422" />
-        <link rel="stylesheet" href="css/catalog-modals.css?v=1761211422" />
-        <link rel="stylesheet" href="css/mobile-menu.css?v=1761211422" />
-        <link rel="stylesheet" href="css/cart-buttons-fix.css?v=1761995152" />
-        <link rel="stylesheet" href="css/vertical-menu.css" />
-        <link rel="stylesheet" href="css/mobile-improvements.css" />
-
-        <!-- Schema.org разметка -->
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "WebPage",
-                "name": "Оплата минитракторов DONGFENG",
-                "description": "Способы оплаты минитракторов: наличный расчет, банковский перевод, кредит, лизинг",
-                "url": "https://dongfeng-minitraktor.ru/payment.html",
-                "mainEntity": {
-                    "@type": "Organization",
-                    "name": "DONGFENG - Официальный дилер минитракторов",
-                    "paymentAccepted": [
-                        "Cash",
-                        "Credit Card",
-                        "Invoice",
-                        "Leasing"
-                    ],
-                    "telephone": "+7-969-999-56-68",
-                    "email": "info@btferm.com"
-                }
-            }
-        </script>
-    </head>
-    <body class="with-sidebar">
-        <!-- Кнопка переключения sidebar (для мобильных) - СПРАВА ВВЕРХУ -->
-        <button
-            class="sidebar-toggle"
-            onclick="toggleSidebar()"
-            aria-label="Меню"
-        >
-            <svg
+      <nav class="sidebar-menu__nav">
+        <ul class="sidebar-menu__list">
+          <li class="sidebar-menu__item">
+            <a href="index.html" class="sidebar-menu__link">
+              <svg
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              </svg>
+              Главная
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a
+              href="catalog.html"
+              class="sidebar-menu__link sidebar-menu__link--orange"
             >
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        </button>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              Каталог
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="about.html" class="sidebar-menu__link">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              О компании
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="delivery.html" class="sidebar-menu__link">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+              Доставка
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="payment.html" class="sidebar-menu__link active">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+              Оплата
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="warranty.html" class="sidebar-menu__link">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              Гарантия
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="contacts.html" class="sidebar-menu__link">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Контакты
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="cart.html" class="sidebar-menu__link">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path
+                  d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                ></path>
+              </svg>
+              Корзина
+            </a>
+          </li>
+        </ul>
 
-        <!-- Overlay для мобильных устройств -->
-        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        <div class="sidebar-menu__divider"></div>
 
-        <!-- Вертикальное боковое меню -->
-        <aside class="sidebar-menu" id="sidebarMenu">
-            <!-- Заголовок с кнопкой закрытия -->
-            <div class="sidebar-menu__header">
-                <button
-                    class="sidebar-menu__close"
-                    onclick="closeSidebar()"
-                    aria-label="Закрыть"
-                >
-                    ×
-                </button>
+        <div class="sidebar-menu__section-title">Дополнительно</div>
+        <ul class="sidebar-menu__list">
+          <li class="sidebar-menu__item">
+            <a href="articles.html" class="sidebar-menu__link">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                ></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              Статьи
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="media.html" class="sidebar-menu__link">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect
+                  x="2"
+                  y="2"
+                  width="20"
+                  height="20"
+                  rx="2.18"
+                  ry="2.18"
+                ></rect>
+                <line x1="7" y1="2" x2="7" y2="22"></line>
+                <line x1="17" y1="2" x2="17" y2="22"></line>
+              </svg>
+              Медиа
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-menu__footer">
+        <div class="sidebar-menu__contacts">
+          <div style="color: #666; margin-bottom: 10px; font-weight: 600">
+            Контакты
+          </div>
+          <a href="tel:+79699995668">📞 +7 (969) 999-56-68</a>
+          <a href="mailto:info@dongfeng-rf.ru">✉️ info@dongfeng-rf.ru</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-top">
+        <div class="container">
+          <div class="header-top-content">
+            <div>📍 Белгород, Курск, Брянск, Липецк</div>
+            <div class="header-contacts">
+              <a href="mailto:info@dongfeng-rf.ru">📧 info@dongfeng-rf.ru</a>
             </div>
+          </div>
+        </div>
+      </div>
 
-            <!-- Кнопка скрытия/показа sidebar (только десктоп) -->
-            <div class="sidebar-collapse-toggle">
-                <button
-                    class="sidebar-desktop-toggle"
-                    onclick="toggleSidebarDesktop()"
-                    title="Свернуть/развернуть меню"
-                >
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                </button>
+      <div class="header-main">
+        <div class="container">
+          <div class="header-content">
+            <a href="index.html" class="logo">DONGFENG</a>
+            <div class="search-bar">
+              <form class="search-form" action="catalog.html">
+                <input
+                  type="text"
+                  class="search-input"
+                  name="search"
+                  placeholder="Поиск тракторов..."
+                />
+                <button type="submit" class="search-btn">🔍 Найти</button>
+              </form>
             </div>
+            <div class="header-actions">
+              <a href="tel:+79699995668" class="header-phone"
+                >📞 +7 (969) 999-56-68</a
+              >
+              <a href="cart.html" class="cart-btn">🛒 Корзина</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-            <!-- Навигация -->
-            <nav class="sidebar-menu__nav">
-                <ul class="sidebar-menu__list">
-                    <!-- Главная -->
-                    <li class="sidebar-menu__item">
-                        <a href="index.html" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-                                ></path>
-                                <polyline
-                                    points="9 22 9 12 15 12 15 22"
-                                ></polyline>
-                            </svg>
-                            Главная
-                        </a>
-                    </li>
+      <nav class="nav">
+        <div class="container">
+          <ul class="nav-list">
+            <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+            <li><a href="about.html" class="nav-link">О компании</a></li>
+            <li><a href="delivery.html" class="nav-link">Доставка</a></li>
+            <li><a href="warranty.html" class="nav-link">Гарантия</a></li>
+            <li><a href="payment.html" class="nav-link active">Оплата</a></li>
+            <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-                    <!-- Каталог - ОРАНЖЕВЫЙ -->
-                    <li class="sidebar-menu__item">
-                        <a
-                            href="catalog.html"
-                            class="sidebar-menu__link sidebar-menu__link--orange"
-                        >
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                            Каталог
-                        </a>
-                    </li>
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">Способы оплаты</h1>
+        <p class="page-subtitle">Выберите удобный способ оплаты техники</p>
+      </div>
+    </section>
 
-                    <!-- Оплата -->
-                    <li class="sidebar-menu__item">
-                        <a href="payment.html" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <rect
-                                    x="1"
-                                    y="4"
-                                    width="22"
-                                    height="16"
-                                    rx="2"
-                                    ry="2"
-                                ></rect>
-                                <line x1="1" y1="10" x2="23" y2="10"></line>
-                            </svg>
-                            Оплата
-                        </a>
-                    </li>
-
-                    <!-- Доставка -->
-                    <li class="sidebar-menu__item">
-                        <a href="delivery.html" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <rect x="1" y="3" width="15" height="13"></rect>
-                                <polygon
-                                    points="16 8 20 8 23 11 23 16 16 16 16 8"
-                                ></polygon>
-                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
-                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
-                            </svg>
-                            Доставка
-                        </a>
-                    </li>
-
-                    <!-- Гарантия -->
-                    <li class="sidebar-menu__item">
-                        <a href="warranty.html" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
-                                ></path>
-                            </svg>
-                            Гарантия
-                        </a>
-                    </li>
-
-                    <!-- Акции - ЗЕЛЕНЫЙ -->
-                    <li class="sidebar-menu__item">
-                        <a
-                            href="#"
-                            class="sidebar-menu__link sidebar-menu__link--green"
-                        >
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <polygon
-                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                                ></polygon>
-                            </svg>
-                            Акции
-                        </a>
-                    </li>
-
-                    <!-- Лизинг -->
-                    <li class="sidebar-menu__item">
-                        <a href="#" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M12 6v6l4 2"></path>
-                            </svg>
-                            Лизинг
-                        </a>
-                    </li>
-
-                    <!-- Медиа -->
-                    <li class="sidebar-menu__item">
-                        <a href="media.html" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <rect
-                                    x="2"
-                                    y="2"
-                                    width="20"
-                                    height="20"
-                                    rx="2.18"
-                                    ry="2.18"
-                                ></rect>
-                                <line x1="7" y1="2" x2="7" y2="22"></line>
-                                <line x1="17" y1="2" x2="17" y2="22"></line>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <line x1="2" y1="7" x2="7" y2="7"></line>
-                                <line x1="2" y1="17" x2="7" y2="17"></line>
-                                <line x1="17" y1="17" x2="22" y2="17"></line>
-                                <line x1="17" y1="7" x2="22" y2="7"></line>
-                            </svg>
-                            Медиа
-                        </a>
-                    </li>
-
-                    <!-- О нас -->
-                    <li class="sidebar-menu__item">
-                        <a href="about.html" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="12" y1="16" x2="12" y2="12"></line>
-                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                            </svg>
-                            О нас
-                        </a>
-                    </li>
-
-                    <!-- Лизинг и Гранты -->
-                    <li class="sidebar-menu__item">
-                        <a href="#" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                                ></path>
-                                <circle cx="8.5" cy="7" r="4"></circle>
-                                <line x1="20" y1="8" x2="20" y2="14"></line>
-                                <line x1="23" y1="11" x2="17" y2="11"></line>
-                            </svg>
-                            Лизинг и Гранты
-                        </a>
-                    </li>
-
-                    <!-- Покупателям -->
-                    <li class="sidebar-menu__item">
-                        <a href="#" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
-                                ></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                            Покупателям
-                        </a>
-                    </li>
-
-                    <!-- Отгрузки -->
-                    <li class="sidebar-menu__item">
-                        <a href="#" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                                ></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
-                            Отгрузки
-                        </a>
-                    </li>
-
-                    <!-- Отзывы -->
-                    <li class="sidebar-menu__item">
-                        <a href="#" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-                                ></path>
-                            </svg>
-                            Отзывы
-                        </a>
-                    </li>
-
-                    <!-- Блог -->
-                    <li class="sidebar-menu__item">
-                        <a href="#" class="sidebar-menu__link">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path d="M12 20h9"></path>
-                                <path
-                                    d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
-                                ></path>
-                            </svg>
-                            Блог
-                        </a>
-                    </li>
+    <!-- Page Content -->
+    <section class="page-content">
+      <div class="container">
+        <!-- Способы оплаты -->
+        <div class="content-section">
+          <h2 class="section-title">Доступные способы оплаты</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <div
+                style="font-size: 48px; text-align: center; margin-bottom: 15px"
+              >
+                💵
+              </div>
+              <h3 class="card-title" style="text-align: center">
+                Наличный расчет
+              </h3>
+              <p class="card-text">
+                Оплата наличными при получении техники в наших
+                представительствах в Белгороде, Курске, Брянске или Липецке.
+                Самый быстрый и простой способ оплаты. Предоставляем все
+                необходимые документы: товарный чек, гарантийный талон.
+              </p>
+              <div
+                style="
+                  margin-top: 20px;
+                  padding: 15px;
+                  background: #f5f5f5;
+                  border-radius: 8px;
+                "
+              >
+                <div style="font-weight: 600; margin-bottom: 8px">
+                  Преимущества:
+                </div>
+                <ul style="margin: 0; padding-left: 20px; font-size: 14px">
+                  <li>Моментальная оплата</li>
+                  <li>Никаких комиссий</li>
+                  <li>Сразу забираете технику</li>
                 </ul>
-            </nav>
-
-            <!-- Селектор города внизу -->
-            <div class="sidebar-city-selector">
-                <button
-                    class="sidebar-city-selector__btn"
-                    onclick="toggleSidebarCitySelector()"
-                >
-                    <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-                        <path
-                            d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                        />
-                        <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    <span id="sidebarSelectedCity">Белгород</span>
-                    <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-                        <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                </button>
-                <div
-                    class="sidebar-city-selector__dropdown"
-                    id="sidebarCityDropdown"
-                >
-                    <div class="sidebar-city-selector__title">
-                        Выберите ваш город:
-                    </div>
-                    <ul class="sidebar-city-selector__list">
-                        <li onclick="selectSidebarCity('Белгород')">
-                            Белгород
-                        </li>
-                        <li onclick="selectSidebarCity('Курск')">Курск</li>
-                        <li onclick="selectSidebarCity('Воронеж')">Воронеж</li>
-                        <li onclick="selectSidebarCity('Орёл')">Орёл</li>
-                        <li onclick="selectSidebarCity('Тула')">Тула</li>
-                        <li onclick="selectSidebarCity('Липецк')">Липецк</li>
-                        <li onclick="selectSidebarCity('Брянск')">Брянск</li>
-                    </ul>
-                </div>
-            </div>
-        </aside>
-
-
-
-        <!-- Modern Header -->
-        <header class="modern-header modern-header--with-sidebar">
-            <div class="modern-header__container">
-                <div class="modern-header__main">
-                    <!-- Left Section: City + Catalog -->
-                    <div class="modern-header__left">                        <!-- City Selector -->
-                        <div class="city-selector-modern">
-                            <button
-                                class="city-selector-modern__btn"
-                                onclick="toggleCitySelector()"
-                            >
-                                <svg
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                >
-                                    <path
-                                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                    />
-                                    <circle cx="12" cy="10" r="3" />
-                                </svg>
-                                <span id="selectedCity">Белгород</span>
-                                <svg
-                                    width="12"
-                                    height="12"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                >
-                                    <polyline points="6 9 12 15 18 9" />
-                                </svg>
-                            </button>
-                            <div
-                                class="city-selector-modern__dropdown"
-                                id="cityDropdown"
-                            >
-                                <div class="city-selector-modern__title">
-                                    Выберите ваш город:
-                                </div>
-                                <ul class="city-selector-modern__list">
-                                    <li onclick="selectCity('Белгород')">
-                                        Белгород
-                                    </li>
-                                    <li onclick="selectCity('Курск')">Курск</li>
-                                    <li onclick="selectCity('Воронеж')">
-                                        Воронеж
-                                    </li>
-                                    <li onclick="selectCity('Орёл')">Орёл</li>
-                                    <li onclick="selectCity('Тула')">Тула</li>
-                                    <li onclick="selectCity('Липецк')">
-                                        Липецк
-                                    </li>
-                                    <li onclick="selectCity('Брянск')">
-                                        Брянск
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Catalog Button -->
-                        <a href="catalog.html" class="catalog-btn-modern">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <line x1="3" y1="12" x2="21" y2="12"></line>
-                                <line x1="3" y1="6" x2="21" y2="6"></line>
-                                <line x1="3" y1="18" x2="21" y2="18"></line>
-                            </svg>
-                            КАТАЛОГ
-                        </a>
-                    </div>
-
-                    <!-- Center Section: Navigation -->
-                    <div class="modern-header__nav">
-                        <ul class="nav-menu-modern">
-                            <li><a href="index.html">ГЛАВНАЯ</a></li>
-                            <li><a href="payment.html">ОПЛАТА</a></li>
-                            <li><a href="delivery.html">ДОСТАВКА</a></li>
-                            <li><a href="warranty.html">ГАРАНТИЯ</a></li>
-                            <li><a href="contacts.html">КОНТАКТЫ</a></li>
-                            <li><a href="media.html">МЕДИА</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Right Section: Icons -->
-                    <div class="modern-header__actions">
-                        <!-- Compare -->
-                        <a href="compare.html" class="action-btn">
-                            <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                            >
-                                <line x1="8" y1="6" x2="8" y2="18" />
-                                <line x1="16" y1="6" x2="16" y2="18" />
-                            </svg>
-                            <span class="action-btn__text">Сравнение</span>
-                            <span
-                                class="action-btn__badge"
-                                id="compareCount"
-                                style="display: none"
-                                >0</span
-                            >
-                        </a>
-
-                        <!-- Favorites -->
-                        <a href="favorites.html" class="action-btn">
-                            <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                                />
-                            </svg>
-                            <span class="action-btn__text">Избранное</span>
-                            <span
-                                class="action-btn__badge"
-                                id="favoritesCount"
-                                style="display: none"
-                                >0</span
-                            >
-                        </a>
-
-                        <!-- Cart -->
-                        <a href="cart.html" class="action-btn action-btn--cart">
-                            <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="white"
-                                stroke-width="2"
-                            >
-                                <circle cx="12" cy="12" r="11" fill="#2a9d4e" />
-                                <path
-                                    d="M8 9L6 11H18L16 9H8Z"
-                                    stroke="white"
-                                    stroke-width="1.5"
-                                />
-                                <path
-                                    d="M6 11H18L17 17H7L6 11Z"
-                                    stroke="white"
-                                    stroke-width="1.5"
-                                />
-                            </svg>
-                            <span class="action-btn__text">Корзина</span>
-                            <span
-                                class="action-btn__badge"
-                                id="cartCount"
-                                style="display: none"
-                                >0</span
-                            >
-                        </a>
-
-                        <!-- Auth Button -->
-                        <button
-                            class="action-btn action-btn--auth"
-                            onclick="handleAuth()"
-                        >
-                            <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path
-                                    d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
-                                />
-                                <circle cx="12" cy="7" r="4" />
-                            </svg>
-                            <span class="action-btn__text">Войти</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <main class="main-content">
-            <!-- Хлебные крошки -->
-            <div class="container">
-                <div class="breadcrumbs">
-                    <a href="index.html">Главная</a>
-                    <span>/</span>
-                    <span>Оплата</span>
-                </div>
+              </div>
             </div>
 
-            <!-- Секция "Оплата" -->
-            <section class="payment-section">
-                <div class="container">
-                    <h1 class="section-title">Способы оплаты</h1>
-                    <p class="section-subtitle">
-                        Мы предлагаем удобные и безопасные способы оплаты
-                        минитракторов DONGFENG
-                    </p>
-
-                    <!-- Основные способы оплаты -->
-                    <div class="payment__grid">
-                        <!-- Наличный расчет -->
-                        <div class="payment-card">
-                            <div class="payment-card__icon">
-                                <svg
-                                    width="48"
-                                    height="48"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                >
-                                    <path
-                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"
-                                        fill="currentColor"
-                                    />
-                                </svg>
-                            </div>
-                            <h3 class="payment-card__title">Наличный расчет</h3>
-                            <p class="payment-card__description">
-                                Оплата наличными при получении техники на складе
-                                или курьеру при доставке.
-                            </p>
-                            <ul class="payment-card__features">
-                                <li>Оплата при получении товара</li>
-                                <li>Возможность осмотра перед оплатой</li>
-                                <li>Выдача кассового чека</li>
-                                <li>Полный пакет документов</li>
-                            </ul>
-                        </div>
-
-                        <!-- Банковский перевод -->
-                        <div class="payment-card">
-                            <div class="payment-card__icon">
-                                <svg
-                                    width="48"
-                                    height="48"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                >
-                                    <path
-                                        d="M4 10h16M4 14h16M6 6h12v12H6V6z"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    />
-                                    <path
-                                        d="M21 6V4H3v2M21 18v2H3v-2"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                    />
-                                </svg>
-                            </div>
-                            <h3 class="payment-card__title">
-                                Банковский перевод
-                            </h3>
-                            <p class="payment-card__description">
-                                Безналичная оплата для физических и юридических
-                                лиц по реквизитам компании.
-                            </p>
-                            <ul class="payment-card__features">
-                                <li>Оплата по счету для юр. лиц</li>
-                                <li>Перевод со счета физ. лица</li>
-                                <li>Работа с НДС и без НДС</li>
-                                <li>Полный комплект документов</li>
-                            </ul>
-                        </div>
-
-                        <!-- Кредит -->
-                        <div class="payment-card payment-card--featured">
-                            <div class="payment-card__badge">Популярно</div>
-                            <div class="payment-card__icon">
-                                <svg
-                                    width="48"
-                                    height="48"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                >
-                                    <rect
-                                        x="2"
-                                        y="5"
-                                        width="20"
-                                        height="14"
-                                        rx="2"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                    />
-                                    <path
-                                        d="M2 10h20M6 14h4"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                    />
-                                </svg>
-                            </div>
-                            <h3 class="payment-card__title">КРЕДИТ</h3>
-                            <p class="payment-card__subtitle">
-                                От банков Партнеров
-                            </p>
-                            <p class="payment-card__description">
-                                Беспроцентный кредит на 12 месяцев без
-                                первоначального взноса и переплат.
-                            </p>
-                            <ul class="payment-card__features">
-                                <li>Без первоначального взноса</li>
-                                <li>Без процентов и переплат</li>
-                                <li>Срок до 12 месяцев</li>
-                                <li>Одобрение за 15 минут</li>
-                            </ul>
-                            <button
-                                class="btn btn--primary btn--block"
-                                onclick="openCallbackModal()"
-                            >
-                                Оформить кредит
-                            </button>
-                        </div>
-
-                        <!-- Лизинг -->
-                        <div class="payment-card">
-                            <div class="payment-card__icon">
-                                <svg
-                                    width="48"
-                                    height="48"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                >
-                                    <path
-                                        d="M9 2L7 7H21L19 2H9Z"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    />
-                                    <path
-                                        d="M7 7H21L19 17H9L7 7Z"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    />
-                                    <circle
-                                        cx="10"
-                                        cy="21"
-                                        r="1"
-                                        fill="currentColor"
-                                    />
-                                    <circle
-                                        cx="18"
-                                        cy="21"
-                                        r="1"
-                                        fill="currentColor"
-                                    />
-                                </svg>
-                            </div>
-                            <h3 class="payment-card__title">
-                                Лизинг для юр. лиц
-                            </h3>
-                            <p class="payment-card__description">
-                                Финансовая аренда техники для организаций и
-                                индивидуальных предпринимателей.
-                            </p>
-                            <ul class="payment-card__features">
-                                <li>Первый взнос от 10%</li>
-                                <li>Срок лизинга до 5 лет</li>
-                                <li>Техника на балансе лизингодателя</li>
-                                <li>Налоговые преимущества</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Принимаем банковские карты -->
-                    <div class="payment-cards">
-                        <h2 class="section-subtitle">
-                            Принимаем к оплате банковские карты
-                        </h2>
-                        <div class="payment-cards__icons">
-                            <div class="payment-cards__item">
-                                <svg
-                                    width="60"
-                                    height="40"
-                                    viewBox="0 0 60 40"
-                                    fill="none"
-                                >
-                                    <rect
-                                        width="60"
-                                        height="40"
-                                        rx="4"
-                                        fill="#0066B2"
-                                    />
-                                    <text
-                                        x="50%"
-                                        y="50%"
-                                        dominant-baseline="middle"
-                                        text-anchor="middle"
-                                        fill="white"
-                                        font-size="12"
-                                        font-weight="bold"
-                                    >
-                                        Visa
-                                    </text>
-                                </svg>
-                            </div>
-                            <div class="payment-cards__item">
-                                <svg
-                                    width="60"
-                                    height="40"
-                                    viewBox="0 0 60 40"
-                                    fill="none"
-                                >
-                                    <rect
-                                        width="60"
-                                        height="40"
-                                        rx="4"
-                                        fill="#EB001B"
-                                    />
-                                    <circle
-                                        cx="22"
-                                        cy="20"
-                                        r="10"
-                                        fill="#FF5F00"
-                                        opacity="0.8"
-                                    />
-                                    <circle
-                                        cx="38"
-                                        cy="20"
-                                        r="10"
-                                        fill="#F79E1B"
-                                        opacity="0.8"
-                                    />
-                                </svg>
-                                <span>Mastercard</span>
-                            </div>
-                            <div class="payment-cards__item">
-                                <svg
-                                    width="60"
-                                    height="40"
-                                    viewBox="0 0 60 40"
-                                    fill="none"
-                                >
-                                    <rect
-                                        width="60"
-                                        height="40"
-                                        rx="4"
-                                        fill="#1A1F71"
-                                    />
-                                    <text
-                                        x="50%"
-                                        y="50%"
-                                        dominant-baseline="middle"
-                                        text-anchor="middle"
-                                        fill="white"
-                                        font-size="10"
-                                        font-weight="bold"
-                                    >
-                                        МИР
-                                    </text>
-                                </svg>
-                            </div>
-                            <div class="payment-cards__item">
-                                <svg
-                                    width="60"
-                                    height="40"
-                                    viewBox="0 0 60 40"
-                                    fill="none"
-                                >
-                                    <rect
-                                        width="60"
-                                        height="40"
-                                        rx="4"
-                                        fill="#00B4E6"
-                                    />
-                                    <text
-                                        x="50%"
-                                        y="50%"
-                                        dominant-baseline="middle"
-                                        text-anchor="middle"
-                                        fill="white"
-                                        font-size="9"
-                                        font-weight="bold"
-                                    >
-                                        Maestro
-                                    </text>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Реквизиты для оплаты -->
-                    <div class="payment-details">
-                        <h2 class="section-title">Реквизиты для оплаты</h2>
-                        <div class="payment-details__content">
-                            <div class="payment-details__info">
-                                <div class="detail-row">
-                                    <span class="detail-label"
-                                        >Наименование:</span
-                                    >
-                                    <span class="detail-value"
-                                        >ИП Иванов Иван Иванович</span
-                                    >
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">ИНН:</span>
-                                    <span class="detail-value"
-                                        >312345678901</span
-                                    >
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">ОГРНИП:</span>
-                                    <span class="detail-value"
-                                        >123456789012345</span
-                                    >
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label"
-                                        >Расчетный счет:</span
-                                    >
-                                    <span class="detail-value"
-                                        >40802810100000000001</span
-                                    >
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Банк:</span>
-                                    <span class="detail-value"
-                                        >ПАО "Сбербанк"</span
-                                    >
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">БИК:</span>
-                                    <span class="detail-value">044525225</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label"
-                                        >Корр. счет:</span
-                                    >
-                                    <span class="detail-value"
-                                        >30101810400000000225</span
-                                    >
-                                </div>
-                            </div>
-                            <div class="payment-details__note">
-                                <p>
-                                    <strong
-                                        >Для получения счета на оплату:</strong
-                                    >
-                                </p>
-                                <p>
-                                    Свяжитесь с нашим менеджером по телефону
-                                    <a href="tel:+79699995668"
-                                        >+7 (969) 999-56-68</a
-                                    >
-                                    или оставьте заявку, и мы выставим счет с
-                                    актуальными реквизитами.
-                                </p>
-                                <button
-                                    class="btn btn--primary"
-                                    onclick="openCallbackModal()"
-                                >
-                                    Запросить счет
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Информация о кредите -->
-                    <div class="installment-info">
-                        <h2 class="section-title">Как оформить кредит?</h2>
-                        <div class="installment-steps">
-                            <div class="step-card">
-                                <div class="step-card__number">1</div>
-                                <h3 class="step-card__title">
-                                    Выберите технику
-                                </h3>
-                                <p class="step-card__text">
-                                    Выберите подходящую модель минитрактора из
-                                    нашего каталога и оформите заявку.
-                                </p>
-                            </div>
-                            <div class="step-card">
-                                <div class="step-card__number">2</div>
-                                <h3 class="step-card__title">
-                                    Заполните анкету
-                                </h3>
-                                <p class="step-card__text">
-                                    Предоставьте паспортные данные и контактную
-                                    информацию для проверки.
-                                </p>
-                            </div>
-                            <div class="step-card">
-                                <div class="step-card__number">3</div>
-                                <h3 class="step-card__title">
-                                    Получите одобрение
-                                </h3>
-                                <p class="step-card__text">
-                                    Решение по вашей заявке принимается в
-                                    течение 15 минут.
-                                </p>
-                            </div>
-                            <div class="step-card">
-                                <div class="step-card__number">4</div>
-                                <h3 class="step-card__title">
-                                    Получите технику
-                                </h3>
-                                <p class="step-card__text">
-                                    После одобрения подпишите договор и получите
-                                    минитрактор.
-                                </p>
-                            </div>
-                        </div>
-                        <div
-                            style="
-                                text-align: center;
-                                margin-top: var(--space-xl);
-                            "
-                        >
-                            <p
-                                style="
-                                    margin-bottom: var(--space-md);
-                                    font-size: var(--font-size-lg);
-                                "
-                            >
-                                <strong
-                                    >Для оформления кредита необходим только
-                                    паспорт</strong
-                                >
-                            </p>
-                            <button
-                                class="btn btn--primary btn--large"
-                                onclick="openCallbackModal()"
-                            >
-                                Оформить кредит сейчас
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Лизинг для юридических лиц -->
-                    <div class="leasing-info">
-                        <h2 class="section-title">
-                            Лизинг для юридических лиц
-                        </h2>
-                        <p class="section-subtitle">
-                            Выгодное решение для развития вашего бизнеса
-                        </p>
-
-                        <div class="leasing-benefits">
-                            <div class="benefit-item">
-                                <div class="benefit-item__icon">✓</div>
-                                <div class="benefit-item__content">
-                                    <h3>Минимальный аванс</h3>
-                                    <p>
-                                        Первоначальный взнос от 10% от стоимости
-                                        техники
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="benefit-item">
-                                <div class="benefit-item__icon">✓</div>
-                                <div class="benefit-item__content">
-                                    <h3>Гибкие условия</h3>
-                                    <p>
-                                        Срок лизинга от 1 до 5 лет по вашему
-                                        выбору
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="benefit-item">
-                                <div class="benefit-item__icon">✓</div>
-                                <div class="benefit-item__content">
-                                    <h3>Налоговые льготы</h3>
-                                    <p>
-                                        Лизинговые платежи относятся на расходы,
-                                        уменьшая налогооблагаемую базу
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="benefit-item">
-                                <div class="benefit-item__icon">✓</div>
-                                <div class="benefit-item__content">
-                                    <h3>Простое оформление</h3>
-                                    <p>
-                                        Минимальный пакет документов и быстрое
-                                        рассмотрение заявки
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="leasing-documents">
-                            <h3>Документы для оформления лизинга:</h3>
-                            <ul class="documents-list">
-                                <li>Заявка на лизинг (заполняется у нас)</li>
-                                <li>Копия паспорта руководителя</li>
-                                <li>
-                                    Учредительные документы (устав,
-                                    свидетельство ОГРН, ИНН)
-                                </li>
-                                <li>
-                                    Бухгалтерская отчетность за последний год
-                                </li>
-                                <li>Выписка из ЕГРЮЛ (не старше 30 дней)</li>
-                            </ul>
-                            <div style="margin-top: var(--space-lg)">
-                                <button
-                                    class="btn btn--primary"
-                                    onclick="openCallbackModal()"
-                                >
-                                    Получить консультацию по лизингу
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Безопасность оплаты -->
-                    <div class="payment-security">
-                        <h2 class="section-title">Безопасность платежей</h2>
-                        <div class="security-features">
-                            <div class="security-item">
-                                <div class="security-item__icon">🔒</div>
-                                <h3>Защищенное соединение</h3>
-                                <p>
-                                    Все платежи проходят через защищенный
-                                    SSL-канал
-                                </p>
-                            </div>
-                            <div class="security-item">
-                                <div class="security-item__icon">🛡️</div>
-                                <h3>Конфиденциальность</h3>
-                                <p>
-                                    Данные банковских карт не передаются нам,
-                                    обработка идет на стороне банка
-                                </p>
-                            </div>
-                            <div class="security-item">
-                                <div class="security-item__icon">✅</div>
-                                <h3>Гарантия возврата</h3>
-                                <p>
-                                    В случае отказа от покупки деньги
-                                    возвращаются в течение 10 рабочих дней
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Часто задаваемые вопросы -->
-                    <div class="payment-faq">
-                        <h2 class="section-title">Часто задаваемые вопросы</h2>
-                        <div class="faq-list">
-                            <div class="faq-item">
-                                <h3 class="faq-question">
-                                    Можно ли оплатить минитрактор частями?
-                                </h3>
-                                <p class="faq-answer">
-                                    Да, мы предлагаем беспроцентный кредит на 12
-                                    месяцев от банков партнеров без
-                                    первоначального взноса. Также доступен
-                                    лизинг для юридических лиц со сроком до 5
-                                    лет.
-                                </p>
-                            </div>
-                            <div class="faq-item">
-                                <h3 class="faq-question">
-                                    Принимаете ли вы оплату картой?
-                                </h3>
-                                <p class="faq-answer">
-                                    Да, мы принимаем все основные банковские
-                                    карты: Visa, Mastercard, МИР, Maestro.
-                                </p>
-                            </div>
-                            <div class="faq-item">
-                                <h3 class="faq-question">
-                                    Как получить счет на оплату для юридического
-                                    лица?
-                                </h3>
-                                <p class="faq-answer">
-                                    Свяжитесь с нашим менеджером по телефону +7
-                                    (969) 999-56-68 или оставьте заявку на
-                                    сайте. Мы выставим счет с полными
-                                    реквизитами и отправим вам на email.
-                                </p>
-                            </div>
-                            <div class="faq-item">
-                                <h3 class="faq-question">
-                                    Какие документы я получу после оплаты?
-                                </h3>
-                                <p class="faq-answer">
-                                    После оплаты вы получите полный пакет
-                                    документов: договор купли-продажи, кассовый
-                                    чек, товарную накладную, гарантийный талон и
-                                    паспорт на технику.
-                                </p>
-                            </div>
-                            <div class="faq-item">
-                                <h3 class="faq-question">
-                                    Можно ли вернуть деньги, если передумаю?
-                                </h3>
-                                <p class="faq-answer">
-                                    Да, в соответствии с законом о защите прав
-                                    потребителей вы можете вернуть технику в
-                                    течение 14 дней с момента покупки, если она
-                                    не была в эксплуатации. Деньги возвращаются
-                                    в течение 10 рабочих дней.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="card">
+              <div
+                style="font-size: 48px; text-align: center; margin-bottom: 15px"
+              >
+                🏦
+              </div>
+              <h3 class="card-title" style="text-align: center">
+                Банковский перевод
+              </h3>
+              <p class="card-text">
+                Безналичный расчет для юридических лиц и индивидуальных
+                предпринимателей. Работаем с НДС, предоставляем полный пакет
+                документов: счет, счет-фактура, товарная накладная, акт
+                выполненных работ.
+              </p>
+              <div
+                style="
+                  margin-top: 20px;
+                  padding: 15px;
+                  background: #f5f5f5;
+                  border-radius: 8px;
+                "
+              >
+                <div style="font-weight: 600; margin-bottom: 8px">
+                  Преимущества:
                 </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer__bottom">
-                    <p>
-                        &copy; 2025 DONGFENG Минитрактора. Все права защищены.
-                    </p>
-                    <div class="footer__links">
-                        <a href="privacy.html">Политика конфиденциальности</a>
-                        <a href="terms.html">Пользовательское соглашение</a>
-                    </div>
-                </div>
+                <ul style="margin: 0; padding-left: 20px; font-size: 14px">
+                  <li>Для юридических лиц</li>
+                  <li>Полный пакет документов</li>
+                  <li>Отсрочка платежа до 14 дней</li>
+                </ul>
+              </div>
             </div>
-        </footer>
 
-        <!-- Модальное окно обратной связи -->
-        <div class="modal-overlay" id="callbackModal">
-            <div class="modal">
-                <button
-                    class="modal__close"
-                    onclick="closeCallbackModal()"
-                    aria-label="Закрыть"
-                >
-                    ×
-                </button>
-
-                <div class="modal__content">
-                    <h2 class="modal__title">Заказать звонок</h2>
-                    <p class="modal__subtitle">
-                        Оставьте свои контакты и мы перезвоним в течение 15
-                        минут
-                    </p>
-
-                    <form
-                        class="modal__form"
-                        id="callbackForm"
-                        onsubmit="submitCallbackForm(event)"
-                    >
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Ваше имя"
-                            required
-                            minlength="2"
-                        />
-
-                        <input
-                            type="tel"
-                            name="phone"
-                            placeholder="Телефон"
-                            required
-                        />
-
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Email (необязательно)"
-                        />
-
-                        <textarea
-                            name="message"
-                            placeholder="Ваш вопрос или комментарий (необязательно)"
-                            rows="4"
-                        ></textarea>
-
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="consent" required />
-                            <span
-                                >Я подтверждаю согласие на обработку
-                                персональных данных</span
-                            >
-                        </label>
-
-                        <button
-                            type="submit"
-                            class="btn btn--primary btn--block"
-                        >
-                            Отправить заявку
-                        </button>
-
-                        <p class="modal__privacy">
-                            Нажимая кнопку, вы соглашаетесь с
-                            <a href="#">политикой конфиденциальности</a>
-                        </p>
-                    </form>
-
-                    <div class="modal__success" style="display: none">
-                        <div class="modal__success-icon">✅</div>
-                        <h3 class="modal__success-title">Спасибо за заявку!</h3>
-                        <p class="modal__success-text">
-                            Мы свяжемся с вами в ближайшее время
-                        </p>
-                        <button
-                            class="btn btn--primary"
-                            onclick="closeCallbackModal()"
-                        >
-                            Закрыть
-                        </button>
-                    </div>
+            <div class="card">
+              <div
+                style="font-size: 48px; text-align: center; margin-bottom: 15px"
+              >
+                💳
+              </div>
+              <h3 class="card-title" style="text-align: center">
+                Оплата картой
+              </h3>
+              <p class="card-text">
+                Оплата банковскими картами Visa, MasterCard, Mir через
+                POS-терминал в наших офисах или онлайн на сайте. Безопасные
+                платежи с защитой 3D-Secure. Мгновенное зачисление средств.
+              </p>
+              <div
+                style="
+                  margin-top: 20px;
+                  padding: 15px;
+                  background: #f5f5f5;
+                  border-radius: 8px;
+                "
+              >
+                <div style="font-weight: 600; margin-bottom: 8px">
+                  Преимущества:
                 </div>
+                <ul style="margin: 0; padding-left: 20px; font-size: 14px">
+                  <li>Удобно и безопасно</li>
+                  <li>Без комиссии</li>
+                  <li>Моментальное зачисление</li>
+                </ul>
+              </div>
             </div>
+
+            <div class="card">
+              <div
+                style="font-size: 48px; text-align: center; margin-bottom: 15px"
+              >
+                📊
+              </div>
+              <h3 class="card-title" style="text-align: center">
+                Рассрочка и кредит
+              </h3>
+              <p class="card-text">
+                Покупка минитрактора в рассрочку или кредит от банков-партнеров.
+                Ставки от 9,9% годовых. Срок кредитования до 60 месяцев.
+                Минимальный первоначальный взнос от 10%. Быстрое рассмотрение
+                заявки.
+              </p>
+              <div
+                style="
+                  margin-top: 20px;
+                  padding: 15px;
+                  background: #f5f5f5;
+                  border-radius: 8px;
+                "
+              >
+                <div style="font-weight: 600; margin-bottom: 8px">
+                  Преимущества:
+                </div>
+                <ul style="margin: 0; padding-left: 20px; font-size: 14px">
+                  <li>Низкий первый взнос</li>
+                  <li>Выгодные проценты</li>
+                  <li>До 5 лет кредит</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- JavaScript -->
-        <script src="js/config.js"></script>
-        <script src="js/header-icons-animation.js"></script>
-        <script src="js/global-cart.js"></script>
-        <script src="js/app.js"></script>
-        <script src="js/catalog.js"></script>
-        <script src="js/mobile-menu.js"></script>
-        <script src="js/vertical-menu.js"></script>
-        <script src="js/modern-header.js"></script>
-</body>
+        <!-- Рассрочка и кредит -->
+        <div class="content-section">
+          <h2 class="section-title">Рассрочка и кредит</h2>
+          <p class="section-text">
+            Мы сотрудничаем с ведущими банками России, предоставляющими выгодные
+            условия кредитования для покупки сельскохозяйственной техники.
+            Оформление кредита занимает 1-2 дня.
+          </p>
+          <div class="grid grid-3">
+            <div class="card">
+              <div
+                style="
+                  background: #2a9d4e;
+                  color: white;
+                  padding: 10px 15px;
+                  border-radius: 8px;
+                  display: inline-block;
+                  margin-bottom: 15px;
+                  font-weight: 700;
+                "
+              >
+                Сбербанк
+              </div>
+              <h3 class="card-title">От 9,9% годовых</h3>
+              <ul style="list-style: none; padding: 0; font-size: 14px">
+                <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0">
+                  <span style="font-weight: 600">Первый взнос:</span> от 10%
+                </li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0">
+                  <span style="font-weight: 600">Срок:</span> до 60 месяцев
+                </li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0">
+                  <span style="font-weight: 600">Решение:</span> 1 день
+                </li>
+                <li style="padding: 8px 0">
+                  <span style="font-weight: 600">Сумма:</span> до 5 млн ₽
+                </li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div
+                style="
+                  background: #2a9d4e;
+                  color: white;
+                  padding: 10px 15px;
+                  border-radius: 8px;
+                  display: inline-block;
+                  margin-bottom: 15px;
+                  font-weight: 700;
+                "
+              >
+                ВТБ
+              </div>
+              <h3 class="card-title">От 10,5% годовых</h3>
+              <ul style="list-style: none; padding: 0; font-size: 14px">
+                <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0">
+                  <span style="font-weight: 600">Первый взнос:</span> от 15%
+                </li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0">
+                  <span style="font-weight: 600">Срок:</span> до 48 месяцев
+                </li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0">
+                  <span style="font-weight: 600">Решение:</span> 2 дня
+                </li>
+                <li style="padding: 8px 0">
+                  <span style="font-weight: 600">Сумма:</span> до 3 млн ₽
+                </li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div
+                style="
+                  background: #2a9d4e;
+                  color: white;
+                  padding: 10px 15px;
+                  border-radius: 8px;
+                  display: inline-block;
+                  margin-bottom: 15px;
+                  font-weight: 700;
+                "
+              >
+                Россельхозбанк
+              </div>
+              <h3 class="card-title">От 8,5% годовых</h3>
+              <ul style="list-style: none; padding: 0; font-size: 14px">
+                <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0">
+                  <span style="font-weight: 600">Первый взнос:</span> от 10%
+                </li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0">
+                  <span style="font-weight: 600">Срок:</span> до 60 месяцев
+                </li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #f0f0f0">
+                  <span style="font-weight: 600">Решение:</span> 1-2 дня
+                </li>
+                <li style="padding: 8px 0">
+                  <span style="font-weight: 600">Сумма:</span> до 7 млн ₽
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            style="
+              background: #e3f2fd;
+              padding: 20px;
+              border-radius: 12px;
+              margin-top: 25px;
+              border-left: 4px solid #2a9d4e;
+            "
+          >
+            <div style="font-weight: 600; margin-bottom: 10px; color: #2a9d4e">
+              💡 Специальные программы
+            </div>
+            <p style="margin: 0; color: #666">
+              Для фермеров и сельхозпроизводителей действуют льготные программы
+              господдержки с субсидированием процентной ставки до 5% годовых.
+              Подробности уточняйте у наших менеджеров.
+            </p>
+          </div>
+        </div>
+
+        <!-- Документы для кредита -->
+        <div class="content-section">
+          <h2 class="section-title">Документы для оформления кредита</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <h3 class="card-title">Для физических лиц</h3>
+              <ul style="list-style: none; padding: 0">
+                <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0">
+                  📋 Паспорт гражданина РФ
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0">
+                  📋 Второй документ (СНИЛС, водительские права)
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0">
+                  📋 Справка о доходах (2-НДФЛ или по форме банка)
+                </li>
+                <li style="padding: 10px 0">📋 Заполненная анкета банка</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3 class="card-title">Для юридических лиц / ИП</h3>
+              <ul style="list-style: none; padding: 0">
+                <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0">
+                  📋 Паспорт руководителя
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0">
+                  📋 Устав и учредительные документы
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0">
+                  📋 Выписка из ЕГРЮЛ/ЕГРИП
+                </li>
+                <li style="padding: 10px 0">
+                  📋 Бухгалтерская отчетность за последний период
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Процесс оплаты -->
+        <div class="content-section">
+          <h2 class="section-title">Как происходит оплата</h2>
+          <div class="grid grid-4">
+            <div class="card">
+              <div
+                style="
+                  background: #2a9d4e;
+                  color: white;
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  margin-bottom: 15px;
+                "
+              >
+                1
+              </div>
+              <h3 class="card-title">Выбор трактора</h3>
+              <p class="card-text">
+                Выбираете подходящую модель в каталоге, согласовываете цену и
+                комплектацию с менеджером.
+              </p>
+            </div>
+
+            <div class="card">
+              <div
+                style="
+                  background: #2a9d4e;
+                  color: white;
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  margin-bottom: 15px;
+                "
+              >
+                2
+              </div>
+              <h3 class="card-title">Выбор способа оплаты</h3>
+              <p class="card-text">
+                Выбираете удобный способ оплаты: наличные, карта, безналичный
+                расчет или кредит.
+              </p>
+            </div>
+
+            <div class="card">
+              <div
+                style="
+                  background: #2a9d4e;
+                  color: white;
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  margin-bottom: 15px;
+                "
+              >
+                3
+              </div>
+              <h3 class="card-title">Оформление документов</h3>
+              <p class="card-text">
+                Подписываете договор купли-продажи, акт приема-передачи.
+                Получаете все документы на технику.
+              </p>
+            </div>
+
+            <div class="card">
+              <div
+                style="
+                  background: #2a9d4e;
+                  color: white;
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  margin-bottom: 15px;
+                "
+              >
+                4
+              </div>
+              <h3 class="card-title">Получение техники</h3>
+              <p class="card-text">
+                После оплаты забираете трактор самостоятельно или заказываете
+                доставку в ваш регион.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Безопасность платежей -->
+        <div class="content-section">
+          <h2 class="section-title">Безопасность платежей</h2>
+          <div class="grid grid-3">
+            <div class="card">
+              <div
+                style="font-size: 36px; text-align: center; margin-bottom: 15px"
+              >
+                🔒
+              </div>
+              <h3 class="card-title" style="text-align: center">
+                Защищенные транзакции
+              </h3>
+              <p class="card-text">
+                Все онлайн-платежи защищены по стандарту PCI DSS. Используем
+                протокол 3D-Secure для дополнительной безопасности.
+              </p>
+            </div>
+
+            <div class="card">
+              <div
+                style="font-size: 36px; text-align: center; margin-bottom: 15px"
+              >
+                📄
+              </div>
+              <h3 class="card-title" style="text-align: center">
+                Полный пакет документов
+              </h3>
+              <p class="card-text">
+                Предоставляем все документы: договор, чеки, гарантийный талон,
+                паспорт транспортного средства, ПТС.
+              </p>
+            </div>
+
+            <div class="card">
+              <div
+                style="font-size: 36px; text-align: center; margin-bottom: 15px"
+              >
+                ✅
+              </div>
+              <h3 class="card-title" style="text-align: center">
+                Официальный дилер
+              </h3>
+              <p class="card-text">
+                Мы официальный дилер DONGFENG в России. Все платежи
+                осуществляются на расчетный счет юридического лица.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div
+          style="
+            background: linear-gradient(135deg, #2a9d4e 0%, #1a7a3a 100%);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+          "
+        >
+          <h2 style="margin-bottom: 15px; font-size: 28px">
+            Есть вопросы по оплате?
+          </h2>
+          <p style="margin-bottom: 25px; opacity: 0.95">
+            Наши специалисты помогут подобрать оптимальный способ оплаты и
+            оформить кредит
+          </p>
+          <a href="contacts.html" class="btn btn-secondary"
+            >Получить консультацию</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>DONGFENG</h3>
+            <p>Официальный дилер минитракторов в России</p>
+          </div>
+          <div class="footer-section">
+            <h3>Каталог</h3>
+            <a href="catalog.html" class="footer-link">Все модели</a>
+            <a href="catalog.html?power=20-30" class="footer-link"
+              >20-30 л.с.</a
+            >
+            <a href="catalog.html?power=30-40" class="footer-link"
+              >30-40 л.с.</a
+            >
+            <a href="catalog.html?power=40+" class="footer-link">40+ л.с.</a>
+          </div>
+          <div class="footer-section">
+            <h3>Информация</h3>
+            <a href="about.html" class="footer-link">О компании</a>
+            <a href="delivery.html" class="footer-link">Доставка</a>
+            <a href="warranty.html" class="footer-link">Гарантия</a>
+            <a href="payment.html" class="footer-link">Оплата</a>
+          </div>
+          <div class="footer-section">
+            <h3>Контакты</h3>
+            <a href="tel:+79699995668" class="footer-link"
+              >📞 +7 (969) 999-56-68</a
+            >
+            <a href="mailto:info@dongfeng-rf.ru" class="footer-link"
+              >📧 info@dongfeng-rf.ru</a
+            >
+            <a href="contacts.html" class="footer-link">📍 Наши адреса</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          © 2025 DONGFENG Минитрактора. Все права защищены.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleSidebar() {
+        const menu = document.getElementById("sidebarMenu");
+        const overlay = document.getElementById("sidebarOverlay");
+        menu.classList.toggle("active");
+        overlay.classList.toggle("active");
+      }
+
+      function closeSidebar() {
+        const menu = document.getElementById("sidebarMenu");
+        const overlay = document.getElementById("sidebarOverlay");
+        menu.classList.remove("active");
+        overlay.classList.remove("active");
+      }
+    </script>
+  </body>
 </html>
