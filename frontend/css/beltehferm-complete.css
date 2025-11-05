@@ -885,11 +885,7 @@ body:not(.light-theme) .sustainability-stat-label {
     gap: 0.25rem;
   }
 
-  /* Скрываем эмодзи на очень маленьких экранах */
-  .header-phone::before {
-    content: "📞";
-    margin-right: 0.25rem;
-  }
+  /* Иконка телефона убрана */
 }
 
 /* ===== PRINT STYLES ===== */
