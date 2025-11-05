@@ -466,11 +466,11 @@ body.terra-bg-dark .terra-badge {
 
 /* Анимированная сетка в темной теме */
 body.terra-bg-dark .terra-grid-bg {
-  opacity: 0.15;
+  opacity: 0.12;
   background-image:
-    linear-gradient(rgba(16, 185, 129, 0.3) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16, 185, 129, 0.3) 1px, transparent 1px);
-  background-size: 50px 50px;
+    linear-gradient(#10b981 1.5px, transparent 1.5px),
+    linear-gradient(90deg, #10b981 1.5px, transparent 1.5px);
+  background-size: 60px 60px;
 }
 
 body.terra-bg-dark .terra-grid-animated {
