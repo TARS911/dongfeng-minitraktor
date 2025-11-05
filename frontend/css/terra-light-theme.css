@@ -4,6 +4,25 @@
  * БЕЛТЕХФЕРМ брендинг
  */
 
+/* ===== SIDEBAR TOGGLE - Видимость на светлом фоне ===== */
+body.light-theme .sidebar-toggle {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+  border: 2px solid #059669 !important;
+  box-shadow: 0 4px 16px rgba(5, 150, 105, 0.4) !important;
+}
+
+body.light-theme .sidebar-toggle:hover {
+  background: linear-gradient(135deg, #047857 0%, #065f46 100%) !important;
+  border-color: #047857 !important;
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.5) !important;
+  transform: scale(1.05);
+}
+
+body.light-theme .sidebar-toggle svg {
+  stroke: #ffffff !important;
+  stroke-width: 2.5;
+}
+
 :root {
   /* === LIGHT THEME COLORS === */
 

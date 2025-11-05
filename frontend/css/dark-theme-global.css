@@ -75,6 +75,25 @@ body.terra-bg-dark .action-btn svg {
   stroke: #e2e8f0;
 }
 
+/* Sidebar Toggle в темной теме */
+body.terra-bg-dark .sidebar-toggle {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border: 2px solid #10b981 !important;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4) !important;
+}
+
+body.terra-bg-dark .sidebar-toggle:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+  border-color: #059669 !important;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5) !important;
+  transform: scale(1.05);
+}
+
+body.terra-bg-dark .sidebar-toggle svg {
+  stroke: #ffffff !important;
+  stroke-width: 2.5;
+}
+
 /* Боковое меню в темной теме */
 body.terra-bg-dark .sidebar-menu {
   background: #1e293b;
