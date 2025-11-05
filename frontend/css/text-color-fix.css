@@ -19,7 +19,12 @@ th {
 }
 
 /* ===== ЗАГОЛОВКИ - ТЕМНО-СЕРЫЙ ===== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #1f2937 !important;
 }
 
@@ -29,7 +34,10 @@ h1, h2, h3, h4, h5, h6 {
 .product-title,
 .quiz-title,
 .hero h1,
-.terra-hero__title {
+.terra-hero__title,
+.terra-why-choose h2,
+.terra-why-choose h3,
+.why-choose-title {
   color: #1f2937 !important;
 }
 
@@ -58,7 +66,20 @@ a:hover {
 .quiz-start-button,
 .cta-button,
 .gallery-cta,
-.btn {
+.btn,
+.terra-hero__cta,
+.hero .btn,
+.terra-btn,
+.terra-btn-primary,
+.terra-btn-outline {
+  color: white !important;
+}
+
+/* Кнопка "Заказать консультацию" - белый текст */
+.hero .cta-button,
+.hero-cta,
+.consultation-btn,
+.terra-hero__actions a {
   color: white !important;
 }
 
