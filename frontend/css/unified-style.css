@@ -2372,10 +2372,11 @@ body:not(.light-theme) .category-card-large:hover .category-card-icon svg {
 
 /* ===== LIVE GALLERY SLIDER (СЛАЙДЕР ЖИВЫХ ФОТО) ===== */
 .live-gallery-section {
-  padding: 80px 0;
+  padding: 120px 0 80px;
   background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
   position: relative;
   overflow: hidden;
+  margin-top: 0;
 }
 
 .live-gallery-section::before {
