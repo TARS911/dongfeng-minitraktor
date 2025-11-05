@@ -14,14 +14,22 @@ html {
 }
 
 /* HEADER - светло-зеленый фон */
-.header {
+.header,
+.header-main,
+.header-content,
+header {
   background: #f0fdf4 !important;
+  background-color: #f0fdf4 !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
 /* FOOTER - светло-зеленый фон */
-.footer {
+.footer,
+.footer-content,
+.footer-section,
+footer {
   background: #f0fdf4 !important;
+  background-color: #f0fdf4 !important;
   color: #1f2937 !important;
   border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
