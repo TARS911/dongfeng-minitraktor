@@ -1,23 +1,23 @@
 /*
- * LIGHT GREEN BACKGROUND
- * Приятный светло-зеленый фон для всего сайта
+ * WHITE BACKGROUND
+ * Чистый белый фон по умолчанию для всего сайта
  * Убираем зеленый фон с кнопок sidebar
  */
 
-/* ===== ОСНОВНОЙ ФОН САЙТА - СВЕТЛО-ЗЕЛЕНЫЙ ВЕЗДЕ ===== */
+/* ===== ОСНОВНОЙ ФОН САЙТА - БЕЛЫЙ ВЕЗДЕ ===== */
 * {
-  background: #f0fdf4 !important;
+  background: #ffffff !important;
 }
 
 body {
-  background: #f0fdf4 !important;
+  background: #ffffff !important;
 }
 
 html {
-  background: #f0fdf4 !important;
+  background: #ffffff !important;
 }
 
-/* HEADER - светло-зеленый фон ВЕЗДЕ */
+/* HEADER - белый фон ВЕЗДЕ */
 .header,
 .header-main,
 .header-content,
@@ -25,34 +25,34 @@ html {
 .search-bar,
 .header-actions,
 header {
-  background: #f0fdf4 !important;
-  background-color: #f0fdf4 !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
 /* Контейнер в header */
 .header .container {
-  background: #f0fdf4 !important;
-  background-color: #f0fdf4 !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
 }
 
-/* FOOTER - светло-зеленый фон ВЕЗДЕ */
+/* FOOTER - белый фон ВЕЗДЕ */
 .footer,
 .footer-content,
 .footer-section,
 .footer-bottom,
 .footer-main,
 footer {
-  background: #f0fdf4 !important;
-  background-color: #f0fdf4 !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
   color: #1f2937 !important;
   border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
 /* Контейнер в footer */
 .footer .container {
-  background: #f0fdf4 !important;
-  background-color: #f0fdf4 !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
 }
 
 .footer a,
@@ -95,13 +95,13 @@ footer {
   font-weight: 600 !important;
 }
 
-/* ===== СЕКЦИИ НА СВЕТЛОМ ФОНЕ ===== */
+/* ===== СЕКЦИИ НА БЕЛОМ ФОНЕ ===== */
 .advantages-section,
 .tractor-quiz-section,
 .live-gallery-section,
 .catalog-section,
 section {
-  background: #f0fdf4 !important;
+  background: #ffffff !important;
 }
 
 /* ВСЕ СТРАНИЦЫ */
@@ -109,40 +109,40 @@ section {
 .content,
 .main-content,
 .wrapper {
-  background: #f0fdf4 !important;
+  background: #ffffff !important;
 }
 
 /* SIDEBAR */
 .sidebar-menu {
-  background: #f0fdf4 !important;
+  background: #ffffff !important;
   border-left: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
 /* MODAL И OVERLAY */
 .modal-content,
 .overlay {
-  background: #f0fdf4 !important;
+  background: #ffffff !important;
 }
 
 /* МОБИЛЬНОЕ МЕНЮ */
 .mobile-menu {
-  background: #f0fdf4 !important;
+  background: #ffffff !important;
 }
 
-/* ===== КОНТЕНТ БЛОКИ - БЕЛЫЕ НА СВЕТЛОМ ФОНЕ ===== */
+/* ===== КОНТЕНТ БЛОКИ - БЕЛЫЕ НА БЕЛОМ ФОНЕ ===== */
 .advantage-card,
 .category-card,
 .product-card,
 .quiz-container,
 .gallery-cta,
 .terra-why-choose {
-  background: #f0fdf4 !important;
+  background: #ffffff !important;
 }
 
-/* ===== HERO НА СВЕТЛОМ ФОНЕ ===== */
+/* ===== HERO НА БЕЛОМ ФОНЕ ===== */
 .terra-hero,
 .hero {
-  background: #f0fdf4 !important;
+  background: #ffffff !important;
 }
 
 /* ===== КОНТЕЙНЕР ===== */
@@ -150,7 +150,7 @@ section {
   background: transparent !important;
 }
 
-/* ===== ТЕМНАЯ ТЕМА - БЕЗ СВЕТЛО-ЗЕЛЕНОГО ===== */
+/* ===== ТЕМНАЯ ТЕМА - БЕЗ БЕЛОГО ===== */
 body:not(.light-theme) {
   background: #1a1a1a !important;
 }
