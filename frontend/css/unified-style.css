@@ -1046,3 +1046,222 @@ body {
     height: 20px;
   }
 }
+
+/* ===== НОВЫЕ СТРАНИЦЫ: АКЦИИ, ЛИЗИНГ, ГРАНТЫ и т.д. ===== */
+.page-content {
+  padding-top: 120px;
+  padding-bottom: 60px;
+  min-height: 100vh;
+}
+
+.content-section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--terra-gray-900);
+}
+
+.section-text {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: var(--terra-gray-700);
+}
+
+.grid {
+  display: grid;
+  gap: 30px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+  background: var(--terra-white);
+  border: 1px solid var(--terra-gray-200);
+  border-radius: 12px;
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--terra-emerald-500);
+}
+
+.card-icon {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--terra-gray-900);
+}
+
+.card-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--terra-gray-600);
+  margin-bottom: 20px;
+}
+
+.card-price {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 600;
+  color: var(--terra-emerald-600);
+  font-size: 24px;
+}
+
+.card-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.badge-hot {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: white;
+}
+
+.badge-new {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+}
+
+.badge-special {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: white;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.4);
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 14px 32px;
+  background: white;
+  color: var(--terra-emerald-600);
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid var(--terra-emerald-600);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-secondary:hover {
+  background: var(--terra-emerald-600);
+  color: white;
+}
+
+.btn-large {
+  padding: 18px 40px;
+  font-size: 18px;
+}
+
+.cta-section {
+  text-align: center;
+  padding: 60px 30px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-radius: 16px;
+  margin-top: 60px;
+}
+
+.cta-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: var(--terra-gray-900);
+}
+
+.cta-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: var(--terra-gray-700);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Dark theme support */
+body:not(.light-theme) .card {
+  background: var(--terra-gray-800);
+  border-color: var(--terra-gray-700);
+}
+
+body:not(.light-theme) .section-title,
+body:not(.light-theme) .card-title {
+  color: var(--terra-white);
+}
+
+body:not(.light-theme) .section-text,
+body:not(.light-theme) .card-text {
+  color: var(--terra-gray-300);
+}
+
+body:not(.light-theme) .cta-section {
+  background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+}
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .cta-section h2 {
+    font-size: 28px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+  }
+}
