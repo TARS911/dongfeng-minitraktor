@@ -80,16 +80,6 @@ body:not(.light-theme) .beltehferm-logo__text-top {
 /* ===== REMOVED DUPLICATE BACKGROUND ===== */
 /* Background now only in terra-hero section */
 
-.terra-hero__grid-pattern {
-  position: absolute;
-  inset: 0;
-  opacity: 0.03;
-  background-image:
-    linear-gradient(#059669 1px, transparent 1px),
-    linear-gradient(90deg, #059669 1px, transparent 1px);
-  background-size: 50px 50px;
-  pointer-events: none;
-}
 
 /* ===== MOBILE OPTIMIZATIONS ===== */
 @media (max-width: 768px) {
