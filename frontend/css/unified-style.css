@@ -2776,6 +2776,14 @@ body:not(.light-theme) .live-photo-title {
 }
 
 body:not(.light-theme) .advantage-text,
+
+body:not(.light-theme) .advantage-link {
+  color: #6ee7b7 !important;
+}
+
+body:not(.light-theme) .advantage-link:hover {
+  color: #86efac !important;
+}
 body:not(.light-theme) .quiz-badge,
 body:not(.light-theme) .gallery-info-location,
 body:not(.light-theme) .gallery-info-desc,
@@ -2794,3 +2802,4 @@ body:not(.light-theme) .quiz-badge {
   border-color: #047857 !important;
   color: #d1fae5 !important;
 }
+
