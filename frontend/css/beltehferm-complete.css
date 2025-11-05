@@ -868,8 +868,27 @@ body:not(.light-theme) .sustainability-stat-label {
 /* Мобильная версия */
 @media (max-width: 768px) {
   .header-phone {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
+    display: flex !important;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    min-width: auto;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+  .header-phone {
+    display: flex !important;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+    gap: 0.25rem;
+  }
+
+  /* Скрываем эмодзи на очень маленьких экранах */
+  .header-phone::before {
+    content: "📞";
+    margin-right: 0.25rem;
   }
 }
 
