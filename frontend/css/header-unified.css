@@ -1,0 +1,245 @@
+/*
+ * HEADER UNIFIED
+ * Единый размер всех элементов в header
+ * Аккуратная мобильная версия
+ */
+
+/* ===== HEADER КОНТЕЙНЕР ===== */
+.header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 12px 20px !important;
+  gap: 16px !important;
+}
+
+.header-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+}
+
+/* ===== ЛОГОТИП ===== */
+.header-logo,
+.beltehferm-logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  min-width: 120px !important;
+}
+
+.beltehferm-logo__icon {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.beltehferm-logo__text {
+  font-size: 14px !important;
+}
+
+/* ===== ПОИСК ===== */
+.header-search {
+  flex: 1 !important;
+  max-width: 500px !important;
+  display: flex !important;
+}
+
+.search-input {
+  height: 40px !important;
+  font-size: 14px !important;
+  padding: 0 12px !important;
+}
+
+.search-btn {
+  height: 40px !important;
+  padding: 0 16px !important;
+  font-size: 14px !important;
+  white-space: nowrap !important;
+}
+
+/* ===== ACTION BUTTONS - ЕДИНЫЙ РАЗМЕР ===== */
+.header-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* Все кнопки одного размера */
+.action-btn,
+.header-phone,
+.theme-toggle,
+.sidebar-toggle {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  border: 1px solid #e0e0e0 !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+}
+
+.action-btn:hover,
+.theme-toggle:hover,
+.sidebar-toggle:hover {
+  background: #f9fafb !important;
+  border-color: #ffa500 !important;
+}
+
+/* Иконки в кнопках */
+.action-btn svg,
+.theme-toggle svg,
+.sidebar-toggle svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* ===== ТЕЛЕФОН - С ТЕКСТОМ ===== */
+.header-phone {
+  width: auto !important;
+  min-width: auto !important;
+  padding: 0 12px !important;
+  background: #ffa500 !important;
+  border-color: #ffa500 !important;
+  color: #1f2937 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+}
+
+.header-phone:hover {
+  background: #ff8c00 !important;
+  border-color: #ff8c00 !important;
+}
+
+/* ===== BADGE КОРЗИНЫ ===== */
+.action-btn__badge {
+  position: absolute !important;
+  top: -4px !important;
+  right: -4px !important;
+  width: 18px !important;
+  height: 18px !important;
+  font-size: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* ===== ТЕКСТ ПОД ИКОНКАМИ - СКРЫТЬ ===== */
+.action-btn__text {
+  display: none !important;
+}
+
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
+@media (max-width: 1024px) {
+  /* Скрываем поиск на планшетах */
+  .header-search {
+    max-width: 300px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 8px 12px !important;
+    gap: 8px !important;
+  }
+
+  /* Скрываем поиск на мобильных */
+  .header-search {
+    display: none !important;
+  }
+
+  /* Логотип меньше */
+  .beltehferm-logo__icon {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .beltehferm-logo__text-top {
+    font-size: 13px !important;
+  }
+
+  .beltehferm-logo__text-bottom {
+    font-size: 10px !important;
+  }
+
+  /* Все кнопки 36px */
+  .action-btn,
+  .theme-toggle,
+  .sidebar-toggle {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+  }
+
+  .action-btn svg,
+  .theme-toggle svg,
+  .sidebar-toggle svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  /* Телефон компактнее */
+  .header-phone {
+    padding: 0 10px !important;
+    font-size: 13px !important;
+    height: 36px !important;
+  }
+
+  /* Уменьшаем gap */
+  .header-actions {
+    gap: 6px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Совсем маленький экран */
+  .header {
+    padding: 6px 10px !important;
+  }
+
+  /* Скрываем текст телефона, только иконка */
+  .header-phone {
+    width: 36px !important;
+    padding: 0 !important;
+    font-size: 0 !important;
+  }
+
+  .header-phone::before {
+    content: "📞" !important;
+    font-size: 18px !important;
+  }
+
+  /* Еще меньше логотип */
+  .beltehferm-logo__text {
+    font-size: 12px !important;
+  }
+}
+
+/* ===== ВЫРАВНИВАНИЕ ===== */
+.header-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  flex: 0 0 auto !important;
+}
+
+.header-center {
+  flex: 1 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.header-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex: 0 0 auto !important;
+}
