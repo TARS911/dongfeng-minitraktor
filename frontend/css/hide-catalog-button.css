@@ -1,0 +1,50 @@
+/*
+ * HIDE CATALOG BUTTON
+ * Убираем кнопку "Смотреть каталог" везде
+ */
+
+/* ===== УБИРАЕМ КНОПКУ "СМОТРЕТЬ КАТАЛОГ" ===== */
+.terra-btn-primary {
+  display: none !important;
+}
+
+/* Оставляем только кнопку "Заказать консультацию" */
+.terra-btn-outline {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 14px 28px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+  background: #ffa500 !important;
+  border: 2px solid #ffa500 !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: all 0.2s !important;
+  box-shadow: 0 2px 8px rgba(255, 165, 0, 0.2) !important;
+}
+
+.terra-btn-outline:hover {
+  background: #ff8c00 !important;
+  border-color: #ff8c00 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3) !important;
+}
+
+/* ===== ЦЕНТРИРУЕМ ОСТАВШУЮСЯ КНОПКУ ===== */
+.terra-hero__actions {
+  justify-content: center !important;
+  gap: 0 !important;
+}
+
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
+@media (max-width: 768px) {
+  .terra-btn-outline {
+    width: 100% !important;
+    max-width: 300px !important;
+    justify-content: center !important;
+    padding: 12px 24px !important;
+    font-size: 15px !important;
+  }
+}
