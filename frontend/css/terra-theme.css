@@ -509,13 +509,13 @@
 
 .sidebar-menu__link--gradient-blue,
 .sidebar-menu__link--orange {
-  background: var(--terra-emerald-10) !important;
+  background: transparent !important;
   color: var(--terra-emerald-400) !important;
 }
 
 .sidebar-menu__link--gradient-blue:hover,
 .sidebar-menu__link--orange:hover {
-  background: var(--terra-emerald-20) !important;
+  background: transparent !important;
 }
 
 /* Sidebar Toggle Button */

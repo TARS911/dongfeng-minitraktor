@@ -621,14 +621,14 @@ body {
 }
 
 .sidebar-menu__link--orange {
-  background: #f8f9fa;
+  background: transparent !important;
   color: #1f2937;
   font-weight: 600;
   box-shadow: 0 2px 8px rgba(255, 91, 26, 0.25);
 }
 
 .sidebar-menu__link--orange:hover {
-  background: #f8f9fa;
+  background: transparent !important;
   transform: translateX(4px);
   box-shadow: 0 4px 12px rgba(255, 91, 26, 0.35);
 }
@@ -992,14 +992,14 @@ body {
 
 /* ===== SIDEBAR MENU LINK VARIANTS ===== */
 .sidebar-menu__link--gradient-blue {
-  background: #f8f9fa;
+  background: transparent !important;
   color: #1f2937 !important;
   border-radius: 8px;
   font-weight: 600;
 }
 
 .sidebar-menu__link--gradient-blue:hover {
-  background: #f8f9fa;
+  background: transparent !important;
 }
 
 .sidebar-menu__link--gradient-blue svg {

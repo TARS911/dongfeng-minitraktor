@@ -209,7 +209,7 @@ body.light-theme {
 
 .light-theme .sidebar-menu__link--gradient-blue,
 .light-theme .sidebar-menu__link--orange {
-  background: var(--light-emerald-100) !important;
+  background: transparent !important;
   color: var(--light-emerald-700) !important;
 }
 
