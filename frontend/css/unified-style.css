@@ -106,9 +106,11 @@ body {
 }
 
 .header-actions {
-  display: flex;
+  display: flex !important;
+  flex-direction: row !important;
   gap: 20px;
   align-items: center;
+  flex-wrap: nowrap !important;
 }
 
 .header-phone {
