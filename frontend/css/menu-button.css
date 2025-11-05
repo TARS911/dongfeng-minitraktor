@@ -39,6 +39,10 @@
   flex-shrink: 0 !important;
 }
 
+.sidebar-toggle svg line {
+  stroke: #000000 !important;
+}
+
 .sidebar-toggle__text {
   color: #1f2937 !important;
   font-size: 12px !important;
@@ -80,6 +84,10 @@ body:not(.light-theme) .sidebar-toggle:hover {
 }
 
 body:not(.light-theme) .sidebar-toggle svg {
+  stroke: #000000 !important;
+}
+
+body:not(.light-theme) .sidebar-toggle svg line {
   stroke: #000000 !important;
 }
 
