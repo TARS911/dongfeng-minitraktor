@@ -17,8 +17,8 @@
   font-size: 16px !important;
   font-weight: 600 !important;
   color: #1f2937 !important;
-  background: #ffa500 !important;
-  border: 2px solid #ffa500 !important;
+  background: transparent !important;
+  border: 2px solid transparent !important;
   border-radius: 8px !important;
   text-decoration: none !important;
   transition: all 0.2s !important;
@@ -26,8 +26,8 @@
 }
 
 .terra-btn-outline:hover {
-  background: #ff8c00 !important;
-  border-color: #ff8c00 !important;
+  background: transparent !important;
+  border-color: transparent !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3) !important;
 }

@@ -63,7 +63,7 @@ footer {
 
 .footer a:hover,
 .footer-link:hover {
-  color: #ffa500 !important;
+  color: transparent !important;
 }
 
 .footer-title {
@@ -87,12 +87,12 @@ footer {
 
 .sidebar-menu__link:hover {
   background: rgba(255, 165, 0, 0.1) !important;
-  color: #ffa500 !important;
+  color: transparent !important;
 }
 
 .sidebar-menu__link--active {
   background: rgba(255, 165, 0, 0.15) !important;
-  color: #ffa500 !important;
+  color: transparent !important;
   font-weight: 600 !important;
 }
 

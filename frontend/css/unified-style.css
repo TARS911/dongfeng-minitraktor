@@ -34,7 +34,7 @@ body {
 }
 
 .header-top {
-  background: #ffa500;
+  background: transparent;
   color: white;
   padding: 8px 0;
   font-size: 13px;
@@ -67,7 +67,7 @@ body {
 .logo {
   font-size: 28px;
   font-weight: 800;
-  color: #ffa500;
+  color: transparent;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -79,7 +79,7 @@ body {
 
 .search-form {
   display: flex;
-  border: 2px solid #ffa500;
+  border: 2px solid transparent;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -92,7 +92,7 @@ body {
 }
 
 .search-btn {
-  background: #ffa500;
+  background: transparent;
   color: white;
   border: none;
   padding: 12px 25px;
@@ -116,7 +116,7 @@ body {
 .header-phone {
   font-size: 18px;
   font-weight: 700;
-  color: #ffa500;
+  color: transparent;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -160,7 +160,7 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-  color: #ffa500;
+  color: transparent;
 }
 
 /* ===== PAGE CONTENT ===== */
@@ -219,7 +219,7 @@ body {
 }
 
 .btn-primary {
-  background: #ffa500;
+  background: transparent;
   color: white;
 }
 
@@ -240,12 +240,12 @@ body {
 
 .btn-outline {
   background: transparent;
-  border: 2px solid #ffa500;
-  color: #ffa500;
+  border: 2px solid transparent;
+  color: transparent;
 }
 
 .btn-outline:hover {
-  background: #ffa500;
+  background: transparent;
   color: white;
 }
 
@@ -324,7 +324,7 @@ body {
 .form-textarea:focus,
 .form-select:focus {
   outline: none;
-  border-color: #ffa500;
+  border-color: transparent;
 }
 
 .form-textarea {
@@ -376,7 +376,7 @@ body {
 }
 
 .product-badge.new {
-  background: #ffa500;
+  background: transparent;
 }
 
 .product-title {
@@ -396,7 +396,7 @@ body {
 .product-price {
   font-size: 24px;
   font-weight: 700;
-  color: #ffa500;
+  color: transparent;
   margin-bottom: 15px;
 }
 
@@ -458,7 +458,7 @@ body {
   top: 20px;
   width: 50px;
   height: 50px;
-  background: #ffa500;
+  background: transparent;
   border: none;
   border-radius: 12px;
   display: flex;
@@ -605,7 +605,7 @@ body {
 
 .sidebar-menu__link:hover {
   background: #f0fdf4;
-  color: #ffa500;
+  color: transparent;
 }
 
 .sidebar-menu__link.active {
@@ -660,7 +660,7 @@ body {
 
 .sidebar-menu__contacts a {
   display: block;
-  color: #ffa500;
+  color: transparent;
   text-decoration: none;
   font-weight: 600;
   margin: 8px 0;
@@ -742,7 +742,7 @@ body {
 .advantage-icon {
   font-size: 48px;
   margin-bottom: 20px;
-  color: #ffa500;
+  color: transparent;
 }
 
 .advantage-title {
@@ -783,7 +783,7 @@ body {
 
 .category-card:hover {
   transform: translateY(-8px);
-  border-color: #ffa500;
+  border-color: transparent;
   background: #f0fdf4;
   box-shadow: 0 8px 24px rgba(42, 157, 78, 0.2);
 }
@@ -938,7 +938,7 @@ body {
 
 /* Корзина с синим фоном */
 .action-btn--cart svg circle {
-  fill: #ffa500;
+  fill: transparent;
 }
 
 .action-btn--cart:hover svg circle {
@@ -947,7 +947,7 @@ body {
 
 /* Кнопка входа */
 .action-btn--auth {
-  color: #ffa500;
+  color: transparent;
   font-weight: 600;
 }
 
@@ -978,7 +978,7 @@ body {
 
 .city-selector:hover {
   background: #ebebeb;
-  border-color: #ffa500;
+  border-color: transparent;
 }
 
 .city-selector span {
@@ -987,7 +987,7 @@ body {
 }
 
 .city-selector svg {
-  color: #ffa500;
+  color: transparent;
 }
 
 /* ===== SIDEBAR MENU LINK VARIANTS ===== */
@@ -1460,12 +1460,12 @@ body:not(.light-theme) .city-option:hover {
 .city-card svg {
   width: 32px;
   height: 32px;
-  color: #ffa500;
+  color: transparent;
 }
 
 .city-card:hover {
   background: #ecfdf5;
-  border-color: #ffa500;
+  border-color: transparent;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(5, 150, 105, 0.15);
 }
@@ -1502,8 +1502,8 @@ body:not(.light-theme) .city-card {
 }
 
 body:not(.light-theme) .city-card:hover {
-  background: #ffa500;
-  border-color: #ffa500;
+  background: transparent;
+  border-color: transparent;
 }
 
 @media (max-width: 640px) {
@@ -1688,7 +1688,7 @@ body:not(.light-theme) .city-card:hover {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #ffa500;
+  color: transparent;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
@@ -1702,7 +1702,7 @@ body:not(.light-theme) .city-card:hover {
 }
 
 .advantage-link:hover {
-  color: #ffa500;
+  color: transparent;
 }
 
 .advantage-link:hover svg {
@@ -1876,7 +1876,7 @@ body:not(.light-theme) .section-subtitle {
 .quiz-check-icon {
   width: 24px;
   height: 24px;
-  color: #ffa500;
+  color: transparent;
   flex-shrink: 0;
 }
 
@@ -2004,7 +2004,7 @@ body:not(.light-theme) .section-subtitle {
 .quiz-floating-card svg {
   width: 28px;
   height: 28px;
-  color: #ffa500;
+  color: transparent;
 }
 
 .quiz-card-1 {
@@ -2199,7 +2199,7 @@ body:not(.light-theme) .quiz-floating-card {
 
 .category-card-large:hover {
   transform: translateY(-8px);
-  border-color: #ffa500;
+  border-color: transparent;
   box-shadow: 0 20px 40px rgba(5, 150, 105, 0.15);
 }
 
@@ -2218,7 +2218,7 @@ body:not(.light-theme) .quiz-floating-card {
 .category-card-icon svg {
   width: 56px;
   height: 56px;
-  stroke: #ffa500;
+  stroke: transparent;
   stroke-width: 1.5;
   transition: all 0.3s ease;
 }
@@ -2299,7 +2299,7 @@ body:not(.light-theme) .category-card-icon {
 }
 
 body:not(.light-theme) .category-card-icon svg {
-  stroke: #ffa500;
+  stroke: transparent;
 }
 
 body:not(.light-theme) .category-card-large:hover .category-card-icon {
@@ -2491,12 +2491,12 @@ body:not(.light-theme) .category-card-large:hover .category-card-icon svg {
 .gallery-nav svg {
   width: 24px;
   height: 24px;
-  color: #ffa500;
+  color: transparent;
   transition: all 0.3s ease;
 }
 
 .gallery-nav:hover {
-  background: #ffa500;
+  background: transparent;
   transform: translateY(-50%) scale(1.1);
   box-shadow: 0 12px 32px rgba(5, 150, 105, 0.3);
 }
@@ -2593,11 +2593,11 @@ body:not(.light-theme) .gallery-nav {
 }
 
 body:not(.light-theme) .gallery-nav svg {
-  color: #ffa500;
+  color: transparent;
 }
 
 body:not(.light-theme) .gallery-nav:hover {
-  background: #ffa500;
+  background: transparent;
 }
 
 body:not(.light-theme) .gallery-nav:hover svg {
@@ -2798,8 +2798,8 @@ body:not(.light-theme) .live-photo-card {
 }
 
 body:not(.light-theme) .quiz-badge {
-  background: #ffa500 !important;
-  border-color: #ffa500 !important;
+  background: transparent !important;
+  border-color: transparent !important;
   color: #d1fae5 !important;
 }
 

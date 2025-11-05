@@ -85,7 +85,7 @@
 }
 
 .header-phone:hover {
-  color: #ffa500 !important;
+  color: transparent !important;
   background: none !important;
 }
 
@@ -130,7 +130,7 @@
 }
 
 .category-card:hover {
-  border-color: #ffa500 !important;
+  border-color: transparent !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
   transform: none !important;
 }
@@ -173,7 +173,7 @@
   display: block !important;
   width: 100% !important;
   padding: 10px 16px !important;
-  background: #ffa500 !important;
+  background: transparent !important;
   color: #ffffff !important;
   text-align: center !important;
   text-decoration: none !important;
@@ -186,7 +186,7 @@
 
 .category-card__link:hover,
 .category-card .btn:hover {
-  background: #ff8c00 !important;
+  background: transparent !important;
   transform: none !important;
 }
 
@@ -235,7 +235,7 @@
 }
 
 .footer-link:hover {
-  color: #ffa500 !important;
+  color: transparent !important;
 }
 
 /* ===== УБИРАЕМ SIDEBAR ===== */
@@ -253,7 +253,7 @@
 
 .sidebar-menu__link:hover {
   background: #f0fdf4 !important;
-  color: #ffa500 !important;
+  color: transparent !important;
 }
 
 /* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */

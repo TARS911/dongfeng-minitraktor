@@ -29,12 +29,12 @@ body.terra-bg-dark .beltehferm-logo__text-bottom {
 }
 
 body.terra-bg-dark .beltehferm-logo__hexagon {
-  stroke: #ffa500;
-  fill: #ffa500;
+  stroke: transparent;
+  fill: transparent;
 }
 
 body.terra-bg-dark .beltehferm-logo__dot-inner {
-  background: #ffa500;
+  background: transparent;
 }
 
 /* Поиск в темной теме */
@@ -49,17 +49,17 @@ body.terra-bg-dark .search-input::placeholder {
 }
 
 body.terra-bg-dark .search-input:focus {
-  border-color: #ffa500;
+  border-color: transparent;
   background: #334155;
 }
 
 body.terra-bg-dark .search-btn {
-  background: #ffa500;
+  background: transparent;
   color: white;
 }
 
 body.terra-bg-dark .search-btn:hover {
-  background: #ffa500;
+  background: transparent;
 }
 
 /* Action buttons в темной теме */
@@ -77,14 +77,14 @@ body.terra-bg-dark .action-btn svg {
 
 /* Sidebar Toggle в темной теме */
 body.terra-bg-dark .sidebar-toggle {
-  background: linear-gradient(135deg, #ffa500 0%, #ffa500 100%) !important;
-  border: 2px solid #ffa500 !important;
+  background: linear-gradient(135deg, transparent 0%, transparent 100%) !important;
+  border: 2px solid transparent !important;
   box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4) !important;
 }
 
 body.terra-bg-dark .sidebar-toggle:hover {
-  background: linear-gradient(135deg, #ffa500 0%, #ffa500 100%) !important;
-  border-color: #ffa500 !important;
+  background: linear-gradient(135deg, transparent 0%, transparent 100%) !important;
+  border-color: transparent !important;
   box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5) !important;
   transform: scale(1.05);
 }
@@ -106,7 +106,7 @@ body.terra-bg-dark .sidebar-menu__link {
 
 body.terra-bg-dark .sidebar-menu__link:hover {
   background: #334155;
-  color: #ffa500;
+  color: transparent;
 }
 
 body.terra-bg-dark .sidebar-menu__link svg {
@@ -136,7 +136,7 @@ body.terra-bg-dark .filter-input {
 
 body.terra-bg-dark .filter-select:focus,
 body.terra-bg-dark .filter-input:focus {
-  border-color: #ffa500;
+  border-color: transparent;
   background: #1e293b;
 }
 
@@ -155,7 +155,7 @@ body.terra-bg-dark .products-count {
 }
 
 body.terra-bg-dark .products-count span {
-  color: #ffa500;
+  color: transparent;
 }
 
 /* Карточки товаров в темной теме */
@@ -165,7 +165,7 @@ body.terra-bg-dark .product-card {
 }
 
 body.terra-bg-dark .product-card:hover {
-  border-color: #ffa500;
+  border-color: transparent;
   box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2);
 }
 
@@ -178,16 +178,16 @@ body.terra-bg-dark .product-desc {
 }
 
 body.terra-bg-dark .product-price {
-  color: #ffa500;
+  color: transparent;
 }
 
 body.terra-bg-dark .product-btn {
-  background: #ffa500;
+  background: transparent;
   color: white;
 }
 
 body.terra-bg-dark .product-btn:hover {
-  background: #ffa500;
+  background: transparent;
 }
 
 /* Карточки (общие) */
@@ -221,7 +221,7 @@ body.terra-bg-dark .footer li {
 }
 
 body.terra-bg-dark .footer a:hover {
-  color: #ffa500;
+  color: transparent;
 }
 
 body.terra-bg-dark .footer-bottom {
@@ -236,7 +236,7 @@ body.terra-bg-dark .terra-social-link {
 }
 
 body.terra-bg-dark .terra-social-link:hover {
-  background: #ffa500;
+  background: transparent;
   color: white;
 }
 
@@ -261,27 +261,27 @@ body.terra-bg-dark .page-subtitle {
 /* Кнопки */
 body.terra-bg-dark .btn,
 body.terra-bg-dark .terra-btn {
-  background: #ffa500;
+  background: transparent;
   color: white;
-  border-color: #ffa500;
+  border-color: transparent;
 }
 
 body.terra-bg-dark .btn:hover,
 body.terra-bg-dark .terra-btn:hover {
-  background: #ffa500;
-  border-color: #ffa500;
+  background: transparent;
+  border-color: transparent;
 }
 
 body.terra-bg-dark .btn-outline,
 body.terra-bg-dark .terra-btn-outline {
   background: transparent;
-  color: #ffa500;
-  border-color: #ffa500;
+  color: transparent;
+  border-color: transparent;
 }
 
 body.terra-bg-dark .btn-outline:hover,
 body.terra-bg-dark .terra-btn-outline:hover {
-  background: #ffa500;
+  background: transparent;
   color: white;
 }
 
@@ -291,7 +291,7 @@ body.terra-bg-dark .gallery-item {
 }
 
 body.terra-bg-dark .gallery-item:hover {
-  border-color: #ffa500;
+  border-color: transparent;
 }
 
 body.terra-bg-dark .video-item {
@@ -315,13 +315,13 @@ body.terra-bg-dark .media-tab {
 }
 
 body.terra-bg-dark .media-tab:hover {
-  border-color: #ffa500;
-  color: #ffa500;
+  border-color: transparent;
+  color: transparent;
 }
 
 body.terra-bg-dark .media-tab.active {
-  background: #ffa500;
-  border-color: #ffa500;
+  background: transparent;
+  border-color: transparent;
   color: white;
 }
 
@@ -331,11 +331,11 @@ body.terra-bg-dark .breadcrumbs {
 }
 
 body.terra-bg-dark .breadcrumbs a {
-  color: #ffa500;
+  color: transparent;
 }
 
 body.terra-bg-dark .breadcrumbs a:hover {
-  color: #ffa500;
+  color: transparent;
 }
 
 /* Таблицы */
@@ -373,7 +373,7 @@ body.terra-bg-dark input[type="tel"]:focus,
 body.terra-bg-dark input[type="number"]:focus,
 body.terra-bg-dark textarea:focus,
 body.terra-bg-dark select:focus {
-  border-color: #ffa500;
+  border-color: transparent;
   background: #334155;
 }
 
@@ -424,7 +424,7 @@ body.terra-bg-dark .sidebar-overlay {
 
 /* Бейджи и метки */
 body.terra-bg-dark .product-badge {
-  background: #ffa500;
+  background: transparent;
   color: white;
 }
 
@@ -460,16 +460,16 @@ body.terra-bg-dark .terra-text-lead {
 
 body.terra-bg-dark .terra-badge {
   background: rgba(16, 185, 129, 0.2);
-  color: #ffa500;
-  border: 1px solid #ffa500;
+  color: transparent;
+  border: 1px solid transparent;
 }
 
 /* Анимированная сетка в темной теме */
 body.terra-bg-dark .terra-grid-bg {
   opacity: 0.12;
   background-image:
-    linear-gradient(#ffa500 1.5px, transparent 1.5px),
-    linear-gradient(90deg, #ffa500 1.5px, transparent 1.5px);
+    linear-gradient(transparent 1.5px, transparent 1.5px),
+    linear-gradient(90deg, transparent 1.5px, transparent 1.5px);
   background-size: 60px 60px;
 }
 
@@ -489,7 +489,7 @@ body.terra-bg-dark .terra-grid-animated {
 
 /* Статистика в hero секции */
 body.terra-bg-dark .terra-stat-value {
-  color: #ffa500;
+  color: transparent;
 }
 
 body.terra-bg-dark .terra-stat-label {

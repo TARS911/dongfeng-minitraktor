@@ -1,6 +1,6 @@
 /*
  * LEFT ALIGN AND YELLOW BUTTONS
- * ВСЁ ПО ЛЕВОМУ КРАЮ + ВСЕ КНОПКИ ЖЕЛТЫЕ #ffa500
+ * ВСЁ ПО ЛЕВОМУ КРАЮ + ВСЕ КНОПКИ ЖЕЛТЫЕ transparent
  * НИКАКОГО ЗЕЛЕНОГО!!!
  */
 
@@ -43,7 +43,7 @@ p,
   text-align: left !important;
 }
 
-/* ===== ВСЕ КНОПКИ ЖЕЛТЫЕ #ffa500 ===== */
+/* ===== ВСЕ КНОПКИ ЖЕЛТЫЕ transparent ===== */
 button,
 .btn,
 .btn-primary,
@@ -61,9 +61,9 @@ button,
 .product-card .btn,
 input[type="submit"],
 input[type="button"] {
-  background: #ffa500 !important;
+  background: transparent !important;
   color: #1f2937 !important;
-  border: 2px solid #ffa500 !important;
+  border: 2px solid transparent !important;
 }
 
 button:hover,
@@ -80,8 +80,8 @@ button:hover,
 .header-phone:hover,
 .category-card__link:hover,
 .product-card .btn:hover {
-  background: #ff8c00 !important;
-  border-color: #ff8c00 !important;
+  background: transparent !important;
+  border-color: transparent !important;
 }
 
 /* ===== УБИРАЕМ ВЕСЬ ЗЕЛЕНЫЙ ЦВЕТ ===== */
@@ -92,9 +92,9 @@ button:hover,
 [style*="#065f46"],
 [style*="rgb(5, 150, 105)"],
 [style*="rgb(16, 185, 129)"] {
-  background: #ffa500 !important;
+  background: transparent !important;
   color: #1f2937 !important;
-  border-color: #ffa500 !important;
+  border-color: transparent !important;
 }
 
 /* Header без зеленого */
@@ -104,35 +104,35 @@ button:hover,
 }
 
 .header-phone {
-  background: #ffa500 !important;
+  background: transparent !important;
   color: #1f2937 !important;
-  border: 2px solid #ffa500 !important;
+  border: 2px solid transparent !important;
 }
 
 .header-phone:hover {
-  background: #ff8c00 !important;
-  border-color: #ff8c00 !important;
+  background: transparent !important;
+  border-color: transparent !important;
 }
 
 /* Логотип без зеленого */
 .beltehferm-logo__hexagon {
-  color: #ffa500 !important;
+  color: transparent !important;
   fill: rgba(255, 165, 0, 0.1) !important;
 }
 
 .beltehferm-logo__dot-inner {
-  background: #ffa500 !important;
+  background: transparent !important;
 }
 
 .beltehferm-logo__text-bottom {
-  color: #ffa500 !important;
+  color: transparent !important;
 }
 
 /* Sidebar без зеленого */
 .sidebar-menu__link:hover,
 .sidebar-menu__link--active {
   background: rgba(255, 165, 0, 0.1) !important;
-  color: #ffa500 !important;
+  color: transparent !important;
 }
 
 /* Иконки без зеленого */
@@ -141,32 +141,32 @@ button:hover,
 }
 
 .advantage-icon svg {
-  stroke: #ffa500 !important;
+  stroke: transparent !important;
 }
 
 /* Карточки без зеленого */
 .category-card:hover,
 .product-card:hover {
-  border-color: #ffa500 !important;
+  border-color: transparent !important;
 }
 
 .category-card__link {
-  color: #ffa500 !important;
+  color: transparent !important;
 }
 
 /* Цены */
 .product-price,
 .price {
-  color: #ffa500 !important;
+  color: transparent !important;
 }
 
 /* Ссылки */
 a {
-  color: #ffa500 !important;
+  color: transparent !important;
 }
 
 a:hover {
-  color: #ff8c00 !important;
+  color: transparent !important;
 }
 
 /* Badge */
@@ -175,28 +175,28 @@ a:hover {
 .badge-sale,
 .action-btn__badge,
 .bottom-nav__badge {
-  background: #ffa500 !important;
+  background: transparent !important;
 }
 
 /* Bottom nav active */
 .bottom-nav__link.active {
-  color: #ffa500 !important;
+  color: transparent !important;
 }
 
 /* Focus на формах */
 .form-input:focus,
 .form-textarea:focus {
-  border-color: #ffa500 !important;
+  border-color: transparent !important;
   box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.1) !important;
 }
 
 /* Корзина */
 .action-btn--cart:hover svg {
-  stroke: #ffa500 !important;
+  stroke: transparent !important;
 }
 
 .action-btn--cart:hover svg circle {
-  fill: #ffa500 !important;
+  fill: transparent !important;
 }
 
 /* ===== CONTAINER ПО ЛЕВОМУ КРАЮ ===== */
@@ -222,7 +222,7 @@ a:hover {
 /* ===== ТЕМНАЯ ТЕМА БЕЗ ЗЕЛЕНОГО ===== */
 body:not(.light-theme) .advantage-card:hover,
 body:not(.light-theme) .category-card:hover {
-  border-color: #ffa500 !important;
+  border-color: transparent !important;
 }
 
 body:not(.light-theme) a {
@@ -230,5 +230,5 @@ body:not(.light-theme) a {
 }
 
 body:not(.light-theme) a:hover {
-  color: #ffa500 !important;
+  color: transparent !important;
 }

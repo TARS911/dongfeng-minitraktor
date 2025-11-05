@@ -21,12 +21,12 @@
 
 .bottom-nav__link:hover {
   background: rgba(255, 165, 0, 0.1) !important;
-  color: #ffa500 !important;
+  color: transparent !important;
 }
 
 .bottom-nav__link.active {
   background: transparent !important;
-  color: #ffa500 !important;
+  color: transparent !important;
 }
 
 /* Иконки */
@@ -36,11 +36,11 @@
 }
 
 .bottom-nav__link:hover svg {
-  stroke: #ffa500 !important;
+  stroke: transparent !important;
 }
 
 .bottom-nav__link.active svg {
-  stroke: #ffa500 !important;
+  stroke: transparent !important;
 }
 
 /* Текст под иконками */
@@ -51,7 +51,7 @@
 
 /* Badge корзины - желтый */
 .bottom-nav__badge {
-  background: #ffa500 !important;
+  background: transparent !important;
   color: white !important;
 }
 
@@ -75,5 +75,5 @@ body:not(.light-theme) .bottom-nav__link {
 
 body:not(.light-theme) .bottom-nav__link:hover,
 body:not(.light-theme) .bottom-nav__link.active {
-  color: #ffa500 !important;
+  color: transparent !important;
 }

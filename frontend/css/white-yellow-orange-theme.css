@@ -12,8 +12,8 @@
   --primary-orange-light: #ff8c66;
 
   /* Желтый (вторичный акцент) */
-  --accent-yellow: #ffa500;
-  --accent-yellow-hover: #ff8c00;
+  --accent-yellow: transparent;
+  --accent-yellow-hover: transparent;
   --accent-yellow-light: #ffb733;
 
   /* Нейтральные */
