@@ -826,8 +826,12 @@ body {
   }
 
   .header-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 10px;
   }
 
   .header-phone {
