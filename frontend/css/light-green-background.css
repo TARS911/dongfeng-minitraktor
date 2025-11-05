@@ -5,6 +5,10 @@
  */
 
 /* ===== ОСНОВНОЙ ФОН САЙТА - СВЕТЛО-ЗЕЛЕНЫЙ ВЕЗДЕ ===== */
+* {
+  background: #f0fdf4 !important;
+}
+
 body {
   background: #f0fdf4 !important;
 }
