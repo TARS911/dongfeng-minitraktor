@@ -259,3 +259,140 @@ body:not(.light-theme) .advantage-icon svg {
   stroke: currentColor !important;
   opacity: 0.9;
 }
+
+/* ============================================
+   УЛУЧШЕННЫЙ ДИЗАЙН - НЕ КВАДРАТНЫЙ, СОВРЕМЕННЫЙ
+   ============================================ */
+
+/* Блок "Почему выбирают" - более интересная форма */
+.terra-why-choose {
+  max-width: 56rem !important;
+  margin: 2rem auto 3rem !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%) !important;
+  padding: 2rem 2.5rem !important;
+  border-radius: 24px !important;
+  box-shadow: 0 10px 40px rgba(5, 150, 105, 0.12), 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(5, 150, 105, 0.1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Декоративный элемент */
+.terra-why-choose::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -50px !important;
+  right: -50px !important;
+  width: 200px !important;
+  height: 200px !important;
+  background: radial-gradient(circle, rgba(5, 150, 105, 0.08) 0%, transparent 70%) !important;
+  pointer-events: none !important;
+}
+
+/* Карточки преимуществ - скругленные углы */
+.advantage-card {
+  border-radius: 16px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.advantage-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Слайдер - более мягкие углы */
+.gallery-slide {
+  border-radius: 16px !important;
+}
+
+.gallery-image {
+  border-radius: 16px !important;
+}
+
+/* Квиз - асимметричный дизайн */
+.quiz-container {
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%) !important;
+  padding: 2.5rem !important;
+  border-radius: 24px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+}
+
+.quiz-start-button {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 16px rgba(5, 150, 105, 0.25) !important;
+}
+
+/* Иконки - не круглые, а с интересной формой */
+.advantage-icon {
+  border-radius: 14px !important;
+  transform: rotate(-3deg) !important;
+  transition: all 0.3s ease !important;
+}
+
+.advantage-card:hover .advantage-icon {
+  transform: rotate(0deg) scale(1.05) !important;
+}
+
+/* ============================================
+   ВЫРАВНИВАНИЕ ПО ЛЕВОМУ КРАЮ
+   ============================================ */
+
+/* Заголовки секций - по левому краю */
+.section-header {
+  text-align: left !important;
+}
+
+/* Hero - по левому краю */
+.hero {
+  text-align: left !important;
+}
+
+.hero h1,
+.hero p {
+  text-align: left !important;
+}
+
+/* Квиз - заголовок по левому краю */
+.quiz-container {
+  text-align: left !important;
+}
+
+.quiz-title,
+.quiz-subtitle {
+  text-align: left !important;
+}
+
+/* Why choose блок - по левому краю */
+.terra-why-choose p {
+  text-align: left !important;
+}
+
+/* Карточки - описание по левому краю */
+.advantage-card {
+  text-align: left !important;
+}
+
+/* Gallery CTA - по левому краю */
+.gallery-cta {
+  text-align: left !important;
+}
+
+/* Кнопки выравниваем в начало */
+.quiz-start-button {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* Тёмная тема */
+body:not(.light-theme) .terra-why-choose {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.95) 0%, rgba(17, 24, 39, 0.95) 100%) !important;
+  border-color: rgba(16, 185, 129, 0.2) !important;
+}
+
+body:not(.light-theme) .terra-why-choose::before {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, transparent 70%) !important;
+}
+
+body:not(.light-theme) .quiz-container {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%) !important;
+}
