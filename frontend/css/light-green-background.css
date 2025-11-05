@@ -27,7 +27,8 @@ html {
 header {
   background: #ffffff !important;
   background-color: #ffffff !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  border-bottom: none !important;
+  border: none !important;
 }
 
 /* Контейнер в header */

@@ -56,7 +56,8 @@
 /* ===== HEADER ===== */
 .header {
   background: var(--primary-green) !important;
-  border-bottom: 3px solid var(--accent-yellow) !important;
+  border-bottom: none !important;
+  border: none !important;
 }
 
 .header-logo__text,
@@ -111,7 +112,12 @@
 /* ===== HERO SECTION ===== */
 .terra-hero,
 .hero {
-  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #fffbeb 100%) !important;
+  background: linear-gradient(
+    135deg,
+    #f0fdf4 0%,
+    #ffffff 50%,
+    #fffbeb 100%
+  ) !important;
 }
 
 .terra-hero__title,
