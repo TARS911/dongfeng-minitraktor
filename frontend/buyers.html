@@ -558,6 +558,48 @@
       </div>
     </section>
 
-    <script src="/js/app.js"></script>
+    
+
+    <script>
+      function toggleSidebar() {
+        const menu = document.getElementById("sidebarMenu");
+        const overlay = document.getElementById("sidebarOverlay");
+        menu.classList.toggle("active");
+        overlay.classList.toggle("active");
+      }
+
+      function closeSidebar() {
+        const menu = document.getElementById("sidebarMenu");
+        const overlay = document.getElementById("sidebarOverlay");
+        menu.classList.remove("active");
+        overlay.classList.remove("active");
+      }
+
+      // Theme Toggle Functionality
+      function toggleTheme() {
+        const body = document.body;
+        const currentTheme = body.classList.contains("light-theme") ? "light" : "dark";
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+
+        if (newTheme === "light") {
+          body.classList.add("light-theme");
+          body.classList.remove("terra-bg-dark");
+        } else {
+          body.classList.remove("light-theme");
+          body.classList.add("terra-bg-dark");
+        }
+
+        localStorage.setItem("theme", newTheme);
+      }
+
+      // Load saved theme on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        if (savedTheme === "dark") {
+          document.body.classList.remove("light-theme");
+          document.body.classList.add("terra-bg-dark");
+        }
+      });
+    </script>
   </body>
 </html>
