@@ -524,7 +524,7 @@ body {
 .sidebar-menu__header {
   padding: 20px;
   background: #f8f9fa;
-  color: white;
+  color: #1f2937;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -533,7 +533,7 @@ body {
 .sidebar-menu__logo {
   font-size: 24px;
   font-weight: 800;
-  color: white;
+  color: #1f2937;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -622,7 +622,7 @@ body {
 
 .sidebar-menu__link--orange {
   background: #f8f9fa;
-  color: white;
+  color: #1f2937;
   font-weight: 600;
   box-shadow: 0 2px 8px rgba(255, 91, 26, 0.25);
 }
@@ -993,7 +993,7 @@ body {
 /* ===== SIDEBAR MENU LINK VARIANTS ===== */
 .sidebar-menu__link--gradient-blue {
   background: #f8f9fa;
-  color: white !important;
+  color: #1f2937 !important;
   border-radius: 8px;
   font-weight: 600;
 }
@@ -1003,12 +1003,12 @@ body {
 }
 
 .sidebar-menu__link--gradient-blue svg {
-  color: white !important;
+  color: #1f2937 !important;
 }
 
 .sidebar-menu__link--green {
   background: #f8f9fa;
-  color: white !important;
+  color: #1f2937 !important;
   border-radius: 8px;
   font-weight: 600;
 }
@@ -1018,7 +1018,7 @@ body {
 }
 
 .sidebar-menu__link--green svg {
-  color: white !important;
+  color: #1f2937 !important;
 }
 
 .sidebar-menu__section-title {
@@ -1143,24 +1143,24 @@ body {
 
 .badge-hot {
   background: #f8f9fa;
-  color: white;
+  color: #1f2937;
 }
 
 .badge-new {
   background: #f8f9fa;
-  color: white;
+  color: #1f2937;
 }
 
 .badge-special {
   background: #f8f9fa;
-  color: white;
+  color: #1f2937;
 }
 
 .btn-primary {
   display: inline-block;
   padding: 14px 32px;
   background: #f8f9fa;
-  color: white;
+  color: #1f2937;
   font-weight: 600;
   font-size: 16px;
   border-radius: 8px;
@@ -1547,10 +1547,7 @@ body:not(.light-theme) .city-card:hover {
 .section-title {
   font-size: 42px;
   font-weight: 800;
-  background: #f8f9fa;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #1f2937;
   margin-bottom: 12px;
   letter-spacing: -0.5px;
 }
@@ -1721,7 +1718,7 @@ body:not(.light-theme) .city-card:hover {
   top: 16px;
   right: 16px;
   background: #f8f9fa;
-  color: white;
+  color: #1f2937;
   font-size: 11px;
   font-weight: 700;
   padding: 4px 12px;
@@ -1741,7 +1738,7 @@ body:not(.light-theme) .advantage-card {
 }
 
 body:not(.light-theme) .advantage-title {
-  color: white;
+  color: #1f2937;
 }
 
 body:not(.light-theme) .advantage-text {
@@ -1749,7 +1746,7 @@ body:not(.light-theme) .advantage-text {
 }
 
 body:not(.light-theme) .section-subtitle {
-  color: #d1d5db;
+  color: #6b7280;
 }
 
 @media (max-width: 1024px) {
@@ -1834,7 +1831,7 @@ body:not(.light-theme) .section-subtitle {
 .quiz-badge {
   display: inline-block;
   background: #f8f9fa;
-  color: white;
+  color: #1f2937;
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1852,9 +1849,6 @@ body:not(.light-theme) .section-subtitle {
   margin-bottom: 16px;
   line-height: 1.2;
   background: #f8f9fa;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .quiz-subtitle {
@@ -1891,7 +1885,7 @@ body:not(.light-theme) .section-subtitle {
   align-items: center;
   gap: 12px;
   background: #f8f9fa;
-  color: white;
+  color: #1f2937;
   font-size: 18px;
   font-weight: 700;
   padding: 18px 40px;
@@ -2058,9 +2052,6 @@ body:not(.light-theme) .tractor-quiz-section {
 
 body:not(.light-theme) .quiz-title {
   background: #f8f9fa;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 body:not(.light-theme) .quiz-subtitle {
@@ -2261,7 +2252,7 @@ body:not(.light-theme) .quiz-floating-card {
   top: 20px;
   right: 20px;
   background: #f8f9fa;
-  color: white;
+  color: #1f2937;
   font-size: 11px;
   font-weight: 700;
   padding: 6px 14px;
@@ -2296,11 +2287,11 @@ body:not(.light-theme) .category-card-large {
 }
 
 body:not(.light-theme) .category-card-title {
-  color: white;
+  color: #1f2937;
 }
 
 body:not(.light-theme) .category-card-desc {
-  color: #d1d5db;
+  color: #6b7280;
 }
 
 body:not(.light-theme) .category-card-icon {
