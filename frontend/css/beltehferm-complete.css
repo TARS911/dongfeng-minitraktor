@@ -20,7 +20,7 @@
 .beltehferm-logo__hexagon {
   width: 100%;
   height: 100%;
-  color: #059669;
+  color: #ffa500;
   fill: #dcfce7;
 }
 
@@ -35,7 +35,7 @@
 .beltehferm-logo__dot-inner {
   width: 8px;
   height: 8px;
-  background: #059669;
+  background: #ffa500;
   border-radius: 50%;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .beltehferm-logo__text-bottom {
-  color: #059669;
+  color: #ffa500;
   font-weight: 500;
   letter-spacing: 0.1em;
   font-size: 0.75rem;
@@ -178,7 +178,7 @@ body:not(.light-theme) .experience-section {
   background: #dcfce7;
   border: 1px solid #bbf7d0;
   border-radius: 9999px;
-  color: #047857;
+  color: #ffa500;
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -266,7 +266,7 @@ body:not(.light-theme) .experience-card--featured {
 .experience-icon {
   width: 4rem;
   height: 4rem;
-  background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+  background: linear-gradient(135deg, #ffa500 0%, #06b6d4 100%);
   border-radius: 0.75rem;
   display: flex;
   align-items: center;
@@ -335,14 +335,14 @@ body:not(.light-theme) .experience-card--featured .experience-card-text {
 }
 
 .experience-btn--primary {
-  background: #059669;
+  background: #ffa500;
   color: #ffffff;
   border: none;
   box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
 }
 
 .experience-btn--primary:hover {
-  background: #047857;
+  background: #ffa500;
 }
 
 body:not(.light-theme) .experience-btn {
@@ -398,7 +398,7 @@ body:not(.light-theme) .sustainability-content {
   background: #dcfce7;
   border: 1px solid #bbf7d0;
   border-radius: 9999px;
-  color: #047857;
+  color: #ffa500;
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -462,7 +462,7 @@ body:not(.light-theme) .sustainability-feature {
 .sustainability-feature-dot {
   width: 0.5rem;
   height: 0.5rem;
-  background: #059669;
+  background: #ffa500;
   border-radius: 50%;
   margin-top: 0.5rem;
   flex-shrink: 0;
@@ -546,14 +546,14 @@ body:not(.light-theme) .sustainability-stat {
 .sustainability-stat-icon {
   width: 2.5rem;
   height: 2.5rem;
-  color: #059669;
+  color: #ffa500;
   margin: 0 auto 1rem;
 }
 
 .sustainability-stat-value {
   font-size: 2rem;
   font-weight: 700;
-  color: #047857;
+  color: #ffa500;
   margin-bottom: 0.5rem;
 }
 
@@ -796,7 +796,7 @@ body:not(.light-theme) .sustainability-stat-label {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  background: linear-gradient(135deg, #ffa500 0%, #ffa500 100%);
   color: white;
   text-decoration: none;
   border-radius: 50px;
