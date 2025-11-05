@@ -1,0 +1,56 @@
+/*
+ * SIMPLIFY QUIZ SECTION
+ * Упрощаем секцию квиза - убираем интерактивные элементы
+ */
+
+/* ===== УБИРАЕМ ИЛЛЮСТРАЦИЮ ТРАКТОРА ===== */
+.quiz-illustration {
+  display: none !important;
+}
+
+/* ===== КВИЗ НА ВСЮ ШИРИНУ ===== */
+.quiz-container {
+  max-width: 100% !important;
+  grid-template-columns: 1fr !important;
+  gap: 0 !important;
+  padding: 32px 40px !important;
+  text-align: center !important;
+}
+
+.quiz-content {
+  max-width: 600px !important;
+  margin: 0 auto !important;
+}
+
+/* ===== УПРОЩАЕМ СТИЛИ ===== */
+.quiz-title {
+  font-size: 24px !important;
+  margin-bottom: 12px !important;
+  text-align: center !important;
+}
+
+.quiz-description {
+  font-size: 15px !important;
+  margin-bottom: 24px !important;
+  text-align: center !important;
+}
+
+.quiz-start-button {
+  margin: 0 auto !important;
+  display: inline-flex !important;
+}
+
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
+@media (max-width: 768px) {
+  .quiz-container {
+    padding: 24px 20px !important;
+  }
+
+  .quiz-title {
+    font-size: 20px !important;
+  }
+
+  .quiz-description {
+    font-size: 14px !important;
+  }
+}
