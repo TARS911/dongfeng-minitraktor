@@ -213,3 +213,49 @@
     padding: 16px 14px !important;
   }
 }
+
+/* ИСПРАВЛЕНИЕ: SVG иконки в карточках должны быть видны */
+.advantage-icon svg {
+  stroke: currentColor !important;
+  fill: none !important;
+  stroke-width: 2 !important;
+}
+
+/* Для каждого типа иконки свой цвет */
+.advantage-icon--delivery svg {
+  stroke: #3b82f6 !important;
+}
+
+.advantage-icon--warranty svg {
+  stroke: #8b5cf6 !important;
+}
+
+.advantage-icon--leasing svg {
+  stroke: #ec4899 !important;
+}
+
+.advantage-icon--trades svg {
+  stroke: #f59e0b !important;
+}
+
+.advantage-icon--grants svg {
+  stroke: #10b981 !important;
+}
+
+.advantage-icon--service svg {
+  stroke: #06b6d4 !important;
+}
+
+.advantage-icon--price svg {
+  stroke: #eab308 !important;
+}
+
+.advantage-icon--promo svg {
+  stroke: #ef4444 !important;
+}
+
+/* Тёмная тема - светлее иконки */
+body:not(.light-theme) .advantage-icon svg {
+  stroke: currentColor !important;
+  opacity: 0.9;
+}
