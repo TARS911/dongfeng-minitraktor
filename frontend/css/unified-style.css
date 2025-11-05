@@ -168,7 +168,7 @@ body {
   background: #f8f9fa;
   color: white;
   padding: 40px 0;
-  text-align: center;
+  text-align: left;
 }
 
 .page-title {
@@ -444,7 +444,7 @@ body {
 }
 
 .footer-bottom {
-  text-align: center;
+  text-align: left;
   padding-top: 20px;
   border-top: 1px solid #444;
   color: #999;
@@ -680,7 +680,7 @@ body {
   background-repeat: no-repeat;
   color: white;
   padding: 50px 0;
-  text-align: center;
+  text-align: left;
 }
 
 .hero h1 {
@@ -727,7 +727,7 @@ body {
   background: white;
   padding: 30px;
   border-radius: 12px;
-  text-align: center;
+  text-align: left;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   transition:
     transform 0.3s,
@@ -775,7 +775,7 @@ body {
   background: #f8f9fa;
   border-radius: 12px;
   padding: 40px 30px;
-  text-align: center;
+  text-align: left;
   transition: all 0.3s;
   cursor: pointer;
   border: 2px solid transparent;
@@ -933,7 +933,7 @@ body {
   padding: 2px 6px;
   border-radius: 10px;
   min-width: 16px;
-  text-align: center;
+  text-align: left;
 }
 
 /* Корзина с синим фоном */
@@ -1105,7 +1105,7 @@ body {
 
 .card-icon {
   font-size: 48px;
-  text-align: center;
+  text-align: left;
   margin-bottom: 20px;
 }
 
@@ -1124,7 +1124,7 @@ body {
 }
 
 .card-price {
-  text-align: center;
+  text-align: left;
   margin-top: 20px;
   font-weight: 600;
   color: var(--terra-emerald-600);
@@ -1168,7 +1168,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
-  text-align: center;
+  text-align: left;
 }
 
 .btn-primary:hover {
@@ -1188,7 +1188,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
-  text-align: center;
+  text-align: left;
 }
 
 .btn-secondary:hover {
@@ -1202,7 +1202,7 @@ body {
 }
 
 .cta-section {
-  text-align: center;
+  text-align: left;
   padding: 60px 30px;
   background: #f8f9fa;
   border-radius: 16px;
@@ -1540,7 +1540,7 @@ body:not(.light-theme) .city-card:hover {
 }
 
 .section-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 60px;
 }
 
@@ -1570,7 +1570,7 @@ body:not(.light-theme) .city-card:hover {
   background: white;
   border-radius: 20px;
   padding: 32px 24px;
-  text-align: center;
+  text-align: left;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(5, 150, 105, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2079,7 +2079,7 @@ body:not(.light-theme) .quiz-floating-card {
 
   .quiz-content {
     padding-left: 0;
-    text-align: center;
+    text-align: left;
   }
 
   .quiz-features-list li {
@@ -2165,7 +2165,7 @@ body:not(.light-theme) .quiz-floating-card {
   background: white;
   border-radius: 20px;
   padding: 40px 30px;
-  text-align: center;
+  text-align: left;
   border: 2px solid #e5e7eb;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2549,7 +2549,7 @@ body:not(.light-theme) .category-card-large:hover .category-card-icon svg {
 
 /* CTA Section */
 .gallery-cta {
-  text-align: center;
+  text-align: left;
   margin-top: 48px;
   padding: 40px 20px;
   background: #f8f9fa;
