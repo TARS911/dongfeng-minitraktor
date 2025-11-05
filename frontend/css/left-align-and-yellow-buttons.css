@@ -1,0 +1,234 @@
+/*
+ * LEFT ALIGN AND YELLOW BUTTONS
+ * ВСЁ ПО ЛЕВОМУ КРАЮ + ВСЕ КНОПКИ ЖЕЛТЫЕ #ffa500
+ * НИКАКОГО ЗЕЛЕНОГО!!!
+ */
+
+/* ===== ВСЁ ПО ЛЕВОМУ КРАЮ ===== */
+* {
+  text-align: left !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.hero-title,
+.terra-hero__title,
+.advantage-title,
+.quiz-title,
+.category-card__title {
+  text-align: left !important;
+}
+
+p,
+.section-subtitle,
+.hero-description,
+.terra-hero__description {
+  text-align: left !important;
+}
+
+/* Контент по левому краю */
+.terra-hero__content,
+.section-header,
+.quiz-container,
+.advantage-card,
+.category-card {
+  text-align: left !important;
+}
+
+/* Кнопки по левому краю */
+.terra-hero__actions,
+.hero-actions,
+.section-actions {
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+/* ===== ВСЕ КНОПКИ ЖЕЛТЫЕ #ffa500 ===== */
+button,
+.btn,
+.btn-primary,
+.btn-secondary,
+.cta-button,
+.quiz-start-button,
+.gallery-cta,
+.terra-btn,
+.terra-btn-primary,
+.terra-btn-outline,
+.action-btn,
+.header-phone,
+.sidebar-toggle,
+.category-card__link,
+.product-card .btn,
+input[type="submit"],
+input[type="button"] {
+  background: #ffa500 !important;
+  color: #1f2937 !important;
+  border: 2px solid #ffa500 !important;
+}
+
+button:hover,
+.btn:hover,
+.btn-primary:hover,
+.btn-secondary:hover,
+.cta-button:hover,
+.quiz-start-button:hover,
+.gallery-cta:hover,
+.terra-btn:hover,
+.terra-btn-primary:hover,
+.terra-btn-outline:hover,
+.action-btn:hover,
+.header-phone:hover,
+.category-card__link:hover,
+.product-card .btn:hover {
+  background: #ff8c00 !important;
+  border-color: #ff8c00 !important;
+}
+
+/* ===== УБИРАЕМ ВЕСЬ ЗЕЛЕНЫЙ ЦВЕТ ===== */
+/* Заменяем все зеленые цвета на желтые */
+[style*="#059669"],
+[style*="#10b981"],
+[style*="#047857"],
+[style*="#065f46"],
+[style*="rgb(5, 150, 105)"],
+[style*="rgb(16, 185, 129)"] {
+  background: #ffa500 !important;
+  color: #1f2937 !important;
+  border-color: #ffa500 !important;
+}
+
+/* Header без зеленого */
+.header {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.header-phone {
+  background: #ffa500 !important;
+  color: #1f2937 !important;
+  border: 2px solid #ffa500 !important;
+}
+
+.header-phone:hover {
+  background: #ff8c00 !important;
+  border-color: #ff8c00 !important;
+}
+
+/* Логотип без зеленого */
+.beltehferm-logo__hexagon {
+  color: #ffa500 !important;
+  fill: rgba(255, 165, 0, 0.1) !important;
+}
+
+.beltehferm-logo__dot-inner {
+  background: #ffa500 !important;
+}
+
+.beltehferm-logo__text-bottom {
+  color: #ffa500 !important;
+}
+
+/* Sidebar без зеленого */
+.sidebar-menu__link:hover,
+.sidebar-menu__link--active {
+  background: rgba(255, 165, 0, 0.1) !important;
+  color: #ffa500 !important;
+}
+
+/* Иконки без зеленого */
+.advantage-icon {
+  background: rgba(255, 165, 0, 0.1) !important;
+}
+
+.advantage-icon svg {
+  stroke: #ffa500 !important;
+}
+
+/* Карточки без зеленого */
+.category-card:hover,
+.product-card:hover {
+  border-color: #ffa500 !important;
+}
+
+.category-card__link {
+  color: #ffa500 !important;
+}
+
+/* Цены */
+.product-price,
+.price {
+  color: #ffa500 !important;
+}
+
+/* Ссылки */
+a {
+  color: #ffa500 !important;
+}
+
+a:hover {
+  color: #ff8c00 !important;
+}
+
+/* Badge */
+.badge-new,
+.badge-hit,
+.badge-sale,
+.action-btn__badge,
+.bottom-nav__badge {
+  background: #ffa500 !important;
+}
+
+/* Bottom nav active */
+.bottom-nav__link.active {
+  color: #ffa500 !important;
+}
+
+/* Focus на формах */
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #ffa500 !important;
+  box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.1) !important;
+}
+
+/* Корзина */
+.action-btn--cart:hover svg {
+  stroke: #ffa500 !important;
+}
+
+.action-btn--cart:hover svg circle {
+  fill: #ffa500 !important;
+}
+
+/* ===== CONTAINER ПО ЛЕВОМУ КРАЮ ===== */
+.container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+}
+
+/* ===== УБИРАЕМ ЦЕНТРИРОВАНИЕ ===== */
+.text-center {
+  text-align: left !important;
+}
+
+.mx-auto {
+  margin-left: 0 !important;
+}
+
+.justify-center {
+  justify-content: flex-start !important;
+}
+
+/* ===== ТЕМНАЯ ТЕМА БЕЗ ЗЕЛЕНОГО ===== */
+body:not(.light-theme) .advantage-card:hover,
+body:not(.light-theme) .category-card:hover {
+  border-color: #ffa500 !important;
+}
+
+body:not(.light-theme) a {
+  color: #ffb733 !important;
+}
+
+body:not(.light-theme) a:hover {
+  color: #ffa500 !important;
+}
