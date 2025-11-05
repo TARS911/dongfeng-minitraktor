@@ -1330,3 +1330,176 @@ body:not(.light-theme) .city-option {
 body:not(.light-theme) .city-option:hover {
   background: var(--terra-gray-700);
 }
+
+/* ===== CITY MODAL ===== */
+.city-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+}
+
+.city-modal.active {
+  display: block;
+}
+
+.city-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.city-modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow: hidden;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.city-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.city-modal-header h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.city-modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.city-modal-close svg {
+  width: 24px;
+  height: 24px;
+  color: #6b7280;
+}
+
+.city-modal-close:hover {
+  background: #f3f4f6;
+}
+
+.city-modal-body {
+  padding: 24px;
+}
+
+.city-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.city-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px;
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.city-card svg {
+  width: 32px;
+  height: 32px;
+  color: #059669;
+}
+
+.city-card:hover {
+  background: #ecfdf5;
+  border-color: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.15);
+}
+
+.city-card:active {
+  transform: translateY(0);
+}
+
+/* Dark theme */
+body:not(.light-theme) .city-modal-content {
+  background: #1f2937;
+}
+
+body:not(.light-theme) .city-modal-header {
+  border-bottom-color: #374151;
+}
+
+body:not(.light-theme) .city-modal-header h3 {
+  color: white;
+}
+
+body:not(.light-theme) .city-modal-close:hover {
+  background: #374151;
+}
+
+body:not(.light-theme) .city-modal-close svg {
+  color: #9ca3af;
+}
+
+body:not(.light-theme) .city-card {
+  background: #374151;
+  border-color: #4b5563;
+  color: white;
+}
+
+body:not(.light-theme) .city-card:hover {
+  background: #065f46;
+  border-color: #059669;
+}
+
+@media (max-width: 640px) {
+  .city-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .city-modal-content {
+    width: 95%;
+  }
+}

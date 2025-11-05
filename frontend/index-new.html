@@ -742,5 +742,53 @@
         console.log('🚜 DONGFENG - Официальный дилер минитракторов');
     </script>
     <script src="/js/vertical-menu.js"></script>
+    <!-- City Selection Modal -->
+    <div class="city-modal" id="cityModal">
+      <div class="city-modal-overlay" onclick="closeCityModal()"></div>
+      <div class="city-modal-content">
+        <div class="city-modal-header">
+          <h3>Выберите ваш город</h3>
+          <button class="city-modal-close" onclick="closeCityModal()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <div class="city-modal-body">
+          <div class="city-grid">
+            <button class="city-card" onclick="selectCity('Белгород')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Белгород</span>
+            </button>
+            <button class="city-card" onclick="selectCity('Курск')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Курск</span>
+            </button>
+            <button class="city-card" onclick="selectCity('Брянск')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Брянск</span>
+            </button>
+            <button class="city-card" onclick="selectCity('Липецк')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Липецк</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>

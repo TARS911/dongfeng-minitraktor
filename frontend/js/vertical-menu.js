@@ -155,3 +155,52 @@ window.addEventListener("resize", function () {
     document.body.style.overflow = "";
   }
 });
+
+// Открытие модального окна выбора города
+function toggleSidebarCitySelector() {
+  openCityModal();
+}
+
+function openCityModal() {
+  const modal = document.getElementById('cityModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Блокируем прокрутку
+  }
+}
+
+function closeCityModal() {
+  const modal = document.getElementById('cityModal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = ''; // Разблокируем прокрутку
+  }
+}
+
+function selectCity(city) {
+  // Обновляем текст в кнопке выбора города
+  const cityButtons = document.querySelectorAll('.city-selector span');
+  cityButtons.forEach(btn => {
+    btn.textContent = city;
+  });
+  
+  // Сохраняем в localStorage
+  localStorage.setItem('selectedCity', city);
+  
+  // Закрываем модальное окно
+  closeCityModal();
+  
+  // Можно добавить уведомление
+  console.log('Выбран город:', city);
+}
+
+// Загружаем сохраненный город при загрузке страницы
+document.addEventListener('DOMContentLoaded', function() {
+  const savedCity = localStorage.getItem('selectedCity');
+  if (savedCity) {
+    const cityButtons = document.querySelectorAll('.city-selector span');
+    cityButtons.forEach(btn => {
+      btn.textContent = savedCity;
+    });
+  }
+});
