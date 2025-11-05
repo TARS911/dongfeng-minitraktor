@@ -1,0 +1,77 @@
+/*
+ * MENU BUTTON WITH TEXT
+ * Кнопка меню с подписью "МЕНЮ"
+ */
+
+/* ДЕСКТОП - кнопка с текстом справа */
+.sidebar-toggle {
+  position: fixed !important;
+  right: 20px !important;
+  top: 20px !important;
+  width: auto !important;
+  height: 50px !important;
+  padding: 0 16px !important;
+  background: #1e88e5 !important;
+  border: none !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  cursor: pointer !important;
+  z-index: 1001 !important;
+  box-shadow: 0 4px 12px rgba(42, 157, 78, 0.3) !important;
+  transition: all 0.3s !important;
+}
+
+.sidebar-toggle:hover {
+  background: #248943 !important;
+  transform: scale(1.05) !important;
+}
+
+.sidebar-toggle svg {
+  width: 24px !important;
+  height: 24px !important;
+  stroke: white !important;
+  stroke-width: 2.5 !important;
+  flex-shrink: 0 !important;
+}
+
+.sidebar-toggle__text {
+  color: white !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  white-space: nowrap !important;
+}
+
+/* МОБИЛЬНАЯ ВЕРСИЯ - компактнее */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    width: auto !important;
+    height: 44px !important;
+    padding: 0 12px !important;
+    right: 16px !important;
+    top: 16px !important;
+    gap: 6px !important;
+  }
+
+  .sidebar-toggle svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .sidebar-toggle__text {
+    font-size: 12px !important;
+  }
+}
+
+/* DARK THEME */
+body:not(.light-theme) .sidebar-toggle {
+  background: #059669 !important;
+}
+
+body:not(.light-theme) .sidebar-toggle:hover {
+  background: #047857 !important;
+}
