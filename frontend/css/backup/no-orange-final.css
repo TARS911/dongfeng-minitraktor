@@ -1,0 +1,74 @@
+/*
+ * NO ORANGE - ФИНАЛЬНЫЙ ФАЙЛ
+ * Загружается ПОСЛЕДНИМ и перекрывает ВСЁ
+ * УБИРАЕТ ВЕСЬ ОРАНЖЕВЫЙ ФОН
+ */
+
+/* ===== УБИРАЕМ ОРАНЖЕВЫЙ ФОН СО ВСЕХ КНОПОК ===== */
+button,
+.btn,
+.btn-primary,
+.btn-secondary,
+.cta-button,
+.quiz-start-button,
+.gallery-cta,
+.terra-btn,
+.terra-btn-primary,
+.terra-btn-outline,
+.action-btn,
+.header-phone,
+.sidebar-toggle,
+.search-btn,
+.category-card__link,
+.product-card .btn,
+input[type="submit"],
+input[type="button"],
+.theme-toggle-btn,
+.action-btn--cart,
+.action-btn--auth {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 1px solid #e0e0e0 !important;
+  color: #1f2937 !important;
+}
+
+/* Hover эффект */
+button:hover,
+.btn:hover,
+.btn-primary:hover,
+.btn-secondary:hover,
+.action-btn:hover,
+.header-phone:hover,
+.sidebar-toggle:hover,
+.search-btn:hover,
+.theme-toggle-btn:hover {
+  background: #f9f9f9 !important;
+  background-color: #f9f9f9 !important;
+  border-color: #d0d0d0 !important;
+}
+
+/* Бейджи (счетчики) - можно оставить красными */
+.action-btn__badge,
+.bottom-nav__badge {
+  background: #ff5722 !important;
+}
+
+/* SVG иконки */
+.action-btn svg,
+.theme-toggle-btn svg,
+.sidebar-toggle svg {
+  stroke: #1f2937 !important;
+  fill: none !important;
+}
+
+/* Поисковая строка */
+.search-input {
+  background: #f9f9f9 !important;
+  border: 1px solid #e0e0e0 !important;
+  color: #1f2937 !important;
+}
+
+.search-input:focus {
+  background: #ffffff !important;
+  border-color: #1f2937 !important;
+}
