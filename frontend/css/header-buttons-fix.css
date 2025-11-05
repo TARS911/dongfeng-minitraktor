@@ -77,6 +77,8 @@ header {
   background: #ffa500 !important;
   color: #1f2937 !important;
   border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
   padding: 10px 16px !important;
   border-radius: 8px !important;
   font-weight: 600 !important;
