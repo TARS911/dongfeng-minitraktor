@@ -143,11 +143,11 @@ input[type="search"]:focus,
 }
 
 /* ===== УБИРАЕМ ВСЕ ЗЕЛЕНЫЕ ЦВЕТА В HEADER ===== */
-.header [style*="#1e88e5"],
+.header [style*="#ffa500"],
 .header [style*="#059669"],
 .header [style*="#10b981"],
 .header [style*="green"],
-.header [fill="#1e88e5"],
+.header [fill="#ffa500"],
 .header [fill="#059669"] {
   background: #ffa500 !important;
   fill: #ffa500 !important;
@@ -156,7 +156,7 @@ input[type="search"]:focus,
 }
 
 /* Синий круг корзины - заменить на желтый */
-circle[fill="#1e88e5"] {
+circle[fill="#ffa500"] {
   fill: #ffa500 !important;
 }
 
