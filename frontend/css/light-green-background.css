@@ -4,9 +4,40 @@
  * Убираем зеленый фон с кнопок sidebar
  */
 
-/* ===== ОСНОВНОЙ ФОН САЙТА - СВЕТЛО-ЗЕЛЕНЫЙ ===== */
+/* ===== ОСНОВНОЙ ФОН САЙТА - СВЕТЛО-ЗЕЛЕНЫЙ ВЕЗДЕ ===== */
 body {
   background: #f0fdf4 !important;
+}
+
+html {
+  background: #f0fdf4 !important;
+}
+
+/* HEADER - светло-зеленый фон */
+.header {
+  background: #f0fdf4 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+/* FOOTER - светло-зеленый фон */
+.footer {
+  background: #f0fdf4 !important;
+  color: #1f2937 !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.footer a,
+.footer-link {
+  color: #1f2937 !important;
+}
+
+.footer a:hover,
+.footer-link:hover {
+  color: #ffa500 !important;
+}
+
+.footer-title {
+  color: #1f2937 !important;
 }
 
 /* ===== УБИРАЕМ ЗЕЛЕНЫЙ ФОН С КНОПОК SIDEBAR ===== */
@@ -39,7 +70,33 @@ body {
 .advantages-section,
 .tractor-quiz-section,
 .live-gallery-section,
-.catalog-section {
+.catalog-section,
+section {
+  background: #f0fdf4 !important;
+}
+
+/* ВСЕ СТРАНИЦЫ */
+.page,
+.content,
+.main-content,
+.wrapper {
+  background: #f0fdf4 !important;
+}
+
+/* SIDEBAR */
+.sidebar-menu {
+  background: #f0fdf4 !important;
+  border-left: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+/* MODAL И OVERLAY */
+.modal-content,
+.overlay {
+  background: #f0fdf4 !important;
+}
+
+/* МОБИЛЬНОЕ МЕНЮ */
+.mobile-menu {
   background: #f0fdf4 !important;
 }
 
