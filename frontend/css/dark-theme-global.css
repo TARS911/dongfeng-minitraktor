@@ -512,3 +512,30 @@ body.terra-bg-dark ::-webkit-scrollbar-thumb {
 body.terra-bg-dark ::-webkit-scrollbar-thumb:hover {
   background: #64748b;
 }
+
+/* === КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ: ГОРИЗОНТАЛЬНЫЕ КНОПКИ НА МОБИЛЬНЫХ === */
+@media (max-width: 768px) {
+  .header-content,
+  div.header-content {
+    flex-direction: column !important;
+  }
+  
+  .header-actions,
+  div.header-actions,
+  .header-actions > div,
+  .action-btn,
+  button.action-btn,
+  a.action-btn {
+    display: inline-flex !important;
+    flex-direction: row !important;
+  }
+  
+  .header-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+}
