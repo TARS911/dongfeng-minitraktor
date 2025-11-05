@@ -1,0 +1,14 @@
+/*
+ * HIDE PAYMENT CTA
+ * Убираем блок "Есть вопросы по оплате?" на странице оплаты
+ */
+
+/* Прячем CTA блок с вопросами */
+.page-content > .container > div[style*="linear-gradient(135deg, #2a9d4e"] {
+  display: none !important;
+}
+
+/* Альтернативный способ через содержимое */
+div[style*="background: linear-gradient(135deg, #2a9d4e 0%, #1a7a3a 100%)"] {
+  display: none !important;
+}
