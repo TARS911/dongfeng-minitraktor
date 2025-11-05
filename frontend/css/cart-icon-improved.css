@@ -1,0 +1,123 @@
+/*
+ * CART ICON IMPROVED
+ * Улучшенная иконка корзины без зеленого фона
+ */
+
+/* ===== ИКОНКА КОРЗИНЫ - БЕЗ ФОНА ===== */
+.action-btn--cart {
+  background: none !important;
+  padding: 8px 12px !important;
+}
+
+.action-btn--cart:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* SVG корзины - больше и четче */
+.action-btn--cart svg {
+  width: 28px !important;
+  height: 28px !important;
+  stroke: #1f2937 !important;
+  fill: none !important;
+}
+
+.action-btn--cart:hover svg {
+  stroke: #d97706 !important;
+}
+
+/* Убираем заливку кругов */
+.action-btn--cart svg circle {
+  fill: #1f2937 !important;
+  stroke: none !important;
+}
+
+.action-btn--cart:hover svg circle {
+  fill: #d97706 !important;
+}
+
+/* Текст "Корзина" */
+.action-btn--cart .action-btn__text {
+  color: #1f2937 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+/* Badge счетчика */
+.action-btn--cart .action-btn__badge {
+  position: absolute !important;
+  top: 4px !important;
+  right: 8px !important;
+  background: #ef4444 !important;
+  color: white !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 2px 6px !important;
+  border-radius: 10px !important;
+  min-width: 18px !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+}
+
+/* ===== MOBILE BOTTOM NAV - КОРЗИНА ===== */
+.bottom-nav__link svg {
+  width: 24px !important;
+  height: 24px !important;
+  stroke: #6b7280 !important;
+  fill: none !important;
+}
+
+.bottom-nav__link.active svg {
+  stroke: #d97706 !important;
+}
+
+.bottom-nav__link:hover svg {
+  stroke: #d97706 !important;
+}
+
+/* Кружочки в иконке корзины в bottom nav */
+.bottom-nav__link svg circle {
+  fill: currentColor !important;
+  stroke: none !important;
+}
+
+/* Badge в bottom nav */
+.bottom-nav__badge {
+  position: absolute !important;
+  top: 8px !important;
+  right: 50% !important;
+  transform: translateX(12px) !important;
+  background: #ef4444 !important;
+  color: white !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  padding: 2px 5px !important;
+  border-radius: 10px !important;
+  min-width: 16px !important;
+  text-align: center !important;
+}
+
+/* ===== ТЕМНАЯ ТЕМА ===== */
+body:not(.light-theme) .action-btn--cart svg {
+  stroke: #f3f4f6 !important;
+}
+
+body:not(.light-theme) .action-btn--cart:hover svg {
+  stroke: #fbbf24 !important;
+}
+
+body:not(.light-theme) .action-btn--cart svg circle {
+  fill: #f3f4f6 !important;
+}
+
+body:not(.light-theme) .action-btn--cart:hover svg circle {
+  fill: #fbbf24 !important;
+}
+
+body:not(.light-theme) .action-btn--cart .action-btn__text {
+  color: #f3f4f6 !important;
+}
+
+body:not(.light-theme) .action-btn--cart:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
