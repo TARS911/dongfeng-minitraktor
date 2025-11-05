@@ -1,6 +1,7 @@
 /*
  * HIDE PAGES CONTENT
  * Скрываем содержимое страниц: Акции, Лизинг, Гранты, Оплата, Доставка, Гарантия, Покупателям, Отгрузки, Отзывы, Блог, Медиа
+ * Этот CSS уже подключен в unified-style.css, поэтому работает глобально
  */
 
 /* Скрываем весь контент на этих страницах */
@@ -18,8 +19,7 @@ body.page-media .page-content {
   display: none !important;
 }
 
-/* Альтернативный способ - по URL */
-/* Если на странице есть секция page-content, скрываем её */
+/* Альтернативный способ - скрываем секцию page-content полностью */
 section.page-content {
   display: none !important;
 }
@@ -32,5 +32,11 @@ section.page-content {
 /* Все карточки и grid */
 .page-content .card,
 .page-content .grid {
+  display: none !important;
+}
+
+/* Hero секции на этих страницах */
+.page-content .hero,
+.page-content .terra-hero {
   display: none !important;
 }

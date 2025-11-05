@@ -2803,3 +2803,45 @@ body:not(.light-theme) .quiz-badge {
   color: #d1fae5 !important;
 }
 
+/*
+ * HIDE PAGES CONTENT
+ * Скрываем содержимое страниц: Акции, Лизинг, Гранты, Оплата, Доставка, Гарантия, Покупателям, Отгрузки, Отзывы, Блог, Медиа
+ * Этот CSS уже подключен в unified-style.css, поэтому работает глобально
+ */
+
+/* Скрываем весь контент на этих страницах */
+body.page-promotions .page-content,
+body.page-leasing .page-content,
+body.page-grants .page-content,
+body.page-payment .page-content,
+body.page-delivery .page-content,
+body.page-warranty .page-content,
+body.page-buyers .page-content,
+body.page-shipments .page-content,
+body.page-reviews .page-content,
+body.page-blog .page-content,
+body.page-media .page-content {
+  display: none !important;
+}
+
+/* Альтернативный способ - скрываем секцию page-content полностью */
+section.page-content {
+  display: none !important;
+}
+
+/* Все секции content-section внутри page-content */
+.page-content .content-section {
+  display: none !important;
+}
+
+/* Все карточки и grid */
+.page-content .card,
+.page-content .grid {
+  display: none !important;
+}
+
+/* Hero секции на этих страницах */
+.page-content .hero,
+.page-content .terra-hero {
+  display: none !important;
+}
