@@ -35,12 +35,23 @@ header {
   background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
-/* SVG иконки в кнопках - черный цвет */
+/* SVG иконки в кнопках - черный цвет, БЕЗ ФОНА */
 .action-btn svg,
 .theme-toggle-btn svg,
-.action-btn--cart svg {
+.action-btn--cart svg,
+.action-btn--cart circle,
+.action-btn--auth svg,
+.sun-icon,
+.moon-icon {
   stroke: #1f2937 !important;
   fill: none !important;
+  background: transparent !important;
+}
+
+/* Убираем fill="#ffa500" у круга в корзине */
+.action-btn--cart svg circle {
+  fill: none !important;
+  background: transparent !important;
 }
 
 /* ===== ЖЕЛТЫЙ ФОН НА КНОПКЕ ПОИСКА ===== */
