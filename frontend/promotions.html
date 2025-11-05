@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Акции и Спецпредложения - БЕЛТЕХФЕРМ | Минитракторы со скидками</title>
+    <meta
+      name="description"
+      content="Актуальные акции и специальные предложения на минитракторы БЕЛТЕХФЕРМ. Скидки, бонусы, выгодные условия покупки. ☎️ +7 (969) 999-56-68"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://res.cloudinary.com/drenz1aia/image/upload/v1760698083/dongfeng-minitraktor/favicon.svg"
+    />
+    <link rel="stylesheet" href="/css/unified-style.css" />
+    <link rel="stylesheet" href="/css/terra-theme.css" />
+    <link rel="stylesheet" href="/css/terra-light-theme.css" />
+    <link rel="stylesheet" href="/css/beltehferm-complete.css" />
+    <link rel="stylesheet" href="/css/mobile-fix.css" />
+    <link rel="stylesheet" href="/css/dark-theme-global.css" />
+  </head>
+  <body class="light-theme">
+    <!-- Кнопка открытия меню -->
+    <button class="sidebar-toggle" onclick="toggleSidebar()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- Overlay -->
+    <div
+      class="sidebar-overlay"
+      id="sidebarOverlay"
+      onclick="closeSidebar()"
+    ></div>
+
+    <!-- Вертикальное меню -->
+    <aside class="sidebar-menu" id="sidebarMenu">
+      <nav class="sidebar-menu__nav">
+        <ul class="sidebar-menu__list">
+          <li class="sidebar-menu__item">
+            <a href="index.html" class="sidebar-menu__link sidebar-menu__link--gradient-blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              </svg>
+              Главная
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="catalog.html" class="sidebar-menu__link sidebar-menu__link--orange">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              Каталог
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="promotions.html" class="sidebar-menu__link sidebar-menu__link--active">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>
+              Акции
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="leasing.html" class="sidebar-menu__link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+              Лизинг
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="grants.html" class="sidebar-menu__link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              Гранты
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="payment.html" class="sidebar-menu__link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+              Оплата
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="delivery.html" class="sidebar-menu__link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+              Доставка
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="warranty.html" class="sidebar-menu__link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              Гарантия
+            </a>
+          </li>
+          <li class="sidebar-menu__item">
+            <a href="contacts.html" class="sidebar-menu__link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="terra-grid-bg terra-grid-animated"></div>
+
+    <header class="header">
+      <div class="header-main">
+        <div class="container">
+          <div class="header-content">
+            <a href="/" class="logo beltehferm-logo">
+              <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="35" height="40" rx="3" fill="#059669"/>
+                <rect x="20" y="20" width="15" height="8" fill="white"/>
+                <circle cx="20" cy="42" r="5" fill="white"/>
+                <circle cx="35" cy="42" r="5" fill="white"/>
+                <text x="55" y="35" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#059669">БЕЛТЕХФЕРМ</text>
+              </svg>
+            </a>
+
+            <div class="search-bar">
+              <input type="text" placeholder="Поиск минитракторов..." />
+              <button type="submit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.35-4.35"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="header-actions">
+              <!-- Сравнение -->
+              <a href="#" class="action-btn" title="Сравнение">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </a>
+
+              <!-- Избранное -->
+              <a href="#" class="action-btn" title="Избранное">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </a>
+
+              <!-- Корзина -->
+              <a href="cart.html" class="action-btn action-btn--cart" title="Корзина">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="cart-count">0</span>
+              </a>
+
+              <!-- Вход -->
+              <button class="action-btn action-btn--auth" title="Войти">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </button>
+
+              <a href="tel:+79699995668" class="header-phone">+7 (969) 999-56-68</a>
+
+              <!-- Theme Toggle Button -->
+              <button class="theme-toggle-btn" onclick="toggleTheme()" title="Сменить тему">
+                <svg class="theme-icon theme-icon--light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="theme-icon theme-icon--dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="container">
+        <h1 class="page-title">Акции и Спецпредложения</h1>
+
+        <section class="promotions-hero">
+          <div class="promo-banner">
+            <h2>Выгодные предложения на минитракторы БЕЛТЕХФЕРМ!</h2>
+            <p>Экономьте до 50 000 ₽ при покупке техники в рамках наших акций</p>
+          </div>
+        </section>
+
+        <section class="promotions-grid">
+          <div class="promo-card promo-card--hot">
+            <div class="promo-badge">ХИТ ПРОДАЖ</div>
+            <h3>Скидка 30 000 ₽ на трактор DF-244</h3>
+            <p>При покупке минитрактора DF-244 с кабиной получите скидку 30 000 рублей!</p>
+            <ul class="promo-features">
+              <li>✓ Мощность 24 л.с.</li>
+              <li>✓ Полный привод 4x4</li>
+              <li>✓ Комфортная кабина</li>
+              <li>✓ Гарантия 1 год</li>
+            </ul>
+            <div class="promo-price">
+              <span class="price-old">315 000 ₽</span>
+              <span class="price-new">285 000 ₽</span>
+            </div>
+            <a href="catalog.html" class="btn-primary">Подробнее</a>
+          </div>
+
+          <div class="promo-card">
+            <div class="promo-badge promo-badge--new">НОВИНКА</div>
+            <h3>Запчасти в подарок при покупке</h3>
+            <p>Получите комплект запчастей стоимостью 15 000 ₽ при покупке любого минитрактора</p>
+            <ul class="promo-features">
+              <li>✓ Фильтры масляные</li>
+              <li>✓ Воздушный фильтр</li>
+              <li>✓ Комплект ремней</li>
+              <li>✓ Смазочные материалы</li>
+            </ul>
+            <div class="promo-validity">Акция действует до 31.12.2025</div>
+            <a href="catalog.html" class="btn-primary">Выбрать трактор</a>
+          </div>
+
+          <div class="promo-card">
+            <div class="promo-badge promo-badge--special">СПЕЦПРЕДЛОЖЕНИЕ</div>
+            <h3>Бесплатная доставка</h3>
+            <p>Доставим ваш минитрактор бесплатно в любую точку России при покупке от 300 000 ₽</p>
+            <ul class="promo-features">
+              <li>✓ Доставка по всей России</li>
+              <li>✓ Страхование груза</li>
+              <li>✓ Контроль на всех этапах</li>
+              <li>✓ Помощь при разгрузке</li>
+            </ul>
+            <div class="promo-validity">Предложение ограничено</div>
+            <a href="delivery.html" class="btn-primary">Узнать подробности</a>
+          </div>
+
+          <div class="promo-card">
+            <h3>Трейд-ин: обмен старого на новый</h3>
+            <p>Сдайте свой старый трактор в зачет покупки нового и получите дополнительную скидку до 50 000 ₽</p>
+            <ul class="promo-features">
+              <li>✓ Оценка за 15 минут</li>
+              <li>✓ Выгодные условия обмена</li>
+              <li>✓ Любое состояние техники</li>
+              <li>✓ Быстрое оформление</li>
+            </ul>
+            <a href="contacts.html" class="btn-primary">Оставить заявку</a>
+          </div>
+        </section>
+
+        <section class="promo-cta">
+          <h2>Не упустите выгодное предложение!</h2>
+          <p>Свяжитесь с нами, чтобы узнать об актуальных акциях и спецпредложениях</p>
+          <div class="cta-buttons">
+            <a href="tel:+79699995668" class="btn-primary btn-large">Позвонить: +7 (969) 999-56-68</a>
+            <a href="contacts.html" class="btn-secondary btn-large">Оставить заявку</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>БЕЛТЕХФЕРМ</h3>
+            <p>Официальный дилер минитракторов DONGFENG в России</p>
+          </div>
+          <div class="footer-column">
+            <h4>Контакты</h4>
+            <p>Телефон: +7 (969) 999-56-68</p>
+            <p>Email: info@beltehferm.ru</p>
+          </div>
+          <div class="footer-column">
+            <h4>Информация</h4>
+            <ul>
+              <li><a href="about.html">О компании</a></li>
+              <li><a href="delivery.html">Доставка</a></li>
+              <li><a href="warranty.html">Гарантия</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 БЕЛТЕХФЕРМ. Все права защищены.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>
