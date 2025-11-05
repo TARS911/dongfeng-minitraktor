@@ -7,7 +7,9 @@
 body.terra-bg-dark {
   background-color: #0f172a;
   color: #e2e8f0;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Header темная тема */
@@ -410,6 +412,73 @@ body.terra-bg-dark .product-badge {
 body.terra-bg-dark .action-btn__badge {
   background: #ef4444;
   color: white;
+}
+
+/* Hero секция в темной теме */
+body.terra-bg-dark .terra-hero {
+  background: #0f172a;
+}
+
+body.terra-bg-dark .terra-hero__overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.8) 0%,
+    rgba(30, 41, 59, 0.9) 100%
+  );
+}
+
+body.terra-bg-dark .terra-hero__content {
+  color: #e2e8f0;
+}
+
+body.terra-bg-dark .terra-heading-hero {
+  color: #e2e8f0;
+}
+
+body.terra-bg-dark .terra-text-lead {
+  color: #cbd5e1;
+}
+
+body.terra-bg-dark .terra-badge {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  border: 1px solid #10b981;
+}
+
+/* Анимированная сетка в темной теме */
+body.terra-bg-dark .terra-grid-bg {
+  opacity: 0.15;
+  background-image:
+    linear-gradient(rgba(16, 185, 129, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.3) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+body.terra-bg-dark .terra-grid-animated {
+  animation: terra-grid-pulse-dark 4s ease-in-out infinite;
+}
+
+@keyframes terra-grid-pulse-dark {
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+/* Статистика в hero секции */
+body.terra-bg-dark .terra-stat-value {
+  color: #10b981;
+}
+
+body.terra-bg-dark .terra-stat-label {
+  color: #94a3b8;
+}
+
+body.terra-bg-dark .terra-scroll-indicator {
+  border-color: rgba(226, 232, 240, 0.3);
 }
 
 /* Скроллбар в темной теме */
