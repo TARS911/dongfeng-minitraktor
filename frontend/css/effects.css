@@ -373,7 +373,7 @@
 
 .gradient-border {
     position: relative;
-    background: white;
+    background: #f0fdf4;
     border-radius: var(--radius-xl);
 }
 

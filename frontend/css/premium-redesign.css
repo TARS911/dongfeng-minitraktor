@@ -159,7 +159,7 @@
 }
 
 .btn-premium--secondary:hover {
-    background: white;
+    background: #f0fdf4;
     color: var(--brand-primary);
 }
 
@@ -210,7 +210,7 @@
 .hero-premium__scroll-line {
     width: 1px;
     height: 60px;
-    background: white;
+    background: #f0fdf4;
     animation: scrollLine 2s ease-in-out infinite;
 }
 
@@ -315,7 +315,7 @@
 }
 
 .product-card-premium {
-    background: white;
+    background: #f0fdf4;
     overflow: hidden;
     position: relative;
     transition:
@@ -333,7 +333,7 @@
     position: relative;
     height: 400px;
     overflow: hidden;
-    background: #f5f5f5;
+    background: #f0fdf4;
 }
 
 .product-card-premium__image {
@@ -457,7 +457,7 @@
 
 .features-premium {
     padding: var(--section-padding) 0;
-    background: white;
+    background: #f0fdf4;
 }
 
 .features-premium__container {
@@ -681,7 +681,7 @@
     }
 
     .btn-card--secondary {
-        background: white;
+        background: #f0fdf4;
         color: #2a9d4e;
         border: 1px solid #2a9d4e;
     }

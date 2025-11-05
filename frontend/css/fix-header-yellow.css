@@ -86,7 +86,7 @@ input[type="search"]:focus,
 
 /* ===== БУРГЕР МЕНЮ - БЕЛЫЙ ФОН, ТЕМНЫЕ ЛИНИИ ===== */
 .sidebar-toggle {
-  background: #ffffff !important;
+  background: #f0fdf4 !important;
   border: 1px solid #e0e0e0 !important;
   border-radius: 8px !important;
   width: 36px !important;
@@ -110,7 +110,7 @@ input[type="search"]:focus,
 
 /* ===== HEADER БЕЗ ЗЕЛЕНОГО ===== */
 .header {
-  background: #ffffff !important;
+  background: #f0fdf4 !important;
   border-bottom: 1px solid #e0e0e0 !important;
 }
 

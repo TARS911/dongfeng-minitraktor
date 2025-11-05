@@ -10,7 +10,7 @@
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background: white;
+    background: #f0fdf4;
     border: 1px solid #e5e5e5;
 }
 
@@ -220,7 +220,7 @@
         bottom: 0;
         width: 85%;
         max-width: 320px;
-        background: white;
+        background: #f0fdf4;
         z-index: 1000;
         transition: left 0.3s ease;
         overflow-y: auto;
@@ -258,7 +258,7 @@
         flex-direction: column;
         gap: 12px;
         padding: 12px;
-        background: #f8f9fa;
+        background: #f0fdf4;
         border-radius: 12px;
         margin-bottom: 16px;
     }
@@ -403,7 +403,7 @@
 .btn--outline {
     border: 2px solid var(--brand-primary);
     color: var(--brand-primary);
-    background: white;
+    background: #f0fdf4;
 }
 
 .btn--outline:hover {

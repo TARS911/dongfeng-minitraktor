@@ -15,7 +15,7 @@ body {
     Arial, sans-serif;
   color: #333;
   line-height: 1.6;
-  background: #f5f5f5;
+  background: #f0fdf4;
 }
 
 .container {
@@ -26,7 +26,7 @@ body {
 
 /* ===== HEADER ===== */
 .header {
-  background: #fff;
+  background: #f0fdf4
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -138,7 +138,7 @@ body {
 
 /* ===== NAVIGATION ===== */
 .nav {
-  background: #fff;
+  background: #f0fdf4
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
@@ -165,7 +165,7 @@ body {
 
 /* ===== PAGE CONTENT ===== */
 .page-header {
-  background: #f8f9fa;
+  background: #f0fdf4;
   color: white;
   padding: 40px 0;
   text-align: left;
@@ -183,7 +183,7 @@ body {
 }
 
 .page-content {
-  background: white;
+  background: #f0fdf4;
   padding: 50px 0;
 }
 
@@ -251,7 +251,7 @@ body {
 
 /* ===== CARDS ===== */
 .card {
-  background: white;
+  background: #f0fdf4;
   border-radius: 12px;
   padding: 30px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
@@ -340,7 +340,7 @@ body {
 }
 
 .product-card {
-  background: white;
+  background: #f0fdf4;
   border: 1px solid #eee;
   border-radius: 12px;
   overflow: hidden;
@@ -508,7 +508,7 @@ body {
   top: 0;
   width: 280px;
   height: 100vh;
-  background: white;
+  background: #f0fdf4;
   z-index: 1003;
   display: flex;
   flex-direction: column;
@@ -523,7 +523,7 @@ body {
 
 .sidebar-menu__header {
   padding: 20px;
-  background: #f8f9fa;
+  background: #f0fdf4;
   color: #1f2937;
   display: flex;
   align-items: center;
@@ -604,12 +604,12 @@ body {
 }
 
 .sidebar-menu__link:hover {
-  background: #f5f5f5;
+  background: #f0fdf4;
   color: #ffa500;
 }
 
 .sidebar-menu__link.active {
-  background: #f8f9fa;
+  background: #f0fdf4;
   color: white;
   font-weight: 600;
 }
@@ -651,7 +651,7 @@ body {
 .sidebar-menu__footer {
   padding: 20px;
   border-top: 1px solid #e5e5e5;
-  background: #fafafa;
+  background: #f0fdf4;
 }
 
 .sidebar-menu__contacts {
@@ -724,7 +724,7 @@ body {
 }
 
 .advantage-item {
-  background: white;
+  background: #f0fdf4;
   padding: 30px;
   border-radius: 12px;
   text-align: left;
@@ -761,7 +761,7 @@ body {
 /* ===== CATEGORIES SECTION ===== */
 .categories {
   padding: 60px 0;
-  background: white;
+  background: #f0fdf4;
 }
 
 .categories-grid {
@@ -772,7 +772,7 @@ body {
 }
 
 .category-card {
-  background: #f8f9fa;
+  background: #f0fdf4;
   border-radius: 12px;
   padding: 40px 30px;
   text-align: left;
@@ -784,7 +784,7 @@ body {
 .category-card:hover {
   transform: translateY(-8px);
   border-color: #ffa500;
-  background: #f8f9fa;
+  background: #f0fdf4;
   box-shadow: 0 8px 24px rgba(42, 157, 78, 0.2);
 }
 
@@ -810,7 +810,7 @@ body {
 /* ===== PRODUCTS SECTION ===== */
 .products {
   padding: 60px 0;
-  background: white;
+  background: #f0fdf4;
 }
 
 /* ===== MOBILE RESPONSIVE ===== */
@@ -906,7 +906,7 @@ body {
 }
 
 .action-btn:hover {
-  background: #f5f5f5;
+  background: #f0fdf4;
   transform: translateY(-2px);
 }
 
@@ -966,7 +966,7 @@ body {
   align-items: center;
   gap: 10px;
   padding: 12px 15px;
-  background: #f5f5f5;
+  background: #f0fdf4;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   cursor: pointer;
@@ -1007,14 +1007,14 @@ body {
 }
 
 .sidebar-menu__link--green {
-  background: #f8f9fa;
+  background: #f0fdf4;
   color: #1f2937 !important;
   border-radius: 8px;
   font-weight: 600;
 }
 
 .sidebar-menu__link--green:hover {
-  background: #f8f9fa;
+  background: #f0fdf4;
 }
 
 .sidebar-menu__link--green svg {
@@ -1142,24 +1142,24 @@ body {
 }
 
 .badge-hot {
-  background: #f8f9fa;
+  background: #f0fdf4;
   color: #1f2937;
 }
 
 .badge-new {
-  background: #f8f9fa;
+  background: #f0fdf4;
   color: #1f2937;
 }
 
 .badge-special {
-  background: #f8f9fa;
+  background: #f0fdf4;
   color: #1f2937;
 }
 
 .btn-primary {
   display: inline-block;
   padding: 14px 32px;
-  background: #f8f9fa;
+  background: #f0fdf4;
   color: #1f2937;
   font-weight: 600;
   font-size: 16px;
@@ -1179,7 +1179,7 @@ body {
 .btn-secondary {
   display: inline-block;
   padding: 14px 32px;
-  background: white;
+  background: #f0fdf4;
   color: var(--terra-emerald-600);
   font-weight: 600;
   font-size: 16px;
@@ -1204,7 +1204,7 @@ body {
 .cta-section {
   text-align: left;
   padding: 60px 30px;
-  background: #f8f9fa;
+  background: #f0fdf4;
   border-radius: 16px;
   margin-top: 60px;
 }
@@ -1245,7 +1245,7 @@ body:not(.light-theme) .card-text {
 }
 
 body:not(.light-theme) .cta-section {
-  background: #f8f9fa;
+  background: #f0fdf4;
 }
 
 @media (max-width: 768px) {
@@ -1373,7 +1373,7 @@ body:not(.light-theme) .city-option:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
+  background: #f0fdf4;
   border-radius: 16px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   width: 90%;
@@ -1519,7 +1519,7 @@ body:not(.light-theme) .city-card:hover {
 /* ===== ADVANTAGES SECTION (НАШИ ПРЕИМУЩЕСТВА) ===== */
 .advantages-section {
   padding: 50px 0;
-  background: #f8f9fa;
+  background: #f0fdf4;
   position: relative;
   overflow: hidden;
 }
@@ -1567,7 +1567,7 @@ body:not(.light-theme) .city-card:hover {
 }
 
 .advantage-card {
-  background: white;
+  background: #f0fdf4;
   border-radius: 20px;
   padding: 32px 24px;
   text-align: left;
@@ -1585,7 +1585,7 @@ body:not(.light-theme) .city-card:hover {
   left: 0;
   right: 0;
   height: 4px;
-  background: #f8f9fa;
+  background: #f0fdf4;
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -1630,42 +1630,42 @@ body:not(.light-theme) .city-card:hover {
 }
 
 .advantage-icon--delivery {
-  background: #f8f9fa;
+  background: #f0fdf4;
   box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
 }
 
 .advantage-icon--warranty {
-  background: #f8f9fa;
+  background: #f0fdf4;
   box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
 }
 
 .advantage-icon--leasing {
-  background: #f8f9fa;
+  background: #f0fdf4;
   box-shadow: 0 8px 24px rgba(236, 72, 153, 0.3);
 }
 
 .advantage-icon--trades {
-  background: #f8f9fa;
+  background: #f0fdf4;
   box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
 }
 
 .advantage-icon--grants {
-  background: #f8f9fa;
+  background: #f0fdf4;
   box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
 }
 
 .advantage-icon--service {
-  background: #f8f9fa;
+  background: #f0fdf4;
   box-shadow: 0 8px 24px rgba(6, 182, 212, 0.3);
 }
 
 .advantage-icon--price {
-  background: #f8f9fa;
+  background: #f0fdf4;
   box-shadow: 0 8px 24px rgba(234, 179, 8, 0.3);
 }
 
 .advantage-icon--promo {
-  background: #f8f9fa;
+  background: #f0fdf4;
   box-shadow: 0 8px 24px rgba(239, 68, 68, 0.3);
 }
 
@@ -1717,7 +1717,7 @@ body:not(.light-theme) .city-card:hover {
   position: absolute;
   top: 16px;
   right: 16px;
-  background: #f8f9fa;
+  background: #f0fdf4;
   color: #1f2937;
   font-size: 11px;
   font-weight: 700;
@@ -1729,7 +1729,7 @@ body:not(.light-theme) .city-card:hover {
 }
 
 body:not(.light-theme) .advantages-section {
-  background: #f8f9fa;
+  background: #f0fdf4;
 }
 
 body:not(.light-theme) .advantage-card {
@@ -1787,7 +1787,7 @@ body:not(.light-theme) .section-subtitle {
 /* ===== TRACTOR QUIZ SECTION (КАКОЙ ТРАКТОР НУЖЕН ВАМ) ===== */
 .tractor-quiz-section {
   padding: 50px 0;
-  background: #f8f9fa;
+  background: #f0fdf4;
   position: relative;
   overflow: hidden;
 }
@@ -1830,7 +1830,7 @@ body:not(.light-theme) .section-subtitle {
 
 .quiz-badge {
   display: inline-block;
-  background: #f8f9fa;
+  background: #f0fdf4;
   color: #1f2937;
   font-size: 13px;
   font-weight: 700;
@@ -1848,7 +1848,7 @@ body:not(.light-theme) .section-subtitle {
   color: #0f172a;
   margin-bottom: 16px;
   line-height: 1.2;
-  background: #f8f9fa;
+  background: #f0fdf4;
 }
 
 .quiz-subtitle {
@@ -1884,7 +1884,7 @@ body:not(.light-theme) .section-subtitle {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: #f8f9fa;
+  background: #f0fdf4;
   color: #1f2937;
   font-size: 18px;
   font-weight: 700;
@@ -1992,7 +1992,7 @@ body:not(.light-theme) .section-subtitle {
   position: absolute;
   width: 56px;
   height: 56px;
-  background: white;
+  background: #f0fdf4;
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -2047,11 +2047,11 @@ body:not(.light-theme) .section-subtitle {
 }
 
 body:not(.light-theme) .tractor-quiz-section {
-  background: #f8f9fa;
+  background: #f0fdf4;
 }
 
 body:not(.light-theme) .quiz-title {
-  background: #f8f9fa;
+  background: #f0fdf4;
 }
 
 body:not(.light-theme) .quiz-subtitle {
@@ -2150,7 +2150,7 @@ body:not(.light-theme) .quiz-floating-card {
 /* ===== CATALOG CATEGORIES SECTION ===== */
 .catalog-categories-section {
   padding: 50px 0;
-  background: #f8f9fa;
+  background: #f0fdf4;
   margin-top: 100px;
 }
 
@@ -2162,7 +2162,7 @@ body:not(.light-theme) .quiz-floating-card {
 }
 
 .category-card-large {
-  background: white;
+  background: #f0fdf4;
   border-radius: 20px;
   padding: 40px 30px;
   text-align: left;
@@ -2206,7 +2206,7 @@ body:not(.light-theme) .quiz-floating-card {
 .category-card-icon {
   width: 100px;
   height: 100px;
-  background: #f8f9fa;
+  background: #f0fdf4;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -2224,7 +2224,7 @@ body:not(.light-theme) .quiz-floating-card {
 }
 
 .category-card-large:hover .category-card-icon {
-  background: #f8f9fa;
+  background: #f0fdf4;
   transform: scale(1.1) rotate(5deg);
 }
 
@@ -2251,7 +2251,7 @@ body:not(.light-theme) .quiz-floating-card {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: #f8f9fa;
+  background: #f0fdf4;
   color: #1f2937;
   font-size: 11px;
   font-weight: 700;
@@ -2263,22 +2263,22 @@ body:not(.light-theme) .quiz-floating-card {
 }
 
 .category-card-badge--new {
-  background: #f8f9fa;
+  background: #f0fdf4;
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .category-card-badge--stock {
-  background: #f8f9fa;
+  background: #f0fdf4;
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
 .category-card-badge--warranty {
-  background: #f8f9fa;
+  background: #f0fdf4;
   box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
 }
 
 body:not(.light-theme) .catalog-categories-section {
-  background: #f8f9fa;
+  background: #f0fdf4;
 }
 
 body:not(.light-theme) .category-card-large {
@@ -2295,7 +2295,7 @@ body:not(.light-theme) .category-card-desc {
 }
 
 body:not(.light-theme) .category-card-icon {
-  background: #f8f9fa;
+  background: #f0fdf4;
 }
 
 body:not(.light-theme) .category-card-icon svg {
@@ -2303,7 +2303,7 @@ body:not(.light-theme) .category-card-icon svg {
 }
 
 body:not(.light-theme) .category-card-large:hover .category-card-icon {
-  background: #f8f9fa;
+  background: #f0fdf4;
 }
 
 body:not(.light-theme) .category-card-large:hover .category-card-icon svg {
@@ -2364,7 +2364,7 @@ body:not(.light-theme) .category-card-large:hover .category-card-icon svg {
 /* ===== LIVE GALLERY SLIDER (СЛАЙДЕР ЖИВЫХ ФОТО) ===== */
 .live-gallery-section {
   padding: 50px 0;
-  background: #f8f9fa;
+  background: #f0fdf4;
   position: relative;
   overflow: hidden;
   margin-top: 0;
@@ -2477,7 +2477,7 @@ body:not(.light-theme) .category-card-large:hover .category-card-icon svg {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: white;
+  background: #f0fdf4;
   border: none;
   cursor: pointer;
   display: flex;
@@ -2542,7 +2542,7 @@ body:not(.light-theme) .category-card-large:hover .category-card-icon svg {
 }
 
 .gallery-indicator.active {
-  background: #f8f9fa;
+  background: #f0fdf4;
   width: 32px;
   border-radius: 6px;
 }
@@ -2552,7 +2552,7 @@ body:not(.light-theme) .category-card-large:hover .category-card-icon svg {
   text-align: left;
   margin-top: 48px;
   padding: 40px 20px;
-  background: #f8f9fa;
+  background: #f0fdf4;
   border-radius: 20px;
   border: 2px solid rgba(5, 150, 105, 0.1);
 }
@@ -2584,7 +2584,7 @@ body:not(.light-theme) .category-card-large:hover .category-card-icon svg {
 
 /* Dark theme support */
 body:not(.light-theme) .live-gallery-section {
-  background: #f8f9fa;
+  background: #f0fdf4;
 }
 
 body:not(.light-theme) .gallery-nav {
@@ -2605,7 +2605,7 @@ body:not(.light-theme) .gallery-nav:hover svg {
 }
 
 body:not(.light-theme) .gallery-cta {
-  background: #f8f9fa;
+  background: #f0fdf4;
   border-color: rgba(16, 185, 129, 0.2);
 }
 

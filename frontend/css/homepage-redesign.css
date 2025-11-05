@@ -8,7 +8,7 @@
 /* Убираем все цветные градиенты, делаем белый/светло-серый фон */
 .live-gallery-section {
   padding: 50px 0 !important;
-  background: #ffffff !important;
+  background: #f0fdf4 !important;
   margin-top: 0 !important;
 }
 
@@ -18,7 +18,7 @@
 
 .advantages-section {
   padding: 50px 0 !important;
-  background: #f8f9fa !important;
+  background: #f0fdf4 !important;
 }
 
 .advantages-section::before {
@@ -27,7 +27,7 @@
 
 .tractor-quiz-section {
   padding: 50px 0 !important;
-  background: #ffffff !important;
+  background: #f0fdf4 !important;
 }
 
 .tractor-quiz-section::before {
@@ -37,7 +37,7 @@
 /* HERO СЕКЦИЯ - КОМПАКТНЕЕ */
 .terra-main-hero {
   padding: 40px 0 !important;
-  background: #ffffff !important;
+  background: #f0fdf4 !important;
 }
 
 .terra-hero-content {
@@ -128,7 +128,7 @@
 .gallery-cta {
   margin-top: 35px !important;
   padding: 25px !important;
-  background: #f8f9fa !important;
+  background: #f0fdf4 !important;
   border-radius: 8px;
 }
 
@@ -144,7 +144,7 @@
 }
 
 .advantage-card {
-  background: #ffffff !important;
+  background: #f0fdf4 !important;
   border-radius: 8px !important;
   padding: 24px 18px !important;
   border: 1px solid #e5e7eb;
@@ -247,7 +247,7 @@
 .terra-why-choose {
   max-width: 48rem !important;
   margin: 2rem auto 2rem !important;
-  background: #f8f9fa !important;
+  background: #f0fdf4 !important;
   padding: 28px 32px !important;
   border-radius: 8px !important;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;

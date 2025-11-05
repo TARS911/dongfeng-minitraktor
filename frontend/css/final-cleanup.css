@@ -18,7 +18,7 @@
 /* УБИРАЕМ ГРАДИЕНТЫ - ТОЛЬКО ПЛОСКИЕ ЦВЕТА */
 .terra-why-choose,
 .quiz-container {
-  background: #ffffff !important;
+  background: #f0fdf4 !important;
   border: 1px solid #e5e7eb !important;
 }
 
@@ -92,7 +92,7 @@ body:not(.light-theme) .quiz-container {
 .gallery-cta {
   padding: 16px !important;
   margin-top: 20px !important;
-  background: #f8f9fa !important;
+  background: #f0fdf4 !important;
   border-radius: 8px !important;
 }
 

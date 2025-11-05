@@ -25,7 +25,7 @@
 
 /* Модальное окно */
 .modal {
-    background: white;
+    background: #f0fdf4;
     border-radius: 16px;
     padding: 40px;
     max-width: 500px;
@@ -62,7 +62,7 @@
 }
 
 .modal__close:hover {
-    background: #f5f5f5;
+    background: #f0fdf4;
     color: #333;
 }
 
@@ -294,7 +294,7 @@
     width: 32px;
     height: 32px;
     border: 1px solid var(--color-gray-300);
-    background: white;
+    background: #f0fdf4;
     border-radius: var(--radius-md);
     cursor: pointer;
     display: flex;

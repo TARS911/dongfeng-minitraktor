@@ -19,7 +19,7 @@
 
 /* ===== HERO БЕЗ ФОНА - ЧИСТЫЙ БЕЛЫЙ ===== */
 .terra-hero {
-  background: #ffffff !important;
+  background: #f0fdf4 !important;
   background-image: none !important;
   position: relative !important;
 }

@@ -14,14 +14,14 @@ body {
     top: 0;
     width: 100%;
     height: var(--header-height);
-    background: white;
+    background: #f0fdf4;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     z-index: var(--z-sticky);
     transition: all 0.3s ease;
 }
 
 .header.scrolled {
-    background: white;
+    background: #f0fdf4;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
     height: 70px;
 }
@@ -196,7 +196,7 @@ body {
 
 /* === Trust Section - KRONOS5 Style === */
 .trust-section {
-    background: white;
+    background: #f0fdf4;
     padding: var(--space-4xl) 0;
     position: relative;
 }
@@ -208,7 +208,7 @@ body {
 }
 
 .trust-card {
-    background: white;
+    background: #f0fdf4;
     padding: var(--space-2xl);
     border-radius: 16px;
     text-align: center;
@@ -254,7 +254,7 @@ body {
 }
 
 .trust-card--accent::before {
-    background: white;
+    background: #f0fdf4;
 }
 
 .trust-card--accent:hover {
@@ -299,7 +299,7 @@ body {
 
 /* === Company Introduction - Compact === */
 .company-intro {
-    background: white;
+    background: #f0fdf4;
     padding: var(--space-3xl) 0 var(--space-2xl);
     text-align: center;
     margin-bottom: var(--space-3xl);
@@ -358,7 +358,7 @@ body {
 /* === Catalog Section === */
 .catalog {
     padding: var(--section-padding) 0;
-    background: white;
+    background: #f0fdf4;
 }
 
 /* === Catalog Tabs === */
@@ -459,7 +459,7 @@ body {
 /* === Advantages Section === */
 .advantages {
     padding: var(--section-padding) 0;
-    background: #fafafa;
+    background: #f0fdf4;
 }
 
 .advantages .trust__grid {
@@ -469,7 +469,7 @@ body {
 /* === Warranty Section === */
 .warranty {
     padding: var(--section-padding) 0;
-    background: white;
+    background: #f0fdf4;
 }
 
 .warranty__text {
@@ -656,7 +656,7 @@ body {
 /* === Delivery Section === */
 .delivery {
     padding: var(--section-padding) 0;
-    background: white;
+    background: #f0fdf4;
 }
 
 .delivery__content {
@@ -683,7 +683,7 @@ body {
 }
 
 .delivery__calculator {
-    background: white;
+    background: #f0fdf4;
     padding: var(--space-2xl);
     border-radius: var(--card-border-radius);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
@@ -704,7 +704,7 @@ body {
 
 .delivery__calculator input,
 .delivery__calculator select {
-    background: #ffffff;
+    background: #f0fdf4;
     border: 2px solid #cbd5e0;
     color: #333;
     font-weight: 500;
@@ -713,7 +713,7 @@ body {
 
 .delivery__calculator input:focus,
 .delivery__calculator select:focus {
-    background: white;
+    background: #f0fdf4;
     border-color: var(--brand-primary);
     box-shadow: 0 0 0 3px rgba(42, 157, 78, 0.1);
 }
@@ -721,7 +721,7 @@ body {
 /* === Contacts Section === */
 .contacts {
     padding: var(--section-padding) 0;
-    background: #fafafa;
+    background: #f0fdf4;
 }
 
 .contacts__wrapper {
@@ -797,7 +797,7 @@ body {
 /* === Contacts Page Specific Styles === */
 .contacts-page {
     padding: var(--section-padding) 0;
-    background: #fafafa;
+    background: #f0fdf4;
 }
 
 .page-title {
@@ -1047,7 +1047,7 @@ body {
 
 /* === Footer - Светлый и современный === */
 .footer {
-    background: #f8f9fa;
+    background: #f0fdf4;
     color: var(--color-gray-800);
     padding: var(--space-2xl) 0;
     position: relative;
@@ -1432,7 +1432,7 @@ body {
 /* Payment Section */
 .payment-section {
     padding: var(--section-padding) 0;
-    background: #fafafa;
+    background: #f0fdf4;
 }
 
 .payment__grid {
@@ -1539,7 +1539,7 @@ body {
 
 /* Payment Cards Icons */
 .payment-cards {
-    background: white;
+    background: #f0fdf4;
     padding: var(--space-3xl);
     border-radius: var(--card-border-radius);
     box-shadow: var(--shadow-sm);
@@ -1570,7 +1570,7 @@ body {
 
 /* Payment Details */
 .payment-details {
-    background: white;
+    background: #f0fdf4;
     padding: var(--space-3xl);
     border-radius: var(--card-border-radius);
     box-shadow: var(--shadow-sm);
@@ -1585,7 +1585,7 @@ body {
 }
 
 .payment-details__info {
-    background: #f8f9fa;
+    background: #f0fdf4;
     padding: var(--space-xl);
     border-radius: 12px;
     border-left: 4px solid var(--brand-primary);
@@ -1643,7 +1643,7 @@ body {
 
 /* Installment Info */
 .installment-info {
-    background: white;
+    background: #f0fdf4;
     padding: var(--space-3xl);
     border-radius: var(--card-border-radius);
     box-shadow: var(--shadow-sm);
@@ -1660,7 +1660,7 @@ body {
 .step-card {
     text-align: center;
     padding: var(--space-xl);
-    background: #f8f9fa;
+    background: #f0fdf4;
     border-radius: 12px;
     transition: all var(--transition-base);
 }
@@ -1668,7 +1668,7 @@ body {
 .step-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-md);
-    background: white;
+    background: #f0fdf4;
 }
 
 .step-card__number {
@@ -1699,7 +1699,7 @@ body {
 
 /* Leasing Info */
 .leasing-info {
-    background: white;
+    background: #f0fdf4;
     padding: var(--space-3xl);
     border-radius: var(--card-border-radius);
     box-shadow: var(--shadow-sm);
@@ -1717,13 +1717,13 @@ body {
     display: flex;
     gap: var(--space-lg);
     padding: var(--space-lg);
-    background: #f8f9fa;
+    background: #f0fdf4;
     border-radius: 12px;
     transition: all var(--transition-base);
 }
 
 .benefit-item:hover {
-    background: white;
+    background: #f0fdf4;
     box-shadow: var(--shadow-md);
 }
 
@@ -1754,7 +1754,7 @@ body {
 }
 
 .leasing-documents {
-    background: #f8f9fa;
+    background: #f0fdf4;
     padding: var(--space-2xl);
     border-radius: 12px;
     margin-top: var(--space-2xl);
@@ -1794,7 +1794,7 @@ body {
 
 /* Payment Security */
 .payment-security {
-    background: white;
+    background: #f0fdf4;
     padding: var(--space-3xl);
     border-radius: var(--card-border-radius);
     box-shadow: var(--shadow-sm);
@@ -1832,7 +1832,7 @@ body {
 
 /* Payment FAQ */
 .payment-faq {
-    background: white;
+    background: #f0fdf4;
     padding: var(--space-3xl);
     border-radius: var(--card-border-radius);
     box-shadow: var(--shadow-sm);
@@ -1922,7 +1922,7 @@ body {
 
 /* === Секция преимуществ - светлая === */
 .advantages {
-    background: #ffffff;
+    background: #f0fdf4;
     padding: var(--space-4xl) 0;
 }
 

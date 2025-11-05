@@ -86,7 +86,7 @@
     position: absolute;
     top: calc(100% + 10px);
     left: 0;
-    background: white;
+    background: #f0fdf4;
     border-radius: 15px;
     padding: 1rem;
     min-width: 200px;

@@ -82,7 +82,7 @@
     max-width: 420px;
     width: 100%;
     flex: 1;
-    background: #ffffff;
+    background: #f0fdf4;
     border: 2px solid #e8e8e8;
     border-radius: 28px;
     padding: 3px 3px 3px 20px;
@@ -180,7 +180,7 @@
 }
 
 .header-action:hover {
-    background: #ffffff;
+    background: #f0fdf4;
     color: var(--brand-primary);
     border-color: #e0e0e0;
     transform: translateY(-2px);
@@ -393,7 +393,7 @@
     top: calc(100% + 12px);
     left: 0;
     min-width: 360px;
-    background: #ffffff;
+    background: #f0fdf4;
     border-radius: 16px;
     box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
     padding: 4px;

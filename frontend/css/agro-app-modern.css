@@ -184,7 +184,7 @@ body {
 }
 
 .agro-btn--primary {
-    background: white;
+    background: #f0fdf4;
     color: var(--agro-green-primary);
     box-shadow: var(--agro-shadow-2);
 }
@@ -259,7 +259,7 @@ body {
 
 /* Карточка продукта */
 .agro-card {
-    background: white;
+    background: #f0fdf4;
     border-radius: var(--agro-radius-lg);
     overflow: hidden;
     box-shadow: var(--agro-shadow-1);

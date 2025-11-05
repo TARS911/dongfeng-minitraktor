@@ -228,7 +228,7 @@ body:not(.light-theme) .experience-description {
 .experience-card {
   position: relative;
   padding: 2rem;
-  background: #ffffff;
+  background: #f0fdf4;
   border: 1px solid #e5e7eb;
   border-radius: 1rem;
   transition: all 0.3s ease;
@@ -325,7 +325,7 @@ body:not(.light-theme) .experience-card--featured .experience-card-text {
   border-radius: 0.5rem;
   color: #374151;
   font-weight: 500;
-  background: #ffffff;
+  background: #f0fdf4;
   transition: all 0.2s ease;
   cursor: pointer;
 }
@@ -443,7 +443,7 @@ body:not(.light-theme) .sustainability-text {
   align-items: start;
   gap: 1rem;
   padding: 1rem;
-  background: #ffffff;
+  background: #f0fdf4;
   border: 1px solid #e5e7eb;
   border-radius: 0.75rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -526,7 +526,7 @@ body:not(.light-theme) .sustainability-feature-text {
 .sustainability-stat {
   text-align: center;
   padding: 2rem;
-  background: #ffffff;
+  background: #f0fdf4;
   border: 1px solid #bbf7d0;
   border-radius: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);

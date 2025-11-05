@@ -11,7 +11,7 @@
   width: 36px !important;
   height: 36px !important;
   padding: 0 !important;
-  background: #ffffff !important;
+  background: #f0fdf4 !important;
   border: 1px solid #e5e7eb !important;
   border-radius: 8px !important;
   display: flex !important;
@@ -66,7 +66,7 @@
 
 /* DARK THEME */
 body:not(.light-theme) .sidebar-toggle {
-  background: #ffffff !important;
+  background: #f0fdf4 !important;
   border-color: #e5e7eb !important;
 }
 

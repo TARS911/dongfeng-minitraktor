@@ -21,7 +21,7 @@
 }
 
 .advantage-item {
-    background: white;
+    background: #f0fdf4;
     border-radius: 12px;
     padding: 32px 24px;
     display: flex;
@@ -219,7 +219,7 @@
     border: none;
     border-radius: 8px;
     font-size: 15px;
-    background: white;
+    background: #f0fdf4;
     color: #333;
     outline: none;
     transition: all 0.3s ease;
@@ -249,7 +249,7 @@
 }
 
 .newsletter-block__submit:hover {
-    background: white;
+    background: #f0fdf4;
     color: var(--brand-accent);
     transform: translateX(4px);
 }

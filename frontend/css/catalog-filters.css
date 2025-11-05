@@ -10,7 +10,7 @@
     justify-content: space-between;
     gap: 16px;
     padding: 20px;
-    background: white;
+    background: #f0fdf4;
     border-radius: 12px;
     margin-bottom: 24px;
     flex-wrap: wrap;
@@ -24,7 +24,7 @@
     padding: 10px 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background: white;
+    background: #f0fdf4;
     cursor: pointer;
     transition: all 0.2s;
     font-size: 15px;
@@ -97,7 +97,7 @@
 }
 
 .filters {
-    background: white;
+    background: #f0fdf4;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -211,7 +211,7 @@
 
 /* Уменьшенные карточки товаров */
 .product-card {
-    background: white;
+    background: #f0fdf4;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -229,7 +229,7 @@
     position: relative;
     width: 100%;
     padding-top: 75%;
-    background: #f5f5f5;
+    background: #f0fdf4;
     overflow: hidden;
 }
 
@@ -338,7 +338,7 @@
         max-height: 100vh;
         z-index: 1001;
         transition: left 0.3s ease;
-        background: white;
+        background: #f0fdf4;
         box-shadow: 4px 0 20px rgba(0,0,0,0.15);
     }
 
@@ -354,7 +354,7 @@
         right: 16px;
         width: 32px;
         height: 32px;
-        background: #f5f5f5;
+        background: #f0fdf4;
         border: none;
         border-radius: 50%;
         cursor: pointer;

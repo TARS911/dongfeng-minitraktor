@@ -31,7 +31,7 @@
 
 /* ===== УПРОЩАЕМ HERO ===== */
 .terra-hero {
-  background: #ffffff !important;
+  background: #f0fdf4 !important;
   padding: 40px 0 !important;
   min-height: auto !important;
 }
@@ -63,7 +63,7 @@
 
 /* ===== МИНИМАЛИСТИЧНЫЙ HEADER ===== */
 .header {
-  background: #ffffff !important;
+  background: #f0fdf4 !important;
   border-bottom: 1px solid #e0e0e0 !important;
   padding: 12px 0 !important;
   box-shadow: none !important;
@@ -91,7 +91,7 @@
 
 /* ===== КАТАЛОГ - ГЛАВНЫЙ ФОКУС ===== */
 .catalog-section {
-  background: #fafafa !important;
+  background: #f0fdf4 !important;
   padding: 40px 0 !important;
 }
 
@@ -120,7 +120,7 @@
 }
 
 .category-card {
-  background: #ffffff !important;
+  background: #f0fdf4 !important;
   border: 1px solid #e0e0e0 !important;
   border-radius: 4px !important;
   padding: 0 !important;
@@ -240,7 +240,7 @@
 
 /* ===== УБИРАЕМ SIDEBAR ===== */
 .sidebar-menu {
-  background: #ffffff !important;
+  background: #f0fdf4 !important;
   border-left: 1px solid #e0e0e0 !important;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1) !important;
 }
@@ -252,7 +252,7 @@
 }
 
 .sidebar-menu__link:hover {
-  background: #fafafa !important;
+  background: #f0fdf4 !important;
   color: #ffa500 !important;
 }
 
@@ -285,7 +285,7 @@
 
 /* ===== ОБЩИЙ СТИЛЬ - МИНИМАЛИЗМ ===== */
 body {
-  background: #ffffff !important;
+  background: #f0fdf4 !important;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif !important;
   color: #1a1a1a !important;
 }
@@ -308,5 +308,5 @@ button,
 
 /* Убираем градиенты */
 [style*="gradient"] {
-  background: #ffffff !important;
+  background: #f0fdf4 !important;
 }

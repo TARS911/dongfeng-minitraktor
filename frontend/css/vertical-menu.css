@@ -35,7 +35,7 @@
 /* Header с логотипом и поиском (мобильная версия) */
 .sidebar-menu__header {
     padding: 16px;
-    background: #ffffff;
+    background: #f0fdf4;
     border-bottom: 1px solid #e1e8ed;
     display: flex;
     align-items: center;
@@ -71,7 +71,7 @@
     height: 36px;
     border-radius: 6px;
     border: 1px solid #e1e8ed;
-    background: #ffffff;
+    background: #f0fdf4;
     color: #525252;
     font-size: 24px;
     cursor: pointer;
@@ -90,7 +90,7 @@
 /* Поиск (опционально) */
 .sidebar-menu__search {
     padding: 0 16px 12px;
-    background: #ffffff;
+    background: #f0fdf4;
     border-bottom: 1px solid #e1e8ed;
 }
 
@@ -175,7 +175,7 @@
 }
 
 .sidebar-menu__link:hover {
-    background: #ffffff;
+    background: #f0fdf4;
     color: #171717;
 }
 
@@ -184,7 +184,7 @@
 }
 
 .sidebar-menu__link.active {
-    background: #ffffff;
+    background: #f0fdf4;
     color: #2a9d4e;
     font-weight: 600;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
@@ -259,7 +259,7 @@
 .sidebar-city-selector {
     padding: 12px 16px;
     border-top: 1px solid #e1e8ed;
-    background: #ffffff;
+    background: #f0fdf4;
     margin-top: auto;
 }
 
@@ -280,7 +280,7 @@
 }
 
 .sidebar-city-selector__btn:hover {
-    background: #ffffff;
+    background: #f0fdf4;
     border-color: #2a9d4e;
     color: #2a9d4e;
 }
@@ -307,7 +307,7 @@
     bottom: 100%;
     left: 16px;
     right: 16px;
-    background: white;
+    background: #f0fdf4;
     border: 1px solid #e1e8ed;
     border-radius: 8px;
     box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12);
@@ -416,7 +416,7 @@ body.sidebar-collapsed .modern-header--with-sidebar {
 .sidebar-collapse-toggle {
     padding: 12px 16px;
     border-bottom: 1px solid #e1e8ed;
-    background: #ffffff;
+    background: #f0fdf4;
 }
 
 /* Кнопка переключения sidebar на десктопе */

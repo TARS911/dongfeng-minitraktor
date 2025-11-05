@@ -41,7 +41,7 @@
 }
 
 .header-action:hover {
-    background: #ffffff;
+    background: #f0fdf4;
     color: var(--brand-primary);
     border-color: #e0e0e0;
     transform: translateY(-2px);

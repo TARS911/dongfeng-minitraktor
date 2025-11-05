@@ -167,7 +167,7 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: white;
+    background: #f0fdf4;
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
     margin-top: 8px;
@@ -197,7 +197,7 @@
 }
 
 .search-result-item:hover {
-    background: #f8f9fa;
+    background: #f0fdf4;
 }
 
 .search-result-item:last-child {
@@ -250,7 +250,7 @@
 }
 
 .modal__content {
-    background: white;
+    background: #f0fdf4;
     border-radius: 24px;
     padding: 32px;
     max-width: 500px;
@@ -329,7 +329,7 @@
 .skeleton-card {
     padding: 16px;
     border-radius: 16px;
-    background: white;
+    background: #f0fdf4;
 }
 
 .skeleton-image {

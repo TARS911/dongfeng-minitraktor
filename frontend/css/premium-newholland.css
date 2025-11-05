@@ -195,7 +195,7 @@
 }
 
 .nh-btn--secondary:hover {
-    background: white;
+    background: #f0fdf4;
     color: var(--nh-primary-dark);
 }
 
@@ -251,7 +251,7 @@
 
 /* Карточка продукта */
 .nh-product-card {
-    background: white;
+    background: #f0fdf4;
     border-radius: var(--nh-radius-md);
     overflow: hidden;
     box-shadow: var(--nh-shadow-sm);
@@ -423,7 +423,7 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: white;
+    background: #f0fdf4;
     box-shadow: var(--nh-shadow-sm);
     transition: all var(--nh-transition-base);
 }

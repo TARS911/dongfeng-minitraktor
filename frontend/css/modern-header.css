@@ -1,6 +1,6 @@
 /* Modern Header Styles */
 .modern-header {
-    background: white;
+    background: #f0fdf4;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     position: sticky;
     top: 0;
@@ -48,7 +48,7 @@
     align-items: center;
     gap: 8px;
     padding: 10px 16px;
-    background: white;
+    background: #f0fdf4;
     border: 2px solid var(--brand-primary);
     border-radius: 8px;
     cursor: pointer;
@@ -71,7 +71,7 @@
     position: absolute;
     top: calc(100% + 8px);
     left: 0;
-    background: white;
+    background: #f0fdf4;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
