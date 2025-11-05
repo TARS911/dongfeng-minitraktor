@@ -1,0 +1,76 @@
+/*
+ * LIGHT GREEN BACKGROUND
+ * Приятный светло-зеленый фон для всего сайта
+ * Убираем зеленый фон с кнопок sidebar
+ */
+
+/* ===== ОСНОВНОЙ ФОН САЙТА - СВЕТЛО-ЗЕЛЕНЫЙ ===== */
+body {
+  background: #f0fdf4 !important;
+}
+
+/* ===== УБИРАЕМ ЗЕЛЕНЫЙ ФОН С КНОПОК SIDEBAR ===== */
+.sidebar-menu__link--gradient-blue,
+.sidebar-menu__link--orange {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.sidebar-menu__link {
+  background: transparent !important;
+  color: #1f2937 !important;
+  padding: 12px 20px !important;
+  transition: all 0.2s !important;
+}
+
+.sidebar-menu__link:hover {
+  background: rgba(255, 165, 0, 0.1) !important;
+  color: #ffa500 !important;
+}
+
+.sidebar-menu__link--active {
+  background: rgba(255, 165, 0, 0.15) !important;
+  color: #ffa500 !important;
+  font-weight: 600 !important;
+}
+
+/* ===== СЕКЦИИ НА СВЕТЛОМ ФОНЕ ===== */
+.advantages-section,
+.tractor-quiz-section,
+.live-gallery-section,
+.catalog-section {
+  background: #f0fdf4 !important;
+}
+
+/* ===== КОНТЕНТ БЛОКИ - БЕЛЫЕ НА СВЕТЛОМ ФОНЕ ===== */
+.advantage-card,
+.category-card,
+.product-card,
+.quiz-container,
+.gallery-cta,
+.terra-why-choose {
+  background: #ffffff !important;
+}
+
+/* ===== HERO НА СВЕТЛОМ ФОНЕ ===== */
+.terra-hero,
+.hero {
+  background: #f0fdf4 !important;
+}
+
+/* ===== КОНТЕЙНЕР ===== */
+.container {
+  background: transparent !important;
+}
+
+/* ===== ТЕМНАЯ ТЕМА - БЕЗ СВЕТЛО-ЗЕЛЕНОГО ===== */
+body:not(.light-theme) {
+  background: #1a1a1a !important;
+}
+
+body:not(.light-theme) .advantages-section,
+body:not(.light-theme) .catalog-section,
+body:not(.light-theme) .terra-hero {
+  background: #1a1a1a !important;
+}
