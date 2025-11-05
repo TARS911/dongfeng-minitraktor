@@ -80,7 +80,14 @@ a:hover {
 .hero-cta,
 .consultation-btn,
 .terra-hero__actions a {
-  color: white !important;
+  color: #1f2937 !important;
+}
+
+/* Кнопки в hero - черный текст */
+.terra-hero__actions .terra-btn,
+.terra-hero__actions .terra-btn-primary,
+.terra-hero__actions .terra-btn-outline {
+  color: #1f2937 !important;
 }
 
 /* ===== HEADER - БЕЛЫЙ ТЕКСТ ===== */
