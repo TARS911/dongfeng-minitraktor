@@ -13,25 +13,42 @@ html {
   background: #f0fdf4 !important;
 }
 
-/* HEADER - светло-зеленый фон */
+/* HEADER - светло-зеленый фон ВЕЗДЕ */
 .header,
 .header-main,
 .header-content,
+.header-container,
+.search-bar,
+.header-actions,
 header {
   background: #f0fdf4 !important;
   background-color: #f0fdf4 !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
-/* FOOTER - светло-зеленый фон */
+/* Контейнер в header */
+.header .container {
+  background: #f0fdf4 !important;
+  background-color: #f0fdf4 !important;
+}
+
+/* FOOTER - светло-зеленый фон ВЕЗДЕ */
 .footer,
 .footer-content,
 .footer-section,
+.footer-bottom,
+.footer-main,
 footer {
   background: #f0fdf4 !important;
   background-color: #f0fdf4 !important;
   color: #1f2937 !important;
   border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Контейнер в footer */
+.footer .container {
+  background: #f0fdf4 !important;
+  background-color: #f0fdf4 !important;
 }
 
 .footer a,
