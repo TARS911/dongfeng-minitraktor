@@ -1,0 +1,52 @@
+/*
+ * HIDE HERO BACKGROUND
+ * Убираем фон с трактором и оверлей
+ */
+
+/* ===== УБИРАЕМ ОВЕРЛЕЙ ===== */
+.terra-hero__overlay {
+  display: none !important;
+}
+
+/* ===== УБИРАЕМ ФОНОВОЕ ИЗОБРАЖЕНИЕ ТРАКТОРА ===== */
+.terra-hero__image-wrapper {
+  display: none !important;
+}
+
+.terra-hero__image {
+  display: none !important;
+}
+
+/* ===== HERO БЕЗ ФОНА - ЧИСТЫЙ БЕЛЫЙ ===== */
+.terra-hero {
+  background: #ffffff !important;
+  background-image: none !important;
+  position: relative !important;
+}
+
+/* ===== КОНТЕНТ НА ВСЮ ШИРИНУ ===== */
+.terra-hero__content {
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  padding: 80px 20px !important;
+}
+
+.terra-hero__title {
+  text-align: center !important;
+}
+
+.terra-hero__description {
+  text-align: center !important;
+}
+
+.terra-hero__actions {
+  justify-content: center !important;
+}
+
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
+@media (max-width: 768px) {
+  .terra-hero__content {
+    padding: 60px 20px !important;
+  }
+}
