@@ -784,6 +784,169 @@
       </div>
     </section>
 
+    <!-- Слайдер живых фото техники -->
+    <section class="live-gallery-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Наша техника в работе</h2>
+          <p class="section-subtitle">Реальные фотографии от наших клиентов</p>
+        </div>
+
+        <div class="live-gallery-wrapper">
+          <button class="gallery-nav gallery-nav--prev" onclick="moveGallerySlide(-1)" aria-label="Предыдущее фото">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <div class="live-gallery-slider">
+            <div class="gallery-track" id="galleryTrack">
+              <!-- Слайд 1 -->
+              <div class="gallery-slide">
+                <div class="gallery-image-wrapper">
+                  <img
+                    src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-244-main.jpg"
+                    alt="DONGFENG DF-244 в поле"
+                    class="gallery-image"
+                    loading="lazy"
+                  />
+                  <div class="gallery-overlay">
+                    <div class="gallery-info">
+                      <h3 class="gallery-info-title">DONGFENG DF-244</h3>
+                      <p class="gallery-info-location">📍 Белгородская область</p>
+                      <p class="gallery-info-desc">Вспашка поля 5 га</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Слайд 2 -->
+              <div class="gallery-slide">
+                <div class="gallery-image-wrapper">
+                  <img
+                    src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-304-main.jpg"
+                    alt="DONGFENG DF-304 на уборке"
+                    class="gallery-image"
+                    loading="lazy"
+                  />
+                  <div class="gallery-overlay">
+                    <div class="gallery-info">
+                      <h3 class="gallery-info-title">DONGFENG DF-304</h3>
+                      <p class="gallery-info-location">📍 Курская область</p>
+                      <p class="gallery-info-desc">Уборка урожая</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Слайд 3 -->
+              <div class="gallery-slide">
+                <div class="gallery-image-wrapper">
+                  <img
+                    src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-404-main.jpg"
+                    alt="DONGFENG DF-404 уборка снега"
+                    class="gallery-image"
+                    loading="lazy"
+                  />
+                  <div class="gallery-overlay">
+                    <div class="gallery-info">
+                      <h3 class="gallery-info-title">DONGFENG DF-404</h3>
+                      <p class="gallery-info-location">📍 Брянская область</p>
+                      <p class="gallery-info-desc">Уборка снега зимой</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Слайд 4 -->
+              <div class="gallery-slide">
+                <div class="gallery-image-wrapper">
+                  <img
+                    src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-354-main.jpg"
+                    alt="DONGFENG DF-354 транспортировка"
+                    class="gallery-image"
+                    loading="lazy"
+                  />
+                  <div class="gallery-overlay">
+                    <div class="gallery-info">
+                      <h3 class="gallery-info-title">DONGFENG DF-354</h3>
+                      <p class="gallery-info-location">📍 Липецкая область</p>
+                      <p class="gallery-info-desc">Транспортировка грузов</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Слайд 5 -->
+              <div class="gallery-slide">
+                <div class="gallery-image-wrapper">
+                  <img
+                    src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-504-main.jpg"
+                    alt="DONGFENG DF-504 пахота"
+                    class="gallery-image"
+                    loading="lazy"
+                  />
+                  <div class="gallery-overlay">
+                    <div class="gallery-info">
+                      <h3 class="gallery-info-title">DONGFENG DF-504</h3>
+                      <p class="gallery-info-location">📍 Воронежская область</p>
+                      <p class="gallery-info-desc">Глубокая вспашка</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Слайд 6 -->
+              <div class="gallery-slide">
+                <div class="gallery-image-wrapper">
+                  <img
+                    src="https://res.cloudinary.com/drenz1aia/image/upload/v1760698080/dongfeng-minitraktor/df-454-main.jpg"
+                    alt="DONGFENG DF-454 в саду"
+                    class="gallery-image"
+                    loading="lazy"
+                  />
+                  <div class="gallery-overlay">
+                    <div class="gallery-info">
+                      <h3 class="gallery-info-title">DONGFENG DF-454</h3>
+                      <p class="gallery-info-location">📍 Тамбовская область</p>
+                      <p class="gallery-info-desc">Работа в саду</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="gallery-nav gallery-nav--next" onclick="moveGallerySlide(1)" aria-label="Следующее фото">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Индикаторы -->
+        <div class="gallery-indicators" id="galleryIndicators">
+          <button class="gallery-indicator active" onclick="goToGallerySlide(0)"></button>
+          <button class="gallery-indicator" onclick="goToGallerySlide(1)"></button>
+          <button class="gallery-indicator" onclick="goToGallerySlide(2)"></button>
+          <button class="gallery-indicator" onclick="goToGallerySlide(3)"></button>
+          <button class="gallery-indicator" onclick="goToGallerySlide(4)"></button>
+          <button class="gallery-indicator" onclick="goToGallerySlide(5)"></button>
+        </div>
+
+        <!-- Кнопка призыва к действию -->
+        <div class="gallery-cta">
+          <p class="gallery-cta-text">Хотите увидеть технику вживую?</p>
+          <a href="shipments.html" class="btn-primary btn-large">
+            Смотреть все фото отгрузок
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Experience Section - УДАЛЕНА (перегружала главную) -->
     <!-- <section class="experience-section">
       <div class="container">
@@ -1042,6 +1205,86 @@
         // В будущем можно открыть модальное окно с вопросами или перейти на страницу теста
         // window.location.href = '/quiz.html';
       }
+
+      // Live Gallery Slider Functionality
+      let currentGallerySlide = 0;
+      const totalGallerySlides = 6;
+      let galleryAutoplayInterval;
+
+      function moveGallerySlide(direction) {
+        const track = document.getElementById('galleryTrack');
+        const indicators = document.querySelectorAll('.gallery-indicator');
+
+        if (!track) return;
+
+        currentGallerySlide += direction;
+
+        // Loop around
+        if (currentGallerySlide < 0) {
+          currentGallerySlide = totalGallerySlides - 1;
+        } else if (currentGallerySlide >= totalGallerySlides) {
+          currentGallerySlide = 0;
+        }
+
+        updateGallerySlide();
+        resetGalleryAutoplay();
+      }
+
+      function goToGallerySlide(index) {
+        currentGallerySlide = index;
+        updateGallerySlide();
+        resetGalleryAutoplay();
+      }
+
+      function updateGallerySlide() {
+        const track = document.getElementById('galleryTrack');
+        const indicators = document.querySelectorAll('.gallery-indicator');
+
+        if (!track) return;
+
+        // Move the track
+        track.style.transform = `translateX(-${currentGallerySlide * 100}%)`;
+
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+          if (index === currentGallerySlide) {
+            indicator.classList.add('active');
+          } else {
+            indicator.classList.remove('active');
+          }
+        });
+      }
+
+      function startGalleryAutoplay() {
+        galleryAutoplayInterval = setInterval(() => {
+          moveGallerySlide(1);
+        }, 5000); // Change slide every 5 seconds
+      }
+
+      function resetGalleryAutoplay() {
+        clearInterval(galleryAutoplayInterval);
+        startGalleryAutoplay();
+      }
+
+      // Start autoplay when page loads
+      document.addEventListener("DOMContentLoaded", function () {
+        const galleryTrack = document.getElementById('galleryTrack');
+        if (galleryTrack) {
+          startGalleryAutoplay();
+
+          // Pause autoplay on hover
+          const gallery = document.querySelector('.live-gallery-slider');
+          if (gallery) {
+            gallery.addEventListener('mouseenter', () => {
+              clearInterval(galleryAutoplayInterval);
+            });
+
+            gallery.addEventListener('mouseleave', () => {
+              startGalleryAutoplay();
+            });
+          }
+        }
+      });
 
       // Load saved theme on page load
       document.addEventListener("DOMContentLoaded", function () {

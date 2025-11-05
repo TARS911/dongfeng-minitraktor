@@ -2369,3 +2369,391 @@ body:not(.light-theme) .category-card-large:hover .category-card-icon svg {
     font-size: 13px;
   }
 }
+
+/* ===== LIVE GALLERY SLIDER (СЛАЙДЕР ЖИВЫХ ФОТО) ===== */
+.live-gallery-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.live-gallery-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(5, 150, 105, 0.2) 50%,
+    transparent 100%
+  );
+}
+
+.live-gallery-wrapper {
+  position: relative;
+  margin: 40px 0;
+  padding: 0 60px;
+}
+
+.live-gallery-slider {
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.gallery-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.gallery-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-slide:hover .gallery-image {
+  transform: scale(1.05);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.5) 60%,
+    transparent 100%
+  );
+  padding: 40px 40px 30px;
+  transform: translateY(0);
+  transition: all 0.4s ease;
+}
+
+.gallery-info {
+  color: white;
+}
+
+.gallery-info-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-info-location {
+  font-size: 16px;
+  margin-bottom: 6px;
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+.gallery-info-desc {
+  font-size: 18px;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* Navigation buttons */
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.gallery-nav svg {
+  width: 24px;
+  height: 24px;
+  color: #059669;
+  transition: all 0.3s ease;
+}
+
+.gallery-nav:hover {
+  background: #059669;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 12px 32px rgba(5, 150, 105, 0.3);
+}
+
+.gallery-nav:hover svg {
+  color: white;
+}
+
+.gallery-nav--prev {
+  left: 0;
+}
+
+.gallery-nav--next {
+  right: 0;
+}
+
+.gallery-nav:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Indicators */
+.gallery-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.gallery-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #d1d5db;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.gallery-indicator:hover {
+  background: #9ca3af;
+  transform: scale(1.2);
+}
+
+.gallery-indicator.active {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  width: 32px;
+  border-radius: 6px;
+}
+
+/* CTA Section */
+.gallery-cta {
+  text-align: center;
+  margin-top: 48px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border-radius: 20px;
+  border: 2px solid rgba(5, 150, 105, 0.1);
+}
+
+.gallery-cta-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+.gallery-cta .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  font-size: 16px;
+}
+
+.gallery-cta .btn-primary svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-cta .btn-primary:hover svg {
+  transform: translateX(4px);
+}
+
+/* Dark theme support */
+body:not(.light-theme) .live-gallery-section {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+}
+
+body:not(.light-theme) .gallery-nav {
+  background: #374151;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+body:not(.light-theme) .gallery-nav svg {
+  color: #10b981;
+}
+
+body:not(.light-theme) .gallery-nav:hover {
+  background: #10b981;
+}
+
+body:not(.light-theme) .gallery-nav:hover svg {
+  color: white;
+}
+
+body:not(.light-theme) .gallery-cta {
+  background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+body:not(.light-theme) .gallery-cta-text {
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .live-gallery-wrapper {
+    padding: 0 50px;
+  }
+
+  .gallery-nav {
+    width: 48px;
+    height: 48px;
+  }
+
+  .gallery-nav svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .gallery-info-title {
+    font-size: 24px;
+  }
+
+  .gallery-info-location {
+    font-size: 14px;
+  }
+
+  .gallery-info-desc {
+    font-size: 16px;
+  }
+
+  .gallery-overlay {
+    padding: 30px 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .live-gallery-section {
+    padding: 60px 0;
+  }
+
+  .live-gallery-wrapper {
+    padding: 0 40px;
+  }
+
+  .gallery-nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .gallery-nav svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .gallery-info-title {
+    font-size: 20px;
+  }
+
+  .gallery-info-location {
+    font-size: 13px;
+  }
+
+  .gallery-info-desc {
+    font-size: 14px;
+  }
+
+  .gallery-overlay {
+    padding: 20px 20px 16px;
+  }
+
+  .gallery-indicators {
+    gap: 8px;
+  }
+
+  .gallery-indicator {
+    width: 10px;
+    height: 10px;
+  }
+
+  .gallery-indicator.active {
+    width: 28px;
+  }
+
+  .gallery-cta-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .live-gallery-wrapper {
+    padding: 0;
+  }
+
+  .gallery-nav {
+    width: 36px;
+    height: 36px;
+  }
+
+  .gallery-nav--prev {
+    left: 10px;
+  }
+
+  .gallery-nav--next {
+    right: 10px;
+  }
+
+  .gallery-nav svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .gallery-info-title {
+    font-size: 18px;
+  }
+
+  .gallery-info-location,
+  .gallery-info-desc {
+    font-size: 13px;
+  }
+
+  .gallery-overlay {
+    padding: 16px;
+  }
+
+  .gallery-cta {
+    padding: 30px 16px;
+    margin-top: 32px;
+  }
+
+  .gallery-cta-text {
+    font-size: 16px;
+  }
+
+  .gallery-cta .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
