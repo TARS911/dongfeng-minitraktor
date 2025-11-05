@@ -16,44 +16,31 @@ header {
 
 /* ===== УБИРАЕМ ЖЕЛТЫЙ ФОН СО ВСЕХ КНОПОК В HEADER ===== */
 .action-btn,
-.theme-toggle-btn {
+.theme-toggle-btn,
+.action-btn--cart {
   background: transparent !important;
+  background-color: transparent !important;
   border: none !important;
   color: #1f2937 !important;
   padding: 8px !important;
   border-radius: 8px !important;
   transition: all 0.2s !important;
+  box-shadow: none !important;
 }
 
 .action-btn:hover,
-.theme-toggle-btn:hover {
+.theme-toggle-btn:hover,
+.action-btn--cart:hover {
   background: rgba(0, 0, 0, 0.05) !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
 /* SVG иконки в кнопках - черный цвет */
 .action-btn svg,
-.theme-toggle-btn svg {
+.theme-toggle-btn svg,
+.action-btn--cart svg {
   stroke: #1f2937 !important;
   fill: none !important;
-}
-
-/* Корзина - особая кнопка с желтым фоном */
-.action-btn--cart {
-  background: #ffa500 !important;
-  border-radius: 50% !important;
-  width: 40px !important;
-  height: 40px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.action-btn--cart svg {
-  stroke: white !important;
-}
-
-.action-btn--cart:hover {
-  background: #ff8c00 !important;
 }
 
 /* ===== ЖЕЛТЫЙ ФОН НА КНОПКЕ ПОИСКА ===== */
@@ -91,11 +78,13 @@ header {
   background: #ff8c00 !important;
 }
 
-/* ===== ЖЕЛТЫЙ ФОН НА БУРГЕР-МЕНЮ ===== */
+/* ===== БУРГЕР-МЕНЮ БЕЗ ЖЕЛТОГО ФОНА ===== */
 .sidebar-toggle {
-  background: #ffa500 !important;
+  background: transparent !important;
+  background-color: transparent !important;
   color: #1f2937 !important;
   border: none !important;
+  box-shadow: none !important;
   padding: 10px 16px !important;
   border-radius: 8px !important;
   font-weight: 600 !important;
@@ -107,7 +96,8 @@ header {
 }
 
 .sidebar-toggle:hover {
-  background: #ff8c00 !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
 .sidebar-toggle svg {
