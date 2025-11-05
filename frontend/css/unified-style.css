@@ -2749,3 +2749,48 @@ body:not(.light-theme) .gallery-cta-text {
     justify-content: center;
   }
 }
+
+/* ===== ИСПРАВЛЕНИЯ ДЛЯ ТЕМНОЙ ТЕМЫ ===== */
+/* Текст который стал тёмным для светлой темы - делаем белым для тёмной */
+
+body:not(.light-theme) .advantages-section,
+body:not(.light-theme) .tractor-quiz-section,
+body:not(.light-theme) .live-gallery-section {
+  background: #1f2937 !important;
+}
+
+body:not(.light-theme) .section-title {
+  color: #ffffff !important;
+}
+
+body:not(.light-theme) .section-subtitle {
+  color: #d1d5db !important;
+}
+
+body:not(.light-theme) .advantage-title,
+body:not(.light-theme) .quiz-title,
+body:not(.light-theme) .quiz-subtitle,
+body:not(.light-theme) .gallery-info-title,
+body:not(.light-theme) .live-photo-title {
+  color: #ffffff !important;
+}
+
+body:not(.light-theme) .advantage-text,
+body:not(.light-theme) .quiz-badge,
+body:not(.light-theme) .gallery-info-location,
+body:not(.light-theme) .gallery-info-desc,
+body:not(.light-theme) .live-photo-location {
+  color: #d1d5db !important;
+}
+
+body:not(.light-theme) .advantage-card,
+body:not(.light-theme) .live-photo-card {
+  background: #374151 !important;
+  border-color: #4b5563 !important;
+}
+
+body:not(.light-theme) .quiz-badge {
+  background: #065f46 !important;
+  border-color: #047857 !important;
+  color: #d1fae5 !important;
+}
