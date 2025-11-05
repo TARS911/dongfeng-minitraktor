@@ -34,7 +34,7 @@
 .sidebar-toggle svg {
   width: 18px !important;
   height: 18px !important;
-  stroke: #1f2937 !important;
+  stroke: #000000 !important;
   stroke-width: 2.5 !important;
   flex-shrink: 0 !important;
 }
@@ -80,7 +80,7 @@ body:not(.light-theme) .sidebar-toggle:hover {
 }
 
 body:not(.light-theme) .sidebar-toggle svg {
-  stroke: #1f2937 !important;
+  stroke: #000000 !important;
 }
 
 body:not(.light-theme) .sidebar-toggle__text {
