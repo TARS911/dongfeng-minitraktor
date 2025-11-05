@@ -54,11 +54,11 @@ header {
   background: transparent !important;
 }
 
-/* ===== ЖЕЛТЫЙ ФОН НА КНОПКЕ ПОИСКА ===== */
+/* ===== КНОПКА ПОИСКА БЕЗ ОРАНЖЕВОГО ФОНА ===== */
 .search-btn {
-  background: #ffa500 !important;
+  background: transparent !important;
   color: #1f2937 !important;
-  border: none !important;
+  border: 1px solid #e0e0e0 !important;
   padding: 10px 20px !important;
   border-radius: 8px !important;
   font-weight: 600 !important;
@@ -67,14 +67,14 @@ header {
 }
 
 .search-btn:hover {
-  background: #ff8c00 !important;
+  background: rgba(0, 0, 0, 0.05) !important;
 }
 
-/* ===== ЖЕЛТЫЙ ФОН НА НОМЕРЕ ТЕЛЕФОНА ===== */
+/* ===== НОМЕР ТЕЛЕФОНА БЕЗ ОРАНЖЕВОГО ФОНА ===== */
 .header-phone {
-  background: #ffa500 !important;
+  background: transparent !important;
   color: #1f2937 !important;
-  border: none !important;
+  border: 1px solid #e0e0e0 !important;
   box-shadow: none !important;
   outline: none !important;
   padding: 10px 16px !important;
@@ -86,7 +86,7 @@ header {
 }
 
 .header-phone:hover {
-  background: #ff8c00 !important;
+  background: rgba(0, 0, 0, 0.05) !important;
 }
 
 /* ===== БУРГЕР-МЕНЮ БЕЗ ЖЕЛТОГО ФОНА ===== */
