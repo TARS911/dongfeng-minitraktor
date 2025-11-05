@@ -4,6 +4,16 @@
  * Остальные кнопки - прозрачный фон с иконками
  */
 
+/* ===== УБИРАЕМ ЛИНИИ ПОД HEADER ===== */
+.header,
+.header-main,
+.header-content,
+header {
+  border: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
 /* ===== УБИРАЕМ ЖЕЛТЫЙ ФОН СО ВСЕХ КНОПОК В HEADER ===== */
 .action-btn,
 .theme-toggle-btn {
