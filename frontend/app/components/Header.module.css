@@ -26,6 +26,20 @@
   font-size: 20px;
   font-weight: bold;
   color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+  transform: scale(1.05);
 }
 
 .mobileIcons {
@@ -135,8 +149,25 @@
 
 .menuIcon {
   margin-right: 15px;
-  font-size: 24px;
   width: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.menuIcon img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.sidebarMenu a:hover .menuIcon img {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.sidebarMenu a:active .menuIcon img {
+  transform: scale(0.9);
 }
 
 /* DESKTOP HEADER */
@@ -171,6 +202,10 @@
 
   .logo {
     font-size: 24px;
+  }
+
+  .logo img {
+    height: 60px;
   }
 
   .searchBox {

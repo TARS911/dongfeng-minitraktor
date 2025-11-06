@@ -1,0 +1,63 @@
+/* Фиксы для главной страницы */
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Убираем лишние отступы у main */
+main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Фикс для hero секции */
+.hero {
+  width: 100%;
+  margin: 0;
+  padding: 80px 0;
+}
+
+/* Фикс для секций */
+.categories-section,
+.featured-section,
+.advantages-section {
+  width: 100%;
+  margin: 0;
+  padding: 60px 0;
+}
+
+/* Фикс для контейнеров */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Фикс для сетки категорий */
+.categories-grid,
+.products-grid,
+.advantages-grid {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Исправление для мобильных */
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 0;
+  }
+
+  .categories-section,
+  .featured-section,
+  .advantages-section {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+}

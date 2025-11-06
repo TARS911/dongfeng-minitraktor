@@ -1,42 +1,33 @@
-# Netlify Configuration for БелТехФермЪ
-
 [build]
-  # Папка для публикации
-  publish = "frontend/public"
+  command = "cd frontend && npm install && npm run build"
+  publish = "frontend/.next"
+  base = "/"
 
-  # Команда для сборки (если нужна)
-  command = "echo 'Static HTML - no build needed'"
+[build.environment]
+  NODE_VERSION = "20"
 
-# Правила для SPA и SEO
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  force = false
 
-# Кастомные заголовки для безопасности
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
-# Кеширование статических файлов
 [[headers]]
-  for = "/*.js"
+  for = "/icons/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/*.css"
+  for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
-
-# Настройки окружения
-[context.production.environment]
-  NODE_ENV = "production"
-
-[context.deploy-preview]
-  publish = "frontend/public"

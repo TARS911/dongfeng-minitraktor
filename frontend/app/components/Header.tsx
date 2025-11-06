@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import styles from './Header.module.css';
+import { useState } from "react";
+import styles from "./Header.module.css";
 
 export default function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -9,9 +9,9 @@ export default function Header() {
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
     if (!sidebarOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
   };
 
@@ -23,7 +23,9 @@ export default function Header() {
           <div className={styles.burgerMenu} onClick={toggleSidebar}>
             ☰
           </div>
-          <div className={styles.logo}>БелТехФермЪ</div>
+          <a href="/" className={styles.logo}>
+            <img src="/images/logo.jpg" alt="БелТехФермЪ" />
+          </a>
           <div className={styles.mobileIcons}>
             <span>❤️</span>
             <span>🛒</span>
@@ -40,7 +42,9 @@ export default function Header() {
       {/* DESKTOP HEADER */}
       <header className={styles.desktopHeader}>
         <div className={styles.headerContent}>
-          <div className={styles.logo}>🚜 БелТехФермЪ</div>
+          <a href="/" className={styles.logo}>
+            <img src="/images/logo.jpg" alt="БелТехФермЪ" />
+          </a>
           <div className={styles.searchBox}>
             <input type="text" placeholder="Поиск техники и запчастей..." />
           </div>
@@ -59,12 +63,14 @@ export default function Header() {
 
       {/* SIDEBAR OVERLAY */}
       <div
-        className={`${styles.sidebarOverlay} ${sidebarOpen ? styles.active : ''}`}
+        className={`${styles.sidebarOverlay} ${sidebarOpen ? styles.active : ""}`}
         onClick={toggleSidebar}
       />
 
       {/* SIDEBAR MENU */}
-      <aside className={`${styles.sidebar} ${sidebarOpen ? styles.active : ''}`}>
+      <aside
+        className={`${styles.sidebar} ${sidebarOpen ? styles.active : ""}`}
+      >
         <div className={styles.sidebarHeader}>
           <span>Каталог</span>
           <span className={styles.sidebarClose} onClick={toggleSidebar}>
@@ -73,43 +79,27 @@ export default function Header() {
         </div>
         <ul className={styles.sidebarMenu}>
           <li>
-            <a href="#">
-              <span className={styles.menuIcon}>🚜</span> Мини-тракторы
+            <a href="/catalog/minitractory">
+              <span className={styles.menuIcon}>
+                <img src="/icons/tractor.svg" alt="" width="24" height="24" />
+              </span>
+              Мини-тракторы
             </a>
           </li>
           <li>
-            <a href="#">
-              <span className={styles.menuIcon}>⚙️</span> Навесное оборудование
+            <a href="/catalog/communal-equipment">
+              <span className={styles.menuIcon}>
+                <img src="/icons/snowplow.svg" alt="" width="24" height="24" />
+              </span>
+              Коммунальная техника
             </a>
           </li>
           <li>
-            <a href="#">
-              <span className={styles.menuIcon}>🔧</span> Запчасти
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span className={styles.menuIcon}>🛠️</span> Инструменты
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span className={styles.menuIcon}>🔩</span> Расходники
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span className={styles.menuIcon}>💡</span> Аксессуары
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span className={styles.menuIcon}>🏷️</span> Акции
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span className={styles.menuIcon}>⭐</span> Хиты продаж
+            <a href="/catalog/parts">
+              <span className={styles.menuIcon}>
+                <img src="/icons/cog.svg" alt="" width="24" height="24" />
+              </span>
+              Запасные части
             </a>
           </li>
         </ul>
