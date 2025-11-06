@@ -21,9 +21,8 @@ const nextConfig = {
     optimizePackageImports: ["@supabase/supabase-js"],
   },
 
-  // Настройки для Netlify - static export
-  output: "export",
-  distDir: "out",
+  // Убираем export - используем SSR для Netlify
+  // output: "export",
 
   // Headers для кэширования
   async headers() {

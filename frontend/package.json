@@ -1,13 +1,11 @@
 {
   "name": "beltehferm-frontend",
   "version": "1.0.0",
-  "description": "БелТехФермЪ - Интернет-магазин мини-тракторов",
-  "private": true,
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "netlify-build": "next build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.79.0",
@@ -16,9 +14,9 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.10.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "typescript": "^5.7.0"
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
   }
 }
