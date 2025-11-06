@@ -21,8 +21,9 @@ const nextConfig = {
     optimizePackageImports: ["@supabase/supabase-js"],
   },
 
-  // Настройки для Netlify
-  output: "standalone",
+  // Настройки для Netlify - static export
+  output: "export",
+  distDir: "out",
 
   // Headers для кэширования
   async headers() {
