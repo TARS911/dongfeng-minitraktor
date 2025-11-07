@@ -80,13 +80,13 @@
 }
 
 .success-message {
-  background: #e8f5e9;
-  color: #2e7d32;
+  background: #e3f2fd;
+  color: #004899;
   padding: 12px 15px;
   border-radius: 6px;
   margin-bottom: 20px;
   font-size: 0.9rem;
-  border-left: 4px solid #2e7d32;
+  border-left: 4px solid #004899;
 }
 
 /* Buttons */

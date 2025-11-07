@@ -44,16 +44,16 @@
 }
 
 .category-btn:hover {
-  border-color: #4caf50;
-  color: #4caf50;
+  border-color: #0066cc;
+  color: #0066cc;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
 }
 
 .category-btn.active {
-  background: #4caf50;
+  background: #0066cc;
   color: white;
-  border-color: #4caf50;
+  border-color: #0066cc;
 }
 
 .category-btn i {
@@ -151,7 +151,7 @@
 }
 
 .product-name:hover {
-  color: #4caf50;
+  color: #0066cc;
 }
 
 .product-manufacturer {
@@ -164,7 +164,7 @@
 }
 
 .product-manufacturer i {
-  color: #4caf50;
+  color: #0066cc;
 }
 
 .product-specs {
@@ -204,13 +204,13 @@
 .current-price {
   font-size: 24px;
   font-weight: 700;
-  color: #4caf50;
+  color: #0066cc;
 }
 
 .add-to-cart-btn {
   width: 48px;
   height: 48px;
-  background: #4caf50;
+  background: #0066cc;
   color: white;
   border: none;
   border-radius: 50%;
@@ -223,7 +223,7 @@
 }
 
 .add-to-cart-btn:hover {
-  background: #45a049;
+  background: #0052a3;
   transform: scale(1.1);
 }
 

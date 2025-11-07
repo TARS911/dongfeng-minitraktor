@@ -7,9 +7,7 @@
     "start": "next start",
     "netlify-build": "next build",
     "postinstall": "echo 'Dependencies installed successfully'",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.79.0",

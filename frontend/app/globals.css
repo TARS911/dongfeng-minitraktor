@@ -1,7 +1,7 @@
 :root {
-  --primary: #4caf50;
-  --primary-dark: #2e7d32;
-  --primary-light: #e8f5e9;
+  --primary: #0066cc;
+  --primary-dark: #004899;
+  --primary-light: #e3f2fd;
 }
 
 * {
@@ -54,7 +54,7 @@ header {
 }
 
 .header-top {
-  background: #2e7d32;
+  background: #0066cc;
   color: white;
   padding: 10px 0;
 }
@@ -99,7 +99,7 @@ header {
 .logo {
   font-size: 24px;
   font-weight: 700;
-  color: #2e7d32;
+  color: #0066cc;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -126,7 +126,7 @@ header {
 
 .search-bar input:focus {
   outline: none;
-  border-color: #4caf50;
+  border-color: #0066cc;
 }
 
 .search-bar button {
@@ -135,7 +135,7 @@ header {
   top: 0;
   height: 100%;
   padding: 0 16px;
-  background: #4caf50;
+  background: #0066cc;
   border: none;
   border-radius: 0 8px 8px 0;
   color: white;
@@ -144,7 +144,7 @@ header {
 }
 
 .search-bar button:hover {
-  background: #45a049;
+  background: #0052a3;
 }
 
 .header-actions {
@@ -166,7 +166,7 @@ header {
 }
 
 .header-btn:hover {
-  color: #4caf50;
+  color: #0066cc;
 }
 
 .header-btn span {
@@ -218,7 +218,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #4caf50;
+  color: #0066cc;
 }
 
 /* Footer */
@@ -239,13 +239,13 @@ nav a:hover {
 .footer-section h3 {
   font-size: 24px;
   margin-bottom: 16px;
-  color: #4caf50;
+  color: #0066cc;
 }
 
 .footer-section h4 {
   font-size: 18px;
   margin-bottom: 12px;
-  color: #4caf50;
+  color: #0066cc;
 }
 
 .footer-section p {
@@ -271,7 +271,7 @@ nav a:hover {
 }
 
 .footer-section a:hover {
-  color: #4caf50;
+  color: #0066cc;
 }
 
 .social-links {
@@ -293,7 +293,7 @@ nav a:hover {
 }
 
 .social-links a:hover {
-  background: #4caf50;
+  background: #0066cc;
   transform: translateY(-2px);
 }
 
