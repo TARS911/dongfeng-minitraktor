@@ -94,10 +94,12 @@ export default function ComparePage() {
     fetch("/api/products")
       .then((res) => res.json())
       .then((data) => {
+        // API возвращает { products: [...] }, извлекаем массив
+        const productsArray = data.products || [];
         // Фильтруем только те продукты, которые есть в compareItems
         const compareIds = compareItems.map((item) => item.id);
-        const filteredProducts = data.filter((product: CompareProductDetails) =>
-          compareIds.includes(product.id),
+        const filteredProducts = productsArray.filter(
+          (product: CompareProductDetails) => compareIds.includes(product.id),
         );
         setProducts(filteredProducts);
         setIsLoading(false);
