@@ -10,6 +10,8 @@ export interface CompareProduct {
   slug: string;
   manufacturer?: string;
   power?: string;
+  type?: string;
+  description?: string;
 }
 
 interface CompareContextType {
@@ -105,9 +107,7 @@ export function CompareProvider({ children }: { children: React.ReactNode }) {
 export function useCompare() {
   const context = useContext(CompareContext);
   if (context === undefined) {
-    throw new Error(
-      "useCompare должен использоваться внутри CompareProvider"
-    );
+    throw new Error("useCompare должен использоваться внутри CompareProvider");
   }
   return context;
 }
