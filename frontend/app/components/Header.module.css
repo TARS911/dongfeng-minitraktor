@@ -1,12 +1,11 @@
 /* MOBILE HEADER */
 .mobileHeader {
   background: white;
-  border-bottom: 3px solid var(--primary);
   padding: 15px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
 }
 
 .mobileTop {
@@ -105,7 +104,7 @@
 .mobileSearch input {
   width: 100%;
   padding: 12px 15px;
-  border: 2px solid #e0e0e0;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
   font-size: 16px;
 }
@@ -189,7 +188,7 @@
 }
 
 .sidebarMenu li {
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: none;
 }
 
 .sidebarMenu a {
@@ -214,8 +213,8 @@
 /* DESKTOP NAVIGATION BAR */
 .desktopNavigation {
   background: white;
-  border-bottom: 2px solid #e0e0e0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-bottom: none;
+  box-shadow: none;
 }
 
 .navContent {
@@ -233,12 +232,11 @@
   .desktopHeader {
     display: block;
     background: white;
-    border-bottom: 3px solid var(--primary);
     padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: none;
   }
 
   .sidebarOverlay {
@@ -322,7 +320,7 @@
   .searchBox input {
     width: 100%;
     padding: 12px 20px;
-    border: 2px solid #e0e0e0;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
     font-size: 16px;
   }
@@ -357,7 +355,8 @@
     font-weight: 600;
     font-size: 14px;
     padding: 8px 15px;
-    border: 2px solid var(--primary);
+    background: var(--primary-light);
+    border: none;
     border-radius: 6px;
     transition: all 0.2s;
   }
