@@ -130,7 +130,10 @@ export default async function CatalogPage() {
                   <div className="product-price">
                     {product.old_price && (
                       <span className="old-price">
-                        {product.old_price.toLocaleString()} ₽
+                        {product.old_price
+                          ? product.old_price.toLocaleString()
+                          : "0"}{" "}
+                        ₽
                       </span>
                     )}
                     <span className="current-price">

@@ -131,11 +131,12 @@ export default async function ProductPage({ params }: PageProps) {
             <div className="product-price-block">
               {product.old_price && (
                 <div className="old-price">
-                  {product.old_price.toLocaleString()} ₽
+                  {product.old_price ? product.old_price.toLocaleString() : "0"}{" "}
+                  ₽
                 </div>
               )}
               <div className="current-price">
-                {product.price.toLocaleString()} ₽
+                {product.price ? product.price.toLocaleString() : "0"} ₽
               </div>
             </div>
 
@@ -212,7 +213,7 @@ export default async function ProductPage({ params }: PageProps) {
                     <div className="product-footer">
                       <div className="product-price">
                         <span className="current-price">
-                          {item.price.toLocaleString()} ₽
+                          {item.price ? item.price.toLocaleString() : "0"} ₽
                         </span>
                       </div>
 
