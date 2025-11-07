@@ -1,5 +1,6 @@
 import { supabase } from "./lib/supabase";
 import Link from "next/link";
+import Image from "next/image";
 import {
   TractorIcon,
   PhoneIcon,
@@ -126,9 +127,14 @@ export default async function HomePage() {
 
                   <Link href={`/catalog/product/${product.slug}`}>
                     <div className="product-image">
-                      <img
+                      <Image
                         src={product.image_url || "/images/placeholder.jpg"}
                         alt={product.name}
+                        fill
+                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                        style={{ objectFit: "cover" }}
+                        priority={false}
+                        loading="lazy"
                       />
                     </div>
                   </Link>
