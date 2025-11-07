@@ -44,16 +44,16 @@
 }
 
 .category-btn:hover {
-  border-color: #4CAF50;
-  color: #4CAF50;
+  border-color: #4caf50;
+  color: #4caf50;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
 }
 
 .category-btn.active {
-  background: #4CAF50;
+  background: #4caf50;
   color: white;
-  border-color: #4CAF50;
+  border-color: #4caf50;
 }
 
 .category-btn i {
@@ -89,7 +89,7 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  background: #FF5722;
+  background: #ff5722;
   color: white;
   padding: 6px 12px;
   border-radius: 6px;
@@ -102,7 +102,7 @@
   position: absolute;
   top: 12px;
   right: 12px;
-  background: #F44336;
+  background: #f44336;
   color: white;
   padding: 6px 12px;
   border-radius: 6px;
@@ -151,7 +151,7 @@
 }
 
 .product-name:hover {
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 .product-manufacturer {
@@ -164,7 +164,7 @@
 }
 
 .product-manufacturer i {
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 .product-specs {
@@ -177,7 +177,7 @@
 }
 
 .product-specs i {
-  color: #FFC107;
+  color: #ffc107;
 }
 
 .product-footer {
@@ -204,13 +204,13 @@
 .current-price {
   font-size: 24px;
   font-weight: 700;
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 .add-to-cart-btn {
   width: 48px;
   height: 48px;
-  background: #4CAF50;
+  background: #4caf50;
   color: white;
   border: none;
   border-radius: 50%;
@@ -291,4 +291,77 @@
     height: 40px;
     font-size: 16px;
   }
+}
+
+/* Категории (подкатегории каталога) */
+.catalog-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.catalog-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.catalog-header p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.breadcrumb {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.breadcrumb a {
+  color: #0066cc;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+  color: #0052a3;
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #ccc;
+}
+
+.empty-category {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin: 40px 0;
+}
+
+.empty-category p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #0066cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-back:hover {
+  background: #0052a3;
+  transform: translateY(-2px);
 }
