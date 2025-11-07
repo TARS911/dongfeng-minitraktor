@@ -35,6 +35,7 @@ interface FavoritesContextType {
   removeFavorite: (productId: number) => void;
   isFavorite: (productId: number) => boolean;
   toggleFavorite: (productId: number) => void;
+  clearFavorites: () => void;
 }
 
 const FavoritesContext = createContext<FavoritesContextType | undefined>(
@@ -122,6 +123,17 @@ export function FavoritesProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  /**
+   * clearFavorites - Полная очистка избранного
+   * Удаляет все товары из избранного и localStorage
+   */
+  const clearFavorites = () => {
+    setFavorites([]);
+    if (typeof window !== "undefined") {
+      localStorage.removeItem(FAVORITES_STORAGE_KEY);
+    }
+  };
+
   return (
     <FavoritesContext.Provider
       value={{
@@ -130,6 +142,7 @@ export function FavoritesProvider({ children }: { children: React.ReactNode }) {
         removeFavorite,
         isFavorite,
         toggleFavorite,
+        clearFavorites,
       }}
     >
       {children}

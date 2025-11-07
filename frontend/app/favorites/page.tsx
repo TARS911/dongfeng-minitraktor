@@ -58,7 +58,7 @@ interface FavoriteProduct {
  * @returns {JSX.Element} Страница со списком избранных товаров
  */
 export default function FavoritesPage() {
-  const { favorites, removeFavorite } = useFavorites();
+  const { favorites, removeFavorite, clearFavorites } = useFavorites();
   const [isLoaded, setIsLoaded] = useState(false);
   const [products, setProducts] = useState<FavoriteProduct[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -125,9 +125,29 @@ export default function FavoritesPage() {
 
       <div className="favorites-toolbar">
         <p className="favorites-count">Всего товаров: {favorites.length}</p>
-        <Link href="/catalog" className="btn-continue">
-          Продолжить покупки
-        </Link>
+        <div style={{ display: "flex", gap: "10px" }}>
+          <button
+            onClick={() => {
+              if (confirm("Вы уверены, что хотите очистить все избранное?")) {
+                clearFavorites();
+              }
+            }}
+            className="btn-clear"
+            style={{
+              background: "#dc3545",
+              color: "white",
+              border: "none",
+              padding: "10px 20px",
+              borderRadius: "4px",
+              cursor: "pointer",
+            }}
+          >
+            Очистить избранное
+          </button>
+          <Link href="/catalog" className="btn-continue">
+            Продолжить покупки
+          </Link>
+        </div>
       </div>
 
       {isLoading ? (
