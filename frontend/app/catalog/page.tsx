@@ -1,6 +1,6 @@
-import { supabase } from '../lib/supabase';
-import Link from 'next/link';
-import './catalog.css';
+import { supabase } from "../lib/supabase";
+import Link from "next/link";
+import "./catalog.css";
 
 interface Product {
   id: number;
@@ -25,16 +25,16 @@ interface Category {
 export default async function CatalogPage() {
   // Загружаем категории
   const { data: categories } = await supabase
-    .from('categories')
-    .select('*')
-    .order('name');
+    .from("categories")
+    .select("*")
+    .order("name");
 
   // Загружаем все товары
   const { data: products } = await supabase
-    .from('products')
-    .select('*')
-    .eq('in_stock', true)
-    .order('created_at', { ascending: false });
+    .from("products")
+    .select("*")
+    .eq("in_stock", true)
+    .order("created_at", { ascending: false });
 
   return (
     <div className="catalog-page">
@@ -61,9 +61,7 @@ export default async function CatalogPage() {
         <div className="products-grid">
           {products?.map((product: Product) => (
             <div key={product.id} className="product-card">
-              {product.is_featured && (
-                <div className="product-badge">Хит</div>
-              )}
+              {product.is_featured && <div className="product-badge">Хит</div>}
               {product.old_price && (
                 <div className="product-discount">
                   -{Math.round((1 - product.price / product.old_price) * 100)}%
@@ -73,7 +71,7 @@ export default async function CatalogPage() {
               <Link href={`/catalog/product/${product.slug}`}>
                 <div className="product-image">
                   <img
-                    src={product.image_url || '/images/placeholder.jpg'}
+                    src={product.image_url || "/images/placeholder.jpg"}
                     alt={product.name}
                   />
                 </div>
@@ -99,29 +97,34 @@ export default async function CatalogPage() {
                 <div className="product-footer">
                   <div className="product-price">
                     {product.old_price && (
-                      <span className="old-price">{product.old_price.toLocaleString()} ₽</span>
+                      <span className="old-price">
+                        {product.old_price.toLocaleString()} ₽
+                      </span>
                     )}
-                    <span className="current-price">{product.price.toLocaleString()} ₽</span>
+                    <span className="current-price">
+                      {product.price.toLocaleString()} ₽
+                    </span>
                   </div>
 
-                  <button
+                  <Link
+                    href={`/catalog/product/${product.slug}`}
                     className="add-to-cart-btn"
-                    onClick={() => addToCart(product)}
                   >
                     <i className="fas fa-shopping-cart"></i>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {!products || products.length === 0 && (
-          <div className="empty-catalog">
-            <i className="fas fa-box-open"></i>
-            <p>Товары скоро появятся</p>
-          </div>
-        )}
+        {!products ||
+          (products.length === 0 && (
+            <div className="empty-catalog">
+              <i className="fas fa-box-open"></i>
+              <p>Товары скоро появятся</p>
+            </div>
+          ))}
       </div>
     </div>
   );
@@ -129,14 +132,14 @@ export default async function CatalogPage() {
 
 function getCategoryIcon(slug: string): string {
   const icons: { [key: string]: string } = {
-    'minitractory': 'fas fa-tractor',
-    'communal-equipment': 'fas fa-snowplow',
-    'parts': 'fas fa-cogs'
+    minitractory: "fas fa-tractor",
+    "communal-equipment": "fas fa-snowplow",
+    parts: "fas fa-cogs",
   };
-  return icons[slug] || 'fas fa-box';
+  return icons[slug] || "fas fa-box";
 }
 
 function addToCart(product: Product) {
   // Client-side функция для добавления в корзину
-  console.log('Add to cart:', product);
+  console.log("Add to cart:", product);
 }
