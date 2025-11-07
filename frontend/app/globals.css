@@ -69,7 +69,6 @@ button {
 /* Header styles */
 header {
   background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -214,7 +213,6 @@ header {
 /* Navigation */
 nav {
   background: #f8f8f8;
-  border-top: 1px solid #e0e0e0;
 }
 
 nav ul {
@@ -322,7 +320,6 @@ nav a:hover {
 .footer-bottom {
   text-align: center;
   padding-top: 20px;
-  border-top: 1px solid #444;
   color: #999;
 }
 
