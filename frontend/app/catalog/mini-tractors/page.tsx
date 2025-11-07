@@ -5,9 +5,8 @@ import type { Metadata } from "next";
 import "../catalog.css";
 
 export const metadata: Metadata = {
-  title: "Запчасти | БелТехФермЪ",
-  description:
-    "Запасные части для мини-тракторов и сельхозтехники. Большой выбор, низкие цены, доставка по России.",
+  title: "Мини-тракторы | БелТехФермЪ",
+  description: "Купите мини-тракторы DONGFENG. Большой выбор, низкие цены, доставка по России.",
 };
 
 interface Product {
@@ -43,8 +42,8 @@ async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
   return products || [];
 }
 
-export default async function PartsPage() {
-  const products = await getProductsByCategory("parts");
+export default async function MiniTractorsPage() {
+  const products = await getProductsByCategory("mini-tractors");
 
   return (
     <div className="catalog-page">
@@ -55,9 +54,9 @@ export default async function PartsPage() {
             <span>/</span>
             <Link href="/catalog">Каталог</Link>
             <span>/</span>
-            <span>Запчасти</span>
+            <span>Мини-тракторы</span>
           </div>
-          <h1>Запчасти</h1>
+          <h1>Мини-тракторы</h1>
         </div>
 
         {products.length === 0 ? (
