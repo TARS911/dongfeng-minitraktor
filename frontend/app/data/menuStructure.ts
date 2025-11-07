@@ -16,6 +16,12 @@ export interface MenuItem {
  */
 export const catalogMenu: MenuItem[] = [
   {
+    id: "all",
+    title: "Весь каталог",
+    slug: "/catalog",
+    icon: "📦",
+  },
+  {
     id: "mini-tractors",
     title: "Мини-тракторы",
     slug: "/catalog/mini-tractors",
@@ -32,12 +38,6 @@ export const catalogMenu: MenuItem[] = [
     title: "Запасные части",
     slug: "/catalog/parts",
     icon: "⚙️",
-  },
-  {
-    id: "all",
-    title: "Весь каталог",
-    slug: "/catalog",
-    icon: "📦",
   },
 ];
 
