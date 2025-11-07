@@ -6,7 +6,8 @@ import { useCart } from "../context/CartContext";
 import { useFavorites } from "../context/FavoritesContext";
 import { useCompare } from "../context/CompareContext";
 import { useAuth } from "../context/AuthContext";
-import { useTheme } from "../context/ThemeContext";
+// TODO: Вернуть позже - темная/светлая тема
+// import { useTheme } from "../context/ThemeContext";
 import Link from "next/link";
 import MegaMenu from "./MegaMenu";
 import { catalogMenu, additionalMenu } from "../data/menuStructure";
@@ -19,7 +20,8 @@ export default function Header() {
   const { favorites } = useFavorites();
   const { compareItems } = useCompare();
   const { user, isAuthenticated, signOut } = useAuth();
-  const { theme, toggleTheme } = useTheme();
+  // TODO: Вернуть позже - темная/светлая тема
+  // const { theme, toggleTheme } = useTheme();
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -71,14 +73,15 @@ export default function Header() {
                 <span className={styles.badge}>{totalCartItems}</span>
               )}
             </Link>
-            <button
+            {/* TODO: Вернуть позже - кнопка темы */}
+            {/* <button
               onClick={toggleTheme}
               className={styles.themeToggle}
               title={theme === "light" ? "Темная тема" : "Светлая тема"}
               aria-label="Переключить тему"
             >
               {theme === "light" ? "🌙" : "☀️"}
-            </button>
+            </button> */}
           </div>
         </div>
         <div className={styles.mobileSearch}>
@@ -140,14 +143,15 @@ export default function Header() {
                 <span className={styles.badge}>{totalCartItems}</span>
               )}
             </Link>
-            <button
+            {/* TODO: Вернуть позже - кнопка темы */}
+            {/* <button
               onClick={toggleTheme}
               className={styles.themeToggle}
               title={theme === "light" ? "Темная тема" : "Светлая тема"}
               aria-label="Переключить тему"
             >
               {theme === "light" ? "🌙" : "☀️"}
-            </button>
+            </button> */}
           </div>
         </div>
 
