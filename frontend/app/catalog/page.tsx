@@ -1,5 +1,16 @@
 import { supabase } from "../lib/supabase";
 import Link from "next/link";
+import {
+  TractorIcon,
+  ShoppingCartIcon,
+  IndustryIcon,
+  BoltIcon,
+  BoxIcon,
+  CogsIcon,
+  TruckIcon,
+  GridIcon,
+  BoxOpenIcon,
+} from "../components/Icons";
 import "./catalog.css";
 
 interface Product {
@@ -44,7 +55,7 @@ export default async function CatalogPage() {
         {/* Фильтры категорий */}
         <div className="category-filters">
           <Link href="/catalog" className="category-btn active">
-            <i className="fas fa-th"></i> Все товары
+            <GridIcon className="inline-icon" /> Все товары
           </Link>
           {categories?.map((category: Category) => (
             <Link
@@ -52,7 +63,7 @@ export default async function CatalogPage() {
               href={`/catalog/${category.slug}`}
               className="category-btn"
             >
-              <i className={getCategoryIcon(category.slug)}></i> {category.name}
+              {getCategoryIcon(category.slug)} {category.name}
             </Link>
           ))}
         </div>
@@ -84,13 +95,14 @@ export default async function CatalogPage() {
 
                 {product.manufacturer && (
                   <p className="product-manufacturer">
-                    <i className="fas fa-industry"></i> {product.manufacturer}
+                    <IndustryIcon className="inline-icon" />{" "}
+                    {product.manufacturer}
                   </p>
                 )}
 
                 {product.power && (
                   <p className="product-specs">
-                    <i className="fas fa-bolt"></i> {product.power}
+                    <BoltIcon className="inline-icon" /> {product.power}
                   </p>
                 )}
 
@@ -110,7 +122,7 @@ export default async function CatalogPage() {
                     href={`/catalog/product/${product.slug}`}
                     className="add-to-cart-btn"
                   >
-                    <i className="fas fa-shopping-cart"></i>
+                    <ShoppingCartIcon className="inline-icon" />
                   </Link>
                 </div>
               </div>
@@ -121,7 +133,7 @@ export default async function CatalogPage() {
         {!products ||
           (products.length === 0 && (
             <div className="empty-catalog">
-              <i className="fas fa-box-open"></i>
+              <BoxOpenIcon />
               <p>Товары скоро появятся</p>
             </div>
           ))}
@@ -130,13 +142,13 @@ export default async function CatalogPage() {
   );
 }
 
-function getCategoryIcon(slug: string): string {
-  const icons: { [key: string]: string } = {
-    minitractory: "fas fa-tractor",
-    "communal-equipment": "fas fa-snowplow",
-    parts: "fas fa-cogs",
+function getCategoryIcon(slug: string): React.ReactElement {
+  const icons: { [key: string]: React.ReactElement } = {
+    minitractory: <TractorIcon className="inline-icon" />,
+    "communal-equipment": <TruckIcon className="inline-icon" />,
+    parts: <CogsIcon className="inline-icon" />,
   };
-  return icons[slug] || "fas fa-box";
+  return icons[slug] || <BoxIcon className="inline-icon" />;
 }
 
 function addToCart(product: Product) {

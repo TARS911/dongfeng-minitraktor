@@ -1,61 +1,58 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import Image from "next/image";
+import { useState } from "react";
 
 interface OptimizedImageProps {
   src: string;
   alt: string;
-  className?: string;
   width?: number;
   height?: number;
+  className?: string;
+  priority?: boolean;
 }
 
+// Компонент для оптимизированной загрузки изображений
 export default function OptimizedImage({
   src,
   alt,
-  className = '',
-  width,
-  height
+  width = 400,
+  height = 300,
+  className = "",
+  priority = false,
 }: OptimizedImageProps) {
-  const [loaded, setLoaded] = useState(false);
-  const [error, setError] = useState(false);
+  const [imgSrc, setImgSrc] = useState(src);
 
-  return (
-    <div className={`image-container ${className}`} style={{ position: 'relative' }}>
-      {!loaded && !error && (
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)',
-            backgroundSize: '200% 100%',
-            animation: 'shimmer 1.5s infinite'
-          }}
-        />
-      )}
+  // Если изображение не загрузилось - показать заглушку
+  const handleError = () => {
+    setImgSrc("/images/placeholder.jpg");
+  };
+
+  // Для внешних изображений используем обычный img
+  if (src?.startsWith("http")) {
+    return (
       <img
-        src={error ? '/images/placeholder.jpg' : src}
+        src={imgSrc}
         alt={alt}
-        width={width}
-        height={height}
+        className={className}
         loading="lazy"
-        onLoad={() => setLoaded(true)}
-        onError={() => setError(true)}
-        style={{
-          opacity: loaded ? 1 : 0,
-          transition: 'opacity 0.3s ease',
-          display: 'block',
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover'
-        }}
+        onError={handleError}
       />
-      <style jsx>{`
-        @keyframes shimmer {
-          0% { background-position: -200% 0; }
-          100% { background-position: 200% 0; }
-        }
-      `}</style>
-    </div>
+    );
+  }
+
+  // Для локальных - оптимизация через Next.js
+  return (
+    <Image
+      src={imgSrc}
+      alt={alt}
+      width={width}
+      height={height}
+      className={className}
+      priority={priority}
+      onError={handleError}
+      placeholder="blur"
+      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAn/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+    />
   );
 }

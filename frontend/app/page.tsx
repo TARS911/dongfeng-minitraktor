@@ -1,7 +1,23 @@
 import { supabase } from "./lib/supabase";
 import Link from "next/link";
+import {
+  TractorIcon,
+  PhoneIcon,
+  ArrowRightIcon,
+  ShoppingCartIcon,
+  IndustryIcon,
+  ShieldCheckIcon,
+  TruckIcon,
+  ToolsIcon,
+  RubleIcon,
+  CogsIcon,
+  BoxIcon,
+} from "./components/Icons";
 import "./home.css";
 import "./page-fix.css";
+
+// Добавляем кеширование для ускорения загрузки
+export const revalidate = 3600; // кеш на 1 час
 
 interface Product {
   id: number;
@@ -54,10 +70,10 @@ export default async function HomePage() {
             </p>
             <div className="hero-buttons">
               <Link href="/catalog" className="btn btn-primary">
-                <i className="fas fa-tractor"></i> Перейти в каталог
+                <TractorIcon className="inline-icon" /> Перейти в каталог
               </Link>
               <Link href="/contacts" className="btn btn-secondary">
-                <i className="fas fa-phone"></i> Связаться с нами
+                <PhoneIcon className="inline-icon" /> Связаться с нами
               </Link>
             </div>
           </div>
@@ -76,12 +92,12 @@ export default async function HomePage() {
                 className="category-card"
               >
                 <div className="category-icon">
-                  <i className={getCategoryIcon(category.slug)}></i>
+                  {getCategoryIcon(category.slug)}
                 </div>
                 <h3>{category.name}</h3>
                 {category.description && <p>{category.description}</p>}
                 <span className="category-link">
-                  Смотреть товары <i className="fas fa-arrow-right"></i>
+                  Смотреть товары <ArrowRightIcon className="inline-icon" />
                 </span>
               </Link>
             ))}
@@ -124,7 +140,7 @@ export default async function HomePage() {
 
                     {product.manufacturer && (
                       <p className="product-manufacturer">
-                        <i className="fas fa-industry"></i>{" "}
+                        <IndustryIcon className="inline-icon" />{" "}
                         {product.manufacturer}
                       </p>
                     )}
@@ -142,7 +158,7 @@ export default async function HomePage() {
                       </div>
 
                       <button className="add-to-cart-btn">
-                        <i className="fas fa-shopping-cart"></i>
+                        <ShoppingCartIcon className="inline-icon" />
                       </button>
                     </div>
                   </div>
@@ -152,7 +168,7 @@ export default async function HomePage() {
 
             <div className="section-footer">
               <Link href="/catalog" className="btn btn-outline">
-                Смотреть весь каталог <i className="fas fa-arrow-right"></i>
+                Смотреть весь каталог <ArrowRightIcon className="inline-icon" />
               </Link>
             </div>
           </div>
@@ -166,7 +182,7 @@ export default async function HomePage() {
           <div className="advantages-grid">
             <div className="advantage-card">
               <div className="advantage-icon">
-                <i className="fas fa-shield-alt"></i>
+                <ShieldCheckIcon />
               </div>
               <h3>Гарантия качества</h3>
               <p>Официальная гарантия на всю технику и запчасти</p>
@@ -174,7 +190,7 @@ export default async function HomePage() {
 
             <div className="advantage-card">
               <div className="advantage-icon">
-                <i className="fas fa-truck"></i>
+                <TruckIcon />
               </div>
               <h3>Доставка</h3>
               <p>Быстрая доставка по всей России</p>
@@ -182,7 +198,7 @@ export default async function HomePage() {
 
             <div className="advantage-card">
               <div className="advantage-icon">
-                <i className="fas fa-tools"></i>
+                <ToolsIcon />
               </div>
               <h3>Сервисное обслуживание</h3>
               <p>Профессиональный ремонт и техподдержка</p>
@@ -190,7 +206,7 @@ export default async function HomePage() {
 
             <div className="advantage-card">
               <div className="advantage-icon">
-                <i className="fas fa-ruble-sign"></i>
+                <RubleIcon />
               </div>
               <h3>Выгодные цены</h3>
               <p>Конкурентные цены и акции для постоянных клиентов</p>
@@ -202,11 +218,11 @@ export default async function HomePage() {
   );
 }
 
-function getCategoryIcon(slug: string): string {
-  const icons: { [key: string]: string } = {
-    minitractory: "fas fa-tractor",
-    "communal-equipment": "fas fa-snowplow",
-    parts: "fas fa-cogs",
+function getCategoryIcon(slug: string): React.ReactElement {
+  const icons: { [key: string]: React.ReactElement } = {
+    minitractory: <TractorIcon />,
+    "communal-equipment": <TruckIcon />,
+    parts: <CogsIcon />,
   };
-  return icons[slug] || "fas fa-box";
+  return icons[slug] || <BoxIcon />;
 }
