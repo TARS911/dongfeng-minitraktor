@@ -7,8 +7,8 @@ import { useFavorites } from "../context/FavoritesContext";
 import { useCompare } from "../context/CompareContext";
 import { useAuth } from "../context/AuthContext";
 import Link from "next/link";
-import MegaMenu from "./MegaMenu";
-import { catalogMenu, additionalMenu } from "../data/menuStructure";
+// import MegaMenu from "./MegaMenu";
+// import { catalogMenu, additionalMenu } from "../data/menuStructure";
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -134,11 +134,11 @@ export default function Header() {
         </div>
 
         {/* DESKTOP NAVIGATION */}
-        <div className={styles.desktopNavigation}>
+        {/* <div className={styles.desktopNavigation}>
           <div className={styles.navContent}>
             <MegaMenu items={catalogMenu} isMobile={false} />
           </div>
-        </div>
+        </div> */}
       </header>
 
       {/* SIDEBAR OVERLAY */}
@@ -158,10 +158,19 @@ export default function Header() {
           </span>
         </div>
         <div className={styles.sidebarContent}>
-          <MegaMenu items={catalogMenu} isMobile={true} />
-          <div className={styles.additionalLinks}>
-            <MegaMenu items={additionalMenu} isMobile={true} />
-          </div>
+          <ul className={styles.sidebarMenu}>
+            <li>
+              <Link href="/catalog/minitractory">Мини-тракторы</Link>
+            </li>
+            <li>
+              <Link href="/catalog/communal-equipment">
+                Коммунальная техника
+              </Link>
+            </li>
+            <li>
+              <Link href="/catalog/parts">Запасные части</Link>
+            </li>
+          </ul>
         </div>
       </aside>
     </>
