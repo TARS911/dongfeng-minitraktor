@@ -1,10 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useCart } from "../context/CartContext";
+import { useFavorites } from "../context/FavoritesContext";
+import { useCompare } from "../context/CompareContext";
+import { useAuth } from "../context/AuthContext";
+import Link from "next/link";
 import styles from "./Header.module.css";
 
 export default function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { items: cartItems } = useCart();
+  const { favorites } = useFavorites();
+  const { compareItems } = useCompare();
+  const { user, isAuthenticated, signOut } = useAuth();
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -27,8 +41,18 @@ export default function Header() {
             <img src="/images/logo.jpg" alt="БелТехФермЪ" />
           </a>
           <div className={styles.mobileIcons}>
-            <span>❤️</span>
-            <span>🛒</span>
+            <Link href="/compare" className={styles.iconLink}>
+              ⚖️
+              {isLoaded && compareItems.length > 0 && (
+                <span className={styles.badge}>{compareItems.length}</span>
+              )}
+            </Link>
+            <Link href="/cart" className={styles.iconLink}>
+              🛒
+              {isLoaded && cartItems.length > 0 && (
+                <span className={styles.badge}>{cartItems.length}</span>
+              )}
+            </Link>
           </div>
         </div>
         <div className={styles.mobileSearch}>
@@ -55,8 +79,37 @@ export default function Header() {
             <div className={styles.workTime}>Ежедневно: 8:00 - 20:00</div>
           </div>
           <div className={styles.headerIcons}>
-            <span>❤️</span>
-            <span>🛒</span>
+            {isLoaded && isAuthenticated ? (
+              <div className={styles.userMenu}>
+                <span className={styles.userName}>
+                  {user?.name || user?.email}
+                </span>
+                <button
+                  className={styles.logoutBtn}
+                  onClick={() =>
+                    signOut().then(() => (window.location.href = "/"))
+                  }
+                >
+                  Выход
+                </button>
+              </div>
+            ) : (
+              <Link href="/auth" className={styles.authLink}>
+                Вход / Регистрация
+              </Link>
+            )}
+            <Link href="/compare" className={styles.iconLink}>
+              ⚖️
+              {isLoaded && compareItems.length > 0 && (
+                <span className={styles.badge}>{compareItems.length}</span>
+              )}
+            </Link>
+            <Link href="/cart" className={styles.iconLink}>
+              🛒
+              {isLoaded && cartItems.length > 0 && (
+                <span className={styles.badge}>{cartItems.length}</span>
+              )}
+            </Link>
           </div>
         </div>
       </header>
