@@ -3,6 +3,9 @@ import "./globals.css";
 import "./components/icons.css";
 import Header from "./components/Header";
 import { OrganizationJsonLd, LocalBusinessJsonLd } from "./components/JsonLd";
+import { CartProvider } from "./context/CartContext";
+import { FavoritesProvider } from "./context/FavoritesContext";
+import { CompareProvider } from "./context/CompareContext";
 
 export const metadata: Metadata = {
   title: "БелТехФермЪ - Мини-тракторы и запчасти | Продажа в России",
@@ -68,83 +71,89 @@ export default function RootLayout({
         <LocalBusinessJsonLd />
       </head>
       <body>
-        <Header />
-        <main>{children}</main>
-        <footer className="footer">
-          <div className="container">
-            <div className="footer-content">
-              <div className="footer-section">
-                <h3>БелТехФермЪ</h3>
-                <p>Надежная сельхозтехника для вашего успеха</p>
-                <div className="social-links">
-                  <a href="#" aria-label="VK">
-                    <i className="fab fa-vk"></i>
-                  </a>
-                  <a href="#" aria-label="Telegram">
-                    <i className="fab fa-telegram"></i>
-                  </a>
-                  <a href="#" aria-label="WhatsApp">
-                    <i className="fab fa-whatsapp"></i>
-                  </a>
+        <CartProvider>
+          <FavoritesProvider>
+            <CompareProvider>
+              <Header />
+              <main>{children}</main>
+              <footer className="footer">
+                <div className="container">
+                  <div className="footer-content">
+                    <div className="footer-section">
+                      <h3>БелТехФермЪ</h3>
+                      <p>Надежная сельхозтехника для вашего успеха</p>
+                      <div className="social-links">
+                        <a href="#" aria-label="VK">
+                          <i className="fab fa-vk"></i>
+                        </a>
+                        <a href="#" aria-label="Telegram">
+                          <i className="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" aria-label="WhatsApp">
+                          <i className="fab fa-whatsapp"></i>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="footer-section">
+                      <h4>Каталог</h4>
+                      <ul>
+                        <li>
+                          <a href="/catalog/minitractory">Минитракторы</a>
+                        </li>
+                        <li>
+                          <a href="/catalog/communal-equipment">
+                            Коммунальная техника
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/catalog/parts">Запасные части</a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="footer-section">
+                      <h4>Информация</h4>
+                      <ul>
+                        <li>
+                          <a href="/about">О компании</a>
+                        </li>
+                        <li>
+                          <a href="/delivery">Доставка</a>
+                        </li>
+                        <li>
+                          <a href="/payment">Оплата</a>
+                        </li>
+                        <li>
+                          <a href="/warranty">Гарантия</a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="footer-section">
+                      <h4>Контакты</h4>
+                      <ul>
+                        <li>
+                          <i className="fas fa-phone"></i> +7 (999) 999-99-99
+                        </li>
+                        <li>
+                          <i className="fas fa-envelope"></i> info@beltehferm.ru
+                        </li>
+                        <li>
+                          <i className="fas fa-map-marker-alt"></i> Белгород
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="footer-bottom">
+                    <p>&copy; 2024 БелТехФермЪ. Все права защищены.</p>
+                  </div>
                 </div>
-              </div>
-
-              <div className="footer-section">
-                <h4>Каталог</h4>
-                <ul>
-                  <li>
-                    <a href="/catalog/minitractory">Минитракторы</a>
-                  </li>
-                  <li>
-                    <a href="/catalog/communal-equipment">
-                      Коммунальная техника
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/catalog/parts">Запасные части</a>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="footer-section">
-                <h4>Информация</h4>
-                <ul>
-                  <li>
-                    <a href="/about">О компании</a>
-                  </li>
-                  <li>
-                    <a href="/delivery">Доставка</a>
-                  </li>
-                  <li>
-                    <a href="/payment">Оплата</a>
-                  </li>
-                  <li>
-                    <a href="/warranty">Гарантия</a>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="footer-section">
-                <h4>Контакты</h4>
-                <ul>
-                  <li>
-                    <i className="fas fa-phone"></i> +7 (999) 999-99-99
-                  </li>
-                  <li>
-                    <i className="fas fa-envelope"></i> info@beltehferm.ru
-                  </li>
-                  <li>
-                    <i className="fas fa-map-marker-alt"></i> Белгород
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="footer-bottom">
-              <p>&copy; 2024 БелТехФермЪ. Все права защищены.</p>
-            </div>
-          </div>
-        </footer>
+              </footer>
+            </CompareProvider>
+          </FavoritesProvider>
+        </CartProvider>
       </body>
     </html>
   );

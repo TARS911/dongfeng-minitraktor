@@ -14,6 +14,7 @@ import {
   CogsIcon,
   BoxIcon,
 } from "./components/Icons";
+import ProductCard from "./components/ProductCard";
 import "./home.css";
 import "./page-fix.css";
 
@@ -113,62 +114,7 @@ export default async function HomePage() {
             <h2 className="section-title">Популярные товары</h2>
             <div className="products-grid">
               {featuredProducts.map((product: Product) => (
-                <div key={product.id} className="product-card">
-                  <div className="product-badge">Хит</div>
-                  {product.old_price && (
-                    <div className="product-discount">
-                      -
-                      {Math.round(
-                        (1 - product.price / product.old_price) * 100,
-                      )}
-                      %
-                    </div>
-                  )}
-
-                  <Link href={`/catalog/product/${product.slug}`}>
-                    <div className="product-image">
-                      <Image
-                        src={product.image_url || "/images/placeholder.jpg"}
-                        alt={product.name}
-                        fill
-                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                        style={{ objectFit: "cover" }}
-                        priority={false}
-                        loading="lazy"
-                      />
-                    </div>
-                  </Link>
-
-                  <div className="product-info">
-                    <Link href={`/catalog/product/${product.slug}`}>
-                      <h3 className="product-name">{product.name}</h3>
-                    </Link>
-
-                    {product.manufacturer && (
-                      <p className="product-manufacturer">
-                        <IndustryIcon className="inline-icon" />{" "}
-                        {product.manufacturer}
-                      </p>
-                    )}
-
-                    <div className="product-footer">
-                      <div className="product-price">
-                        {product.old_price && (
-                          <span className="old-price">
-                            {product.old_price.toLocaleString()} ₽
-                          </span>
-                        )}
-                        <span className="current-price">
-                          {product.price.toLocaleString()} ₽
-                        </span>
-                      </div>
-
-                      <button className="add-to-cart-btn">
-                        <ShoppingCartIcon className="inline-icon" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <ProductCard key={product.id} product={product} />
               ))}
             </div>
 
