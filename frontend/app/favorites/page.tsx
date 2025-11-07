@@ -1,3 +1,23 @@
+/**
+ * favorites/page.tsx
+ *
+ * Страница избранных товаров с полной информацией о каждом товаре.
+ * Загружает данные продуктов из API на основе ID из FavoritesContext.
+ *
+ * Интерфейсы:
+ * - FavoriteProduct (line 19): Модель данных товара для избранного
+ *
+ * Функции:
+ * - FavoritesPage (line 28): Основной компонент страницы избранного
+ * - useEffect (line 33): Инициализация isLoaded для предотвращения hydration mismatch
+ * - useEffect (line 38): Загрузка полных данных продуктов из API
+ *
+ * Состояния:
+ * - Empty state (line 70): Пустое избранное с призывом к действию
+ * - Loading state (line 62): Индикатор загрузки
+ * - Content state (line 87): Отображение сетки избранных товаров
+ */
+
 "use client";
 
 import { useFavorites } from "../context/FavoritesContext";
@@ -6,6 +26,16 @@ import Link from "next/link";
 import Image from "next/image";
 import "./favorites.css";
 
+/**
+ * FavoriteProduct - Интерфейс данных товара в избранном
+ *
+ * @property {number} id - Уникальный идентификатор товара
+ * @property {string} name - Название товара
+ * @property {number} price - Цена в рублях
+ * @property {string} image_url - URL изображения товара
+ * @property {string} slug - URL-friendly идентификатор для роутинга
+ * @property {string} [description] - Опциональное описание товара
+ */
 interface FavoriteProduct {
   id: number;
   name: string;
@@ -15,6 +45,17 @@ interface FavoriteProduct {
   description?: string;
 }
 
+/**
+ * FavoritesPage - Компонент страницы избранного
+ *
+ * Отображает все товары, добавленные в избранное:
+ * - Загружает полные данные из API по ID из FavoritesContext
+ * - Показывает карточки товаров с изображением, ценой и описанием
+ * - Позволяет удалить товар из избранного
+ * - Отображает empty state если избранное пустое
+ *
+ * @returns {JSX.Element} Страница со списком избранных товаров
+ */
 export default function FavoritesPage() {
   const { favorites, removeFavorite } = useFavorites();
   const [isLoaded, setIsLoaded] = useState(false);

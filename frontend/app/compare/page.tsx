@@ -1,3 +1,30 @@
+/**
+ * compare/page.tsx
+ *
+ * Страница сравнения товаров в табличном формате.
+ * Позволяет сравнить характеристики до 4-х товаров одновременно.
+ *
+ * Интерфейсы:
+ * - CompareProductDetails (line 27): Расширенная модель товара с характеристиками
+ *
+ * Функции:
+ * - ComparePage (line 40): Основной компонент страницы сравнения
+ * - useEffect (line 46): Инициализация isLoaded для предотвращения hydration mismatch
+ * - useEffect (line 50): Загрузка полных данных товаров из API
+ *
+ * Особенности:
+ * - Максимум 4 товара для сравнения (FIFO очередь в Context)
+ * - Табличное представление характеристик
+ * - Загрузка полных данных из API по ID
+ * - Удаление товаров из сравнения
+ * - Очистка всего списка сравнения
+ *
+ * Состояния:
+ * - Empty state (line 85): Пустое сравнение с призывом к действию
+ * - Loading state (line 77): Индикатор загрузки
+ * - Content state (line 102): Таблица сравнения характеристик
+ */
+
 "use client";
 
 import { useCompare } from "../context/CompareContext";
@@ -6,6 +33,20 @@ import Link from "next/link";
 import Image from "next/image";
 import "./compare.css";
 
+/**
+ * CompareProductDetails - Интерфейс расширенных данных товара для сравнения
+ *
+ * @property {number} id - Уникальный идентификатор товара
+ * @property {string} name - Название товара
+ * @property {number} price - Цена в рублях
+ * @property {string} image_url - URL изображения товара
+ * @property {string} slug - URL-friendly идентификатор для роутинга
+ * @property {string} [manufacturer] - Производитель товара
+ * @property {string} [power] - Мощность (для техники)
+ * @property {string} [type] - Тип товара
+ * @property {string} [description] - Описание товара
+ * @property {any} [key: string] - Дополнительные характеристики
+ */
 interface CompareProductDetails {
   id: number;
   name: string;
@@ -19,6 +60,18 @@ interface CompareProductDetails {
   [key: string]: any;
 }
 
+/**
+ * ComparePage - Компонент страницы сравнения товаров
+ *
+ * Отображает товары в табличном формате для сравнения:
+ * - Загружает полные данные из API по ID из CompareContext
+ * - Показывает характеристики товаров в виде таблицы
+ * - Позволяет удалить товары из сравнения
+ * - Максимум 4 товара одновременно
+ * - Отображает empty state если нет товаров для сравнения
+ *
+ * @returns {JSX.Element} Страница со таблицей сравнения товаров
+ */
 export default function ComparePage() {
   const { compareItems, removeFromCompare, clearCompare } = useCompare();
   const [isLoaded, setIsLoaded] = useState(false);

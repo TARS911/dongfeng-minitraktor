@@ -1,3 +1,27 @@
+/**
+ * cart/page.tsx
+ *
+ * Страница корзины покупок с управлением количеством товаров и оформлением заказа.
+ * Отображает список товаров, итоговую стоимость и действия с корзиной.
+ *
+ * Функции:
+ * - CartPage (line 18): Основной компонент страницы корзины
+ * - useEffect (line 24): Инициализация isLoaded для предотвращения hydration mismatch
+ *
+ * Особенности:
+ * - Управление количеством товаров (increment/decrement/direct input)
+ * - Удаление отдельных товаров из корзины
+ * - Очистка всей корзины
+ * - Подсчет итоговой суммы заказа
+ * - Empty state для пустой корзины
+ * - Переход к оформлению заказа
+ *
+ * Состояния:
+ * - Empty state (line 36): Пустая корзина с призывом к действию
+ * - Loading state (line 28): Индикатор загрузки
+ * - Content state (line 48): Таблица товаров и блок итогов
+ */
+
 "use client";
 
 import { useCart } from "../context/CartContext";
@@ -7,6 +31,19 @@ import Link from "next/link";
 import Image from "next/image";
 import "./cart.css";
 
+/**
+ * CartPage - Компонент страницы корзины
+ *
+ * Отображает корзину покупок с функциями:
+ * - Просмотр всех товаров в корзине
+ * - Изменение количества каждого товара
+ * - Удаление товаров из корзины
+ * - Очистка всей корзины
+ * - Просмотр итоговой суммы
+ * - Переход к оформлению заказа
+ *
+ * @returns {JSX.Element} Страница корзины с товарами и блоком оформления
+ */
 export default function CartPage() {
   const { items, removeFromCart, updateQuantity, clearCart, total } = useCart();
   const [isLoaded, setIsLoaded] = useState(false);

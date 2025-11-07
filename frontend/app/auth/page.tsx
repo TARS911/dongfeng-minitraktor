@@ -1,3 +1,30 @@
+/**
+ * auth/page.tsx
+ *
+ * Страница аутентификации с тремя режимами: вход, регистрация, сброс пароля.
+ * Использует Supabase Auth для управления пользователями.
+ *
+ * Типы:
+ * - AuthMode (line 27): Тип режима аутентификации ("login" | "signup" | "reset")
+ *
+ * Функции:
+ * - AuthPage (line 29): Основной компонент страницы аутентификации
+ * - handleLogin (line 41): Обработчик формы входа
+ * - handleSignup (line 58): Обработчик формы регистрации
+ * - handleReset (line 77): Обработчик формы сброса пароля
+ *
+ * Состояния формы:
+ * - mode: "login" | "signup" | "reset" - текущий режим формы
+ * - email, password, name - поля ввода
+ * - error, success - сообщения обратной связи
+ * - isLoading - индикатор загрузки
+ *
+ * Режимы:
+ * - Login (line 99): Форма входа с email и паролем
+ * - Signup (line 181): Форма регистрации с именем, email и паролем
+ * - Reset (line 259): Форма сброса пароля с email
+ */
+
 "use client";
 
 import { useState } from "react";
@@ -6,8 +33,25 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import "./auth.css";
 
+/**
+ * AuthMode - Тип режима аутентификации
+ */
 type AuthMode = "login" | "signup" | "reset";
 
+/**
+ * AuthPage - Компонент страницы аутентификации
+ *
+ * Мультирежимная страница аутентификации:
+ * - Вход в существующий аккаунт
+ * - Регистрация нового пользователя
+ * - Сброс забытого пароля
+ * - Возможность продолжить как гость
+ *
+ * Использует AuthContext для работы с Supabase Auth.
+ * После успешного входа перенаправляет на главную страницу.
+ *
+ * @returns {JSX.Element} Страница аутентификации с формами
+ */
 export default function AuthPage() {
   const [mode, setMode] = useState<AuthMode>("login");
   const [email, setEmail] = useState("");
@@ -20,6 +64,15 @@ export default function AuthPage() {
   const { signIn, signUp, resetPassword } = useAuth();
   const router = useRouter();
 
+  /**
+   * handleLogin - Обработчик формы входа
+   *
+   * Вызывает signIn из AuthContext для входа через Supabase.
+   * При успешном входе перенаправляет на главную страницу через 1.5 сек.
+   * При ошибке отображает сообщение об ошибке.
+   *
+   * @param {React.FormEvent} e - Событие submit формы
+   */
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
@@ -37,6 +90,15 @@ export default function AuthPage() {
     }
   };
 
+  /**
+   * handleSignup - Обработчик формы регистрации
+   *
+   * Вызывает signUp из AuthContext для создания нового пользователя в Supabase.
+   * Отправляет письмо с подтверждением на указанный email.
+   * При успешной регистрации переключает на режим входа через 2 сек.
+   *
+   * @param {React.FormEvent} e - Событие submit формы
+   */
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
@@ -56,6 +118,15 @@ export default function AuthPage() {
     }
   };
 
+  /**
+   * handleReset - Обработчик формы сброса пароля
+   *
+   * Вызывает resetPassword из AuthContext для отправки ссылки сброса пароля.
+   * Supabase отправляет email со ссылкой для создания нового пароля.
+   * При успешной отправке переключает на режим входа через 2 сек.
+   *
+   * @param {React.FormEvent} e - Событие submit формы
+   */
   const handleReset = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
