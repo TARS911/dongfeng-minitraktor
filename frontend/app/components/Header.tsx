@@ -22,6 +22,12 @@ export default function Header() {
     setIsLoaded(true);
   }, []);
 
+  // Подсчет общего количества товаров в корзине с учетом quantity
+  const totalCartItems = cartItems.reduce(
+    (sum, item) => sum + item.quantity,
+    0,
+  );
+
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
     if (!sidebarOpen) {
@@ -57,8 +63,8 @@ export default function Header() {
             </Link>
             <Link href="/cart" className={styles.iconLink}>
               🛒
-              {isLoaded && cartItems.length > 0 && (
-                <span className={styles.badge}>{cartItems.length}</span>
+              {isLoaded && totalCartItems > 0 && (
+                <span className={styles.badge}>{totalCartItems}</span>
               )}
             </Link>
           </div>
@@ -118,8 +124,8 @@ export default function Header() {
             </Link>
             <Link href="/cart" className={styles.iconLink}>
               🛒
-              {isLoaded && cartItems.length > 0 && (
-                <span className={styles.badge}>{cartItems.length}</span>
+              {isLoaded && totalCartItems > 0 && (
+                <span className={styles.badge}>{totalCartItems}</span>
               )}
             </Link>
           </div>

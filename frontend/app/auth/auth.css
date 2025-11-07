@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #f5f5f5;
   padding: 20px;
 }
 
@@ -93,7 +93,7 @@
 .btn-auth {
   width: 100%;
   padding: 12px 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #0066cc;
   color: white;
   border: none;
   border-radius: 6px;
@@ -105,8 +105,9 @@
 }
 
 .btn-auth:hover:not(:disabled) {
+  background: #0052a3;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.4);
 }
 
 .btn-auth:disabled {
@@ -174,7 +175,7 @@
 .link-btn {
   background: none;
   border: none;
-  color: #667eea;
+  color: #0066cc;
   cursor: pointer;
   font-size: 0.9rem;
   text-decoration: none;
@@ -183,7 +184,7 @@
 }
 
 .link-btn:hover {
-  color: #764ba2;
+  color: #0052a3;
   text-decoration: underline;
 }
 

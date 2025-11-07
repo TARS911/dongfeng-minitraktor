@@ -36,17 +36,24 @@ export default function ComparePage() {
     }
 
     setIsLoading(true);
-    // Fetch full product details for comparison
-    Promise.all(
-      compareItems.map((item) =>
-        fetch(`/api/products/${item.slug}`)
-          .then((res) => res.json())
-          .catch(() => item),
-      ),
-    ).then((data) => {
-      setProducts(data);
-      setIsLoading(false);
-    });
+    // Получаем все продукты из API и фильтруем нужные
+    fetch("/api/products")
+      .then((res) => res.json())
+      .then((data) => {
+        // Фильтруем только те продукты, которые есть в compareItems
+        const compareIds = compareItems.map((item) => item.id);
+        const filteredProducts = data.filter((product: CompareProductDetails) =>
+          compareIds.includes(product.id),
+        );
+        setProducts(filteredProducts);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Ошибка при загрузке товаров для сравнения:", error);
+        // В случае ошибки используем данные из compareItems
+        setProducts(compareItems as CompareProductDetails[]);
+        setIsLoading(false);
+      });
   }, [compareItems]);
 
   if (!isLoaded) {
