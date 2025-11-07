@@ -1,0 +1,231 @@
+/* ============================================
+   DESKTOP NAVIGATION
+   ============================================ */
+
+.desktopNav {
+  display: flex;
+  gap: 0;
+  background: white;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.desktopNav .menuItem {
+  position: relative;
+}
+
+.desktopNav .menuItemHeader {
+  display: flex;
+  align-items: center;
+}
+
+.desktopNav .menuLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.desktopNav .menuLink:hover {
+  background: #f5f5f5;
+  color: var(--primary);
+}
+
+.desktopNav .menuIcon {
+  font-size: 18px;
+}
+
+/* Выпадающее меню - уровень 1 */
+.desktopNav .submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 250px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 0 0 8px 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.desktopNav .menuItem:hover > .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Вложенное меню - уровень 2 и глубже */
+.desktopNav .level1 .submenu,
+.desktopNav .level2 .submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 0;
+  border-radius: 8px;
+}
+
+.desktopNav .level1 .menuLink,
+.desktopNav .level2 .menuLink {
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.desktopNav .level1 .menuLink:hover,
+.desktopNav .level2 .menuLink:hover {
+  background: var(--primary-light);
+  padding-left: 24px;
+}
+
+/* Стрелка для desktop не показываем */
+.desktopNav .toggleBtn {
+  display: none;
+}
+
+/* ============================================
+   MOBILE NAVIGATION
+   ============================================ */
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileNav .menuItem {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobileNav .menuItemHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobileNav .menuLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  flex: 1;
+  transition: background 0.2s ease;
+}
+
+.mobileNav .menuLink:active {
+  background: var(--primary-light);
+}
+
+.mobileNav .menuIcon {
+  font-size: 20px;
+  width: 28px;
+  text-align: center;
+}
+
+/* Кнопка раскрытия */
+.toggleBtn {
+  background: none;
+  border: none;
+  padding: 16px 20px;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggleBtn:active {
+  background: #f5f5f5;
+  color: var(--primary);
+}
+
+/* Подменю - accordion */
+.mobileNav .submenu {
+  max-height: 0;
+  overflow: hidden;
+  background: #fafafa;
+  transition: max-height 0.3s ease;
+}
+
+.mobileNav .submenu.submenuOpen {
+  max-height: 1000px;
+}
+
+/* Отступы для вложенности */
+.mobileNav .level1 .menuLink {
+  padding-left: 40px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.mobileNav .level2 .menuLink {
+  padding-left: 60px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+}
+
+.mobileNav .level1 {
+  border-bottom: none;
+}
+
+.mobileNav .level2 {
+  border-bottom: none;
+}
+
+/* ============================================
+   BREAKPOINTS
+   ============================================ */
+
+/* Tablet - 992px */
+@media (max-width: 992px) {
+  .desktopNav .menuLink {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .desktopNav .submenu {
+    min-width: 220px;
+  }
+}
+
+/* Mobile - 575px */
+@media (max-width: 575px) {
+  .mobileNav .menuLink {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+
+  .mobileNav .level1 .menuLink {
+    padding-left: 32px;
+    font-size: 14px;
+  }
+
+  .mobileNav .level2 .menuLink {
+    padding-left: 48px;
+    font-size: 13px;
+  }
+
+  .toggleBtn {
+    padding: 14px 16px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+.menuLink:focus,
+.toggleBtn:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}

@@ -1,9 +1,10 @@
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
-  color: white;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  color: #333;
   padding: 48px 0;
   text-align: center;
+  border-bottom: 3px solid #0066cc;
 }
 
 .hero-content {
@@ -59,36 +60,36 @@
 }
 
 .btn-primary {
-  background: white;
-  color: #2e7d32;
+  background: #0066cc;
+  color: white;
 }
 
 .btn-primary:hover {
-  background: #f5f5f5;
+  background: #0052a3;
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 102, 204, 0.3);
 }
 
 .btn-secondary {
   background: transparent;
-  color: white;
-  border-color: white;
+  color: #333;
+  border-color: #333;
 }
 
 .btn-secondary:hover {
-  background: white;
-  color: #2e7d32;
+  background: #333;
+  color: white;
   transform: translateY(-2px);
 }
 
 .btn-outline {
   background: transparent;
-  color: #2e7d32;
-  border: 2px solid #2e7d32;
+  color: #0066cc;
+  border: 2px solid #0066cc;
 }
 
 .btn-outline:hover {
-  background: #2e7d32;
+  background: #0066cc;
   color: white;
   transform: translateY(-2px);
 }
@@ -140,7 +141,7 @@
   width: 64px;
   height: 64px;
   margin: 0 auto 16px;
-  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+  background: linear-gradient(135deg, #0066cc 0%, #004899 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -165,7 +166,7 @@
 }
 
 .category-link {
-  color: #4caf50;
+  color: #0066cc;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -265,7 +266,7 @@
 }
 
 .product-name:hover {
-  color: #4caf50;
+  color: #0066cc;
 }
 
 .product-manufacturer {
@@ -278,7 +279,7 @@
 }
 
 .product-manufacturer i {
-  color: #4caf50;
+  color: #0066cc;
 }
 
 .product-footer {
@@ -306,7 +307,7 @@
 .current-price {
   font-size: 20px;
   font-weight: 700;
-  color: #4caf50;
+  color: #0066cc;
 }
 
 .product-actions {
@@ -351,13 +352,13 @@
 .add-to-cart-btn {
   width: 42px;
   height: 42px;
-  background: #4caf50;
+  background: #0066cc;
   color: white;
   font-size: 16px;
 }
 
 .add-to-cart-btn:hover {
-  background: #45a049;
+  background: #0052a3;
   transform: scale(1.08);
 }
 
@@ -380,7 +381,7 @@
   width: 64px;
   height: 64px;
   margin: 0 auto 16px;
-  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+  background: linear-gradient(135deg, #0066cc 0%, #004899 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -401,6 +402,74 @@
   color: #6c757d;
   line-height: 1.5;
   font-size: 14px;
+}
+
+/* Trust Statistics */
+.trust-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+  padding: 40px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+}
+
+.trust-stat {
+  text-align: center;
+}
+
+.trust-stat-number {
+  font-size: 42px;
+  font-weight: 700;
+  color: #0066cc;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.trust-stat-label {
+  font-size: 14px;
+  color: #6c757d;
+  line-height: 1.4;
+}
+
+/* Guarantees Section */
+.guarantees-section {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.guarantee-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px;
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.guarantee-item:hover {
+  border-color: #0066cc;
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.1);
+  transform: translateY(-2px);
+}
+
+.guarantee-icon {
+  font-size: 24px;
+  color: #0066cc;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.guarantee-text {
+  font-size: 15px;
+  color: #2c3e50;
+  line-height: 1.4;
+  font-weight: 500;
 }
 
 /* Responsive */
@@ -510,6 +579,35 @@
 
   .advantage-card p {
     font-size: 13px;
+  }
+
+  .trust-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 30px 20px;
+    margin-top: 30px;
+  }
+
+  .trust-stat-number {
+    font-size: 36px;
+  }
+
+  .trust-stat-label {
+    font-size: 13px;
+  }
+
+  .guarantees-section {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 30px;
+  }
+
+  .guarantee-item {
+    padding: 16px;
+  }
+
+  .guarantee-text {
+    font-size: 14px;
   }
 }
 

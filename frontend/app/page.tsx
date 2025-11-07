@@ -131,21 +131,25 @@ export default async function HomePage() {
       <section className="advantages-section">
         <div className="container">
           <h2 className="section-title">Почему выбирают нас</h2>
+
+          {/* Основные преимущества */}
           <div className="advantages-grid">
             <div className="advantage-card">
               <div className="advantage-icon">
                 <ShieldCheckIcon />
               </div>
               <h3>Гарантия качества</h3>
-              <p>Официальная гарантия на всю технику и запчасти</p>
+              <p>Официальная гарантия на всю технику от 12 до 24 месяцев</p>
             </div>
 
             <div className="advantage-card">
               <div className="advantage-icon">
                 <TruckIcon />
               </div>
-              <h3>Доставка</h3>
-              <p>Быстрая доставка по всей России</p>
+              <h3>Бесплатная доставка</h3>
+              <p>
+                Доставка по России от 3 дней. Бесплатно при заказе от 50 000 ₽
+              </p>
             </div>
 
             <div className="advantage-card">
@@ -153,15 +157,61 @@ export default async function HomePage() {
                 <ToolsIcon />
               </div>
               <h3>Сервисное обслуживание</h3>
-              <p>Профессиональный ремонт и техподдержка</p>
+              <p>15+ сервисных центров по всей стране</p>
             </div>
 
             <div className="advantage-card">
               <div className="advantage-icon">
                 <RubleIcon />
               </div>
-              <h3>Выгодные цены</h3>
-              <p>Конкурентные цены и акции для постоянных клиентов</p>
+              <h3>Рассрочка 0%</h3>
+              <p>Рассрочка без переплат до 12 месяцев. Быстрое оформление</p>
+            </div>
+          </div>
+
+          {/* Статистика - доверительные цифры */}
+          <div className="trust-stats">
+            <div className="trust-stat">
+              <div className="trust-stat-number">5+</div>
+              <div className="trust-stat-label">лет на рынке</div>
+            </div>
+            <div className="trust-stat">
+              <div className="trust-stat-number">3000+</div>
+              <div className="trust-stat-label">довольных клиентов</div>
+            </div>
+            <div className="trust-stat">
+              <div className="trust-stat-number">15+</div>
+              <div className="trust-stat-label">сервисных центров</div>
+            </div>
+            <div className="trust-stat">
+              <div className="trust-stat-number">100%</div>
+              <div className="trust-stat-label">гарантия возврата</div>
+            </div>
+          </div>
+
+          {/* Гарантии */}
+          <div className="guarantees-section">
+            <div className="guarantee-item">
+              <span className="guarantee-icon">✓</span>
+              <span className="guarantee-text">
+                Официальный дилер ведущих производителей
+              </span>
+            </div>
+            <div className="guarantee-item">
+              <span className="guarantee-icon">✓</span>
+              <span className="guarantee-text">Все товары сертифицированы</span>
+            </div>
+            <div className="guarantee-item">
+              <span className="guarantee-icon">✓</span>
+              <span className="guarantee-text">
+                Гарантия лучшей цены - вернем разницу
+              </span>
+            </div>
+            <div className="guarantee-item">
+              <span className="guarantee-icon">✓</span>
+              <span className="guarantee-text">
+                Бесплатная консультация специалиста
+              </span>
             </div>
           </div>
         </div>

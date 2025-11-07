@@ -7,6 +7,8 @@ import { useFavorites } from "../context/FavoritesContext";
 import { useCompare } from "../context/CompareContext";
 import { useAuth } from "../context/AuthContext";
 import Link from "next/link";
+import MegaMenu from "./MegaMenu";
+import { catalogMenu, additionalMenu } from "../data/menuStructure";
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -130,6 +132,13 @@ export default function Header() {
             </Link>
           </div>
         </div>
+
+        {/* DESKTOP NAVIGATION */}
+        <div className={styles.desktopNavigation}>
+          <div className={styles.navContent}>
+            <MegaMenu items={catalogMenu} isMobile={false} />
+          </div>
+        </div>
       </header>
 
       {/* SIDEBAR OVERLAY */}
@@ -143,37 +152,17 @@ export default function Header() {
         className={`${styles.sidebar} ${sidebarOpen ? styles.active : ""}`}
       >
         <div className={styles.sidebarHeader}>
-          <span>Каталог</span>
+          <span>Меню</span>
           <span className={styles.sidebarClose} onClick={toggleSidebar}>
             ✕
           </span>
         </div>
-        <ul className={styles.sidebarMenu}>
-          <li>
-            <a href="/catalog/minitractory">
-              <span className={styles.menuIcon}>
-                <img src="/icons/tractor.svg" alt="" width="24" height="24" />
-              </span>
-              Мини-тракторы
-            </a>
-          </li>
-          <li>
-            <a href="/catalog/communal-equipment">
-              <span className={styles.menuIcon}>
-                <img src="/icons/snowplow.svg" alt="" width="24" height="24" />
-              </span>
-              Коммунальная техника
-            </a>
-          </li>
-          <li>
-            <a href="/catalog/parts">
-              <span className={styles.menuIcon}>
-                <img src="/icons/cog.svg" alt="" width="24" height="24" />
-              </span>
-              Запасные части
-            </a>
-          </li>
-        </ul>
+        <div className={styles.sidebarContent}>
+          <MegaMenu items={catalogMenu} isMobile={true} />
+          <div className={styles.additionalLinks}>
+            <MegaMenu items={additionalMenu} isMobile={true} />
+          </div>
+        </div>
       </aside>
     </>
   );
