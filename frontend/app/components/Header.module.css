@@ -78,6 +78,26 @@
   font-weight: bold;
 }
 
+.themeToggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+  opacity: 0.8;
+}
+
+.themeToggle:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
 .mobileSearch {
   margin-bottom: 10px;
 }

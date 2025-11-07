@@ -142,7 +142,18 @@ export default function ComparePage() {
       <h1>Сравнение товаров ({compareItems.length} из 4)</h1>
 
       <div className="compare-toolbar">
-        <button className="btn-clear" onClick={clearCompare}>
+        <button
+          className="btn-clear"
+          onClick={() => {
+            if (
+              confirm(
+                "Вы уверены, что хотите очистить все товары из сравнения?",
+              )
+            ) {
+              clearCompare();
+            }
+          }}
+        >
           Очистить сравнение
         </button>
         <Link href="/catalog" className="btn-continue">

@@ -75,7 +75,34 @@ export default function CartPage() {
 
   return (
     <div className="cart-container">
-      <h1>Моя корзина</h1>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "20px",
+        }}
+      >
+        <h1>Моя корзина</h1>
+        <button
+          onClick={() => {
+            if (confirm("Вы уверены, что хотите очистить всю корзину?")) {
+              clearCart();
+            }
+          }}
+          style={{
+            background: "#dc3545",
+            color: "white",
+            border: "none",
+            padding: "10px 20px",
+            borderRadius: "4px",
+            cursor: "pointer",
+            fontSize: "14px",
+          }}
+        >
+          Очистить корзину
+        </button>
+      </div>
 
       <div className="cart-content">
         <div className="cart-items">
