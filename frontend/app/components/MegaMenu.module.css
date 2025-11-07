@@ -6,7 +6,7 @@
   display: flex;
   gap: 0;
   background: white;
-  border-bottom: 2px solid #e0e0e0;
+  border-bottom: none;
 }
 
 .desktopNav .menuItem {
@@ -100,7 +100,7 @@
 }
 
 .mobileNav .menuItem {
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: none;
 }
 
 .mobileNav .menuItemHeader {
