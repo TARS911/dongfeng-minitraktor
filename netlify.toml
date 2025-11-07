@@ -4,11 +4,6 @@
 
 [build.environment]
   NODE_VERSION = "20"
-  NEXT_ENABLE_EXPERIMENTAL_REACT = "false"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-[functions]
-  directory = "frontend/.next/server/app/api"
-  node_bundler = "esbuild"
