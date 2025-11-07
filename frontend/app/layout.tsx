@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./styles/animations.css";
 import "./components/icons.css";
 import Header from "./components/Header";
 import { OrganizationJsonLd, LocalBusinessJsonLd } from "./components/JsonLd";

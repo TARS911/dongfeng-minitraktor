@@ -130,7 +130,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     : 0;
 
   return (
-    <div className="product-card">
+    <div className="product-card fade-in hover-lift">
       {/* Бейдж "Хит" для популярных товаров */}
       {product.is_featured && <div className="product-badge">Хит</div>}
 

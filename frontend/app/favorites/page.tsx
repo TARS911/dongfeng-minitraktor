@@ -24,6 +24,7 @@ import { useFavorites } from "../context/FavoritesContext";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import SkeletonCard from "../components/SkeletonCard";
 import "./favorites.css";
 
 /**
@@ -130,11 +131,15 @@ export default function FavoritesPage() {
       </div>
 
       {isLoading ? (
-        <div className="loading">Загрузка товаров...</div>
+        <div className="favorites-grid">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <SkeletonCard key={i} />
+          ))}
+        </div>
       ) : (
         <div className="favorites-grid">
           {products.map((product) => (
-            <div key={product.id} className="favorite-card">
+            <div key={product.id} className="favorite-card fade-in hover-lift">
               <button
                 className="btn-remove-favorite"
                 onClick={() => removeFavorite(product.id)}

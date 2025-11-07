@@ -31,6 +31,7 @@ import { useCompare } from "../context/CompareContext";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import SkeletonTable from "../components/SkeletonTable";
 import "./compare.css";
 
 /**
@@ -148,7 +149,7 @@ export default function ComparePage() {
       </div>
 
       {isLoading ? (
-        <div className="loading">Загрузка деталей товаров...</div>
+        <SkeletonTable />
       ) : (
         <div className="compare-table-wrapper">
           <table className="compare-table">
