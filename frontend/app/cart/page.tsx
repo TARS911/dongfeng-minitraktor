@@ -2,6 +2,7 @@
 
 import { useCart } from "../context/CartContext";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import "./cart.css";
@@ -9,13 +10,18 @@ import "./cart.css";
 export default function CartPage() {
   const { items, removeFromCart, updateQuantity, clearCart, total } = useCart();
   const [isLoaded, setIsLoaded] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setIsLoaded(true);
   }, []);
 
   if (!isLoaded) {
-    return <div className="cart-container"><p>Загрузка...</p></div>;
+    return (
+      <div className="cart-container">
+        <p>Загрузка...</p>
+      </div>
+    );
   }
 
   if (items.length === 0) {
@@ -59,7 +65,10 @@ export default function CartPage() {
                         className="product-thumb"
                       />
                     )}
-                    <Link href={`/products/${item.slug}`} className="product-name">
+                    <Link
+                      href={`/products/${item.slug}`}
+                      className="product-name"
+                    >
                       {item.name}
                     </Link>
                   </td>
@@ -84,7 +93,7 @@ export default function CartPage() {
                         onChange={(e) =>
                           updateQuantity(
                             item.id,
-                            Math.max(1, parseInt(e.target.value) || 1)
+                            Math.max(1, parseInt(e.target.value) || 1),
                           )
                         }
                         className="qty-input"
@@ -122,9 +131,7 @@ export default function CartPage() {
             <h2>Итого</h2>
             <div className="summary-line">
               <span>Товаров ({items.length}):</span>
-              <span className="amount">
-                {total.toLocaleString("ru-RU")} ₽
-              </span>
+              <span className="amount">{total.toLocaleString("ru-RU")} ₽</span>
             </div>
             <div className="summary-line">
               <span>Доставка:</span>
@@ -141,7 +148,10 @@ export default function CartPage() {
               Перейти к оформлению заказа
             </button>
 
-            <button className="btn-continue" onClick={() => window.location.href = "/catalog"}>
+            <button
+              className="btn-continue"
+              onClick={() => router.push("/catalog")}
+            >
               Продолжить покупки
             </button>
 

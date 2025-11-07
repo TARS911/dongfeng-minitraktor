@@ -54,10 +54,13 @@ export function FavoritesProvider({ children }: { children: React.ReactNode }) {
    * Используется для восстановления списка избранного после перезагрузки страницы
    */
   useEffect(() => {
-    const savedFavorites = localStorage.getItem(FAVORITES_STORAGE_KEY);
-    if (savedFavorites) {
-      const parsedFavorites = JSON.parse(savedFavorites);
-      setFavorites(parsedFavorites);
+    // Проверка доступности localStorage (только на клиенте, не на сервере)
+    if (typeof window !== "undefined") {
+      const savedFavorites = localStorage.getItem(FAVORITES_STORAGE_KEY);
+      if (savedFavorites) {
+        const parsedFavorites = JSON.parse(savedFavorites);
+        setFavorites(parsedFavorites);
+      }
     }
     setIsLoaded(true);
   }, []);
@@ -67,7 +70,7 @@ export function FavoritesProvider({ children }: { children: React.ReactNode }) {
    * Срабатывает только после первой загрузки
    */
   useEffect(() => {
-    if (isLoaded) {
+    if (isLoaded && typeof window !== "undefined") {
       localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(favorites));
     }
   }, [favorites, isLoaded]);

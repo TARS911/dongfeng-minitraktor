@@ -71,10 +71,13 @@ export function CompareProvider({ children }: { children: React.ReactNode }) {
    * Используется для восстановления списка сравнения после перезагрузки страницы
    */
   useEffect(() => {
-    const savedCompare = localStorage.getItem(COMPARE_STORAGE_KEY);
-    if (savedCompare) {
-      const parsedCompare = JSON.parse(savedCompare);
-      setCompareItems(parsedCompare);
+    // Проверка доступности localStorage (только на клиенте, не на сервере)
+    if (typeof window !== "undefined") {
+      const savedCompare = localStorage.getItem(COMPARE_STORAGE_KEY);
+      if (savedCompare) {
+        const parsedCompare = JSON.parse(savedCompare);
+        setCompareItems(parsedCompare);
+      }
     }
     setIsLoaded(true);
   }, []);
@@ -84,7 +87,7 @@ export function CompareProvider({ children }: { children: React.ReactNode }) {
    * Срабатывает только после первой загрузки
    */
   useEffect(() => {
-    if (isLoaded) {
+    if (isLoaded && typeof window !== "undefined") {
       localStorage.setItem(COMPARE_STORAGE_KEY, JSON.stringify(compareItems));
     }
   }, [compareItems, isLoaded]);

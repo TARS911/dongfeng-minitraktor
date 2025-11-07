@@ -65,10 +65,13 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
    * Используется для восстановления состояния корзины после перезагрузки страницы
    */
   useEffect(() => {
-    const savedCart = localStorage.getItem(CART_STORAGE_KEY);
-    if (savedCart) {
-      const parsedCart = JSON.parse(savedCart);
-      setItems(parsedCart);
+    // Проверка доступности localStorage (только на клиенте, не на сервере)
+    if (typeof window !== "undefined") {
+      const savedCart = localStorage.getItem(CART_STORAGE_KEY);
+      if (savedCart) {
+        const parsedCart = JSON.parse(savedCart);
+        setItems(parsedCart);
+      }
     }
     setIsLoaded(true);
   }, []);
@@ -78,7 +81,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
    * Срабатывает только после первой загрузки, чтобы избежать перезаписи при инициализации
    */
   useEffect(() => {
-    if (isLoaded) {
+    if (isLoaded && typeof window !== "undefined") {
       localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
     }
   }, [items, isLoaded]);

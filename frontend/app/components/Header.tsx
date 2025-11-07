@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { useCart } from "../context/CartContext";
 import { useFavorites } from "../context/FavoritesContext";
 import { useCompare } from "../context/CompareContext";
@@ -10,6 +11,7 @@ import styles from "./Header.module.css";
 
 export default function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const router = useRouter();
   const { items: cartItems } = useCart();
   const { favorites } = useFavorites();
   const { compareItems } = useCompare();
@@ -41,6 +43,12 @@ export default function Header() {
             <img src="/images/logo.jpg" alt="БелТехФермЪ" />
           </a>
           <div className={styles.mobileIcons}>
+            <Link href="/favorites" className={styles.iconLink}>
+              ❤️
+              {isLoaded && favorites.length > 0 && (
+                <span className={styles.badge}>{favorites.length}</span>
+              )}
+            </Link>
             <Link href="/compare" className={styles.iconLink}>
               ⚖️
               {isLoaded && compareItems.length > 0 && (
@@ -86,9 +94,7 @@ export default function Header() {
                 </span>
                 <button
                   className={styles.logoutBtn}
-                  onClick={() =>
-                    signOut().then(() => (window.location.href = "/"))
-                  }
+                  onClick={() => signOut().then(() => router.push("/"))}
                 >
                   Выход
                 </button>
@@ -98,6 +104,12 @@ export default function Header() {
                 Вход / Регистрация
               </Link>
             )}
+            <Link href="/favorites" className={styles.iconLink}>
+              ❤️
+              {isLoaded && favorites.length > 0 && (
+                <span className={styles.badge}>{favorites.length}</span>
+              )}
+            </Link>
             <Link href="/compare" className={styles.iconLink}>
               ⚖️
               {isLoaded && compareItems.length > 0 && (
