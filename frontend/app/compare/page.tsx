@@ -195,7 +195,7 @@ export default function ComparePage() {
                 {compareItems.map((item) => (
                   <td key={item.id} className="product-cell">
                     <span className="price-value">
-                      {item.price.toLocaleString("ru-RU")} ₽
+                      {item.price ? item.price.toLocaleString("ru-RU") : "0"} ₽
                     </span>
                   </td>
                 ))}
