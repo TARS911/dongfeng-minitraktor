@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test('homepage has title and links to catalog', async ({ page }) => {
   await page.goto('/');
 
-  await expect(page).toHaveTitle(/Dongfeng/);
+  await expect(page).toHaveTitle(/БелТехФермЪ/);
 
   const catalogLink = page.getByRole('link', { name: 'Каталог' });
 

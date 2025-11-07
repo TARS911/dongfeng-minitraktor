@@ -79,9 +79,11 @@ export default function FavoritesPage() {
     fetch("/api/products")
       .then((res) => res.json())
       .then((data) => {
+        // API возвращает { products: [] }, извлекаем массив
+        const productsArray = data.products || [];
         // Фильтруем только избранные продукты
-        const favoriteProducts = data.filter((product: FavoriteProduct) =>
-          favorites.includes(product.id)
+        const favoriteProducts = productsArray.filter(
+          (product: FavoriteProduct) => favorites.includes(product.id),
         );
         setProducts(favoriteProducts);
         setIsLoading(false);
@@ -122,9 +124,7 @@ export default function FavoritesPage() {
       <h1>Избранное ({favorites.length})</h1>
 
       <div className="favorites-toolbar">
-        <p className="favorites-count">
-          Всего товаров: {favorites.length}
-        </p>
+        <p className="favorites-count">Всего товаров: {favorites.length}</p>
         <Link href="/catalog" className="btn-continue">
           Продолжить покупки
         </Link>
@@ -177,12 +177,12 @@ export default function FavoritesPage() {
 
                 <div className="favorite-footer">
                   <span className="favorite-price">
-                    {product.price.toLocaleString("ru-RU")} ₽
+                    {product.price
+                      ? product.price.toLocaleString("ru-RU")
+                      : "0"}{" "}
+                    ₽
                   </span>
-                  <Link
-                    href={`/products/${product.slug}`}
-                    className="btn-view"
-                  >
+                  <Link href={`/products/${product.slug}`} className="btn-view">
                     Подробнее →
                   </Link>
                 </div>
