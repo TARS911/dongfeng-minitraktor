@@ -1,0 +1,39 @@
+# Правила индексирования для поисковых систем
+User-agent: *
+Allow: /
+Allow: /catalog
+Allow: /about
+Allow: /delivery
+Allow: /payment
+Allow: /warranty
+Allow: /contacts
+
+# Запрещаем админские пути и API
+Disallow: /api
+Disallow: /admin
+Disallow: /_next
+Disallow: /.next
+Disallow: /private
+
+# Запрещаем служебные пути
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+Disallow: /*?*page=
+
+# Указываем на карту сайта
+Sitemap: https://beltehferm.netlify.app/sitemap.xml
+
+# Задержка для ботов (в секундах)
+Crawl-delay: 1
+
+# Правила для конкретных поисковых систем
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yandexbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2

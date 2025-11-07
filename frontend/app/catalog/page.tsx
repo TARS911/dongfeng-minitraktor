@@ -1,6 +1,7 @@
 import { supabase } from "../lib/supabase";
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import {
   TractorIcon,
   ShoppingCartIcon,
@@ -13,6 +14,20 @@ import {
   BoxOpenIcon,
 } from "../components/Icons";
 import "./catalog.css";
+
+export const metadata: Metadata = {
+  title: "Каталог товаров | БелТехФермЪ - Мини-тракторы и запчасти",
+  description:
+    "Полный каталог мини-тракторов, навесного оборудования и запчастей. Низкие цены, большой выбор, доставка по России.",
+  keywords:
+    "каталог мини-тракторов, сельхозтехника, запчасти, оборудование, цены",
+  openGraph: {
+    title: "Каталог товаров | БелТехФермЪ",
+    description: "Полный каталог мини-тракторов и сельхозтехники",
+    url: "https://beltehferm.netlify.app/catalog",
+    type: "website",
+  },
+};
 
 interface Product {
   id: number;

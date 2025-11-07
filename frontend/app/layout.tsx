@@ -2,13 +2,58 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./components/icons.css";
 import Header from "./components/Header";
+import { OrganizationJsonLd, LocalBusinessJsonLd } from "./components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "БелТехФермЪ - Мини-тракторы и запчасти",
+  title: "БелТехФермЪ - Мини-тракторы и запчасти | Продажа в России",
   description:
-    "Продажа мини-тракторов, навесного оборудования и запчастей для фермеров. Белгород, Курск, Орёл, Воронеж, Брянск, Тула. Гарантия, сервис, доставка.",
+    "Купите мини-тракторы и сельхозтехнику в БелТехФермЪ. Доставка по России: Белгород, Курск, Орёл, Воронеж, Брянск, Тула. Официальная гарантия, техническое обслуживание, низкие цены.",
   keywords:
-    "мини-трактор, сельхозтехника, трактор купить, навесное оборудование, запчасти",
+    "мини-трактор купить, сельхозтехника, трактор, навесное оборудование, запчасти, доставка",
+  authors: [{ name: "БелТехФермЪ" }],
+  creator: "БелТехФермЪ",
+  publisher: "БелТехФермЪ",
+  formatDetection: {
+    email: false,
+    telephone: false,
+    address: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    url: "https://beltehferm.netlify.app",
+    siteName: "БелТехФермЪ",
+    title: "БелТехФермЪ - Мини-тракторы и запчасти",
+    description:
+      "Продажа мини-тракторов и сельхозтехники с доставкой по России",
+    images: [
+      {
+        url: "https://beltehferm.netlify.app/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "БелТехФермЪ - Мини-тракторы",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "БелТехФермЪ - Мини-тракторы и запчасти",
+    description: "Купите мини-тракторы и сельхозтехнику с доставкой по России",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://beltehferm.netlify.app",
+  },
 };
 
 export default function RootLayout({
@@ -18,6 +63,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
+      <head>
+        <OrganizationJsonLd />
+        <LocalBusinessJsonLd />
+      </head>
       <body>
         <Header />
         <main>{children}</main>
