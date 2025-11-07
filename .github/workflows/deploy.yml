@@ -1,12 +1,15 @@
+# ОТКЛЮЧЕНО: Используем прямую интеграцию Netlify с GitHub
+# Netlify автоматически деплоит при push в main
 name: Deploy to Netlify
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch: # Запуск только вручную
+  # push:
+  #   branches:
+  #     - main
+  # pull_request:
+  #   branches:
+  #     - main
 
 jobs:
   deploy:
