@@ -25,11 +25,7 @@ import { useState, useEffect } from "react";
 import { useCart } from "../context/CartContext";
 import { useFavorites } from "../context/FavoritesContext";
 import { useCompare } from "../context/CompareContext";
-import {
-  ShoppingCartIcon,
-  IndustryIcon,
-  ArrowRightIcon,
-} from "./Icons";
+import { ShoppingCartIcon, IndustryIcon, ArrowRightIcon } from "./Icons";
 
 // Интерфейсы
 interface Product {
@@ -174,7 +170,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               </span>
             )}
             <span className="current-price">
-              {product.price.toLocaleString()} ₽
+              {product.price ? product.price.toLocaleString() : "0"} ₽
             </span>
           </div>
 
@@ -186,7 +182,9 @@ export default function ProductCard({ product }: ProductCardProps) {
                 <button
                   className={`favorite-btn ${isFav ? "active" : ""}`}
                   onClick={handleToggleFavorite}
-                  title={isFav ? "Удалить из избранного" : "Добавить в избранное"}
+                  title={
+                    isFav ? "Удалить из избранного" : "Добавить в избранное"
+                  }
                   aria-label="Избранное"
                 >
                   ❤️
@@ -194,7 +192,9 @@ export default function ProductCard({ product }: ProductCardProps) {
                 <button
                   className={`compare-btn ${isComp ? "active" : ""}`}
                   onClick={handleToggleCompare}
-                  title={isComp ? "Удалить из сравнения" : "Добавить в сравнение"}
+                  title={
+                    isComp ? "Удалить из сравнения" : "Добавить в сравнение"
+                  }
                   aria-label="Сравнение"
                 >
                   ⚖️

@@ -134,7 +134,7 @@ export default async function CatalogPage() {
                       </span>
                     )}
                     <span className="current-price">
-                      {product.price.toLocaleString()} ₽
+                      {product.price ? product.price.toLocaleString() : "0"} ₽
                     </span>
                   </div>
 
