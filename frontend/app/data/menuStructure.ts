@@ -17,7 +17,7 @@ export interface MenuItem {
 export const catalogMenu: MenuItem[] = [
   {
     id: "all",
-    title: "Весь каталог",
+    title: "Каталог товаров",
     slug: "/catalog",
     icon: "📦",
   },
