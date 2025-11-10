@@ -5,8 +5,9 @@ import type { Metadata } from "next";
 import "../catalog.css";
 
 export const metadata: Metadata = {
-  title: "Навесное оборудование | БелТехФермЪ",
-  description: "Навесное оборудование для мини-тракторов. Большой выбор, низкие цены, доставка по России.",
+  title: "Коммунальная техника | БелТехФермЪ",
+  description:
+    "Коммунальная техника для уборки снега и территорий. Большой выбор, низкие цены, доставка по России.",
 };
 
 interface Product {
@@ -54,9 +55,9 @@ export default async function EquipmentPage() {
             <span>/</span>
             <Link href="/catalog">Каталог</Link>
             <span>/</span>
-            <span>Навесное оборудование</span>
+            <span>Коммунальная техника</span>
           </div>
-          <h1>Навесное оборудование</h1>
+          <h1>Коммунальная техника</h1>
         </div>
 
         {products.length === 0 ? (

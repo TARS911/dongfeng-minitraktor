@@ -24,7 +24,7 @@ const nextConfig = {
   // Убираем export - используем SSR для Netlify
   // output: "export",
 
-  // Headers для кэширования
+  // Headers для кэширования и безопасности
   async headers() {
     return [
       {
@@ -42,6 +42,56 @@ const nextConfig = {
           {
             key: "Cache-Control",
             value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/:path*",
+        headers: [
+          // Content Security Policy - защита от XSS
+          {
+            key: "Content-Security-Policy",
+            value:
+              "default-src 'self'; " +
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://dpsykseeqloturowdyzf.supabase.co; " +
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; " +
+              "img-src 'self' data: blob: https: http:; " +
+              "font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; " +
+              "connect-src 'self' https://dpsykseeqloturowdyzf.supabase.co wss://dpsykseeqloturowdyzf.supabase.co; " +
+              "frame-ancestors 'none'; " +
+              "base-uri 'self'; " +
+              "form-action 'self';",
+          },
+          // X-Frame-Options - защита от clickjacking
+          {
+            key: "X-Frame-Options",
+            value: "DENY",
+          },
+          // X-Content-Type-Options - защита от MIME sniffing
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+          // Referrer-Policy - контроль передачи referrer
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+          // Permissions-Policy - ограничение browser features
+          {
+            key: "Permissions-Policy",
+            value:
+              "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+          },
+          // X-XSS-Protection - дополнительная защита от XSS (legacy)
+          {
+            key: "X-XSS-Protection",
+            value: "1; mode=block",
+          },
+          // Strict-Transport-Security - принудительный HTTPS
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=31536000; includeSubDomains; preload",
           },
         ],
       },

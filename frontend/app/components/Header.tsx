@@ -6,6 +6,7 @@ import { useCart } from "../context/CartContext";
 import { useFavorites } from "../context/FavoritesContext";
 import { useCompare } from "../context/CompareContext";
 import { useAuth } from "../context/AuthContext";
+import { useSwipe } from "../hooks/useSwipe";
 // TODO: Вернуть позже - темная/светлая тема
 // import { useTheme } from "../context/ThemeContext";
 import Link from "next/link";
@@ -42,6 +43,17 @@ export default function Header() {
       document.body.style.overflow = "";
     }
   };
+
+  const closeSidebar = () => {
+    setSidebarOpen(false);
+    document.body.style.overflow = "";
+  };
+
+  // Swipe-жесты для sidebar (свайп влево закрывает)
+  const swipeHandlers = useSwipe({
+    onSwipeLeft: closeSidebar,
+    minSwipeDistance: 50,
+  });
 
   return (
     <>
@@ -166,12 +178,13 @@ export default function Header() {
       {/* SIDEBAR OVERLAY */}
       <div
         className={`${styles.sidebarOverlay} ${sidebarOpen ? styles.active : ""}`}
-        onClick={toggleSidebar}
+        onClick={closeSidebar}
       />
 
       {/* SIDEBAR MENU */}
       <aside
         className={`${styles.sidebar} ${sidebarOpen ? styles.active : ""}`}
+        {...swipeHandlers}
       >
         <div className={styles.sidebarHeader}>
           <span>Меню</span>

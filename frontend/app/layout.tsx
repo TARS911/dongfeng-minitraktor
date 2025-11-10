@@ -8,6 +8,9 @@ import { CartProvider } from "./context/CartContext";
 import { FavoritesProvider } from "./context/FavoritesContext";
 import { CompareProvider } from "./context/CompareContext";
 import { AuthProvider } from "./context/AuthContext";
+import ServiceWorkerRegister from "./components/ServiceWorkerRegister";
+import GoogleAnalytics from "./components/GoogleAnalytics";
+import SkipLinks from "./components/SkipLinks";
 // TODO: Вернуть позже - темная/светлая тема
 // import { ThemeProvider } from "./context/ThemeContext";
 
@@ -16,7 +19,7 @@ export const metadata: Metadata = {
   description:
     "Купите мини-тракторы и сельхозтехнику в БелТехФермЪ. Доставка по России: Белгород, Курск, Орёл, Воронеж, Брянск, Тула. Официальная гарантия, техническое обслуживание, низкие цены.",
   keywords:
-    "мини-трактор купить, сельхозтехника, трактор, навесное оборудование, запчасти, доставка",
+    "мини-трактор купить, сельхозтехника, трактор, коммунальная техника, запчасти, доставка",
   authors: [{ name: "БелТехФермЪ" }],
   creator: "БелТехФермЪ",
   publisher: "БелТехФермЪ",
@@ -71,10 +74,48 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
+        {/* Preconnect для ускорения загрузки внешних ресурсов */}
+        <link
+          rel="preconnect"
+          href="https://dpsykseeqloturowdyzf.supabase.co"
+        />
+        <link
+          rel="dns-prefetch"
+          href="https://dpsykseeqloturowdyzf.supabase.co"
+        />
+
+        {/* Viewport для PWA */}
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"
+        />
+        <meta name="theme-color" content="#0066cc" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="БелТехФермЪ" />
+
+        {/* PWA Manifest */}
+        <link rel="manifest" href="/manifest.json" />
+
+        {/* Apple Touch Icons */}
+        <link rel="apple-touch-icon" href="/images/logo.jpg" />
+
+        {/* Structured Data */}
         <OrganizationJsonLd />
         <LocalBusinessJsonLd />
       </head>
       <body>
+        {/* Skip Links для accessibility */}
+        <SkipLinks />
+
+        {/* Google Analytics 4 */}
+        <GoogleAnalytics
+          GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_ID || ""}
+        />
+
+        {/* Service Worker регистрация */}
+        <ServiceWorkerRegister />
+
         {/* TODO: Вернуть позже - ThemeProvider */}
         {/* <ThemeProvider> */}
         <AuthProvider>
@@ -82,8 +123,8 @@ export default function RootLayout({
             <FavoritesProvider>
               <CompareProvider>
                 <Header />
-                <main>{children}</main>
-                <footer className="footer">
+                <main id="main-content">{children}</main>
+                <footer id="footer" className="footer">
                   <div className="container">
                     <div className="footer-content">
                       <div className="footer-section">

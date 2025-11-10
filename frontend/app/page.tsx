@@ -1,12 +1,10 @@
 import { supabase } from "./lib/supabase";
 import Link from "next/link";
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import {
   TractorIcon,
   PhoneIcon,
   ArrowRightIcon,
-  ShoppingCartIcon,
-  IndustryIcon,
   ShieldCheckIcon,
   TruckIcon,
   ToolsIcon,
@@ -14,9 +12,14 @@ import {
   CogsIcon,
   BoxIcon,
 } from "./components/Icons";
-import ProductCard from "./components/ProductCard";
 import "./home.css";
 import "./page-fix.css";
+
+// Lazy loading для ProductCard - загружается только когда нужен
+const ProductCard = dynamic(() => import("./components/ProductCard"), {
+  loading: () => <div className="skeleton-card">Загрузка...</div>,
+  ssr: true, // Включаем SSR для SEO
+});
 
 // Добавляем кеширование для ускорения загрузки
 export const revalidate = 3600; // кеш на 1 час
@@ -67,7 +70,7 @@ export default async function HomePage() {
               </span>
             </h1>
             <p className="hero-description">
-              Мини-тракторы, навесное оборудование и запчасти с гарантией и
+              Мини-тракторы, коммунальная техника и запчасти с гарантией и
               доставкой
             </p>
             <div className="hero-buttons">
