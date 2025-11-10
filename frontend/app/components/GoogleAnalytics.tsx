@@ -1,8 +1,8 @@
 "use client";
 
 import Script from "next/script";
-import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect, Suspense } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 /**
  * Google Analytics 4 компонент
@@ -13,22 +13,19 @@ interface GoogleAnalyticsProps {
   GA_MEASUREMENT_ID: string;
 }
 
-function GoogleAnalyticsInner({ GA_MEASUREMENT_ID }: GoogleAnalyticsProps) {
+export default function GoogleAnalytics({
+  GA_MEASUREMENT_ID,
+}: GoogleAnalyticsProps) {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   // Отслеживание просмотров страниц при навигации
   useEffect(() => {
     if (pathname && typeof window !== "undefined" && window.gtag) {
-      const url =
-        pathname +
-        (searchParams?.toString() ? `?${searchParams.toString()}` : "");
-
       window.gtag("config", GA_MEASUREMENT_ID, {
-        page_path: url,
+        page_path: pathname,
       });
     }
-  }, [pathname, searchParams, GA_MEASUREMENT_ID]);
+  }, [pathname, GA_MEASUREMENT_ID]);
 
   // Не загружаем GA в development
   if (process.env.NODE_ENV !== "production") {
@@ -58,16 +55,6 @@ function GoogleAnalyticsInner({ GA_MEASUREMENT_ID }: GoogleAnalyticsProps) {
         }}
       />
     </>
-  );
-}
-
-export default function GoogleAnalytics({
-  GA_MEASUREMENT_ID,
-}: GoogleAnalyticsProps) {
-  return (
-    <Suspense fallback={null}>
-      <GoogleAnalyticsInner GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />
-    </Suspense>
   );
 }
 

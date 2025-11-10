@@ -109,9 +109,9 @@ export default function RootLayout({
         <SkipLinks />
 
         {/* Google Analytics 4 */}
-        <GoogleAnalytics
-          GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_ID || ""}
-        />
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
 
         {/* Service Worker регистрация */}
         <ServiceWorkerRegister />
