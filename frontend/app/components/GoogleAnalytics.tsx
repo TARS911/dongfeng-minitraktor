@@ -2,7 +2,7 @@
 
 import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 
 /**
  * Google Analytics 4 компонент
@@ -13,16 +13,16 @@ interface GoogleAnalyticsProps {
   GA_MEASUREMENT_ID: string;
 }
 
-export default function GoogleAnalytics({
-  GA_MEASUREMENT_ID,
-}: GoogleAnalyticsProps) {
+function GoogleAnalyticsInner({ GA_MEASUREMENT_ID }: GoogleAnalyticsProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   // Отслеживание просмотров страниц при навигации
   useEffect(() => {
     if (pathname && typeof window !== "undefined" && window.gtag) {
-      const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
+      const url =
+        pathname +
+        (searchParams?.toString() ? `?${searchParams.toString()}` : "");
 
       window.gtag("config", GA_MEASUREMENT_ID, {
         page_path: url,
@@ -61,6 +61,16 @@ export default function GoogleAnalytics({
   );
 }
 
+export default function GoogleAnalytics({
+  GA_MEASUREMENT_ID,
+}: GoogleAnalyticsProps) {
+  return (
+    <Suspense fallback={null}>
+      <GoogleAnalyticsInner GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />
+    </Suspense>
+  );
+}
+
 /**
  * Типизация для window.gtag
  */
@@ -69,7 +79,7 @@ declare global {
     gtag: (
       command: string,
       targetId: string,
-      config?: Record<string, any>
+      config?: Record<string, any>,
     ) => void;
     dataLayer: any[];
   }
@@ -98,7 +108,7 @@ export const trackAddToCart = (
   productId: number,
   productName: string,
   price: number,
-  quantity: number
+  quantity: number,
 ) => {
   if (typeof window !== "undefined" && window.gtag) {
     window.gtag("event", "add_to_cart", {
@@ -121,7 +131,7 @@ export const trackRemoveFromCart = (
   productId: number,
   productName: string,
   price: number,
-  quantity: number
+  quantity: number,
 ) => {
   if (typeof window !== "undefined" && window.gtag) {
     window.gtag("event", "remove_from_cart", {
@@ -156,11 +166,7 @@ export const trackBeginCheckout = (cartTotal: number, items: any[]) => {
 };
 
 // Отслеживание покупки
-export const trackPurchase = (
-  orderId: string,
-  total: number,
-  items: any[]
-) => {
+export const trackPurchase = (orderId: string, total: number, items: any[]) => {
   if (typeof window !== "undefined" && window.gtag) {
     window.gtag("event", "purchase", {
       transaction_id: orderId,
@@ -190,7 +196,7 @@ export const trackViewItem = (
   productId: number,
   productName: string,
   price: number,
-  category: string
+  category: string,
 ) => {
   if (typeof window !== "undefined" && window.gtag) {
     window.gtag("event", "view_item", {
