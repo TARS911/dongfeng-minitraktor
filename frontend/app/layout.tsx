@@ -106,15 +106,15 @@ export default function RootLayout({
       </head>
       <body>
         {/* Skip Links для accessibility */}
-        <SkipLinks />
+        {/* <SkipLinks /> */}
 
         {/* Google Analytics 4 */}
-        {process.env.NEXT_PUBLIC_GA_ID && (
+        {/* {process.env.NEXT_PUBLIC_GA_ID && (
           <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_ID} />
-        )}
+        )} */}
 
         {/* Service Worker регистрация */}
-        <ServiceWorkerRegister />
+        {/* <ServiceWorkerRegister /> */}
 
         {/* TODO: Вернуть позже - ThemeProvider */}
         {/* <ThemeProvider> */}
