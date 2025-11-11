@@ -68,6 +68,13 @@ async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
 export default async function MiniTractorsPage() {
   const products = await getProductsByCategory("mini-tractors");
 
+  // Загружаем брендовые подкатегории для фильтров
+  const { data: brandCategories } = await supabase
+    .from("categories")
+    .select("*")
+    .in("slug", ["dongfeng", "lovol-foton", "xingtai", "rustrak"])
+    .order("name");
+
   return (
     <div className="catalog-page">
       <div className="container">
@@ -81,6 +88,24 @@ export default async function MiniTractorsPage() {
           </div>
           <h1>Мини-тракторы</h1>
         </div>
+
+        {/* Фильтры по брендам */}
+        {brandCategories && brandCategories.length > 0 && (
+          <div className="category-filters">
+            <Link href="/catalog/mini-tractors" className="category-btn active">
+              Все бренды
+            </Link>
+            {brandCategories.map((brand) => (
+              <Link
+                key={brand.id}
+                href={`/catalog/${brand.slug}`}
+                className="category-btn"
+              >
+                {brand.name}
+              </Link>
+            ))}
+          </div>
+        )}
 
         {products.length === 0 ? (
           <div className="empty-category">
