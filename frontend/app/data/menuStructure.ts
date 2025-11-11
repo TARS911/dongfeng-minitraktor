@@ -24,36 +24,6 @@ export const catalogMenu: MenuItem[] = [
 ];
 
 /**
- * Полное меню каталога для мобильной версии
- */
-export const catalogMenuMobile: MenuItem[] = [
-  {
-    id: "all",
-    title: "Каталог товаров",
-    slug: "/catalog",
-    icon: "📦",
-  },
-  {
-    id: "mini-tractors",
-    title: "Мини-тракторы",
-    slug: "/catalog/mini-tractors",
-    icon: "🚜",
-  },
-  {
-    id: "equipment",
-    title: "Коммунальная техника",
-    slug: "/catalog/equipment",
-    icon: "❄️",
-  },
-  {
-    id: "parts",
-    title: "Запасные части",
-    slug: "/catalog/parts",
-    icon: "⚙️",
-  },
-];
-
-/**
  * Дополнительные пункты меню (не каталог)
  */
 export const additionalMenu: MenuItem[] = [
