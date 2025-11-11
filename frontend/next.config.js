@@ -4,6 +4,9 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
 
+  // Исправляем workspace root warning
+  outputFileTracingRoot: require("path").join(__dirname, "../"),
+
   // Оптимизация изображений
   images: {
     domains: ["dpsykseeqloturowdyzf.supabase.co"],
