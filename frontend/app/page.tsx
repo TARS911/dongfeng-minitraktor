@@ -43,12 +43,17 @@ interface Category {
 }
 
 export default async function HomePage() {
-  // Загружаем только основные категории (первые 3)
-  const { data: categories } = await supabase
+  // Загружаем только основные категории в нужном порядке
+  const { data: allCategories } = await supabase
     .from("categories")
     .select("*")
-    .in("slug", ["mini-tractors", "parts", "equipment"])
-    .order("name");
+    .in("slug", ["mini-tractors", "parts", "equipment"]);
+
+  // Сортируем в нужном порядке: Мини-тракторы, Коммунальная техника, Запчасти
+  const categoryOrder = ["mini-tractors", "equipment", "parts"];
+  const categories = allCategories?.sort((a, b) => {
+    return categoryOrder.indexOf(a.slug) - categoryOrder.indexOf(b.slug);
+  });
 
   // Загружаем хиты продаж
   const { data: featuredProducts } = await supabase

@@ -50,12 +50,17 @@ interface Category {
 }
 
 export default async function CatalogPage() {
-  // Загружаем только основные категории (без брендов)
-  const { data: categories } = await supabase
+  // Загружаем только основные категории в нужном порядке
+  const { data: allCategories } = await supabase
     .from("categories")
     .select("*")
-    .in("slug", ["mini-tractors", "parts", "equipment"])
-    .order("name");
+    .in("slug", ["mini-tractors", "parts", "equipment"]);
+
+  // Сортируем: Мини-тракторы, Коммунальная техника, Запчасти
+  const categoryOrder = ["mini-tractors", "equipment", "parts"];
+  const categories = allCategories?.sort((a, b) => {
+    return categoryOrder.indexOf(a.slug) - categoryOrder.indexOf(b.slug);
+  });
 
   // Загружаем товары только из основных категорий (не показываем товары из брендовых подкатегорий)
   // Товары брендов показываются только на странице /catalog/mini-tractors
