@@ -21,6 +21,18 @@ export const catalogMenu: MenuItem[] = [
     slug: "/catalog",
     icon: "📦",
   },
+];
+
+/**
+ * Полное меню каталога для мобильной версии
+ */
+export const catalogMenuMobile: MenuItem[] = [
+  {
+    id: "all",
+    title: "Каталог товаров",
+    slug: "/catalog",
+    icon: "📦",
+  },
   {
     id: "mini-tractors",
     title: "Мини-тракторы",

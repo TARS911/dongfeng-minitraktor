@@ -11,7 +11,11 @@ import { useSwipe } from "../hooks/useSwipe";
 // import { useTheme } from "../context/ThemeContext";
 import Link from "next/link";
 import MegaMenu from "./MegaMenu";
-import { catalogMenu, additionalMenu } from "../data/menuStructure";
+import {
+  catalogMenu,
+  catalogMenuMobile,
+  additionalMenu,
+} from "../data/menuStructure";
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -204,7 +208,7 @@ export default function Header() {
           </span>
         </div>
         <div className={styles.sidebarContent}>
-          <MegaMenu items={catalogMenu} isMobile={true} />
+          <MegaMenu items={catalogMenuMobile} isMobile={true} />
           <div className={styles.sidebarAdditional}>
             {additionalMenu.map((item) => (
               <Link
