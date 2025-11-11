@@ -6,7 +6,8 @@ import "../catalog.css";
 
 export const metadata: Metadata = {
   title: "Мини-тракторы | БелТехФермЪ",
-  description: "Купите мини-тракторы DONGFENG. Большой выбор, низкие цены, доставка по России.",
+  description:
+    "Купите мини-тракторы DONGFENG. Большой выбор, низкие цены, доставка по России.",
 };
 
 interface Product {
@@ -22,7 +23,30 @@ interface Product {
 }
 
 async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
-  // Получаем ID категории по slug
+  // Для категории "mini-tractors" загружаем товары из всех брендовых подкатегорий
+  if (categorySlug === "mini-tractors") {
+    // Получаем ID брендовых категорий
+    const { data: brandCategories } = await supabase
+      .from("categories")
+      .select("id")
+      .in("slug", ["dongfeng", "lovol-foton", "xingtai", "rustrak"]);
+
+    if (!brandCategories || brandCategories.length === 0) return [];
+
+    const categoryIds = brandCategories.map((cat) => cat.id);
+
+    // Получаем товары из всех брендовых категорий
+    const { data: products } = await supabase
+      .from("products")
+      .select("*")
+      .in("category_id", categoryIds)
+      .eq("in_stock", true)
+      .order("created_at", { ascending: false });
+
+    return products || [];
+  }
+
+  // Для других категорий - стандартная логика
   const { data: category } = await supabase
     .from("categories")
     .select("id")
@@ -31,7 +55,6 @@ async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
 
   if (!category) return [];
 
-  // Получаем товары этой категории
   const { data: products } = await supabase
     .from("products")
     .select("*")
