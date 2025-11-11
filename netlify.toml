@@ -1,11 +1,12 @@
 [build]
   base = "frontend"
-  command = "npm ci && npm run build"
+  command = "npm install --production=false && npm run build"
   publish = ".next"
 
 [build.environment]
   NODE_VERSION = "20"
   NODE_OPTIONS = "--max-old-space-size=4096"
+  NEXT_TELEMETRY_DISABLED = "1"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
