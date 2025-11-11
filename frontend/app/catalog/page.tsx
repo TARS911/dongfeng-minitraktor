@@ -50,10 +50,11 @@ interface Category {
 }
 
 export default async function CatalogPage() {
-  // Загружаем категории
+  // Загружаем только основные категории (без брендов)
   const { data: categories } = await supabase
     .from("categories")
     .select("*")
+    .in("slug", ["mini-tractors", "parts", "equipment"])
     .order("name");
 
   // Загружаем все товары
