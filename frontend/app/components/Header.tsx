@@ -178,6 +178,9 @@ export default function Header() {
                   href={item.slug}
                   className={styles.additionalNavLink}
                 >
+                  {item.icon && (
+                    <span className={styles.menuIcon}>{item.icon}</span>
+                  )}
                   {item.title}
                 </Link>
               ))}
@@ -213,6 +216,11 @@ export default function Header() {
                 className={styles.sidebarLink}
                 onClick={closeSidebar}
               >
+                {item.icon && (
+                  <span style={{ fontSize: "20px", marginRight: "12px" }}>
+                    {item.icon}
+                  </span>
+                )}
                 {item.title}
               </Link>
             ))}
