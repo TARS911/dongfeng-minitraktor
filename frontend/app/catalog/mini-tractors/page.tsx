@@ -66,9 +66,7 @@ async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
 }
 
 export default async function MiniTractorsPage() {
-  const products = await getProductsByCategory("mini-tractors");
-
-  // Загружаем брендовые подкатегории для фильтров
+  // Загружаем брендовые подкатегории
   const { data: brandCategories } = await supabase
     .from("categories")
     .select("*")
@@ -87,39 +85,59 @@ export default async function MiniTractorsPage() {
             <span>Мини-тракторы</span>
           </div>
           <h1>Мини-тракторы</h1>
+          <p className="category-description">
+            Выберите бренд мини-трактора для просмотра доступных моделей
+          </p>
         </div>
 
-        {/* Фильтры по брендам */}
-        {brandCategories && brandCategories.length > 0 && (
-          <div className="category-filters">
-            <Link href="/catalog/mini-tractors" className="category-btn active">
-              Все бренды
-            </Link>
+        {/* Показываем бренды как подкатегории */}
+        {brandCategories && brandCategories.length > 0 ? (
+          <div className="categories-grid">
             {brandCategories.map((brand) => (
               <Link
                 key={brand.id}
                 href={`/catalog/${brand.slug}`}
-                className="category-btn"
+                className="category-card"
               >
-                {brand.name}
+                <div className="category-icon">
+                  <svg
+                    className="icon"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                  </svg>
+                </div>
+                <h3>{brand.name}</h3>
+                {brand.description && <p>{brand.description}</p>}
+                <span className="category-link">
+                  Смотреть товары{" "}
+                  <svg
+                    className="inline-icon"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </span>
               </Link>
             ))}
           </div>
-        )}
-
-        {products.length === 0 ? (
+        ) : (
           <div className="empty-category">
-            <h2>В этой категории пока нет товаров</h2>
-            <p>Мы работаем над пополнением ассортимента</p>
+            <h2>Подкатегории пока не добавлены</h2>
+            <p>Мы работаем над пополнением каталога</p>
             <Link href="/catalog" className="btn-back">
               ← Вернуться в каталог
             </Link>
-          </div>
-        ) : (
-          <div className="products-grid">
-            {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
           </div>
         )}
       </div>
