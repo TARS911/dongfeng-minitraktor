@@ -92,7 +92,7 @@ CREATE INDEX IF NOT EXISTS idx_order_items_order ON order_items(order_id);
 INSERT INTO categories (name, slug, description) VALUES
 ('Мини-тракторы', 'mini-tractors', 'Компактные тракторы для сельского хозяйства'),
 ('Запчасти', 'parts', 'Оригинальные запчасти для мини-тракторов'),
-('Навесное оборудование', 'equipment', 'Плуги, культиваторы, косилки')
+('Коммунальная техника', 'equipment', 'Снегоуборщики, газонокосилки, подметальные машины, техника для уборки территорий')
 ON CONFLICT (slug) DO NOTHING;
 
 -- Товары (мини-тракторы)

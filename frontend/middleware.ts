@@ -2,20 +2,21 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 /**
- * Rate Limiting Middleware для Next.js
+ * Rate Limiting Middleware для Next.js (Edge Runtime Compatible)
  * Ограничивает количество запросов от одного IP
+ *
+ * ПРИМЕЧАНИЕ: В production рекомендуется использовать Redis/Upstash
+ * для распределённого rate limiting
  */
-
-// Хранилище запросов (в production лучше использовать Redis)
-const requestCounts = new Map<
-  string,
-  { count: number; resetTime: number }
->();
 
 // Настройки rate limiting
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 минута
 const MAX_REQUESTS_PER_WINDOW = 100; // 100 запросов в минуту
 const API_MAX_REQUESTS = 30; // 30 запросов в минуту для API
+
+// Простое in-memory хранилище (работает только на одном инстансе)
+// Для production: используйте Upstash Redis или Cloudflare KV
+let requestCounts = new Map<string, { count: number; resetTime: number }>()
 
 /**
  * Получить IP адрес клиента
@@ -72,15 +73,16 @@ function cleanupOldEntries() {
   }
 }
 
-// Очистка каждые 5 минут
-if (typeof setInterval !== "undefined") {
-  setInterval(cleanupOldEntries, 5 * 60 * 1000);
-}
+// Очистка устаревших записей при каждом запросе (для Edge Runtime)
+// setInterval недоступен в Edge Runtime, поэтому очищаем вручную
 
 /**
  * Middleware функция
  */
 export function middleware(request: NextRequest) {
+  // Очищаем устаревшие записи перед проверкой
+  cleanupOldEntries();
+
   const ip = getClientIp(request);
   const { pathname } = request.nextUrl;
 
@@ -138,12 +140,13 @@ export function middleware(request: NextRequest) {
  */
 export const config = {
   matcher: [
-    // API routes
+    // API routes (высокий приоритет для защиты)
     "/api/:path*",
     // Страницы с формами
     "/auth/:path*",
     "/cart/:path*",
-    // Исключаем статические файлы
-    "/((?!_next/static|_next/image|favicon.ico|images|icons).*)",
+    "/contacts/:path*",
+    // Исключаем статические файлы и внутренние Next.js пути
+    "/((?!_next/static|_next/image|favicon.ico|images|icons|sw.js|manifest.json).*)",
   ],
 };
