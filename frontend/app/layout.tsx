@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import "./styles/animations.css";
 import "./components/icons.css";
@@ -13,6 +14,14 @@ import GoogleAnalytics from "./components/GoogleAnalytics";
 import SkipLinks from "./components/SkipLinks";
 // TODO: Вернуть позже - темная/светлая тема
 // import { ThemeProvider } from "./context/ThemeContext";
+
+// Подключаем красивый шрифт Montserrat
+const montserrat = Montserrat({
+  subsets: ["latin", "cyrillic"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-montserrat",
+});
 
 export const metadata: Metadata = {
   title: "БелТехФермЪ - Мини-тракторы и запчасти | Продажа в России",
@@ -72,7 +81,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru">
+    <html lang="ru" className={montserrat.variable}>
       <head>
         {/* Preconnect для ускорения загрузки внешних ресурсов */}
         <link
