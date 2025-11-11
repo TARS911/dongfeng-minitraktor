@@ -46,21 +46,38 @@ export const catalogMenu: MenuItem[] = [
  */
 export const additionalMenu: MenuItem[] = [
   {
-    id: "delivery",
-    title: "Доставка и оплата",
-    slug: "/delivery",
-    icon: "🚚",
+    id: "about",
+    title: "О компании",
+    slug: "/about",
   },
   {
-    id: "warranty",
-    title: "Гарантия",
-    slug: "/warranty",
-    icon: "✓",
+    id: "delivery",
+    title: "Доставка",
+    slug: "/delivery",
+  },
+  {
+    id: "payment",
+    title: "Оплата",
+    slug: "/payment",
+  },
+  {
+    id: "promotions",
+    title: "Акции",
+    slug: "/promotions",
+  },
+  {
+    id: "services",
+    title: "Услуги",
+    slug: "/services",
+  },
+  {
+    id: "service-center",
+    title: "Сервисный Центр",
+    slug: "/service-center",
   },
   {
     id: "contacts",
     title: "Контакты",
     slug: "/contacts",
-    icon: "📞",
   },
 ];

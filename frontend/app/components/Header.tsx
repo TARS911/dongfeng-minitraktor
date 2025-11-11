@@ -171,6 +171,17 @@ export default function Header() {
         <div className={styles.desktopNavigation}>
           <div className={styles.navContent}>
             <MegaMenu items={catalogMenu} isMobile={false} />
+            <div className={styles.additionalNav}>
+              {additionalMenu.map((item) => (
+                <Link
+                  key={item.id}
+                  href={item.slug}
+                  className={styles.additionalNavLink}
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </header>
@@ -194,14 +205,17 @@ export default function Header() {
         </div>
         <div className={styles.sidebarContent}>
           <MegaMenu items={catalogMenu} isMobile={true} />
-          <div
-            style={{
-              marginTop: "20px",
-              paddingTop: "20px",
-              borderTop: "1px solid #eee",
-            }}
-          >
-            <MegaMenu items={additionalMenu} isMobile={true} />
+          <div className={styles.sidebarAdditional}>
+            {additionalMenu.map((item) => (
+              <Link
+                key={item.id}
+                href={item.slug}
+                className={styles.sidebarLink}
+                onClick={closeSidebar}
+              >
+                {item.title}
+              </Link>
+            ))}
           </div>
         </div>
       </aside>
