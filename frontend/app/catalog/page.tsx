@@ -57,10 +57,14 @@ export default async function CatalogPage() {
     .in("slug", ["mini-tractors", "parts", "equipment"])
     .order("name");
 
-  // Загружаем все товары
+  // Загружаем товары только из основных категорий (не показываем товары из брендовых подкатегорий)
+  // Товары брендов показываются только на странице /catalog/mini-tractors
+  const mainCategoryIds = categories?.map((cat: Category) => cat.id) || [];
+
   const { data: products } = await supabase
     .from("products")
     .select("*")
+    .in("category_id", mainCategoryIds.length > 0 ? mainCategoryIds : [0])
     .eq("in_stock", true)
     .order("created_at", { ascending: false });
 
