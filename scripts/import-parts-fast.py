@@ -76,7 +76,7 @@ if not SUPABASE_KEY:
 # Пути
 PARTS_FILE = Path(__file__).parent.parent / "parsed_data" / "agrodom" / "parts.json"
 
-# Маппинг брендов
+# Маппинг брендов - ПОЛНЫЙ СПИСОК (19 брендов)
 BRAND_MAPPING = {
     "uralets": ["Уралец", "уралец"],
     "jinma": ["Jinma", "Джинма", "jinma", "джинма"],
@@ -87,10 +87,16 @@ BRAND_MAPPING = {
     "foton": ["Foton", "Фотон", "foton", "фотон", "Lovol", "ловол"],
     "rusich": ["Русич", "русич"],
     "mtz": ["МТЗ", "MTZ", "Беларус", "беларус", "мтз"],
-    "t-series": ["Т-25", "Т-40", "Т-16", "т-25", "т-40", "т-16"],
     "shifeng": ["Shifeng", "Шифенг", "shifeng", "шифенг"],
     "catmann": ["Catmann", "Кэтманн", "catmann", "кэтманн"],
     "chuvashpiller": ["Чувашпиллер", "Chuvashpiller", "чувашпиллер"],
+    "kentavr": ["Кентавр", "кентавр"],
+    "bulat": ["Булат", "булат", "Bulat"],
+    "yto": ["YTO", "yto"],
+    "neva": ["Нева", "нева"],
+    "dlh": ["DLH", "dlh"],
+    "perkins": ["Perkins", "perkins"],
+    "universal": [],  # Для товаров БЕЗ бренда
 }
 
 # Маппинг типов запчастей
@@ -203,11 +209,10 @@ def main():
         if not name or not part.get("price"):
             continue
 
-        # Определяем бренд
+        # Определяем бренд (если не найден - используем "universal")
         brand_slug = detect_brand(name)
         if not brand_slug:
-            results["no_brand"] += 1
-            continue
+            brand_slug = "universal"  # Универсальные запчасти
 
         # Определяем тип запчасти
         part_category = part.get("category", "Прочие запчасти")
