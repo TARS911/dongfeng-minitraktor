@@ -1,0 +1,133 @@
+[
+  {
+    "name": "DongFeng",
+    "name_ru": "ДонгФенг",
+    "slug": "dongfeng",
+    "variants": [
+      "DongFeng",
+      "Dong Feng",
+      "ДонгФенг"
+    ],
+    "count": 41
+  },
+  {
+    "name": "Foton",
+    "name_ru": "Фотон",
+    "slug": "foton",
+    "variants": [
+      "Foton",
+      "Фотон"
+    ],
+    "count": 19
+  },
+  {
+    "name": "Xingtai",
+    "name_ru": "Синтай",
+    "slug": "xingtai",
+    "variants": [
+      "Xingtai",
+      "Синтай"
+    ],
+    "count": 55
+  },
+  {
+    "name": "Jinma",
+    "name_ru": "Джинма",
+    "slug": "jinma",
+    "variants": [
+      "Jinma",
+      "Джинма"
+    ],
+    "count": 79
+  },
+  {
+    "name": "MTZ",
+    "name_ru": "МТЗ (Беларус)",
+    "slug": "mtz",
+    "variants": [
+      "МТЗ",
+      "MTZ",
+      "Беларус"
+    ],
+    "count": 10
+  },
+  {
+    "name": "Uralets",
+    "name_ru": "Уралец",
+    "slug": "uralets",
+    "variants": [
+      "Уралец"
+    ],
+    "count": 110
+  },
+  {
+    "name": "Rusich",
+    "name_ru": "Русич",
+    "slug": "rusich",
+    "variants": [
+      "Русич"
+    ],
+    "count": 16
+  },
+  {
+    "name": "Scout",
+    "name_ru": "Скаут",
+    "slug": "scout",
+    "variants": [
+      "Скаут",
+      "Scout"
+    ],
+    "count": 40
+  },
+  {
+    "name": "Shifeng",
+    "name_ru": "Шифенг",
+    "slug": "shifeng",
+    "variants": [
+      "Shifeng",
+      "Шифенг"
+    ],
+    "count": 6
+  },
+  {
+    "name": "Catmann",
+    "name_ru": "Кэтманн",
+    "slug": "catmann",
+    "variants": [
+      "Catmann",
+      "Кэтманн"
+    ],
+    "count": 2
+  },
+  {
+    "name": "Chuvashpiller",
+    "name_ru": "Чувашпиллер",
+    "slug": "chuvashpiller",
+    "variants": [
+      "Чувашпиллер",
+      "Chuvashpiller"
+    ],
+    "count": 2
+  },
+  {
+    "name": "T-Series",
+    "name_ru": "Т-серия (Т-25, Т-40)",
+    "slug": "t-series",
+    "variants": [
+      "Т-25",
+      "Т-40",
+      "Т-16"
+    ],
+    "count": 8
+  },
+  {
+    "name": "KM",
+    "name_ru": "КМ (двигатели)",
+    "slug": "km-engines",
+    "variants": [
+      "КМ",
+      "KM"
+    ],
+    "count": 46
+  }
+]
