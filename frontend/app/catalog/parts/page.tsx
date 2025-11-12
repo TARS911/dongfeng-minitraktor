@@ -22,29 +22,37 @@ interface Product {
   is_featured?: boolean;
 }
 
-async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
-  // Получаем ID категории по slug
-  const { data: category } = await supabase
+interface Category {
+  id: number;
+  name: string;
+  slug: string;
+}
+
+async function getAllPartsProducts(): Promise<Product[]> {
+  // Получаем все категории запчастей (все кроме категорий мини-тракторов)
+  const { data: categories } = await supabase
     .from("categories")
     .select("id")
-    .eq("slug", categorySlug)
-    .single();
+    .not("slug", "like", "mini-traktory%");
 
-  if (!category) return [];
+  if (!categories || categories.length === 0) return [];
 
-  // Получаем товары этой категории
+  const categoryIds = categories.map((c) => c.id);
+
+  // Получаем все товары из этих категорий
   const { data: products } = await supabase
     .from("products")
     .select("*")
-    .eq("category_id", category.id)
+    .in("category_id", categoryIds)
     .eq("in_stock", true)
-    .order("created_at", { ascending: false });
+    .order("created_at", { ascending: false })
+    .limit(100); // Показываем первые 100 товаров
 
   return products || [];
 }
 
 export default async function PartsPage() {
-  const products = await getProductsByCategory("parts");
+  const products = await getAllPartsProducts();
 
   return (
     <div className="catalog-page">
