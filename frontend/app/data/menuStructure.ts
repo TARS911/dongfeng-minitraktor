@@ -19,7 +19,6 @@ export const catalogMenu: MenuItem[] = [
     id: "all",
     title: "Каталог товаров",
     slug: "/catalog",
-    icon: "📦",
   },
 ];
 
@@ -31,42 +30,35 @@ export const additionalMenu: MenuItem[] = [
     id: "about",
     title: "О компании",
     slug: "/about",
-    icon: "ℹ️",
   },
   {
     id: "delivery",
     title: "Доставка",
     slug: "/delivery",
-    icon: "🚚",
   },
   {
     id: "payment",
     title: "Оплата",
     slug: "/payment",
-    icon: "💳",
   },
   {
     id: "promotions",
     title: "Акции",
     slug: "/promotions",
-    icon: "🎁",
   },
   {
     id: "services",
     title: "Услуги",
     slug: "/services",
-    icon: "🔧",
   },
   {
     id: "service-center",
     title: "Сервисный Центр",
     slug: "/service-center",
-    icon: "⚙️",
   },
   {
     id: "contacts",
     title: "Контакты",
     slug: "/contacts",
-    icon: "📞",
   },
 ];
