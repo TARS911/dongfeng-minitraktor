@@ -76,7 +76,7 @@ if not SUPABASE_KEY:
 # Пути
 PARTS_FILE = Path(__file__).parent.parent / "parsed_data" / "agrodom" / "parts.json"
 
-# Маппинг брендов - ПОЛНЫЙ СПИСОК (19 брендов)
+# Маппинг брендов - ПОЛНЫЙ СПИСОК (21 бренд)
 BRAND_MAPPING = {
     "uralets": ["Уралец", "уралец"],
     "jinma": ["Jinma", "Джинма", "jinma", "джинма"],
@@ -96,6 +96,8 @@ BRAND_MAPPING = {
     "neva": ["Нева", "нева"],
     "dlh": ["DLH", "dlh"],
     "perkins": ["Perkins", "perkins"],
+    "wirax": ["WIRAX", "Виракс", "wirax", "виракс"],
+    "fayter": ["Файтер", "файтер", "Fighter"],
     "universal": [],  # Для товаров БЕЗ бренда
 }
 
