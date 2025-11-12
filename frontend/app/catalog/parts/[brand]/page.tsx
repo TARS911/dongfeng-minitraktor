@@ -3,8 +3,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import "../../catalog.css";
 
-// Кешируем страницу на 1 час
-export const revalidate = 3600;
+// Полностью динамическая генерация - не pre-render при билде
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 // Типы запчастей
 const partTypes = [

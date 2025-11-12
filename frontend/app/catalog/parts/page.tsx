@@ -9,8 +9,9 @@ export const metadata: Metadata = {
     "Запасные части для мини-тракторов и сельхозтехники. Большой выбор по брендам, низкие цены, доставка по России.",
 };
 
-// Кешируем страницу на 1 час
-export const revalidate = 3600;
+// Полностью динамическая генерация - не pre-render при билде
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 // Список всех брендов запчастей (без count - будем считать из БД)
 const brands = [
