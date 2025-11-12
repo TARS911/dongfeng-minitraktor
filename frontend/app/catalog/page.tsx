@@ -54,10 +54,10 @@ export default async function CatalogPage() {
   const { data: allCategories } = await supabase
     .from("categories")
     .select("*")
-    .in("slug", ["mini-tractors", "equipment"]);
+    .in("slug", ["mini-tractors", "equipment", "parts"]);
 
-  // Сортируем: Мини-тракторы, Коммунальная техника
-  const categoryOrder = ["mini-tractors", "equipment"];
+  // Сортируем: Мини-тракторы, Коммунальная техника, Запчасти
+  const categoryOrder = ["mini-tractors", "equipment", "parts"];
   const categories = allCategories?.sort((a, b) => {
     return categoryOrder.indexOf(a.slug) - categoryOrder.indexOf(b.slug);
   });
