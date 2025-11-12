@@ -1,3 +1,4 @@
+import { supabase } from "../../../lib/supabase";
 import Link from "next/link";
 import type { Metadata } from "next";
 import "../../catalog.css";
@@ -69,6 +70,33 @@ export default async function BrandPartsPage({ params }: PageProps) {
   const { brand } = await params;
   const brandName = brandNames[brand] || brand;
 
+  // Получаем количество товаров для каждого типа запчастей
+  const partTypesWithCounts = await Promise.all(
+    partTypes.map(async (type) => {
+      const categorySlug = `${brand}-${type.slug}`;
+
+      // Получаем ID категории
+      const { data: category } = await supabase
+        .from("categories")
+        .select("id")
+        .eq("slug", categorySlug)
+        .single();
+
+      if (!category) {
+        return { ...type, count: 0 };
+      }
+
+      // Считаем товары в этой категории
+      const { count } = await supabase
+        .from("products")
+        .select("*", { count: "exact", head: true })
+        .eq("category_id", category.id)
+        .eq("in_stock", true);
+
+      return { ...type, count: count || 0 };
+    }),
+  );
+
   return (
     <div className="catalog-page">
       <div className="container">
@@ -97,7 +125,7 @@ export default async function BrandPartsPage({ params }: PageProps) {
             marginTop: "2rem",
           }}
         >
-          {partTypes.map((type) => (
+          {partTypesWithCounts.map((type) => (
             <Link
               key={type.slug}
               href={`/catalog/parts/${brand}/${type.slug}`}
@@ -122,6 +150,14 @@ export default async function BrandPartsPage({ params }: PageProps) {
               >
                 {type.name}
               </h3>
+              <p style={{ color: "#666", fontSize: "0.9rem", margin: "0" }}>
+                {type.count}{" "}
+                {type.count === 1
+                  ? "товар"
+                  : type.count < 5
+                    ? "товара"
+                    : "товаров"}
+              </p>
             </Link>
           ))}
         </div>
