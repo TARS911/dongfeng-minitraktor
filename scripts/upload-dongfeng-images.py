@@ -57,10 +57,10 @@ def upload_to_storage(file_path, storage_path):
     with open(file_path, "rb") as f:
         response = requests.post(url, headers=headers, data=f)
 
+    if response.status_code in [200, 201]:
         public_url = (
             f"{SUPABASE_URL}/storage/v1/object/public/{STORAGE_BUCKET}/{storage_path}"
         )
-        public_url = f"{SUPABASE_URL}/storage/v1/object/public/{STORAGE_BUCKET}/{storage_path}"
         return public_url
     else:
         print(f"  ❌ Ошибка загрузки: {response.text}")
