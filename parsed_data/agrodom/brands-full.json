@@ -1,0 +1,116 @@
+[
+  {
+    "name": "Уралец",
+    "slug": "uralets",
+    "type": "tractor",
+    "count": 110
+  },
+  {
+    "name": "Jinma (Джинма)",
+    "slug": "jinma",
+    "type": "tractor",
+    "count": 78
+  },
+  {
+    "name": "DongFeng (ДонгФенг)",
+    "slug": "dongfeng-parts",
+    "type": "tractor",
+    "count": 41
+  },
+  {
+    "name": "Скаут",
+    "slug": "scout",
+    "type": "tractor",
+    "count": 40
+  },
+  {
+    "name": "Xingtai (Синтай)",
+    "slug": "xingtai",
+    "type": "tractor",
+    "count": 52
+  },
+  {
+    "name": "Foton (Фотон, Lovol)",
+    "slug": "foton",
+    "type": "tractor",
+    "count": 26
+  },
+  {
+    "name": "Русич",
+    "slug": "rusich",
+    "type": "tractor",
+    "count": 16
+  },
+  {
+    "name": "МТЗ (Беларус)",
+    "slug": "mtz",
+    "type": "tractor",
+    "count": 10
+  },
+  {
+    "name": "Кентавр",
+    "slug": "kentavr",
+    "type": "tractor",
+    "count": 8
+  },
+  {
+    "name": "Булат",
+    "slug": "bulat",
+    "type": "tractor",
+    "count": 6
+  },
+  {
+    "name": "Shifeng (Шифенг)",
+    "slug": "shifeng",
+    "type": "tractor",
+    "count": 4
+  },
+  {
+    "name": "YTO",
+    "slug": "yto",
+    "type": "tractor",
+    "count": 2
+  },
+  {
+    "name": "Нева",
+    "slug": "neva",
+    "type": "tractor",
+    "count": 2
+  },
+  {
+    "name": "Catmann",
+    "slug": "catmann",
+    "type": "tractor",
+    "count": 2
+  },
+  {
+    "name": "Чувашпиллер",
+    "slug": "chuvashpiller",
+    "type": "tractor",
+    "count": 2
+  },
+  {
+    "name": "КМ (двигатели)",
+    "slug": "km-engines",
+    "type": "engine",
+    "count": 46
+  },
+  {
+    "name": "DLH",
+    "slug": "dlh",
+    "type": "engine",
+    "count": 14
+  },
+  {
+    "name": "Perkins",
+    "slug": "perkins",
+    "type": "engine",
+    "count": 2
+  },
+  {
+    "name": "Универсальные",
+    "slug": "universal",
+    "type": "universal",
+    "count": 552
+  }
+]
