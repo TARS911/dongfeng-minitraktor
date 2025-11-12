@@ -1,3 +1,4 @@
+import { supabase } from "../../lib/supabase";
 import Link from "next/link";
 import type { Metadata } from "next";
 import "../catalog.css";
@@ -11,32 +12,57 @@ export const metadata: Metadata = {
 // Кешируем страницу на 1 час
 export const revalidate = 3600;
 
-// Список всех брендов запчастей
+// Список всех брендов запчастей (без count - будем считать из БД)
 const brands = [
-  { name: "Уралец", slug: "uralets", count: 110 },
-  { name: "Jinma (Джинма)", slug: "jinma", count: 78 },
-  { name: "Xingtai (Синтай)", slug: "xingtai", count: 52 },
-  { name: "DongFeng (ДонгФенг)", slug: "dongfeng-parts", count: 41 },
-  { name: "Скаут", slug: "scout", count: 40 },
-  { name: "Foton (Фотон, Lovol)", slug: "foton", count: 26 },
-  { name: "Русич", slug: "rusich", count: 16 },
-  { name: "МТЗ (Беларус)", slug: "mtz", count: 10 },
-  { name: "Кентавр", slug: "kentavr", count: 8 },
-  { name: "Файтер", slug: "fayter", count: 8 },
-  { name: "Булат", slug: "bulat", count: 6 },
-  { name: "Shifeng (Шифенг)", slug: "shifeng", count: 4 },
-  { name: "YTO", slug: "yto", count: 2 },
-  { name: "WIRAX (Виракс)", slug: "wirax", count: 2 },
-  { name: "Нева", slug: "neva", count: 2 },
-  { name: "Catmann", slug: "catmann", count: 2 },
-  { name: "Чувашпиллер", slug: "chuvashpiller", count: 2 },
-  { name: "КМ (двигатели)", slug: "km-engines", count: 46 },
-  { name: "DLH", slug: "dlh", count: 14 },
-  { name: "Perkins", slug: "perkins", count: 2 },
-  { name: "Универсальные", slug: "universal", count: 550 },
+  { name: "Уралец", slug: "uralets" },
+  { name: "Jinma (Джинма)", slug: "jinma" },
+  { name: "Xingtai (Синтай)", slug: "xingtai" },
+  { name: "DongFeng (ДонгФенг)", slug: "dongfeng-parts" },
+  { name: "Скаут", slug: "scout" },
+  { name: "Foton (Фотон, Lovol)", slug: "foton" },
+  { name: "Русич", slug: "rusich" },
+  { name: "МТЗ (Беларус)", slug: "mtz" },
+  { name: "Кентавр", slug: "kentavr" },
+  { name: "Файтер", slug: "fayter" },
+  { name: "Булат", slug: "bulat" },
+  { name: "Shifeng (Шифенг)", slug: "shifeng" },
+  { name: "YTO", slug: "yto" },
+  { name: "WIRAX (Виракс)", slug: "wirax" },
+  { name: "Нева", slug: "neva" },
+  { name: "Catmann", slug: "catmann" },
+  { name: "Чувашпиллер", slug: "chuvashpiller" },
+  { name: "КМ (двигатели)", slug: "km-engines" },
+  { name: "DLH", slug: "dlh" },
+  { name: "Perkins", slug: "perkins" },
+  { name: "Универсальные", slug: "universal" },
 ];
 
 export default async function PartsPage() {
+  // Получаем количество товаров для каждого бренда из БД
+  const brandsWithCounts = await Promise.all(
+    brands.map(async (brand) => {
+      // Получаем все категории этого бренда (brand-*)
+      const { data: categories } = await supabase
+        .from("categories")
+        .select("id")
+        .like("slug", `${brand.slug}-%`);
+
+      if (!categories || categories.length === 0) {
+        return { ...brand, count: 0 };
+      }
+
+      const categoryIds = categories.map((c) => c.id);
+
+      // Считаем все товары во всех категориях этого бренда
+      const { count } = await supabase
+        .from("products")
+        .select("*", { count: "exact", head: true })
+        .in("category_id", categoryIds)
+        .eq("in_stock", true);
+
+      return { ...brand, count: count || 0 };
+    }),
+  );
   return (
     <div className="catalog-page">
       <div className="container">
@@ -63,7 +89,7 @@ export default async function PartsPage() {
             marginTop: "2rem",
           }}
         >
-          {brands.map((brand) => (
+          {brandsWithCounts.map((brand) => (
             <Link
               key={brand.slug}
               href={`/catalog/parts/${brand.slug}`}
