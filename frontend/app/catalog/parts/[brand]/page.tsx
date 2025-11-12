@@ -2,6 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import "../../catalog.css";
 
+// Кешируем страницу на 1 час
+export const revalidate = 3600;
+
 // Типы запчастей
 const partTypes = [
   { name: "Фильтра", slug: "filters" },
@@ -21,27 +24,27 @@ const partTypes = [
 
 // Маппинг брендов
 const brandNames: { [key: string]: string } = {
-  "uralets": "Уралец",
-  "jinma": "Jinma (Джинма)",
-  "xingtai": "Xingtai (Синтай)",
+  uralets: "Уралец",
+  jinma: "Jinma (Джинма)",
+  xingtai: "Xingtai (Синтай)",
   "dongfeng-parts": "DongFeng (ДонгФенг)",
-  "scout": "Скаут",
-  "foton": "Foton (Фотон, Lovol)",
-  "rusich": "Русич",
-  "mtz": "МТЗ (Беларус)",
-  "kentavr": "Кентавр",
-  "fayter": "Файтер",
-  "bulat": "Булат",
-  "shifeng": "Shifeng (Шифенг)",
-  "yto": "YTO",
-  "wirax": "WIRAX (Виракс)",
-  "neva": "Нева",
-  "catmann": "Catmann",
-  "chuvashpiller": "Чувашпиллер",
+  scout: "Скаут",
+  foton: "Foton (Фотон, Lovol)",
+  rusich: "Русич",
+  mtz: "МТЗ (Беларус)",
+  kentavr: "Кентавр",
+  fayter: "Файтер",
+  bulat: "Булат",
+  shifeng: "Shifeng (Шифенг)",
+  yto: "YTO",
+  wirax: "WIRAX (Виракс)",
+  neva: "Нева",
+  catmann: "Catmann",
+  chuvashpiller: "Чувашпиллер",
   "km-engines": "КМ (двигатели)",
-  "dlh": "DLH",
-  "perkins": "Perkins",
-  "universal": "Универсальные",
+  dlh: "DLH",
+  perkins: "Perkins",
+  universal: "Универсальные",
 };
 
 interface PageProps {
@@ -50,7 +53,9 @@ interface PageProps {
   }>;
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { brand } = await params;
   const brandName = brandNames[brand] || brand;
 
@@ -83,12 +88,15 @@ export default async function BrandPartsPage({ params }: PageProps) {
           </p>
         </div>
 
-        <div className="part-types-grid" style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-          gap: "1.5rem",
-          marginTop: "2rem"
-        }}>
+        <div
+          className="part-types-grid"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+            gap: "1.5rem",
+            marginTop: "2rem",
+          }}
+        >
           {partTypes.map((type) => (
             <Link
               key={type.slug}
@@ -102,14 +110,16 @@ export default async function BrandPartsPage({ params }: PageProps) {
                 transition: "all 0.3s ease",
                 textDecoration: "none",
                 color: "inherit",
-                backgroundColor: "#fff"
+                backgroundColor: "#fff",
               }}
             >
-              <h3 style={{
-                fontSize: "1.1rem",
-                color: "#333",
-                marginBottom: "0.5rem"
-              }}>
+              <h3
+                style={{
+                  fontSize: "1.1rem",
+                  color: "#333",
+                  marginBottom: "0.5rem",
+                }}
+              >
                 {type.name}
               </h3>
             </Link>

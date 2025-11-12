@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     "Запасные части для мини-тракторов и сельхозтехники. Большой выбор по брендам, низкие цены, доставка по России.",
 };
 
+// Кешируем страницу на 1 час
+export const revalidate = 3600;
+
 // Список всех брендов запчастей
 const brands = [
   { name: "Уралец", slug: "uralets", count: 110 },
@@ -51,12 +54,15 @@ export default async function PartsPage() {
           </p>
         </div>
 
-        <div className="brands-grid" style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
-          gap: "1.5rem",
-          marginTop: "2rem"
-        }}>
+        <div
+          className="brands-grid"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+            gap: "1.5rem",
+            marginTop: "2rem",
+          }}
+        >
           {brands.map((brand) => (
             <Link
               key={brand.slug}
@@ -69,14 +75,16 @@ export default async function PartsPage() {
                 textAlign: "center",
                 transition: "all 0.3s ease",
                 textDecoration: "none",
-                color: "inherit"
+                color: "inherit",
               }}
             >
-              <h3 style={{
-                fontSize: "1.2rem",
-                marginBottom: "0.5rem",
-                color: "#333"
-              }}>
+              <h3
+                style={{
+                  fontSize: "1.2rem",
+                  marginBottom: "0.5rem",
+                  color: "#333",
+                }}
+              >
                 {brand.name}
               </h3>
               <p style={{ color: "#666", fontSize: "0.9rem" }}>

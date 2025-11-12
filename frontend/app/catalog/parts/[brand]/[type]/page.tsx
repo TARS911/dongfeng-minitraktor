@@ -4,6 +4,12 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import "../../../catalog.css";
 
+// Кешируем страницу на 1 час
+export const revalidate = 3600;
+
+// Генерируем статически только для нескольких популярных комбинаций
+export const dynamicParams = true; // Остальные генерируются по требованию
+
 interface Product {
   id: number;
   name: string;
@@ -18,43 +24,43 @@ interface Product {
 
 // Маппинг брендов
 const brandNames: { [key: string]: string } = {
-  "uralets": "Уралец",
-  "jinma": "Jinma (Джинма)",
-  "xingtai": "Xingtai (Синтай)",
+  uralets: "Уралец",
+  jinma: "Jinma (Джинма)",
+  xingtai: "Xingtai (Синтай)",
   "dongfeng-parts": "DongFeng (ДонгФенг)",
-  "scout": "Скаут",
-  "foton": "Foton (Фотон, Lovol)",
-  "rusich": "Русич",
-  "mtz": "МТЗ (Беларус)",
-  "kentavr": "Кентавр",
-  "fayter": "Файтер",
-  "bulat": "Булат",
-  "shifeng": "Shifeng (Шифенг)",
-  "yto": "YTO",
-  "wirax": "WIRAX (Виракс)",
-  "neva": "Нева",
-  "catmann": "Catmann",
-  "chuvashpiller": "Чувашпиллер",
+  scout: "Скаут",
+  foton: "Foton (Фотон, Lovol)",
+  rusich: "Русич",
+  mtz: "МТЗ (Беларус)",
+  kentavr: "Кентавр",
+  fayter: "Файтер",
+  bulat: "Булат",
+  shifeng: "Shifeng (Шифенг)",
+  yto: "YTO",
+  wirax: "WIRAX (Виракс)",
+  neva: "Нева",
+  catmann: "Catmann",
+  chuvashpiller: "Чувашпиллер",
   "km-engines": "КМ (двигатели)",
-  "dlh": "DLH",
-  "perkins": "Perkins",
-  "universal": "Универсальные",
+  dlh: "DLH",
+  perkins: "Perkins",
+  universal: "Универсальные",
 };
 
 // Маппинг типов запчастей
 const partTypeNames: { [key: string]: string } = {
-  "filters": "Фильтра",
+  filters: "Фильтра",
   "diesel-engines": "Двигателя дизельные",
   "starters-generators": "Стартеры, Генераторы",
   "universal-parts": "Универсальные комплектующие",
-  "seats": "Сиденья (кресла)",
+  seats: "Сиденья (кресла)",
   "spare-parts-kit": "ЗИП",
   "equipment-parts": "Запчасти для навесного оборудования",
   "tractor-parts": "Запчасти для тракторов",
   "wheels-tires": "Колёса, шины, груза",
   "standard-parts": "Стандартные изделия",
-  "hydraulics": "Гидравлика",
-  "driveshafts": "Карданные валы",
+  hydraulics: "Гидравлика",
+  driveshafts: "Карданные валы",
   "other-parts": "Прочие запчасти",
 };
 
@@ -65,7 +71,9 @@ interface PageProps {
   }>;
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { brand, type } = await params;
   const brandName = brandNames[brand] || brand;
   const typeName = partTypeNames[type] || type;
@@ -122,7 +130,9 @@ export default async function PartTypePage({ params }: PageProps) {
             <span>/</span>
             <span>{typeName}</span>
           </div>
-          <h1>{typeName} для {brandName}</h1>
+          <h1>
+            {typeName} для {brandName}
+          </h1>
         </div>
 
         {products.length === 0 ? (
@@ -142,7 +152,10 @@ export default async function PartTypePage({ params }: PageProps) {
             </div>
 
             <div style={{ marginTop: "2rem" }}>
-              <Link href={`/catalog/parts/${brand}`} className="btn btn-secondary">
+              <Link
+                href={`/catalog/parts/${brand}`}
+                className="btn btn-secondary"
+              >
                 ← Назад к типам запчастей
               </Link>
             </div>
