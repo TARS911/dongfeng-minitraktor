@@ -9,7 +9,10 @@ const nextConfig = {
 
   // Оптимизация изображений
   images: {
-    domains: ["dpsykseeqloturowdyzf.supabase.co"],
+    domains: [
+      "dpsykseeqloturowdyzf.supabase.co",
+      "xn----7sbabpgpk4bsbesjp1f.xn--p1ai", // agrodom.ru
+    ],
     formats: ["image/webp", "image/avif"],
     deviceSizes: [640, 750, 828, 1080, 1200],
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
