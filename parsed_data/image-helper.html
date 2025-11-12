@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Помощник скачивания изображений DongFeng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #0066cc; }
+        h2 { color: #333; margin-top: 30px; }
+        .step {
+            background: #e3f2fd;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #0066cc;
+            border-radius: 4px;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        pre {
+            background: #2d2d2d;
+            color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .button {
+            display: inline-block;
+            background: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 5px;
+        }
+        .button:hover { background: #0052a3; }
+        .model-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .model-item {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ Помощник скачивания изображений DongFeng</h1>
+
+        <div class="success">
+            <strong>✅ Тракторы уже в базе данных!</strong><br>
+            16 моделей DongFeng добавлены. Осталось только добавить фотографии.
+        </div>
+
+        <h2>📋 Список моделей для скачивания</h2>
+        <div class="model-list">
+            <div class="model-item">DongFeng 244</div>
+            <div class="model-item">DongFeng 244 G2</div>
+            <div class="model-item">DongFeng 304</div>
+            <div class="model-item">DongFeng 404</div>
+            <div class="model-item">DongFeng 504</div>
+            <div class="model-item">DongFeng 504 G3</div>
+            <div class="model-item">DongFeng 704</div>
+            <div class="model-item">DongFeng 804</div>
+            <div class="model-item">DongFeng 904</div>
+            <div class="model-item">DongFeng 1004</div>
+            <div class="model-item">DongFeng 1204</div>
+            <div class="model-item">DongFeng 1304</div>
+            <div class="model-item">DongFeng 1304E</div>
+            <div class="model-item">DongFeng 1404</div>
+            <div class="model-item">DongFeng 1604</div>
+            <div class="model-item">DongFeng 2004</div>
+        </div>
+
+        <h2>🚀 Метод 1: Через консоль браузера (РЕКОМЕНДУЕТСЯ)</h2>
+
+        <div class="step">
+            <strong>Шаг 1:</strong> Откройте сайт
+            <br>
+            <a href="https://dongfeng-traktor.com/" target="_blank" class="button">
+                Открыть dongfeng-traktor.com
+            </a>
+        </div>
+
+        <div class="step">
+            <strong>Шаг 2:</strong> Откройте консоль браузера
+            <br>
+            Нажмите <code>F12</code> → перейдите на вкладку <code>Console</code>
+        </div>
+
+        <div class="step">
+            <strong>Шаг 3:</strong> Вставьте скрипт
+            <br>
+            <button onclick="copyScript()" style="margin: 10px 0; padding: 8px 15px; cursor: pointer;">
+                📋 Скопировать скрипт
+            </button>
+            <pre id="script">// Загружается...</pre>
+        </div>
+
+        <div class="step">
+            <strong>Шаг 4:</strong> Скачайте изображения
+            <br>
+            В консоли выполните: <code>downloadAll()</code>
+        </div>
+
+        <h2>✋ Метод 2: Ручное скачивание</h2>
+
+        <div class="step">
+            <p>Для каждого трактора:</p>
+            <ol>
+                <li>Найдите изображение на сайте</li>
+                <li>Правый клик → "Сохранить изображение как..."</li>
+                <li>Сохраните с правильным именем (см. список выше)</li>
+            </ol>
+
+            <div class="warning">
+                <strong>⚠️ Важно!</strong> Имена файлов должны быть точно:
+                <code>dongfeng-244.jpg</code>, <code>dongfeng-504-g3.jpg</code> и т.д.
+            </div>
+        </div>
+
+        <h2>📤 Загрузка в Supabase</h2>
+
+        <div class="step">
+            <p>После скачивания изображений:</p>
+            <pre>cd /home/ibm/dongfeng-minitraktor
+python3 scripts/upload-dongfeng-images.py</pre>
+        </div>
+
+        <h2>📚 Дополнительные материалы</h2>
+        <ul>
+            <li><a href="MANUAL_DOWNLOAD.md">Подробное руководство (MANUAL_DOWNLOAD.md)</a></li>
+            <li><a href="IMAGES_GUIDE.md">Общее руководство по изображениям</a></li>
+            <li><a href="BROWSER_CONSOLE_SCRIPT.js">Скрипт для консоли (JS файл)</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Загружаем скрипт
+        fetch('BROWSER_CONSOLE_SCRIPT.js')
+            .then(r => r.text())
+            .then(text => {
+                document.getElementById('script').textContent = text;
+            })
+            .catch(err => {
+                document.getElementById('script').textContent = 'Ошибка загрузки скрипта';
+            });
+
+        function copyScript() {
+            const script = document.getElementById('script').textContent;
+            navigator.clipboard.writeText(script).then(() => {
+                alert('✅ Скрипт скопирован в буфер обмена!\n\nТеперь:\n1. Откройте dongfeng-traktor.com\n2. Нажмите F12\n3. Вставьте скрипт в консоль');
+            });
+        }
+    </script>
+</body>
+</html>
