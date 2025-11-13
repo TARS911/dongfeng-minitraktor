@@ -7,7 +7,7 @@ import { useFavorites } from "../context/FavoritesContext";
 import { useCompare } from "../context/CompareContext";
 import { useAuth } from "../context/AuthContext";
 import { useSwipe } from "../hooks/useSwipe";
-import GlobalSearch from "../../components/GlobalSearch";
+import GlobalSearch from "./GlobalSearch";
 // TODO: Вернуть позже - темная/светлая тема
 // import { useTheme } from "../context/ThemeContext";
 import Link from "next/link";
