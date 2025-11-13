@@ -74,7 +74,9 @@ if not SUPABASE_KEY:
     sys.exit(1)
 
 # Пути
-PARTS_FILE = Path(__file__).parent.parent / "parsed_data" / "agrodom" / "parts.json"
+PARTS_FILE = (
+    Path(__file__).parent.parent / "parsed_data" / "agrodom" / "parts-all-unique.json"
+)
 
 # Маппинг брендов - ПОЛНЫЙ СПИСОК (21 бренд)
 BRAND_MAPPING = {
@@ -109,13 +111,15 @@ PART_TYPE_MAPPING = {
     "Стартеры, Генераторы": "starters-generators",
     "Универсальные комплектующие": "universal-parts",
     "Сиденья (кресла)": "seats",
-    "ЗИП": "spare-parts-kit",
+    "ЗИП": "spare-parts-kits",
     "Запчасти для навесного оборудования": "equipment-parts",
     "Запчасти для тракторов": "tractor-parts",
     "Колёса, шины, груза": "wheels-tires",
     "Стандартные изделия": "standard-parts",
     "Гидравлика": "hydraulics",
     "Карданные валы": "driveshafts",
+    "Запчасти для дизелей": "diesel-parts",
+    "Ожидается": "coming-soon",
 }
 
 
