@@ -7,6 +7,7 @@ import { useFavorites } from "../context/FavoritesContext";
 import { useCompare } from "../context/CompareContext";
 import { useAuth } from "../context/AuthContext";
 import { useSwipe } from "../hooks/useSwipe";
+import GlobalSearch from "../../components/GlobalSearch";
 // TODO: Вернуть позже - темная/светлая тема
 // import { useTheme } from "../context/ThemeContext";
 import Link from "next/link";
@@ -97,7 +98,7 @@ export default function Header() {
           </div>
         </div>
         <div className={styles.mobileSearch}>
-          <input type="text" placeholder="Поиск техники..." />
+          <GlobalSearch />
         </div>
         <div className={styles.mobilePhone}>
           <a href="tel:88005559999">8 (800) 555-99-99</a>
@@ -111,7 +112,7 @@ export default function Header() {
             <img src="/images/logo.jpg" alt="БелТехФермЪ" />
           </a>
           <div className={styles.searchBox}>
-            <input type="text" placeholder="Поиск техники и запчастей..." />
+            <GlobalSearch />
           </div>
           <div className={styles.phoneBlock}>
             <a href="tel:88005559999" className={styles.phone}>

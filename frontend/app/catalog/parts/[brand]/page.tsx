@@ -1,4 +1,5 @@
 import { supabase } from "../../../lib/supabase";
+import Breadcrumbs from "../../../components/Breadcrumbs";
 import Link from "next/link";
 import type { Metadata } from "next";
 import "../../catalog.css";
@@ -61,9 +62,28 @@ export async function generateMetadata({
   const { brand } = await params;
   const brandName = brandNames[brand] || brand;
 
+  const title = `Запчасти для ${brandName} | БелТехФермЪ`;
+  const description = `Купить запчасти для мини-тракторов ${brandName} в Белгороде. Широкий ассортимент: фильтры, двигатели, стартеры, генераторы. Доставка по России.`;
+
   return {
-    title: `Запчасти ${brandName} | БелТехФермЪ`,
-    description: `Запасные части для ${brandName}. Большой выбор, низкие цены, доставка по России.`,
+    title,
+    description,
+    keywords: `запчасти ${brandName}, ${brandName}, купить запчасти, мини-трактор ${brandName}, фильтры, двигатели, запчасти для тракторов`,
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      locale: "ru_RU",
+      siteName: "БелТехФермЪ",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+    alternates: {
+      canonical: `/catalog/parts/${brand}`,
+    },
   };
 }
 
@@ -98,19 +118,18 @@ export default async function BrandPartsPage({ params }: PageProps) {
     }),
   );
 
+  const breadcrumbItems = [
+    { label: "Главная", href: "/" },
+    { label: "Каталог", href: "/catalog" },
+    { label: "Запчасти", href: "/catalog/parts" },
+    { label: brandName },
+  ];
+
   return (
     <div className="catalog-page">
       <div className="container">
         <div className="catalog-header">
-          <div className="breadcrumb">
-            <Link href="/">Главная</Link>
-            <span>/</span>
-            <Link href="/catalog">Каталог</Link>
-            <span>/</span>
-            <Link href="/catalog/parts">Запчасти</Link>
-            <span>/</span>
-            <span>{brandName}</span>
-          </div>
+          <Breadcrumbs items={breadcrumbItems} />
           <h1>Запчасти {brandName}</h1>
           <p style={{ marginTop: "1rem", color: "#666" }}>
             Выберите тип запчастей

@@ -1,5 +1,6 @@
 import { supabase } from "../../../../lib/supabase";
 import ProductCard from "../../../../components/ProductCard";
+import Breadcrumbs from "../../../../components/Breadcrumbs";
 import Link from "next/link";
 import type { Metadata } from "next";
 import "../../../catalog.css";
@@ -76,9 +77,28 @@ export async function generateMetadata({
   const brandName = brandNames[brand] || brand;
   const typeName = partTypeNames[type] || type;
 
+  const title = `${typeName} для ${brandName} | БелТехФермЪ`;
+  const description = `Купить ${typeName.toLowerCase()} для ${brandName} в Белгороде. Большой выбор запчастей, низкие цены, быстрая доставка по России. Гарантия качества.`;
+
   return {
-    title: `${typeName} для ${brandName} | БелТехФермЪ`,
-    description: `${typeName} для ${brandName}. Большой выбор, низкие цены, доставка по России.`,
+    title,
+    description,
+    keywords: `${typeName}, ${brandName}, запчасти ${brandName}, купить ${typeName.toLowerCase()}, запчасти для тракторов, мини-трактор`,
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      locale: "ru_RU",
+      siteName: "БелТехФермЪ",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+    alternates: {
+      canonical: `/catalog/parts/${brand}/${type}`,
+    },
   };
 }
 
@@ -113,21 +133,19 @@ export default async function PartTypePage({ params }: PageProps) {
 
   const products = await getProducts(brand, type);
 
+  const breadcrumbItems = [
+    { label: "Главная", href: "/" },
+    { label: "Каталог", href: "/catalog" },
+    { label: "Запчасти", href: "/catalog/parts" },
+    { label: brandName, href: `/catalog/parts/${brand}` },
+    { label: typeName },
+  ];
+
   return (
     <div className="catalog-page">
       <div className="container">
         <div className="catalog-header">
-          <div className="breadcrumb">
-            <Link href="/">Главная</Link>
-            <span>/</span>
-            <Link href="/catalog">Каталог</Link>
-            <span>/</span>
-            <Link href="/catalog/parts">Запчасти</Link>
-            <span>/</span>
-            <Link href={`/catalog/parts/${brand}`}>{brandName}</Link>
-            <span>/</span>
-            <span>{typeName}</span>
-          </div>
+          <Breadcrumbs items={breadcrumbItems} />
           <h1>
             {typeName} для {brandName}
           </h1>

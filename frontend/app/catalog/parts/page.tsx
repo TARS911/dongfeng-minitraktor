@@ -1,12 +1,32 @@
 import { supabase } from "../../lib/supabase";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import Link from "next/link";
 import type { Metadata } from "next";
 import "../catalog.css";
 
 export const metadata: Metadata = {
-  title: "Запчасти | БелТехФермЪ",
+  title: "Запчасти для мини-тракторов и сельхозтехники | БелТехФермЪ",
   description:
-    "Запасные части для мини-тракторов и сельхозтехники. Большой выбор по брендам, низкие цены, доставка по России.",
+    "Купить запчасти для мини-тракторов и сельхозтехники в Белгороде. Более 2800 наименований: фильтры, двигатели, стартеры, генераторы. Доставка по России. Гарантия качества.",
+  keywords:
+    "запчасти для тракторов, купить запчасти, мини-трактор, фильтры, двигатели, стартеры, генераторы, запчасти для сельхозтехники",
+  openGraph: {
+    title: "Запчасти для мини-тракторов | БелТехФермЪ",
+    description:
+      "Более 2800 наименований запчастей для мини-тракторов. Большой выбор по брендам, низкие цены, доставка по России.",
+    type: "website",
+    locale: "ru_RU",
+    siteName: "БелТехФермЪ",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Запчасти для мини-тракторов | БелТехФермЪ",
+    description:
+      "Более 2800 наименований запчастей. Большой выбор, низкие цены, доставка по России.",
+  },
+  alternates: {
+    canonical: "/catalog/parts",
+  },
 };
 
 // Полностью динамическая генерация - не pre-render при билде
@@ -35,7 +55,6 @@ const brands = [
   { name: "КМ (двигатели)", slug: "km-engines" },
   { name: "DLH", slug: "dlh" },
   { name: "Perkins", slug: "perkins" },
-  { name: "Универсальные", slug: "universal" },
 ];
 
 export default async function PartsPage() {
@@ -64,17 +83,17 @@ export default async function PartsPage() {
       return { ...brand, count: count || 0 };
     }),
   );
+  const breadcrumbItems = [
+    { label: "Главная", href: "/" },
+    { label: "Каталог", href: "/catalog" },
+    { label: "Запчасти" },
+  ];
+
   return (
     <div className="catalog-page">
       <div className="container">
         <div className="catalog-header">
-          <div className="breadcrumb">
-            <Link href="/">Главная</Link>
-            <span>/</span>
-            <Link href="/catalog">Каталог</Link>
-            <span>/</span>
-            <span>Запчасти</span>
-          </div>
+          <Breadcrumbs items={breadcrumbItems} />
           <h1>Запчасти по брендам</h1>
           <p style={{ marginTop: "1rem", color: "#666" }}>
             Выберите бренд для просмотра запчастей
