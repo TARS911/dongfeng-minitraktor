@@ -56,6 +56,11 @@ const brands = [
   { name: "Catmann", slug: "catmann" },
   { name: "Чувашпиллер", slug: "chuvashpiller" },
   { name: "Perkins", slug: "perkins" },
+  // Китайские двигатели (NEW!)
+  { name: "🇨🇳 S1100", slug: "s1100" },
+  { name: "🇨🇳 S195", slug: "s195" },
+  { name: "🇨🇳 ZS", slug: "zs" },
+  { name: "🇨🇳 R180", slug: "r180" },
 ];
 
 export default async function PartsPage() {
