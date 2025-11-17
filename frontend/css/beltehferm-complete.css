@@ -880,3 +880,71 @@ body:not(.light-theme) .sustainability-stat-label {
     page-break-inside: avoid;
   }
 }
+
+/* ===== INLINE STYLES CLEANUP - Moved from HTML ===== */
+
+/* Header Badge Hidden State */
+.action-btn__badge--hidden {
+  display: none;
+}
+
+/* Terra Hero Description */
+.terra-hero__description {
+  max-width: 42rem;
+  margin: 0 auto 3rem;
+}
+
+/* Terra Button Icon */
+.terra-btn__icon {
+  margin-left: 0.5rem;
+}
+
+/* Terra Scroll Indicator */
+.terra-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.terra-scroll-mouse {
+  width: 24px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 9999px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8px;
+}
+
+/* City Selector Icons */
+.city-selector__icon {
+  width: 18px;
+  height: 18px;
+}
+
+.city-selector__chevron {
+  width: 16px;
+  height: 16px;
+  margin-left: auto;
+}
+
+/* Sidebar Menu Divider */
+.sidebar-menu__divider {
+  margin: 15px 0;
+}
+
+/* Sidebar Contacts Title */
+.sidebar-menu__contacts-title {
+  color: #666;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Footer Hours */
+.footer-hours {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+}

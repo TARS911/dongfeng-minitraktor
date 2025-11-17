@@ -258,30 +258,30 @@
         <div class="sidebar-menu__city">
           <button class="city-selector" onclick="toggleCityMenu()">
             <svg
+              class="city-selector__icon"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               stroke-width="2"
-              style="width: 18px; height: 18px"
             >
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
               <circle cx="12" cy="10" r="3"></circle>
             </svg>
             <span>Белгород</span>
             <svg
+              class="city-selector__chevron"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               stroke-width="2"
-              style="width: 16px; height: 16px; margin-left: auto"
             >
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
         </div>
-        <div class="sidebar-menu__divider" style="margin: 15px 0"></div>
+        <div class="sidebar-menu__divider"></div>
         <div class="sidebar-menu__contacts">
-          <div style="color: #666; margin-bottom: 10px; font-weight: 600">
+          <div class="sidebar-menu__contacts-title">
             Контакты
           </div>
           <a href="tel:+79699995668">📞 +7 (969) 999-56-68</a>
@@ -330,95 +330,78 @@
               </form>
             </div>
             <div class="header-actions">
-              <div class="header-actions">
-                <!-- Сравнение -->
-                <a href="#" class="action-btn">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                  >
-                    <line x1="8" y1="6" x2="8" y2="18" />
-                    <line x1="16" y1="6" x2="16" y2="18" />
-                  </svg>
-                  <span class="action-btn__text">Сравнение</span>
-                  <span
-                    class="action-btn__badge"
-                    id="compareCount"
-                    style="display: none"
-                    >0</span
-                  >
-                </a>
-
-                <!-- Избранное -->
-                <a href="#" class="action-btn">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                    />
-                  </svg>
-                  <span class="action-btn__text">Избранное</span>
-                  <span
-                    class="action-btn__badge"
-                    id="favoritesCount"
-                    style="display: none"
-                    >0</span
-                  >
-                </a>
-
-                <!-- Корзина -->
-                <a href="cart.html" class="action-btn action-btn--cart">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="white"
-                    stroke-width="2"
-                  >
-                    <circle cx="12" cy="12" r="11" fill="#1e88e5" />
-                    <path
-                      d="M8 9L6 11H18L16 9H8Z"
-                      stroke="white"
-                      stroke-width="1.5"
-                    />
-                    <path
-                      d="M6 11H18L17 17H7L6 11Z"
-                      stroke="white"
-                      stroke-width="1.5"
-                    />
-                  </svg>
-                  <span class="action-btn__text">Корзина</span>
-                  <span
-                    class="action-btn__badge"
-                    id="cartCount"
-                    style="display: none"
-                    >0</span
-                  >
-                </a>
-
-                <!-- Вход -->
-                <button
-                  class="action-btn action-btn--auth"
-                  onclick="alert('Функция входа в разработке')"
+              <!-- Сравнение -->
+              <a href="#" class="action-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
                 >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                  <span class="action-btn__text">Войти</span>
-                </button>
-              </div>
+                  <line x1="8" y1="6" x2="8" y2="18" />
+                  <line x1="16" y1="6" x2="16" y2="18" />
+                </svg>
+                <span class="action-btn__text">Сравнение</span>
+                <span class="action-btn__badge action-btn__badge--hidden" id="compareCount">0</span>
+              </a>
+
+              <!-- Избранное -->
+              <a href="#" class="action-btn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  />
+                </svg>
+                <span class="action-btn__text">Избранное</span>
+                <span class="action-btn__badge action-btn__badge--hidden" id="favoritesCount">0</span>
+              </a>
+
+              <!-- Корзина -->
+              <a href="cart.html" class="action-btn action-btn--cart">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="11" fill="#1e88e5" />
+                  <path
+                    d="M8 9L6 11H18L16 9H8Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M6 11H18L17 17H7L6 11Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                  />
+                </svg>
+                <span class="action-btn__text">Корзина</span>
+                <span class="action-btn__badge action-btn__badge--hidden" id="cartCount">0</span>
+              </a>
+
+              <!-- Вход -->
+              <button
+                class="action-btn action-btn--auth"
+                onclick="alert('Функция входа в разработке')"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                <span class="action-btn__text">Войти</span>
+              </button>
               <a href="tel:+79699995668" class="header-phone"
                 >📞 +7 (969) 999-56-68</a
               >
@@ -506,10 +489,7 @@
             Минитракторы БЕЛТЕХФЕРМ для вашего хозяйства
           </h1>
 
-          <p
-            class="terra-text-lead"
-            style="max-width: 42rem; margin: 0 auto 3rem"
-          >
+          <p class="terra-text-lead terra-hero__description">
             Надежная техника с гарантией 1 год. Доставка по России за 3 дня.
             Официальный дилер.
           </p>
@@ -518,13 +498,13 @@
             <a href="catalog.html" class="terra-btn terra-btn-primary">
               Смотреть каталог
               <svg
+                class="terra-btn__icon"
                 width="20"
                 height="20"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
-                style="margin-left: 0.5rem"
               >
                 <polyline points="9 18 15 12 9 6" />
               </svg>
@@ -557,117 +537,13 @@
       </div>
 
       <!-- Scroll Indicator -->
-      <div
-        class="terra-scroll-indicator"
-        style="
-          position: absolute;
-          bottom: 2rem;
-          left: 50%;
-          transform: translateX(-50%);
-          z-index: 10;
-        "
-      >
-        <div
-          style="
-            width: 24px;
-            height: 40px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 9999px;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 8px;
-          "
-        >
+      <div class="terra-scroll-indicator">
+        <div class="terra-scroll-mouse">
           <div class="terra-scroll-dot"></div>
         </div>
       </div>
     </section>
 
-    <!-- Experience Section - УДАЛЕНА (перегружала главную) -->
-    <!-- <section class="experience-section">
-      <div class="container">
-        <div class="experience-header">
-          <div class="experience-badge">ПОПРОБУЙТЕ BELTEHFERM</div>
-          <h2 class="experience-title">Увидьте технику в действии</h2>
-          <p class="experience-description">
-            Познакомьтесь с БЕЛТЕХФЕРМ лично. Запишитесь на демонстрацию,
-            посетите наш выставочный зал или совершите виртуальный тур.
-          </p>
-        </div>
-
-        <div class="experience-grid">
-          <div class="experience-card">
-            <div class="experience-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <polygon points="5 3 19 12 5 21 5 3"></polygon>
-              </svg>
-            </div>
-            <h3 class="experience-card-title">Виртуальный тур</h3>
-            <p class="experience-card-text">
-              Изучите наши новейшие модели в потрясающем 360° формате прямо из
-              своего офиса.
-            </p>
-            <button class="experience-btn">Начать тур</button>
-          </div>
-
-          <div class="experience-card experience-card--featured">
-            <div class="experience-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-              </svg>
-            </div>
-            <h3 class="experience-card-title">Записаться на демо</h3>
-            <p class="experience-card-text">
-              Забронируйте персональную демонстрацию с нашими экспертами по
-              сельскохозяйственной технике.
-            </p>
-            <button class="experience-btn experience-btn--primary">
-              Записаться
-            </button>
-          </div>
-
-          <div class="experience-card">
-            <div class="experience-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-            </div>
-            <h3 class="experience-card-title">Скачать каталог</h3>
-            <p class="experience-card-text">
-              Получите подробные характеристики и техническую документацию для
-              всех моделей.
-            </p>
-            <button class="experience-btn">Скачать PDF</button>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- Категории -->
-    <!-- Категории - УДАЛЕНЫ (дублируют каталог) -->
-
-    <!-- Товары -->
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
@@ -747,7 +623,7 @@
               </li>
               <li><a href="contacts.html">📍 Белгород, Курск, Брянск</a></li>
             </ul>
-            <p style="margin-top: 1.5rem; font-size: 0.875rem">
+            <p class="footer-hours">
               Пн-Пт: 9:00 - 18:00<br />Сб-Вс: По договоренности
             </p>
           </div>
