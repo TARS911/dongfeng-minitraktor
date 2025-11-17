@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Запчасти Uralets (Уралец)",
+    "slug": "uralets-parts",
+    "parent_category": "Запчасти для тракторов",
+    "count": 96,
+    "description": "Запчасти для тракторов Уралец 180/220/224/2204/250/254",
+    "types": [
+      "Гидравлика",
+      "Дуги безопасности",
+      "Козырьки",
+      "Расширители колеи",
+      "Бамперы",
+      "Блокировки"
+    ],
+    "url": "https://xn----7sbabpgpk4bsbesjp1f.xn--p1ai/product-category/запчасти-для-тракторов/ураlets/",
+    "status": "inferred"
+  },
+  {
+    "name": "Запчасти Lovol-Foton",
+    "slug": "lovol-foton-parts",
+    "parent_category": "Запчасти для тракторов",
+    "count": 37,
+    "description": "Запчасти для тракторов Lovol и Foton",
+    "types": [
+      "Гидросистемы",
+      "Бачки",
+      "Гидравлические компоненты"
+    ],
+    "url": "https://xn----7sbabpgpk4bsbesjp1f.xn--p1ai/product-category/запчасти-для-тракторов/lovol-foton/",
+    "status": "inferred"
+  },
+  {
+    "name": "Универсальные запчасти",
+    "slug": "universal-parts",
+    "parent_category": "Запчасти для тракторов",
+    "count": 25,
+    "description": "Универсальные запчасти, подходящие для разных моделей тракторов",
+    "types": [
+      "Кронштейны",
+      "Крепления",
+      "Втулки",
+      "Прочее"
+    ],
+    "url": "https://xn----7sbabpgpk4bsbesjp1f.xn--p1ai/product-category/запчасти-для-тракторов/universal/",
+    "status": "inferred"
+  },
+  {
+    "name": "Запчасти Xingtai (Синтай)",
+    "slug": "xingtai-parts",
+    "parent_category": "Запчасти для тракторов",
+    "count": 22,
+    "description": "Запчасти для тракторов Синтай (Xingtai)",
+    "types": [
+      "Комплекты РВД для ГУР",
+      "Гидравлика",
+      "Прочее"
+    ],
+    "url": "https://xn----7sbabpgpk4bsbesjp1f.xn--p1ai/product-category/запчасти-для-тракторов/xingtai/",
+    "status": "inferred"
+  },
+  {
+    "name": "Запчасти Jinma (Джинма)",
+    "slug": "jinma-parts",
+    "parent_category": "Запчасти для тракторов",
+    "count": 9,
+    "description": "Запчасти для тракторов Jinma 164/184/244/264",
+    "types": [
+      "Дуги безопасности",
+      "Козырьки",
+      "Гидрофикация",
+      "Расширители колеи"
+    ],
+    "url": "https://xn----7sbabpgpk4bsbesjp1f.xn--p1ai/product-category/запчасти-для-тракторов/jinma/",
+    "status": "inferred"
+  }
+]
