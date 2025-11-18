@@ -8,9 +8,14 @@ import "../../catalog.css";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-// Типы запчастей - удалены старые подкатегории
-// Теперь используется новая структура из 11 основных категорий
-const partTypes: { name: string; slug: string }[] = [];
+// Подкатегории для "Запчасти на Минитракторы"
+const minitractorBrands = [
+  { name: "МиниТрактора Dongfeng", slug: "parts-minitractors-dongfeng" },
+  { name: "МиниТрактора Foton/Lovol", slug: "parts-minitractors-foton" },
+  { name: "МиниТрактора Jinma", slug: "parts-minitractors-jinma" },
+  { name: "МиниТрактора Xingtai/Уралец", slug: "parts-minitractors-xingtai" },
+  { name: "Shifeng", slug: "parts-minitractors-shifeng" },
+];
 
 // Маппинг брендов
 const brandNames: { [key: string]: string } = {
@@ -98,32 +103,33 @@ export default async function BrandPartsPage({ params }: PageProps) {
   const categoryName = categoryData?.name || brand;
   const categoryDescription = categoryData?.description || "";
 
-  // Получаем количество товаров для каждого типа запчастей
-  const partTypesWithCounts = await Promise.all(
-    partTypes.map(async (type) => {
-      const categorySlug = `${brand}-${type.slug}`;
+  // Проверяем, есть ли подкатегории для этой категории
+  let subcategories: { name: string; slug: string; count: number }[] = [];
 
-      // Получаем ID категории
-      const { data: category } = await supabase
-        .from("categories")
-        .select("id")
-        .eq("slug", categorySlug)
-        .single();
+  // Если это "Запчасти на Минитракторы" - показываем бренды
+  if (brand === "parts-minitractors") {
+    subcategories = await Promise.all(
+      minitractorBrands.map(async (subcat) => {
+        const { data: subcatData } = await supabase
+          .from("categories")
+          .select("id")
+          .eq("slug", subcat.slug)
+          .maybeSingle();
 
-      if (!category) {
-        return { ...type, count: 0 };
-      }
+        if (!subcatData) {
+          return { ...subcat, count: 0 };
+        }
 
-      // Считаем товары в этой категории
-      const { count } = await supabase
-        .from("products")
-        .select("*", { count: "exact", head: true })
-        .eq("category_id", category.id)
-        .eq("in_stock", true);
+        const { count } = await supabase
+          .from("products")
+          .select("*", { count: "exact", head: true })
+          .eq("category_id", subcatData.id)
+          .eq("in_stock", true);
 
-      return { ...type, count: count || 0 };
-    }),
-  );
+        return { ...subcat, count: count || 0 };
+      }),
+    );
+  }
 
   const breadcrumbItems = [
     { label: "Главная", href: "/" },
@@ -132,13 +138,21 @@ export default async function BrandPartsPage({ params }: PageProps) {
     { label: categoryName },
   ];
 
-  // Получаем товары в этой категории
-  const { data: products, count: totalCount } = await supabase
-    .from("products")
-    .select("*", { count: "exact" })
-    .eq("category_id", categoryData?.id || 0)
-    .eq("in_stock", true)
-    .order("created_at", { ascending: false });
+  // Если подкатегорий нет - получаем товары
+  let products = null;
+  let totalCount = 0;
+
+  if (subcategories.length === 0 && categoryData?.id) {
+    const result = await supabase
+      .from("products")
+      .select("*", { count: "exact" })
+      .eq("category_id", categoryData.id)
+      .eq("in_stock", true)
+      .order("created_at", { ascending: false });
+
+    products = result.data;
+    totalCount = result.count || 0;
+  }
 
   return (
     <div className="catalog-page">
@@ -151,12 +165,67 @@ export default async function BrandPartsPage({ params }: PageProps) {
               {categoryDescription}
             </p>
           )}
-          <p style={{ marginTop: "0.5rem", color: "#999", fontSize: "0.9rem" }}>
-            {totalCount || 0} позиций
-          </p>
+          {subcategories.length === 0 && (
+            <p
+              style={{ marginTop: "0.5rem", color: "#999", fontSize: "0.9rem" }}
+            >
+              {totalCount} позиций
+            </p>
+          )}
         </div>
 
-        {products && products.length > 0 ? (
+        {/* Если есть подкатегории - показываем их */}
+        {subcategories.length > 0 ? (
+          <div
+            className="subcategories-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+              gap: "1.5rem",
+              marginTop: "2rem",
+            }}
+          >
+            {subcategories.map((subcat) => (
+              <Link
+                key={subcat.slug}
+                href={`/catalog/parts/${subcat.slug}`}
+                className="subcategory-card"
+                style={{
+                  padding: "1.5rem",
+                  border: "1px solid #e0e0e0",
+                  borderRadius: "8px",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                  textDecoration: "none",
+                  color: "inherit",
+                  backgroundColor: "#fff",
+                }}
+              >
+                <h3
+                  style={{
+                    fontSize: "1.1rem",
+                    color: "#333",
+                    marginBottom: "0.5rem",
+                    fontWeight: "600",
+                  }}
+                >
+                  {subcat.name}
+                </h3>
+                <p
+                  style={{
+                    color: "#2a9d4e",
+                    fontSize: "0.9rem",
+                    fontWeight: "500",
+                    margin: "0",
+                  }}
+                >
+                  {subcat.count} позиций
+                </p>
+              </Link>
+            ))}
+          </div>
+        ) : products && products.length > 0 ? (
+          /* Если подкатегорий нет - показываем товары */
           <div
             className="products-grid"
             style={{
@@ -207,7 +276,9 @@ export default async function BrandPartsPage({ params }: PageProps) {
             ))}
           </div>
         ) : (
-          <div style={{ marginTop: "2rem", textAlign: "center", padding: "3rem" }}>
+          <div
+            style={{ marginTop: "2rem", textAlign: "center", padding: "3rem" }}
+          >
             <p style={{ color: "#999", fontSize: "1.1rem" }}>
               Товары в этой категории скоро появятся
             </p>
