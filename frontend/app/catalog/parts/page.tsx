@@ -34,34 +34,7 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 // Список всех брендов запчастей (без count - будем считать из БД)
-const brands = [
-  { name: "🔧 Универсальные", slug: "universal" },
-  { name: "Уралец", slug: "uralets" },
-  { name: "КМ (двигатели)", slug: "km-engines" },
-  { name: "DLH", slug: "dlh" },
-  { name: "DongFeng (ДонгФенг)", slug: "dongfeng-parts" },
-  { name: "Foton (Фотон, Lovol)", slug: "foton" },
-  { name: "Jinma (Джинма)", slug: "jinma" },
-  { name: "Xingtai (Синтай)", slug: "xingtai" },
-  { name: "Shifeng (Шифенг)", slug: "shifeng" },
-  { name: "Скаут", slug: "scout" },
-  { name: "WIRAX (Виракс)", slug: "wirax" },
-  { name: "YTO", slug: "yto" },
-  { name: "Русич", slug: "rusich" },
-  { name: "МТЗ (Беларус)", slug: "mtz" },
-  { name: "Файтер", slug: "fayter" },
-  { name: "Кентавр", slug: "kentavr" },
-  { name: "Булат", slug: "bulat" },
-  { name: "Нева", slug: "neva" },
-  { name: "Catmann", slug: "catmann" },
-  { name: "Чувашпиллер", slug: "chuvashpiller" },
-  { name: "Perkins", slug: "perkins" },
-  // Китайские двигатели (NEW!)
-  { name: "🇨🇳 S1100", slug: "s1100" },
-  { name: "🇨🇳 S195", slug: "s195" },
-  { name: "🇨🇳 ZS", slug: "zs" },
-  { name: "🇨🇳 R180", slug: "r180" },
-];
+const brands: { name: string; slug: string }[] = [];
 
 export default async function PartsPage() {
   // Получаем количество товаров для каждого бренда из БД
