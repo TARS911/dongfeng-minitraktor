@@ -47,15 +47,26 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { brand } = await params;
-  const brandName = brandNames[brand] || brand;
 
-  const title = `Запчасти для ${brandName} | БелТехФермЪ`;
-  const description = `Купить запчасти для мини-тракторов ${brandName} в Белгороде. Широкий ассортимент: фильтры, двигатели, стартеры, генераторы. Доставка по России.`;
+  // Получаем название категории из БД
+  const { data: categoryData } = await supabase
+    .from("categories")
+    .select("name, description")
+    .eq("slug", brand)
+    .maybeSingle();
+
+  const categoryName = categoryData?.name || brand;
+  const categoryDescription =
+    categoryData?.description ||
+    "Широкий ассортимент запчастей для тракторов и сельхозтехники";
+
+  const title = `${categoryName} | БелТехФермЪ`;
+  const description = `${categoryDescription}. Доставка по России. Гарантия качества.`;
 
   return {
     title,
     description,
-    keywords: `запчасти ${brandName}, ${brandName}, купить запчасти, мини-трактор ${brandName}, фильтры, двигатели, запчасти для тракторов`,
+    keywords: `${categoryName}, запчасти, купить запчасти, мини-трактор, фильтры, двигатели, запчасти для тракторов`,
     openGraph: {
       title,
       description,
@@ -76,7 +87,16 @@ export async function generateMetadata({
 
 export default async function BrandPartsPage({ params }: PageProps) {
   const { brand } = await params;
-  const brandName = brandNames[brand] || brand;
+
+  // Получаем название категории из БД
+  const { data: categoryData } = await supabase
+    .from("categories")
+    .select("id, name, description")
+    .eq("slug", brand)
+    .maybeSingle();
+
+  const categoryName = categoryData?.name || brand;
+  const categoryDescription = categoryData?.description || "";
 
   // Получаем количество товаров для каждого типа запчастей
   const partTypesWithCounts = await Promise.all(
@@ -109,69 +129,94 @@ export default async function BrandPartsPage({ params }: PageProps) {
     { label: "Главная", href: "/" },
     { label: "Каталог", href: "/catalog" },
     { label: "Запчасти", href: "/catalog/parts" },
-    { label: brandName },
+    { label: categoryName },
   ];
+
+  // Получаем товары в этой категории
+  const { data: products, count: totalCount } = await supabase
+    .from("products")
+    .select("*", { count: "exact" })
+    .eq("category_id", categoryData?.id || 0)
+    .eq("in_stock", true)
+    .order("created_at", { ascending: false });
 
   return (
     <div className="catalog-page">
       <div className="container">
         <div className="catalog-header">
           <Breadcrumbs items={breadcrumbItems} />
-          <h1>Запчасти {brandName}</h1>
-          <p style={{ marginTop: "1rem", color: "#666" }}>
-            Выберите тип запчастей
+          <h1>{categoryName}</h1>
+          {categoryDescription && (
+            <p style={{ marginTop: "1rem", color: "#666" }}>
+              {categoryDescription}
+            </p>
+          )}
+          <p style={{ marginTop: "0.5rem", color: "#999", fontSize: "0.9rem" }}>
+            {totalCount || 0} позиций
           </p>
         </div>
 
-        <div
-          className="part-types-grid"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-            gap: "1.5rem",
-            marginTop: "2rem",
-          }}
-        >
-          {partTypesWithCounts.map((type) => (
-            <Link
-              key={type.slug}
-              href={`/catalog/parts/${brand}/${type.slug}`}
-              className="part-type-card"
-              style={{
-                padding: "1.5rem",
-                border: "1px solid #e0e0e0",
-                borderRadius: "8px",
-                textAlign: "center",
-                transition: "all 0.3s ease",
-                textDecoration: "none",
-                color: "inherit",
-                backgroundColor: "#fff",
-              }}
-            >
-              <h3
+        {products && products.length > 0 ? (
+          <div
+            className="products-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+              gap: "1.5rem",
+              marginTop: "2rem",
+            }}
+          >
+            {products.map((product) => (
+              <Link
+                key={product.id}
+                href={`/catalog/product/${product.slug}`}
+                className="product-card"
                 style={{
-                  fontSize: "1.1rem",
-                  color: "#333",
-                  marginBottom: "0.5rem",
+                  padding: "1.5rem",
+                  border: "1px solid #e0e0e0",
+                  borderRadius: "8px",
+                  textAlign: "center",
+                  transition: "all 0.3s ease",
+                  textDecoration: "none",
+                  color: "inherit",
+                  backgroundColor: "#fff",
                 }}
               >
-                {type.name}
-              </h3>
-              <p style={{ color: "#666", fontSize: "0.9rem", margin: "0" }}>
-                {type.count}{" "}
-                {type.count === 1
-                  ? "товар"
-                  : type.count < 5
-                    ? "товара"
-                    : "товаров"}
-              </p>
-            </Link>
-          ))}
-        </div>
+                <h3
+                  style={{
+                    fontSize: "1rem",
+                    color: "#333",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  {product.name}
+                </h3>
+                {product.price && (
+                  <p
+                    style={{
+                      color: "#2a9d4e",
+                      fontSize: "1.1rem",
+                      fontWeight: "600",
+                      margin: "0.5rem 0",
+                    }}
+                  >
+                    {product.price.toLocaleString("ru-RU")} ₽
+                  </p>
+                )}
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div style={{ marginTop: "2rem", textAlign: "center", padding: "3rem" }}>
+            <p style={{ color: "#999", fontSize: "1.1rem" }}>
+              Товары в этой категории скоро появятся
+            </p>
+          </div>
+        )}
 
         <div style={{ marginTop: "2rem" }}>
           <Link href="/catalog/parts" className="btn btn-secondary">
-            ← Назад к брендам
+            ← Назад к категориям
           </Link>
         </div>
       </div>
