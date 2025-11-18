@@ -13,7 +13,7 @@ from urllib.parse import unquote
 sys.stdout.reconfigure(encoding='utf-8', line_buffering=True)
 
 # Пути к файлам
-INPUT_FILE = "parsed_data/agrodom/products-clean.json"
+INPUT_FILE = "parsed_data/agrodom/organized/all-parts-organized.json"
 OUTPUT_FILE = "backend/database/supabase-parts-data.sql"
 
 def create_slug(text):
@@ -119,7 +119,7 @@ def generate_sql_inserts(products):
     """Генерирует SQL INSERT statements"""
     sql_lines = []
 
-    sql_lines.append("-- Импорт данных запчастей Agrodom")
+    sql_lines.append("-- Импорт данных запчастей Agrodom (ОРГАНИЗОВАННЫЕ)")
     sql_lines.append(f"-- Всего записей: {len(products)}")
     sql_lines.append(f"-- Дата генерации: 2025-11-18\n")
 
@@ -149,27 +149,29 @@ def generate_sql_inserts(products):
             counter += 1
         slugs_seen.add(slug)
 
-        # Извлекаем данные
+        # Извлекаем данные (используем готовые метаданные!)
         price = extract_price(product.get('price', ''))
         sku = product.get('sku', '').strip() or None
         image_url = product.get('image_url', '').strip() or None
         product_url = product.get('link', '').strip() or None
 
-        manufacturer = detect_manufacturer(name, product_url)
-        category = detect_category(product_url)
+        # Используем уже определённые бренд, категорию и подкатегорию
+        brand = product.get('brand', 'Универсальные')
+        category = product.get('category', 'Прочее')
+        subcategory = product.get('subcategory')
 
         # Формируем SQL INSERT
         values = []
         values.append(escape_sql(name))  # name
         values.append(escape_sql(slug))  # slug
         values.append(escape_sql(sku))   # sku
-        values.append('NULL')  # category_id (заполним позже)
-        values.append('NULL')  # subcategory
+        values.append('NULL')  # category_id (заполним позже через миграцию)
+        values.append(escape_sql(subcategory))  # subcategory
         values.append(str(price) if price else 'NULL')  # price
         values.append('NULL')  # old_price
         values.append('true')  # in_stock (по умолчанию)
         values.append("'unknown'")  # stock_status
-        values.append(escape_sql(manufacturer))  # manufacturer
+        values.append(escape_sql(brand))  # manufacturer (бренд)
         values.append('NULL')  # compatible_models
         values.append('NULL')  # part_number
         values.append('NULL')  # description
@@ -178,7 +180,8 @@ def generate_sql_inserts(products):
         values.append('NULL')  # images_gallery
         values.append(escape_sql(product_url))  # product_url
 
-        insert_sql = f"INSERT INTO parts (name, slug, sku, category_id, subcategory, price, old_price, in_stock, stock_status, manufacturer, compatible_models, part_number, description, specifications, image_url, images_gallery, product_url) VALUES ({', '.join(values)});"
+        # Добавляем категорию в комментарий для удобства
+        insert_sql = f"INSERT INTO parts (name, slug, sku, category_id, subcategory, price, old_price, in_stock, stock_status, manufacturer, compatible_models, part_number, description, specifications, image_url, images_gallery, product_url) VALUES ({', '.join(values)}); -- {category}"
         sql_lines.append(insert_sql)
 
         inserted += 1
@@ -204,6 +207,7 @@ def generate_sql_inserts(products):
     sql_lines.append("SELECT manufacturer, COUNT(*) as count FROM parts WHERE manufacturer IS NOT NULL GROUP BY manufacturer ORDER BY count DESC;")
     sql_lines.append("SELECT COUNT(*) as parts_with_price FROM parts WHERE price IS NOT NULL;")
     sql_lines.append("SELECT COUNT(*) as parts_with_images FROM parts WHERE image_url IS NOT NULL;")
+    sql_lines.append("SELECT subcategory, COUNT(*) as count FROM parts WHERE subcategory IS NOT NULL GROUP BY subcategory ORDER BY count DESC LIMIT 10;")
 
     return '\n'.join(sql_lines), inserted, skipped
 
