@@ -93,7 +93,7 @@ const partsCategories: { name: string; slug: string; description: string }[] = [
 ];
 
 export default async function PartsPage() {
-  // Получаем количество товаров для каждой подкатегории из БД
+  // Получаем количество товаров для каждой категории из БД
   const categoriesWithCounts = await Promise.all(
     partsCategories.map(async (category) => {
       // Получаем категорию по slug
@@ -101,7 +101,7 @@ export default async function PartsPage() {
         .from("categories")
         .select("id")
         .eq("slug", category.slug)
-        .single();
+        .maybeSingle();
 
       if (!categoryData) {
         return { ...category, count: 0 };
