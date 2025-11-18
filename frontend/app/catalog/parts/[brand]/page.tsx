@@ -8,22 +8,9 @@ import "../../catalog.css";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-// Типы запчастей
-const partTypes = [
-  { name: "Фильтра", slug: "filters" },
-  { name: "Двигателя дизельные", slug: "diesel-engines" },
-  { name: "Стартеры, Генераторы", slug: "starters-generators" },
-  { name: "Универсальные комплектующие", slug: "universal-parts" },
-  { name: "Сиденья (кресла)", slug: "seats" },
-  { name: "ЗИП", slug: "spare-parts-kit" },
-  { name: "Запчасти для навесного оборудования", slug: "equipment-parts" },
-  { name: "Запчасти для тракторов", slug: "tractor-parts" },
-  { name: "Колёса, шины, груза", slug: "wheels-tires" },
-  { name: "Стандартные изделия", slug: "standard-parts" },
-  { name: "Гидравлика", slug: "hydraulics" },
-  { name: "Карданные валы", slug: "driveshafts" },
-  { name: "Прочие запчасти", slug: "other-parts" },
-];
+// Типы запчастей - удалены старые подкатегории
+// Теперь используется новая структура из 11 основных категорий
+const partTypes: { name: string; slug: string }[] = [];
 
 // Маппинг брендов
 const brandNames: { [key: string]: string } = {
