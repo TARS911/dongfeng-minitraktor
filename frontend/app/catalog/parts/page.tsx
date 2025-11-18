@@ -33,35 +33,91 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-// Список всех брендов запчастей (без count - будем считать из БД)
-const brands: { name: string; slug: string }[] = [];
+// Список подкатегорий запчастей
+const partsCategories: { name: string; slug: string; description: string }[] = [
+  {
+    name: "ДВС в Сборе",
+    slug: "engines-assembled",
+    description: "Двигатели внутреннего сгорания в сборе",
+  },
+  {
+    name: "Запчасти на ДВС",
+    slug: "parts-engines",
+    description: "Поршни, кольца, прокладки, клапаны",
+  },
+  {
+    name: "Запчасти на Минитракторы",
+    slug: "parts-minitractors",
+    description: "DongFeng, Foton, Jinma, Xingtai",
+  },
+  {
+    name: "Запчасти на Мототракторы",
+    slug: "parts-mototractors",
+    description: "Зубр, Crosser с колесом 16\"",
+  },
+  {
+    name: "Запчасти на Мотоблоки",
+    slug: "parts-motoblocks",
+    description: "Garden, Скаут, Прораб, Булат",
+  },
+  {
+    name: "Запчасти на Навесное оборудование",
+    slug: "parts-attachments",
+    description: "Плуги, культиваторы, косилки",
+  },
+  {
+    name: "Запчасти на Садовую технику",
+    slug: "parts-garden-equipment",
+    description: "Газонокосилки, триммеры, кусторезы",
+  },
+  {
+    name: "Запчасти на Электрогенераторы",
+    slug: "parts-generators",
+    description: "AVR, щетки, статоры, роторы",
+  },
+  {
+    name: "Топливная система",
+    slug: "parts-fuel-system",
+    description: "Баки, насосы, краны, карбюраторы",
+  },
+  {
+    name: "Фильтры",
+    slug: "parts-filters",
+    description: "Воздушные, топливные, масляные",
+  },
+  {
+    name: "Гидравлика",
+    slug: "parts-hydraulics",
+    description: "Насосы, распределители, цилиндры",
+  },
+];
 
 export default async function PartsPage() {
-  // Получаем количество товаров для каждого бренда из БД
-  const brandsWithCounts = await Promise.all(
-    brands.map(async (brand) => {
-      // Получаем все категории этого бренда (brand-*)
-      const { data: categories } = await supabase
+  // Получаем количество товаров для каждой подкатегории из БД
+  const categoriesWithCounts = await Promise.all(
+    partsCategories.map(async (category) => {
+      // Получаем категорию по slug
+      const { data: categoryData } = await supabase
         .from("categories")
         .select("id")
-        .like("slug", `${brand.slug}-%`);
+        .eq("slug", category.slug)
+        .single();
 
-      if (!categories || categories.length === 0) {
-        return { ...brand, count: 0 };
+      if (!categoryData) {
+        return { ...category, count: 0 };
       }
 
-      const categoryIds = categories.map((c) => c.id);
-
-      // Считаем все товары во всех категориях этого бренда
+      // Считаем товары в этой категории
       const { count } = await supabase
         .from("products")
         .select("*", { count: "exact", head: true })
-        .in("category_id", categoryIds)
+        .eq("category_id", categoryData.id)
         .eq("in_stock", true);
 
-      return { ...brand, count: count || 0 };
+      return { ...category, count: count || 0 };
     }),
   );
+
   const breadcrumbItems = [
     { label: "Главная", href: "/" },
     { label: "Каталог", href: "/catalog" },
@@ -73,47 +129,61 @@ export default async function PartsPage() {
       <div className="container">
         <div className="catalog-header">
           <Breadcrumbs items={breadcrumbItems} />
-          <h1>Запчасти по брендам</h1>
+          <h1>Запчасти</h1>
           <p style={{ marginTop: "1rem", color: "#666" }}>
-            Выберите бренд для просмотра запчастей
+            Выберите категорию запчастей
           </p>
         </div>
 
         <div
-          className="brands-grid"
+          className="categories-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
             gap: "1.5rem",
             marginTop: "2rem",
           }}
         >
-          {brandsWithCounts.map((brand) => (
+          {categoriesWithCounts.map((category) => (
             <Link
-              key={brand.slug}
-              href={`/catalog/parts/${brand.slug}`}
-              className="brand-card"
+              key={category.slug}
+              href={`/catalog/parts/${category.slug}`}
+              className="category-card"
               style={{
                 padding: "1.5rem",
                 border: "1px solid #e0e0e0",
                 borderRadius: "8px",
-                textAlign: "center",
+                textAlign: "left",
                 transition: "all 0.3s ease",
                 textDecoration: "none",
                 color: "inherit",
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.5rem",
               }}
             >
               <h3
                 style={{
-                  fontSize: "1.2rem",
-                  marginBottom: "0.5rem",
+                  fontSize: "1.1rem",
+                  marginBottom: "0.25rem",
                   color: "#333",
+                  fontWeight: "600",
                 }}
               >
-                {brand.name}
+                {category.name}
               </h3>
-              <p style={{ color: "#666", fontSize: "0.9rem" }}>
-                {brand.count} позиций
+              <p style={{ color: "#666", fontSize: "0.85rem", margin: 0 }}>
+                {category.description}
+              </p>
+              <p
+                style={{
+                  color: "#2a9d4e",
+                  fontSize: "0.9rem",
+                  fontWeight: "500",
+                  marginTop: "auto",
+                }}
+              >
+                {category.count} позиций
               </p>
             </Link>
           ))}
