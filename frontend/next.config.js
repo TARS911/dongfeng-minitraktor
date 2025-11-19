@@ -4,6 +4,9 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
 
+  // Для Docker нужен standalone output
+  output: "standalone",
+
   // Исправляем workspace root warning
   outputFileTracingRoot: require("path").join(__dirname, "../"),
 

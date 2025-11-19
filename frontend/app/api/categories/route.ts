@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { supabase } from "@/app/lib/supabase";
 import { validateSlug, sanitizeString } from "@/app/lib/validation";
+import { requireAdmin } from "@/app/lib/auth";
 
 /**
  * GET /api/categories - получить все категории
@@ -38,8 +39,15 @@ export async function GET(request: Request) {
 /**
  * POST /api/categories - создать новую категорию
  * Body: { name, slug, description?, image_url? }
+ * 🔒 Требует: Admin права
  */
 export async function POST(request: Request) {
+  // 🔒 Проверка admin прав
+  const authCheck = await requireAdmin(request);
+  if (authCheck instanceof Response) {
+    return authCheck; // Возвращаем 401/403 ошибку
+  }
+
   try {
     const body = await request.json();
     const { name, slug, description, image_url } = body;

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { supabase } from "@/app/lib/supabase";
 import { validateId, validateSlug, sanitizeString } from "@/app/lib/validation";
+import { requireAdmin } from "@/app/lib/auth";
 
 /**
  * GET /api/categories/:id - получить категорию по ID
@@ -46,11 +47,18 @@ export async function GET(
 /**
  * PUT /api/categories/:id - обновить категорию
  * Body: { name?, slug?, description?, image_url? }
+ * 🔒 Требует: Admin права
  */
 export async function PUT(
   request: Request,
   context: { params: Promise<{ id: string }> },
 ) {
+  // 🔒 Проверка admin прав
+  const authCheck = await requireAdmin(request);
+  if (authCheck instanceof Response) {
+    return authCheck;
+  }
+
   const params = await context.params;
   try {
     const id = parseInt(params.id, 10);
@@ -151,11 +159,18 @@ export async function PUT(
 
 /**
  * DELETE /api/categories/:id - удалить категорию
+ * 🔒 Требует: Admin права
  */
 export async function DELETE(
   request: Request,
   context: { params: Promise<{ id: string }> },
 ) {
+  // 🔒 Проверка admin прав
+  const authCheck = await requireAdmin(request);
+  if (authCheck instanceof Response) {
+    return authCheck;
+  }
+
   const params = await context.params;
   try {
     const id = parseInt(params.id, 10);

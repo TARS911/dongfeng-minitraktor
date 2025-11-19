@@ -48,30 +48,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/warranty`,
+      url: `${baseUrl}/services`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.6,
+      priority: 0.7,
     },
     {
-      url: `${baseUrl}/cart`,
+      url: `${baseUrl}/service-center`,
       lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.5,
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
-      url: `${baseUrl}/favorites`,
+      url: `${baseUrl}/promotions`,
       lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/compare`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.5,
+      changeFrequency: "weekly",
+      priority: 0.8,
     },
   ];
+
+  // Эти страницы НЕ добавляем в sitemap (noindex):
+  // - /cart (корзина)
+  // - /favorites (избранное)
+  // - /compare (сравнение)
+  // - /auth (авторизация)
+  // - /admin/* (админка)
 
   // Динамические страницы категорий
   const { data: categories } = await supabase
