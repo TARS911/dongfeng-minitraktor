@@ -3,6 +3,7 @@
  * JSON-LD разметка для различных типов контента
  */
 
+import React from "react";
 import { SITE_CONFIG } from "./seo";
 
 /**
@@ -239,10 +240,8 @@ export function generateFAQSchema(
  * Компонент для вставки JSON-LD разметки
  */
 export function JsonLd({ data }: { data: Record<string, any> }) {
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
-  );
+  return React.createElement('script', {
+    type: 'application/ld+json',
+    dangerouslySetInnerHTML: { __html: JSON.stringify(data) },
+  });
 }

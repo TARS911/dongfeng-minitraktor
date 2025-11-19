@@ -37,7 +37,7 @@ interface GenerateMetadataParams {
   image?: string;
   canonical?: string;
   noIndex?: boolean;
-  type?: "website" | "article" | "product";
+  type?: "website" | "article";
 }
 
 /**
@@ -161,7 +161,7 @@ export function generateProductMetadata(
     description: `${productDescription} Цена: ${priceFormatted}. Купить с доставкой по России в БелТехФермЪ.`,
     keywords: [productName.toLowerCase(), "купить", "цена", "характеристики"],
     image: imageUrl,
-    type: "product",
+    type: "article", // Используем "article" вместо "product" для совместимости с Next.js Metadata
   });
 }
 
