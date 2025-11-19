@@ -1,89 +1,30 @@
-"use client";
-
-import { supabase } from "../../../lib/supabase";
-import ProductCard from "../../../components/ProductCard";
+import Link from "next/link";
 import Breadcrumbs from "../../../components/Breadcrumbs";
-import { useState, useEffect } from "react";
+import type { Metadata } from "next";
 import "../../catalog.css";
 
-interface Product {
-  id: number;
-  name: string;
-  slug: string;
-  price: number;
-  old_price?: number;
-  image_url: string;
-  category_id: number;
-  manufacturer?: string;
-  model?: string;
-  is_featured?: boolean;
-  specifications?: {
-    article?: string;
-    source_url?: string;
-  };
-}
+export const metadata: Metadata = {
+  title: "Запчасти DongFeng (ДонгФенг) | БелТехФермЪ",
+  description:
+    "Каталог запчастей для минитракторов DongFeng. Выберите модель: 240-244, 354-404.",
+};
+
+const dongfengModels = [
+  {
+    id: "240-244",
+    title: "DongFeng 240-244",
+    description: "Запчасти для моделей DongFeng 240, 244",
+    icon: "🚜",
+  },
+  {
+    id: "354-404",
+    title: "DongFeng 354-404",
+    description: "Запчасти для моделей DongFeng 354, 404",
+    icon: "🚜",
+  },
+];
 
 export default function DongFengPartsPage() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
-  const [selectedModel, setSelectedModel] = useState<string>("all");
-  const [loading, setLoading] = useState(true);
-
-  // Загружаем товары
-  useEffect(() => {
-    async function loadProducts() {
-      setLoading(true);
-
-      // Фильтруем напрямую по manufacturer - без category_id!
-      const { data } = await supabase
-        .from("products")
-        .select("*")
-        .eq("manufacturer", "DONGFENG")
-        .eq("in_stock", true)
-        .order("created_at", { ascending: false });
-
-      if (data) {
-        setProducts(data);
-        setFilteredProducts(data);
-      }
-
-      setLoading(false);
-    }
-
-    loadProducts();
-  }, []);
-
-  // Фильтрация по модели
-  useEffect(() => {
-    if (selectedModel === "all") {
-      setFilteredProducts(products);
-    } else {
-      // Фильтруем по названию (в названии есть номер модели)
-      const filtered = products.filter((product) => {
-        const name = product.name.toLowerCase();
-        const model = product.model?.toLowerCase() || "";
-
-        if (selectedModel === "240-244") {
-          return (
-            name.includes("240") ||
-            name.includes("244") ||
-            model.includes("240") ||
-            model.includes("244")
-          );
-        } else if (selectedModel === "354-404") {
-          return (
-            name.includes("354") ||
-            name.includes("404") ||
-            model.includes("354") ||
-            model.includes("404")
-          );
-        }
-        return false;
-      });
-      setFilteredProducts(filtered);
-    }
-  }, [selectedModel, products]);
-
   const breadcrumbItems = [
     { label: "Главная", href: "/" },
     { label: "Каталог", href: "/catalog" },
@@ -97,123 +38,62 @@ export default function DongFengPartsPage() {
         <div className="catalog-header">
           <Breadcrumbs items={breadcrumbItems} />
           <h1>Запчасти DongFeng</h1>
-          <p className="catalog-description">
-            Оригинальные запчасти для минитракторов DongFeng
+          <p style={{ marginTop: "1rem", color: "#666" }}>
+            Выберите модель минитрактора
           </p>
         </div>
 
-        {/* Фильтры по моделям */}
-        <div className="model-filters" style={{ marginBottom: "2rem" }}>
-          <div
-            style={{
-              display: "flex",
-              gap: "1rem",
-              flexWrap: "wrap",
-              alignItems: "center",
-            }}
-          >
-            <strong>Модель:</strong>
-            <button
-              className={`filter-btn ${selectedModel === "all" ? "active" : ""}`}
-              onClick={() => setSelectedModel("all")}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+            gap: "1.5rem",
+            margin: "2rem 0",
+          }}
+        >
+          {dongfengModels.map((model) => (
+            <Link
+              key={model.id}
+              href={`/catalog/parts/parts-minitractors-dongfeng/${model.id}`}
               style={{
-                padding: "0.5rem 1rem",
-                border: "1px solid #ddd",
-                borderRadius: "6px",
-                background:
-                  selectedModel === "all" ? "#2a9d4e" : "transparent",
-                color: selectedModel === "all" ? "white" : "#333",
-                cursor: "pointer",
-                transition: "all 0.3s",
+                background: "white",
+                border: "1px solid #e5e7eb",
+                borderRadius: "12px",
+                padding: "2rem",
+                textDecoration: "none",
+                color: "inherit",
+                transition: "all 0.3s ease",
+                display: "flex",
+                flexDirection: "column",
+                gap: "1rem",
               }}
             >
-              Все модели ({products.length})
-            </button>
-            <button
-              className={`filter-btn ${selectedModel === "240-244" ? "active" : ""}`}
-              onClick={() => setSelectedModel("240-244")}
-              style={{
-                padding: "0.5rem 1rem",
-                border: "1px solid #ddd",
-                borderRadius: "6px",
-                background:
-                  selectedModel === "240-244" ? "#2a9d4e" : "transparent",
-                color: selectedModel === "240-244" ? "white" : "#333",
-                cursor: "pointer",
-                transition: "all 0.3s",
-              }}
-            >
-              DongFeng 240-244
-            </button>
-            <button
-              className={`filter-btn ${selectedModel === "354-404" ? "active" : ""}`}
-              onClick={() => setSelectedModel("354-404")}
-              style={{
-                padding: "0.5rem 1rem",
-                border: "1px solid #ddd",
-                borderRadius: "6px",
-                background:
-                  selectedModel === "354-404" ? "#2a9d4e" : "transparent",
-                color: selectedModel === "354-404" ? "white" : "#333",
-                cursor: "pointer",
-                transition: "all 0.3s",
-              }}
-            >
-              DongFeng 354-404
-            </button>
-          </div>
+              <div style={{ fontSize: "3rem", textAlign: "center" }}>
+                {model.icon}
+              </div>
+              <h3
+                style={{
+                  fontSize: "1.25rem",
+                  fontWeight: 600,
+                  color: "#1f2937",
+                  margin: 0,
+                }}
+              >
+                {model.title}
+              </h3>
+              <p style={{ color: "#6b7280", fontSize: "0.95rem", margin: 0 }}>
+                {model.description}
+              </p>
+              <span style={{ color: "#2a9d4e", fontWeight: 500 }}>
+                Перейти к запчастям →
+              </span>
+            </Link>
+          ))}
         </div>
 
-        {loading ? (
-          <div style={{ textAlign: "center", padding: "3rem" }}>
-            <p>Загрузка товаров...</p>
-          </div>
-        ) : filteredProducts.length === 0 ? (
-          <div className="empty-category">
-            <h2>Товары не найдены</h2>
-            <p>Попробуйте выбрать другую модель</p>
-          </div>
-        ) : (
-          <>
-            <div
-              style={{
-                marginBottom: "1rem",
-                color: "#666",
-                fontSize: "0.95rem",
-              }}
-            >
-              Найдено товаров: {filteredProducts.length}
-            </div>
-            <div className="products-grid">
-              {filteredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          </>
-        )}
-
-        <style jsx>{`
-          .filter-btn:hover {
-            border-color: #2a9d4e !important;
-          }
-
-          .catalog-description {
-            color: #6b7280;
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
-          }
-
-          @media (max-width: 768px) {
-            .model-filters {
-              font-size: 0.9rem;
-            }
-
-            .filter-btn {
-              font-size: 0.85rem;
-              padding: 0.4rem 0.8rem !important;
-            }
-          }
-        `}</style>
+        <Link href="/catalog/parts" className="btn btn-secondary">
+          ← Назад
+        </Link>
       </div>
     </div>
   );
