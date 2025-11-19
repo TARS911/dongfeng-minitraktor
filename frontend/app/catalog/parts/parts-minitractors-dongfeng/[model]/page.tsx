@@ -14,9 +14,11 @@ interface Product {
   price: number;
   old_price?: number;
   image_url: string;
+  category_id: number;
   manufacturer?: string;
   model?: string;
   in_stock?: boolean;
+  is_featured?: boolean;
 }
 
 export default function DongFengModelPage() {
