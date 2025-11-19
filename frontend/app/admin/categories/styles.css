@@ -219,6 +219,102 @@
   color: #dc3545;
 }
 
+/* Фильтры */
+.filters {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.filters .form-group {
+  margin-bottom: 0;
+}
+
+.filters select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.filters select:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+/* Товары */
+.product-card {
+  /* Наследуем стили от category-card */
+}
+
+.product-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  color: #212529;
+}
+
+.product-article {
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  color: #6c757d;
+  margin: 5px 0;
+}
+
+.product-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: #dc2626;
+  margin: 10px 0;
+}
+
+.product-brand,
+.product-category {
+  font-size: 14px;
+  color: #495057;
+  margin: 5px 0;
+}
+
+.product-stock {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.product-stock.in-stock {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.product-stock.out-of-stock {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.products-stats {
+  text-align: right;
+  margin-bottom: 15px;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
   .admin-header {
@@ -238,5 +334,13 @@
 
   .category-actions button {
     flex: 1;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
   }
 }

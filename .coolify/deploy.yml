@@ -1,0 +1,56 @@
+# Coolify deployment configuration
+# https://coolify.io/docs
+
+version: "1.0"
+
+# Build configuration
+build:
+  context: ./frontend
+  dockerfile: Dockerfile
+  args:
+    - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+    - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+
+# Runtime configuration
+deploy:
+  replicas: 1
+  restart_policy: always
+
+  # Health check
+  healthcheck:
+    test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000"]
+    interval: 30s
+    timeout: 10s
+    retries: 3
+    start_period: 40s
+
+  # Resource limits
+  resources:
+    limits:
+      cpus: '1.0'
+      memory: 1G
+    reservations:
+      cpus: '0.5'
+      memory: 512M
+
+# Environment variables (set in Coolify UI)
+# - NEXT_PUBLIC_SUPABASE_URL
+# - NEXT_PUBLIC_SUPABASE_ANON_KEY
+# - SUPABASE_SERVICE_ROLE_KEY
+# - NODE_ENV=production
+
+# Port mapping
+ports:
+  - "3000:3000"
+
+# Persistent volumes (if needed)
+volumes:
+  - name: cache
+    path: /app/.next/cache
+
+# Logging
+logging:
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
