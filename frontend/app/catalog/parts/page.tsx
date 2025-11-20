@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Полностью динамическая генерация - не pre-render при билде
+// Полностью динамическая генерация
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 

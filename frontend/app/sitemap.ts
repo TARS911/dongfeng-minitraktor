@@ -6,6 +6,9 @@ import { supabase } from "./lib/supabase";
  * Автоматически генерирует sitemap на основе данных из БД
  */
 
+export const dynamic = "force-dynamic";
+export const revalidate = 3600; // Обновлять каждый час
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://beltehferm.netlify.app";
 

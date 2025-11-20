@@ -7,6 +7,11 @@ const nextConfig = {
   // Для Docker нужен standalone output
   output: "standalone",
 
+  // Для IPFS нужен статичный экспорт (закомментировано)
+  // output: "export",
+  // basePath: "",
+  // trailingSlash: true,
+
   // Исправляем workspace root warning (закомментировано для Docker)
   // outputFileTracingRoot: require("path").join(__dirname, "../"),
 
@@ -14,12 +19,12 @@ const nextConfig = {
   images: {
     domains: [
       "dpsykseeqloturowdyzf.supabase.co",
-      "xn----7sbabpgpk4bsbesjp1f.xn--p1ai", // agrodom.ru
+      "xn----7sbabpgpk4bsbesjp1f.xn--p1ai",
     ],
     formats: ["image/webp", "image/avif"],
-    deviceSizes: [640, 750, 828, 1080, 1200],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256],
     minimumCacheTTL: 60,
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 
   // Отключаем строгий режим для production
@@ -29,6 +34,9 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["@supabase/supabase-js"],
   },
+
+  // Увеличиваем таймаут для статической генерации
+  staticPageGenerationTimeout: 180,
 
   // Убираем export - используем SSR для Netlify
   // output: "export",
