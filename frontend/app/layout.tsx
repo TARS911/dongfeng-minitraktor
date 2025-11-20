@@ -12,6 +12,7 @@ import { AuthProvider } from "./context/AuthContext";
 import ServiceWorkerRegister from "./components/ServiceWorkerRegister";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import SkipLinks from "./components/SkipLinks";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 // TODO: Вернуть позже - темная/светлая тема
 // import { ThemeProvider } from "./context/ThemeContext";
 
@@ -214,6 +215,7 @@ export default function RootLayout({
           </CartProvider>
         </AuthProvider>
         {/* </ThemeProvider> */}
+        <SpeedInsights />
       </body>
     </html>
   );
