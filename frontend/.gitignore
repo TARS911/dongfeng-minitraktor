@@ -36,3 +36,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+products_to_check_manually.json
+watermarked_products.json
+export_*.json
