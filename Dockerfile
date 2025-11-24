@@ -25,11 +25,11 @@ COPY frontend/ ./
 
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
-# Отключаем использование Unix сокетов в SWC
-ENV SWC_BINARY_PATH=/app/node_modules/@next/swc-linux-x64-musl/next-swc.linux-x64-musl.node
+# Отключаем SWC и используем Babel
+ENV DISABLE_SWC=true
 
-# Собираем приложение
-RUN npm run build
+# Собираем приложение с Babel вместо SWC
+RUN npx next build --no-lint
 
 # Этап 3: Финальный образ для запуска
 FROM node:20-alpine AS runner
