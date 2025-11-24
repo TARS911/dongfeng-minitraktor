@@ -17,17 +17,19 @@ RUN npm ci --ignore-scripts --allow-root
 FROM node:20-alpine AS builder
 WORKDIR /app
 
-# Создаем /tmp с правильными правами для Unix сокетов
-RUN mkdir -p /tmp && chmod 1777 /tmp
+# Создаем /tmp и /run с правильными правами для Unix сокетов
+RUN mkdir -p /tmp /run && chmod 1777 /tmp /run
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY frontend/ ./
 
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
+# Отключаем использование Unix сокетов в SWC
+ENV SWC_BINARY_PATH=/app/node_modules/@next/swc-linux-x64-musl/next-swc.linux-x64-musl.node
 
-# Собираем приложение от root с allow-root
-RUN npm run build --allow-root
+# Собираем приложение
+RUN npm run build
 
 # Этап 3: Финальный образ для запуска
 FROM node:20-alpine AS runner
