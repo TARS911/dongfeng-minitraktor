@@ -1,13 +1,19 @@
 services:
   dongfeng-web:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      # Разрешаем привилегированный режим для сборки
+      args:
+        - DOCKER_BUILDKIT=1
     container_name: dongfeng-minitraktor
     restart: always
     ports:
       - "3001:3000"
-    # Отключаем ограничения seccomp для решения проблем с Unix сокетами
+    # Отключаем ограничения seccomp для контейнера
     security_opt:
       - seccomp=unconfined
+    privileged: true
     environment:
       # Облачный Supabase
       - NEXT_PUBLIC_SUPABASE_URL=https://dpsykseeqloturowdyzf.supabase.co
