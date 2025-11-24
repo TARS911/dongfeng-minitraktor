@@ -10,8 +10,8 @@ COPY frontend/package.json frontend/package-lock.json* ./
 ENV SKIP_SENTRY_DOWNLOAD=1
 ENV SKIP_INSTALL_SIMPLE_GIT_HOOKS=1
 
-# Устанавливаем зависимости от имени root с allow-root
-RUN npm ci --ignore-scripts --allow-root
+# Устанавливаем зависимости от имени root с allow-root и unsafe-perm
+RUN npm ci --ignore-scripts --unsafe-perm --allow-root
 
 # Этап 2: Сборка приложения
 FROM node:20-alpine AS builder
