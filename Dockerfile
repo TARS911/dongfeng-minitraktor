@@ -8,7 +8,7 @@ WORKDIR /app
 
 # Install dependencies
 COPY frontend/package.json frontend/package-lock.json* ./
-RUN npm ci --unsafe-perm
+RUN npm ci --ignore-scripts && npm rebuild
 
 # Rebuild the source code only when needed
 FROM base AS builder
