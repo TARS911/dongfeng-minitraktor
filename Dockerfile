@@ -8,7 +8,9 @@ WORKDIR /app
 
 # Install dependencies
 COPY frontend/package.json frontend/package-lock.json* ./
-RUN npm ci --ignore-scripts && npm rebuild
+ENV SKIP_SENTRY_DOWNLOAD=1
+ENV SKIP_INSTALL_SIMPLE_GIT_HOOKS=1
+RUN npm ci --ignore-scripts
 
 # Rebuild the source code only when needed
 FROM base AS builder
