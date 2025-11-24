@@ -15,6 +15,10 @@ RUN npm ci --ignore-scripts
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
+
+# Create temp directory with proper permissions
+RUN mkdir -p /tmp && chmod 1777 /tmp
+
 COPY --from=deps /app/node_modules ./node_modules
 COPY frontend ./
 
