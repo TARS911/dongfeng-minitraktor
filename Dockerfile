@@ -1,44 +1,42 @@
-# Dockerfile для Next.js 16
-FROM node:20-alpine AS base
-
-# Install dependencies only when needed
-FROM base AS deps
+# Этап 1: Установка зависимостей
+FROM node:20-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-# Install dependencies
+# Копируем только файлы зависимостей
 COPY frontend/package.json frontend/package-lock.json* ./
+
+# Пропускаем постинсталл скрипты для избежания проблем с правами
 ENV SKIP_SENTRY_DOWNLOAD=1
 ENV SKIP_INSTALL_SIMPLE_GIT_HOOKS=1
-RUN npm ci --ignore-scripts
 
-# Rebuild the source code only when needed
-FROM base AS builder
+# Устанавливаем зависимости от имени root с allow-root
+RUN npm ci --ignore-scripts --allow-root
+
+# Этап 2: Сборка приложения
+FROM node:20-alpine AS builder
 WORKDIR /app
-
-# Create temp directory with proper permissions
-RUN mkdir -p /tmp && chmod 1777 /tmp
 
 COPY --from=deps /app/node_modules ./node_modules
-COPY frontend ./
+COPY frontend/ ./
 
-# Next.js collects completely anonymous telemetry data about general usage.
-# Uncomment the following line to disable telemetry during the build.
-ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV=production
 
-# Build Next.js
+# Собираем приложение
 RUN npm run build
 
-# Production image, copy all the files and run next
-FROM base AS runner
+# Этап 3: Финальный образ для запуска
+FROM node:20-alpine AS runner
 WORKDIR /app
 
-ENV NODE_ENV production
-ENV NEXT_TELEMETRY_DISABLED 1
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
+# Копируем собранное приложение с правильным владельцем
 COPY --from=builder /app/public ./public
 
 # Set the correct permission for prerender cache
@@ -53,7 +51,7 @@ USER nextjs
 
 EXPOSE 3000
 
-ENV PORT 3000
-ENV HOSTNAME "0.0.0.0"
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
 
 CMD ["node", "server.js"]
