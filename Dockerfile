@@ -17,14 +17,17 @@ RUN npm ci --ignore-scripts --allow-root
 FROM node:20-alpine AS builder
 WORKDIR /app
 
+# Создаем /tmp с правильными правами для Unix сокетов
+RUN mkdir -p /tmp && chmod 1777 /tmp
+
 COPY --from=deps /app/node_modules ./node_modules
 COPY frontend/ ./
 
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 
-# Собираем приложение
-RUN npm run build
+# Собираем приложение от root с allow-root
+RUN npm run build --allow-root
 
 # Этап 3: Финальный образ для запуска
 FROM node:20-alpine AS runner
