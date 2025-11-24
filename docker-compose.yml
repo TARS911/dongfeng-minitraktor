@@ -5,6 +5,9 @@ services:
     restart: always
     ports:
       - "3001:3000"
+    # Отключаем ограничения seccomp для решения проблем с Unix сокетами
+    security_opt:
+      - seccomp=unconfined
     environment:
       # Облачный Supabase
       - NEXT_PUBLIC_SUPABASE_URL=https://dpsykseeqloturowdyzf.supabase.co
