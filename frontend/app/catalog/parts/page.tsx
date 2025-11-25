@@ -71,11 +71,6 @@ const partsCategories: { name: string; slug: string; description: string }[] = [
     description: "Газонокосилки, триммеры, кусторезы",
   },
   {
-    name: "Запчасти на Электрогенераторы",
-    slug: "parts-generators",
-    description: "AVR, щетки, статоры, роторы",
-  },
-  {
     name: "Топливная система",
     slug: "parts-fuel-system",
     description: "Баки, насосы, краны, карбюраторы",
