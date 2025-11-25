@@ -51,11 +51,6 @@ const partsCategories: { name: string; slug: string; description: string }[] = [
     description: "Зубр, Crosser с колесом 16\"",
   },
   {
-    name: "Запчасти на Мотоблоки",
-    slug: "parts-motoblocks",
-    description: "Garden, Скаут, Прораб, Булат",
-  },
-  {
     name: "Запчасти на Навесное оборудование и садовую технику",
     slug: "parts-attachments",
     description: "Плуги, культиваторы, косилки, газонокосилки, триммеры",
