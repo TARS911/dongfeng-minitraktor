@@ -1,0 +1,91 @@
+{
+	"threadHistory": [
+		{
+			"thread": [
+				"FILES/ВСЕ ТОВАРЫ.md"
+			],
+			"currentNode": "FILES/ВСЕ ТОВАРЫ.md"
+		},
+		{
+			"thread": [
+				"FILES/New Folder"
+			],
+			"currentNode": "FILES/New Folder"
+		},
+		{
+			"thread": [
+				"FILES/New Folder/ЗАПЧАСТИ.md"
+			],
+			"currentNode": "FILES/New Folder/ЗАПЧАСТИ.md"
+		},
+		{
+			"thread": [
+				"FILES/ВСЕ ТОВАРЫ.md"
+			],
+			"currentNode": "FILES/ВСЕ ТОВАРЫ.md"
+		},
+		{
+			"thread": [
+				"FILES/New Folder"
+			],
+			"currentNode": "FILES/New Folder"
+		},
+		{
+			"thread": [
+				"FILES/ВСЕ ТОВАРЫ.md"
+			],
+			"currentNode": "FILES/ВСЕ ТОВАРЫ.md"
+		},
+		{
+			"thread": [
+				"FILES/New Folder/ЗАПЧАСТИ.md",
+				"FILES/ВСЕ ТОВАРЫ.md"
+			],
+			"currentNode": "FILES/ВСЕ ТОВАРЫ.md"
+		},
+		{
+			"thread": [
+				"FILES/New Folder/ЗАПЧАСТИ.md",
+				"FILES/ВСЕ ТОВАРЫ.md"
+			],
+			"currentNode": "FILES/New Folder/ЗАПЧАСТИ.md"
+		},
+		{
+			"thread": [
+				"FILES/ВСЕ ТОВАРЫ.md"
+			],
+			"currentNode": "FILES/ВСЕ ТОВАРЫ.md"
+		},
+		{
+			"thread": [],
+			"currentNode": null
+		},
+		{
+			"thread": [
+				"FILES/New Folder/ЗАПЧАСТИ.md"
+			],
+			"currentNode": "FILES/New Folder/ЗАПЧАСТИ.md"
+		},
+		{
+			"thread": [],
+			"currentNode": null
+		},
+		{
+			"thread": [
+				"FILES/New Folder"
+			],
+			"currentNode": "FILES/New Folder"
+		},
+		{
+			"thread": [],
+			"currentNode": null
+		}
+	],
+	"threadIndex": 13,
+	"previousSession": "",
+	"map": {
+		"nodes": {},
+		"connections": []
+	},
+	"version": 1
+}

@@ -1,0 +1,15 @@
+module.exports = {
+  apps: [{
+    name: 'dongfeng',
+    script: '.next/standalone/dongfeng-minitraktor/frontend/server.js',
+    cwd: '/home/ibm/dongfeng-minitraktor/frontend',
+    env: {
+      PORT: 3001,
+      NODE_ENV: 'production',
+      NEXT_PUBLIC_SUPABASE_URL: 'https://dpsykseeqloturowdyzf.supabase.co',
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRwc3lrc2VlcWxvdHVyb3dkeXpmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1MDI4NTMsImV4cCI6MjA3ODA3ODg1M30.vAWTLffyUaQsbZPJvlvdJzUOtdvGSGthxvAvEBhFeO4',
+      SUPABASE_SERVICE_ROLE_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRwc3lrc2VlcWxvdHVyb3dkeXpmIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MjUwMjg1MywiZXhwIjoyMDc4MDc4ODUzfQ.wY2VoghxdIhgwEws_kUIUgZX1P3TTw-1PXh84GVbdJ4',
+      HOSTNAME: '0.0.0.0'
+    }
+  }]
+}

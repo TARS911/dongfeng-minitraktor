@@ -1,0 +1,40 @@
+{
+	"directoryView": {
+		"openDirectories": [],
+		"selection": [
+			"FILES/New Folder"
+		],
+		"sortMode": "name|ascending",
+		"sortFoldersToTop": true,
+		"sortQueriesToTop": true
+	},
+	"tagTreeView": {
+		"openDirectories": [],
+		"selection": [
+			"FILES/New Folder"
+		],
+		"sortMode": "name|ascending",
+		"sortFoldersToTop": true,
+		"sortQueriesToTop": true
+	},
+	"leftSidebar": {
+		"size": 300,
+		"mode": 1,
+		"lastUnfocusedMode": 1,
+		"lastFocusedMode": 0,
+		"currentTab": "files"
+	},
+	"targetFocusModeLevel": 2,
+	"system": {
+		"showMenu": false,
+		"section": null
+	},
+	"version": 3,
+	"window_state": {
+		"x": 0,
+		"y": 32,
+		"width": 1920,
+		"height": 1008,
+		"fullscreen": false
+	}
+}
