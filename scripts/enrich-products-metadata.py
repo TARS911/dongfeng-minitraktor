@@ -8,6 +8,7 @@
 import os
 import json
 import re
+import time
 from supabase import Client, create_client
 
 # Supabase setup
@@ -15,157 +16,209 @@ url = os.environ.get("SUPABASE_URL") or os.environ.get("NEXT_PUBLIC_SUPABASE_URL
 key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
 supabase: Client = create_client(url, key)
 
-# Маппинг файлов на метаданные
-# Формат: "путь/к/файлу.json": {"type": "parts/engines", "brand": "DongFeng", "model": "DF-240"}
+# ВСЕ JSON файлы из parsed_data с метаданными
 FILE_METADATA_MAPPING = {
+    # ============================================================================
+    # ZIP-AGRO (31 файл)
+    # ============================================================================
+
     # ФИЛЬТРЫ
     "../parsed_data/zip-agro/zip-agro-filters.json": {
         "part_type": "filter",
-        "category": "parts",
+        "category": "parts-filters",
     },
 
     # ТОПЛИВНАЯ СИСТЕМА
     "../parsed_data/zip-agro/zip-agro-fuel-system.json": {
         "part_type": "fuel-system",
-        "category": "parts",
+        "category": "parts-fuel-system",
     },
 
     # НАСОСЫ
     "../parsed_data/zip-agro/zip-agro-pumps-hydraulic-fuel.json": {
         "part_type": "pump",
-        "category": "parts",
+        "category": "parts-hydraulics",
+    },
+
+    # КПП
+    "../parsed_data/zip-agro/zip-agro-kpp-parts.json": {
+        "part_type": "transmission",
+        "category": "parts-minitractors",
     },
 
     # ДВС В СБОРЕ
     "../parsed_data/zip-agro/zip-agro-dvigateli-dlya-minitraktorov.json": {
         "part_type": "engine-assembled",
-        "category": "engines",
+        "category": "engines-assembled",
     },
 
-    # ЗАПЧАСТИ НА ДВС - R180
+    # ЗАПЧАСТИ ДВИГАТЕЛЕЙ - R180
     "../parsed_data/zip-agro/zip-agro-r180ne-parts.json": {
         "part_type": "engine-part",
         "engine_model": "R180",
         "category": "parts-engines",
     },
 
-    # ЗАПЧАСТИ НА ДВС - R190
+    # ЗАПЧАСТИ ДВИГАТЕЛЕЙ - R190
     "../parsed_data/zip-agro/zip-agro-r190ne-parts.json": {
         "part_type": "engine-part",
         "engine_model": "R190",
         "category": "parts-engines",
     },
 
-    # ЗАПЧАСТИ НА ДВС - R195
+    # ЗАПЧАСТИ ДВИГАТЕЛЕЙ - R195
     "../parsed_data/zip-agro/zip-agro-r195ne-parts.json": {
         "part_type": "engine-part",
         "engine_model": "R195",
         "category": "parts-engines",
     },
 
-    # ЗАПЧАСТИ НА ДВС - ZS1100/ZS1115
+    # ЗАПЧАСТИ ДВИГАТЕЛЕЙ - ZS1100/ZS1115
     "../parsed_data/zip-agro/zip-agro-zs1100-1115-parts.json": {
         "part_type": "engine-part",
         "engine_model": "ZS1100/ZS1115",
         "category": "parts-engines",
     },
 
-    # ЗАПЧАСТИ НА ДВС - KM385/LL380
+    # ЗАПЧАСТИ ДВИГАТЕЛЕЙ - KM385/LL380
     "../parsed_data/zip-agro/zip-agro-km385-ll380-parts.json": {
         "part_type": "engine-part",
         "engine_model": "KM385/LL380",
         "category": "parts-engines",
     },
 
-    "../parsed_data/tata-agro/tata-agro-km385vt-engine.json": {
-        "part_type": "engine-part",
-        "engine_model": "KM385BT",
-        "category": "parts-engines",
-    },
-
-    # ЗАПЧАСТИ НА ДВС - ZN490
+    # ЗАПЧАСТИ ДВИГАТЕЛЕЙ - ZN490
     "../parsed_data/zip-agro/zip-agro-zn490bt-parts.json": {
         "part_type": "engine-part",
         "engine_model": "ZN490",
         "category": "parts-engines",
     },
 
+    # ЗАПЧАСТИ МИНИТРАКТОРОВ - DongFeng (все)
+    "../parsed_data/zip-agro/zip-agro-dongfeng-all.json": {
+        "part_type": "minitractor-part",
+        "category": "parts-minitractors-dongfeng",
+    },
+
+    # ЗАПЧАСТИ МИНИТРАКТОРОВ - DongFeng 240/244
+    "../parsed_data/zip-agro/zip-agro-dongfeng-240-244.json": {
+        "part_type": "minitractor-part",
+        "model": "DF-240/DF-244",
+        "category": "parts-minitractors-dongfeng",
+    },
+
+    # ЗАПЧАСТИ МИНИТРАКТОРОВ - DongFeng 354/404
+    "../parsed_data/zip-agro/zip-agro-dongfeng-354-404.json": {
+        "part_type": "minitractor-part",
+        "model": "DF-354/DF-404",
+        "category": "parts-minitractors-dongfeng",
+    },
+
+    # ЗАПЧАСТИ МИНИТРАКТОРОВ - Foton (все)
+    "../parsed_data/zip-agro/zip-agro-foton-all.json": {
+        "part_type": "minitractor-part",
+        "category": "parts-minitractors-foton",
+    },
+
+    # ЗАПЧАСТИ МИНИТРАКТОРОВ - Jinma (все)
+    "../parsed_data/zip-agro/zip-agro-jinma-all.json": {
+        "part_type": "minitractor-part",
+        "category": "parts-minitractors-jinma",
+    },
+
+    # ЗАПЧАСТИ МИНИТРАКТОРОВ - Xingtai (все)
+    "../parsed_data/zip-agro/zip-agro-xingtai-all-sorted.json": {
+        "part_type": "minitractor-part",
+        "category": "parts-minitractors-xingtai",
+    },
+
+    # ЗАПЧАСТИ МИНИТРАКТОРОВ - Xingtai 120
+    "../parsed_data/zip-agro/zip-agro-xingtai-120-parts.json": {
+        "part_type": "minitractor-part",
+        "model": "XT-120",
+        "category": "parts-minitractors-xingtai",
+    },
+
+    # ЗАПЧАСТИ МИНИТРАКТОРОВ - Xingtai 120 (двигатель)
+    "../parsed_data/zip-agro/zip-agro-xingtai-120-engine-parts.json": {
+        "part_type": "engine-part",
+        "model": "XT-120",
+        "category": "parts-engines",
+    },
+
+    # ЗАПЧАСТИ МИНИТРАКТОРОВ - Xingtai XT-180
+    "../parsed_data/zip-agro/zip-agro-xingtai-xt-180-parts.json": {
+        "part_type": "minitractor-part",
+        "model": "XT-180",
+        "category": "parts-minitractors-xingtai",
+    },
+
+    # ============================================================================
+    # TATA-AGRO (11 файлов)
+    # ============================================================================
+
+    # ЗАПЧАСТИ МИНИТРАКТОРОВ - DongFeng
+    "../parsed_data/tata-agro/tata-agro-dongfeng.json": {
+        "part_type": "minitractor-part",
+        "category": "parts-minitractors-dongfeng",
+    },
+
+    # ЗАПЧАСТИ МИНИТРАКТОРОВ - Foton
+    "../parsed_data/tata-agro/tata-agro-foton.json": {
+        "part_type": "minitractor-part",
+        "category": "parts-minitractors-foton",
+    },
+
+    # ЗАПЧАСТИ МИНИТРАКТОРОВ - Jinma
+    "../parsed_data/tata-agro/tata-agro-jinma.json": {
+        "part_type": "minitractor-part",
+        "category": "parts-minitractors-jinma",
+    },
+
+    # ЗАПЧАСТИ МИНИТРАКТОРОВ - Xingtai
+    "../parsed_data/tata-agro/tata-agro-xingtai.json": {
+        "part_type": "minitractor-part",
+        "category": "parts-minitractors-xingtai",
+    },
+
+    # ЗАПЧАСТИ МИНИТРАКТОРОВ - Xingtai 24B
+    "../parsed_data/tata-agro/tata-agro-xingtai-24b.json": {
+        "part_type": "minitractor-part",
+        "model": "XT-24B",
+        "category": "parts-minitractors-xingtai",
+    },
+
+    # ЗАПЧАСТИ ДВИГАТЕЛЕЙ - KM385BT
+    "../parsed_data/tata-agro/tata-agro-km385vt-engine.json": {
+        "part_type": "engine-part",
+        "engine_model": "KM385BT",
+        "category": "parts-engines",
+    },
+
+    # ЗАПЧАСТИ ДВИГАТЕЛЕЙ - ZN490BT
     "../parsed_data/tata-agro/tata-agro-zn490bt-engine.json": {
         "part_type": "engine-part",
         "engine_model": "ZN490",
         "category": "parts-engines",
     },
 
-    # ЗАПЧАСТИ МИНИТРАКТОРОВ - DongFeng
-    "../parsed_data/zip-agro/zip-agro-dongfeng-all.json": {
-        "part_type": "minitractor-part",
-        "manufacturer": "DongFeng",
-        "category": "parts-minitractors",
+    # ЗАПЧАСТИ МОТОТРАКТОРОВ - Зубр 16
+    "../parsed_data/tata-agro/tata-agro-zubr-16.json": {
+        "part_type": "mototractor-part",
+        "manufacturer": "ZUBR",
+        "category": "parts-mototractors",
     },
 
-    "../parsed_data/zip-agro/zip-agro-dongfeng-240-244.json": {
-        "part_type": "minitractor-part",
-        "manufacturer": "DongFeng",
-        "model": "DF-240/DF-244",
-        "category": "parts-minitractors",
-    },
-
-    "../parsed_data/zip-agro/zip-agro-dongfeng-354-404.json": {
-        "part_type": "minitractor-part",
-        "manufacturer": "DongFeng",
-        "model": "DF-354/DF-404",
-        "category": "parts-minitractors",
-    },
-
-    "../parsed_data/tata-agro/tata-agro-dongfeng.json": {
-        "part_type": "minitractor-part",
-        "manufacturer": "DongFeng",
-        "category": "parts-minitractors",
-    },
-
-    # ЗАПЧАСТИ МИНИТРАКТОРОВ - Foton
-    "../parsed_data/zip-agro/zip-agro-foton-all.json": {
-        "part_type": "minitractor-part",
-        "manufacturer": "Foton",
-        "category": "parts-minitractors",
-    },
-
-    "../parsed_data/tata-agro/tata-agro-foton.json": {
-        "part_type": "minitractor-part",
-        "manufacturer": "Foton",
-        "category": "parts-minitractors",
-    },
-
-    # ЗАПЧАСТИ МИНИТРАКТОРОВ - Jinma
-    "../parsed_data/zip-agro/zip-agro-jinma-all.json": {
-        "part_type": "minitractor-part",
-        "manufacturer": "Jinma",
-        "category": "parts-minitractors",
-    },
-
-    "../parsed_data/tata-agro/tata-agro-jinma.json": {
-        "part_type": "minitractor-part",
-        "manufacturer": "Jinma",
-        "category": "parts-minitractors",
-    },
-
-    # ЗАПЧАСТИ МИНИТРАКТОРОВ - Xingtai
-    "../parsed_data/zip-agro/zip-agro-xingtai-all-sorted.json": {
-        "part_type": "minitractor-part",
-        "manufacturer": "Xingtai",
-        "category": "parts-minitractors",
-    },
-
-    "../parsed_data/tata-agro/tata-agro-xingtai.json": {
-        "part_type": "minitractor-part",
-        "manufacturer": "Xingtai",
-        "category": "parts-minitractors",
-    },
-
-    # ЗАПЧАСТИ МОТОТРАКТОРОВ
+    # ЗАПЧАСТИ МОТОТРАКТОРОВ - мототрактор 16"
     "../parsed_data/tata-agro/tata-agro-mototraktor-16.json": {
         "part_type": "mototractor-part",
         "category": "parts-mototractors",
+    },
+
+    # ЗАПЧАСТИ НА САДОВУЮ ТЕХНИКУ
+    "../parsed_data/tata-agro/tata-agro-garden.json": {
+        "part_type": "garden-equipment-part",
+        "category": "parts-attachments",
     },
 }
 
@@ -195,6 +248,8 @@ def enrich_file(file_path: str, metadata: dict):
     for product_data in products_data:
         title = product_data.get("title", "")
         url = product_data.get("url", "")
+        # ВАЖНО: Берем бренд из JSON файла, а не из метаданных!
+        brand_from_json = product_data.get("brand", "")
 
         if not title:
             continue
@@ -212,8 +267,10 @@ def enrich_file(file_path: str, metadata: dict):
         # Формируем обновления
         update_data = {}
 
-        # Обновляем manufacturer если указан в метаданных
-        if "manufacturer" in metadata and metadata["manufacturer"]:
+        # ПРИОРИТЕТ: Сначала берем бренд из JSON файла, потом из метаданных
+        if brand_from_json and brand_from_json not in ["Неизвестно", "Unknown", ""]:
+            update_data["manufacturer"] = brand_from_json
+        elif "manufacturer" in metadata and metadata["manufacturer"]:
             update_data["manufacturer"] = metadata["manufacturer"]
 
         # Обновляем model если указан в метаданных
@@ -233,12 +290,27 @@ def enrich_file(file_path: str, metadata: dict):
         if "category" in metadata:
             new_specs["category"] = metadata["category"]
 
+        # Добавляем бренд и в specifications для удобства фильтрации
+        if brand_from_json and brand_from_json not in ["Неизвестно", "Unknown", ""]:
+            new_specs["brand"] = brand_from_json
+
         update_data["specifications"] = new_specs
 
-        # Обновляем товар
+        # Обновляем товар с retry логикой
         if update_data:
-            supabase.table("products").update(update_data).eq("id", product["id"]).execute()
-            updated += 1
+            max_retries = 3
+            for attempt in range(max_retries):
+                try:
+                    supabase.table("products").update(update_data).eq("id", product["id"]).execute()
+                    updated += 1
+                    break
+                except Exception as e:
+                    if attempt < max_retries - 1:
+                        print(f"   ⚠️  Ошибка при обновлении, попытка {attempt + 1}/{max_retries}...")
+                        time.sleep(2)
+                    else:
+                        print(f"   ❌ Не удалось обновить товар: {title[:40]}")
+                        skipped += 1
 
     print(f"   ✅ Обновлено: {updated} | Пропущено: {skipped}")
     return updated, skipped
