@@ -14,7 +14,6 @@ const minitractorBrands = [
   { name: "МиниТрактора Foton/Lovol", slug: "parts-minitractors-foton" },
   { name: "МиниТрактора Jinma", slug: "parts-minitractors-jinma" },
   { name: "МиниТрактора Xingtai/Уралец", slug: "parts-minitractors-xingtai" },
-  { name: "Shifeng", slug: "parts-minitractors-shifeng" },
 ];
 
 // Маппинг брендов
