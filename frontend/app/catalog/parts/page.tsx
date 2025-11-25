@@ -36,11 +36,6 @@ export const revalidate = 0;
 // Список подкатегорий запчастей
 const partsCategories: { name: string; slug: string; description: string }[] = [
   {
-    name: "ДВС в Сборе",
-    slug: "engines-assembled",
-    description: "Двигатели внутреннего сгорания в сборе",
-  },
-  {
     name: "Запчасти на ДВС",
     slug: "parts-engines",
     description: "Поршни, кольца, прокладки, клапаны",

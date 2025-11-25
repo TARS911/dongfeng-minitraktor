@@ -54,10 +54,10 @@ export default async function CatalogPage() {
   const { data: allCategories } = await supabase
     .from("categories")
     .select("*")
-    .in("slug", ["mini-tractors", "equipment", "parts"]);
+    .in("slug", ["mini-tractors", "equipment", "engines-assembled", "parts"]);
 
-  // Сортируем: Мини-тракторы, Коммунальная техника, Запчасти
-  const categoryOrder = ["mini-tractors", "equipment", "parts"];
+  // Сортируем: Мини-тракторы, Коммунальная техника, ДВС в Сборе, Запчасти
+  const categoryOrder = ["mini-tractors", "equipment", "engines-assembled", "parts"];
   const categories = allCategories?.sort((a, b) => {
     return categoryOrder.indexOf(a.slug) - categoryOrder.indexOf(b.slug);
   });
@@ -177,8 +177,9 @@ export default async function CatalogPage() {
 
 function getCategoryIcon(slug: string): React.ReactElement {
   const icons: { [key: string]: React.ReactElement } = {
-    minitractory: <TractorIcon className="inline-icon" />,
-    "communal-equipment": <TruckIcon className="inline-icon" />,
+    "mini-tractors": <TractorIcon className="inline-icon" />,
+    equipment: <TruckIcon className="inline-icon" />,
+    "engines-assembled": <BoltIcon className="inline-icon" />,
     parts: <CogsIcon className="inline-icon" />,
   };
   return icons[slug] || <BoxIcon className="inline-icon" />;
