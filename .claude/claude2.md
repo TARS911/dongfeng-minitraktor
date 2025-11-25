@@ -1,124 +1,346 @@
-# Project rules
-- AI Hub - a web application for automatic news collection with subsequent rewriting and publishing on the website, as well as in Telegram bot and Telegram channel.
-- Main mechanism - a processing pipeline with 5 stages (parsing, sorting, AI rewrite, quality assessment, publishing), some stages have sub-stages.
-- All processing except the parsing stage is done using AI, connected to the project AI Providers (OpenRouter, Qwen, Grok, Kilo Code). Currently working only with OpenRouter.
+# DongFeng Mini-Tractor E-Commerce Project
 
-## Task Execution Order
+## Project Overview
+- **Name**: DongFeng Mini-Tractor Shop
+- **Type**: E-commerce website for mini-tractors and spare parts
+- **Target**: Russian market (Belarus, Kazakhstan)
+- **Brands**: DongFeng, Foton, Jinma, Xingtai, Universal parts
+- **Production**: https://frontend-e3j8bav75-iskanders-projects-7d563bb7.vercel.app
 
-### 1. Analysis Phase
-- Study the current implementation and documentation
-- Ask clarifying questions to understand:
-  - Project-specific features and constraints
-  - Potential impact on other system components
-  - Edge cases and dependencies
+## Technology Stack
 
-### 2. Implementation Phase
-- Write new or edit existing code
-- After each file edit, run the linter to check for errors
-- Fix any linter errors immediately before proceeding
+### Frontend
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel
+- **Analytics**: Vercel Speed Insights
+- **Mode**: Dynamic SSR (standalone output)
 
-### 3. Quality Assurance Phase
-**IMPORTANT: Subagents must be launched strictly sequentially. The next subagent is only started after receiving a complete report from the previous one.**
+### Backend
+- **Database**: Supabase (PostgreSQL)
+- **Authentication**: Supabase Auth
+- **Storage**: Supabase Storage
+- **API**: Supabase REST API + Server Actions
 
-- Run the `code-reviewer` agent to ensure code quality
-  - Wait for completion and report delivery
-- Run the `test-engineer` agent to verify functionality
-  - Wait for completion and report delivery
-- Run the `docs-updater` agent to keep documentation synchronized
-  - Wait for completion and report delivery
+### Data Sources
+- **Parsed data**: `parsed_data/` folder
+  - `zip-agro/` - primary source (2,323 products)
+  - `tata-agro/` - secondary source (1,932 products)
+  - `agrodom/` - additional source
+- **Total products**: 10,952 in database
 
-### 4. Final Verification
-- Perform final linter check across all modified files
-- Fix any remaining errors immediately
+## Project Structure
 
-## Code Search
-- **Hybrid Search**: Use `mcp__claude-context__search_code` tool to search code across the entire codebase
-  - **Search methods**: Combines BM25 (keyword matching) + Dense Vector (semantic understanding) for optimal results
-  - **Natural language**: "Find authentication logic", "Where is RSS parsing implemented", "Show AI processing pipeline"
-  - **Exact keywords**: `TelegramAuthService`, `processArticleStage`, `handleCallback`
-  - **Mixed queries**: "функция для retry механизма в AI processing", "JWT token generation in auth"
-  - **Multilingual**: Works with both Russian and English queries
-  - **Filtering**: Use `extensionFilter` parameter to search only specific file types (e.g., `['.ts', '.js']`)
-- **Auto-sync**: Index automatically updates when files change (Merkle tree-based incremental indexing)
-- **Parameters**: `path` (absolute), `query` (any format), `limit` (default 10, max 50), `extensionFilter` (optional)
-- **⛔ CRITICALLY FORBIDDEN**: NEVER use `mcp__claude-context__clear_index` command - clearing the index takes hours to rebuild. Indexing continues automatically in background.
-
-## Project rules
-- User authorization is done through Telegram.
-- Production version is located at https://aihubnews.ru/ in the /opt/aihub folder
-- Test admin for frontend and backend login `test@example.com` password `12345678`
-- There is a page for test authorization of regular users without Telegram /dev
-- Do not create any credentials, administrators and users without my permission
-- We store and update documents strictly in the `docs/` folder
-- Every time you create new code, or fix broken code, refer to MCP Context7 to get best practices and examples of ready-made code
-
-### Technology Stack:
-- **Frontend**: Next.js 14+ (App Router), TypeScript, Tailwind CSS
-- **Backend**: Node.js, Express.js, PM2
-- **Database**: PostgreSQL
-- **Queues**: Redis + Bull/BullMQ
-- **Integrations**: Telegram Bot API, RSS/Web parsing
-
-### 📋 Main Documents:
-- `docs/project_architecture.md` - **Project Architecture** (actual implemented architecture of all components)
-  - **UPDATED 2025-10-31**: Dual authentication system details (Admin + User), Bearer tokens in development
-
-### 🗄️ Technical Documentation:
-- `docs/database_schema.md` - **Database Schema** (PostgreSQL structure with models, indexes and retry system)
-- `docs/api_endpoints.md` - **API Documentation** (REST endpoints, centralized API client, monitoring and retry statistics)
-  - **UPDATED 2025-10-31**: Complete admin authentication endpoints (/login, /me, /refresh, /logout) with error codes and cookie configuration
-- `docs/ai_architecture.md` - **AI Architecture** (content processing system through AI with smart retry)
-- `docs/search_system.md` - **Search System** (description of algorithms and technologies for news search)
-- `docs/logging_system.md` - **Logging System** (categorized logs, performance monitoring)
-- `docs/socks_proxy_integration.md` - **SOCKS Proxy Integration** (bypassing regional restrictions of AI providers)
-- `docs/seo_optimization.md` - **SEO Optimization** (structured data JSON-LD, Open Graph, sitemap, robots.txt configuration)
-- `docs/security_authentication.md` - **Security & Authentication** (dual admin/user JWT system, httpOnly cookies, CSRF, rate limiting, headers)
-  - **UPDATED 2025-10-31**: Dual authentication architecture with environment-specific strategies (production vs development), token lifecycle, frontend integration details
-
-### 📱 Additional Documentation:
-- `docs/todo.md` - **Current Tasks** (list of actual tasks and priorities)
-
-## 📱 Logging:
-  - Production (Docker): /app/logs/ inside container
-  - Development: /home/nyx/projects/aihub/logs/
-
-## Testing
-- Main tool: Playwright for all E2E tests
-- If you create any test or temporary files, delete them after completing checks
-- When creating any new code, always create tests for it
-- Do not add excessive logging to the code, only what is really needed for debugging or tracking the application state
-
-## Working with Documentation
-- We store documents strictly in the `docs/` folder
-- Do not create any new documentation after completing tasks unless I explicitly ask for it in the request
-- Documentation is written only for the AI Agent, we write briefly and only the data needed for the AI agent.
-- **CRITICALLY IMPORTANT**: After any changes in the API or project logic, always update the documentation, and important note that you don't need to write about improvements or fixes, you need to make changes to existing documentation sections about how the project currently works
-- **CRITICALLY IMPORTANT**: After completing any task, check if there is a need to update the API or project architecture documentation
-- **AUTOMATIC CHECK**: In each response, forcibly check the relevance of all documentation in the `/docs/` folder
-- **MANDATORY AGENT RUN**: After completing any development task, ALWAYS run the docs-updater agent through the Task tool to check documentation
-- Additionally, briefly describe at the beginning of each file referring to the necessary methods and functions, to clearly know on which lines which method or function is located, to quickly access them without reading the entire file and don't forget about the general recommended file length limit in lines (up to 500 lines), in case of file updates, also update the documentation built into them.
-
-## Development Commands
-
-### 🎯 AUTOMATIC START (recommended):
-```bash
-# Full project start with one command
-./start.sh
-
-# Stop all services (Docker remains)
-./stop.sh
-
-# Stop all services including Docker
-./stop.sh --docker
-
-# Help for stop.sh
-./stop.sh --help
+```
+/home/ibm/dongfeng-minitraktor/
+├── frontend/              # Next.js application
+│   ├── app/              # App Router pages
+│   │   ├── catalog/      # Product catalog
+│   │   │   ├── parts/    # Spare parts categories
+│   │   │   └── [brand]/  # Brand-specific pages
+│   │   ├── about/        # About pages
+│   │   ├── delivery/     # Delivery info
+│   │   └── contacts/     # Contact page
+│   ├── components/       # React components
+│   ├── lib/             # Utilities and Supabase client
+│   └── public/          # Static assets
+├── scripts/             # Python data management scripts
+│   ├── import-*.py      # Import scripts for products
+│   ├── check-watermarks.py  # Image watermark detection
+│   ├── cleanup-and-normalize.py  # Database cleanup
+│   ├── optimize-database.py  # Full optimization workflow
+│   ├── supabase-tools.py  # CLI for database queries
+│   └── create-indexes.sql  # Performance indexes
+├── parsed_data/         # Source data (JSON files)
+└── .claude/             # Claude Code configuration
 ```
 
-### 🔍 Health Checks:
-- **Backend**: http://localhost:3001/health
-- **Frontend**: http://localhost:3000
-- **Admin panel**: http://localhost:3000/admin
-- **MeiliSearch**: http://localhost:7700/health
-- **PostgreSQL**: `PGPASSWORD=postgres psql -h localhost -p 5432 -U postgres -d aihub -c "SELECT 1;"`
-- **Redis**: `docker exec redis-aihub redis-cli ping`
+## Database Schema (Supabase)
+
+### Main Tables
+- **products** - All products (tractors + parts)
+  - `id` (uuid, primary key)
+  - `name` (text) - Product name
+  - `slug` (text, unique) - URL-friendly identifier
+  - `description` (text) - Product description
+  - `price` (numeric) - Price in rubles
+  - `manufacturer` (text) - Brand (DONGFENG, FOTON, JINMA, XINGTAI, UNIVERSAL)
+  - `category_id` (int) - Foreign key to categories
+  - `image_url` (text) - Product image URL
+  - `in_stock` (boolean) - Availability
+  - `specifications` (jsonb) - Technical specs including:
+    - `part_type` - Type of part (filters, engines, pumps, etc.)
+    - `has_watermark` - Flag for images with watermarks
+    - `watermark_source` - Detection method
+  - `created_at`, `updated_at` (timestamps)
+
+- **categories** - Product categories (28 total)
+  - Standard hierarchy for spare parts
+
+### Key Constraints
+- **Unique slug**: Each product must have unique slug
+- **RLS enabled**: Row-Level Security policies active
+- **Service Role Key**: Required for bulk operations
+
+## Environment Variables
+
+### Required (.env.local)
+```bash
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key  # For scripts only!
+
+# Vercel (auto-configured in deployment)
+VERCEL_PROJECT_ID=your-project-id
+VERCEL_ORG_ID=your-org-id
+```
+
+## Development Workflow
+
+### 1. Data Import
+```bash
+# Import brand-specific products
+python3 scripts/import-all-brands.py
+
+# Import remaining universal parts
+python3 scripts/import-all-remaining.py
+
+# Full database optimization
+python3 scripts/optimize-database.py
+```
+
+### 2. Database Management
+```bash
+# Interactive cleanup tool
+python3 scripts/cleanup-and-normalize.py
+
+# CLI for filtering/searching
+python3 scripts/supabase-tools.py
+
+# Check for watermarked images
+python3 scripts/check-watermarks.py
+
+# Generate statistics
+python3 scripts/db-stats-and-indexes.py
+```
+
+### 3. Frontend Development
+```bash
+cd frontend
+npm install
+npm run dev          # Development server (localhost:3000)
+npm run build        # Production build
+npm run lint         # ESLint check
+```
+
+### 4. Deployment
+```bash
+cd frontend
+vercel --prod --yes  # Deploy to Vercel production
+```
+
+## Database Statistics (Current)
+
+- **Total products**: 10,952
+- **With images**: 10,903 (99.6%)
+- **Without images**: 49 (mostly Rustrak brand)
+- **Need watermark check**: 4,255 (from zip-agro.ru, tata-agro-moto.com)
+
+### By Brand
+- UNIVERSAL: 6,097 (55.7%)
+- XINGTAI: 1,190 (10.9%)
+- JINMA: 1,122 (10.2%)
+- DONGFENG: 1,081 (9.9%)
+- FOTON: 777 (7.1%)
+- Other: 685 (6.3%)
+
+### Known Issues
+- **10,155 products** in generic category (ID=2) - needs redistribution
+- **2,231 duplicate products** detected - pending removal
+- **SQL indexes** not yet applied - needs manual execution
+
+## Data Management Tools
+
+### Import Scripts
+- `import-dongfeng.py` - DongFeng products only
+- `import-all-brands.py` - Foton, Jinma, Xingtai
+- `import-all-remaining.py` - Universal parts and remaining data
+- Auto-generates unique slugs with counters
+- Detects brands from product names
+- Batch processing (100 items per batch)
+
+### Optimization Tools
+- `cleanup-and-normalize.py` - Interactive menu:
+  1. Find duplicates
+  2. Remove duplicates (keeps cheapest)
+  3. Normalize brand names
+  4. Detect part types
+- `optimize-database.py` - One-click full optimization
+- `check-watermarks.py` - Watermark detection and marking
+
+### Query Tools
+- `supabase-tools.py` - CLI for:
+  - Filter by brand
+  - Filter by part_type
+  - Search by name
+  - Price range filter
+  - Export to JSON
+  - Brand statistics
+
+### Performance
+- `create-indexes.sql` - Production indexes:
+  - Single-column indexes (manufacturer, in_stock, price, category_id)
+  - Composite indexes (manufacturer + in_stock)
+  - Full-text search (Russian language)
+  - Materialized view for catalog
+
+## Important Rules
+
+### Data Integrity
+- **Always use SERVICE_ROLE_KEY** for bulk operations (bypasses RLS)
+- **Never use ANON_KEY** for imports - will fail with 42501 error
+- **Generate unique slugs** - use counter system for duplicates
+- **Validate before import** - check for existing products by name
+
+### Code Style (Python Scripts)
+- Use `supabase-py` library (not Node.js client)
+- Load env from `frontend/.env.local`
+- Batch processing for large operations
+- Print progress every 100 items
+- Use descriptive variable names
+- Add comments for complex logic
+
+### Frontend Rules
+- **No hardcoded data** - fetch from Supabase
+- **Server Components by default** - use 'use client' only when needed
+- **Error boundaries** - handle loading and error states
+- **Responsive design** - mobile-first approach
+- **Russian language** - all content in Russian
+- **SEO optimized** - metadata, Open Graph, structured data
+
+### Database Operations
+- **Never clear RLS policies** - use SERVICE_ROLE_KEY instead
+- **Test in development first** - avoid production mistakes
+- **Backup before bulk changes** - Supabase auto-backup enabled
+- **Check constraints** - respect unique slugs and foreign keys
+
+## Pending Tasks
+
+### High Priority
+1. **Wait for category structure** - User will provide mindmap (miro/tangent)
+2. **Redistribute products** - Move 10,155 items from generic category
+3. **Apply SQL indexes** - Execute create-indexes.sql in Supabase Dashboard
+4. **Remove duplicates** - Confirm with user, then run cleanup script
+
+### Medium Priority
+1. **Replace watermarked images** - 4,255 products need verification
+2. **Add missing images** - 49 products (Rustrak brand)
+3. **Improve part type detection** - More keywords for classification
+4. **Category tree UI** - Frontend component for browsing
+
+### Low Priority
+1. **Admin panel** - Product management interface
+2. **Search functionality** - Full-text search implementation
+3. **Filters** - Price range, brand, availability
+4. **Cart & checkout** - E-commerce functionality
+
+## Documentation Files
+
+- `DATABASE_OPTIMIZATION.md` - Database management guide
+- `WATERMARKS_CHECK.md` - Image watermark detection guide
+- `.claude/claude.md` - Core development rules
+- `.claude/agents.md` - AI agent guidelines
+- `.claude/claude2.md` - This file (project-specific rules)
+
+## Git Workflow
+
+### Branch Strategy
+- `main` - production branch (auto-deploys to Vercel)
+- No feature branches currently (direct commits to main)
+
+### Commit Message Format
+```
+🎯 Short description
+
+- Detailed changes
+- Impact on system
+- Related files
+
+Stats: (if applicable)
+- Metrics and numbers
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+### Common Emoji Prefixes
+- 🎯 Feature/Enhancement
+- 🔧 Configuration/Tools
+- 🐛 Bug fix
+- 📚 Documentation
+- 🔍 Search/Detection
+- 💾 Data/Database
+- 🚀 Deployment
+- ⚡ Performance
+
+## Useful Commands Reference
+
+### Supabase CLI (if installed)
+```bash
+supabase login
+supabase db dump > backup.sql
+supabase db reset --linked
+```
+
+### Database Queries (psql or Supabase Dashboard)
+```sql
+-- Product count by brand
+SELECT manufacturer, COUNT(*) as count
+FROM products
+GROUP BY manufacturer
+ORDER BY count DESC;
+
+-- Products without images
+SELECT id, name, manufacturer
+FROM products
+WHERE image_url IS NULL OR image_url = '';
+
+-- Duplicate detection
+SELECT name, COUNT(*) as count
+FROM products
+GROUP BY LOWER(name)
+HAVING COUNT(*) > 1;
+
+-- Category distribution
+SELECT c.name, COUNT(p.id) as product_count
+FROM categories c
+LEFT JOIN products p ON p.category_id = c.id
+GROUP BY c.id, c.name
+ORDER BY product_count DESC;
+```
+
+### Python Virtual Environment (if needed)
+```bash
+python3 -m venv venv
+source venv/bin/activate  # Linux/Mac
+pip install -r requirements.txt
+```
+
+## Contact & Support
+
+- **Developer**: IBM (user)
+- **AI Assistant**: Claude Code
+- **Repository**: TARS911/dongfeng-minitraktor (GitHub)
+- **Deployment**: Vercel (automatic from main branch)
+
+## Notes
+
+- **Environment**: Windows + WSL Ubuntu
+- **Responses**: Always in Russian
+- **No fallbacks**: Fail fast on errors (see claude.md)
+- **No silent errors**: Log everything, re-raise exceptions
+- **Modularity**: Max 500 lines per file
+- **Test-driven**: Write tests when adding features
