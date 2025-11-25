@@ -61,9 +61,9 @@ const partsCategories: { name: string; slug: string; description: string }[] = [
     description: "Garden, Скаут, Прораб, Булат",
   },
   {
-    name: "Запчасти на Навесное оборудование",
+    name: "Запчасти на Навесное оборудование и садовую технику",
     slug: "parts-attachments",
-    description: "Плуги, культиваторы, косилки",
+    description: "Плуги, культиваторы, косилки, газонокосилки, триммеры",
   },
   {
     name: "Топливная система",
