@@ -66,11 +66,6 @@ const partsCategories: { name: string; slug: string; description: string }[] = [
     description: "Плуги, культиваторы, косилки",
   },
   {
-    name: "Запчасти на Садовую технику",
-    slug: "parts-garden-equipment",
-    description: "Газонокосилки, триммеры, кусторезы",
-  },
-  {
     name: "Топливная система",
     slug: "parts-fuel-system",
     description: "Баки, насосы, краны, карбюраторы",
