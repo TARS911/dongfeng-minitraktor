@@ -64,7 +64,10 @@ export default async function CatalogPage() {
 
   // Загружаем товары только из основных категорий (не показываем товары из брендовых подкатегорий)
   // Товары брендов показываются только на странице /catalog/mini-tractors
-  const mainCategoryIds = categories?.map((cat: Category) => cat.id) || [];
+  // Исключаем категорию "parts" - запчасти показываются только на своих страницах
+  const mainCategoryIds = categories
+    ?.filter((cat: Category) => cat.slug !== "parts")
+    .map((cat: Category) => cat.id) || [];
 
   const { data: products } = await supabase
     .from("products")
