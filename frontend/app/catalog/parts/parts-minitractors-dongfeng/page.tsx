@@ -1,12 +1,14 @@
 import Link from "next/link";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import type { Metadata } from "next";
+import { supabase } from "../../../lib/supabase";
+import ProductCard from "../../../components/ProductCard";
 import "../../catalog.css";
 
 export const metadata: Metadata = {
-  title: "Запчасти DongFeng (ДонгФенг) | БелТехФермЪ",
+  title: "Запчасти DongFeng (ДонгФенг) - 1000 товаров | БелТехФермЪ",
   description:
-    "Каталог запчастей для минитракторов DongFeng. Выберите модель: 240-244, 354-404.",
+    "Полный каталог запчастей для минитракторов DongFeng. Все модели: 240, 244, 354, 404, 504, 904, 1304E и другие.",
 };
 
 const dongfengModels = [
@@ -24,7 +26,15 @@ const dongfengModels = [
   },
 ];
 
-export default function DongFengPartsPage() {
+export default async function DongFengPartsPage() {
+  // Загружаем ВСЕ товары DongFeng
+  const { data: products } = await supabase
+    .from("products")
+    .select("*")
+    .eq("manufacturer", "DongFeng")
+    .eq("in_stock", true)
+    .order("price", { ascending: true })
+    .limit(100); // Первые 100 товаров
   const breadcrumbItems = [
     { label: "Главная", href: "/" },
     { label: "Каталог", href: "/catalog" },
