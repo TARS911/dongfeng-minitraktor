@@ -114,6 +114,12 @@
   gap: 0.3rem;
 }
 
+.manufacturer-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
 .product-actions {
   display: flex;
   justify-content: space-between;
