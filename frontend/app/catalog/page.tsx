@@ -50,31 +50,19 @@ interface Category {
 }
 
 export default async function CatalogPage() {
-  // Загружаем только основные категории в нужном порядке
-  const { data: allCategories } = await supabase
+  // Загружаем все категории
+  const { data: categories } = await supabase
     .from("categories")
     .select("*")
-    .in("slug", ["mini-tractors", "equipment", "engines-assembled", "parts"]);
+    .order("name");
 
-  // Сортируем: Мини-тракторы, Коммунальная техника, ДВС в Сборе, Запчасти
-  const categoryOrder = ["mini-tractors", "equipment", "engines-assembled", "parts"];
-  const categories = allCategories?.sort((a, b) => {
-    return categoryOrder.indexOf(a.slug) - categoryOrder.indexOf(b.slug);
-  });
-
-  // Загружаем товары только из основных категорий (не показываем товары из брендовых подкатегорий)
-  // Товары брендов показываются только на странице /catalog/mini-tractors
-  // Исключаем категорию "parts" - запчасти показываются только на своих страницах
-  const mainCategoryIds = categories
-    ?.filter((cat: Category) => cat.slug !== "parts")
-    .map((cat: Category) => cat.id) || [];
-
+  // Загружаем ВСЕ товары в наличии (не фильтруем по категориям на главной странице каталога)
   const { data: products } = await supabase
     .from("products")
     .select("*")
-    .in("category_id", mainCategoryIds.length > 0 ? mainCategoryIds : [0])
     .eq("in_stock", true)
-    .order("created_at", { ascending: false });
+    .order("created_at", { ascending: false })
+    .limit(100); // Показываем первые 100 товаров
 
   return (
     <div className="catalog-page">
@@ -86,15 +74,18 @@ export default async function CatalogPage() {
           <Link href="/catalog" className="category-btn active">
             <GridIcon className="inline-icon" /> Все товары
           </Link>
-          {categories?.map((category: Category) => (
-            <Link
-              key={category.id}
-              href={`/catalog/${category.slug}`}
-              className="category-btn"
-            >
-              {getCategoryIcon(category.slug)} {category.name}
-            </Link>
-          ))}
+          <Link href="/catalog/parts" className="category-btn">
+            <CogsIcon className="inline-icon" /> Запчасти
+          </Link>
+          <Link href="/catalog/mini-tractors" className="category-btn">
+            <TractorIcon className="inline-icon" /> Мини-тракторы
+          </Link>
+          <Link href="/catalog/equipment" className="category-btn">
+            <TruckIcon className="inline-icon" /> Оборудование
+          </Link>
+          <Link href="/catalog/engines-assembled" className="category-btn">
+            <BoltIcon className="inline-icon" /> ДВС в Сборе
+          </Link>
         </div>
 
         {/* Сетка товаров */}
