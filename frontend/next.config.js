@@ -20,11 +20,25 @@ const nextConfig = {
     domains: [
       "dpsykseeqloturowdyzf.supabase.co",
       "xn----7sbabpgpk4bsbesjp1f.xn--p1ai",
+      "zip-agro.ru",
+      "tata-agro-moto.com",
     ],
     formats: ["image/webp", "image/avif"],
     minimumCacheTTL: 60,
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "zip-agro.ru",
+        pathname: "/image/**",
+      },
+      {
+        protocol: "https",
+        hostname: "tata-agro-moto.com",
+        pathname: "/image/**",
+      },
+    ],
   },
 
   // Отключаем строгий режим для production
