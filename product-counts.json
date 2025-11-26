@@ -1,0 +1,222 @@
+{
+  "total": 5846,
+  "in_stock": 5710,
+  "by_category": {
+    "303": {
+      "name": "Запчасти на ДВС",
+      "slug": "parts-engines",
+      "total": 787,
+      "in_stock": 782
+    },
+    "313": {
+      "name": "МиниТрактора Dongfeng",
+      "slug": "parts-minitractors-dongfeng",
+      "total": 437,
+      "in_stock": 407
+    },
+    "310": {
+      "name": "Топливная система",
+      "slug": "parts-fuel-system",
+      "total": 189,
+      "in_stock": 188
+    },
+    "325": {
+      "name": "Трансмиссия",
+      "slug": "parts-transmission",
+      "total": 360,
+      "in_stock": 356
+    },
+    "331": {
+      "name": "Ходовая часть",
+      "slug": "parts-chassis",
+      "total": 735,
+      "in_stock": 722
+    },
+    "326": {
+      "name": "Система охлаждения",
+      "slug": "parts-cooling",
+      "total": 133,
+      "in_stock": 131
+    },
+    "327": {
+      "name": "Электрика",
+      "slug": "parts-electrical",
+      "total": 153,
+      "in_stock": 147
+    },
+    "304": {
+      "name": "Запчасти на Минитракторы",
+      "slug": "parts-minitractors",
+      "total": 578,
+      "in_stock": 552
+    },
+    "332": {
+      "name": "Колёса и шины",
+      "slug": "parts-wheels-tires",
+      "total": 153,
+      "in_stock": 149
+    },
+    "315": {
+      "name": "МиниТрактора Jinma",
+      "slug": "parts-minitractors-jinma",
+      "total": 267,
+      "in_stock": 265
+    },
+    "314": {
+      "name": "МиниТрактора Foton/Lovol",
+      "slug": "parts-minitractors-foton",
+      "total": 299,
+      "in_stock": 297
+    },
+    "316": {
+      "name": "МиниТрактора Xingtai/Уралец",
+      "slug": "parts-minitractors-xingtai",
+      "total": 398,
+      "in_stock": 392
+    },
+    "311": {
+      "name": "Фильтры",
+      "slug": "parts-filters",
+      "total": 178,
+      "in_stock": 172
+    },
+    "312": {
+      "name": "Гидравлика",
+      "slug": "parts-hydraulics",
+      "total": 247,
+      "in_stock": 237
+    },
+    "330": {
+      "name": "Рулевое управление",
+      "slug": "parts-steering",
+      "total": 157,
+      "in_stock": 148
+    },
+    "329": {
+      "name": "Тормозная система",
+      "slug": "parts-brakes",
+      "total": 92,
+      "in_stock": 91
+    },
+    "328": {
+      "name": "Карданные валы",
+      "slug": "parts-driveshaft",
+      "total": 152,
+      "in_stock": 149
+    },
+    "302": {
+      "name": "ДВС в Сборе",
+      "slug": "engines-assembled",
+      "total": 8,
+      "in_stock": 8
+    },
+    "336": {
+      "name": "Пресс-подборщики",
+      "slug": "parts-attachments-balers",
+      "total": 202,
+      "in_stock": 200
+    },
+    "305": {
+      "name": "Запчасти на Мототракторы",
+      "slug": "parts-mototractors",
+      "total": 95,
+      "in_stock": 93
+    },
+    "307": {
+      "name": "Запчасти на Навесное оборудование",
+      "slug": "parts-attachments",
+      "total": 33,
+      "in_stock": 32
+    },
+    "335": {
+      "name": "Почвофрезы",
+      "slug": "parts-attachments-tillers",
+      "total": 25,
+      "in_stock": 25
+    },
+    "333": {
+      "name": "Ремни",
+      "slug": "parts-belts",
+      "total": 44,
+      "in_stock": 44
+    },
+    "337": {
+      "name": "Плуги",
+      "slug": "parts-attachments-plows",
+      "total": 36,
+      "in_stock": 36
+    },
+    "339": {
+      "name": "Культиваторы",
+      "slug": "parts-attachments-cultivators",
+      "total": 15,
+      "in_stock": 15
+    },
+    "338": {
+      "name": "Бороны",
+      "slug": "parts-attachments-harrows",
+      "total": 25,
+      "in_stock": 24
+    },
+    "341": {
+      "name": "Грабли-ворошилки",
+      "slug": "parts-attachments-rakes",
+      "total": 18,
+      "in_stock": 18
+    },
+    "340": {
+      "name": "Картофелекопалки и сажалки",
+      "slug": "parts-attachments-potato",
+      "total": 21,
+      "in_stock": 21
+    },
+    "334": {
+      "name": "Косилки",
+      "slug": "parts-attachments-mowers",
+      "total": 9,
+      "in_stock": 9
+    }
+  },
+  "by_manufacturer": {
+    "DongFeng": {
+      "total": 1402,
+      "in_stock": 1322
+    },
+    "Xingtai": {
+      "total": 1096,
+      "in_stock": 1090
+    },
+    "Foton": {
+      "total": 618,
+      "in_stock": 615
+    },
+    "Jinma": {
+      "total": 695,
+      "in_stock": 692
+    },
+    "Рустрак": {
+      "total": 8,
+      "in_stock": 8
+    },
+    "UNIVERSAL": {
+      "total": 1845,
+      "in_stock": 1803
+    },
+    "ZUBR": {
+      "total": 121,
+      "in_stock": 121
+    },
+    "Scout": {
+      "total": 61,
+      "in_stock": 59
+    }
+  },
+  "dongfeng_by_model": {
+    "240-244": 524,
+    "354-404": 192,
+    "504": 7,
+    "904": 2,
+    "1304": 3,
+    "general": 594
+  }
+}
