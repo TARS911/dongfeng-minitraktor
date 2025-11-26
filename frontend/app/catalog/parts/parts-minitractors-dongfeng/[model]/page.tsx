@@ -39,7 +39,7 @@ export default function DongFengModelPage() {
       const { data } = await supabase
         .from("products")
         .select("*")
-        .eq("manufacturer", "DONGFENG")
+        .eq("manufacturer", "DongFeng")
         .eq("in_stock", true)
         .order("created_at", { ascending: false });
 
