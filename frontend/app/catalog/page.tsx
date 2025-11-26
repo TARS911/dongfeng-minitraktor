@@ -69,11 +69,7 @@ export default async function CatalogPage() {
           <Link href="/catalog/equipment" className="category-btn">
             <TruckIcon className="inline-icon" /> Оборудование
           </Link>
-          <Link href="/catalog/engines-assembled" className="category-btn">
-            <BoltIcon className="inline-icon" /> ДВС в Сборе
-          </Link>
         </div>
-
       </div>
     </div>
   );
