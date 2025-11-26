@@ -144,7 +144,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       <div className="product-content">
         {product.manufacturer && (
           <div className="product-manufacturer">
-            <IndustryIcon size={14} /> {product.manufacturer}
+            <IndustryIcon className="manufacturer-icon" /> {product.manufacturer}
           </div>
         )}
         
