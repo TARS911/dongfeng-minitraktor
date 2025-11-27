@@ -142,8 +142,8 @@ export default function ProductCard({ product }: ProductCardProps) {
         )}
       </Link>
       
-      <div className="product-content">
-        <Link href={`/catalog/product/${product.slug}`} className="product-title">
+      <div className="product-info">
+        <Link href={`/catalog/product/${product.slug}`} className="product-name">
           {product.name}
         </Link>
         
@@ -152,7 +152,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             {product.old_price && product.old_price > product.price && (
               <span className="old-price">{product.old_price.toLocaleString('ru-RU')} ₽</span>
             )}
-            <div className="current-price">{product.price.toLocaleString('ru-RU')} ₽</div>
+            <span className="current-price">{product.price.toLocaleString('ru-RU')} ₽</span>
           </div>
           
           <div className="product-actions">
