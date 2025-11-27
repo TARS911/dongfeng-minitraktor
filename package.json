@@ -1,0 +1,9 @@
+{
+  "name": "dongfeng-minitraktor-scripts",
+  "version": "1.0.0",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.8",
+    "dotenv": "^16.4.5",
+    "postgres": "^3.4.4"
+  }
+}

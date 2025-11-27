@@ -1,0 +1,7 @@
+CREATE TABLE callbacks (
+    id SERIAL PRIMARY KEY,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    name VARCHAR(255) NOT NULL,
+    phone VARCHAR(255) NOT NULL,
+    is_completed BOOLEAN DEFAULT FALSE
+);
