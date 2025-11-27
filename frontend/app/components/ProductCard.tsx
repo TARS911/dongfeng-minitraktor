@@ -143,23 +143,16 @@ export default function ProductCard({ product }: ProductCardProps) {
       </Link>
       
       <div className="product-content">
-        {product.manufacturer && (
-          <div className="product-manufacturer">
-            <IndustryIcon className="manufacturer-icon" /> {product.manufacturer}
-          </div>
-        )}
-        
         <Link href={`/catalog/product/${product.slug}`} className="product-title">
           {product.name}
         </Link>
         
-{/* ... (imports and component start) ... */}
         <div className="product-footer">
           <div className="product-price">
             {product.old_price && product.old_price > product.price && (
               <span className="old-price">{product.old_price.toLocaleString('ru-RU')} ₽</span>
             )}
-            {product.price.toLocaleString('ru-RU')} ₽
+            <div className="current-price">{product.price.toLocaleString('ru-RU')} ₽</div>
           </div>
           
           <div className="product-actions">
