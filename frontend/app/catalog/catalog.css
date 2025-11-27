@@ -148,7 +148,7 @@
   color: #333;
   margin-bottom: 12px;
   line-height: 1.4;
-  min-height: 50px;
+  flex-grow: 1; /* Растягиваем блок с названием */
   text-decoration: none;
   display: block;
 }

@@ -149,7 +149,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
         )}
         
-        <Link href={`/product/${product.slug}`} className="product-title">
+        <Link href={`/catalog/product/${product.slug}`} className="product-title">
           {product.name}
         </Link>
         
