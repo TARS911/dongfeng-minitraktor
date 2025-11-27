@@ -500,10 +500,10 @@ export default function AdminProductsPage() {
                   )}
                   <p
                     className={`product-stock ${
-                      product.stock_quantity > 0 ? "in-stock" : "out-of-stock"
+                      (product.stock_quantity || 0) > 0 ? "in-stock" : "out-of-stock"
                     }`}
                   >
-                    {product.stock_quantity > 0
+                    {(product.stock_quantity || 0) > 0
                       ? `В наличии: ${product.stock_quantity} шт.`
                       : "Нет в наличии"}
                   </p>
