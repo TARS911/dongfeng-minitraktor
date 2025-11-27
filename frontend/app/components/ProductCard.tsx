@@ -153,42 +153,30 @@ export default function ProductCard({ product }: ProductCardProps) {
           {product.name}
         </Link>
         
-        <div className="product-price-container">
+{/* ... (imports and component start) ... */}
+        <div className="product-footer">
           <div className="product-price">
-            {product.price.toLocaleString('ru-RU')} ₽
             {product.old_price && product.old_price > product.price && (
               <span className="old-price">{product.old_price.toLocaleString('ru-RU')} ₽</span>
             )}
+            {product.price.toLocaleString('ru-RU')} ₽
           </div>
-        </div>
-        
-        <div className="product-actions">
-          <button 
-            className={`action-button ${isFav ? 'active' : ''}`}
-            onClick={handleToggleFavorite}
-            aria-label={isFav ? 'Удалить из избранного' : 'Добавить в избранное'}
-            title={isFav ? 'Удалить из избранного' : 'Добавить в избранное'}
-          >
-            {isFav ? '❤️' : '🤍'}
-          </button>
           
-          <button 
-            className={`action-button ${isComp ? 'active' : ''}`}
-            onClick={handleToggleCompare}
-            aria-label={isComp ? 'Удалить из сравнения' : 'Добавить к сравнению'}
-            title={isComp ? 'Удалить из сравнения' : 'Добавить к сравнению'}
-          >
-            {isComp ? '📊' : '📈'}
-          </button>
-          
-          <button 
-            className="action-button"
-            onClick={handleAddToCart}
-            aria-label="Добавить в корзину"
-            title="Добавить в корзину"
-          >
-            🛒
-          </button>
+          <div className="product-actions">
+            <button 
+              className={`action-button ${isFav ? 'active' : ''}`}
+              onClick={handleToggleFavorite}
+              title={isFav ? 'Удалить из избранного' : 'Добавить в избранное'}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </button>
+            <button 
+              className="add-to-cart-btn"
+              onClick={handleAddToCart}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>

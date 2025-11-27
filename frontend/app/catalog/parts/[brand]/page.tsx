@@ -153,6 +153,10 @@ export default async function BrandPartsPage({ params }: PageProps) {
     totalCount = result.count || 0;
   }
 
+  import ProductCard from "../../../components/ProductCard";
+
+// ... (keep the rest of the file until the return statement)
+
   return (
     <div className="catalog-page">
       <div className="container">
@@ -160,127 +164,35 @@ export default async function BrandPartsPage({ params }: PageProps) {
           <Breadcrumbs items={breadcrumbItems} />
           <h1>{categoryName}</h1>
           {categoryDescription && (
-            <p style={{ marginTop: "1rem", color: "#666" }}>
-              {categoryDescription}
-            </p>
+            <p>{categoryDescription}</p>
           )}
           {subcategories.length === 0 && (
-            <p
-              style={{ marginTop: "0.5rem", color: "#999", fontSize: "0.9rem" }}
-            >
-              {totalCount} позиций
-            </p>
+            <p>{totalCount} позиций</p>
           )}
         </div>
 
-        {/* Если есть подкатегории - показываем их */}
         {subcategories.length > 0 ? (
-          <div
-            className="subcategories-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-              gap: "1.5rem",
-              marginTop: "2rem",
-            }}
-          >
+          <div className="subcategories-grid">
             {subcategories.map((subcat) => (
               <Link
                 key={subcat.slug}
                 href={`/catalog/parts/${subcat.slug}`}
                 className="subcategory-card"
-                style={{
-                  padding: "1.5rem",
-                  border: "1px solid #e0e0e0",
-                  borderRadius: "8px",
-                  textAlign: "center",
-                  transition: "all 0.3s ease",
-                  textDecoration: "none",
-                  color: "inherit",
-                  backgroundColor: "#fff",
-                }}
               >
-                <h3
-                  style={{
-                    fontSize: "1.1rem",
-                    color: "#333",
-                    marginBottom: "0.5rem",
-                    fontWeight: "600",
-                  }}
-                >
-                  {subcat.name}
-                </h3>
-                <p
-                  style={{
-                    color: "#2a9d4e",
-                    fontSize: "0.9rem",
-                    fontWeight: "500",
-                    margin: "0",
-                  }}
-                >
-                  {subcat.count} позиций
-                </p>
+                <h3>{subcat.name}</h3>
+                <p>{subcat.count} позиций</p>
               </Link>
             ))}
           </div>
         ) : products && products.length > 0 ? (
-          /* Если подкатегорий нет - показываем товары */
-          <div
-            className="products-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-              gap: "1.5rem",
-              marginTop: "2rem",
-            }}
-          >
+          <div className="products-grid">
             {products.map((product) => (
-              <Link
-                key={product.id}
-                href={`/catalog/product/${product.slug}`}
-                className="product-card"
-                style={{
-                  padding: "1.5rem",
-                  border: "1px solid #e0e0e0",
-                  borderRadius: "8px",
-                  textAlign: "center",
-                  transition: "all 0.3s ease",
-                  textDecoration: "none",
-                  color: "inherit",
-                  backgroundColor: "#fff",
-                }}
-              >
-                <h3
-                  style={{
-                    fontSize: "1rem",
-                    color: "#333",
-                    marginBottom: "0.5rem",
-                  }}
-                >
-                  {product.name}
-                </h3>
-                {product.price && (
-                  <p
-                    style={{
-                      color: "#2a9d4e",
-                      fontSize: "1.1rem",
-                      fontWeight: "600",
-                      margin: "0.5rem 0",
-                    }}
-                  >
-                    {product.price.toLocaleString("ru-RU")} ₽
-                  </p>
-                )}
-              </Link>
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         ) : (
-          <div
-            style={{ marginTop: "2rem", textAlign: "center", padding: "3rem" }}
-          >
-            <p style={{ color: "#999", fontSize: "1.1rem" }}>
-              Товары в этой категории скоро появятся
-            </p>
+          <div className="empty-category">
+            <p>Товары в этой категории скоро появятся</p>
           </div>
         )}
 
