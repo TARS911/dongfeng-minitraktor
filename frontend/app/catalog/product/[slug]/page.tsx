@@ -1,7 +1,7 @@
 import { supabase } from "../../../lib/supabase";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ProductCard from "../../components/ProductCard"; // <-- Import the component
+import ProductCard from "../../../components/ProductCard"; // <-- Import the component
 import "./product.css";
 
 interface Product {
