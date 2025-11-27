@@ -1,7 +1,8 @@
 import { supabase } from "../../lib/supabase";
 import ProductCard from "../../components/ProductCard";
 import Breadcrumbs from "../../components/Breadcrumbs";
-import { Product } from "../../../types"; // Import centralized type
+import { Product } from "../../../types";
+import Link from "next/link"; // Добавляем пропущенный импорт Link
 import "../catalog.css";
 
 async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
