@@ -98,7 +98,7 @@
 }
 
 /* Main Category Buttons on /catalog page */
-.category-filters {
+.catalog-page .category-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
@@ -106,7 +106,7 @@
   justify-content: center;
 }
 
-.catalog-main-category-btn {
+.catalog-page .catalog-main-category-btn {
   padding: 24px;
   background: white;
   border: 1px solid #e2e8f0;
@@ -124,7 +124,7 @@
   text-align: center;
 }
 
-.catalog-main-category-btn:hover {
+.catalog-page .catalog-main-category-btn:hover {
   border-color: #0066cc;
   color: #0066cc;
   transform: translateY(-4px);
