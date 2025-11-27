@@ -24,16 +24,7 @@ const ProductCard = dynamic(() => import("./components/ProductCard"), {
 // Добавляем кеширование для ускорения загрузки
 export const revalidate = 3600; // кеш на 1 час
 
-interface Product {
-  id: number;
-  name: string;
-  slug: string;
-  price: number;
-  old_price?: number;
-  image_url: string;
-  category_id: number;
-  manufacturer?: string;
-}
+import { Product } from "../types";
 
 interface Category {
   id: number;

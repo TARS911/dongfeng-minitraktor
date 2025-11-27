@@ -46,17 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-interface Product {
-  id: number;
-  name: string;
-  slug: string;
-  price: number;
-  old_price?: number;
-  image_url: string;
-  manufacturer?: string;
-  in_stock: boolean;
-  category_id: number; // Add missing property
-}
+import { Product } from "../../../../types";
 
 export default async function EnginePartsPage({ params }: PageProps) {
   const resolvedParams = await params;

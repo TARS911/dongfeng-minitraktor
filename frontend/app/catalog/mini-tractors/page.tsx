@@ -10,17 +10,7 @@ export const metadata: Metadata = {
     "Купите мини-тракторы DONGFENG. Большой выбор, низкие цены, доставка по России.",
 };
 
-interface Product {
-  id: number;
-  name: string;
-  slug: string;
-  price: number;
-  old_price?: number;
-  image_url: string;
-  category_id: number;
-  manufacturer?: string;
-  is_featured?: boolean;
-}
+import { Product } from "../../../types";
 
 async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
   // Для категории "mini-tractors" загружаем товары из всех брендовых подкатегорий

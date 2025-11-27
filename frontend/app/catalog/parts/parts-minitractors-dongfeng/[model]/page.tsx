@@ -7,19 +7,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import "../../../catalog.css";
 
-interface Product {
-  id: number;
-  name: string;
-  slug: string;
-  price: number;
-  old_price?: number;
-  image_url: string;
-  category_id: number;
-  manufacturer?: string;
-  model?: string;
-  in_stock?: boolean;
-  is_featured?: boolean;
-}
+import { Product } from "../../../../types";
 
 export default function DongFengModelPage() {
   const params = useParams();

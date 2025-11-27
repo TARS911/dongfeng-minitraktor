@@ -9,17 +9,7 @@ import "../../../catalog.css";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-interface Product {
-  id: number;
-  name: string;
-  slug: string;
-  price: number;
-  old_price?: number;
-  image_url: string;
-  category_id: number;
-  manufacturer?: string;
-  is_featured?: boolean;
-}
+import { Product } from "../../../../types";
 
 // Маппинг брендов
 const brandNames: { [key: string]: string } = {

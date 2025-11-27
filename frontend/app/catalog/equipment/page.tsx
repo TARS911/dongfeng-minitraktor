@@ -10,17 +10,7 @@ export const metadata: Metadata = {
     "Коммунальная техника для уборки снега и территорий. Большой выбор, низкие цены, доставка по России.",
 };
 
-interface Product {
-  id: number;
-  name: string;
-  slug: string;
-  price: number;
-  old_price?: number;
-  image_url: string;
-  category_id: number;
-  manufacturer?: string;
-  is_featured?: boolean;
-}
+import { Product } from "../../../types";
 
 async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
   // Получаем ID категории по slug

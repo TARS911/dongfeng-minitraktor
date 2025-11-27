@@ -4,27 +4,7 @@ import { notFound } from "next/navigation";
 import ProductCard from "../../../components/ProductCard"; // <-- Import the component
 import "./product.css";
 
-interface Product {
-  id: number;
-  name: string;
-  slug: string;
-  price: number;
-  old_price?: number;
-  image_url: string;
-  category_id: number;
-  in_stock: boolean;
-  is_featured: boolean;
-  power?: string;
-  manufacturer?: string;
-  description?: string;
-  specifications?: string;
-}
-
-interface Category {
-  id: number;
-  name: string;
-  slug: string;
-}
+import { Product, Category } from "../../../types";
 
 interface PageProps {
   params: Promise<{

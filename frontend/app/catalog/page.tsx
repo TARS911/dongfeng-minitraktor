@@ -29,19 +29,7 @@ export const metadata: Metadata = {
   },
 };
 
-interface Product {
-  id: number;
-  name: string;
-  slug: string;
-  price: number;
-  old_price?: number;
-  image_url: string;
-  category_id: number;
-  in_stock: boolean;
-  is_featured: boolean;
-  power?: string;
-  manufacturer?: string;
-}
+import { Product } from "../../types";
 
 interface Category {
   id: number;

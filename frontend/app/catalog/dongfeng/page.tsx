@@ -1,25 +1,8 @@
 import { supabase } from "../../lib/supabase";
 import ProductCard from "../../components/ProductCard";
-import Link from "next/link";
-import type { Metadata } from "next";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import { Product } from "../../../types"; // Import centralized type
 import "../catalog.css";
-
-export const metadata: Metadata = {
-  title: "Мини-тракторы DongFeng | БелТехФермЪ",
-  description: "Купите мини-тракторы DongFeng. Большой выбор, низкие цены, доставка по России.",
-};
-
-interface Product {
-  id: number;
-  name: string;
-  slug: string;
-  price: number;
-  old_price?: number;
-  image_url: string;
-  category_id: number;
-  manufacturer?: string;
-  is_featured?: boolean;
-}
 
 async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
   // Получаем ID категории по slug

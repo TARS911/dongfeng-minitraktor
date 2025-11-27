@@ -28,18 +28,7 @@ import { useCompare } from "../context/CompareContext";
 import { ShoppingCartIcon, IndustryIcon, ArrowRightIcon } from "./Icons";
 
 // Интерфейсы
-interface Product {
-  id: number;
-  name: string;
-  slug: string;
-  price: number;
-  old_price?: number;
-  image_url: string;
-  category_id: number;
-  manufacturer?: string;
-  is_featured?: boolean;
-  in_stock: boolean; // Добавляем пропущенное свойство
-}
+import { Product } from "../../types";
 
 interface ProductCardProps {
   product: Product;

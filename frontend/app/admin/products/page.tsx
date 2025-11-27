@@ -3,21 +3,7 @@
 import { useState, useEffect } from "react";
 import "../categories/styles.css";
 
-interface Product {
-  id: number;
-  name: string;
-  slug: string;
-  article: string | null;
-  price: number;
-  brand: string | null;
-  category: string | null;
-  stock_quantity: number;
-  description: string | null;
-  specifications: any;
-  image_url: string | null;
-  created_at: string;
-  updated_at: string;
-}
+import { Product } from "../../types";
 
 interface Category {
   id: number;
