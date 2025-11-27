@@ -28,7 +28,7 @@ import { useCompare } from "../context/CompareContext";
 import { ShoppingCartIcon, IndustryIcon, ArrowRightIcon } from "./Icons";
 
 // Интерфейсы
-import { Product } from "../types";
+import { Product } from "../../types";
 
 interface ProductCardProps {
   product: Product;
