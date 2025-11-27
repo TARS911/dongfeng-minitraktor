@@ -1,25 +1,25 @@
-
-
-/* -- Refined Hover Effects for Product Card Footer -- */
-.product-footer {
+/* -- Main Category Buttons on /catalog page -- */
+.catalog-main-category-btn {
+  padding: 24px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: #1a202c;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-top: auto;
-  padding-top: 12px;
-  border-top: 1px solid #f1f5f9;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
 }
 
-.product-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  /* Make buttons slightly transparent by default */
-  opacity: 0.7;
-  transition: opacity 0.2s ease-in-out;
-}
-
-/* Make buttons fully opaque on card hover */
-.product-card:hover .product-actions {
-  opacity: 1;
+.catalog-main-category-btn:hover {
+  border-color: #0066cc;
+  color: #0066cc;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }

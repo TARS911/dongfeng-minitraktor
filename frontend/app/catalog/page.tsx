@@ -48,13 +48,13 @@ export default async function CatalogPage() {
 
         {/* Фильтры категорий */}
         <div className="category-filters">
-          <Link href="/catalog/parts" className="category-btn">
+          <Link href="/catalog/parts" className="catalog-main-category-btn">
             <CogsIcon className="inline-icon" /> Запчасти
           </Link>
-          <Link href="/catalog/mini-tractors" className="category-btn">
+          <Link href="/catalog/mini-tractors" className="catalog-main-category-btn">
             <TractorIcon className="inline-icon" /> Мини-тракторы
           </Link>
-          <Link href="/catalog/equipment" className="category-btn">
+          <Link href="/catalog/equipment" className="catalog-main-category-btn">
             <TruckIcon className="inline-icon" /> Оборудование
           </Link>
         </div>
