@@ -154,9 +154,7 @@ export default async function BrandPartsPage({ params }: PageProps) {
     totalCount = result.count || 0;
   }
 
-  import ProductCard from "../../../components/ProductCard";
 
-// ... (keep the rest of the file until the return statement)
 
   return (
     <div className="catalog-page">
