@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import "../categories/styles.css";
 
-import { Product } from "../../types";
+import { Product } from "../../../types";
 
 interface Category {
   id: number;

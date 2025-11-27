@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-import { Product } from "../../../../types";
+import { Product } from "../../../../../types";
 
 export default async function EnginePartsPage({ params }: PageProps) {
   const resolvedParams = await params;

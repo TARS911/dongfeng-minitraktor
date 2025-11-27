@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import "../../../catalog.css";
 
-import { Product } from "../../../../types";
+import { Product } from "../../../../../types";
 
 export default function DongFengModelPage() {
   const params = useParams();

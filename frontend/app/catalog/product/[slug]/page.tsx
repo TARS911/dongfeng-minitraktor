@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import ProductCard from "../../../components/ProductCard"; // <-- Import the component
 import "./product.css";
 
-import { Product, Category } from "../../../types";
+import { Product, Category } from "../../../../types";
 
 interface PageProps {
   params: Promise<{

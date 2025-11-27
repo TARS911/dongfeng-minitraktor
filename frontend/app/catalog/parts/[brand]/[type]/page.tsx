@@ -9,7 +9,7 @@ import "../../../catalog.css";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-import { Product } from "../../../../types";
+import { Product } from "../../../../../types";
 
 // Маппинг брендов
 const brandNames: { [key: string]: string } = {
