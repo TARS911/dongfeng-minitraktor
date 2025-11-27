@@ -1,5 +1,6 @@
 import { supabase } from "../../../../lib/supabase";
 import Breadcrumbs from "../../../../components/Breadcrumbs";
+import ProductCard from "../../../../components/ProductCard"; // Import the component
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -97,58 +98,7 @@ export default async function EnginePartsPage({ params }: PageProps) {
         {products && products.length > 0 ? (
           <div className="products-grid" style={{ marginTop: "2rem" }}>
             {products.map((product: Product) => (
-              <div key={product.id} className="product-card">
-                {product.old_price && (
-                  <div className="product-discount">
-                    -{Math.round((1 - product.price / product.old_price) * 100)}%
-                  </div>
-                )}
-
-                <Link href={`/catalog/product/${product.slug}`}>
-                  <div className="product-image">
-                    <Image
-                      src={product.image_url || "/images/placeholder.jpg"}
-                      alt={product.name}
-                      fill
-                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                      style={{ objectFit: "cover" }}
-                      loading="lazy"
-                    />
-                  </div>
-                </Link>
-
-                <div className="product-info">
-                  <Link href={`/catalog/product/${product.slug}`}>
-                    <h3 className="product-name">{product.name}</h3>
-                  </Link>
-
-                  {product.manufacturer && (
-                    <p style={{ color: "#666", fontSize: "0.85rem" }}>
-                      Производитель: {product.manufacturer}
-                    </p>
-                  )}
-
-                  <div className="product-footer">
-                    <div className="product-price">
-                      {product.old_price && (
-                        <span className="old-price">
-                          {product.old_price.toLocaleString()} ₽
-                        </span>
-                      )}
-                      <span className="current-price">
-                        {product.price.toLocaleString()} ₽
-                      </span>
-                    </div>
-
-                    <Link
-                      href={`/catalog/product/${product.slug}`}
-                      className="add-to-cart-btn"
-                    >
-                      Подробнее
-                    </Link>
-                  </div>
-                </div>
-              </div>
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         ) : (
