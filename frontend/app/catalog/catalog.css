@@ -1,41 +1,25 @@
 
 
-/* -- Advanced Hover Effects for Product Card Footer -- */
+/* -- Refined Hover Effects for Product Card Footer -- */
 .product-footer {
-  position: relative;
-  min-height: 42px; /* Set a fixed height to prevent collapsing */
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-top: auto;
   padding-top: 12px;
   border-top: 1px solid #f1f5f9;
 }
 
-.product-price, .product-actions {
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
-  position: absolute;
-  left: 0;
-  width: 100%;
-}
-
-.product-price {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .product-actions {
-  opacity: 0;
-  transform: translateY(10px);
   display: flex;
-  justify-content: flex-end; /* Align buttons to the right */
+  align-items: center;
+  gap: 8px;
+  /* Make buttons slightly transparent by default */
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.product-card:hover .product-price {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-
+/* Make buttons fully opaque on card hover */
 .product-card:hover .product-actions {
   opacity: 1;
-  transform: translateY(0);
 }
