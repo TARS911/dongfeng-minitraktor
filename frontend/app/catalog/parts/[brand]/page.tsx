@@ -2,6 +2,7 @@ import { supabase } from "../../../lib/supabase";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import Link from "next/link";
 import type { Metadata } from "next";
+import ProductCard from "../../../components/ProductCard"; // Moved to top-level
 import "../../catalog.css";
 
 // Полностью динамическая генерация - не pre-render при билде
