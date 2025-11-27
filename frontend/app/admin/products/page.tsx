@@ -153,7 +153,7 @@ export default function AdminProductsPage() {
       price: product.price,
       brand: product.brand || "",
       category: product.category || "",
-      stock_quantity: product.stock_quantity,
+      stock_quantity: product.stock_quantity || 0,
       description: product.description || "",
       image_url: product.image_url || "",
     });
