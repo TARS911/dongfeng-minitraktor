@@ -523,7 +523,7 @@ export default function AdminProductsPage() {
                   )}
                   <p className="meta">
                     ID: {product.id} | Создано:{" "}
-                    {new Date(product.created_at).toLocaleDateString("ru-RU")}
+                    {product.created_at ? new Date(product.created_at).toLocaleDateString("ru-RU") : "-"}
                   </p>
                 </div>
 
