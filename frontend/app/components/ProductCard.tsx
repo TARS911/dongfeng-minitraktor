@@ -38,6 +38,7 @@ interface Product {
   category_id: number;
   manufacturer?: string;
   is_featured?: boolean;
+  in_stock: boolean; // Добавляем пропущенное свойство
 }
 
 interface ProductCardProps {
