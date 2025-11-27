@@ -24,7 +24,6 @@ export default function AdminProductsPage() {
   const [formData, setFormData] = useState({
     name: "",
     slug: "",
-    article: "",
     price: 0,
     brand: "",
     category: "",
@@ -151,7 +150,6 @@ export default function AdminProductsPage() {
     setFormData({
       name: product.name,
       slug: product.slug,
-      article: product.article || "",
       price: product.price,
       brand: product.brand || "",
       category: product.category || "",
@@ -166,7 +164,6 @@ export default function AdminProductsPage() {
     setFormData({
       name: "",
       slug: "",
-      article: "",
       price: 0,
       brand: "",
       category: "",
@@ -189,7 +186,6 @@ export default function AdminProductsPage() {
     const matchesSearch =
       !searchQuery ||
       product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.article?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       product.brand?.toLowerCase().includes(searchQuery.toLowerCase());
 
     return matchesCategory && matchesSearch;
@@ -270,18 +266,6 @@ export default function AdminProductsPage() {
                     setFormData({ ...formData, name: e.target.value })
                   }
                   required
-                />
-              </div>
-
-              <div className="form-group">
-                <label>Артикул</label>
-                <input
-                  type="text"
-                  value={formData.article}
-                  onChange={(e) =>
-                    setFormData({ ...formData, article: e.target.value })
-                  }
-                  placeholder="DF-180"
                 />
               </div>
             </div>
@@ -428,16 +412,6 @@ export default function AdminProductsPage() {
                       }
                     />
                   </div>
-                  <div className="form-group">
-                    <label>Артикул</label>
-                    <input
-                      type="text"
-                      value={formData.article}
-                      onChange={(e) =>
-                        setFormData({ ...formData, article: e.target.value })
-                      }
-                    />
-                  </div>
                 </div>
 
                 <div className="form-row">
@@ -513,9 +487,6 @@ export default function AdminProductsPage() {
               <>
                 <div className="category-info product-info">
                   <h3>{product.name}</h3>
-                  {product.article && (
-                    <p className="product-article">Артикул: {product.article}</p>
-                  )}
                   <p className="product-price">
                     {product.price.toLocaleString("ru-RU")} ₽
                   </p>
