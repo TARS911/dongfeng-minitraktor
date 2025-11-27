@@ -15,6 +15,9 @@ export interface Product {
   power?: string;
   description?: string;
   specifications?: string;
+  brand?: string;
+  stock_quantity?: number;
+  created_at?: string;
 }
 
 export interface Category {
