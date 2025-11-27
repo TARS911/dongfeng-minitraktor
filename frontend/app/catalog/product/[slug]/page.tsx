@@ -1,6 +1,7 @@
 import { supabase } from "../../../lib/supabase";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ProductCard from "../../components/ProductCard"; // <-- Import the component
 import "./product.css";
 
 interface Product {
@@ -33,12 +34,13 @@ interface PageProps {
 
 export default async function ProductPage({ params }: PageProps) {
   const { slug: productSlug } = await params;
+  const decodedSlug = decodeURIComponent(productSlug);
 
   // Загружаем товар
   const { data: product } = await supabase
     .from("products")
     .select("*")
-    .eq("slug", productSlug)
+    .eq("slug", decodedSlug)
     .single();
 
   if (!product) {
@@ -193,36 +195,7 @@ export default async function ProductPage({ params }: PageProps) {
             <h2 className="section-title">Похожие товары</h2>
             <div className="products-grid">
               {similarProducts.map((item: Product) => (
-                <div key={item.id} className="product-card">
-                  {item.is_featured && <div className="product-badge">Хит</div>}
-
-                  <Link href={`/catalog/product/${item.slug}`}>
-                    <div className="product-image">
-                      <img
-                        src={item.image_url || "/images/placeholder.jpg"}
-                        alt={item.name}
-                      />
-                    </div>
-                  </Link>
-
-                  <div className="product-info">
-                    <Link href={`/catalog/product/${item.slug}`}>
-                      <h3 className="product-name">{item.name}</h3>
-                    </Link>
-
-                    <div className="product-footer">
-                      <div className="product-price">
-                        <span className="current-price">
-                          {item.price ? item.price.toLocaleString() : "0"} ₽
-                        </span>
-                      </div>
-
-                      <button className="add-to-cart-btn">
-                        <i className="fas fa-shopping-cart"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <ProductCard key={item.id} product={item} />
               ))}
             </div>
           </div>

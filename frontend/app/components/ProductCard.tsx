@@ -127,7 +127,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div className="product-card">
-      <Link href={`/product/${product.slug}`} className="product-image-container">
+      <Link href={`/catalog/product/${product.slug}`} className="product-image-container">
         <Image
           src={product.image_url || '/placeholder.jpg'}
           alt={product.name}
@@ -135,6 +135,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="product-image"
           priority={product.is_featured}
+          quality={75}
         />
         {product.old_price && product.old_price > product.price && (
           <span className="discount-badge">-{discount}%</span>
