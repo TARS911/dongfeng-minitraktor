@@ -18,6 +18,7 @@ export interface Product {
   brand?: string;
   stock_quantity?: number;
   created_at?: string;
+  category?: string; // Добавляем пропущенное свойство
 }
 
 export interface Category {
