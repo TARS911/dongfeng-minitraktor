@@ -55,6 +55,7 @@ interface Product {
   image_url: string;
   manufacturer?: string;
   in_stock: boolean;
+  category_id: number; // Add missing property
 }
 
 export default async function EnginePartsPage({ params }: PageProps) {
