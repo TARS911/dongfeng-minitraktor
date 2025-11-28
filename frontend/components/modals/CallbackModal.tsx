@@ -1,8 +1,8 @@
 "use client";
 
-import { useModal } from "@/hooks/useModal";
+import { useModal } from "../../hooks/useModal";
 import { useState } from "react";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "../../../lib/supabase";
 import { toast } from 'react-toastify';
 import './CallbackModal.css';
 
