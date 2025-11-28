@@ -12,8 +12,8 @@ const nextConfig = {
   // basePath: "",
   // trailingSlash: true,
 
-  // Исправляем workspace root warning (закомментировано для Docker)
-  // outputFileTracingRoot: require("path").join(__dirname, "../"),
+  // Исправляем workspace root warning
+  outputFileTracingRoot: require("path").join(__dirname, "../"),
 
   // Оптимизация изображений
   images: {
