@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { supabase } from "@/app/lib/supabase";
-import { validateId, validateSlug, sanitizeString } from "@/app/lib/validation";
-import { requireAdmin } from "@/app/lib/auth";
+import { supabase } from "@/lib/supabase";
+import { validateId, validateSlug, sanitizeString } from "@/lib/validation";
+import { requireAdmin } from "@/lib/auth";
 
 /**
  * GET /api/categories/:id - получить категорию по ID
