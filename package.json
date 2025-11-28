@@ -1,6 +1,9 @@
 {
   "name": "dongfeng-minitraktor-scripts",
   "version": "1.0.0",
+  "workspaces": [
+    "frontend"
+  ],
   "dependencies": {
     "@supabase/supabase-js": "^2.39.8",
     "dotenv": "^16.4.5",
